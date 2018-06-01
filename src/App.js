@@ -4,31 +4,24 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import Hero from './hero';
 
-const xmlReader = XmlReader.create({
-  stream: false,
-  parentNodes: false,
-  tagPrefix: 'tag:',
-  doneEvent: 'done',
-  emitTopLevelOnly: false
-});
-
 class App extends Component {
   constructor() {
     super();
-    this.state = {
+    this.initialState = {
       heros: [],
       chosenHero: null,
       masterMode: false
-    };
+    }
+    this.state = this.initialState;
   }
 
   componentDidMount() {
     // eslint-disable-next-line no-undef
     const chosenHero = JSON.parse(window.localStorage.getItem('hero'));
     if (chosenHero) {
-      this.setState(nextState => ({
+      this.setState(currentState => ({
         chosenHero: chosenHero || null,
-        heros: [].concat(...nextState.heros, chosenHero)
+        heros: [].concat(...currentState.heros, chosenHero)
       }));
     }
   }
@@ -61,6 +54,13 @@ class App extends Component {
       // eslint-disable-next-line no-undef
       const fileReader = new FileReader();
       fileReader.onload = e => {
+        const xmlReader = XmlReader.create({
+          stream: false,
+          parentNodes: false,
+          tagPrefix: 'tag:',
+          doneEvent: 'done',
+          emitTopLevelOnly: false
+        });
         xmlReader.on('done', data => this.appendToState(data));
         xmlReader.parse(e.target.result);
       };
@@ -75,11 +75,23 @@ class App extends Component {
   }
 
   chooseHero(name) {
-    this.setState(nextState => ({
-      chosenHero: nextState.heros.filter(
+    this.setState(currentState => ({
+      chosenHero: currentState.heros.filter(
         h => h.children[0].attributes.name === name
       )[0]
     }));
+  }
+
+  removeHero(hero, index) {
+    this.setState(currentState => ({
+      heros: currentState.heros.filter((h, i) => i !== index)
+    }));
+  }
+
+  clearStorage() {
+    // eslint-disable-next-line no-undef
+    window.localStorage.removeItem('hero');
+    this.setState(this.initialState);
   }
 
   render() {
@@ -93,7 +105,7 @@ class App extends Component {
         <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
-              <div className="float-left">
+              <div className="float-left display-flex">
                 <div className="custom-file">
                   <input
                     id="validatedCustomFile"
@@ -109,6 +121,11 @@ class App extends Component {
                     Held hochladen...
                   </label>
                 </div>
+                <button
+                  className="btn btn-primary"
+                  onClick={this.clearStorage.bind(this)}>
+                  Clear Storage
+                </button>
               </div>
               <div className="float-right">
                 <label
@@ -156,12 +173,15 @@ class App extends Component {
           {masterMode ? (
             <Fragment>
               <div className="left-pane col-md-1">
-                {heroOptions.map(h => (
+                {heroOptions.map((h, index) => (
                   <div
-                    key={h.name}
-                    className="uploaded-hero row text-align-center"
+                    key={h.name + index}
+                    className="uploaded-hero text-align-center"
                     onClick={this.chooseHero.bind(this, h.name)}>
-                    {h.name}
+                    {h.name}{' '}
+                    <span onClick={this.removeHero.bind(this, h, index)}>
+                      X
+                    </span>
                   </div>
                 ))}
               </div>

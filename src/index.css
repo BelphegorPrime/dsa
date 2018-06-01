@@ -11,6 +11,8 @@ body {
 #app-body {
   height: calc(100vh - 55px);
   width: 100vw;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .text-align-center {
@@ -26,13 +28,22 @@ body {
   width: 100%;
 }
 
+.display-flex{
+  display: flex;
+}
+
+.display-flex > div {
+  margin-right: 10px;
+}
+
 .left-pane {
   border-right: 1px solid lightgrey;
 }
 
 .uploaded-hero{
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
   margin-left: 0;
   margin-right: 0;
 }
