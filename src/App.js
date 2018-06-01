@@ -25,10 +25,12 @@ class App extends Component {
   componentDidMount() {
     // eslint-disable-next-line no-undef
     const chosenHero = JSON.parse(window.localStorage.getItem('hero'));
-    this.setState(nextState => ({
-      chosenHero: chosenHero || null,
-      heros: [].concat(...nextState.heros, chosenHero)
-    }));
+    if (chosenHero) {
+      this.setState(nextState => ({
+        chosenHero: chosenHero || null,
+        heros: [].concat(...nextState.heros, chosenHero)
+      }));
+    }
   }
 
   static getDerivedStateFromProps(nextProps, nextState) {
