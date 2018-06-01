@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import proptypes from 'prop-types';
 
-import Base from './components/Base';
-import Properties from './components/Properties';
+import Base from '../Base/index';
+import Properties from '../Properties/index';
 
 class App extends Component {
   render() {

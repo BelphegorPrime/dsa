@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import XmlReader from 'xml-reader';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import Hero from './hero';
+import Hero from './Hero';
 
 class App extends Component {
   constructor() {
@@ -11,7 +11,7 @@ class App extends Component {
       heros: [],
       chosenHero: null,
       masterMode: false
-    }
+    };
     this.state = this.initialState;
   }
 
@@ -109,6 +109,7 @@ class App extends Component {
                 <div className="custom-file">
                   <input
                     id="validatedCustomFile"
+                    data-testid="validatedCustomFile"
                     className="custom-file-input"
                     type="file"
                     accept="text/xml"
@@ -139,29 +140,36 @@ class App extends Component {
                   className="btn-group btn-group-toggle"
                   data-toggle="buttons">
                   <label
+                    data-testid="app-master-mode-off"
                     className={
                       !masterMode
                         ? 'btn btn-secondary active'
                         : 'btn btn-secondary'
-                    }>
+                    }
+                    htmlFor="master-mode-off">
                     <input
+                      id="master-mode-off"
                       type="radio"
                       onChange={this.handleChange.bind(this, false)}
                       checked={!masterMode}
-                    />{' '}
+                    />
                     OFF
                   </label>
                   <label
+                    data-testid="app-master-mode-on"
                     className={
                       masterMode
                         ? 'btn btn-secondary active'
                         : 'btn btn-secondary'
-                    }>
+                    }
+                    htmlFor="master-mode-on">
                     <input
+                      id="master-mode-on"
+                      data-testid="app-master-mode-on-input"
                       type="radio"
                       onChange={this.handleChange.bind(this, true)}
                       checked={masterMode}
-                    />{' '}
+                    />
                     ON
                   </label>
                 </div>
