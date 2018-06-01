@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#master-mode-toggle-label{
+  padding-right: 10px;
+}
+
+#app-body {
+  height: calc(100vh - 55px);
+  width: 100vw;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.navbar {
+  background: whitesmoke;
+  border-bottom: 1px solid lightgrey;
+}
+
+.navbar-header {
+  width: 100%;
+}
+
+.left-pane {
+  border-right: 1px solid lightgrey;
+}
+
+.uploaded-hero{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
