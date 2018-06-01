@@ -10,25 +10,23 @@ class App extends Component {
     if (hero) {
       const { name } = hero.children[0].attributes;
       const [
-        mods,
+        ,
         base,
         properties,
         advantages,
         specialAbilities,
-        events,
+        ,
         talentList,
         spellList,
         fight,
         objects,
-        boniWeaponlees,
+        ,
         comments,
         equipment,
         connections,
-        extension,
-        purse,
-        pluginData
+        ,
+        purse
       ] = hero.children[0].children;
-      console.log(advantages.children);
       return (
         <Fragment>
           <Base name={name} base={base} />
