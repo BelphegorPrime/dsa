@@ -37,3 +37,13 @@ it('can toogle mastermode', () => {
   );
   expect(getByTestId('app-master-mode-on').className).toBe('btn btn-secondary');
 });
+
+it('can upload a file', () => {
+  const fileContents = 'file contents';
+  const file = new Blob([fileContents], { type: 'text/xml' });
+  const { getByTestId } = render(<App />);
+  const fileUploadInput = getByTestId('validatedCustomFile');
+  fileUploadInput._files = [file];
+  Simulate.change(fileUploadInput);
+  expect(fileUploadInput._files.length).toBe(1);
+});
