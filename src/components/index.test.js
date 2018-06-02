@@ -1,9 +1,10 @@
-/* eslint-disable no-undef */
+/* eslint-disable no-undef,no-underscore-dangle */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { render, Simulate, cleanup } from 'react-testing-library';
 
 import App from './index';
+import hero from '../../testData/hero.xml';
 
 afterEach(cleanup);
 
@@ -14,13 +15,17 @@ it('renders without crashing', () => {
 });
 
 it('can toogle mastermode', () => {
-  const { getByLabelText, getByTestId } = render(<App />);
+  let instance;
+  const { getByLabelText, getByTestId } = render(
+    <App ref={el => (instance = el)} />
+  );
   const onButton = getByLabelText('ON');
   const offButton = getByLabelText('OFF');
   onButton.checked = true;
   Simulate.change(onButton);
   expect(onButton.checked).toBe(true);
   expect(offButton.checked).toBe(false);
+  expect(instance.state.masterMode).toBe(true);
   expect(getByTestId('app-master-mode-off').className).toBe(
     'btn btn-secondary'
   );
@@ -32,6 +37,7 @@ it('can toogle mastermode', () => {
   Simulate.change(offButton);
   expect(offButton.checked).toBe(true);
   expect(onButton.checked).toBe(false);
+  expect(instance.state.masterMode).toBe(false);
   expect(getByTestId('app-master-mode-off').className).toBe(
     'btn btn-secondary active'
   );
@@ -39,11 +45,12 @@ it('can toogle mastermode', () => {
 });
 
 it('can upload a file', () => {
-  const fileContents = 'file contents';
-  const file = new Blob([fileContents], { type: 'text/xml' });
-  const { getByTestId } = render(<App />);
+  let instance;
+  const { getByTestId } = render(<App ref={el => (instance = el)} />);
   const fileUploadInput = getByTestId('validatedCustomFile');
-  fileUploadInput._files = [file];
+  fileUploadInput._files = [hero];
   Simulate.change(fileUploadInput);
+  console.log(instance.state);
   expect(fileUploadInput._files.length).toBe(1);
+  console.log(localStorage.getItem('hero'));
 });
