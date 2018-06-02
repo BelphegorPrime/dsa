@@ -165,7 +165,6 @@ class App extends Component {
                     htmlFor="master-mode-on">
                     <input
                       id="master-mode-on"
-                      data-testid="app-master-mode-on-input"
                       type="radio"
                       onChange={this.handleChange.bind(this, true)}
                       checked={masterMode}
