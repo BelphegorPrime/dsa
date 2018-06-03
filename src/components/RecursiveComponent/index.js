@@ -9,12 +9,14 @@ class RecursiveComponent extends Component {
     if (attributes) {
       attributeValues = (
         <Fragment>
-          {name === 'muenze' && attributes.anzahl ? attributes.anzahl : null}
+          {name === 'muenze' && attributes.anzahl
+            ? `${attributes.anzahl}\n`
+            : null}
           {name !== 'rasse' &&
           name !== 'ausbildung' &&
           attributes.name &&
           attributes.name.indexOf('helden.model.kultur.') === -1
-            ? attributes.name
+            ? `${attributes.name}\n`
             : null}
           {attributes.string ? attributes.string : null}
           {attributes.probe ? attributes.probe : null}{' '}
@@ -100,7 +102,8 @@ class RecursiveComponent extends Component {
       wrapper,
       {},
       <Fragment>
-        {filteredName} {attributeValues}{' '}
+        {filteredName}
+        {attributeValues} <br />
         {children
           ? children.map((child, index) => (
               <RecursiveComponent
