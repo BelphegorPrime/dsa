@@ -39,18 +39,23 @@ class App extends Component {
       ] = hero.children[0].children;
       return (
         <Fragment>
-          <Base name={name} base={base} />
-          <Properties properties={properties} />
-          <Advantages advantages={advantages} />
-          <SpecialAbilities specialAbilities={specialAbilities} />
-          <TalentList talentList={talentList} />
-          <SpellList spellList={spellList} />
-          <Fight fight={fight} />
-          <Objects objects={objects} />
-          <Comments comments={comments} />
-          <Equipment equipment={equipment} />
-          <Connections connections={connections} />
-          <Purse purse={purse} />
+          <Base name={name} base={base} className="col-md-3" />
+          <Properties properties={properties} className="col-md-3" />
+          <Advantages advantages={advantages} className="col-md-3" />
+          <SpecialAbilities
+            specialAbilities={specialAbilities}
+            className="col-md-3"
+          />
+          <TalentList talentList={talentList} className="col-md-3" />
+          {spellList.children.length > 0 ? (
+            <SpellList spellList={spellList} className="col-md-3" />
+          ) : null}
+          <Fight fight={fight} className="col-md-3" />
+          <Objects objects={objects} className="col-md-3" />
+          <Comments comments={comments} className="col-md-3" />
+          <Equipment equipment={equipment} className="col-md-3" />
+          <Connections connections={connections} className="col-md-3" />
+          <Purse purse={purse} className="col-md-3" />
         </Fragment>
       );
     }

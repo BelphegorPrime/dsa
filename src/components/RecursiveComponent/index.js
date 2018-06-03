@@ -55,6 +55,7 @@ class RecursiveComponent extends Component {
     }
     const filteredName =
       [
+        'basis',
         'eigenschaft',
         'eigenschaften',
         'sf',
@@ -87,9 +88,7 @@ class RecursiveComponent extends Component {
       wrapper,
       {},
       <Fragment>
-        {/* {Object.values(node.attributes)} */}
-        {filteredName}
-        {attributeValues}
+        {filteredName} {attributeValues}{' '}
         {children
           ? children.map((child, index) => (
               <RecursiveComponent

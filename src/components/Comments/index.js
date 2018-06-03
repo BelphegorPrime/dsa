@@ -4,9 +4,9 @@ import RecursiveComponent from '../RecursiveComponent';
 
 class App extends Component {
   render() {
-    const { comments } = this.props;
+    const { comments, className } = this.props;
     return (
-      <div className="col-md-12">
+      <div className={className}>
         <RecursiveComponent node={comments} wrapper={'span'} />
       </div>
     );
@@ -14,7 +14,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-  comments: proptypes.object
+  comments: proptypes.object,
+  className: proptypes.string
 };
 
 export default App;

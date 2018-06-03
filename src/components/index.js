@@ -203,12 +203,12 @@ class App extends Component {
                   </div>
                 ))}
               </div>
-              <div className="col-md-11">
+              <div className="row col-md-11">
                 {chosenHero ? <Hero hero={chosenHero} /> : null}
               </div>
             </Fragment>
           ) : (
-            <div className="col-md-12">
+            <div className="row col-md-12">
               {chosenHero ? <Hero hero={chosenHero} /> : null}
             </div>
           )}

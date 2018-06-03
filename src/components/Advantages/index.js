@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-import RecursiveComponent from "../RecursiveComponent";
+import RecursiveComponent from '../RecursiveComponent';
 
 class App extends Component {
   render() {
-    const { advantages } = this.props;
+    const { advantages, className } = this.props;
     return (
-      <div className="col-md-12">
+      <div className={className}>
         <RecursiveComponent node={advantages} wrapper={'span'} />
-        {/*{advantages.children.map(advantage => (*/}
-          {/*<span key={advantage.attributes.name}>*/}
-            {/*{advantage.attributes.name}*/}
-            {/*{advantage.attributes.value*/}
-              {/*? ` (${advantage.attributes.value})`*/}
-              {/*: ''}*/}
-          {/*</span>*/}
-        {/*))}*/}
       </div>
     );
   }
 }
 
 App.propTypes = {
-  advantages: proptypes.object
+  advantages: proptypes.object,
+  className: proptypes.string
 };
 
 export default App;
