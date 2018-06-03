@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-import RecursiveComponent from '../RecursiveComponent';
+// import RecursiveComponent from '../RecursiveComponent';
 
 class App extends Component {
   static calc2(x, y, z) {
@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <div className={className}>
         {/* <RecursiveComponent node={properties} wrapper={'span'} /> */}
-        <table>
+        <table className="table table-sm table-hover">
           <thead>
             <tr>
               <th>Name</th>
@@ -179,7 +179,8 @@ class App extends Component {
                   CH.attributes.value
                 ) +
                   parseInt(AE.attributes.mod, 10) +
-                  parseInt(AE.attributes.value, 10)}
+                  parseInt(AE.attributes.value, 10) +
+                  parseInt(AE.attributes.grossemeditation, 10)}
               </td>
               <td>{AE.attributes.value}</td>
             </tr>

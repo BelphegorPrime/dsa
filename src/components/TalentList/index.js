@@ -46,11 +46,11 @@ class App extends Component {
   }
 
   render() {
-    const { talentList, className } = this.props;
+    const { talentList, className, fight } = this.props;
     const { tawStars } = this.state;
     return (
       <div className={className}>
-        <table>
+        <table className="table table-sm table-hover">
           <thead>
             <tr>
               <th>Name</th>
@@ -62,9 +62,24 @@ class App extends Component {
           <tbody>
             {talentList.children.map(talent => {
               const { attributes } = talent;
+              const possibleWeaponValues = fight.children.filter(
+                kw => kw.attributes.name === attributes.name
+              );
+              let AT = null;
+              let PA = null;
+              if (possibleWeaponValues.length > 0) {
+                const weaponValues = possibleWeaponValues[0];
+                AT = weaponValues.children[0].attributes.value;
+                PA = weaponValues.children[1].attributes.value;
+              }
               return (
                 <tr key={attributes.name}>
-                  <td>{attributes.name}</td>
+                  <td>
+                    {attributes.name}
+                    {AT ? ` AT(${AT})` : null}
+                    {PA ? ` PA(${PA})` : null}
+                    {attributes.k ? ` Komplexität(${attributes.k})` : null}
+                  </td>
                   <td>{attributes.probe}</td>
                   <td>{attributes.value}</td>
                   <td>
@@ -102,6 +117,7 @@ class App extends Component {
 
 App.propTypes = {
   talentList: proptypes.object,
+  fight: proptypes.object,
   className: proptypes.string,
   baseProperties: proptypes.array
 };

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import XmlReader from 'xml-reader';
+import XmlPrint from 'xml-printer';
 import { sortBy } from 'lodash';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -100,6 +101,22 @@ class App extends Component {
     });
   }
 
+  download() {
+    const { chosenHero } = this.state;
+    // eslint-disable-next-line no-undef
+    const doc = document
+    const a = doc.createElement('a');
+    a.setAttribute(
+      'href',
+      `data:text/xml;charset=utf-8,${encodeURIComponent(XmlPrint(chosenHero))}`
+    );
+    a.setAttribute('download', `${chosenHero.children[0].attributes.name}.xml`);
+    a.style.display = 'none';
+    doc.body.appendChild(a);
+    a.click();
+    doc.body.removeChild(a);
+  }
+
   clearStorage() {
     // eslint-disable-next-line no-undef
     window.localStorage.removeItem('hero');
@@ -139,6 +156,11 @@ class App extends Component {
                     Held hochladen...
                   </label>
                 </div>
+                <button
+                  className="btn btn-primary"
+                  onClick={this.download.bind(this)}>
+                  Download
+                </button>
                 <button
                   className="btn btn-primary"
                   onClick={this.clearStorage.bind(this)}>

@@ -7,7 +7,7 @@ import Advantages from '../Advantages';
 import SpecialAbilities from '../SpecialAbilities';
 import TalentList from '../TalentList';
 import SpellList from '../SpellList';
-import Fight from '../Fight';
+// import Fight from '../Fight';
 import Objects from '../Objects';
 import Comments from '../Comments';
 import Equipment from '../Equipment';
@@ -86,12 +86,13 @@ class App extends Component {
           <TalentList
             talentList={talentList}
             baseProperties={baseProperties}
+            fight={fight}
             className="col-md-3"
           />
           {spellList.children.length > 0 ? (
             <SpellList spellList={spellList} className="col-md-3" />
           ) : null}
-          <Fight fight={fight} className="col-md-3" />
+          {/*<Fight fight={fight} className="col-md-3" />*/}
           <Objects objects={objects} className="col-md-3" />
           <Comments comments={comments} className="col-md-3" />
           <Equipment equipment={equipment} className="col-md-3" />
