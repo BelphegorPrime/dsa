@@ -9,12 +9,19 @@ class RecursiveComponent extends Component {
     if (attributes) {
       attributeValues = (
         <Fragment>
+          {name === 'muenze' && attributes.anzahl ? attributes.anzahl : null}
           {attributes.name ? attributes.name : null}
           {attributes.string ? attributes.string : null}
           {attributes.probe ? attributes.probe : null}
           {attributes.value ? attributes.value : null}
+          {name !== 'muenze' && attributes.anzahl ? attributes.anzahl : null}
           {attributes.startwert ? ` (${attributes.startwert})` : null}
           {attributes.mod ? attributes.mod : null}
+          {attributes.at ? `AT: ${attributes.at}` : null}
+          {attributes.pa ? `PA: ${attributes.pa}` : null}
+          {attributes.akt ? attributes.akt : null}
+          {attributes.min ? attributes.min : null}
+          {attributes.key ? attributes.min : null}
           {attributes.anmerkungen ? attributes.anmerkungen : null}
           {attributes.hauszauber ? attributes.hauszauber : null}
           {attributes.k ? attributes.k : null}
@@ -25,26 +32,54 @@ class RecursiveComponent extends Component {
           {attributes.wirkungsdauer ? attributes.wirkungsdauer : null}
           {attributes.zauberdauer ? attributes.zauberdauer : null}
           {attributes.lernmethode ? attributes.lernmethode : null}
-          {attributes.zauberkommentar ? attributes.zauberkommentar : null}
+          {attributes.waffenname ? attributes.waffenname : null}
+          {attributes.talent ? attributes.talent : null}
+          {attributes.bezeichner ? attributes.bezeichner : null}
+          {attributes.bfakt ? attributes.bfakt : null}
+          {attributes.bfmin ? attributes.bfmin : null}
+          {attributes.hand ? attributes.hand : null}
+          {attributes.schild ? attributes.schild : null}
+          {attributes.set ? attributes.set : null}
+          {attributes.slot ? attributes.slot : null}
+          {attributes.so ? attributes.so : null}
+          {attributes.beschreibung
+            ? attributes.beschreibung.split('&#10;')
+            : null}
+          {attributes.kommentar ? attributes.kommentar.split('&#10;') : null}
+          {attributes.zauberkommentar
+            ? attributes.zauberkommentar.split('&#10;')
+            : null}
           {attributes.notiz0 ? attributes.notiz0.split('&#10;') : null}
         </Fragment>
       );
     }
     const filteredName =
-      name !== 'eigenschaft' &&
-      name !== 'eigenschaften' &&
-      name !== 'sf' &&
-      name !== 'sonderfertigkeit' &&
-      name !== 'vt' &&
-      name !== 'vorteil' &&
-      name !== 'Selbststudium' &&
-      name !== 'talent' &&
-      name !== 'talentliste' &&
-      name !== 'zauber' &&
-      name !== 'zauberliste' &&
-      name !== 'kampf' &&
-      name !== 'kampfwerte' &&
-      name !== 'portraet'
+      [
+        'eigenschaft',
+        'eigenschaften',
+        'sf',
+        'sonderfertigkeit',
+        'vt',
+        'vorteil',
+        'Selbststudium',
+        'talent',
+        'talentliste',
+        'zauber',
+        'zauberliste',
+        'kampf',
+        'kampfwerte',
+        'gegenstände',
+        'gegenstand',
+        'kommentare',
+        'kommentar',
+        'sfInfos',
+        'ausrüstungen',
+        'heldenausruestung',
+        'verbindungen',
+        'geldboerse',
+        'muenze',
+        'portraet'
+      ].indexOf(name) === -1
         ? name
         : null;
 

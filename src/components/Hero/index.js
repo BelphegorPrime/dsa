@@ -8,6 +8,11 @@ import SpecialAbilities from '../SpecialAbilities';
 import TalentList from '../TalentList';
 import SpellList from '../SpellList';
 import Fight from '../Fight';
+import Objects from '../Objects';
+import Comments from '../Comments';
+import Equipment from '../Equipment';
+import Connections from '../Connections';
+import Purse from '../Purse';
 
 class App extends Component {
   render() {
@@ -32,6 +37,7 @@ class App extends Component {
         ,
         purse
       ] = hero.children[0].children;
+      console.log(purse)
       return (
         <Fragment>
           <Base name={name} base={base} />
@@ -41,6 +47,11 @@ class App extends Component {
           <TalentList talentList={talentList} />
           <SpellList spellList={spellList} />
           <Fight fight={fight} />
+          <Objects objects={objects} />
+          <Comments comments={comments} />
+          <Equipment equipment={equipment} />
+          <Connections connections={connections} />
+          <Purse purse={purse} />
         </Fragment>
       );
     }
