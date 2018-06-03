@@ -15,6 +15,10 @@ body {
   margin-left: 0;
 }
 
+#app-body > div {
+  overflow: scroll;
+}
+
 .text-align-center {
   text-align: center;
 }

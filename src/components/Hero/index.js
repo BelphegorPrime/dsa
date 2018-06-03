@@ -37,7 +37,6 @@ class App extends Component {
         ,
         purse
       ] = hero.children[0].children;
-      console.log(purse)
       return (
         <Fragment>
           <Base name={name} base={base} />

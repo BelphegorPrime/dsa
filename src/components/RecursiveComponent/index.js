@@ -104,9 +104,6 @@ class RecursiveComponent extends Component {
   }
 }
 
-// zauberdauer
-// zauberkommentar
-
 RecursiveComponent.propTypes = {
   node: proptypes.object,
   wrapper: proptypes.string
