@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import XmlReader from 'xml-reader';
+import { sortBy } from 'lodash';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Hero from './Hero';
@@ -16,31 +17,36 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // eslint-disable-next-line no-undef
-    const chosenHero = JSON.parse(window.localStorage.getItem('hero'));
-    if (chosenHero) {
-      this.setState(currentState => ({
-        chosenHero: chosenHero || null,
-        heros: [].concat(...currentState.heros, chosenHero)
-      }));
-    }
+    this.setState({
+      // eslint-disable-next-line no-undef
+      heros: JSON.parse(window.localStorage.getItem('heros')) || [],
+      // eslint-disable-next-line no-undef
+      chosenHero: JSON.parse(window.localStorage.getItem('hero')) || null
+    });
   }
 
   static getDerivedStateFromProps(nextProps, nextState) {
     if (nextState.chosenHero) {
       // eslint-disable-next-line no-undef
       window.localStorage.setItem('hero', JSON.stringify(nextState.chosenHero));
+      // eslint-disable-next-line no-undef
+      window.localStorage.setItem('heros', JSON.stringify(nextState.heros));
     }
     return nextState;
   }
 
   appendToState(xml) {
     this.setState(currentState => {
-      const heros = [].concat(...currentState.heros, xml);
-      const chosenHero = heros.length > 0 ? heros[0] : null;
+      const otherHeros = currentState.heros.filter(
+        h => h.children[0].attributes.name !== xml.children[0].attributes.name
+      );
+      const heros = [].concat(xml, ...otherHeros);
+      const chosenHero = heros.length > 0 ? xml : null;
       if (chosenHero) {
         // eslint-disable-next-line no-undef
         window.localStorage.setItem('hero', JSON.stringify(chosenHero));
+        // eslint-disable-next-line no-undef
+        window.localStorage.setItem('heros', JSON.stringify(heros));
       }
       return {
         heros,
@@ -82,23 +88,30 @@ class App extends Component {
     }));
   }
 
-  removeHero(hero, index) {
-    this.setState(currentState => ({
-      heros: currentState.heros.filter((h, i) => i !== index)
-    }));
+  removeHero(hero) {
+    this.setState({
+      heros: this.state.heros.filter(
+        h => h.children[0].attributes.name !== hero.name
+      )
+    });
   }
 
   clearStorage() {
     // eslint-disable-next-line no-undef
     window.localStorage.removeItem('hero');
+    // eslint-disable-next-line no-undef
+    window.localStorage.removeItem('heros');
     this.setState(this.initialState);
   }
 
   render() {
     const { heros, masterMode, chosenHero } = this.state;
-    const heroOptions = heros.map(hero => ({
-      name: hero.children[0].attributes.name
-    }));
+    const heroOptions = sortBy(
+      heros.map(hero => ({
+        name: hero.children[0].attributes.name
+      })),
+      ['name']
+    );
 
     return (
       <div className="App">
@@ -186,9 +199,7 @@ class App extends Component {
                     className="uploaded-hero text-align-center"
                     onClick={this.chooseHero.bind(this, h.name)}>
                     {h.name}{' '}
-                    <span onClick={this.removeHero.bind(this, h, index)}>
-                      X
-                    </span>
+                    <span onClick={this.removeHero.bind(this, h)}>X</span>
                   </div>
                 ))}
               </div>
