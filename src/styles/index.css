@@ -57,3 +57,7 @@ body {
   margin-left: 0;
   margin-right: 0;
 }
+
+.test-btn {
+  width: 100%;
+}

@@ -37,6 +37,43 @@ class App extends Component {
         ,
         purse
       ] = hero.children[0].children;
+      const baseProperties = properties.children
+        .filter((e, i) => i <= 7)
+        .map(p => {
+          let propertieName = '';
+          switch (p.attributes.name) {
+            case 'Mut':
+              propertieName = 'MU';
+              break;
+            case 'Klugheit':
+              propertieName = 'KL';
+              break;
+            case 'Intuition':
+              propertieName = 'IN';
+              break;
+            case 'Charisma':
+              propertieName = 'CH';
+              break;
+            case 'Fingerfertigkeit':
+              propertieName = 'FF';
+              break;
+            case 'Gewandtheit':
+              propertieName = 'GE';
+              break;
+            case 'Konstitution':
+              propertieName = 'KO';
+              break;
+            case 'Körperkraft':
+              propertieName = 'KK';
+              break;
+            default:
+              break;
+          }
+          return {
+            name: propertieName,
+            value: parseInt(p.attributes.value, 10)
+          };
+        });
       return (
         <Fragment>
           <Base name={name} base={base} className="col-md-3" />
@@ -46,7 +83,11 @@ class App extends Component {
             specialAbilities={specialAbilities}
             className="col-md-3"
           />
-          <TalentList talentList={talentList} className="col-md-3" />
+          <TalentList
+            talentList={talentList}
+            baseProperties={baseProperties}
+            className="col-md-3"
+          />
           {spellList.children.length > 0 ? (
             <SpellList spellList={spellList} className="col-md-3" />
           ) : null}

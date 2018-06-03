@@ -16,6 +16,10 @@ class App extends Component {
     this.state = this.initialState;
   }
 
+  static rollDice(x) {
+    return Math.floor(Math.random() * x) + 1;
+  }
+
   componentDidMount() {
     this.setState({
       // eslint-disable-next-line no-undef
