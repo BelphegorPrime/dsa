@@ -4,17 +4,17 @@ import RecursiveComponent from '../RecursiveComponent';
 
 class App extends Component {
   render() {
-    const { properties } = this.props;
+    const { talentList } = this.props;
     return (
       <div className="col-md-12">
-        <RecursiveComponent node={properties} wrapper={'span'} />
+        <RecursiveComponent node={talentList} wrapper={'span'} />
       </div>
     );
   }
 }
 
 App.propTypes = {
-  properties: proptypes.object
+  talentList: proptypes.object
 };
 
 export default App;

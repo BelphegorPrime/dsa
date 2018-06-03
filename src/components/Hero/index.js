@@ -1,8 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import proptypes from 'prop-types';
 
-import Base from '../Base/index';
-import Properties from '../Properties/index';
+import Base from '../Base';
+import Properties from '../Properties';
+import Advantages from '../Advantages';
+import SpecialAbilities from '../SpecialAbilities';
+import TalentList from '../TalentList';
+import SpellList from '../SpellList';
+import Fight from '../Fight';
 
 class App extends Component {
   render() {
@@ -31,6 +36,11 @@ class App extends Component {
         <Fragment>
           <Base name={name} base={base} />
           <Properties properties={properties} />
+          <Advantages advantages={advantages} />
+          <SpecialAbilities specialAbilities={specialAbilities} />
+          <TalentList talentList={talentList} />
+          <SpellList spellList={spellList} />
+          <Fight fight={fight} />
         </Fragment>
       );
     }
