@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   static test(probe, baseProperties) {
-    return probe
+    const values = probe
       .split('(')[1]
       .split(')')[0]
       .split('/')
@@ -26,17 +26,21 @@ class App extends Component {
         }
         return 0;
       })
-      .map(val => val - Main.rollDice(20))
-      .filter(val => val < 0)
-      .reduce((acc, val) => acc + val, 0);
+      .map(val => val - Main.rollDice(20));
+    return {
+      values: `(${values.join('/')})`,
+      diceThrow: values
+        .filter(val => val < 0)
+        .reduce((acc, val) => acc + val, 0)
+    };
   }
 
   changeTest(name, probe, taw) {
-    const diceThrow = App.test(probe, this.props.baseProperties);
+    const { diceThrow, values } = App.test(probe, this.props.baseProperties);
     const tawStar = taw + diceThrow;
     this.setState(currentState => {
       const newState = currentState.tawStars;
-      newState[name] = tawStar;
+      newState[name] = `${values} => ${tawStar}`;
       return newState;
     });
   }
@@ -67,7 +71,10 @@ class App extends Component {
                     <button
                       className={
                         tawStars[attributes.name] &&
-                        tawStars[attributes.name] < 0
+                        parseInt(
+                          tawStars[attributes.name].split(' => ')[1],
+                          10
+                        ) < 0
                           ? 'btn btn-danger test-btn'
                           : 'btn btn-primary test-btn'
                       }
@@ -87,7 +94,7 @@ class App extends Component {
             })}
           </tbody>
         </table>
-        {/*<RecursiveComponent node={talentList} wrapper={'span'} />*/}
+        {/* <RecursiveComponent node={talentList} wrapper={'span'} /> */}
       </div>
     );
   }
