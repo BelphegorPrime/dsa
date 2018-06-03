@@ -36,8 +36,14 @@ body {
   display: flex;
 }
 
-.display-flex > div {
+.display-flex > div,
+.display-flex > button {
   margin-right: 10px;
+}
+
+.hero-name {
+  width: 400px;
+  line-height: 38px;
 }
 
 .left-pane {

@@ -10,13 +10,22 @@ class RecursiveComponent extends Component {
       attributeValues = (
         <Fragment>
           {name === 'muenze' && attributes.anzahl ? attributes.anzahl : null}
-          {attributes.name ? attributes.name : null}
+          {name !== 'rasse' &&
+          name !== 'ausbildung' &&
+          attributes.name &&
+          attributes.name.indexOf('helden.model.kultur.') === -1
+            ? attributes.name
+            : null}
           {attributes.string ? attributes.string : null}
-          {attributes.probe ? attributes.probe : null}
-          {attributes.value ? attributes.value : null}
+          {attributes.probe ? attributes.probe : null}{' '}
+          {name !== 'verify' && attributes.value ? attributes.value : null}
           {name !== 'muenze' && attributes.anzahl ? attributes.anzahl : null}
           {attributes.startwert ? ` (${attributes.startwert})` : null}
-          {attributes.mod ? attributes.mod : null}
+          {attributes.mod
+            ? parseInt(attributes.mod, 10) >= 0
+              ? `+${attributes.mod}`
+              : attributes.mod
+            : null}
           {attributes.at ? `AT: ${attributes.at}` : null}
           {attributes.pa ? `PA: ${attributes.pa}` : null}
           {attributes.akt ? attributes.akt : null}
@@ -71,6 +80,9 @@ class RecursiveComponent extends Component {
         'kampfwerte',
         'gegenstände',
         'gegenstand',
+        'notiz',
+        'Notizen',
+        'verify',
         'kommentare',
         'kommentar',
         'sfInfos',

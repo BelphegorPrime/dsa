@@ -140,6 +140,9 @@ class App extends Component {
                   onClick={this.clearStorage.bind(this)}>
                   Clear Storage
                 </button>
+                <div className="hero-name">
+                  {chosenHero ? chosenHero.children[0].attributes.name : null}
+                </div>
               </div>
               <div className="float-right">
                 <label
