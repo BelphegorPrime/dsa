@@ -1,17 +1,18 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import XmlReader from 'xml-reader';
 import XmlPrint from 'xml-printer';
-import { sortBy } from 'lodash';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Hero from './Hero';
+import SideBar from './SideBar';
 
 class App extends Component {
   constructor() {
     super();
     this.initialState = {
-      heros: [],
+      heros: {},
       chosenHero: null,
+      page: null,
       masterMode: false
     };
     this.state = this.initialState;
@@ -34,6 +35,8 @@ class App extends Component {
     if (nextState.chosenHero) {
       // eslint-disable-next-line no-undef
       window.localStorage.setItem('hero', JSON.stringify(nextState.chosenHero));
+    }
+    if (Object.keys(nextState.heros).length > 0) {
       // eslint-disable-next-line no-undef
       window.localStorage.setItem('heros', JSON.stringify(nextState.heros));
     }
@@ -41,23 +44,16 @@ class App extends Component {
   }
 
   appendToState(xml) {
-    this.setState(currentState => {
-      const otherHeros = currentState.heros.filter(
-        h => h.children[0].attributes.name !== xml.children[0].attributes.name
-      );
-      const heros = [].concat(xml, ...otherHeros);
-      const chosenHero = heros.length > 0 ? xml : null;
-      if (chosenHero) {
-        // eslint-disable-next-line no-undef
-        window.localStorage.setItem('hero', JSON.stringify(chosenHero));
-        // eslint-disable-next-line no-undef
-        window.localStorage.setItem('heros', JSON.stringify(heros));
-      }
-      return {
-        heros,
-        chosenHero
-      };
-    });
+    const { name } = xml.children[0].attributes;
+    const { state } = this;
+    state.chosenHero = xml;
+    state.heros = Object.assign(
+      {
+        [name]: xml
+      },
+      state.heros
+    );
+    this.setState(state);
   }
 
   fileUploaded(files) {
@@ -79,32 +75,10 @@ class App extends Component {
     });
   }
 
-  handleChange(val) {
-    this.setState({
-      masterMode: val
-    });
-  }
-
-  chooseHero(name) {
-    this.setState(currentState => ({
-      chosenHero: currentState.heros.filter(
-        h => h.children[0].attributes.name === name
-      )[0]
-    }));
-  }
-
-  removeHero(hero) {
-    this.setState({
-      heros: this.state.heros.filter(
-        h => h.children[0].attributes.name !== hero.name
-      )
-    });
-  }
-
   download() {
     const { chosenHero } = this.state;
     // eslint-disable-next-line no-undef
-    const doc = document
+    const doc = document;
     const a = doc.createElement('a');
     a.setAttribute(
       'href',
@@ -125,15 +99,38 @@ class App extends Component {
     this.setState(this.initialState);
   }
 
-  render() {
-    const { heros, masterMode, chosenHero } = this.state;
-    const heroOptions = sortBy(
-      heros.map(hero => ({
-        name: hero.children[0].attributes.name
-      })),
-      ['name']
-    );
+  handleChange(val) {
+    this.setState({
+      masterMode: val
+    });
+  }
 
+  chooseHero(name) {
+    this.setState({
+      chosenHero: this.state.heros[name]
+    });
+  }
+
+  removeHero(name) {
+    const { heros } = this.state;
+    let { chosenHero } = this.state;
+    if (chosenHero.children[0].attributes.name === name) {
+      chosenHero = null;
+    }
+    delete heros[name];
+    this.setState({
+      heros
+    });
+  }
+
+  showPage(page) {
+    this.setState({
+      page
+    });
+  }
+
+  render() {
+    const { heros, masterMode, chosenHero, page } = this.state;
     return (
       <div className="App">
         <nav className="navbar navbar-default">
@@ -147,7 +144,7 @@ class App extends Component {
                     className="custom-file-input"
                     type="file"
                     accept="text/xml"
-                    multiple={masterMode}
+                    multiple={true}
                     onChange={e => this.fileUploaded(e.target.files)}
                   />
                   <label
@@ -158,7 +155,8 @@ class App extends Component {
                 </div>
                 <button
                   className="btn btn-primary"
-                  onClick={this.download.bind(this)}>
+                  onClick={this.download.bind(this)}
+                  disabled={!chosenHero}>
                   Download
                 </button>
                 <button
@@ -219,28 +217,19 @@ class App extends Component {
           </div>
         </nav>
         <div id="app-body" className="row">
-          {masterMode ? (
-            <Fragment>
-              <div className="left-pane col-md-1">
-                {heroOptions.map((h, index) => (
-                  <div
-                    key={h.name + index}
-                    className="uploaded-hero text-align-center"
-                    onClick={this.chooseHero.bind(this, h.name)}>
-                    {h.name}{' '}
-                    <span onClick={this.removeHero.bind(this, h)}>X</span>
-                  </div>
-                ))}
-              </div>
-              <div className="row col-md-11">
-                {chosenHero ? <Hero hero={chosenHero} /> : null}
-              </div>
-            </Fragment>
-          ) : (
-            <div className="row col-md-12">
-              {chosenHero ? <Hero hero={chosenHero} /> : null}
-            </div>
-          )}
+          <div className="left-pane col-md-2">
+            <SideBar
+              heros={heros}
+              chosenHero={chosenHero}
+              page={page}
+              chooseHero={this.chooseHero.bind(this)}
+              removeHero={this.removeHero.bind(this)}
+              showPage={this.showPage.bind(this)}
+            />
+          </div>
+          <div className="row col-md-10">
+            {chosenHero ? <Hero hero={chosenHero} page={page} /> : null}
+          </div>
         </div>
       </div>
     );

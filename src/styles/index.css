@@ -11,17 +11,17 @@ body {
 #app-body {
   height: calc(100vh - 55px);
   width: 100vw;
-  margin-right: 0;
-  margin-left: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #app-body > div {
   overflow: scroll;
 }
 
-.text-align-center {
-  text-align: center;
-}
+/*.text-align-center {*/
+  /*text-align: center;*/
+/*}*/
 
 .navbar {
   background: whitesmoke;
@@ -50,13 +50,22 @@ body {
   border-right: 1px solid lightgrey;
 }
 
-.uploaded-hero{
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-top: 15px;
-  margin-left: 0;
-  margin-right: 0;
+.left-pane > hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
+
+.list-group {
+  padding-right: 0 !important;
+}
+
+/*.uploaded-hero{*/
+  /*padding-top: 15px;*/
+  /*padding-bottom: 15px;*/
+  /*margin-top: 15px;*/
+  /*margin-left: 0;*/
+  /*margin-right: 0;*/
+/*}*/
 
 .test-btn {
   width: 166px;
