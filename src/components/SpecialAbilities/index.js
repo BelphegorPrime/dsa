@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-import RecursiveComponent from '../RecursiveComponent';
 
 class SpecialAbilities extends Component {
   render() {
@@ -15,30 +14,23 @@ class SpecialAbilities extends Component {
     return (
       <div className={className}>
         {specialAbilities.map(specialAbility => {
-          if (
-            specialAbility.attributes.name === 'Kulturkunde' ||
-            specialAbility.attributes.name === 'Rüstungsgewöhnung I'
-          ) {
+          const { name } = specialAbility.attributes;
+          if (name === 'Kulturkunde' || name === 'Rüstungsgewöhnung I') {
             return (
-              <div className="col-md-12 pt-2">
+              <div key={name} className="col-md-12 pt-2">
                 <span>
-                  {`${
-                    specialAbility.attributes.name
-                  } ${specialAbility.children
+                  {`${name} ${specialAbility.children
                     .map(sa => sa.attributes.name)
                     .join(', ')}`}
                 </span>
               </div>
             );
           }
-          if (specialAbility.attributes.name.indexOf('Wahrer Name: ') > -1) {
-            console.log(specialAbility);
+          if (name.indexOf('Wahrer Name: ') > -1) {
             return (
-              <div className="col-md-12 pt-2">
+              <div key={name} className="col-md-12 pt-2">
                 <span>
-                  {`${
-                    specialAbility.attributes.name
-                  } ${specialAbility.children
+                  {`${name} ${specialAbility.children
                     .map(sa =>
                       sa.children.map(e => e.attributes.value).join(' ')
                     )
@@ -48,17 +40,19 @@ class SpecialAbilities extends Component {
             );
           }
           return (
-            <div className="col-md-12 pt-2">
-              <span>{specialAbility.attributes.name}</span>
+            <div key={name} className="col-md-12 pt-2">
+              <span>{name}</span>
             </div>
           );
         })}
-        {cheapenedAbilities.map(cheapenedAbility => (
-          <div className="col-md-12 pt-2">
-            <span>{cheapenedAbility.attributes.name}</span>
-          </div>
-        ))}
-        <RecursiveComponent node={specialAbilities} wrapper={'span'} />
+        {cheapenedAbilities.map(cheapenedAbility => {
+          const { name } = cheapenedAbility.attributes;
+          return (
+            <div key={name} className="col-md-12 pt-2">
+              <span>Verbilligt: {name}</span>
+            </div>
+          );
+        })}
       </div>
     );
   }

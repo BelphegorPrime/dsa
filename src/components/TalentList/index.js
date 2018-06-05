@@ -27,7 +27,7 @@ class TalentList extends Component {
     const { tawStars } = this.state;
     return (
       <div className={className}>
-        <table className="table table-sm table-hover">
+        <table className="fixt-table table table-sm table-hover">
           <thead>
             <tr>
               <th>Name</th>

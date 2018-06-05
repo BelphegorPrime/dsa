@@ -28,7 +28,7 @@ class SpellList extends Component {
 
     return (
       <div className={className}>
-        <table className="table table-sm table-hover">
+        <table className="fixt-table table table-sm table-hover">
           <thead>
             <tr>
               <th>Name</th>
@@ -38,8 +38,9 @@ class SpellList extends Component {
             </tr>
           </thead>
           <tbody>
-            {spellList.children.map(talent => {
-              const { attributes } = talent;
+            {spellList.children.map(spell => {
+              const { attributes } = spell;
+              console.log(attributes)
               return (
                 <tr key={attributes.name}>
                   <td>
@@ -75,11 +76,7 @@ class SpellList extends Component {
             })}
           </tbody>
         </table>
-        {/* <RecursiveComponent node={talentList} wrapper={'span'} /> */}
       </div>
-      // <div className={className}>
-      //   <RecursiveComponent node={spellList} wrapper={'span'} />
-      // </div>
     );
   }
 }

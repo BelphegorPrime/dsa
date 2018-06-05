@@ -271,7 +271,7 @@ class App extends Component {
               showPage={this.showPage.bind(this)}
             />
           </div>
-          <div className="row col-md-10">
+          <div className="right-pane col-md-10 row-without-margin">
             {chosenHero ? <Hero hero={chosenHero} page={page} /> : null}
           </div>
         </div>

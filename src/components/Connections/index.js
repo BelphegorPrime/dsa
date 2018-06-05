@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-import RecursiveComponent from '../RecursiveComponent';
 
 class Connections extends Component {
   render() {
     const { connections, className } = this.props;
     return (
       <div className={className}>
-        <RecursiveComponent node={connections} wrapper={'span'} />
+        {connections.children.map(connection => {
+          const { beschreibung, name, so } = connection.attributes;
+          return (
+            <div key={name} className="col-md-12 pt-2">
+              <span>
+                {name || null} {beschreibung || null} {so || null}
+              </span>
+            </div>
+          );
+        })}
       </div>
     );
   }
