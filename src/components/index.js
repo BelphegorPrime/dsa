@@ -209,7 +209,11 @@ class App extends Component {
                   Clear Storage
                 </button>
                 <div className="hero-name">
-                  {chosenHero ? chosenHero.children[0].attributes.name : null}
+                  {chosenHero ? (
+                    <span className="font-weight-bold">
+                      {chosenHero.children[0].attributes.name}
+                    </span>
+                  ) : null}
                 </div>
               </div>
               <div className="float-right">

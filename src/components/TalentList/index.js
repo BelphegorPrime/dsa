@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-// import RecursiveComponent from '../RecursiveComponent';
 
 import Main from '../index';
 
@@ -27,7 +26,7 @@ class TalentList extends Component {
     const { tawStars } = this.state;
     return (
       <div className={className}>
-        <table className="fixt-table table table-sm table-hover">
+        <table className="fixt-table fixt-table-4 table table-sm table-hover">
           <thead>
             <tr>
               <th>Name</th>

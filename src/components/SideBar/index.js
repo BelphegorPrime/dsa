@@ -2,14 +2,6 @@ import React, { Component, Fragment } from 'react';
 import proptypes from 'prop-types';
 
 class Sidebar extends Component {
-  static defaultProps = {
-    heros: [],
-    chosenHero: {},
-    page: '',
-    chooseHero: () =>{},
-    removeHero: () =>{},
-    showPage: () =>{}
-  }
   getSubMenu(hero, name) {
     const { chosenHero, page } = this.props;
     return (
@@ -53,13 +45,13 @@ class Sidebar extends Component {
           .sort()
           .map((name, index) => (
             <Fragment key={name + index}>
-              <div
-                className="row"
-                onClick={chooseHero.bind(this, name)}>
+              <div className="row" onClick={chooseHero.bind(this, name)}>
                 <ul className="list-group list-group-flush col-md-12">
                   <li className="list-group-item">
                     <div className="row">
-                      <div className="col-md-10">{name}</div>
+                      <div className="col-md-10">
+                        <span className="font-weight-bold">{name}</span>
+                      </div>
                       <span
                         className="col-md-2 btn btn-secondary"
                         onClick={removeHero.bind(this, name)}>
@@ -79,12 +71,21 @@ class Sidebar extends Component {
 }
 
 Sidebar.propTypes = {
-  chooseHero: proptypes.func,
-  removeHero: proptypes.func,
-  showPage: proptypes.func,
   heros: proptypes.object,
   chosenHero: proptypes.object,
-  page: proptypes.string
+  page: proptypes.string,
+  chooseHero: proptypes.func,
+  removeHero: proptypes.func,
+  showPage: proptypes.func
+};
+
+Sidebar.defaultProps = {
+  heros: [],
+  chosenHero: {},
+  page: '',
+  chooseHero: () => {},
+  removeHero: () => {},
+  showPage: () => {}
 };
 
 export default Sidebar;

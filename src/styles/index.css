@@ -76,7 +76,12 @@ body {
 }
 
 .fixt-table {
-  width: 100%
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+
+.fixt-table > thead > tr > th {
+  height: 34px;
 }
 
 .fixt-table > thead,
@@ -98,11 +103,17 @@ body {
 
 .fixt-table > tbody {
   overflow-y: auto;
-  height: calc(100vh - 106px);
+  height: calc(100vh - 89px);
 }
 
-.fixt-table > tbody > tr > td,
-.fixt-table > thead > tr > th {
+.fixt-table-4 > tbody > tr > td,
+.fixt-table-4 > thead > tr > th {
   width: 25%;
+  float: left;
+}
+
+.fixt-table-5 > tbody > tr > td,
+.fixt-table-5 > thead > tr > th {
+  width: 20%;
   float: left;
 }

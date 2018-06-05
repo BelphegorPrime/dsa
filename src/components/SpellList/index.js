@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-// import RecursiveComponent from '../RecursiveComponent';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/fontawesome-free-solid';
 
 import Main from '../index';
 
@@ -28,47 +29,70 @@ class SpellList extends Component {
 
     return (
       <div className={className}>
-        <table className="fixt-table table table-sm table-hover">
+        <table className="fixt-table fixt-table-5 table table-sm table-hover">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Probe</th>
-              <th>Wert</th>
-              <th>Test</th>
+              <th style={{ width: '50%' }}>Name</th>
+              <th style={{ width: '7%' }}>Probe</th>
+              <th style={{ width: '30%' }}>Kosten | ZDauer | RW | WDauer</th>
+              <th style={{ width: '3%' }}>Wert</th>
+              <th style={{ width: '10%' }}>Test</th>
             </tr>
           </thead>
           <tbody>
             {spellList.children.map(spell => {
-              const { attributes } = spell;
-              console.log(attributes)
+              const {
+                anmerkungen,
+                hauszauber,
+                k,
+                kosten,
+                name,
+                probe,
+                reichweite,
+                repraesentation,
+                value,
+                variante,
+                wirkungsdauer,
+                zauberdauer,
+                zauberkommentar
+              } = spell.attributes;
               return (
-                <tr key={attributes.name}>
-                  <td>
-                    {attributes.name}
-                    {attributes.k ? ` Komplexität(${attributes.k})` : null}
+                <tr key={name}>
+                  <td style={{ width: '50%' }}>
+                    <div>
+                      <span className="font-weight-bold">{name}</span>
+                      {variante}
+                      ({repraesentation})
+                    </div>
+                    <div>
+                      {k ? ` Komplexität(${k})` : null}
+                      {hauszauber === 'true' ? (
+                        <FontAwesomeIcon icon={faHome} />
+                      ) : null}
+                    </div>
+                    <div>{anmerkungen}</div>
+                    <div>{zauberkommentar}</div>
                   </td>
-                  <td>{attributes.probe}</td>
-                  <td>{attributes.value}</td>
-                  <td>
+                  <td style={{ width: '7%' }}>{probe}</td>
+                  <td style={{ width: '30%' }}>
+                    {kosten} | {zauberdauer} | {reichweite} | {wirkungsdauer}
+                  </td>
+                  <td style={{ width: '3%' }}>{value}</td>
+                  <td style={{ width: '10%' }}>
                     <button
                       className={
-                        tawStars[attributes.name] &&
-                        parseInt(
-                          tawStars[attributes.name].split(' => ')[1],
-                          10
-                        ) < 0
+                        tawStars[name] &&
+                        parseInt(tawStars[name].split(' => ')[1], 10) < 0
                           ? 'btn btn-danger test-btn'
                           : 'btn btn-primary test-btn'
                       }
                       onClick={this.changeSpell.bind(
                         this,
-                        attributes.name,
-                        attributes.probe,
-                        parseInt(attributes.value, 10)
+                        name,
+                        probe,
+                        parseInt(value, 10)
                       )}>
-                      {tawStars[attributes.name] !== undefined
-                        ? tawStars[attributes.name]
-                        : 'Probe'}
+                      {tawStars[name] !== undefined ? tawStars[name] : 'Probe'}
                     </button>
                   </td>
                 </tr>
