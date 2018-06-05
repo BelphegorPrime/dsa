@@ -3,7 +3,7 @@ import proptypes from 'prop-types';
 
 class RecursiveComponent extends Component {
   render() {
-    const { node, wrapper } = this.props;
+    const { node, wrapper, doBreak } = this.props;
     const { attributes, children, name } = node;
     let attributeValues = null;
     if (attributes) {
@@ -93,6 +93,9 @@ class RecursiveComponent extends Component {
         'verbindungen',
         'geldboerse',
         'muenze',
+        'vorteile',
+        'sonderfertigkeiten',
+        'auswahl',
         'portraet'
       ].indexOf(name) === -1
         ? name
@@ -103,7 +106,7 @@ class RecursiveComponent extends Component {
       {},
       <Fragment>
         {filteredName}
-        {attributeValues} <br />
+        {attributeValues} {doBreak ? <br /> : null}
         {children
           ? children.map((child, index) => (
               <RecursiveComponent
@@ -120,7 +123,8 @@ class RecursiveComponent extends Component {
 
 RecursiveComponent.propTypes = {
   node: proptypes.object,
-  wrapper: proptypes.string
+  wrapper: proptypes.string,
+  doBreak: proptypes.bool
 };
 
 export default RecursiveComponent;
