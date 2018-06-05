@@ -1,26 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import proptypes from 'prop-types';
 
-class App extends Component {
-  // static defaultProps = {
-  //   heros: [],
-  //   chooseHero: () =>{},
-  //   removeHero: () =>{},
-  //   showPage: () =>{}
-  // }
+class Sidebar extends Component {
+  static defaultProps = {
+    heros: [],
+    chosenHero: {},
+    page: '',
+    chooseHero: () =>{},
+    removeHero: () =>{},
+    showPage: () =>{}
+  }
   getSubMenu(hero, name) {
-    // const liObject = {
-    //   Basis: [
-    //     'base',
-    //     'properties',
-    //     'advantages',
-    //     'specialAbilities',
-    //     'connections'
-    //   ],
-    //   Talente: ['talentList'],
-    //   Zauber: ['spellList'],
-    //   Kampf: ['objects', 'equipment', 'purse']
-    // };
     const { chosenHero, page } = this.props;
     return (
       <Fragment>
@@ -62,9 +52,8 @@ class App extends Component {
         {Object.keys(heros)
           .sort()
           .map((name, index) => (
-            <Fragment>
+            <Fragment key={name + index}>
               <div
-                key={name + index}
                 className="row"
                 onClick={chooseHero.bind(this, name)}>
                 <ul className="list-group list-group-flush col-md-12">
@@ -89,13 +78,13 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+Sidebar.propTypes = {
   chooseHero: proptypes.func,
   removeHero: proptypes.func,
   showPage: proptypes.func,
-  heros: proptypes.array,
+  heros: proptypes.object,
   chosenHero: proptypes.object,
   page: proptypes.string
 };
 
-export default App;
+export default Sidebar;

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome": "1.1.8",
+    "@fortawesome/fontawesome-free-solid": "5.0.13",
+    "@fortawesome/react-fontawesome": "0.0.20",
     "bootstrap": "4.1.1",
     "lodash": "4.17.10",
     "moment": "2.22.2",
@@ -23,7 +26,7 @@
     "eslint-plugin-import": "2.12.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-prettier": "2.6.0",
-    "eslint-plugin-react": "7.8.2",
+    "eslint-plugin-react": "7.9.1",
     "jest-fetch-mock": "^1.6.2",
     "prettier": "1.13.4",
     "react-testing-library": "3.1.3"

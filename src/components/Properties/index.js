@@ -2,24 +2,9 @@ import React, { Component } from 'react';
 import proptypes from 'prop-types';
 // import RecursiveComponent from '../RecursiveComponent';
 
-class App extends Component {
-  static calc2(x, y, z) {
-    return Math.round(
-      (parseInt(x, 10) + parseInt(y, 10) + parseInt(z, 10)) / 2
-    );
-  }
+import Main from '../index';
 
-  static calc5(x, y, z, a = '0') {
-    return Math.round(
-      (parseInt(x, 10) + parseInt(y, 10) + parseInt(z, 10) + parseInt(a, 10)) /
-        5
-    );
-  }
-
-  static calcKe(x, y, z) {
-    return 0;
-  }
-
+class Properties extends Component {
   render() {
     const { properties, className } = this.props;
     const { children } = properties;
@@ -123,7 +108,7 @@ class App extends Component {
             <tr>
               <td>{LE.attributes.name}</td>
               <td>
-                {App.calc2(
+                {Main.calc2(
                   KO.attributes.value,
                   KO.attributes.value,
                   KK.attributes.value
@@ -131,7 +116,7 @@ class App extends Component {
               </td>
               <td>{LE.attributes.mod}</td>
               <td>
-                {App.calc2(
+                {Main.calc2(
                   KO.attributes.value,
                   KO.attributes.value,
                   KK.attributes.value
@@ -144,7 +129,7 @@ class App extends Component {
             <tr>
               <td>{AU.attributes.name}</td>
               <td>
-                {App.calc2(
+                {Main.calc2(
                   KO.attributes.value,
                   KO.attributes.value,
                   KK.attributes.value
@@ -152,7 +137,7 @@ class App extends Component {
               </td>
               <td>{AU.attributes.mod}</td>
               <td>
-                {App.calc2(
+                {Main.calc2(
                   KO.attributes.value,
                   KO.attributes.value,
                   KK.attributes.value
@@ -165,7 +150,7 @@ class App extends Component {
             <tr>
               <td>{AE.attributes.name}</td>
               <td>
-                {App.calc2(
+                {Main.calc2(
                   MU.attributes.value,
                   IN.attributes.value,
                   CH.attributes.value
@@ -173,7 +158,7 @@ class App extends Component {
               </td>
               <td>{AE.attributes.mod}</td>
               <td>
-                {App.calc2(
+                {Main.calc2(
                   MU.attributes.value,
                   IN.attributes.value,
                   CH.attributes.value
@@ -187,7 +172,7 @@ class App extends Component {
             <tr>
               <td>{KE.attributes.name}</td>
               <td>
-                {App.calcKe(
+                {Main.calcKe(
                   MU.attributes.value,
                   IN.attributes.value,
                   CH.attributes.value
@@ -195,7 +180,7 @@ class App extends Component {
               </td>
               <td>{KE.attributes.mod}</td>
               <td>
-                {App.calcKe(
+                {Main.calcKe(
                   MU.attributes.value,
                   IN.attributes.value,
                   CH.attributes.value
@@ -208,7 +193,7 @@ class App extends Component {
             <tr>
               <td>{MR.attributes.name}</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   MU.attributes.value,
                   KL.attributes.value,
                   KO.attributes.value
@@ -216,7 +201,7 @@ class App extends Component {
               </td>
               <td>{MR.attributes.mod}</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   MU.attributes.value,
                   KL.attributes.value,
                   KO.attributes.value
@@ -229,7 +214,7 @@ class App extends Component {
             <tr>
               <td>Initiative Basis</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   MU.attributes.value,
                   MU.attributes.value,
                   IN.attributes.value,
@@ -238,7 +223,7 @@ class App extends Component {
               </td>
               <td>{INI.attributes.mod}</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   MU.attributes.value,
                   MU.attributes.value,
                   IN.attributes.value,
@@ -250,7 +235,7 @@ class App extends Component {
             <tr>
               <td>Attacke Basis</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   MU.attributes.value,
                   GE.attributes.value,
                   KK.attributes.value
@@ -258,7 +243,7 @@ class App extends Component {
               </td>
               <td>{AT.attributes.mod}</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   MU.attributes.value,
                   GE.attributes.value,
                   KK.attributes.value
@@ -269,7 +254,7 @@ class App extends Component {
             <tr>
               <td>Parade Basis</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   IN.attributes.value,
                   GE.attributes.value,
                   KK.attributes.value
@@ -277,7 +262,7 @@ class App extends Component {
               </td>
               <td>{PA.attributes.mod}</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   IN.attributes.value,
                   GE.attributes.value,
                   KK.attributes.value
@@ -288,7 +273,7 @@ class App extends Component {
             <tr>
               <td>Fernkampf Basis</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   IN.attributes.value,
                   FF.attributes.value,
                   KK.attributes.value
@@ -296,7 +281,7 @@ class App extends Component {
               </td>
               <td>{FK.attributes.mod}</td>
               <td>
-                {App.calc5(
+                {Main.calc5(
                   IN.attributes.value,
                   FF.attributes.value,
                   KK.attributes.value
@@ -350,9 +335,9 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+Properties.propTypes = {
   properties: proptypes.object,
   className: proptypes.string
 };
 
-export default App;
+export default Properties;

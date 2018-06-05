@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import proptypes from 'prop-types';
 import RecursiveComponent from '../RecursiveComponent';
 
-class App extends Component {
+class Advantages extends Component {
   render() {
     const { advantages, className } = this.props;
+    console.log(advantages)
     return (
       <div className={className}>
         <RecursiveComponent node={advantages} wrapper={'span'} />
@@ -13,9 +14,9 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+Advantages.propTypes = {
   advantages: proptypes.object,
   className: proptypes.string
 };
 
-export default App;
+export default Advantages;

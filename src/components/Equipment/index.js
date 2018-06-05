@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import proptypes from 'prop-types';
 import RecursiveComponent from '../RecursiveComponent';
 
-class App extends Component {
+class Equipment extends Component {
   render() {
     const { equipment, className } = this.props;
     return (
@@ -13,9 +13,9 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+Equipment.propTypes = {
   equipment: proptypes.object,
   className: proptypes.string
 };
 
-export default App;
+export default Equipment;

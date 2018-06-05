@@ -4,7 +4,7 @@ import proptypes from 'prop-types';
 
 import Main from '../index';
 
-class App extends Component {
+class TalentList extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,31 +12,8 @@ class App extends Component {
     };
   }
 
-  static test(probe, baseProperties) {
-    const values = probe
-      .split('(')[1]
-      .split(')')[0]
-      .split('/')
-      .map(pp => {
-        const possibleBaseProperties = baseProperties.filter(
-          bp => bp.name === pp
-        );
-        if (possibleBaseProperties.length > 0) {
-          return possibleBaseProperties[0].value;
-        }
-        return 0;
-      })
-      .map(val => val - Main.rollDice(20));
-    return {
-      values: `(${values.join('/')})`,
-      diceThrow: values
-        .filter(val => val < 0)
-        .reduce((acc, val) => acc + val, 0)
-    };
-  }
-
   changeTest(name, probe, taw) {
-    const { diceThrow, values } = App.test(probe, this.props.baseProperties);
+    const { diceThrow, values } = Main.test(probe, this.props.baseProperties);
     const tawStar = taw + diceThrow;
     this.setState(currentState => {
       const newState = currentState.tawStars;
@@ -115,11 +92,11 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+TalentList.propTypes = {
   talentList: proptypes.object,
   fight: proptypes.object,
   className: proptypes.string,
   baseProperties: proptypes.array
 };
 
-export default App;
+export default TalentList;

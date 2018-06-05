@@ -14,11 +14,10 @@ import Equipment from '../Equipment';
 import Connections from '../Connections';
 import Purse from '../Purse';
 
-class App extends Component {
+class Hero extends Component {
   render() {
     const { hero, page } = this.props;
     if (hero) {
-      const { name } = hero.children[0].attributes;
       const [
         ,
         base,
@@ -37,20 +36,6 @@ class App extends Component {
         ,
         purse
       ] = hero.children[0].children;
-      const object = {
-        base,
-        properties,
-        advantages,
-        specialAbilities,
-        talentList,
-        spellList,
-        fight,
-        objects,
-        comments,
-        equipment,
-        connections,
-        purse
-      };
       const baseProperties = properties.children
         .filter((e, i) => i <= 7)
         .map(p => {
@@ -92,14 +77,14 @@ class App extends Component {
         case 'Basis': {
           return (
             <Fragment>
-              <Base name={name} base={base} className="col-md-3" />
+              <Base base={base} className="col-md-2" />
               <Properties properties={properties} className="col-md-3" />
-              <Advantages advantages={advantages} className="col-md-3" />
+              <Advantages advantages={advantages} className="col-md-2" />
               <SpecialAbilities
                 specialAbilities={specialAbilities}
                 className="col-md-3"
               />
-              <Connections connections={connections} className="col-md-3" />
+              <Connections connections={connections} className="col-md-2" />
             </Fragment>
           );
         }
@@ -109,36 +94,42 @@ class App extends Component {
               talentList={talentList}
               baseProperties={baseProperties}
               fight={fight}
-              className="col-md-3"
+              className="col-md-12"
             />
           );
         }
         case 'Zauber': {
-          return <SpellList spellList={spellList} className="col-md-3" />;
+          return (
+            <SpellList
+              spellList={spellList}
+              baseProperties={baseProperties}
+              className="col-md-12"
+            />
+          );
         }
         case 'Kampf': {
           return (
             <Fragment>
-              <Objects objects={objects} className="col-md-3" />
-              <Equipment equipment={equipment} className="col-md-3" />
-              <Purse purse={purse} className="col-md-3" />
+              <Objects objects={objects} className="col-md-4" />
+              <Equipment equipment={equipment} className="col-md-4" />
+              <Purse purse={purse} className="col-md-4" />
             </Fragment>
           );
         }
         case 'Kommentare': {
-          return <Comments comments={comments} className="col-md-3" />;
+          return <Comments comments={comments} className="col-md-12" />;
         }
         default:
-          null;
+          return null;
       }
     }
     return null;
   }
 }
 
-App.propTypes = {
+Hero.propTypes = {
   hero: proptypes.object,
   page: proptypes.string
 };
 
-export default App;
+export default Hero;

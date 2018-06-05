@@ -22,6 +22,50 @@ class App extends Component {
     return Math.floor(Math.random() * x) + 1;
   }
 
+  static test(probe, baseProperties) {
+    const propertyValues = probe
+      .split('(')[1]
+      .split(')')[0]
+      .split('/')
+      .map(propertie => {
+        const possibleBaseProperties = baseProperties.filter(
+          basePropertie => basePropertie.name === propertie
+        );
+        if (possibleBaseProperties.length > 0) {
+          return possibleBaseProperties[0].value;
+        }
+        return 0;
+      });
+    console.warn(`Eigenschaften: ${propertyValues}`);
+    const throws = propertyValues.map(() => App.rollDice(20));
+    console.warn(`Gewürfelte Werte: ${throws}`);
+    const values = propertyValues.map((val, i) => val - throws[i]);
+    console.warn(`Ergebnisse: ${values}`);
+    return {
+      values: `(${values.join('/')})`,
+      diceThrow: values
+        .filter(val => val < 0)
+        .reduce((acc, val) => acc + val, 0)
+    };
+  }
+
+  static calc2(x, y, z) {
+    return Math.round(
+      (parseInt(x, 10) + parseInt(y, 10) + parseInt(z, 10)) / 2
+    );
+  }
+
+  static calc5(x, y, z, a = '0') {
+    return Math.round(
+      (parseInt(x, 10) + parseInt(y, 10) + parseInt(z, 10) + parseInt(a, 10)) /
+        5
+    );
+  }
+
+  static calcKe(x, y, z) {
+    return 0;
+  }
+
   componentDidMount() {
     this.setState({
       // eslint-disable-next-line no-undef

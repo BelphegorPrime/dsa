@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import proptypes from 'prop-types';
 import RecursiveComponent from '../RecursiveComponent';
 
-class App extends Component {
+class Comments extends Component {
   render() {
     const { comments, className } = this.props;
     return (
@@ -13,9 +13,9 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+Comments.propTypes = {
   comments: proptypes.object,
   className: proptypes.string
 };
 
-export default App;
+export default Comments;
