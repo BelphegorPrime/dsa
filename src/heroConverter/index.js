@@ -1,14 +1,14 @@
 import getBasics from './getBasics';
 import getProperties from './getProperties';
+import getEvents from './getEvents';
+import getSpecialAbilities from './getSpecialAbilities';
+import getTalentList from './getTalentList';
+import getAdvantages from './getAdvantages';
+import getSpellList from './getSpellList';
 
 const getEquipment = equipments => {
   console.log(equipments);
   return equipments;
-};
-
-const getEvents = events => {
-  console.log(events);
-  return events;
 };
 
 const getObjects = objects => {
@@ -29,26 +29,6 @@ const getFight = fight => {
 const getComments = comments => {
   console.log(comments);
   return comments;
-};
-
-const getSpecialAbilities = specialAbilities => {
-  console.log(specialAbilities);
-  return specialAbilities;
-};
-
-const getTalentList = talentList => {
-  console.log(talentList);
-  return talentList;
-};
-
-const getAdvantages = advantages => {
-  console.log(advantages);
-  return advantages;
-};
-
-const getSpellList = spellList => {
-  console.log(spellList);
-  return spellList;
 };
 
 const index = hero => {
