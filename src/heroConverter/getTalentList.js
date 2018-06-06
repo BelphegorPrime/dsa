@@ -9,6 +9,9 @@ export default talentList => {
       case 'Selbststudium':
         learningMethode = 'selfStudy';
         break;
+      case 'Gegenseitiges Lehren':
+        learningMethode = 'mutualTeaching';
+        break;
       default:
         learningMethode = lernmethode;
         break;

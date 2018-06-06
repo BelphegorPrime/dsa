@@ -24,6 +24,9 @@ export default spellList => {
       case 'Selbststudium':
         learningMethode = 'selfStudy';
         break;
+      case 'Gegenseitiges Lehren':
+        learningMethode = 'mutualTeaching';
+        break;
       default:
         learningMethode = lernmethode;
         break;

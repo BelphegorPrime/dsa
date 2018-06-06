@@ -1,25 +1,17 @@
+import getEquipment from './getEquipment';
 import getBasics from './getBasics';
 import getProperties from './getProperties';
 import getEvents from './getEvents';
 import getPurse from './getPurse';
+import getFight from './getFight';
 import getSpecialAbilities from './getSpecialAbilities';
 import getTalentList from './getTalentList';
 import getAdvantages from './getAdvantages';
 import getSpellList from './getSpellList';
 
-const getEquipment = equipments => {
-  console.log(equipments);
-  return equipments;
-};
-
 const getObjects = objects => {
   console.log(objects);
   return objects;
-};
-
-const getFight = fight => {
-  console.log(fight);
-  return fight;
 };
 
 const getComments = comments => {
@@ -35,7 +27,7 @@ const index = hero => {
     if (child.children.length > 0) {
       switch (child.name) {
         case 'ausrüstungen':
-          returnHero.equipments = getEquipment(child.children);
+          returnHero.weapons = getEquipment(child.children);
           break;
         case 'basis':
           returnHero.basics = getBasics(child.children);
