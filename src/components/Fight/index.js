@@ -7,7 +7,7 @@ class App extends Component {
     const { fight, className } = this.props;
     return (
       <div className={className}>
-        <RecursiveComponent node={fight} wrapper={'span'} />
+        <RecursiveComponent node={fight} wrapper={'span'} doBreak={true} />
       </div>
     );
   }

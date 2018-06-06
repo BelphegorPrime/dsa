@@ -7,7 +7,7 @@ class Purse extends Component {
     const { purse, className } = this.props;
     return (
       <div className={className}>
-        <RecursiveComponent node={purse} wrapper={'span'} />
+        <RecursiveComponent node={purse} wrapper={'span'} doBreak={true} />
       </div>
     );
   }

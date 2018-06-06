@@ -25,7 +25,7 @@ class Objects extends Component {
                           <RecursiveComponent
                             node={c}
                             wrapper={'span'}
-                            doBreak={true}
+                            doBreak={false}
                           />
                         ));
                       case 'modallgemein':

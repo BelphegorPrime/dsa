@@ -113,6 +113,7 @@ class RecursiveComponent extends Component {
                 key={child.name + index}
                 node={child}
                 wrapper={'span'}
+                doBreak={false}
               />
             ))
           : null}

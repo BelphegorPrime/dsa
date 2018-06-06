@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Hero from './Hero';
 import SideBar from './SideBar';
 
+import convert from '../heroConverter';
+
 class App extends Component {
   constructor() {
     super();
@@ -102,20 +104,31 @@ class App extends Component {
 
   fileUploaded(files) {
     Object.values(files).forEach(file => {
-      // eslint-disable-next-line no-undef
-      const fileReader = new FileReader();
-      fileReader.onload = e => {
-        const xmlReader = XmlReader.create({
-          stream: false,
-          parentNodes: false,
-          tagPrefix: 'tag:',
-          doneEvent: 'done',
-          emitTopLevelOnly: false
-        });
-        xmlReader.on('done', data => this.appendToState(data));
-        xmlReader.parse(e.target.result);
-      };
-      fileReader.readAsText(file);
+      new Promise(resolve => {
+        // eslint-disable-next-line no-undef
+        const fileReader = new FileReader();
+        fileReader.onload = e => resolve(e.target.result);
+        fileReader.readAsText(file);
+      })
+        .then(
+          xmlString =>
+            new Promise(resolve => {
+              const xmlReader = XmlReader.create({
+                stream: false,
+                parentNodes: false,
+                tagPrefix: 'tag:',
+                doneEvent: 'done',
+                emitTopLevelOnly: false
+              });
+              xmlReader.on('done', data => resolve(data));
+              xmlReader.parse(xmlString);
+            })
+        )
+        .then(hero => {
+          convert(hero);
+          return hero;
+        })
+        .then(hero => this.appendToState(hero));
     });
   }
 

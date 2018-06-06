@@ -7,7 +7,7 @@ class Comments extends Component {
     const { comments, className } = this.props;
     return (
       <div className={className}>
-        <RecursiveComponent node={comments} wrapper={'span'} />
+        <RecursiveComponent node={comments} wrapper={'span'} doBreak={true} />
       </div>
     );
   }
