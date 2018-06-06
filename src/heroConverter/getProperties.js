@@ -67,7 +67,7 @@ export default properties => {
         name = 'remoteCombatBaseValue';
         break;
       default:
-        name = 'courage';
+        name = pp.attributes.name;
     }
     if (name === 'astralEnergy') {
       returnProperties[name] = {
@@ -134,41 +134,49 @@ export default properties => {
     returnProperties.magicResistance.mod +
     returnProperties.magicResistance.basicValue;
 
-  returnProperties.initiativBaseValue.calcValue = Main.calc5(
-    returnProperties.courage.value,
-    returnProperties.courage.value,
-    returnProperties.intuition.value,
-    returnProperties.dexterity.value
-  );
-  returnProperties.initiativBaseValue.value =
-    returnProperties.initiativBaseValue.calcValue +
-    returnProperties.initiativBaseValue.mod;
+  if (returnProperties.initiativBaseValue) {
+    returnProperties.initiativBaseValue.calcValue = Main.calc5(
+      returnProperties.courage.value,
+      returnProperties.courage.value,
+      returnProperties.intuition.value,
+      returnProperties.dexterity.value
+    );
+    returnProperties.initiativBaseValue.value =
+      returnProperties.initiativBaseValue.calcValue +
+      returnProperties.initiativBaseValue.mod;
+  }
 
-  returnProperties.attackBaseValue.calcValue = Main.calc5(
-    returnProperties.courage.value,
-    returnProperties.dexterity.value,
-    returnProperties.strength.value
-  );
-  returnProperties.attackBaseValue.value =
-    returnProperties.attackBaseValue.calcValue +
-    returnProperties.attackBaseValue.mod;
+  if (returnProperties.attackBaseValue) {
+    returnProperties.attackBaseValue.calcValue = Main.calc5(
+      returnProperties.courage.value,
+      returnProperties.dexterity.value,
+      returnProperties.strength.value
+    );
+    returnProperties.attackBaseValue.value =
+      returnProperties.attackBaseValue.calcValue +
+      returnProperties.attackBaseValue.mod;
+  }
 
-  returnProperties.paradeBaseValue.calcValue = Main.calc5(
-    returnProperties.intuition.value,
-    returnProperties.dexterity.value,
-    returnProperties.strength.value
-  );
-  returnProperties.paradeBaseValue.value =
-    returnProperties.paradeBaseValue.calcValue +
-    returnProperties.paradeBaseValue.mod;
+  if (returnProperties.paradeBaseValue) {
+    returnProperties.paradeBaseValue.calcValue = Main.calc5(
+      returnProperties.intuition.value,
+      returnProperties.dexterity.value,
+      returnProperties.strength.value
+    );
+    returnProperties.paradeBaseValue.value =
+      returnProperties.paradeBaseValue.calcValue +
+      returnProperties.paradeBaseValue.mod;
+  }
 
-  returnProperties.remoteCombatBaseValue.calcValue = Main.calc5(
-    returnProperties.intuition.value,
-    returnProperties.fingerAbility.value,
-    returnProperties.strength.value
-  );
-  returnProperties.remoteCombatBaseValue.value =
-    returnProperties.remoteCombatBaseValue.calcValue +
-    returnProperties.remoteCombatBaseValue.mod;
+  if (returnProperties.remoteCombatBaseValue) {
+    returnProperties.remoteCombatBaseValue.calcValue = Main.calc5(
+      returnProperties.intuition.value,
+      returnProperties.fingerAbility.value,
+      returnProperties.strength.value
+    );
+    returnProperties.remoteCombatBaseValue.value =
+      returnProperties.remoteCombatBaseValue.calcValue +
+      returnProperties.remoteCombatBaseValue.mod;
+  }
   return returnProperties;
 };
