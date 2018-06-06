@@ -1,6 +1,7 @@
 import getBasics from './getBasics';
 import getProperties from './getProperties';
 import getEvents from './getEvents';
+import getPurse from './getPurse';
 import getSpecialAbilities from './getSpecialAbilities';
 import getTalentList from './getTalentList';
 import getAdvantages from './getAdvantages';
@@ -14,11 +15,6 @@ const getEquipment = equipments => {
 const getObjects = objects => {
   console.log(objects);
   return objects;
-};
-
-const getPurse = purse => {
-  console.log(purse);
-  return purse;
 };
 
 const getFight = fight => {
