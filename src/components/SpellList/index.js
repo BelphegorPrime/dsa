@@ -14,7 +14,7 @@ class SpellList extends Component {
   }
 
   changeSpell(name, probe, taw) {
-    const { diceThrow, values } = Main.test(probe, this.props.baseProperties);
+    const { diceThrow, values } = Main.test(probe, this.props.properties);
     const tawStar = taw + diceThrow;
     this.setState(currentState => {
       const newState = currentState.tawStars;
@@ -107,8 +107,8 @@ class SpellList extends Component {
 
 SpellList.propTypes = {
   spellList: proptypes.object,
-  className: proptypes.string,
-  baseProperties: proptypes.array
+  properties: proptypes.object,
+  className: proptypes.string
 };
 
 export default SpellList;

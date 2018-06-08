@@ -173,6 +173,10 @@ export default properties => {
       returnProperties.remoteCombatBaseValue.mod;
   }
 
+  if (returnProperties.karmaEnergy) {
+    returnProperties.karmaEnergy.calcValue = 0;
+  }
+
   if (returnProperties.magicResistance) {
     returnProperties.magicResistance.calcValue = Main.calc5(
       returnProperties.courage ? returnProperties.courage.value : 0,

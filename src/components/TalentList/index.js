@@ -12,7 +12,7 @@ class TalentList extends Component {
   }
 
   changeTest(name, probe, taw) {
-    const { diceThrow, values } = Main.test(probe, this.props.baseProperties);
+    const { diceThrow, values } = Main.test(probe, this.props.properties);
     const tawStar = taw + diceThrow;
     this.setState(currentState => {
       const newState = currentState.tawStars;
@@ -85,7 +85,6 @@ class TalentList extends Component {
             })}
           </tbody>
         </table>
-        {/* <RecursiveComponent node={talentList} wrapper={'span'} /> */}
       </div>
     );
   }
@@ -94,8 +93,8 @@ class TalentList extends Component {
 TalentList.propTypes = {
   talentList: proptypes.object,
   fight: proptypes.object,
-  className: proptypes.string,
-  baseProperties: proptypes.array
+  properties: proptypes.object,
+  className: proptypes.string
 };
 
 export default TalentList;

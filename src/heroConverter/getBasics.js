@@ -32,9 +32,13 @@ export default basics => {
   returnBasics.notes = Object.keys(basics[6].attributes)
     .map(
       key =>
-        basics[6].attributes[key] !== '' ? basics[6].attributes[key] : null
+        basics[6].attributes[key] !== ''
+          ? basics[6].attributes[key].split('&#10;')
+          : null
     )
-    .filter(e => e);
+    .filter(e => e)
+    .reduce((flat, toFlatten) => flat.concat(toFlatten), [])
+    .filter(e => e !== 'Notizen');
   returnBasics.exp = parseInt(basics[8].attributes.value, 10);
   returnBasics.freeExp = parseInt(basics[9].attributes.value, 10);
   return returnBasics;

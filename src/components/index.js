@@ -7,6 +7,7 @@ import Hero from './Hero';
 import SideBar from './SideBar';
 
 import convert from '../heroConverter';
+import trialToProperty from "../heroConverter/trialToProperty";
 
 class App extends Component {
   constructor() {
@@ -18,23 +19,23 @@ class App extends Component {
       masterMode: false
     };
     this.state = this.initialState;
+    this.fileUpload = React.createRef();
   }
 
   static rollDice(x) {
     return Math.floor(Math.random() * x) + 1;
   }
 
-  static test(probe, baseProperties) {
+  static test(probe, properties) {
     const propertyValues = probe
       .split('(')[1]
       .split(')')[0]
       .split('/')
-      .map(propertie => {
-        const possibleBaseProperties = baseProperties.filter(
-          basePropertie => basePropertie.name === propertie
-        );
-        if (possibleBaseProperties.length > 0) {
-          return possibleBaseProperties[0].value;
+      .map(trialToProperty)
+      .map(property => {
+        const possibleProperty = properties[property];
+        if (possibleProperty.value) {
+          return possibleProperty.value;
         }
         return 0;
       });
@@ -71,7 +72,7 @@ class App extends Component {
   componentDidMount() {
     this.setState({
       // eslint-disable-next-line no-undef
-      heros: JSON.parse(window.localStorage.getItem('heros')) || [],
+      heros: JSON.parse(window.localStorage.getItem('heros')) || null,
       // eslint-disable-next-line no-undef
       chosenHero: JSON.parse(window.localStorage.getItem('hero')) || null
     });
@@ -82,7 +83,7 @@ class App extends Component {
       // eslint-disable-next-line no-undef
       window.localStorage.setItem('hero', JSON.stringify(nextState.chosenHero));
     }
-    if (Object.keys(nextState.heros).length > 0) {
+    if (nextState.heros && Object.keys(nextState.heros).length > 0) {
       // eslint-disable-next-line no-undef
       window.localStorage.setItem('heros', JSON.stringify(nextState.heros));
     }
@@ -95,7 +96,7 @@ class App extends Component {
     const composedHero = {
       xml,
       converted
-    }
+    };
     state.chosenHero = composedHero;
     state.heros = Object.assign(
       {
@@ -128,7 +129,10 @@ class App extends Component {
               xmlReader.parse(xmlString);
             })
         )
-        .then(hero => this.appendToState(hero, convert(hero)));
+        .then(hero => this.appendToState(hero, convert(hero)))
+        .then(() => {
+          this.fileUpload.current.value = '';
+        });
     });
   }
 
@@ -139,9 +143,14 @@ class App extends Component {
     const a = doc.createElement('a');
     a.setAttribute(
       'href',
-      `data:text/xml;charset=utf-8,${encodeURIComponent(XmlPrint(chosenHero))}`
+      `data:text/xml;charset=utf-8,${encodeURIComponent(
+        XmlPrint(chosenHero.xml)
+      )}`
     );
-    a.setAttribute('download', `${chosenHero.xml.children[0].attributes.name}.xml`);
+    a.setAttribute(
+      'download',
+      `${chosenHero.xml.children[0].attributes.name}.xml`
+    );
     a.style.display = 'none';
     doc.body.appendChild(a);
     a.click();
@@ -170,13 +179,14 @@ class App extends Component {
 
   removeHero(name) {
     const { heros } = this.state;
-    // let { chosenHero } = this.state;
-    // if (chosenHero.xml.children[0].attributes.name === name) {
-    //   chosenHero = null;
-    // }
+    let { chosenHero } = this.state;
+    if (chosenHero && chosenHero.xml.children[0].attributes.name === name) {
+      chosenHero = null;
+    }
     delete heros[name];
     this.setState({
-      heros
+      heros,
+      chosenHero
     });
   }
 
@@ -188,7 +198,6 @@ class App extends Component {
 
   render() {
     const { heros, masterMode, chosenHero, page } = this.state;
-    console.log(chosenHero)
     return (
       <div className="App">
         <nav className="navbar navbar-default">
@@ -197,6 +206,7 @@ class App extends Component {
               <div className="float-left display-flex">
                 <div className="custom-file">
                   <input
+                    ref={this.fileUpload}
                     id="validatedCustomFile"
                     data-testid="validatedCustomFile"
                     className="custom-file-input"
@@ -282,7 +292,7 @@ class App extends Component {
           <div className="left-pane col-md-2">
             <SideBar
               heros={heros}
-              chosenHero={chosenHero ? chosenHero.xml : {}}
+              chosenHero={chosenHero || null}
               page={page}
               chooseHero={this.chooseHero.bind(this)}
               removeHero={this.removeHero.bind(this)}
@@ -290,7 +300,7 @@ class App extends Component {
             />
           </div>
           <div className="right-pane col-md-10 row-without-margin">
-            {chosenHero ? <Hero hero={chosenHero.xml} page={page} /> : null}
+            {chosenHero ? <Hero hero={chosenHero} page={page} /> : null}
           </div>
         </div>
       </div>

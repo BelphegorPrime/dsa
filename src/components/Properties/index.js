@@ -1,36 +1,12 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-// import RecursiveComponent from '../RecursiveComponent';
-
-import Main from '../index';
 
 class Properties extends Component {
   render() {
-    const { properties, className } = this.props;
-    const { children } = properties;
-    const [
-      MU,
-      KL,
-      IN,
-      CH,
-      FF,
-      GE,
-      KO,
-      KK,
-      SO,
-      LE,
-      AU,
-      AE,
-      KE,
-      MR,
-      INI,
-      AT,
-      PA,
-      FK
-    ] = children;
+    const { className, properties } = this.props;
     return (
       <div className={className}>
-        {/* <RecursiveComponent node={properties} wrapper={'span'} /> */}
+        {/* <RecursiveComponent node={oldProperties} wrapper={'span'} /> */}
         <table className="table table-sm table-hover">
           <thead>
             <tr>
@@ -43,293 +19,133 @@ class Properties extends Component {
           </thead>
           <tbody>
             <tr>
-              <td>{MU.attributes.name}</td>
-              <td>{MU.attributes.startwert}</td>
-              <td>{MU.attributes.mod}</td>
-              <td>{MU.attributes.value}</td>
+              <td>Mut</td>
+              <td>{properties.courage.startValue}</td>
+              <td>{properties.courage.mod}</td>
+              <td>{properties.courage.value}</td>
               <td />
             </tr>
             <tr>
-              <td>{KL.attributes.name}</td>
-              <td>{KL.attributes.startwert}</td>
-              <td>{KL.attributes.mod}</td>
-              <td>{KL.attributes.value}</td>
+              <td>Klugheit</td>
+              <td>{properties.wisdom.startValue}</td>
+              <td>{properties.wisdom.mod}</td>
+              <td>{properties.wisdom.value}</td>
               <td />
             </tr>
             <tr>
-              <td>{IN.attributes.name}</td>
-              <td>{IN.attributes.startwert}</td>
-              <td>{IN.attributes.mod}</td>
-              <td>{IN.attributes.value}</td>
+              <td>Intuition</td>
+              <td>{properties.intuition.startValue}</td>
+              <td>{properties.intuition.mod}</td>
+              <td>{properties.intuition.value}</td>
               <td />
             </tr>
             <tr>
-              <td>{CH.attributes.name}</td>
-              <td>{CH.attributes.startwert}</td>
-              <td>{CH.attributes.mod}</td>
-              <td>{CH.attributes.value}</td>
+              <td>Charisma</td>
+              <td>{properties.charisma.startValue}</td>
+              <td>{properties.charisma.mod}</td>
+              <td>{properties.charisma.value}</td>
               <td />
             </tr>
             <tr>
-              <td>{FF.attributes.name}</td>
-              <td>{FF.attributes.startwert}</td>
-              <td>{FF.attributes.mod}</td>
-              <td>{FF.attributes.value}</td>
+              <td>Fingerfertigkeit</td>
+              <td>{properties.fingerAbility.startValue}</td>
+              <td>{properties.fingerAbility.mod}</td>
+              <td>{properties.fingerAbility.value}</td>
               <td />
             </tr>
             <tr>
-              <td>{GE.attributes.name}</td>
-              <td>{GE.attributes.startwert}</td>
-              <td>{GE.attributes.mod}</td>
-              <td>{GE.attributes.value}</td>
+              <td>Gewandtheit</td>
+              <td>{properties.dexterity.startValue}</td>
+              <td>{properties.dexterity.mod}</td>
+              <td>{properties.dexterity.value}</td>
               <td />
             </tr>
             <tr>
-              <td>{KO.attributes.name}</td>
-              <td>{KO.attributes.startwert}</td>
-              <td>{KO.attributes.mod}</td>
-              <td>{KO.attributes.value}</td>
+              <td>Konstitution</td>
+              <td>{properties.constitution.startValue}</td>
+              <td>{properties.constitution.mod}</td>
+              <td>{properties.constitution.value}</td>
               <td />
             </tr>
             <tr>
-              <td>{KK.attributes.name}</td>
-              <td>{KK.attributes.startwert}</td>
-              <td>{KK.attributes.mod}</td>
-              <td>{KK.attributes.value}</td>
+              <td>Körperkraft</td>
+              <td>{properties.strength.startValue}</td>
+              <td>{properties.strength.mod}</td>
+              <td>{properties.strength.value}</td>
               <td />
             </tr>
             <tr>
-              <td>{SO.attributes.name}</td>
-              <td>{SO.attributes.startwert}</td>
-              <td>{SO.attributes.mod}</td>
-              <td>{SO.attributes.value}</td>
+              <td>Sozialstatus</td>
+              <td>{properties.socialStatus.startValue}</td>
+              <td>{properties.socialStatus.mod}</td>
+              <td>{properties.socialStatus.value}</td>
               <td />
             </tr>
             <tr>
-              <td>{LE.attributes.name}</td>
-              <td>
-                {Main.calc2(
-                  KO.attributes.value,
-                  KO.attributes.value,
-                  KK.attributes.value
-                )}
-              </td>
-              <td>{LE.attributes.mod}</td>
-              <td>
-                {Main.calc2(
-                  KO.attributes.value,
-                  KO.attributes.value,
-                  KK.attributes.value
-                ) +
-                  parseInt(LE.attributes.mod, 10) +
-                  parseInt(LE.attributes.value, 10)}
-              </td>
-              <td>{LE.attributes.value}</td>
+              <td>Lebenspunkte</td>
+              <td>{properties.lifeforce.calcValue}</td>
+              <td>{properties.lifeforce.mod}</td>
+              <td>{properties.lifeforce.value}</td>
+              <td>{properties.lifeforce.basicValue}</td>
             </tr>
             <tr>
-              <td>{AU.attributes.name}</td>
-              <td>
-                {Main.calc2(
-                  KO.attributes.value,
-                  KO.attributes.value,
-                  KK.attributes.value
-                )}
-              </td>
-              <td>{AU.attributes.mod}</td>
-              <td>
-                {Main.calc2(
-                  KO.attributes.value,
-                  KO.attributes.value,
-                  KK.attributes.value
-                ) +
-                  parseInt(AU.attributes.mod, 10) +
-                  parseInt(AU.attributes.value, 10)}
-              </td>
-              <td>{AU.attributes.value}</td>
+              <td>Ausdauer</td>
+              <td>{properties.endurance.calcValue}</td>
+              <td>{properties.endurance.mod}</td>
+              <td>{properties.endurance.value}</td>
+              <td>{properties.endurance.basicValue}</td>
             </tr>
             <tr>
-              <td>{AE.attributes.name}</td>
-              <td>
-                {Main.calc2(
-                  MU.attributes.value,
-                  IN.attributes.value,
-                  CH.attributes.value
-                )}
-              </td>
-              <td>{AE.attributes.mod}</td>
-              <td>
-                {Main.calc2(
-                  MU.attributes.value,
-                  IN.attributes.value,
-                  CH.attributes.value
-                ) +
-                  parseInt(AE.attributes.mod, 10) +
-                  parseInt(AE.attributes.value, 10) +
-                  parseInt(AE.attributes.grossemeditation, 10)}
-              </td>
-              <td>{AE.attributes.value}</td>
+              <td>Astralenergie</td>
+              <td>{properties.astralEnergy.calcValue}</td>
+              <td>{properties.astralEnergy.mod}</td>
+              <td>{properties.astralEnergy.value}</td>
+              <td>{properties.astralEnergy.basicValue}</td>
             </tr>
             <tr>
-              <td>{KE.attributes.name}</td>
-              <td>
-                {Main.calcKe(
-                  MU.attributes.value,
-                  IN.attributes.value,
-                  CH.attributes.value
-                )}
-              </td>
-              <td>{KE.attributes.mod}</td>
-              <td>
-                {Main.calcKe(
-                  MU.attributes.value,
-                  IN.attributes.value,
-                  CH.attributes.value
-                ) +
-                  parseInt(KE.attributes.mod, 10) +
-                  parseInt(KE.attributes.value, 10)}
-              </td>
-              <td>{KE.attributes.value}</td>
+              <td>Karmaenergie</td>
+              <td>{properties.karmaEnergy.calcValue}</td>
+              <td>{properties.karmaEnergy.mod}</td>
+              <td>{properties.karmaEnergy.value}</td>
+              <td>{properties.karmaEnergy.basicValue}</td>
             </tr>
             <tr>
-              <td>{MR.attributes.name}</td>
-              <td>
-                {Main.calc5(
-                  MU.attributes.value,
-                  KL.attributes.value,
-                  KO.attributes.value
-                )}
-              </td>
-              <td>{MR.attributes.mod}</td>
-              <td>
-                {Main.calc5(
-                  MU.attributes.value,
-                  KL.attributes.value,
-                  KO.attributes.value
-                ) +
-                  parseInt(MR.attributes.mod, 10) +
-                  parseInt(MR.attributes.value, 10)}
-              </td>
-              <td>{MR.attributes.value}</td>
+              <td>Magieresistenz</td>
+              <td>{properties.magicResistance.calcValue}</td>
+              <td>{properties.magicResistance.mod}</td>
+              <td>{properties.magicResistance.value}</td>
+              <td>{properties.magicResistance.basicValue}</td>
             </tr>
             <tr>
               <td>Initiative Basis</td>
-              <td>
-                {Main.calc5(
-                  MU.attributes.value,
-                  MU.attributes.value,
-                  IN.attributes.value,
-                  GE.attributes.value
-                )}
-              </td>
-              <td>{INI.attributes.mod}</td>
-              <td>
-                {Main.calc5(
-                  MU.attributes.value,
-                  MU.attributes.value,
-                  IN.attributes.value,
-                  GE.attributes.value
-                ) + parseInt(INI.attributes.mod, 10)}
-              </td>
+              <td>{properties.initiativBaseValue.calcValue}</td>
+              <td>{properties.initiativBaseValue.mod}</td>
+              <td>{properties.initiativBaseValue.value}</td>
               <td />
             </tr>
             <tr>
               <td>Attacke Basis</td>
-              <td>
-                {Main.calc5(
-                  MU.attributes.value,
-                  GE.attributes.value,
-                  KK.attributes.value
-                )}
-              </td>
-              <td>{AT.attributes.mod}</td>
-              <td>
-                {Main.calc5(
-                  MU.attributes.value,
-                  GE.attributes.value,
-                  KK.attributes.value
-                ) + parseInt(AT.attributes.mod, 10)}
-              </td>
+              <td>{properties.attackBaseValue.calcValue}</td>
+              <td>{properties.attackBaseValue.mod}</td>
+              <td>{properties.attackBaseValue.value}</td>
               <td />
             </tr>
             <tr>
               <td>Parade Basis</td>
-              <td>
-                {Main.calc5(
-                  IN.attributes.value,
-                  GE.attributes.value,
-                  KK.attributes.value
-                )}
-              </td>
-              <td>{PA.attributes.mod}</td>
-              <td>
-                {Main.calc5(
-                  IN.attributes.value,
-                  GE.attributes.value,
-                  KK.attributes.value
-                ) + parseInt(PA.attributes.mod, 10)}
-              </td>
+              <td>{properties.paradeBaseValue.calcValue}</td>
+              <td>{properties.paradeBaseValue.mod}</td>
+              <td>{properties.paradeBaseValue.value}</td>
               <td />
             </tr>
             <tr>
               <td>Fernkampf Basis</td>
-              <td>
-                {Main.calc5(
-                  IN.attributes.value,
-                  FF.attributes.value,
-                  KK.attributes.value
-                )}
-              </td>
-              <td>{FK.attributes.mod}</td>
-              <td>
-                {Main.calc5(
-                  IN.attributes.value,
-                  FF.attributes.value,
-                  KK.attributes.value
-                ) + parseInt(FK.attributes.mod, 10)}
-              </td>
+              <td>{properties.remoteCombatBaseValue.calcValue}</td>
+              <td>{properties.remoteCombatBaseValue.mod}</td>
+              <td>{properties.remoteCombatBaseValue.value}</td>
               <td />
             </tr>
           </tbody>
         </table>
-        {/* <span> */}
-        {/* {children[0].attributes.startwert ? ( */}
-        {/* <span> */}
-        {/* {children[0].attributes.name} */}
-
-        {/* {`${`${children[0].attributes.name} ${ */}
-        {/* children[0].attributes.startwert */}
-        {/* }`} (${children[0].attributes.mod}) | ${ */}
-        {/* children[0].attributes.value */}
-        {/* }`} */}
-        {/* <br /> */}
-        {/* </span> */}
-        {/* ) : ( */}
-        {/* <span> */}
-        {/* {`${`${children[0].attributes.name} ${ */}
-        {/* children[0].attributes.value */}
-        {/* }`}(${children[0].attributes.mod})`} */}
-        {/* <br /> */}
-        {/* </span> */}
-        {/* )} */}
-        {/* </span> */}
-        {/* {properties.children.map( */}
-        {/* p => */}
-        {/* p.attributes.startwert ? ( */}
-        {/* <span key={p.attributes.name}> */}
-        {/* {`${`${p.attributes.name} ${p.attributes.startwert}`} (${ */}
-        {/* p.attributes.mod */}
-        {/* }) | ${p.attributes.value}`} */}
-        {/* <br /> */}
-        {/* </span> */}
-        {/* ) : ( */}
-        {/* <span key={p.attributes.name}> */}
-        {/* {`${`${p.attributes.name} ${p.attributes.value}`}(${ */}
-        {/* p.attributes.mod */}
-        {/* })`} */}
-        {/* <br /> */}
-        {/* </span> */}
-        {/* ) */}
-        {/* )} */}
       </div>
     );
   }

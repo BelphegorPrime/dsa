@@ -5,34 +5,37 @@ import { faMars, faVenus } from '@fortawesome/fontawesome-free-solid';
 
 class Base extends Component {
   render() {
-    const { base, className } = this.props;
-    const note = base.children[6].attributes.notiz0;
+    const { className, base } = this.props;
     return (
       <div className={className}>
         <div className="col-md-12 pt-2">
           <span>
-            Geschlecht: {base.children[0].attributes.name}{' '}
-            {base.children[0].attributes.name === 'weiblich' ? (
-              <FontAwesomeIcon icon={faVenus} />
+            Geschlecht:{' '}
+            {base.gender === 'female' ? (
+              <span>
+                weiblich <FontAwesomeIcon icon={faVenus} />
+              </span>
             ) : (
-              <FontAwesomeIcon icon={faMars} />
+              <span>
+                männlich <FontAwesomeIcon icon={faMars} />
+              </span>
             )}
           </span>
         </div>
         <div className="col-md-12 pt-2">
-          <span>Rasse: {base.children[2].attributes.string}</span>
+          <span>Rasse: {base.race}</span>
         </div>
         <div className="col-md-12 pt-2">
-          <span>Kultur: {base.children[3].attributes.string}</span>
+          <span>Kultur: {base.culture}</span>
         </div>
         <div className="col-md-12 pt-2">
-          Profession: {base.children[4].children[0].attributes.string}
+          Profession: {base.profession.name}
         </div>
-        {note !== 'Notizen' ? (
+        {base.notes.length > 0 ? (
           <div className="col-md-12 pt-2">
             <span>
               {`Notizen: `}
-              {note.split('&#10;').map(n => (
+              {base.notes.map(n => (
                 <Fragment key={n}>
                   <span>{n}</span>
                   <br />
@@ -42,10 +45,10 @@ class Base extends Component {
           </div>
         ) : null}
         <div className="col-md-12 pt-2">
-          <span>{base.children[8].attributes.value} AP vergeben</span>
+          <span>{base.exp} AP vergeben</span>
         </div>
         <div className="col-md-12 pt-2">
-          <span>{base.children[9].attributes.value} AP unvergeben</span>
+          <span>{base.freeExp} AP unvergeben</span>
         </div>
       </div>
     );
