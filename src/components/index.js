@@ -89,13 +89,17 @@ class App extends Component {
     return nextState;
   }
 
-  appendToState(xml) {
+  appendToState(xml, converted) {
     const { name } = xml.children[0].attributes;
     const { state } = this;
-    state.chosenHero = xml;
+    const composedHero = {
+      xml,
+      converted
+    }
+    state.chosenHero = composedHero;
     state.heros = Object.assign(
       {
-        [name]: xml
+        [name]: composedHero
       },
       state.heros
     );
@@ -124,11 +128,7 @@ class App extends Component {
               xmlReader.parse(xmlString);
             })
         )
-        .then(hero => {
-          convert(hero);
-          return hero;
-        })
-        .then(hero => this.appendToState(hero));
+        .then(hero => this.appendToState(hero, convert(hero)));
     });
   }
 
@@ -141,7 +141,7 @@ class App extends Component {
       'href',
       `data:text/xml;charset=utf-8,${encodeURIComponent(XmlPrint(chosenHero))}`
     );
-    a.setAttribute('download', `${chosenHero.children[0].attributes.name}.xml`);
+    a.setAttribute('download', `${chosenHero.xml.children[0].attributes.name}.xml`);
     a.style.display = 'none';
     doc.body.appendChild(a);
     a.click();
@@ -188,6 +188,7 @@ class App extends Component {
 
   render() {
     const { heros, masterMode, chosenHero, page } = this.state;
+    console.log(chosenHero)
     return (
       <div className="App">
         <nav className="navbar navbar-default">
@@ -224,7 +225,7 @@ class App extends Component {
                 <div className="hero-name">
                   {chosenHero ? (
                     <span className="font-weight-bold">
-                      {chosenHero.children[0].attributes.name}
+                      {chosenHero.xml.children[0].attributes.name}
                     </span>
                   ) : null}
                 </div>
@@ -281,7 +282,7 @@ class App extends Component {
           <div className="left-pane col-md-2">
             <SideBar
               heros={heros}
-              chosenHero={chosenHero}
+              chosenHero={chosenHero ? chosenHero.xml : {}}
               page={page}
               chooseHero={this.chooseHero.bind(this)}
               removeHero={this.removeHero.bind(this)}
@@ -289,7 +290,7 @@ class App extends Component {
             />
           </div>
           <div className="right-pane col-md-10 row-without-margin">
-            {chosenHero ? <Hero hero={chosenHero} page={page} /> : null}
+            {chosenHero ? <Hero hero={chosenHero.xml} page={page} /> : null}
           </div>
         </div>
       </div>

@@ -41,30 +41,32 @@ class Sidebar extends Component {
     const { heros, chooseHero, removeHero } = this.props;
     return (
       <Fragment>
-        {Object.keys(heros)
-          .sort()
-          .map((name, index) => (
-            <Fragment key={name + index}>
-              <div className="row" onClick={chooseHero.bind(this, name)}>
-                <ul className="list-group list-group-flush col-md-12">
-                  <li className="list-group-item">
-                    <div className="row">
-                      <div className="col-md-10">
-                        <span className="font-weight-bold">{name}</span>
-                      </div>
-                      <span
-                        className="col-md-2 btn btn-secondary"
-                        onClick={removeHero.bind(this, name)}>
-                        X
-                      </span>
-                    </div>
-                  </li>
-                  {this.getSubMenu(heros[name], name)}
-                </ul>
-              </div>
-              {Object.keys(heros).length - 1 !== index ? <hr /> : null}
-            </Fragment>
-          ))}
+        {heros.xml
+          ? Object.keys(heros.xml)
+              .sort()
+              .map((name, index) => (
+                <Fragment key={name + index}>
+                  <div className="row" onClick={chooseHero.bind(this, name)}>
+                    <ul className="list-group list-group-flush col-md-12">
+                      <li className="list-group-item">
+                        <div className="row">
+                          <div className="col-md-10">
+                            <span className="font-weight-bold">{name}</span>
+                          </div>
+                          <span
+                            className="col-md-2 btn btn-secondary"
+                            onClick={removeHero.bind(this, name)}>
+                            X
+                          </span>
+                        </div>
+                      </li>
+                      {this.getSubMenu(heros.xml[name], name)}
+                    </ul>
+                  </div>
+                  {Object.keys(heros.xml).length - 1 !== index ? <hr /> : null}
+                </Fragment>
+              ))
+          : null}
       </Fragment>
     );
   }

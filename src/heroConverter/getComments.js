@@ -12,13 +12,14 @@ export default comments =>
       sfname: specialAbilityName,
       wirkung: effect
     } = c.attributes;
-    const trial =
-      probe && probe !== ''
-        ? probe
-            .split('(')[1]
-            .split(')')[0]
-            .split('/')
-        : [];
+    let trial = [];
+    if (probe && probe !== '') {
+      let split1 = probe;
+      if (probe.indexOf('(') > -1) {
+        [, split1] = probe.split('(');
+      }
+      trial = split1.split(')')[0].split('/');
+    }
     if (!key) {
       return {
         duration,

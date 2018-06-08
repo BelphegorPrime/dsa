@@ -103,36 +103,30 @@ export default properties => {
     returnProperties.lifeforce.mod +
     returnProperties.lifeforce.basicValue;
 
-  returnProperties.endurance.calcValue = Main.calc2(
-    returnProperties.courage.value,
-    returnProperties.constitution.value,
-    returnProperties.dexterity.value
-  );
-  returnProperties.endurance.value =
-    returnProperties.endurance.calcValue +
-    returnProperties.endurance.mod +
-    returnProperties.endurance.basicValue;
+  if (returnProperties.endurance) {
+    returnProperties.endurance.calcValue = Main.calc2(
+      returnProperties.courage.value,
+      returnProperties.constitution.value,
+      returnProperties.dexterity.value
+    );
+    returnProperties.endurance.value =
+      returnProperties.endurance.calcValue +
+      returnProperties.endurance.mod +
+      returnProperties.endurance.basicValue;
+  }
 
-  returnProperties.astralEnergy.calcValue = Main.calc2(
-    returnProperties.courage.value,
-    returnProperties.intuition.value,
-    returnProperties.charisma.value
-  );
-  returnProperties.astralEnergy.value =
-    returnProperties.astralEnergy.calcValue +
-    returnProperties.astralEnergy.mod +
-    returnProperties.astralEnergy.basicValue +
-    returnProperties.astralEnergy.greatMeditation;
-
-  returnProperties.magicResistance.calcValue = Main.calc5(
-    returnProperties.courage.value,
-    returnProperties.wisdom.value,
-    returnProperties.constitution.value
-  );
-  returnProperties.magicResistance.value =
-    returnProperties.magicResistance.calcValue +
-    returnProperties.magicResistance.mod +
-    returnProperties.magicResistance.basicValue;
+  if (returnProperties.astralEnergy) {
+    returnProperties.astralEnergy.calcValue = Main.calc2(
+      returnProperties.courage.value,
+      returnProperties.intuition.value,
+      returnProperties.charisma.value
+    );
+    returnProperties.astralEnergy.value =
+      returnProperties.astralEnergy.calcValue +
+      returnProperties.astralEnergy.mod +
+      returnProperties.astralEnergy.basicValue +
+      returnProperties.astralEnergy.greatMeditation;
+  }
 
   if (returnProperties.initiativBaseValue) {
     returnProperties.initiativBaseValue.calcValue = Main.calc5(
@@ -177,6 +171,18 @@ export default properties => {
     returnProperties.remoteCombatBaseValue.value =
       returnProperties.remoteCombatBaseValue.calcValue +
       returnProperties.remoteCombatBaseValue.mod;
+  }
+
+  if (returnProperties.magicResistance) {
+    returnProperties.magicResistance.calcValue = Main.calc5(
+      returnProperties.courage ? returnProperties.courage.value : 0,
+      returnProperties.wisdom ? returnProperties.wisdom.value : 0,
+      returnProperties.constitution ? returnProperties.constitution.value : 0
+    );
+    returnProperties.magicResistance.value =
+      returnProperties.magicResistance.calcValue +
+      returnProperties.magicResistance.mod +
+      returnProperties.magicResistance.basicValue;
   }
   return returnProperties;
 };
