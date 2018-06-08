@@ -4,16 +4,16 @@ import proptypes from 'prop-types';
 class SpecialAbilities extends Component {
   render() {
     const { className } = this.props;
-    let { specialAbilities } = this.props;
-    const cheapenedAbilities = specialAbilities.children.filter(
+    let { oldSpecialAbilities } = this.props;
+    const cheapenedAbilities = oldSpecialAbilities.children.filter(
       sa => sa.name === 'verbilligtesonderfertigkeit'
     );
-    specialAbilities = specialAbilities.children.filter(
+    oldSpecialAbilities = oldSpecialAbilities.children.filter(
       sa => sa.name !== 'verbilligtesonderfertigkeit'
     );
     return (
       <div className={className}>
-        {specialAbilities.map(specialAbility => {
+        {oldSpecialAbilities.map(specialAbility => {
           const { name } = specialAbility.attributes;
           if (name === 'Kulturkunde' || name === 'Rüstungsgewöhnung I') {
             return (
@@ -59,7 +59,7 @@ class SpecialAbilities extends Component {
 }
 
 SpecialAbilities.propTypes = {
-  specialAbilities: proptypes.object,
+  oldSpecialAbilities: proptypes.object,
   className: proptypes.string
 };
 

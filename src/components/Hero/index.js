@@ -49,12 +49,12 @@ class Hero extends Component {
               properties={hero.converted.properties}
               className="col-md-3"
             />
-            <Advantages advantages={advantages} className="col-md-2" />
+            <Advantages oldAdvantages={advantages} className="col-md-2" />
             <SpecialAbilities
-              specialAbilities={specialAbilities}
+              oldSpecialAbilities={specialAbilities}
               className="col-md-3"
             />
-            <Connections connections={connections} className="col-md-2" />
+            <Connections oldConnections={connections} className="col-md-2" />
           </Fragment>
         );
       }

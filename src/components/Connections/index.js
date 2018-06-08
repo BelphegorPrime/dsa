@@ -3,10 +3,10 @@ import proptypes from 'prop-types';
 
 class Connections extends Component {
   render() {
-    const { connections, className } = this.props;
+    const { oldConnections, className } = this.props;
     return (
       <div className={className}>
-        {connections.children.map(connection => {
+        {oldConnections.children.map(connection => {
           const { beschreibung, name, so } = connection.attributes;
           return (
             <div key={name} className="col-md-12 pt-2">
@@ -22,7 +22,7 @@ class Connections extends Component {
 }
 
 Connections.propTypes = {
-  connections: proptypes.object,
+  oldConnections: proptypes.object,
   className: proptypes.string
 };
 
