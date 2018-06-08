@@ -170,10 +170,10 @@ class App extends Component {
 
   removeHero(name) {
     const { heros } = this.state;
-    let { chosenHero } = this.state;
-    if (chosenHero.children[0].attributes.name === name) {
-      chosenHero = null;
-    }
+    // let { chosenHero } = this.state;
+    // if (chosenHero.xml.children[0].attributes.name === name) {
+    //   chosenHero = null;
+    // }
     delete heros[name];
     this.setState({
       heros
