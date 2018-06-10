@@ -6,17 +6,19 @@ class Advantages extends Component {
     const { advantages, className } = this.props;
     return (
       <div className={className}>
-        <span className="font-weight-bold">Vorteile:</span>
-        {advantages.map(advantage => {
-          const { name, value } = advantage;
-          return (
-            <div key={name} className="col-md-12 pt-2">
-              <span>
-                {name} {value || null}
-              </span>
-            </div>
-          );
-        })}
+        <div className="pl-3 pt-3">
+          <span className="font-weight-bold">Vorteile:</span>
+          {advantages.map(advantage => {
+            const { name, value } = advantage;
+            return (
+              <div key={name} className="col-md-12 pt-2">
+                <span>
+                  {name} {value || null}
+                </span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

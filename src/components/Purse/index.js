@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-import RecursiveComponent from '../RecursiveComponent';
 
 class Purse extends Component {
   render() {
     const { purse, className } = this.props;
     return (
       <div className={className}>
-        <RecursiveComponent node={purse} wrapper={'span'} doBreak={true} />
+        <div className="pl-3 pt-3">
+          <span className="font-weight-bold">Vermögen</span>
+          {Object.keys(purse).map(monetaryUnit => {
+            const money = purse[monetaryUnit];
+            return (
+              <div key={monetaryUnit}>
+                <span className="pl-3">
+                  {money.amount} {monetaryUnit} ({money.country})
+                </span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

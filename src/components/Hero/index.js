@@ -29,14 +29,13 @@ class Hero extends Component {
       ,
       ,
       ,
-      fight,
       ,
       ,
-      comments,
-      equipment,
       ,
       ,
-      purse
+      ,
+      ,
+      ,
     ] = hero.xml.children[0].children;
     console.log(hero.converted);
 
@@ -71,7 +70,6 @@ class Hero extends Component {
           <TalentList
             talentList={hero.converted.talentList}
             properties={hero.converted.properties}
-            fight={fight}
             className="col-md-12"
           />
         );
@@ -89,13 +87,13 @@ class Hero extends Component {
         return (
           <Fragment>
             <Objects objects={hero.converted.objects} className="col-md-4" />
-            <Equipment equipment={equipment} className="col-md-4" />
-            <Purse purse={purse} className="col-md-4" />
+            <Equipment weapons={hero.converted.weapons} className="col-md-4" />
+            <Purse purse={hero.converted.purse} className="col-md-4" />
           </Fragment>
         );
       }
       case 'Kommentare': {
-        return <Comments comments={comments} className="col-md-12" />;
+        return <Comments comments={hero.converted.comments} className="col-md-12" />;
       }
       default:
         return null;

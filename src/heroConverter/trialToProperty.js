@@ -1,5 +1,5 @@
 export default propertieString => {
-  switch (propertieString) {
+  switch (propertieString.split(' ').join('')) {
     case 'MU':
       return 'courage';
     case 'KL':

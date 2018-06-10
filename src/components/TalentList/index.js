@@ -22,7 +22,7 @@ class TalentList extends Component {
   }
 
   render() {
-    const { talentList, className, fight } = this.props;
+    const { talentList, className } = this.props;
     const { tawStars } = this.state;
     return (
       <div className={className}>
@@ -38,22 +38,12 @@ class TalentList extends Component {
           <tbody>
             {Object.keys(talentList).map(name => {
               const talent = talentList[name];
-              const possibleWeaponValues = fight.children.filter(
-                kw => kw.attributes.name === name
-              );
-              let AT = null;
-              let PA = null;
-              if (possibleWeaponValues.length > 0) {
-                const weaponValues = possibleWeaponValues[0];
-                AT = weaponValues.children[0].attributes.value;
-                PA = weaponValues.children[1].attributes.value;
-              }
               return (
                 <tr key={name}>
                   <td>
                     {name}
-                    {AT ? ` AT(${AT})` : null}
-                    {PA ? ` PA(${PA})` : null}
+                    {talent.attack ? ` AT(${talent.attack})` : null}
+                    {talent.parade ? ` PA(${talent.parade})` : null}
                     {talent.k ? ` Komplexität(${talent.k})` : null}
                   </td>
                   <td>({talent.trial.join('/')})</td>
@@ -87,7 +77,6 @@ class TalentList extends Component {
 
 TalentList.propTypes = {
   talentList: proptypes.object,
-  fight: proptypes.object,
   properties: proptypes.object,
   className: proptypes.string
 };

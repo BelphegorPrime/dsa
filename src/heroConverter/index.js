@@ -11,6 +11,7 @@ import getTalentList from './getTalentList';
 import getAdvantages from './getAdvantages';
 import getSpellList from './getSpellList';
 import getConnections from './getConnections';
+import addFight from './addFight'
 
 const index = hero => {
   const returnHero = {};
@@ -65,6 +66,7 @@ const index = hero => {
       }
     }
   });
+  returnHero.talentList = addFight(returnHero.talentList, returnHero.fight)
   console.log(returnHero);
   return returnHero;
 };

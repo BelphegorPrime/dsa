@@ -8,49 +8,53 @@ class Base extends Component {
     const { className, base } = this.props;
     return (
       <div className={className}>
-        <div className="col-md-12 pt-2">
-          <span>
-            <span className="font-weight-bold">Geschlecht: </span>
-            {base.gender === 'female' ? (
-              <span>
-                weiblich <FontAwesomeIcon icon={faVenus} />
-              </span>
-            ) : (
-              <span>
-                männlich <FontAwesomeIcon icon={faMars} />
-              </span>
-            )}
-          </span>
-        </div>
-        <div className="col-md-12 pt-2">
-          <span className="font-weight-bold">Rasse: </span>
-          {base.race}
-        </div>
-        <div className="col-md-12 pt-2">
-          <span className="font-weight-bold">Kultur: </span>
-          {base.culture}
-        </div>
-        <div className="col-md-12 pt-2">
-          <span className="font-weight-bold">Profession: </span>
-          {base.profession.name}
-        </div>
-        {base.notes.length > 0 ? (
-          <div className="col-md-12 pt-2">
-            <span className="font-weight-bold">Notizen: </span>
-            {base.notes.map(n => (
-              <Fragment key={n}>
-                <span>{n}</span>
-                <br />
-              </Fragment>
-            ))}
+        <div className="pl-3 pt-3">
+          <div>
+            <span>
+              <span className="font-weight-bold">Geschlecht: </span>
+              {base.gender === 'female' ? (
+                <span>
+                  weiblich <FontAwesomeIcon icon={faVenus} />
+                </span>
+              ) : (
+                <span>
+                  männlich <FontAwesomeIcon icon={faMars} />
+                </span>
+              )}
+            </span>
           </div>
-        ) : null}
-        <hr />
-        <div className="col-md-12 pt-2">
-          <span className="font-weight-bold">{base.exp} AP vergeben</span>
-        </div>
-        <div className="col-md-12 pt-2">
-          <span className="font-weight-bold">{base.freeExp} AP unvergeben</span>
+          <div>
+            <span className="font-weight-bold">Rasse: </span>
+            {base.race}
+          </div>
+          <div>
+            <span className="font-weight-bold">Kultur: </span>
+            {base.culture}
+          </div>
+          <div>
+            <span className="font-weight-bold">Profession: </span>
+            {base.profession.name}
+          </div>
+          {base.notes.length > 0 ? (
+            <div>
+              <span className="font-weight-bold">Notizen: </span>
+              {base.notes.map(n => (
+                <Fragment key={n}>
+                  <span>{n}</span>
+                  <br />
+                </Fragment>
+              ))}
+            </div>
+          ) : null}
+          <hr />
+          <div>
+            <span className="font-weight-bold">{base.exp} AP vergeben</span>
+          </div>
+          <div>
+            <span className="font-weight-bold">
+              {base.freeExp} AP unvergeben
+            </span>
+          </div>
         </div>
       </div>
     );

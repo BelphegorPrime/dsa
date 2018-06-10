@@ -24,7 +24,7 @@ export default comments =>
       return {
         duration,
         cost,
-        trial,
+        trial: trial.map(t => t.split(' ').join('')),
         trialProperties: trial.map(trialToProperty),
         specialAbility,
         specialAbilityName,

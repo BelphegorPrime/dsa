@@ -6,17 +6,19 @@ class Connections extends Component {
     const { connections, className } = this.props;
     return (
       <div className={className}>
-        <span className="font-weight-bold">Verbindungen:</span>
-        {connections.map(connection => {
-          const { description, name, socialStatus } = connection;
-          return (
-            <div key={name} className="col-md-12 pt-2">
-              <span>
-                {name || null} {description || null} {socialStatus || null}
-              </span>
-            </div>
-          );
-        })}
+        <div className="pl-3 pt-3">
+          <span className="font-weight-bold">Verbindungen:</span>
+          {connections.map(connection => {
+            const { description, name, socialStatus } = connection;
+            return (
+              <div key={name} className="col-md-12 pt-2">
+                <span>
+                  {name || null} {description || null} {socialStatus || null}
+                </span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
