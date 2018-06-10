@@ -1,7 +1,7 @@
 import lcd from './libreCantionesDeluxe.json';
 
 export default class Rulebook {
-  static libreCantionesDeluxe() {
+  static getLibreCantionesDeluxe() {
     return lcd;
   }
 }

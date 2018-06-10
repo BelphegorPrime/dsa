@@ -11,13 +11,14 @@ import getTalentList from './getTalentList';
 import getAdvantages from './getAdvantages';
 import getSpellList from './getSpellList';
 import getConnections from './getConnections';
-import addFight from './addFight'
+import addFight from './addFight';
+import RuleBook from '../Rulebook';
 
 const index = hero => {
   const returnHero = {};
+  console.log(RuleBook.getLibreCantionesDeluxe())
   returnHero.name = hero.children[0].attributes.name;
   const { children } = hero.children[0];
-  console.log(children)
   children.forEach(child => {
     if (child.children.length > 0) {
       switch (child.name) {
@@ -66,7 +67,7 @@ const index = hero => {
       }
     }
   });
-  returnHero.talentList = addFight(returnHero.talentList, returnHero.fight)
+  returnHero.talentList = addFight(returnHero.talentList, returnHero.fight);
   console.log(returnHero);
   return returnHero;
 };

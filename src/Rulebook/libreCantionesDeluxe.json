@@ -1,5 +1,132 @@
 [
   {
-    "name": "Abvenum Reine Speise"
+    "name": "Abvenum Reine Speise",
+    "trial": "KL/KL/FF",
+    "technik": "Der Elf spricht bha’sama venyabha’za yalza über die zu reinigende Nahrung.",
+    "castTime": "mindestens 15 Aktionen",
+    "effect": "Der Zauber reinigt Nahrungsmittel und Getränke von sämtlichen Giften und Krankheitskeimen; verdorbene Nahrung wird frisch und genießbar. Die Zauberprobe ist um die doppelte Stufe des Giftes oder der beim Verzehr zu befürchtenden Krankheit erschwert. Verdorbene Nahrung kann je nach Zustand einen Zuschlag von 2 bis 12 Punkten auf die Probe bedeuten.Dieser  Zauber  versetzt  Nahrung  in  einen  Zustand,  die  dem  Spruchanwender nicht gefährlich werden kann. Da es aber von dem Entwickler des Spruches abhängt, in welchem Zustand Nahrung als gefährlich angesehen werden muss und in welchem nicht, variiert die genaue Wirkung je nach Repräsentation recht erheblich. So wandelt die elfische Repräsentation selbst Wein in Traubensaft um, während die Achazform des Spruches manche für Menschen und Elfen giftige Mahlzeiten unverändert lässt.Gift, das sich nicht in Nahrung befindet, wird von dem Zauber nicht als solches erkannt, weswegen das Gift auf der Klinge eines Meuchlers oder in der Phiole  eines Alchimisten nicht verändert wird. Wenn allerdings zum Beispiel in einer Pilzpfanne giftige Pilze  enthalten sind, dann wirkt der Zauber sehr wohl.",
+    "cost": "4 AsP pro Mahlzeit, die für etwa 10 Personen reicht (Sch: 3 AsP)",
+    "target": "Nahrungsmenge (mehrere Objekte) nach AsP-Aufwand",
+    "distance": "1 Schritt",
+    "duration": "augenblicklich",
+    "reversalis": "bewirkt das schlagartige Verfaulen und Verschimmeln von Lebensmitteln.",
+    "antimagic": "kann in einer Zone des OBJEKT ENTZAUBERN nur erschwert gesprochen werden; lässt sich wegen der Wirkungsdauer augenblicklich nicht mittels Antimagie widerrufen.",
+    "complexity": "C",
+    "characteristics": ["Objekt"],
+    "modifications": [
+      {
+        "name": "Schutz vor Übelkeit",
+        "mod": "+5",
+        "effect": "Nahrung, die an sich nicht giftig ist, deren Genuss aber heftige Übelkeit erzeugt, wird in einen Zustand versetzt, der als harmlos gelten kann. So ist es zum Beispiel möglich, auch Meerwasser in Trinkwasser zu verwandeln. Horasische Sahne torten werden jedoch nur von den wenigsten Repräsentationen in Mitleidenschaft gezogen."
+      },
+      {
+        "name": "Schutz vor Vergiftung",
+        "mod": "+5",
+        "effect": "Bewahrt die Nahrung für die nächsten ZfP* Stunden vor jeglicher in diesem Zeitraum geschehener Vergiftung und jedem Verschimmeln oder Verderben. Der Zaubernde muss sich hierbei selbst einen Aufschlag auf die Zauberprobe auferlegen, und zwar in Höhe der Stufe der Krankheit/des Giftes, gegen die der Schutz höchstens wirksam sein soll. Eine bereits vergiftete Speise wird dabei entgiftet."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 6},
+      { "representation": "Elf", "distribution": 6},
+      { "representation": "Hexe", "distribution": 6},
+      { "representation": "Magier", "distribution": 6},
+      { "representation": "Geode", "distribution": 5},
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Schelm", "distribution": 4}
+    ]
+  },
+  {
+    "name": "Accuratum Zaubernadel",
+    "trial": "KL/CH/FF",
+    "technik": "Die  Magierin  streicht  über  ihr  Gewand, konzentriert sich auf die Eigenschaften des  Stoffes  und  die  Möglichkeiten  der  Wandlungdesselben und murmelt dabei die Formel.",
+    "castTime": "40 Aktionen",
+    "effect": "Farbe und Schnitt (nicht jedoch die Art des Stoffs) eines Kleidungsstücks können sich mit dieser Formel nach Wunsch der Magierin ändern. Die Zaubernde muss eine recht genaue Vorstellung vom Endergebnis besitzen, genaue Kenntnisse des Schneiderhandwerks sind jedoch nicht erforderlich, aber nützlich: Die Hälfte der TaP* einer – gedanklich ausgeführ ten – Schneidern-Probe erleichtern die  Zauberprobe  um  den  entsprechenden  Betrag.  Bei  besonders  gewagten  Kreationen  kann  der  Meister  auf  die  Zauberprobe  Zuschläge bis zu +7 verlangen. Die ZfP* geben die künstlerisch-handwerkliche Qualität des Kleidungsstücks an, wobei Werte über 10 für meisterliche  Arbeit stehen.Das Erschaffen von Stoff aus dem Nichts ist mit diesem Spruch nicht möglich, aus einem kurzen Hemd kann also keine weite Robe werden. Gewisse Vorsicht ist auch in der Nähe eines schelmisch gesinnten Anti-magiers geboten, der den OBJEKT ENTZAUBERN beherrscht ...",
+    "cost": "4 AsP pro Stein Gewicht des Kleidungsstücks, mindestens aber 7 AsP",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "bis zur nächsten  Wintersonnenwende",
+    "reversalis": "bewirkt eine Aufhebung eines bestehenden ACCURA-TUM oder verwandelt ein normales Kleidungsstück in unzusammen-hängende Stoffbahnen, Fetzen und Fäden.",
+    "antimagic": "kann in einer Zone des OBJEKT ENTZAUBERN nur erschwert gewirkt und mit diesem Anti magie-Spruch beendet werden. (Gilt nicht für die Vari ante Haltbarkeit.)",
+    "complexity": "C",
+    "characteristics": ["Objekt"],
+    "modifications": [
+      {
+        "name": "Nadel des Wanderers",
+        "mod": "+3",
+        "effect": "Wenn ein bereits mit ACCURATUM geformtes Kleidungsstück einmal einreißt, einer hungrigen Motte als Nahrung dient oder durchzuscheuern droht, kann mit dieser Variante für 3 AsP die betroffene Stelle ausgebessert werden. Erzielt man dabei mindestens halb so viele ZfP* wie bei der Herstellung, so ist  die  Reparatur  nicht  zu  bemerken.  Gleiches  gilt,  wenn  man  den Schnitt leicht anpassen will, weil man vielleicht die ein oder andere Unze zugenommen hat ..."
+      },
+      {
+        "name": "Ohne  Schere",
+        "mod": "+3",
+        "effect": "Es  ist  möglich,  eine  rohe  Stoffbahn  benötigter  Größe  in  ein  Kleidungsstück zu verwandeln"
+      },
+      {
+        "name": "Haltbarkeit",
+        "mod": "+3",
+        "effect": "Für den Einsatz von 7 AsP pro  Stein  Gewicht  wird  die  Verwandlung  dauerhaft  (Wirkungsdauer: augenblicklich)."
+      },
+      {
+        "name": "Webstuhl",
+        "mod": "+7 ab ZfW 11",
+        "effect": "Die Magierin kann das Kleidungsstück aus der nötigen Menge Garn herstellen, was jedoch eine gute Stunde Arbeit bedeutet"
+      },
+      {
+        "name": "Sackleinen und Spinnenseide",
+        "mod": "+7 plus eine  Erschwernis bis zu 7 Punkten für mangelnde Ähnlichkeit der Stoffarten; ab ZfW 14; nur gildenmagische Variante",
+        "effect": "Die Magierin kann mit dieser Variante eine Stoffart in eine andere verwandeln (Leinen in Seide oder in ein Bausch-Leinen-Mischgewebe); Fell und Leder sind jedoch von solchen Verwandlungen ausgenommen. Die Variante ist nicht mit der Variante Haltbarkeit kombinierbar."
+      }
+    ],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 2},
+      { "representation": "Magier", "distribution": 4},
+      { "representation": "Scharlatan", "distribution": 4}
+    ]
+  },
+  {
+    "name": "Adamantium Erzstruktur",
+    "trial": "KL/FF/KO",
+    "technik": "Der Kristallomant fährt mit einem Smaragd  mehrmals  über  den  zu  verzaubernden  Gegenstand.",
+    "castTime": "40 Aktionen",
+    "effect": "Die Struktur des verzauberten Gegenstands wird gefestigt. Er wird hart wie ein Diamant und unbe-zwingbar  wie  ein  Amboss.  Er  ist  durch  gewöhnliche  Ge-walteinwirkung praktisch unzerstörbar (Strukturpunkte und Härte werden verdreifacht; eine Härte von 0 bleibt demzufolge 0). Schadenszauberei wie ein IGNIFAXIUS kann dem Objekt nur  Schaden  zufügen,  wenn  die  angerichteten  SP  mindestens  ein Drittel der Strukturpunkte betragen. Da diese Formel einen Teil ihrer Kraft aus der Essenz des Gegenstandes zieht, wird dieser jedoch nach Ablauf der Wirkungsdauer ungewöhnlich zerbrechlich (Strukturpunkte und Härte halbiert).",
+    "cost": "5 AsP + 2 AsP pro angefangenem Stein Gewicht",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "ZfP* Spielrunden, die negativen Nachwirkungen sind ab Ablauf der Wirkungsdauer augenblicklich.",
+    "reversalis": "Erzeugt  an  Gegenständen  einen  Zerfallschaden  wie  beim EISENROST (Seite 77).",
+    "antimagic": "OBJEKT  ENTZAUBERN  und  ERZBANN  wirken  in  ihren  verschiedenen  Varianten    gegen  den  ADAMANTIUM.  Die  erhöhten TP der Zauberstahl-Variante werden von Rüstungen oder einem ARMATRUTZ wie üblich gemindert. Die Entzauberung eines permanent gehärteten Gegenstandes kostet natürlich auch permanente AsP. ",
+    "complexity": "C",
+    "characteristics": ["Objekt", "Elementar (Erz)"],
+    "modifications": [
+      {
+        "name": "Adamantenquader",
+        "mod": "+5",
+        "effect": "Für je 5 Punkte kann ein fünffaches Gewicht verzaubert werden (für +15 betragen die Kosten also 5 AsP + 2 AsP pro angefangener (5x5x5=) 125 Stein Gewicht)."
+      },
+      {
+        "name": "Kristallglanz",
+        "mod": "+3 ab  ZfW  7",
+        "effect": "Der  verzauberte  Gegenstand  erhält nach Wunsch des Zaubernden zusätzlich eine Oberfläche, die wie ein anderes Metall, wie Gestein oder Kristalle wirkt. Dies ist jedoch eine rein optische Komponente, die von der inneren Struktur unabhängig ist."
+      },
+      {
+        "name": "Zauberstahl",
+        "mod": "+5 ab ZfW 7",
+        "effect": "Eine Variante mit zusätzlichen Elementarkräften, die eigens für die Anwendung auf Waffen und Rüstungen entwickelt wurde. Der Bruchfaktor einer Waffe oder eines Schildes sinkt um ZfP* Punkte. Die TP einer Nahkampf-waffe steigen um ZfP*/3 Punkte, ebenso der RS einer verzau-berten Rüstung, die TP eines Geschosses oder einer Wurfwaffe um ZfP*/4. Leider verkehren sich diese Boni auch hier nach Ablauf der Wirkungsdauer in ihr Gegenteil. Während der Wirkungsdauer  können  die  so  verzauberten  Waffen  auch  Dämonen  und  andere  magische  Wesen  verletzen.  Diese  TP-Steigerungen  sind  nicht kumulativ zu Steigerungen aus hervorragender Schmiede arbeit (WdS181ff.)."
+      },
+      {
+        "name": "Struktur  wahren",
+        "mod": "+7 ab ZfW 11",
+        "effect": "Der  Zauber  wird  so  modifiziert,  dass  er  seine  Kraft  nicht  aus  der  Struktur  des  Materials  zieht  und  der  Gegenstand  nach  Ablauf der Wirkungsdauer keine negativen Nachwirkungen erleidet.  Die  Kosten  betragen  7  AsP  plus  4  AsP  pro  ange-fangenem Stein Gewicht."
+      },
+      {
+        "name": "Permanenz",
+        "mod": "+7 ab ZfW 11 nur in der kristallomantischen Repräsentation",
+        "effect": "Der Gegenstand wird permanent gefestigt. Dies erfordert den Aufwand von 1 permanenten AsP pro angefange-nem Stein Gewicht (bei der Variante Adamantenquader pro 5 etc. Stein)."
+      }
+    ],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 6},
+      { "representation": "Magier", "distribution": 5},
+      { "representation": "Druide", "distribution": 2}
+    ]
   }
 ]
