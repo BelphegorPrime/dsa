@@ -13,8 +13,8 @@ class SpellList extends Component {
     };
   }
 
-  changeSpell(name, probe, taw) {
-    const { diceThrow, values } = Main.test(probe, this.props.properties);
+  changeSpell(name, trial, taw) {
+    const { diceThrow, values } = Main.test(trial, this.props.properties);
     const tawStar = taw + diceThrow;
     this.setState(currentState => {
       const newState = currentState.tawStars;
@@ -26,7 +26,6 @@ class SpellList extends Component {
   render() {
     const { spellList, className } = this.props;
     const { tawStars } = this.state;
-
     return (
       <div className={className}>
         <table className="fixt-table fixt-table-5 table table-sm table-hover">
@@ -40,44 +39,35 @@ class SpellList extends Component {
             </tr>
           </thead>
           <tbody>
-            {spellList.children.map(spell => {
-              const {
-                anmerkungen,
-                hauszauber,
-                k,
-                kosten,
-                name,
-                probe,
-                reichweite,
-                repraesentation,
-                value,
-                variante,
-                wirkungsdauer,
-                zauberdauer,
-                zauberkommentar
-              } = spell.attributes;
+            {Object.keys(spellList).map(name => {
+              const spell = spellList[name];
               return (
                 <tr key={name}>
                   <td style={{ width: '50%' }}>
                     <div>
                       <span className="font-weight-bold">{name}</span>
-                      {variante}
-                      ({repraesentation})
+                      {spell.variant}
+                      ({spell.representation})
                     </div>
                     <div>
-                      {k ? ` Komplexität(${k})` : null}
-                      {hauszauber === 'true' ? (
+                      {spell.complexity
+                        ? ` Komplexität(${spell.complexity})`
+                        : null}
+                      {spell.homeSpell ? (
                         <FontAwesomeIcon icon={faHome} />
                       ) : null}
                     </div>
-                    <div>{anmerkungen}</div>
-                    <div>{zauberkommentar}</div>
+                    <div>{spell.remarks}</div>
+                    <div>{spell.spellComment}</div>
                   </td>
-                  <td style={{ width: '7%' }}>{probe}</td>
+                  <td style={{ width: '7%' }}>({spell.trial.join('/')})</td>
                   <td style={{ width: '30%' }}>
-                    {kosten} | {zauberdauer} | {reichweite} | {wirkungsdauer}
+                    {spell.cost ? `${spell.cost}` : null}
+                    {spell.castTime ? ` | ${spell.castTime}` : null}
+                    {spell.distance ? ` | ${spell.distance}` : null}
+                    {spell.duration ? ` | ${spell.duration}` : null}
                   </td>
-                  <td style={{ width: '3%' }}>{value}</td>
+                  <td style={{ width: '3%' }}>{spell.value}</td>
                   <td style={{ width: '10%' }}>
                     <button
                       className={
@@ -89,8 +79,8 @@ class SpellList extends Component {
                       onClick={this.changeSpell.bind(
                         this,
                         name,
-                        probe,
-                        parseInt(value, 10)
+                        spell.trial,
+                        parseInt(spell.value, 10)
                       )}>
                       {tawStars[name] !== undefined ? tawStars[name] : 'Probe'}
                     </button>

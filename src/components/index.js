@@ -7,7 +7,7 @@ import Hero from './Hero';
 import SideBar from './SideBar';
 
 import convert from '../heroConverter';
-import trialToProperty from "../heroConverter/trialToProperty";
+import trialToProperty from '../heroConverter/trialToProperty';
 
 class App extends Component {
   constructor() {
@@ -26,19 +26,14 @@ class App extends Component {
     return Math.floor(Math.random() * x) + 1;
   }
 
-  static test(probe, properties) {
-    const propertyValues = probe
-      .split('(')[1]
-      .split(')')[0]
-      .split('/')
-      .map(trialToProperty)
-      .map(property => {
-        const possibleProperty = properties[property];
-        if (possibleProperty.value) {
-          return possibleProperty.value;
-        }
-        return 0;
-      });
+  static test(trial, properties) {
+    const propertyValues = trial.map(trialToProperty).map(property => {
+      const possibleProperty = properties[property];
+      if (possibleProperty.value) {
+        return possibleProperty.value;
+      }
+      return 0;
+    });
     console.warn(`Eigenschaften: ${propertyValues}`);
     const throws = propertyValues.map(() => App.rollDice(20));
     console.warn(`Gewürfelte Werte: ${throws}`);

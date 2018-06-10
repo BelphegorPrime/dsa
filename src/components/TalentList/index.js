@@ -11,8 +11,8 @@ class TalentList extends Component {
     };
   }
 
-  changeTest(name, probe, taw) {
-    const { diceThrow, values } = Main.test(probe, this.props.properties);
+  changeTest(name, trial, taw) {
+    const { diceThrow, values } = Main.test(trial, this.props.properties);
     const tawStar = taw + diceThrow;
     this.setState(currentState => {
       const newState = currentState.tawStars;
@@ -36,10 +36,10 @@ class TalentList extends Component {
             </tr>
           </thead>
           <tbody>
-            {talentList.children.map(talent => {
-              const { attributes } = talent;
+            {Object.keys(talentList).map(name => {
+              const talent = talentList[name];
               const possibleWeaponValues = fight.children.filter(
-                kw => kw.attributes.name === attributes.name
+                kw => kw.attributes.name === name
               );
               let AT = null;
               let PA = null;
@@ -49,35 +49,30 @@ class TalentList extends Component {
                 PA = weaponValues.children[1].attributes.value;
               }
               return (
-                <tr key={attributes.name}>
+                <tr key={name}>
                   <td>
-                    {attributes.name}
+                    {name}
                     {AT ? ` AT(${AT})` : null}
                     {PA ? ` PA(${PA})` : null}
-                    {attributes.k ? ` Komplexität(${attributes.k})` : null}
+                    {talent.k ? ` Komplexität(${talent.k})` : null}
                   </td>
-                  <td>{attributes.probe}</td>
-                  <td>{attributes.value}</td>
+                  <td>({talent.trial.join('/')})</td>
+                  <td>{talent.value}</td>
                   <td>
                     <button
                       className={
-                        tawStars[attributes.name] &&
-                        parseInt(
-                          tawStars[attributes.name].split(' => ')[1],
-                          10
-                        ) < 0
+                        tawStars[name] &&
+                        parseInt(tawStars[name].split(' => ')[1], 10) < 0
                           ? 'btn btn-danger test-btn'
                           : 'btn btn-primary test-btn'
                       }
                       onClick={this.changeTest.bind(
                         this,
-                        attributes.name,
-                        attributes.probe,
-                        parseInt(attributes.value, 10)
+                        name,
+                        talent.trial,
+                        parseInt(talent.value, 10)
                       )}>
-                      {tawStars[attributes.name] !== undefined
-                        ? tawStars[attributes.name]
-                        : 'Probe'}
+                      {tawStars[name] !== undefined ? tawStars[name] : 'Probe'}
                     </button>
                   </td>
                 </tr>

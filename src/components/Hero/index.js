@@ -27,7 +27,7 @@ class Hero extends Component {
       ,
       ,
       ,
-      talentList,
+      ,
       spellList,
       fight,
       objects,
@@ -57,17 +57,19 @@ class Hero extends Component {
               specialAbilities={hero.converted.specialAbilities}
               className="col-md-3"
             />
-            <Connections
-              connections={hero.converted.connections}
-              className="col-md-2"
-            />
+            {hero.converted.connections ? (
+              <Connections
+                connections={hero.converted.connections}
+                className="col-md-2"
+              />
+            ) : null}
           </Fragment>
         );
       }
       case 'Talente': {
         return (
           <TalentList
-            talentList={talentList}
+            talentList={hero.converted.talentList}
             properties={hero.converted.properties}
             fight={fight}
             className="col-md-12"
@@ -77,7 +79,7 @@ class Hero extends Component {
       case 'Zauber': {
         return (
           <SpellList
-            spellList={spellList}
+            spellList={hero.converted.spellList}
             properties={hero.converted.properties}
             className="col-md-12"
           />

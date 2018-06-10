@@ -20,12 +20,23 @@ export default talentList => {
       .split('(')[1]
       .split(')')[0]
       .split('/');
-    returnTalentList[name] = {
-      learningMethode,
-      trial,
-      trialProperties: trial.map(trialToProperty),
-      value: parseInt(value, 10)
-    };
+
+    if (t.attributes.k) {
+      returnTalentList[name] = {
+        learningMethode,
+        trial,
+        trialProperties: trial.map(trialToProperty),
+        value: parseInt(value, 10),
+        k: t.attributes.k
+      };
+    } else {
+      returnTalentList[name] = {
+        learningMethode,
+        trial,
+        trialProperties: trial.map(trialToProperty),
+        value: parseInt(value, 10)
+      };
+    }
   });
   return returnTalentList;
 };
