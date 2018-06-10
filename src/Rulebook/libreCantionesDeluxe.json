@@ -247,5 +247,57 @@
       { "representation": "Druide", "distribution": 2},
       { "representation": "Hexe", "distribution": 2}
     ]
+  },
+  {
+    "name": "Aeolitus Windgebraus",
+    "trial": "KL/CH/KO",
+    "technik": "Der Elf spricht eo’la dao winya’bhaund  bläst  durch  die  zu  einem  Trichter  geformte  Hand.",
+    "castTime": "3 Aktionen",
+    "effect": "Der  Lufthauch,  den  der  Elf  erzeugt  hat,  verstärkt  sich  zu  einem  kurzen,  heftigen  Windstoß,  der  sich  kegelförmig  in  Blasrichtung  ausbreitet.  Jenseits  der  Reichweite  verliert  der  Wind  jedoch  deutlich  an  Stärke,  und in einer Entfernung von der doppelten Reichweite ist er kaum noch zu spüren. Der Windstoß ist kräftig genug, um z.B. Fackeln verlöschen zu  lassen, einen Wandschirm umzuwerfen, Staub  aufzuwirbeln  oder  Rauch  und  Nebel  aus  einem  kleinen  Raum zu we hen, jedoch nicht, um einen Menschen von den Beinen zu holen.",
+    "cost": "4 AsP (Sch: 3 AsP)",
+    "target": "Zone",
+    "distance": "ZfP*  x  2  Schritt,  Basisbreite  des  Kegels  maximal  ZfW Schritt",
+    "duration": "augenblicklich",
+    "reversalis": "Statt  eines  Windstoßes  erzeugt  der  Zauber  einen Sog zum Elfen hin – es soll jedoch hin und wieder vor-kommen, dass der Elf anschließend allerlei Staub und Kleintiere im Mund hat.",
+    "antimagic": "kann nur erschwert in einer Zone des VERÄNDE-RUNG AUFHEBEN gewirkt und von diesem Zauber verhindert werden.",
+    "complexity": "B",
+    "page": 18,
+    "characteristics": ["Umwelt", "Elementar(Luft)"],
+    "modifications": ["Zauberdauer", "Reichweite"],
+    "variants": [
+      {
+        "name": "Langer Atem",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Der Windstoß hält so lange an, wie der Elf kräftig  blasen  kann,  also  KO  Aktionen,  in  dieser  Zeit  muss  jedes  Wesen im gesamten Wirkungsbereich eine KK-Probe ablegen, um sich dem Elfen zu nähern"
+      },
+      {
+        "name": "Sturm",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Der Windstoß ist derart heftig, dass sogar Personen umgeweht werden, wenn ihnen nicht sofort eine KK-Probe gelingt, die um die ZfP* erschwert ist."
+      },
+      {
+        "name": "Übler  Gestank",
+        "mod": "+7 nicht  in  elfischer  Repräsentation",
+        "minZfW": 0,
+        "effect": "Der Lufthauch ist von einem Geruch  nach  Fäulnis  verseucht,  so  dass  jedem  Opfer eine KO-Probe gelingen muss, um nicht vor Übelkeit für ZfP* KR Abzüge von 1 Punkt auf alle Werte zu erhalten."
+      },
+      {
+        "name": "Lieblicher Duft",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Natürlich der Gegen-Effekt zur Variante Übler Gestank.  Für Elfen und jene Gildenmagier, denen der Muff in ihrer Bibliothek unangenehm ist."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 7},
+      { "representation": "Achaz", "distribution": 5},
+      { "representation": "Magier", "distribution": 5},
+      { "representation": "Druide", "distribution": 5},
+      { "representation": "Geode", "distribution": 4},
+      { "representation": "Schelm", "distribution": 3},
+      { "representation": "Scharlatan", "distribution": 3}
+    ]
   }
 ]
