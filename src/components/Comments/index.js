@@ -4,7 +4,6 @@ import proptypes from 'prop-types';
 class Comments extends Component {
   render() {
     const { comments, className } = this.props;
-    console.log(comments);
     return (
       <div className={className}>
         <div className="pt-3">
@@ -20,7 +19,6 @@ class Comments extends Component {
                 </div>
               );
             }
-            console.log(comment);
             return (
               <div>
                 <span className="pl-4">

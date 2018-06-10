@@ -20,25 +20,6 @@ class Hero extends Component {
     if (!hero) {
       return null;
     }
-    const [
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-      ,
-    ] = hero.xml.children[0].children;
-    console.log(hero.converted);
-
     switch (page) {
       case 'Basis': {
         return (
@@ -93,7 +74,9 @@ class Hero extends Component {
         );
       }
       case 'Kommentare': {
-        return <Comments comments={hero.converted.comments} className="col-md-12" />;
+        return (
+          <Comments comments={hero.converted.comments} className="col-md-12" />
+        );
       }
       default:
         return null;
