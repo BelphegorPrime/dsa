@@ -17,11 +17,13 @@
       {
         "name": "Schutz vor Übelkeit",
         "mod": "+5",
+        "minZfW": 0,
         "effect": "Nahrung, die an sich nicht giftig ist, deren Genuss aber heftige Übelkeit erzeugt, wird in einen Zustand versetzt, der als harmlos gelten kann. So ist es zum Beispiel möglich, auch Meerwasser in Trinkwasser zu verwandeln. Horasische Sahne torten werden jedoch nur von den wenigsten Repräsentationen in Mitleidenschaft gezogen."
       },
       {
         "name": "Schutz vor Vergiftung",
         "mod": "+5",
+        "minZfW": 0,
         "effect": "Bewahrt die Nahrung für die nächsten ZfP* Stunden vor jeglicher in diesem Zeitraum geschehener Vergiftung und jedem Verschimmeln oder Verderben. Der Zaubernde muss sich hierbei selbst einen Aufschlag auf die Zauberprobe auferlegen, und zwar in Höhe der Stufe der Krankheit/des Giftes, gegen die der Schutz höchstens wirksam sein soll. Eine bereits vergiftete Speise wird dabei entgiftet."
       }
     ],
@@ -53,26 +55,31 @@
       {
         "name": "Nadel des Wanderers",
         "mod": "+3",
+        "minZfW": 0,
         "effect": "Wenn ein bereits mit ACCURATUM geformtes Kleidungsstück einmal einreißt, einer hungrigen Motte als Nahrung dient oder durchzuscheuern droht, kann mit dieser Variante für 3 AsP die betroffene Stelle ausgebessert werden. Erzielt man dabei mindestens halb so viele ZfP* wie bei der Herstellung, so ist  die  Reparatur  nicht  zu  bemerken.  Gleiches  gilt,  wenn  man  den Schnitt leicht anpassen will, weil man vielleicht die ein oder andere Unze zugenommen hat ..."
       },
       {
         "name": "Ohne  Schere",
         "mod": "+3",
+        "minZfW": 0,
         "effect": "Es  ist  möglich,  eine  rohe  Stoffbahn  benötigter  Größe  in  ein  Kleidungsstück zu verwandeln"
       },
       {
         "name": "Haltbarkeit",
         "mod": "+3",
+        "minZfW": 0,
         "effect": "Für den Einsatz von 7 AsP pro  Stein  Gewicht  wird  die  Verwandlung  dauerhaft  (Wirkungsdauer: augenblicklich)."
       },
       {
         "name": "Webstuhl",
-        "mod": "+7 ab ZfW 11",
+        "mod": "+7",
+        "minZfW": 11,
         "effect": "Die Magierin kann das Kleidungsstück aus der nötigen Menge Garn herstellen, was jedoch eine gute Stunde Arbeit bedeutet"
       },
       {
         "name": "Sackleinen und Spinnenseide",
-        "mod": "+7 plus eine  Erschwernis bis zu 7 Punkten für mangelnde Ähnlichkeit der Stoffarten; ab ZfW 14; nur gildenmagische Variante",
+        "mod": "+7 plus eine  Erschwernis bis zu 7 Punkten für mangelnde Ähnlichkeit der Stoffarten; nur gildenmagische Variante",
+        "minZfW": 14,
         "effect": "Die Magierin kann mit dieser Variante eine Stoffart in eine andere verwandeln (Leinen in Seide oder in ein Bausch-Leinen-Mischgewebe); Fell und Leder sind jedoch von solchen Verwandlungen ausgenommen. Die Variante ist nicht mit der Variante Haltbarkeit kombinierbar."
       }
     ],
@@ -100,26 +107,31 @@
       {
         "name": "Adamantenquader",
         "mod": "+5",
+        "minZfW": 0,
         "effect": "Für je 5 Punkte kann ein fünffaches Gewicht verzaubert werden (für +15 betragen die Kosten also 5 AsP + 2 AsP pro angefangener (5x5x5=) 125 Stein Gewicht)."
       },
       {
         "name": "Kristallglanz",
-        "mod": "+3 ab  ZfW  7",
+        "mod": "+3",
+        "minZfW": 7,
         "effect": "Der  verzauberte  Gegenstand  erhält nach Wunsch des Zaubernden zusätzlich eine Oberfläche, die wie ein anderes Metall, wie Gestein oder Kristalle wirkt. Dies ist jedoch eine rein optische Komponente, die von der inneren Struktur unabhängig ist."
       },
       {
         "name": "Zauberstahl",
-        "mod": "+5 ab ZfW 7",
+        "mod": "+5",
+        "minZfW": 7,
         "effect": "Eine Variante mit zusätzlichen Elementarkräften, die eigens für die Anwendung auf Waffen und Rüstungen entwickelt wurde. Der Bruchfaktor einer Waffe oder eines Schildes sinkt um ZfP* Punkte. Die TP einer Nahkampf-waffe steigen um ZfP*/3 Punkte, ebenso der RS einer verzau-berten Rüstung, die TP eines Geschosses oder einer Wurfwaffe um ZfP*/4. Leider verkehren sich diese Boni auch hier nach Ablauf der Wirkungsdauer in ihr Gegenteil. Während der Wirkungsdauer  können  die  so  verzauberten  Waffen  auch  Dämonen  und  andere  magische  Wesen  verletzen.  Diese  TP-Steigerungen  sind  nicht kumulativ zu Steigerungen aus hervorragender Schmiede arbeit (WdS181ff.)."
       },
       {
         "name": "Struktur  wahren",
-        "mod": "+7 ab ZfW 11",
+        "mod": "+7",
+        "minZfW": 11,
         "effect": "Der  Zauber  wird  so  modifiziert,  dass  er  seine  Kraft  nicht  aus  der  Struktur  des  Materials  zieht  und  der  Gegenstand  nach  Ablauf der Wirkungsdauer keine negativen Nachwirkungen erleidet.  Die  Kosten  betragen  7  AsP  plus  4  AsP  pro  ange-fangenem Stein Gewicht."
       },
       {
         "name": "Permanenz",
-        "mod": "+7 ab ZfW 11 nur in der kristallomantischen Repräsentation",
+        "mod": "+7 nur in der kristallomantischen Repräsentation",
+        "minZfW": 11,
         "effect": "Der Gegenstand wird permanent gefestigt. Dies erfordert den Aufwand von 1 permanenten AsP pro angefange-nem Stein Gewicht (bei der Variante Adamantenquader pro 5 etc. Stein)."
       }
     ],
