@@ -28,9 +28,9 @@ class Hero extends Component {
       ,
       ,
       ,
-      spellList,
+      ,
       fight,
-      objects,
+      ,
       ,
       comments,
       equipment,
@@ -88,7 +88,7 @@ class Hero extends Component {
       case 'Kampf': {
         return (
           <Fragment>
-            <Objects objects={objects} className="col-md-4" />
+            <Objects objects={hero.converted.objects} className="col-md-4" />
             <Equipment equipment={equipment} className="col-md-4" />
             <Purse purse={purse} className="col-md-4" />
           </Fragment>

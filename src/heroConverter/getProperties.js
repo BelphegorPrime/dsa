@@ -66,6 +66,21 @@ export default properties => {
       case 'fk':
         name = 'remoteCombatBaseValue';
         break;
+      case 'Gefahrenwert':
+        name = 'risk';
+        break;
+      case 'Loyalität':
+        name = 'loyalty';
+        break;
+      case 'Geschwindigkeit':
+        name = 'speed';
+        break;
+      case 'Magieresistenz 2':
+        name = 'magicResistance2';
+        break;
+      case 'Rüstungsschutz':
+        name = 'armor';
+        break;
       default:
         name = pp.attributes.name;
     }
