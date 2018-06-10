@@ -14,7 +14,8 @@
     "complexity": "C",
     "page": 11,
     "characteristics": ["Objekt"],
-    "modifications": [
+    "modifications": ["Zauberdauer", "Reichweite"],
+    "variants": [
       {
         "name": "Schutz vor Übelkeit",
         "mod": "+5",
@@ -53,7 +54,8 @@
     "complexity": "C",
     "page": 12,
     "characteristics": ["Objekt"],
-    "modifications": [
+    "modifications": ["Zauberdauer", "Kosten"],
+    "variants": [
       {
         "name": "Nadel des Wanderers",
         "mod": "+3",
@@ -106,7 +108,8 @@
     "complexity": "C",
     "page": 13,
     "characteristics": ["Objekt", "Elementar (Erz)"],
-    "modifications": [
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "variants": [
       {
         "name": "Adamantenquader",
         "mod": "+5",
@@ -142,6 +145,39 @@
       { "representation": "Achaz", "distribution": 6},
       { "representation": "Magier", "distribution": 5},
       { "representation": "Druide", "distribution": 2}
+    ]
+  },
+  {
+    "name": "Adlerauge Luchsenohr",
+    "trial": "KL/IN/FF",
+    "technik": "Die Elfe legt die Hände an die Schlä-fen und konzentriert sich auf die Melodie des a’daobiunda visya’eor.",
+    "castTime": "5 Aktionen",
+    "effect": "Das gesamte Wahrnehmungsvermögen der Zaubernden (alle fünf Sinne) wird so stark verbessert, dass alle Proben auf das Talent Sinnenschärfe um ZfP* Punkte erleichtert werden. Sie ist in der Lage, haarfeine Ornamente zu ertasten, hört das Rascheln von Tieren im Dutzende Schritt entfernten Gebüsch, riecht den schleichenden Oger auf hundert Schritt Entfernung und kann selbst in einer Meile Entfernung noch das Gesicht eines Reiters erkennen – wenn die entsprechende Sinnenschärfe-Probe gelingt. Dadurch können auch Dinge und Ereignisse  wahrgenommen  werden,  die  durch  gewöhnliche  Sinne  (und seien diese noch so gut) unbemerkt geblieben wären. Der Zauber ermöglicht keine Dämmerungssicht oder gar Nacht-sicht, schärft also nur den tatsächlich existenten Wahrnehmungsbe-reich. Solcherart geschärfte Sinne haben übrigens nicht nur Vorteile: Plötzlicher Lärm, gleißendes Licht oder übler Geruch können für die Anwenderin so erschreckend sein, dass sie für W20 Sekunden desori-entiert ist, wenn ihr keine Selbstbeherrschungs-Probe gelingt.Mit dem ADLERAUGE können auch die von verwandten Zaubern wie  z.  B.  dem  hexischen  KATZENAUGEN  (Nachtsicht)  und  dem  WARMES BLUT (Wärmesicht) der Achaz zur Verfügung gestellten Sinne verstärkt werden (eventuell den Abzug wegen Aufrechterhalten beachten).",
+    "cost": "4 AsP",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "1 Spielrunde (A)",
+    "reversalis": "Die Sinne der Verzauberten werden ab gestumpft, dadurch verliert sie ZfP* Punkte Sinnenschärfe.",
+    "antimagic": "HELLSICHT  TRÜBEN  und  EIGENSCHAFT  WIEDERHERSTELLEN  heben  die  Wirkung  des  Spruches  auf;  er  kann  in  den  entsprechenden  Zonen  nur  erschwert  gewirkt  werden.",
+    "complexity": "B",
+    "page": 13,
+    "characteristics": ["Hellsicht", "Eigenschaften"],
+    "modifications": ["Zauberdauer", "Reichweite", "Wirkungsdauer"],
+    "variants": [
+      {
+        "name": "Einzelsinn schärfen",
+        "mod": "+4",
+        "minZfW": 0,
+        "effect": "Der Zauber betrifft nur einen  einzigen  Sinn,  den  dafür  umso  stärker.  Alle  Sinnenschärfe-Proben, die diesen Sinn betreffen, sind um die doppelten ZfP* erleichtert."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 7},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Geode", "distribution": 3},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Magier", "distribution": 3}
     ]
   }
 ]
