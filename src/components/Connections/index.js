@@ -3,15 +3,16 @@ import proptypes from 'prop-types';
 
 class Connections extends Component {
   render() {
-    const { oldConnections, className } = this.props;
+    const { connections, className } = this.props;
     return (
       <div className={className}>
-        {oldConnections.children.map(connection => {
-          const { beschreibung, name, so } = connection.attributes;
+        <span className="font-weight-bold">Verbindungen:</span>
+        {connections.map(connection => {
+          const { description, name, socialStatus } = connection;
           return (
             <div key={name} className="col-md-12 pt-2">
               <span>
-                {name || null} {beschreibung || null} {so || null}
+                {name || null} {description || null} {socialStatus || null}
               </span>
             </div>
           );
@@ -22,7 +23,7 @@ class Connections extends Component {
 }
 
 Connections.propTypes = {
-  oldConnections: proptypes.object,
+  connections: proptypes.array,
   className: proptypes.string
 };
 

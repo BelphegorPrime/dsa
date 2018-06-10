@@ -3,39 +3,23 @@ import proptypes from 'prop-types';
 
 class SpecialAbilities extends Component {
   render() {
-    const { className } = this.props;
-    let { oldSpecialAbilities } = this.props;
-    const cheapenedAbilities = oldSpecialAbilities.children.filter(
-      sa => sa.name === 'verbilligtesonderfertigkeit'
-    );
-    oldSpecialAbilities = oldSpecialAbilities.children.filter(
-      sa => sa.name !== 'verbilligtesonderfertigkeit'
-    );
+    const { specialAbilities, className } = this.props;
     return (
       <div className={className}>
-        {oldSpecialAbilities.map(specialAbility => {
-          const { name } = specialAbility.attributes;
+        <span className="font-weight-bold">Sonderfertigkeiten:</span>
+        {specialAbilities.specialAbilities.map(specialAbility => {
+          const { name } = specialAbility;
           if (name === 'Kulturkunde' || name === 'Rüstungsgewöhnung I') {
             return (
               <div key={name} className="col-md-12 pt-2">
-                <span>
-                  {`${name} ${specialAbility.children
-                    .map(sa => sa.attributes.name)
-                    .join(', ')}`}
-                </span>
+                <span>{`${name} ${specialAbility.values.join(', ')}`}</span>
               </div>
             );
           }
           if (name.indexOf('Wahrer Name: ') > -1) {
             return (
               <div key={name} className="col-md-12 pt-2">
-                <span>
-                  {`${name} ${specialAbility.children
-                    .map(sa =>
-                      sa.children.map(e => e.attributes.value).join(' ')
-                    )
-                    .join(', ')}`}
-                </span>
+                <span>{`${name} ${specialAbility.values.join(', ')}`}</span>
               </div>
             );
           }
@@ -45,11 +29,13 @@ class SpecialAbilities extends Component {
             </div>
           );
         })}
-        {cheapenedAbilities.map(cheapenedAbility => {
-          const { name } = cheapenedAbility.attributes;
+        <hr />
+        <span className="font-weight-bold">Verbilligt:</span>
+        {specialAbilities.cheapenedSpecialAbilities.map(cheapenedAbility => {
+          const { name } = cheapenedAbility;
           return (
             <div key={name} className="col-md-12 pt-2">
-              <span>Verbilligt: {name}</span>
+              <span>{name}</span>
             </div>
           );
         })}
@@ -59,7 +45,7 @@ class SpecialAbilities extends Component {
 }
 
 SpecialAbilities.propTypes = {
-  oldSpecialAbilities: proptypes.object,
+  specialAbilities: proptypes.object,
   className: proptypes.string
 };
 

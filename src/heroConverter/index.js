@@ -10,11 +10,13 @@ import getSpecialAbilities from './getSpecialAbilities';
 import getTalentList from './getTalentList';
 import getAdvantages from './getAdvantages';
 import getSpellList from './getSpellList';
+import getConnections from './getConnections';
 
 const index = hero => {
   const returnHero = {};
   returnHero.name = hero.children[0].attributes.name;
   const { children } = hero.children[0];
+  console.log(children)
   children.forEach(child => {
     if (child.children.length > 0) {
       switch (child.name) {
@@ -53,6 +55,9 @@ const index = hero => {
           break;
         case 'zauberliste':
           returnHero.spellList = getSpellList(child.children);
+          break;
+        case 'verbindungen':
+          returnHero.connections = getConnections(child.children);
           break;
         default:
           returnHero[child.name] = child.children;

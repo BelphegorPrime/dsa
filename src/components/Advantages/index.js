@@ -3,11 +3,12 @@ import proptypes from 'prop-types';
 
 class Advantages extends Component {
   render() {
-    const { oldAdvantages, className } = this.props;
+    const { advantages, className } = this.props;
     return (
       <div className={className}>
-        {oldAdvantages.children.map(advantage => {
-          const { name, value } = advantage.attributes;
+        <span className="font-weight-bold">Vorteile:</span>
+        {advantages.map(advantage => {
+          const { name, value } = advantage;
           return (
             <div key={name} className="col-md-12 pt-2">
               <span>
@@ -22,7 +23,7 @@ class Advantages extends Component {
 }
 
 Advantages.propTypes = {
-  oldAdvantages: proptypes.object,
+  advantages: proptypes.array,
   className: proptypes.string
 };
 

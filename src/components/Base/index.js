@@ -10,7 +10,7 @@ class Base extends Component {
       <div className={className}>
         <div className="col-md-12 pt-2">
           <span>
-            Geschlecht:{' '}
+            <span className="font-weight-bold">Geschlecht: </span>
             {base.gender === 'female' ? (
               <span>
                 weiblich <FontAwesomeIcon icon={faVenus} />
@@ -23,32 +23,34 @@ class Base extends Component {
           </span>
         </div>
         <div className="col-md-12 pt-2">
-          <span>Rasse: {base.race}</span>
+          <span className="font-weight-bold">Rasse: </span>
+          {base.race}
         </div>
         <div className="col-md-12 pt-2">
-          <span>Kultur: {base.culture}</span>
+          <span className="font-weight-bold">Kultur: </span>
+          {base.culture}
         </div>
         <div className="col-md-12 pt-2">
-          Profession: {base.profession.name}
+          <span className="font-weight-bold">Profession: </span>
+          {base.profession.name}
         </div>
         {base.notes.length > 0 ? (
           <div className="col-md-12 pt-2">
-            <span>
-              {`Notizen: `}
-              {base.notes.map(n => (
-                <Fragment key={n}>
-                  <span>{n}</span>
-                  <br />
-                </Fragment>
-              ))}
-            </span>
+            <span className="font-weight-bold">Notizen: </span>
+            {base.notes.map(n => (
+              <Fragment key={n}>
+                <span>{n}</span>
+                <br />
+              </Fragment>
+            ))}
           </div>
         ) : null}
+        <hr />
         <div className="col-md-12 pt-2">
-          <span>{base.exp} AP vergeben</span>
+          <span className="font-weight-bold">{base.exp} AP vergeben</span>
         </div>
         <div className="col-md-12 pt-2">
-          <span>{base.freeExp} AP unvergeben</span>
+          <span className="font-weight-bold">{base.freeExp} AP unvergeben</span>
         </div>
       </div>
     );

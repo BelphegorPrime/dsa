@@ -24,8 +24,8 @@ class Hero extends Component {
       ,
       ,
       ,
-      advantages,
-      specialAbilities,
+      ,
+      ,
       ,
       talentList,
       spellList,
@@ -34,7 +34,7 @@ class Hero extends Component {
       ,
       comments,
       equipment,
-      connections,
+      ,
       ,
       purse
     ] = hero.xml.children[0].children;
@@ -49,12 +49,18 @@ class Hero extends Component {
               properties={hero.converted.properties}
               className="col-md-3"
             />
-            <Advantages oldAdvantages={advantages} className="col-md-2" />
+            <Advantages
+              advantages={hero.converted.advantages}
+              className="col-md-2"
+            />
             <SpecialAbilities
-              oldSpecialAbilities={specialAbilities}
+              specialAbilities={hero.converted.specialAbilities}
               className="col-md-3"
             />
-            <Connections oldConnections={connections} className="col-md-2" />
+            <Connections
+              connections={hero.converted.connections}
+              className="col-md-2"
+            />
           </Fragment>
         );
       }
