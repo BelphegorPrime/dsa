@@ -4,7 +4,7 @@ export default comments =>
   comments.map(c => {
     const {
       key,
-      kommentar: comment,
+      kommentar,
       dauer: duration,
       kosten: cost,
       probe,
@@ -33,6 +33,6 @@ export default comments =>
     }
     return {
       name: key,
-      comment
+      comment: kommentar.replace(/&#10;/g, '')
     };
   });
