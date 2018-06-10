@@ -12,6 +12,7 @@
     "reversalis": "bewirkt das schlagartige Verfaulen und Verschimmeln von Lebensmitteln.",
     "antimagic": "kann in einer Zone des OBJEKT ENTZAUBERN nur erschwert gesprochen werden; lässt sich wegen der Wirkungsdauer augenblicklich nicht mittels Antimagie widerrufen.",
     "complexity": "C",
+    "page": 11,
     "characteristics": ["Objekt"],
     "modifications": [
       {
@@ -50,6 +51,7 @@
     "reversalis": "bewirkt eine Aufhebung eines bestehenden ACCURA-TUM oder verwandelt ein normales Kleidungsstück in unzusammen-hängende Stoffbahnen, Fetzen und Fäden.",
     "antimagic": "kann in einer Zone des OBJEKT ENTZAUBERN nur erschwert gewirkt und mit diesem Anti magie-Spruch beendet werden. (Gilt nicht für die Vari ante Haltbarkeit.)",
     "complexity": "C",
+    "page": 12,
     "characteristics": ["Objekt"],
     "modifications": [
       {
@@ -102,6 +104,7 @@
     "reversalis": "Erzeugt  an  Gegenständen  einen  Zerfallschaden  wie  beim EISENROST (Seite 77).",
     "antimagic": "OBJEKT  ENTZAUBERN  und  ERZBANN  wirken  in  ihren  verschiedenen  Varianten    gegen  den  ADAMANTIUM.  Die  erhöhten TP der Zauberstahl-Variante werden von Rüstungen oder einem ARMATRUTZ wie üblich gemindert. Die Entzauberung eines permanent gehärteten Gegenstandes kostet natürlich auch permanente AsP. ",
     "complexity": "C",
+    "page": 13,
     "characteristics": ["Objekt", "Elementar (Erz)"],
     "modifications": [
       {
