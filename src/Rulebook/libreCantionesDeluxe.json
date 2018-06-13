@@ -445,7 +445,7 @@
         "name": "Gegenzauber",
         "mod": "+MR des Patienten",
         "minZfW": 0,
-        "effect": " Obwohl dies ursprünglich bestimmt  nicht  in  der  Absicht  der    Töchter  Satuarias  lag,  hilft dieser  Zauber  auch  gegen  verschiedene,  von  finsterer  Zauberei  verursachte  Ängste:  Er verkürzt die Wirkung des HORRIPHOBUS, des SCHWARZEN SCHRECKENS, des BÖSEN BLICKS, des Fluchs Ängste mehren sowie anderer, ähnlich  wirkender  Furcht  erzeugender  Zauber  oder  Rituale. Dazu wird die Hälfte der ZfP* der Hexe von den ZfP* des Ängste verursachenden Zaubers abgezogen und dessen Wirkung entsprechend angepasst; fällt dadurch die Wirkungsdauer auf 0, ist der Furcht-Zauber sofort gebrochen. Diese Variante kostet 7 AsP."
+        "effect": "Obwohl dies ursprünglich bestimmt  nicht  in  der  Absicht  der Töchter  Satuarias  lag,  hilft dieser  Zauber  auch  gegen  verschiedene,  von  finsterer  Zauberei  verursachte  Ängste:  Er verkürzt die Wirkung des HORRIPHOBUS, des SCHWARZEN SCHRECKENS, des BÖSEN BLICKS, des Fluchs Ängste mehren sowie anderer, ähnlich  wirkender  Furcht  erzeugender  Zauber  oder  Rituale. Dazu wird die Hälfte der ZfP* der Hexe von den ZfP* des Ängste verursachenden Zaubers abgezogen und dessen Wirkung entsprechend angepasst; fällt dadurch die Wirkungsdauer auf 0, ist der Furcht-Zauber sofort gebrochen. Diese Variante kostet 7 AsP."
       },
       {
         "name": "Seele  beruhigen",
@@ -465,6 +465,59 @@
       { "representation": "Geode", "distribution": 5},
       { "representation": "Druide", "distribution": 4},
       { "representation": "Gildenmagier", "distribution": 4}
+    ]
+  },
+  {
+    "name": "Animatio Stummer Diener",
+    "trial": "KL/FF/GE",
+    "difficulty": "",
+    "technik": "Der  Magier  erfasst  den  Gegenstand  mit    beiden  Händen  und  vollführt  mit  ihm sieben Mal die  Bewegung, die in das Objekt übergehen  soll,  und  spricht  dabei    sieben  Mal  das  Zauberwort.",
+    "castTime": "28 Aktionen oder mehr",
+    "effect": "Der  auf  diese  Art  verzauberte  Gegenstand  (ein unbelebtes Objekt) wiederholt die ihm vorgeschriebene Bewegung,  sobald  er  vom  Magier  die  entsprechende  Auf-forderung  erhält  (Fingerschnippen,  kurzer  Befehl  o.ä.)  oder  ein bestimmter Effekt eintritt. Die wiederholte Bewegung ist unabhängig vom Ort, an dem sie beginnt. Soll der Zauber durch einen anderen Effekt als den Befehl des Ma-giers ausgelöst werden, ist die Zauberprobe um 3 Punkte erschwert. Dieser auslösende Effekt darf aber nur einfachster Natur sein (z.B. das Öffnen einer Tür). Soll der Zauber von einer anderen Person als dem Magier ausgelöst werden, ist die Zauberprobe um 3 Punkte pro zusätzlicher Person erschwert. Soll der Zauber von einem physischen Effekt ausgelöst  werden, ist die Probe um 5 Punkte erschwert, magi-sche  Effekte als Auslöser erschweren die Probe um 7 Punkte.Die eigentliche Bewegung muss vom Magier mit dem Gegenstand in weniger als ZfW x 10 Aktionen auszuführen sein. Der Gegenstand selbst darf dabei auch ‘unmögliche’ Bewegungen wie Schweben nach-vollziehen. Die gewünschte Bewegung darf auch komplexerer Natur sein  (z.B.  Heranschweben,  Drehen,  Aufschließen  und  Aufklappen  einer Kassette mit Spezereien). Wie  schwer  der  Gegenstand  sein  kann,  hängt  im    Übrigen  von  der  Körperkraft des Magiers ab, der die  Bewe gung ja sieben Mal aus-führen muss; die Verwendung von Elixieren zur Kraftsteigerung ist ausdrücklich erlaubt.Bekannte Beispiele für diesen Zauber sind apportierende Tabletts, sich  auf  Kommando  öffnende  Türen,  herbeieilende  Mäntel  und  dergleichen mehr. Rohal selbst soll ein großer Freund dieses Zaubers gewesen sein, den er in Gesprächen als eine der klassischen Arten der Herr-schaft des Geistes über die Materie bezeichnete.Mit  ANIMATIO  verzauberte  Gegenstände  gelten  nicht  als  magisch in dem Sinne, dass sie z.B. von der Wirkung eines DESINTEGRATUS ausgenommen wären oder dämonen-verletzende Eigenschaften tragen.",
+    "cost": "12 AsP für Gegenstände bis zu 1 Stein Gewicht, 18 AsP für Objekte bis 5 Stein, 24 AsP für Gegenstände bis zu 10 Stein, 30 AsP für Objektebis  50  Stein  und  mindestens  36  AsP  für  schwerere Objekte.",
+    "target": "Einzelobjekt",
+    "distance": "Berührung; die Wirkung des Zaubers ist durch die Ausführung der Zauberhandlung beschränkt.  Nach  Abschluss  der  Zauberdauer  kann  sich der  Magier beliebig weit vom verzauberten Objekt entfernen.",
+    "duration": "ZfP* Monate, längstens jedoch bis zur nächsten Sommersonnenwende",
+    "modifications": ["Kosten"],
+    "reversalis": "hebt einen bestehenden ANIMATIO auf.",
+    "antimagic": "kann  in  einer  BEWEGUNG  STÖREN-Zone  nur  erschwert gewirkt und von diesem Zauber beendet  werden.",
+    "complexity": "E",
+    "page": 24,
+    "characteristics": ["Telekinese"],
+    "variants": [
+      {
+        "name": "Tagelöhner",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Der  Zauber  wirkt  nur  ZfP*  Stunden  lang (maximal bis zum nächsten Sonnenaufgang), dafür kostet er auch nur ein Drittel der o.a. AsP."
+      },
+      {
+        "name": "Knechtschaft",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Der Zauber wirkt ZfP* Jahre, kostet jedoch je 3 AsP mehr."
+      },
+      {
+        "name": "Mehrere  Objekte",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Der  Magier  kann  so  viele  Objekte  gleichzeitig  mit  dem  ANIMATIO  belegen,  wie  er  tragen  kann.  Notfalls ist eine FF-Probe erforderlich."
+      },
+      {
+        "name": "Ad Infinitum, ad Nauseam",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Hiermit kann der Gegenstand für die Wirkungsdauer dazu gebracht werden, auf ein Kommando des Zauberers (Fingerschnippen, Schlüsselwort) stets die gleiche Bewegung zu wiederholen, nämlich jene, die der Zauberer dem Gegenstand vorge-macht hat. Der Magier selbst kann den Zauber jederzeit unterbrechen und  wieder  einsetzen  lassen,  um  zwischendrin  eine  eigenhändige  Manipulation durchzuführen."
+      },
+      {
+        "name": "Geworfenes Objekt",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Die Bewegung des Objekts kann ein Wurf sein, solange es dem Magier gelingt, den Gegenstand binnen ZfP* x 10 Aktionen wiederzuerlangen und neu zu werfen. Zum Wiedererlangen ist z.B. ein MOTORICUS erlaubt."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3}
     ]
   }
 ]
