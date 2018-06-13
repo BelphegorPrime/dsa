@@ -416,5 +416,55 @@
       { "representation": "Geode (Mag)", "distribution": 2},
       { "representation": "Hexe (Mag)", "distribution": 2}
     ]
+  },
+  {
+    "name": "Ängste Lindern",
+    "trial": "MU/IN/CH",
+    "difficulty": "",
+    "technik": "Die Hexe tritt vor die Person, der sie    helfen  möchte,  sieht  ihr  in  die  Augen  und  legt ihr beide  Hände auf die Schultern.",
+    "castTime": "20 Aktionen",
+    "effect": "Das Selbstvertrauen des Gefährten wird auf  magische  Weise  gestärkt.  Der  Zauber  wird  nach  einer  gelungenen  Probe  auf  eine  Schlechte  Eigenschaft,  die  mit  tief  verwurzelten  Ängsten  zu  tun  hat  (alles  mit  ‘Angst’ oder ‘Phobie’ im Namen, jedoch auch Aberglaube), oder  nach  einer  misslungenen  Mut-Probe  angewandt  und  gestattet es einem Helden, die Probe zu wiederholen. Für diese Wiederholungsprobe ist die entsprechende Schlechte Eigenschaft um  die  ZfP*  gesenkt  oder  der  MU-Wert  entsprechend  erhöht.  Wird  die  Angst  als  Aufschlag  auf  eine  Probe  gehandhabt  (z.B.  Klettern-Probe,  erschwert  um  Höhenangst),  muss  der  Zauber  vor  der  Probe  gewirkt  werden,  kann  dann  aber  den  Aufschlag  durch die Angst vollständig aufheben, wenn die Hexe ausreichend ZfP* übrig behält.",
+    "cost": "5 AsP",
+    "target": "Einzelperson freiwillig",
+    "distance": "Berührung",
+    "duration": "augenblicklich,  die  motivierende  Kraft  des  Zaubers  hält  so  lange  an,  wie  die  direkt  auf  den  Zauber  folgende  Aktion  dauert  (also  dem  obigen  Beispiel  folgend  für  den  nächsten  Kletterabschnitt, je nach Ausdauer der Kletternden).",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "bekannt als Ängste mehren:Alle vorhandenen Ängsteverdoppeln sich für die nächste Viertelstunde.",
+    "antimagic": "kann  in  einer  Zone  des  EINFLUSS  BANNEN  nur  erschwert gewirkt und von diesem Zauber aufgehoben werden.",
+    "complexity": "C",
+    "page": 23,
+    "characteristics": ["Einfluss"],
+    "variants": [
+      {
+        "name": "Vertrauten beruhigen",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der satuarischen Repräsentation gilt der  eigene  Vertraute  als  Einzelperson  –  in  diesem  Fall  wirkt  die  Grundvariante des Zaubers also auch auf Tiere."
+      },
+      {
+        "name": "Gegenzauber",
+        "mod": "+MR des Patienten",
+        "minZfW": 0,
+        "effect": " Obwohl dies ursprünglich bestimmt  nicht  in  der  Absicht  der    Töchter  Satuarias  lag,  hilft dieser  Zauber  auch  gegen  verschiedene,  von  finsterer  Zauberei  verursachte  Ängste:  Er verkürzt die Wirkung des HORRIPHOBUS, des SCHWARZEN SCHRECKENS, des BÖSEN BLICKS, des Fluchs Ängste mehren sowie anderer, ähnlich  wirkender  Furcht  erzeugender  Zauber  oder  Rituale. Dazu wird die Hälfte der ZfP* der Hexe von den ZfP* des Ängste verursachenden Zaubers abgezogen und dessen Wirkung entsprechend angepasst; fällt dadurch die Wirkungsdauer auf 0, ist der Furcht-Zauber sofort gebrochen. Diese Variante kostet 7 AsP."
+      },
+      {
+        "name": "Seele  beruhigen",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Wirkt  speziell  gegen  andere  Schlechte Eigenschaften: Jähzorn wird gesenkt, Goldgier wird gemindert und dergleichen."
+      },
+      {
+        "name": "Tiere besänftigen",
+        "mod": "+5 plus geistige MR des Tieres",
+        "minZfW": 0,
+        "effect": "Eventuelle Ängste von Tieren können hiermit eine Zeit lang unterdrückt werden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 7},
+      { "representation": "Geode", "distribution": 5},
+      { "representation": "Druide", "distribution": 4},
+      { "representation": "Gildenmagier", "distribution": 4}
+    ]
   }
 ]
