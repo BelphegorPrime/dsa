@@ -670,5 +670,124 @@
       { "representation": "Hexe", "distribution": 3},
       { "representation": "Druide", "distribution": 2}
     ]
+  },
+  {
+    "page": 29,
+    "name": "Atemnot",
+    "trial": "MU/KO/KK",
+    "difficulty": "+MR",
+    "technik": "Der Druide fixiert sein Opfer, atmet heftig  aus  und  schlägt  die  Hände  vor  der  Brust  zusammen.",
+    "castTime": "6 Aktionen",
+    "effect": "Eine unsichtbare Kraft scheint dem Opfer die Kehle zuzuschnüren. Es leidet unter Kurzatmigkeit und gelegentlichen  Schwindelanfällen  (es    erleidet  schlagartig  ZfP* Punkte Erschöpfung) und muss etwa einen Tag lang (das  heißt,  die  nächsten  ZfW  x  2  Stunden)  mit  der  Hälfte  seines derzeitigen  Ausdauerwertes auskommen (kann also nur bis zur halben AU regenerieren). Es kann nicht mehr so lange und auch nicht so schnell laufen, schwimmen etc. und ermüdet auch schneller bei kräfteraubenden Aktionen wie z.B. Kampf – es erleidet doppelt so hohe AuP-Verluste durch kräftezehrende Aktionen und doppelt so  schnell Erschöpfung (WdS 139). Der Druide hingegen kann sich die Hälfte der geraubten Ausdauer gutschreiben (also ein Viertel der Ausdauer seines Opfers), so er sie benötigt. Regeln zur Auswirkung niedriger Ausdauer finden Sie in WdS auf Seiten 83.",
+    "cost": "7 AsP",
+    "target": "Einzelperson",
+    "distance": "3 Schritt",
+    "duration": "ZfW x 2 Stunden",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "bewirkt  freies,  unbeschwertes  Atmen  und  doppelte  AU  beim  Verzauberten  (jedoch  nicht  über den Grundwert hinaus), dafür aber halbe AU beim Druiden.",
+    "antimagic": "kann in einer Zone des EIGENSCHAFT WIE-DERHERSTELLEN  nur  erschwert  gewirkt  und  von  diesem  Zauber aufgehoben werden.",
+    "complexity": "C",
+    "characteristics": ["Eigenschaften"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Druide", "distribution": 5},
+      { "representation": "Achaz", "distribution": 3}
+    ]
+  },
+  {
+    "page": 30,
+    "name": "Attributo",
+    "trial": "KL/CH/XX",
+    "difficulty": "",
+    "technik": "Der Magier berührt seinen Gefährten mit beiden Händen und spricht die Formel. Wo er ihn  berührt,  hängt  von  der  zu  steigernden  Eigenschaft ab: an beiden Oberarmen für Körperkraft, an den Schläfen für Klugheit, an den Augen für Intuition, an den Händen für Fingerfertigkeit usw. (LE, AU und AE werden durch die Grundwerte nicht neu berechnet; AT-, PA- und andere Basiswerte können aber abweichen.)",
+    "castTime": "30 Aktionen",
+    "effect": "Der Zauber hebt den in der Probe durch ‘Eigen-schaft’ bezeichneten Wert des Verzauberten für die Dauer einer Stunde um ZfP*/3 Punkte.",
+    "cost": "7 AsP (Sch: 5 AsP)",
+    "target": "Einzelperson, Einzelwesen, freiwillig",
+    "distance": "Berührung",
+    "duration": "1 Stunde",
+    "modifications": ["Zauberdauer", "Reichweite  (Selbst)", "Wirkungsdauer"],
+    "reversalis": "Die  entsprechende  Eigenschaft  des  Opfers  sinkt  um  den entsprechenden Betrag.",
+    "antimagic": "kann  in  einer  Zone  des  EIGENSCHAFT  WIE-DERHERSTELLEN nur erschwert gewirkt und kann mit diesem Antimagie-Spruch beendet werden.",
+    "complexity": "B",
+    "characteristics": ["Eigenschaften"],
+    "variants": [
+      {
+        "name": "Mut",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Wirkt auch auf Tiere beliebiger Art"
+      },
+      {
+        "name": "Klugheit",
+        "mod": "+3-7",
+        "minZfW": 0,
+        "effect": "Dieser Zauber kann auch auf Vertraute, Reit- und Haustiere angewandt werden, ja sogar auf Pflanzen (z.B. als Vorbereitung auf einen Verständigungszauber), ist jedoch um 3 bis 5 Punkte für Tiere und um 7 Punkte für Pflanzen erschwert. Natürlich spricht ein  solcherart  ‘erleuchtetes’  Wesen  keine  Menschensprache,  und  auch  die  Erinnerungen  aus  der  Zeit  vor  Einsetzen  des  Zaubers  sind entsprechend unintelligent. Als Ausgangswerte mögen hier dienen: KL 0: Gewürm, Schnecke, Pflanze; 1: Fisch, Eidechse; 2: Rindvieh, Schlange; 3: Pferd, Raubvogel; 4: Raubkatze, Hund; 5: Katze, Wolf, Schwein; 6: Affe, Eule, Rabe."
+      },
+      {
+        "name": "Intuition",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Bei  Lebewesen  ohne  höhere  Verstandesfunktionen  (Tiere)  wirkt  dieser  Zauber  als  Verbesserung  der  Wahrnehmung  und  der  Aufmerksamkeit  und  ist  um  3  Punkte erschwert"
+      },
+      {
+        "name": "Charisma",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Diese Variante wirkt ausschließlich auf kulturschaffende Wesen."
+      },
+      {
+        "name": "Fingerfertigkeit",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Kann  nur  auf  Lebewesen angewandt  werden,  die  über  eine  Greifhand  verfügen."
+      },
+      {
+        "name": "Gewandtheit",
+        "mod": "+3-7",
+        "minZfW": 0,
+        "effect": "Um  die  GE  eines  Vierbeiners  oder einer Schlange zu verbessern, ist die Probe um 3  Punkte  erschwert,  bei  Vögeln,  Sechsbeinern  oder  fliegenden  Vierbeinern  um  5  Punkte,  bei  Achtbeinern  oder fliegenden Sechsbeinern sogar um 7 Punkte."
+      },
+      {
+        "name": "Konstitution",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Soll die Konstitution eines Tieres verändert werden, das leichter oder schwerer als ein Mensch (ca. 75 Stein) ist, so müssen die Kosten entsprechend der Masse des Tieres angepasst werden: Um die KO eine Pferdes zu erhöhen, sind also mindestens 40 AsP aufzuwenden (etwa das sechsfache Gewicht eines Menschen). Bei kleinen Tieren gilt, dass die KO durch diesen Zauber maximal verdoppelt werden kann."
+      },
+      {
+        "name": "Körperkraft",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Soll die Konstitution eines Tieres verändert werden, das leichter oder schwerer als ein Mensch (ca. 75 Stein) ist, so müssen die Kosten entsprechend der Masse des Tieres angepasst werden: Um die KO eine Pferdes zu erhöhen, sind also mindestens 40 AsP aufzuwenden (etwa das sechsfache Gewicht eines Menschen). Bei kleinen Tieren gilt, dass die KO durch diesen Zauber maximal verdoppelt werden kann."
+      },
+      {
+        "name": "Schnellsteigerung",
+        "mod": "+3 nur in der gildenmagischen, elfischen,  satuarischen  und  druidischen  Repräsentationen",
+        "minZfW": 11,
+        "effect": "Von  dieser ‘kleinen’ oder ‘Basis-Mutanda’ existiert auch eine mächtigere Version, die dem Nutznießer des Zaubers für die Dauer von ZfW KR einen  Bonus  von  ZfP*  Punkten  auf  die  entsprechende  Eigenschaft  bringt, den Zauberer jedoch 11 AsP kostet. Diese Form des Zaubers hat zudem eine Zauberdauer von nur 5 Aktionen."
+      },
+      {
+        "name": "Übernatürliche Begabung",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Die ähnlich wirkende Übernatürliche Begabung der Magiedilettanten wirkt nur auf den Anwender selbst, steigert die Eigenschaft um ZfP* Punkte, wirkt für ZfP* KR und kostet ZfP* AsP."
+      },
+      {
+        "name": "scharlatanischen  Repräsentation",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Reichweite  selbst,  Zielobjekt Einzelperson, freiwillig."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 5},
+      { "representation": "Elfe", "distribution": 5},
+      { "representation": "Geode", "distribution": 5},
+      { "representation": "Hexe", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Schelm", "distribution": 3},
+      { "representation": "Scharlatan", "distribution": 3}
+    ]
   }
 ]
