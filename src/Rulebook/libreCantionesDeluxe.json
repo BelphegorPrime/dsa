@@ -519,5 +519,55 @@
     "distribution": [
       { "representation": "Gildenmagier", "distribution": 3}
     ]
+  },
+
+  {
+    "name": "Applicatus Zauberspeicher",
+    "trial": "KL/FF/FF",
+    "difficulty": "",
+    "technik": "Der Magier berührt das Objekt, Möbelstück oder Gebäudeteil, das er verzaubernwill,  und  spricht  das  Zauberwort.  Anschließend  zaubert er den Wirkenden Spruch.",
+    "castTime": "40 Aktionen",
+    "effect": "Mit dieser einfachsten aller Artefaktformeln kann ein einziger Zauberspruch in einem unbelebten Ob-jekt (ein Gegenstand, eine Türschwelle, ein Möbelstück o.ä.)fixiert und mit einem speziellen, jedoch einfachen Auslöser (z.  B.  Berührung,  Öffnen  einer  Tür)  versehen  werden.  Der  gespeicherte Spruch entlädt sich auf denjenigen, der die Falle ausgelöst hat (falls der Spruch ein einzelnes Opfer vorsieht), oder in der direkten Umgebung des verzauberten Objekts (bei Zaubern, die eine Zone zum Ziel haben). Zur genauen Wirkungsbestimmung sollten  ZfW  und  ZfP*  des  Wirkenden  Spruches  notiert  werden.  Nach Anbringen des APPLICATUS darf das Objekt nicht von seinem Platz bewegt werden, sonst wird der Zauber ausgelöst. Diese  Formel  erspart  also  eine  umständliche  Anwendung  des  AR-CANOVI (der einen Gegenstand mit magischem Muster durchwirkt, während der APPLICATUS den Zauber eher ‘anheftet’) und dient in erster Linie dazu, magische Fallen auszulegen.",
+    "cost": "2W6 AsP (+ Kosten des Wirkenden Spruches)",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "längstens  bis  zum  nächsten  Sonnenaufgang,  dann  bauen  sich  die  Muster  des  APPLICATUS  ab  und  der  fixierte  Zauberspruch wird automatisch ausgelöst.",
+    "modifications": ["Zauberdauer", "Kosten", "Wirkungsdauer"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Um einen mit APPLICATUS gespeicherten Zauber zu bannen, muss eine Probe auf DESTRUCTIBO oder OBJEKT ENTZAUBERN gelingen, die um so viele Punkte erschwert ist, wie  der  APP  LI CATUS  an  AsP  gekostet  hat.  Die  Entzauberung  eines APPLICATUS verbraucht beim DESTRUCTIBO halb so viele Punkte wie die AsP-Summe, die für den APPLICATUS und den wir-kenden Spruch aufgewandt wurden, beim OBJEKT ENTZAUBERN Astralenergie je nach ZfP* des APPLICATUS, in keinem der beiden Fälle  jedoch  permanente  AsP.  Beim  Misslingen  des  Gegenzaubers  fällt der Wirkende Spruch auf den Entzauberer zurück. Sowohl beim ‘Einspeisen’ als auch beim Auslösen des Spruches können antimagische Effekte gegen den gespeicherten Spruch wirken; der OBJEKT ENT-ZAUBERN und der METAMAGIE NEUTRALISIEREN wirken in ihren Zonenvarianten gegen das Sprechen des APPLICATUS.",
+    "complexity": "C",
+    "page": 25,
+    "characteristics": ["Objekt", "Metamagie"],
+    "variants": [
+      {
+        "name": "Tragbare Falle",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Der verzauberte Gegenstand kann mitgeführt werden."
+      },
+      {
+        "name": "Hauswächter",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Die  Wirkungsdauer  eines  mit  den  ent-sprechenden  Zeichen  zeitlich  ausgedehnten  Zaubers  beträgt  bis  zur nächsten Sonnenwende. Die Kosten für den APPLICATUS betragen 4W6 AsP; der Magier muss allerdings die Sonderfertigkeit Zauberzeichen besitzen."
+      },
+      {
+        "name": "Komplexer  Auslöser",
+        "mod": "+0",
+        "minZfW": 14,
+        "effect": "Der  Auslöser  des  APPLICATUS darf mit dieser Variante auch komplexerer Natur sein: Die Zauberprobe ist um ebenso viele Punkte er-schwert, wie der jeweilige Auslöser beim ARCANOVI an ZfP* erfordert (siehe das Kapitel Magische Artefakte in Wege der Zauberei auf den Seiten 46ff.). Hierfür ist das Anbringen einer entsprechenden Sigille auf dem Zielobjekt erforderlich, siehe SRD 65. Die SF Zauberzeichen ist dabei zwar nützlich, jedoch nicht Bedingung."
+      },
+      {
+        "name": "scharlatanischen Repräsentation",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Eigentlich ist dieser Spruch in der scharlatanischen Repräsentation nicht möglich; er muss daher  mit  ‘Zauberzeichen’  gestützt  werden.  Diese  Zauberzeichen für den APPLICATUS sind oft jedoch die  einzigen  echten  Arcanoglyphen,  die  Scharlatanen  bekannt sind; sie benötigen also für den Basis-APPLICATUS und die Varianten Tragbare Falle und komplexer Auslöser nicht die SF Zauberzeichen, sehr wohl aber für den Hauswächter."
+      }
+    ],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Scharlatan", "distribution": 3}
+    ]
   }
 ]
