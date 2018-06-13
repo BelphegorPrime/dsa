@@ -34,7 +34,7 @@
       { "representation": "Druide", "distribution": 6},
       { "representation": "Elf", "distribution": 6},
       { "representation": "Hexe", "distribution": 6},
-      { "representation": "Magier", "distribution": 6},
+      { "representation": "Gildenmagier", "distribution": 6},
       { "representation": "Geode", "distribution": 5},
       { "representation": "Achaz", "distribution": 4},
       { "representation": "Schelm", "distribution": 4}
@@ -91,7 +91,7 @@
     ],
     "distribution": [
       { "representation": "Hexe", "distribution": 2},
-      { "representation": "Magier", "distribution": 4},
+      { "representation": "Gildenmagier", "distribution": 4},
       { "representation": "Scharlatan", "distribution": 4}
     ]
   },
@@ -146,7 +146,7 @@
     ],
     "distribution": [
       { "representation": "Achaz", "distribution": 6},
-      { "representation": "Magier", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 5},
       { "representation": "Druide", "distribution": 2}
     ]
   },
@@ -181,7 +181,7 @@
       { "representation": "Druide", "distribution": 3},
       { "representation": "Geode", "distribution": 3},
       { "representation": "Hexe", "distribution": 3},
-      { "representation": "Magier", "distribution": 3}
+      { "representation": "Gildenmagier", "distribution": 3}
     ]
   },
   {
@@ -248,7 +248,7 @@
     "distribution": [
       { "representation": "Elf", "distribution": 6},
       { "representation": "Achaz", "distribution": 3},
-      { "representation": "Magier", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3},
       { "representation": "Druide", "distribution": 2},
       { "representation": "Hexe", "distribution": 2}
     ]
@@ -299,7 +299,7 @@
     "distribution": [
       { "representation": "Elf", "distribution": 7},
       { "representation": "Achaz", "distribution": 5},
-      { "representation": "Magier", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 5},
       { "representation": "Druide", "distribution": 5},
       { "representation": "Geode", "distribution": 4},
       { "representation": "Schelm", "distribution": 3},
@@ -326,7 +326,7 @@
     "variants": [],
     "distribution": [
       { "representation": "Achaz", "distribution": 2},
-      { "representation": "Magier", "distribution": 2}
+      { "representation": "Gildenmagier", "distribution": 2}
     ]
   },
   {
@@ -347,7 +347,7 @@
     "characteristics": ["Umwelt", "Elementar(Luft)"],
     "variants": [],
     "distribution": [
-      { "representation": "Magier", "distribution": 2}
+      { "representation": "Gildenmagier", "distribution": 2}
     ]
   },
   {
@@ -389,6 +389,32 @@
     ],
     "distribution": [
       { "representation": "Druide", "distribution": 3}
+    ]
+  },
+  {
+    "name": "Analys Arcanstruktur",
+    "trial": "KL/KL/IN",
+    "difficulty": "+Mod",
+    "technik": "Die  Magierin  fixiert  das  Ziel  ihres  Interesses und spricht die Formel.",
+    "castTime": "min. 1 Spielrunde",
+    "effect": "  Mit  diesem  Spruch  kann  eine  Magierin  die  magische  Wirkungsmatrix,  das  aller  Zauberei  inne-wohnende Gewebe aus den Fäden und Bahnen der Kraft, sehen,  das  ein  magisches  Artefakt,  magisches  Wesen  oder  einen wirkenden Zauber ausmacht. Keine bekannte magische Hellsichtformel kann göttliches oder karmales Wirken aufspüren oder klassifizieren.Je  besser  die  Probe  gelingt,  desto  mehr  Einzelheiten  sind  daraus  abzulesen, desto mehr feine Matrixfäden sind zu erkennen, desto eher ist eine geplante oder anhaltende Wirkung zu erkennen. Je nach-dem, wie viele ZfP* bei der Probe übrig bleiben, können  verschiedene Detailstufen erkannt werden.U1 ZfP*: Bestimmbar sind die Merkmale und die Repräsentation eines Zaubers, der auf einem Gegenstand oder einer Person liegt. (Ganz exakt kann die Magierin nur solche Sprüche oder Zauberwirkungen bestimmen, die sie selbst beherrscht oder deren Matrix sie schon häufiger analysiert hat.) Wird ein fragwürdiges Wesen analysiert, ist ferner bestimmbar, um welche Klasse von Wesenheit es sich handelt (Elementarwesen, Feenwesen, Geisterwesen, Chimäre, Untoter, Dämon).U4 ZfP*: Einzelheiten eines betrachteten Zaubermodus werden bekannt (z.B. “Dieser SALANDER wird noch drei Stunden vorhalten.”). Magische Wesen können näher klassifiziert werden (“Dieser Dämon ist ein Karun-ga.”), aber auch eventuell verkleidete Zauber wirker werden erkannt (“Das ist gar keine Scharlatanin, sondern eine echte Hexe.”).U7 ZfP*: Versteckte Zaubereien und Varianten von Sprüchen werden bestimmbar,  Fähigkeiten  eines  magischen  Wesens  können  ausgelotet  werden.  Eine  Signatur  zu  erkennen  (den  Erschaffer  eines  Zaubers  oder den Stil der Akademie) erfordert (neben der entsprechenden SF) mindestens 8 ZfP*.UDem stehen Erschwernisse auf die Probe entgegen, die aus verschie-denen Quellen herrühren können: Zauberwirkungen in fremder Reprä-sentation erschweren die Probe um mindestens 2 (Magier analysiert Druiden- oder Hexenzauber) bis zu 7 Punkte (Magier analysiert alte Skrsechim-Magie, hochelfische Zauberlieder, arachnide Genera-tionenflüche etc.). Willentlich verborgene Zauberei erschwert die Probe um die ZfP* des Tarnzaubers (HELLSICHT TRÜBEN, SCHLEIER etc.). Ein ANALYS auf die Reststrahlung eines nicht  mehr  vorhandenen  Zaubers  erschwert  die  Probe  um  mindestens 7 Punkte.UFür Elixiere, Tränke und Artefakte, die auf Zauberei beruhen, gelten besondere Regeln, die Sie kurzgefasst in den entsprechenden Kapiteln in WdZ (Seite 51f.), ausführlich in der Spielhilfe Stäbe, Rin-ge, Dschinnenlampen ab Seite 22 finden.UVor allem bei der Analyse magischer Artefakte –  für  die  dieser  Zauber  entwickelt  wurde  –  kann  es  durchaus Probenaufschläge jenseits der +10 geben, die der Zaubernde jedoch durch eine länger andauernde Analyse wieder wettmachen kann: Jeweils nach einer halben Stunde kann er eine neue Probe ablegen und die hier übrig behaltenen ZfP* zu den bereits ‘erwirtschafteten’ addieren. Um die Kon-zentration so lange aufrechtzuerhalten, muss jedoch nach jeder halben Stunde eine Selbstbeherrschungs-Probe abgelegt werden, jeweils erschwert um die Anzahl der bereits verstrichenen halben Stunden. Außerdem kostet eine Verlängerung der Wirkungsdauer 3 AsP pro angefangener halber Stunde (unabhängig vom Ausgang der Selbstbeherrschungs-Probe).UDie Hälfte der ZfP* eines vorbereitenden ODEM auf dasselbe Ziel können bei der ANALYS-Probe eingesetzt werden, um Erschwernisse zu vermindern.",
+    "cost": "6 AsP + 3 AsP für jede angefangene halbe Stunde, die die Analyse dauert.",
+    "target": "Einzelobjekt, Einzelwesen",
+    "distance": "1 Schritt",
+    "duration": "identisch  mit  Zauberdauer,  nach  AsP-Aufwand.  Während  der  Wirkungs-/Zauberdauer  kann  der  Magier  keine  anderen  Aktionen unternehmen.",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "HELLSICHT TRÜBEN und SCHLEIER DER UNWIS-SENHEIT erschweren die Analyse.",
+    "complexity": "D",
+    "page": 22,
+    "characteristics": ["Hellsicht", "Metamagie"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Druide (Mag)", "distribution": 2},
+      { "representation": "Geode (Mag)", "distribution": 2},
+      { "representation": "Hexe (Mag)", "distribution": 2}
     ]
   }
 ]
