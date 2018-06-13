@@ -520,7 +520,6 @@
       { "representation": "Gildenmagier", "distribution": 3}
     ]
   },
-
   {
     "name": "Applicatus Zauberspeicher",
     "trial": "KL/FF/FF",
@@ -569,5 +568,43 @@
       { "representation": "Gildenmagier", "distribution": 3},
       { "representation": "Scharlatan", "distribution": 3}
     ]
+  },
+  {
+    "name": "Arachnea Krabbeltier",
+    "trial": "MU/IN/CH",
+    "difficulty": "",
+    "technik": "Die Magierin legt die Fingerspitzen ihrer  gespreizten  rechten  Hand  vor  sich  auf  den  Boden und zieht sie langsam zusammen.",
+    "castTime": "40 Aktionen",
+    "effect": "Die Zaubernde erschafft um sich herum eine Zone, in der sich alle Insekten, Spinnen, Maden und wir-bellose Tiere, ja sogar Morfus, zu ihrem Mittelpunkt gezogen fühlen, und mit der ihnen eigenen Geschwindigkeit beginnen, sich auf diesen Mittelpunkt hin zu bewegen. Die Zaubernde ist gegen eventuelle Angriffe durch die herbeigerufenen Tiere nicht gefeit. Da dieser gildenmagische Versuch, satuarische Fluchmagie nachzuempfinden, sich leicht (und speziell in sumpfigem Gebiet) gegen  die  Magierin  wenden  kann,  wird  sie  sich  normalerweise  tunlichst bald aus dem Zentrum des von ihr ‘gesegneten’ Gebietes entfernen.  Ein  mit  einem  REVERSALIS  belegter  ARACHNEA  stellt allerdings einen äußerst effektiven Schutz vor Ungeziefer für das Nachtlager dar.",
+    "cost": "11 AsP (borbaradianische Variante: W20+3 AsP oder die Hälfte dieses Werts als LeP)",
+    "target": "Zone",
+    "distance": "ZfW x 50 Schritt Radius",
+    "duration": "ZfP* x 2 Stunden (borbaradianische Variante: AsP-Kosten in Stunden)",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "erzeugt eine Schutzzone vor Spinnen, Insekten und anderen wirbellosen Tieren.",
+    "antimagic": "kann in einer Zone des HERBEIRUFUNG VEREITELN nur erschwert gesprochen und auch von diesem Antimagie-Spruch aufgehoben werden. Gegen die borbaradianische Variante wirkt auch der MISHKHARABANN.",
+    "complexity": "D",
+    "page": 26,
+    "characteristics": ["Herbeirufung", "Dämonisch (Mishkhara)(borbaradianisch)"],
+    "variants": [
+      {
+        "name": "Dauerfliegenfalle",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Der Zauber hält ZfP* Tage lang an und kostet 21 AsP (borbaradianische Repräsentation: 2W20 AsP oder die Hälfte davon als LeP)."
+      },
+      {
+        "name": "Schmetterlingssammler",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Für  den  Einsatz von 7 ZfP kann der Magier speziell eine (ihm bekannte, notfalls Tierkunde-Probe) Tierart herbeirufen oder diese von dem Ruf ausnehmen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 2},
+      { "representation": "Hexe", "distribution": 1},
+      { "representation": "Borbaradianer", "distribution": 3}
+    ]
   }
+
 ]
