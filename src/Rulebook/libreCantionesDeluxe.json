@@ -1,5 +1,6 @@
 [
   {
+    "page": 11,
     "name": "Abvenum Reine Speise",
     "trial": "KL/KL/FF",
     "difficulty": "",
@@ -14,7 +15,6 @@
     "reversalis": "bewirkt das schlagartige Verfaulen und Verschimmeln von Lebensmitteln.",
     "antimagic": "kann in einer Zone des OBJEKT ENTZAUBERN nur erschwert gesprochen werden; lässt sich wegen der Wirkungsdauer augenblicklich nicht mittels Antimagie widerrufen.",
     "complexity": "C",
-    "page": 11,
     "characteristics": ["Objekt"],
     "variants": [
       {
@@ -41,6 +41,7 @@
     ]
   },
   {
+    "page": 12,
     "name": "Accuratum Zaubernadel",
     "trial": "KL/CH/FF",
     "difficulty": "",
@@ -55,7 +56,6 @@
     "reversalis": "bewirkt eine Aufhebung eines bestehenden ACCURA-TUM oder verwandelt ein normales Kleidungsstück in unzusammen-hängende Stoffbahnen, Fetzen und Fäden.",
     "antimagic": "kann in einer Zone des OBJEKT ENTZAUBERN nur erschwert gewirkt und mit diesem Anti magie-Spruch beendet werden. (Gilt nicht für die Vari ante Haltbarkeit.)",
     "complexity": "C",
-    "page": 12,
     "characteristics": ["Objekt"],
     "variants": [
       {
@@ -96,6 +96,7 @@
     ]
   },
   {
+    "page": 13,
     "name": "Adamantium Erzstruktur",
     "trial": "KL/FF/KO",
     "difficulty": "",
@@ -110,7 +111,6 @@
     "reversalis": "Erzeugt  an  Gegenständen  einen  Zerfallschaden  wie  beim EISENROST (Seite 77).",
     "antimagic": "OBJEKT  ENTZAUBERN  und  ERZBANN  wirken  in  ihren  verschiedenen  Varianten    gegen  den  ADAMANTIUM.  Die  erhöhten TP der Zauberstahl-Variante werden von Rüstungen oder einem ARMATRUTZ wie üblich gemindert. Die Entzauberung eines permanent gehärteten Gegenstandes kostet natürlich auch permanente AsP. ",
     "complexity": "C",
-    "page": 13,
     "characteristics": ["Objekt", "Elementar (Erz)"],
     "variants": [
       {
@@ -151,6 +151,7 @@
     ]
   },
   {
+    "page": 15,
     "name": "Adlerauge Luchsenohr",
     "trial": "KL/IN/FF",
     "difficulty": "",
@@ -165,7 +166,6 @@
     "reversalis": "Die Sinne der Verzauberten werden ab gestumpft, dadurch verliert sie ZfP* Punkte Sinnenschärfe.",
     "antimagic": "HELLSICHT  TRÜBEN  und  EIGENSCHAFT  WIEDERHERSTELLEN  heben  die  Wirkung  des  Spruches  auf;  er  kann  in  den  entsprechenden  Zonen  nur  erschwert  gewirkt  werden.",
     "complexity": "B",
-    "page": 15,
     "characteristics": ["Hellsicht", "Eigenschaften"],
     "variants": [
       {
@@ -185,6 +185,7 @@
     ]
   },
   {
+    "page": 16,
     "name": "Adlerschwinge Wolfsgestalt",
     "trial": "MU/IN/GE",
     "difficulty": "",
@@ -199,7 +200,6 @@
     "reversalis": "verwandelt eine Tierform zurück in einen Elfen.",
     "antimagic": "kann  in  einer  Zone  des  VERWANDLUNG  BEENDEN nur erschwert gewirkt werden und kann mit diesemAntimagie-Spruch beendet werden.",
     "complexity": "D",
-    "page": 16,
     "characteristics": ["Form"],
     "variants": [
       {
@@ -254,6 +254,7 @@
     ]
   },
   {
+    "page": 18,
     "name": "Aeolitus Windgebraus",
     "trial": "KL/CH/KO",
     "difficulty": "",
@@ -268,7 +269,6 @@
     "reversalis": "Statt  eines  Windstoßes  erzeugt  der  Zauber  einen Sog zum Elfen hin – es soll jedoch hin und wieder vor-kommen, dass der Elf anschließend allerlei Staub und Kleintiere im Mund hat.",
     "antimagic": "kann nur erschwert in einer Zone des VERÄNDE-RUNG AUFHEBEN gewirkt und von diesem Zauber verhindert werden.",
     "complexity": "B",
-    "page": 18,
     "characteristics": ["Umwelt", "Elementar(Luft)"],
     "variants": [
       {
@@ -307,6 +307,7 @@
     ]
   },
   {
+    "page": 19,
     "name": "Aerofugo Vakuum",
     "trial": "MU/KO/KK",
     "difficulty": "",
@@ -321,7 +322,6 @@
     "reversalis": "bewirkt einen AEROGELO",
     "antimagic": "kann in einer Zone des VERÄNDERUNG AUFHEBEN  nur  erschwert  gewirkt  und  von  diesemZauber  beendet  werden.  Ein  ZORN  DER  LUFT  kann  (wenn  mehr  TP  erzielt  werden,  als  der  AEROFUGO  an  ZfP* besitzt) ein ‘Leck’ in die Vakuumbegrenzung schlagen, so dass Luft langsam wieder einströmt.",
     "complexity": "D",
-    "page": 19,
     "characteristics": ["Umwelt", "Elementar(Luft)"],
     "variants": [],
     "distribution": [
@@ -330,6 +330,7 @@
     ]
   },
   {
+    "page": 20,
     "name": "Aerogelo Atemqual",
     "trial": "MU/IN/KO",
     "technik": "Der  Magier  bläst  Luft  in  seine  zu  einer  Schale  geschlossenen  Handflächen.  Dabei  konzentriert  er  sich  auf  die  Formel,  die  er  im  An-schluss ausspricht.",
@@ -343,7 +344,6 @@
     "reversalis": "bewirkt den AEROFUGO",
     "antimagic": "kann  in  einer  Zone  des  VERÄNDERUNG  AUFHEBEN oder des LUFTBANN nur erschwert gewirkt und von diesen Zaubern beendet werden. Ein ZORN DER LUFT kann (wenn mehr TP erzielt werden, als der AEROGELO an ZfP* besitzt) ein Leck in die Zonenbegrenzung schlagen, so dass sich die verdichtete Luft langsam verteilt.",
     "complexity": "D",
-    "page": 20,
     "characteristics": ["Umwelt", "Elementar(Luft)"],
     "variants": [],
     "distribution": [
@@ -351,6 +351,7 @@
     ]
   },
   {
+    "page": 21,
     "name": "Alpgestalt",
     "trial": "MU/CH/GE",
     "difficulty": "+MR",
@@ -365,7 +366,6 @@
     "reversalis": "Der Zaubernde erscheint dem Opfer als verlockendste Gestalt, die er sich je erträumt hat, und lässtes vor Entzücken erstarren. Nach Ende der Wirkungsdauer muss eine IN-Probe+ZfP* gelingen, sonst fällt das Opfer für ZfP* x 5 KR in einen rauschhaften Tagtraum.",
     "antimagic": "EINFLUSS BANNEN und BEHERRSCHUNG BRECHEN  können  den  Zauber  gleicher  maßen  aufheben;  in  den entsprechenden antimagischen Zonen kann der Zauber nur erschwert  gewirkt  werden.  Aus  der  Ohnmacht  kann  das  Opfer  jedoch  mit  konventionellen  Mitteln  geweckt  werden.  ÄNGSTE  LINDERN  kann  die  Wirkung  dieses  Zaubers  aufheben  oder  zumindest abschwächen.",
     "complexity": "C",
-    "page": 21,
     "characteristics": ["Einfluss", "Herrschaft"],
     "variants": [
       {
@@ -392,6 +392,7 @@
     ]
   },
   {
+    "page": 22,
     "name": "Analys Arcanstruktur",
     "trial": "KL/KL/IN",
     "difficulty": "+Mod",
@@ -406,7 +407,6 @@
     "reversalis": "keine Wirkung",
     "antimagic": "HELLSICHT TRÜBEN und SCHLEIER DER UNWIS-SENHEIT erschweren die Analyse.",
     "complexity": "D",
-    "page": 22,
     "characteristics": ["Hellsicht", "Metamagie"],
     "variants": [],
     "distribution": [
@@ -418,6 +418,7 @@
     ]
   },
   {
+    "page": 23,
     "name": "Ängste Lindern",
     "trial": "MU/IN/CH",
     "difficulty": "",
@@ -432,7 +433,6 @@
     "reversalis": "bekannt als Ängste mehren:Alle vorhandenen Ängsteverdoppeln sich für die nächste Viertelstunde.",
     "antimagic": "kann  in  einer  Zone  des  EINFLUSS  BANNEN  nur  erschwert gewirkt und von diesem Zauber aufgehoben werden.",
     "complexity": "C",
-    "page": 23,
     "characteristics": ["Einfluss"],
     "variants": [
       {
@@ -468,6 +468,7 @@
     ]
   },
   {
+    "page": 24,
     "name": "Animatio Stummer Diener",
     "trial": "KL/FF/GE",
     "difficulty": "",
@@ -482,7 +483,6 @@
     "reversalis": "hebt einen bestehenden ANIMATIO auf.",
     "antimagic": "kann  in  einer  BEWEGUNG  STÖREN-Zone  nur  erschwert gewirkt und von diesem Zauber beendet  werden.",
     "complexity": "E",
-    "page": 24,
     "characteristics": ["Telekinese"],
     "variants": [
       {
@@ -521,6 +521,7 @@
     ]
   },
   {
+    "page": 25,
     "name": "Applicatus Zauberspeicher",
     "trial": "KL/FF/FF",
     "difficulty": "",
@@ -535,7 +536,6 @@
     "reversalis": "keine Wirkung",
     "antimagic": "Um einen mit APPLICATUS gespeicherten Zauber zu bannen, muss eine Probe auf DESTRUCTIBO oder OBJEKT ENTZAUBERN gelingen, die um so viele Punkte erschwert ist, wie  der  APP  LI CATUS  an  AsP  gekostet  hat.  Die  Entzauberung  eines APPLICATUS verbraucht beim DESTRUCTIBO halb so viele Punkte wie die AsP-Summe, die für den APPLICATUS und den wir-kenden Spruch aufgewandt wurden, beim OBJEKT ENTZAUBERN Astralenergie je nach ZfP* des APPLICATUS, in keinem der beiden Fälle  jedoch  permanente  AsP.  Beim  Misslingen  des  Gegenzaubers  fällt der Wirkende Spruch auf den Entzauberer zurück. Sowohl beim ‘Einspeisen’ als auch beim Auslösen des Spruches können antimagische Effekte gegen den gespeicherten Spruch wirken; der OBJEKT ENT-ZAUBERN und der METAMAGIE NEUTRALISIEREN wirken in ihren Zonenvarianten gegen das Sprechen des APPLICATUS.",
     "complexity": "C",
-    "page": 25,
     "characteristics": ["Objekt", "Metamagie"],
     "variants": [
       {
@@ -570,6 +570,7 @@
     ]
   },
   {
+    "page": 26,
     "name": "Arachnea Krabbeltier",
     "trial": "MU/IN/CH",
     "difficulty": "",
@@ -584,7 +585,6 @@
     "reversalis": "erzeugt eine Schutzzone vor Spinnen, Insekten und anderen wirbellosen Tieren.",
     "antimagic": "kann in einer Zone des HERBEIRUFUNG VEREITELN nur erschwert gesprochen und auch von diesem Antimagie-Spruch aufgehoben werden. Gegen die borbaradianische Variante wirkt auch der MISHKHARABANN.",
     "complexity": "D",
-    "page": 26,
     "characteristics": ["Herbeirufung", "Dämonisch (Mishkhara)(borbaradianisch)"],
     "variants": [
       {
@@ -604,6 +604,33 @@
       { "representation": "Gildenmagier", "distribution": 2},
       { "representation": "Hexe", "distribution": 1},
       { "representation": "Borbaradianer", "distribution": 3}
+    ]
+  },
+  {
+    "page": 27,
+    "name": "Arcanovi Artefakt",
+    "trial": "KL/KL/FF",
+    "difficulty": "",
+    "technik": "Der Magier berührt den Gegenstand, in den er den Zauber fließen lassen will, und spricht die benötigten Formeln, beginnend und endend mit dem ARCANOVI.",
+    "castTime": "ein bis mehrere Stunden",
+    "effect": "Mit Hilfe dieser Formel kann der Zaubernde magische Artefakte erschaffen, indem er einen oder mehrere Zauber in einen Gegenstand seiner Wahl fließen lässt. Eine kurz gefasste Beschreibung der Wirkungsweise finden Sie im Kapitel Magische  Artefak  te  im  Band  Wege  der  Zauberei  (Seite 46ff.), eine  detail lierte Betrachtung des Herstellungsvor-gangs in der Spielhilfe Stäbe, Ringe, Dschinnenlampen.",
+    "cost": "10  AsP  (+  Kosten  der  Wirkenden  Sprüche).  Jedes  Artefakt erfordert zudem den Aufwand von permanenten AsP zur Schaffung einer dauerhaften Matrix.",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "variabel; je nach Art des Artefakts bleibt der ARCANOVI mindestens bis zur Auslösung der Wirkenden Sprüche intakt.",
+    "modifications": ["je nach Art des Artefakts"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Magische Artefakte müssen mit dem DESTRUCTIBO entzaubert werden, der OBJEKT ENTZAUBERN reicht hierfür nicht aus. Den  genauen Modus hierzu finden Sie im oben genannten Arte-fakt-Kapitel in Wege der Zauberei, nähere Einzelhei ten in der Spiel-hilfe Stäbe, Ringe, Dschinnenlampen. Sowohl beim ‘Einspeisen’ als auch beim  Auslösen des Spruches können antimagische Effekte gegen den gespeicherten Spruch wirken; der OBJEKT ENTZAUBERN und der METAMAGIE NEUTRALISIEREN wirken in ihren Zonenva-rianten gegen das Sprechen des ARCANOVI.",
+    "complexity": "E",
+    "characteristics": ["Metamagie", "Objekt"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Hexe", "distribution": 2},
+      { "representation": "Elf", "distribution": 1},
+      { "representation": "Druide", "distribution": 1}
     ]
   }
 
