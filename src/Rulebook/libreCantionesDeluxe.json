@@ -2,6 +2,7 @@
   {
     "name": "Abvenum Reine Speise",
     "trial": "KL/KL/FF",
+    "difficulty": "",
     "technik": "Der Elf spricht bha’sama venyabha’za yalza über die zu reinigende Nahrung.",
     "castTime": "mindestens 15 Aktionen",
     "effect": "Der Zauber reinigt Nahrungsmittel und Getränke von sämtlichen Giften und Krankheitskeimen; verdorbene Nahrung wird frisch und genießbar. Die Zauberprobe ist um die doppelte Stufe des Giftes oder der beim Verzehr zu befürchtenden Krankheit erschwert. Verdorbene Nahrung kann je nach Zustand einen Zuschlag von 2 bis 12 Punkten auf die Probe bedeuten.Dieser  Zauber  versetzt  Nahrung  in  einen  Zustand,  die  dem  Spruchanwender nicht gefährlich werden kann. Da es aber von dem Entwickler des Spruches abhängt, in welchem Zustand Nahrung als gefährlich angesehen werden muss und in welchem nicht, variiert die genaue Wirkung je nach Repräsentation recht erheblich. So wandelt die elfische Repräsentation selbst Wein in Traubensaft um, während die Achazform des Spruches manche für Menschen und Elfen giftige Mahlzeiten unverändert lässt.Gift, das sich nicht in Nahrung befindet, wird von dem Zauber nicht als solches erkannt, weswegen das Gift auf der Klinge eines Meuchlers oder in der Phiole  eines Alchimisten nicht verändert wird. Wenn allerdings zum Beispiel in einer Pilzpfanne giftige Pilze  enthalten sind, dann wirkt der Zauber sehr wohl.",
@@ -9,12 +10,12 @@
     "target": "Nahrungsmenge (mehrere Objekte) nach AsP-Aufwand",
     "distance": "1 Schritt",
     "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Reichweite"],
     "reversalis": "bewirkt das schlagartige Verfaulen und Verschimmeln von Lebensmitteln.",
     "antimagic": "kann in einer Zone des OBJEKT ENTZAUBERN nur erschwert gesprochen werden; lässt sich wegen der Wirkungsdauer augenblicklich nicht mittels Antimagie widerrufen.",
     "complexity": "C",
     "page": 11,
     "characteristics": ["Objekt"],
-    "modifications": ["Zauberdauer", "Reichweite"],
     "variants": [
       {
         "name": "Schutz vor Übelkeit",
@@ -42,6 +43,7 @@
   {
     "name": "Accuratum Zaubernadel",
     "trial": "KL/CH/FF",
+    "difficulty": "",
     "technik": "Die  Magierin  streicht  über  ihr  Gewand, konzentriert sich auf die Eigenschaften des  Stoffes  und  die  Möglichkeiten  der  Wandlungdesselben und murmelt dabei die Formel.",
     "castTime": "40 Aktionen",
     "effect": "Farbe und Schnitt (nicht jedoch die Art des Stoffs) eines Kleidungsstücks können sich mit dieser Formel nach Wunsch der Magierin ändern. Die Zaubernde muss eine recht genaue Vorstellung vom Endergebnis besitzen, genaue Kenntnisse des Schneiderhandwerks sind jedoch nicht erforderlich, aber nützlich: Die Hälfte der TaP* einer – gedanklich ausgeführ ten – Schneidern-Probe erleichtern die  Zauberprobe  um  den  entsprechenden  Betrag.  Bei  besonders  gewagten  Kreationen  kann  der  Meister  auf  die  Zauberprobe  Zuschläge bis zu +7 verlangen. Die ZfP* geben die künstlerisch-handwerkliche Qualität des Kleidungsstücks an, wobei Werte über 10 für meisterliche  Arbeit stehen.Das Erschaffen von Stoff aus dem Nichts ist mit diesem Spruch nicht möglich, aus einem kurzen Hemd kann also keine weite Robe werden. Gewisse Vorsicht ist auch in der Nähe eines schelmisch gesinnten Anti-magiers geboten, der den OBJEKT ENTZAUBERN beherrscht ...",
@@ -49,12 +51,12 @@
     "target": "Einzelobjekt",
     "distance": "Berührung",
     "duration": "bis zur nächsten  Wintersonnenwende",
+    "modifications": ["Zauberdauer", "Kosten"],
     "reversalis": "bewirkt eine Aufhebung eines bestehenden ACCURA-TUM oder verwandelt ein normales Kleidungsstück in unzusammen-hängende Stoffbahnen, Fetzen und Fäden.",
     "antimagic": "kann in einer Zone des OBJEKT ENTZAUBERN nur erschwert gewirkt und mit diesem Anti magie-Spruch beendet werden. (Gilt nicht für die Vari ante Haltbarkeit.)",
     "complexity": "C",
     "page": 12,
     "characteristics": ["Objekt"],
-    "modifications": ["Zauberdauer", "Kosten"],
     "variants": [
       {
         "name": "Nadel des Wanderers",
@@ -96,6 +98,7 @@
   {
     "name": "Adamantium Erzstruktur",
     "trial": "KL/FF/KO",
+    "difficulty": "",
     "technik": "Der Kristallomant fährt mit einem Smaragd  mehrmals  über  den  zu  verzaubernden  Gegenstand.",
     "castTime": "40 Aktionen",
     "effect": "Die Struktur des verzauberten Gegenstands wird gefestigt. Er wird hart wie ein Diamant und unbe-zwingbar  wie  ein  Amboss.  Er  ist  durch  gewöhnliche  Ge-walteinwirkung praktisch unzerstörbar (Strukturpunkte und Härte werden verdreifacht; eine Härte von 0 bleibt demzufolge 0). Schadenszauberei wie ein IGNIFAXIUS kann dem Objekt nur  Schaden  zufügen,  wenn  die  angerichteten  SP  mindestens  ein Drittel der Strukturpunkte betragen. Da diese Formel einen Teil ihrer Kraft aus der Essenz des Gegenstandes zieht, wird dieser jedoch nach Ablauf der Wirkungsdauer ungewöhnlich zerbrechlich (Strukturpunkte und Härte halbiert).",
@@ -103,12 +106,12 @@
     "target": "Einzelobjekt",
     "distance": "Berührung",
     "duration": "ZfP* Spielrunden, die negativen Nachwirkungen sind ab Ablauf der Wirkungsdauer augenblicklich.",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
     "reversalis": "Erzeugt  an  Gegenständen  einen  Zerfallschaden  wie  beim EISENROST (Seite 77).",
     "antimagic": "OBJEKT  ENTZAUBERN  und  ERZBANN  wirken  in  ihren  verschiedenen  Varianten    gegen  den  ADAMANTIUM.  Die  erhöhten TP der Zauberstahl-Variante werden von Rüstungen oder einem ARMATRUTZ wie üblich gemindert. Die Entzauberung eines permanent gehärteten Gegenstandes kostet natürlich auch permanente AsP. ",
     "complexity": "C",
     "page": 13,
     "characteristics": ["Objekt", "Elementar (Erz)"],
-    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
     "variants": [
       {
         "name": "Adamantenquader",
@@ -150,6 +153,7 @@
   {
     "name": "Adlerauge Luchsenohr",
     "trial": "KL/IN/FF",
+    "difficulty": "",
     "technik": "Die Elfe legt die Hände an die Schlä-fen und konzentriert sich auf die Melodie des a’daobiunda visya’eor.",
     "castTime": "5 Aktionen",
     "effect": "Das gesamte Wahrnehmungsvermögen der Zaubernden (alle fünf Sinne) wird so stark verbessert, dass alle Proben auf das Talent Sinnenschärfe um ZfP* Punkte erleichtert werden. Sie ist in der Lage, haarfeine Ornamente zu ertasten, hört das Rascheln von Tieren im Dutzende Schritt entfernten Gebüsch, riecht den schleichenden Oger auf hundert Schritt Entfernung und kann selbst in einer Meile Entfernung noch das Gesicht eines Reiters erkennen – wenn die entsprechende Sinnenschärfe-Probe gelingt. Dadurch können auch Dinge und Ereignisse  wahrgenommen  werden,  die  durch  gewöhnliche  Sinne  (und seien diese noch so gut) unbemerkt geblieben wären. Der Zauber ermöglicht keine Dämmerungssicht oder gar Nacht-sicht, schärft also nur den tatsächlich existenten Wahrnehmungsbe-reich. Solcherart geschärfte Sinne haben übrigens nicht nur Vorteile: Plötzlicher Lärm, gleißendes Licht oder übler Geruch können für die Anwenderin so erschreckend sein, dass sie für W20 Sekunden desori-entiert ist, wenn ihr keine Selbstbeherrschungs-Probe gelingt.Mit dem ADLERAUGE können auch die von verwandten Zaubern wie  z.  B.  dem  hexischen  KATZENAUGEN  (Nachtsicht)  und  dem  WARMES BLUT (Wärmesicht) der Achaz zur Verfügung gestellten Sinne verstärkt werden (eventuell den Abzug wegen Aufrechterhalten beachten).",
@@ -157,12 +161,12 @@
     "target": "Einzelperson, freiwillig",
     "distance": "selbst",
     "duration": "1 Spielrunde (A)",
+    "modifications": ["Zauberdauer", "Reichweite", "Wirkungsdauer"],
     "reversalis": "Die Sinne der Verzauberten werden ab gestumpft, dadurch verliert sie ZfP* Punkte Sinnenschärfe.",
     "antimagic": "HELLSICHT  TRÜBEN  und  EIGENSCHAFT  WIEDERHERSTELLEN  heben  die  Wirkung  des  Spruches  auf;  er  kann  in  den  entsprechenden  Zonen  nur  erschwert  gewirkt  werden.",
     "complexity": "B",
     "page": 15,
     "characteristics": ["Hellsicht", "Eigenschaften"],
-    "modifications": ["Zauberdauer", "Reichweite", "Wirkungsdauer"],
     "variants": [
       {
         "name": "Einzelsinn schärfen",
@@ -183,6 +187,7 @@
   {
     "name": "Adlerschwinge Wolfsgestalt",
     "trial": "MU/IN/GE",
+    "difficulty": "",
     "technik": "Der Elf kauert sich auf dem Boden zusammen  und  spricht  leise  die  Formel  a’dao valva iama ... Es folgt der Name des Tieres, in das sich der Elf verwandeln will.",
     "castTime": "20 Aktionen",
     "effect": "  Der  Zaubernde  erhält  die  Gestalt  des  beim  Erlernen des Zaubers gewählten Tieres, das nicht kleiner als eine Ratte und nicht größer als ein Pferd sein darf. Kleidung und Ausrüstung werden nicht mit verwandelt. Der Elf behält seine Verstandeskraft, ihm stehen jedoch die körperlichen Fä-higkeiten des Tieres, dessen Wahrnehmung und dessen LE zur Verfügung. Er kann in Tiergestalt nicht zaubern und sich auch vor Ablauf der Wirkungsdauer nicht zurückverwandeln. Zu  welchen  körperlichen  Aktivitäten  ein  Elf  in  Tiergestalt  fähig  ist,  hängt  in  erster  Linie  von  den  Möglichkeiten  der  Tiergestalt,  in  zweiter  Linie  vom  ZfW  des  Elfen  ab.  Natürlich  ist  es  immer  eine Frage des gesunden Menschenverstands, was einem Elf in einer Tiergestalt überhaupt möglich ist und wo Proben gefordert werden müssen. (Ein Bär kann ohne Probe eine Tür eindrücken, aber selbst bei besten Werten keinen Schuh zubinden.) Als Faustregel sollten Sie davon  ausgehen,  dass  ein  körperlicher Eigenschaftswert  oder  ein  Kampfwert des Tiers nicht höher sein darf als der doppelte ZfW des Elfen; bei einem eventuellen Talentwert des Tiers ist die Grenze der ZfW.  (Ein  Elf,  der  den  Zauber  nur  mäßig  beherrscht,  ist  auch  mit  dem  Tierkörper  nicht  sonderlich  vertraut  und  kann  dessen  Stärken  nur unvollkommen nutzen.) Weitere Details sind Meisterentscheid. (Für die Kampfwerte einiger Tiere ist das Lebensalter wichtig. Für eine Maraske gilt hier ZfP*/2 = Lebensalter in Jahren, für einen Har nischträger ZfP* x 30 Jahre.)Die  Lebenspunkte  werden  bei  der  Verwandlung  wie  auch  bei  der  Rückverwandlung  umgerechnet:  Wenn  der  Elf  vor  dem  Zauber  schon die Hälfte seiner LeP verlo ren hat, dann ist auch das Tier geschwächt und verfügt nur über die Hälfte seiner Lebensenergie. Wird das Tier während der Verwandlung verletzt, so hat auch der Elf nach der Rückverwandlung einen entsprechenden An-teil LeP verloren. Wunden, die ein Tier erleidet, übertragen sich auf das entsprechende Körperteil des  Elfen (und auch umgekehrt).Ein  Held  mit  dem  Nachteil  Elfische  Weltsicht  hat  eine  erweiterte,  über  diese  ‘funktionalen  Aspekte’  hinausgehende  Vorstellung,  die  darauf  beruht,  sich  in  sein  Seelentier  –  also  einen  Teil  seiner  selbst  –  zu  verwandeln,  was  besondere  Auswirkun-gen  nach  sich  zieht:  Gelegentlich  kommt  es  vor,  dass  bei  ihm  die    Instinkte  des  Tieres  überhand  nehmen  und  den  Elfenfalken  dazu bringen, jetzt – und genau jetzt –  diesen    schmackhaften  Hasen  zu  schlagen,  ohne  sich  um solchen Unfug wie das eilige Überbringen einer Botschaft zu scheren.",
@@ -190,12 +195,12 @@
     "target": "Einzelperson, freiwillig",
     "distance": "selbst",
     "duration": "nach AsP-Aufwand (vorher festlegen)",
+    "modifications": ["Zauberdauer", "Kosten", "Wirkungsdauer", "Erzwingen"],
     "reversalis": "verwandelt eine Tierform zurück in einen Elfen.",
     "antimagic": "kann  in  einer  Zone  des  VERWANDLUNG  BEENDEN nur erschwert gewirkt werden und kann mit diesemAntimagie-Spruch beendet werden.",
     "complexity": "D",
     "page": 16,
     "characteristics": ["Form"],
-    "modifications": ["Zauberdauer", "Kosten", "Wirkungsdauer", "Erzwingen"],
     "variants": [
       {
         "name": "Achaz-Repräsentation",
@@ -251,6 +256,7 @@
   {
     "name": "Aeolitus Windgebraus",
     "trial": "KL/CH/KO",
+    "difficulty": "",
     "technik": "Der Elf spricht eo’la dao winya’bhaund  bläst  durch  die  zu  einem  Trichter  geformte  Hand.",
     "castTime": "3 Aktionen",
     "effect": "Der  Lufthauch,  den  der  Elf  erzeugt  hat,  verstärkt  sich  zu  einem  kurzen,  heftigen  Windstoß,  der  sich  kegelförmig  in  Blasrichtung  ausbreitet.  Jenseits  der  Reichweite  verliert  der  Wind  jedoch  deutlich  an  Stärke,  und in einer Entfernung von der doppelten Reichweite ist er kaum noch zu spüren. Der Windstoß ist kräftig genug, um z.B. Fackeln verlöschen zu  lassen, einen Wandschirm umzuwerfen, Staub  aufzuwirbeln  oder  Rauch  und  Nebel  aus  einem  kleinen  Raum zu we hen, jedoch nicht, um einen Menschen von den Beinen zu holen.",
@@ -258,12 +264,12 @@
     "target": "Zone",
     "distance": "ZfP*  x  2  Schritt,  Basisbreite  des  Kegels  maximal  ZfW Schritt",
     "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Reichweite"],
     "reversalis": "Statt  eines  Windstoßes  erzeugt  der  Zauber  einen Sog zum Elfen hin – es soll jedoch hin und wieder vor-kommen, dass der Elf anschließend allerlei Staub und Kleintiere im Mund hat.",
     "antimagic": "kann nur erschwert in einer Zone des VERÄNDE-RUNG AUFHEBEN gewirkt und von diesem Zauber verhindert werden.",
     "complexity": "B",
     "page": 18,
     "characteristics": ["Umwelt", "Elementar(Luft)"],
-    "modifications": ["Zauberdauer", "Reichweite"],
     "variants": [
       {
         "name": "Langer Atem",
@@ -298,6 +304,91 @@
       { "representation": "Geode", "distribution": 4},
       { "representation": "Schelm", "distribution": 3},
       { "representation": "Scharlatan", "distribution": 3}
+    ]
+  },
+  {
+    "name": "Aerofugo Vakuum",
+    "trial": "MU/KO/KK",
+    "difficulty": "",
+    "technik": "Die Magierin presst die Hände so fest sie kann aneinander, spricht die Formel und reißt die Hände blitzartig auseinander.",
+    "castTime": "10 Aktionen",
+    "effect": "Nach Anwenden dieses Spruches verschwin-det aus einem Raum schlagartig und auf magische Weise alle  Luft,  es  herrscht  ein  Vakuum.  Alle  dort  befindlichen  Lebewesen  drohen  zu  ersticken.  (Es  gilt  der  Schaden  eines  Würgegriffs gemäß WdS 93: 1W6+2 TP(A) / KR.) Außer-dem werden Flammen gelöscht, und es treten beim Wiederein-strömen der Luft heftige Winde auf. Ist der Raum oder das Gefäß besonders  gut  gegen  Lufteintritt  versiegelt  (z.B.  verschlossene  Fässer und Flaschen), kann es passieren, dass er oder es durch den Unterdruck zerstört wird.Gegen elementare Wesenheiten der Luft wirkt dieser Zauber verhee-rend: Mindergeister, die zum Teil aus Luft bestehen, werden auf der Stelle vernichtet, Elementargeister oder Dschinne der Luft erleiden 2 x ZfP* Schadenspunkte, und es heißt, dass selbst ein Elementarer Meister der Luft in der Abwesenheit seines Elements gelähmt ist.",
+    "cost": "10 AsP + 1 AsP pro 5 Raumschritt",
+    "target": "Zone",
+    "distance": "Die  luftleere  Zone  entsteht  maximal  ZfW  Schritt  vom  Zaubernden  entfernt.  Ihre  größte  Ausdehnung  beträgt  ZfW  x  5 Raumschritt.",
+    "duration": "ZfP* KR, danach strömt die Luft auf natürliche Weise wieder ein.",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "bewirkt einen AEROGELO",
+    "antimagic": "kann in einer Zone des VERÄNDERUNG AUFHEBEN  nur  erschwert  gewirkt  und  von  diesemZauber  beendet  werden.  Ein  ZORN  DER  LUFT  kann  (wenn  mehr  TP  erzielt  werden,  als  der  AEROFUGO  an  ZfP* besitzt) ein ‘Leck’ in die Vakuumbegrenzung schlagen, so dass Luft langsam wieder einströmt.",
+    "complexity": "D",
+    "page": 19,
+    "characteristics": ["Umwelt", "Elementar(Luft)"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Magier", "distribution": 2}
+    ]
+  },
+  {
+    "name": "Aerogelo Atemqual",
+    "trial": "MU/IN/KO",
+    "technik": "Der  Magier  bläst  Luft  in  seine  zu  einer  Schale  geschlossenen  Handflächen.  Dabei  konzentriert  er  sich  auf  die  Formel,  die  er  im  An-schluss ausspricht.",
+    "castTime": "10 Aktionen",
+    "effect": "Durch diesen Spruch ‘gerinnt’ die Luft und verwandelt sich in ein zähes, quasi flüssiges Medium, das schnelle Bewegungen verhindert (AT/PA je um 6 erschwert, ebenso  GE-Proben;  Waffen-  und  Manöver-Einschränkungen  wie beim Kampf unter Wasser, WdS86), große Feuer glosen lässt,  während kleinere Flammen ersticken, und das Atmen er-schwert. Pro Spielrunde – bei großer Anstrengung wie in einem Kampf jede KR – muss eine KO-Probe abgelegt werden, bei deren Gelingen man 1 SP(A) erleidet, bei Misslingen 1W6 SP(A). Die Probe wird von Mal zu Mal (entweder pro SR oder pro KR) um 1  Punkt  schwieriger.  Alle  KO-Proben,  die  sich  aufs  Luftanhalten  oder ähnliche Aktionen beziehen, sind um 4 Punkte erschwert, jede ausdauerintensive (schwierige) Ak tion im Kampf (siehe WdS83) kostet zwei zusätzliche AuP, und jeder, der sich längerfristig in einem solchen Raum aufhält, erleidet 1W6 Punkte Erschöpfung pro SR. Das Medium hat eine Konsistenz wie Wasser und ermöglicht damit eine schwimmende Fortbewegung: Es gilt der TaW Schwimmen. Stürze in eine solche Zone hinein sind wie Stürze auf eine Wasserfläche zu werten. Die Sonderfertigkeit Unterwasserkampf verhindert Einbußen auf AT, PA und GE.",
+    "cost": "5 AsP + 1 AsP pro 20 Raumschritt",
+    "target": "Zone (quaderförmig)",
+    "distance": "Die  verdichtete  Luft  entsteht  maximal  ZfW  x  3  Schritt  vom  Zauberndenentfernt. Ihr maximales Volumen beträgt ZfW x 20 Raumschritt.",
+    "duration": "ZfP* Spielrunden",
+    "modifications": ["Zauberdauer", "Kosten", "Wirkungsdauer"],
+    "reversalis": "bewirkt den AEROFUGO",
+    "antimagic": "kann  in  einer  Zone  des  VERÄNDERUNG  AUFHEBEN oder des LUFTBANN nur erschwert gewirkt und von diesen Zaubern beendet werden. Ein ZORN DER LUFT kann (wenn mehr TP erzielt werden, als der AEROGELO an ZfP* besitzt) ein Leck in die Zonenbegrenzung schlagen, so dass sich die verdichtete Luft langsam verteilt.",
+    "complexity": "D",
+    "page": 20,
+    "characteristics": ["Umwelt", "Elementar(Luft)"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Magier", "distribution": 2}
+    ]
+  },
+  {
+    "name": "Alpgestalt",
+    "trial": "MU/CH/GE",
+    "difficulty": "+MR",
+    "technik": "Der Druide konzentriert sich auf das Unter bewusstsein seines Opfers, hebt die Arme undgeht drohend auf das Opfer zu.",
+    "castTime": "20 Aktionen",
+    "effect": "Der Zaubernde weckt im Unterbewusstsein des Opfers die dort schlummernden Angstvorstellungen, so dass er selbst dem vor Schreck völlig  gelähmten Opfer als  (menschenähnliche)  Gestalt  aus  seinen  schlimmsten  Alpträumen erscheint.Solange das Opfer den Zaubernden sieht (und es kann die Augen auch  nicht  freiwillig  schließen;  maximal  jedoch  ZfP*  x  5  KR  lang), bringt es keinen Laut mehr hervor und ist völlig in Angst erstarrt. Danach muss eine MU-Probe+ZfP* abgelegt werden, bei deren Misslingen es in eine tiefe Ohnmacht von ZfP*  Kampfrunden Dauer fällt. Bei Gelingen erlangt es die Kontrolle über sich wieder. Die Zauberprobe kann bei Opfern mit pas senden Ängsten erleichtert sein (Meisterentscheid).",
+    "cost": "MR des Opfers in AsP, wenigstens aber 6 AsP",
+    "target": "Einzelperson",
+    "distance": "ZfW Schritt",
+    "duration": "ZfP* x 5 KR",
+    "modifications": ["Zauberdauer", "Kosten", "Wirkungsdauer", "Erzwingen", "Reichweite", "Zielobjekt (mehrere)"],
+    "reversalis": "Der Zaubernde erscheint dem Opfer als verlockendste Gestalt, die er sich je erträumt hat, und lässtes vor Entzücken erstarren. Nach Ende der Wirkungsdauer muss eine IN-Probe+ZfP* gelingen, sonst fällt das Opfer für ZfP* x 5 KR in einen rauschhaften Tagtraum.",
+    "antimagic": "EINFLUSS BANNEN und BEHERRSCHUNG BRECHEN  können  den  Zauber  gleicher  maßen  aufheben;  in  den entsprechenden antimagischen Zonen kann der Zauber nur erschwert  gewirkt  werden.  Aus  der  Ohnmacht  kann  das  Opfer  jedoch  mit  konventionellen  Mitteln  geweckt  werden.  ÄNGSTE  LINDERN  kann  die  Wirkung  dieses  Zaubers  aufheben  oder  zumindest abschwächen.",
+    "complexity": "C",
+    "page": 21,
+    "characteristics": ["Einfluss", "Herrschaft"],
+    "variants": [
+      {
+        "name": "gegen mehrere Opfer",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante gegen mehrere Opfer kostet der  Zauber 5 AsP pro Opfer."
+      },
+      {
+        "name": "Fremdgestalt",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Der Zaubernde lässt nicht sich selbst, sondern einen anderen als Ausgeburt der Alpträume erscheinen."
+      },
+      {
+        "name": "Alpdrücken",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Die  Erscheinung der ALPGESTALT wirkt so nach-haltig beim Opfer, dass es in den folgenden ZfP* Nächten  von  dieser  Wesenheit  in  seinen  Träumen  verfolgt wird. (Wirkt wie der Nachteil Alpträume.)"
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 3}
     ]
   }
 ]
