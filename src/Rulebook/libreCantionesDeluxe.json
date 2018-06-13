@@ -632,6 +632,43 @@
       { "representation": "Elf", "distribution": 1},
       { "representation": "Druide", "distribution": 1}
     ]
+  },
+  {
+    "page": 28,
+    "name": "Armatrutz",
+    "trial": "IN/GE/KO",
+    "difficulty": "",
+    "technik": "Die Elfe streicht mit den Händen über ihre Brust, während sie ama tharza spricht.",
+    "castTime": "3 Aktionen",
+    "effect": "Die Zaubernde erhält eine (zusätzliche) ‘stählerne Haut’, die ihren natürlichen Rüstungsschutz erhöht. Die Stärke der zusätzlichen Rüstung darf maximal ZfW/2 Punkte betragen. Die zusätzliche Rüstung erzeugt keine  Behinderung,  wirkt  wie  alle  stofflichen  Rüstungen  gegen materielle Angriffe (und damit auch gegen alle Dämo-nen- und Elementarattacken, die eine materielle Komponente haben), jedoch nicht gegen Zauber, die Schaden ohne materielle Komponente erzeugen wie der FULMINICTUS. Der ARMA TRUTZ hält übrigens auch die Bisse von Tieren wie Ratten  oder  Fledermäusen  ab,  die  sich  ungerüstete  Stellen  des  Körpers aussuchen und SP anstatt TP hervorrufen.",
+    "cost": "zusätzlicher  RS  mal  zusätzlicher  RS  minus  ZfP*/2  in  AsP, mindestens aber 4 AsP",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "maximal eine Spielrunde (A)",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite (Berührung)", "Wirkungsdauer"],
+    "reversalis": "hebt einen wirkenden ARMATRUTZ auf.",
+    "antimagic": "Sowohl EIGENSCHAFT WIEDERHERSTELLEN als  auch  ERZBANN  können  die  Wirkung  beenden;  kann  in  den  entsprechenden Zonen nur erschwert gewirkt werden.",
+    "complexity": "B",
+    "characteristics": ["Eigenschaften", "Elementar (Erz)"],
+    "variants": [
+      {
+        "name": "Körperschild",
+        "mod": "+4",
+        "minZfW": 0,
+        "effect": "Der  Zauber  wird  nur auf einen Teil des Körpers angewendet und kostet entsprechend weniger. Bei den Trefferzonen Brust,  Rücken  und  Bauch  werden  die  AsP-Kosten  halbiert, bei Kopf, Armen und Beinen geviertelt, betragen jeweils aber mindestens 3 AsP. (Zu den Trefferzonen siehe WdS107ff.)"
+      },
+      {
+        "name": "Kraft des Fakirs",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Unter der Wirkung dieser  Variante  ist  die  Zauberin  resistent  gegen  Schäden,  die  1  SP  oder  weniger  verursachen  würden.  Größere  Schadenswirkungen betreffen sie allerdings unvermindert. Mücken stechen die Elfe nicht, und sie kann schadlos über Scherben gehen (nicht jedoch rennen oder springen). Die Wirkungsdauer beträgt maximal ZfP* Spielrunden (A), die Kosten 1 AsP pro SR."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 6},
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Druide", "distribution": 2}
+    ]
   }
-
 ]
