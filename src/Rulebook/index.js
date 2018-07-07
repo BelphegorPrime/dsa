@@ -10,7 +10,7 @@ export default class Rulebook {
 
   getLibreCantionesDeluxe() {
     const spellRules = this.houseRules.filter(rule => rule.type === 'spell');
-    const lcdInstance = [...lcd];
+    const lcdInstance = JSON.parse(JSON.stringify(lcd));
     spellRules.forEach(rule => {
       const possibleSpells = lcdInstance.filter(
         s => s.page === rule.page || s.name === rule.name
