@@ -222,9 +222,13 @@ class App extends Component {
   }
 
   removeRule(id) {
-    this.setState(state => ({
-      houseRules: state.houseRules.filter(hr => hr.id !== id)
-    }));
+    const { houseRules, heros } = this.state;
+    const otherHouseRules = houseRules.filter(hr => hr.id !== id);
+    Object.keys(heros).forEach(name => {
+      const { xml } = heros[name];
+      this.appendToState(xml, convert(xml, otherHouseRules));
+    });
+    this.setState({ houseRules: otherHouseRules });
   }
 
   render() {
