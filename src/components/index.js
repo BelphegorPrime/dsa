@@ -18,7 +18,8 @@ class App extends Component {
       page: 'default',
       heros: {},
       chosenHero: null,
-      heroPage: null
+      heroPage: null,
+      houseRules: []
     };
     this.state = this.initialState;
     this.fileUpload = React.createRef();
@@ -71,6 +72,8 @@ class App extends Component {
       // eslint-disable-next-line no-undef
       heros: JSON.parse(window.localStorage.getItem('heros')) || null,
       // eslint-disable-next-line no-undef
+      houseRules: JSON.parse(window.localStorage.getItem('houseRules')) || [],
+      // eslint-disable-next-line no-undef
       chosenHero: JSON.parse(window.localStorage.getItem('hero')) || null
     });
   }
@@ -83,6 +86,13 @@ class App extends Component {
     if (nextState.heros && Object.keys(nextState.heros).length > 0) {
       // eslint-disable-next-line no-undef
       window.localStorage.setItem('heros', JSON.stringify(nextState.heros));
+    }
+    if (nextState.houseRules && nextState.houseRules.length > 0) {
+      // eslint-disable-next-line no-undef
+      window.localStorage.setItem(
+        'houseRules',
+        JSON.stringify(nextState.houseRules)
+      );
     }
     return nextState;
   }
@@ -102,6 +112,17 @@ class App extends Component {
       state.heros
     );
     this.setState(state);
+  }
+
+  addedHouseRule(rule) {
+    const { houseRules, heros } = this.state;
+    const otherHouseRules = houseRules.filter(r => r.page !== rule.page);
+    otherHouseRules.push(rule);
+    Object.keys(heros).forEach(name => {
+      const { xml } = heros[name];
+      this.appendToState(xml, convert(xml, otherHouseRules));
+    });
+    this.setState({ houseRules: otherHouseRules });
   }
 
   fileUploaded(files) {
@@ -126,7 +147,9 @@ class App extends Component {
               xmlReader.parse(xmlString);
             })
         )
-        .then(hero => this.appendToState(hero, convert(hero)))
+        .then(hero =>
+          this.appendToState(hero, convert(hero, this.state.houseRules))
+        )
         .then(() => {
           this.fileUpload.current.value = '';
         });
@@ -313,7 +336,9 @@ class App extends Component {
           ) : (
             <Fragment>
               <div className="left-pane col-md-2">
-                <HouseRulesSideBar />
+                <HouseRulesSideBar
+                  addedHouseRule={this.addedHouseRule.bind(this)}
+                />
               </div>
               <div className="right-pane col-md-10 row-without-margin">
                 <HouseRules />

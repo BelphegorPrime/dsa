@@ -19,7 +19,6 @@ class Sidebar extends Component {
           ) {
             className = 'list-group-item active';
           }
-          console.log(this.props.showPage);
           return (
             <li
               key={name + k}

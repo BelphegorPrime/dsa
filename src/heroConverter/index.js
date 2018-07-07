@@ -14,9 +14,9 @@ import getConnections from './getConnections';
 import addFight from './addFight';
 import RuleBook from '../Rulebook';
 
-const index = hero => {
+const index = (hero, houseRules = []) => {
   const returnHero = {};
-  const ruleBook = new RuleBook([]);
+  const ruleBook = new RuleBook(houseRules);
   console.log(ruleBook.getLibreCantionesDeluxe())
   returnHero.name = hero.children[0].attributes.name;
   const { children } = hero.children[0];
