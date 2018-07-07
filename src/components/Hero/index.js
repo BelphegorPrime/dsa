@@ -1,18 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import proptypes from 'prop-types';
 
-import Base from '../Base';
-import Properties from '../Properties';
-import Advantages from '../Advantages';
-import SpecialAbilities from '../SpecialAbilities';
-import TalentList from '../TalentList';
-import SpellList from '../SpellList';
-// import Fight from '../Fight';
-import Objects from '../Objects';
-import Comments from '../Comments';
-import Equipment from '../Equipment';
-import Connections from '../Connections';
-import Purse from '../Purse';
+import Base from './Base';
+import Properties from './Properties';
+import Advantages from './Advantages';
+import SpecialAbilities from './SpecialAbilities';
+import TalentList from './TalentList';
+import SpellList from './SpellList';
+import Objects from './Objects';
+import Comments from './Comments';
+import Equipment from './Equipment';
+import Connections from './Connections';
+import Purse from './Purse';
 
 class Hero extends Component {
   render() {

@@ -16,7 +16,8 @@ import RuleBook from '../Rulebook';
 
 const index = hero => {
   const returnHero = {};
-  console.log(RuleBook.getLibreCantionesDeluxe())
+  const ruleBook = new RuleBook([]);
+  console.log(ruleBook.getLibreCantionesDeluxe())
   returnHero.name = hero.children[0].attributes.name;
   const { children } = hero.children[0];
   children.forEach(child => {

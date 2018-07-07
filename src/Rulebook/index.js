@@ -7,10 +7,10 @@ export default class Rulebook {
   constructor(houseRules) {
     console.log('Rulebook created');
     this.houseRules = houseRules;
-    console.log(this.houseRules);
   }
 
-  static getLibreCantionesDeluxe() {
+  getLibreCantionesDeluxe() {
+    console.log(this.houseRules);
     return lcd;
   }
 }
