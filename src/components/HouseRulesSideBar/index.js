@@ -27,6 +27,7 @@ class HouseRulesSidebar extends Component {
         fileReader.onload = e => resolve(e.target.result);
         fileReader.readAsText(file);
       })
+        // eslint-disable-next-line no-eval
         .then(script => eval(script))
         .then(rule => this.addId(rule))
         .then(rule => this.props.addedHouseRule(rule))
