@@ -19,6 +19,7 @@ class Sidebar extends Component {
           ) {
             className = 'list-group-item active';
           }
+          console.log(this.props.showPage);
           return (
             <li
               key={name + k}
@@ -77,9 +78,15 @@ Sidebar.defaultProps = {
   heros: [],
   chosenHero: {},
   page: '',
-  chooseHero: () => {},
-  removeHero: () => {},
-  showPage: () => {}
+  chooseHero: () => {
+    console.warn('no chooseHero Function Provided');
+  },
+  removeHero: () => {
+    console.warn('no removeHero Function Provided');
+  },
+  showPage: () => {
+    console.warn('no showPage Function Provided');
+  }
 };
 
 export default Sidebar;

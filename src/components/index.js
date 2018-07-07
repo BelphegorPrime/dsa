@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import XmlReader from 'xml-reader';
 import XmlPrint from 'xml-printer';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Hero from './Hero';
 import SideBar from './SideBar';
+import HouseRules from './HouseRules';
+import HouseRulesSideBar from './HouseRulesSideBar';
 
 import convert from '../heroConverter';
 import trialToProperty from '../heroConverter/trialToProperty';
@@ -13,10 +15,10 @@ class App extends Component {
   constructor() {
     super();
     this.initialState = {
+      page: 'default',
       heros: {},
       chosenHero: null,
-      page: null,
-      masterMode: false
+      heroPage: null
     };
     this.state = this.initialState;
     this.fileUpload = React.createRef();
@@ -160,9 +162,9 @@ class App extends Component {
     this.setState(this.initialState);
   }
 
-  handleChange(val) {
+  handleChange(page) {
     this.setState({
-      masterMode: val
+      page
     });
   }
 
@@ -185,14 +187,15 @@ class App extends Component {
     });
   }
 
-  showPage(page) {
+  showHeroPage(heroPage) {
+    console.log(heroPage);
     this.setState({
-      page
+      heroPage
     });
   }
 
   render() {
-    const { heros, masterMode, chosenHero, page } = this.state;
+    const { heros, chosenHero, heroPage, page } = this.state;
     return (
       <div className="App">
         <nav className="navbar navbar-default">
@@ -236,47 +239,54 @@ class App extends Component {
                 </div>
               </div>
               <div className="float-right">
-                <label
-                  id="master-mode-toggle-label"
-                  className="form-check-label"
-                  htmlFor="master-mode-toggle">
-                  Meistermodus
-                </label>
                 <div
-                  id="master-mode-toggle"
+                  id="page-toggle"
                   className="btn-group btn-group-toggle"
                   data-toggle="buttons">
                   <label
-                    data-testid="app-master-mode-off"
                     className={
-                      !masterMode
+                      page === 'default'
                         ? 'btn btn-secondary active'
                         : 'btn btn-secondary'
                     }
-                    htmlFor="master-mode-off">
+                    htmlFor="default">
                     <input
-                      id="master-mode-off"
+                      id="default"
                       type="radio"
-                      onChange={this.handleChange.bind(this, false)}
-                      checked={!masterMode}
+                      onChange={this.handleChange.bind(this, 'default')}
+                      checked={page === 'default'}
                     />
-                    OFF
+                    Standard
                   </label>
                   <label
-                    data-testid="app-master-mode-on"
                     className={
-                      masterMode
+                      page === 'mastermode'
                         ? 'btn btn-secondary active'
                         : 'btn btn-secondary'
                     }
-                    htmlFor="master-mode-on">
+                    htmlFor="mastermode">
                     <input
-                      id="master-mode-on"
+                      id="mastermode"
                       type="radio"
-                      onChange={this.handleChange.bind(this, true)}
-                      checked={masterMode}
+                      onChange={this.handleChange.bind(this, 'mastermode')}
+                      checked={page === 'mastermode'}
                     />
-                    ON
+                    Meistermodus
+                  </label>
+                  <label
+                    className={
+                      page === 'houserules'
+                        ? 'btn btn-secondary active'
+                        : 'btn btn-secondary'
+                    }
+                    htmlFor="houserules">
+                    <input
+                      id="houserules"
+                      type="radio"
+                      onChange={this.handleChange.bind(this, 'houserules')}
+                      checked={page === 'houserules'}
+                    />
+                    Hausregeln
                   </label>
                 </div>
               </div>
@@ -284,19 +294,32 @@ class App extends Component {
           </div>
         </nav>
         <div id="app-body" className="row">
-          <div className="left-pane col-md-2">
-            <SideBar
-              heros={heros}
-              chosenHero={chosenHero || null}
-              page={page}
-              chooseHero={this.chooseHero.bind(this)}
-              removeHero={this.removeHero.bind(this)}
-              showPage={this.showPage.bind(this)}
-            />
-          </div>
-          <div className="right-pane col-md-10 row-without-margin">
-            {chosenHero ? <Hero hero={chosenHero} page={page} /> : null}
-          </div>
+          {page === 'default' || page === 'mastermode' ? (
+            <Fragment>
+              <div className="left-pane col-md-2">
+                <SideBar
+                  heros={heros}
+                  chosenHero={chosenHero || null}
+                  page={heroPage}
+                  chooseHero={this.chooseHero.bind(this)}
+                  removeHero={this.removeHero.bind(this)}
+                  showPage={this.showHeroPage.bind(this)}
+                />
+              </div>
+              <div className="right-pane col-md-10 row-without-margin">
+                {chosenHero ? <Hero hero={chosenHero} page={heroPage} /> : null}
+              </div>
+            </Fragment>
+          ) : (
+            <Fragment>
+              <div className="left-pane col-md-2">
+                <HouseRulesSideBar />
+              </div>
+              <div className="right-pane col-md-10 row-without-margin">
+                <HouseRules />
+              </div>
+            </Fragment>
+          )}
         </div>
       </div>
     );
