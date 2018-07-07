@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
 
-import spellTemplate from '../../templates/spellTemplate';
-
 class HouseRulesSidebar extends Component {
   constructor() {
     super();
     this.fileUpload = React.createRef();
     this.possibleTemplates = ['spell'];
+  }
+
+  addId(rule) {
+    const returnRule = rule;
+    const s4 = () =>
+      Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    returnRule.id = `${s4() +
+      s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
+    return returnRule;
   }
 
   fileUploaded(files) {
@@ -19,6 +28,7 @@ class HouseRulesSidebar extends Component {
         fileReader.readAsText(file);
       })
         .then(script => eval(script))
+        .then(rule => this.addId(rule))
         .then(rule => this.props.addedHouseRule(rule))
         .then(() => {
           this.fileUpload.current.value = '';
@@ -26,33 +36,51 @@ class HouseRulesSidebar extends Component {
     });
   }
 
-  show(template) {
-    console.log(template);
+  // eslint-disable-next-line class-methods-use-this
+  download(template) {
+    const templateFile = new Promise(resolve => {
+      switch (template) {
+        case 'spell': {
+          // eslint-disable-next-line no-undef
+          fetch('/templates/spellTemplate.js')
+            .then(response => response.body)
+            .then(body => {
+              const reader = body.getReader();
+              reader.read().then(({ value }) => {
+                resolve({
+                  // eslint-disable-next-line no-undef
+                  stringValue: new TextDecoder('utf-8').decode(value),
+                  name: 'spellTemplate'
+                });
+              });
+            });
+          break;
+        }
+        default: {
+          break;
+        }
+      }
+    });
+    templateFile.then(file => {
+      // eslint-disable-next-line no-undef
+      const doc = document;
+      const a = doc.createElement('a');
+      a.setAttribute(
+        'href',
+        `data:application/javascript;charset=utf-8,${encodeURIComponent(
+          file.stringValue
+        )}`
+      );
+      a.setAttribute('download', `${file.name}.js`);
+      a.style.display = 'none';
+      doc.body.appendChild(a);
+      a.click();
+      doc.body.removeChild(a);
+    });
   }
 
-  download(template) {
-    switch (template) {
-      case 'spell':
-        // eslint-disable-next-line no-undef
-        const doc = document;
-        const a = doc.createElement('a');
-        // eslint-disable-next-line no-undef
-        console.log(spellTemplate);
-        a.setAttribute(
-          'href',
-          `data:application/javascript;charset=utf-8,${encodeURIComponent(
-            spellTemplate
-          )}`
-        );
-        a.setAttribute('download', `spellTemplate.js`);
-        a.style.display = 'none';
-        doc.body.appendChild(a);
-        a.click();
-        doc.body.removeChild(a);
-        break;
-      default:
-        break;
-    }
+  show(template) {
+    this.props.setHouseRuleToShow(template);
   }
 
   render() {
@@ -94,13 +122,17 @@ class HouseRulesSidebar extends Component {
             ))}
             <li className="list-group-item">
               <div className="row">
-                <div>Rules</div>
+                <div>Regeln</div>
               </div>
             </li>
             {this.possibleTemplates.map(template => (
               <li
                 key={`rules${template}`}
-                className="list-group-item"
+                className={
+                  this.props.houseRuleToShow === template
+                    ? 'list-group-item active'
+                    : 'list-group-item'
+                }
                 onClick={this.show.bind(this, template)}>
                 <div className="row">
                   <div className="offset-2">Zauber</div>
@@ -115,7 +147,9 @@ class HouseRulesSidebar extends Component {
 }
 
 HouseRulesSidebar.propTypes = {
-  addedHouseRule: proptypes.func
+  addedHouseRule: proptypes.func,
+  setHouseRuleToShow: proptypes.func,
+  houseRuleToShow: proptypes.string
 };
 
 export default HouseRulesSidebar;

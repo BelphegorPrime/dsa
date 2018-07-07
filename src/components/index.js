@@ -19,7 +19,8 @@ class App extends Component {
       heros: {},
       chosenHero: null,
       heroPage: null,
-      houseRules: []
+      houseRules: [],
+      houseRuleToShow: 'spell'
     };
     this.state = this.initialState;
     this.fileUpload = React.createRef();
@@ -114,17 +115,6 @@ class App extends Component {
     this.setState(state);
   }
 
-  addedHouseRule(rule) {
-    const { houseRules, heros } = this.state;
-    const otherHouseRules = houseRules.filter(r => r.page !== rule.page);
-    otherHouseRules.push(rule);
-    Object.keys(heros).forEach(name => {
-      const { xml } = heros[name];
-      this.appendToState(xml, convert(xml, otherHouseRules));
-    });
-    this.setState({ houseRules: otherHouseRules });
-  }
-
   fileUploaded(files) {
     Object.values(files).forEach(file => {
       new Promise(resolve => {
@@ -211,14 +201,41 @@ class App extends Component {
   }
 
   showHeroPage(heroPage) {
-    console.log(heroPage);
     this.setState({
       heroPage
     });
   }
 
+  addedHouseRule(rule) {
+    const { houseRules, heros } = this.state;
+    const otherHouseRules = houseRules.filter(r => r.page !== rule.page);
+    otherHouseRules.push(rule);
+    Object.keys(heros).forEach(name => {
+      const { xml } = heros[name];
+      this.appendToState(xml, convert(xml, otherHouseRules));
+    });
+    this.setState({ houseRules: otherHouseRules });
+  }
+
+  setHouseRuleToShow(type) {
+    this.setState({ houseRuleToShow: type });
+  }
+
+  removeRule(id) {
+    this.setState(state => ({
+      houseRules: state.houseRules.filter(hr => hr.id !== id)
+    }));
+  }
+
   render() {
-    const { heros, chosenHero, heroPage, page } = this.state;
+    const {
+      heros,
+      chosenHero,
+      heroPage,
+      page,
+      houseRules,
+      houseRuleToShow
+    } = this.state;
     return (
       <div className="App">
         <nav className="navbar navbar-default">
@@ -338,10 +355,16 @@ class App extends Component {
               <div className="left-pane col-md-2">
                 <HouseRulesSideBar
                   addedHouseRule={this.addedHouseRule.bind(this)}
+                  setHouseRuleToShow={this.setHouseRuleToShow.bind(this)}
+                  houseRuleToShow={houseRuleToShow}
                 />
               </div>
-              <div className="right-pane col-md-10 row-without-margin">
-                <HouseRules />
+              <div className="col-md-10 row-without-margin">
+                <HouseRules
+                  houseRuleToShow={houseRuleToShow}
+                  houseRules={houseRules}
+                  removeRule={this.removeRule.bind(this)}
+                />
               </div>
             </Fragment>
           )}

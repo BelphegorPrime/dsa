@@ -117,3 +117,7 @@ body {
   width: 20%;
   float: left;
 }
+
+.house-rule-delete {
+  right: 16px;
+}
