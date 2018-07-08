@@ -26,8 +26,22 @@ export default class Rulebook {
     });
     return lcdInstance;
   }
-
   getArsenal() {
     return arsenal;
+  }
+  getLiturgium() {
+    return [];
+  }
+  getZooBotanica() {
+    return [];
+  }
+  getElementals() {
+    return [];
+  }
+  getAdvantages() {
+    return [];
+  }
+  getDisadvantages() {
+    return [];
   }
 }

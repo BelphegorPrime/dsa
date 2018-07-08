@@ -1,6 +1,6 @@
 const houseRule = {
   type: 'spell',
-  // page within the Spell
+  // name of the Spell REQUIRED!!
   name: 'Ängste Lindern',
   // page within the LCD
   page: 23,
