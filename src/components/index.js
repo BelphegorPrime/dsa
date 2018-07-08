@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import XmlReader from 'xml-reader';
 import XmlPrint from 'xml-printer';
-import { countBy } from 'lodash';
+import { countBy, values } from 'lodash';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Hero from './Hero';
@@ -25,16 +25,11 @@ class App extends Component {
     };
     this.state = this.initialState;
     this.fileUpload = React.createRef();
-    let throws = [];
+    const throws = [];
     for (let i = 0; i < 100000; i += 1) {
       throws[i] = App.rollDice(20);
     }
-    throws = countBy(throws);
-    this.throws = Object.keys(throws).map(throwValue => ({
-      x: parseInt(throwValue, 10),
-      y: throws[throwValue]
-    }));
-    console.log(this.throws);
+    this.throws = values(countBy(throws));
   }
 
   static rollDice(x) {
@@ -295,11 +290,11 @@ class App extends Component {
                 <div
                   className="border border-dark"
                   style={{ height: 40, width: 40, display: 'inherit' }}>
-                  {this.throws.map(throwObject => (
+                  {this.throws.map(throwValue => (
                     <div
                       style={{
                         width: 2,
-                        marginBottom: throwObject.y / 200,
+                        marginBottom: throwValue / 200,
                         background: '#000000'
                       }}
                     />
