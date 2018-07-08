@@ -908,5 +908,103 @@
       { "representation": "Gildenmagier", "distribution": 4},
       { "representation": "Scharlatan", "distribution": 6}
     ]
+  },
+  {
+    "page": 35,
+    "name": "Auris Nasus Oculus",
+    "trial": "KL/CH/FF",
+    "difficulty": "",
+    "technik": "Der Magier konzentriert sich auf den Ort, an dem die Illusion erscheinen soll, und murmelt mit geschlossenen Augen die Formel.",
+    "castTime": "5 Aktionen pro Illusionskomponente, die erscheinen soll.",
+    "effect": "Der Zaubernde kann mit dieser Formel illusionäre Geräusche, Gerüche und dreidimensionale (aber unbewegte) Bilder erschaffen (z.B. eine Schrift an der Wand; eine vorgelagerte Wand, hinter der sich der Zaubernde versteckt; eine Stimme aus dem Nichts; Brandgeruch). Jedes einzelne Bild und Geräusch und jeder einzelne Geruch gilt als eine der oben genannten Illusionskomponenten. Die Größe der entstehenden Bilder kann maximal ZfW x 5 Raumschritt betragen. Die drei Illusionsarten können miteinander kombiniert werden, dafür ist die Probe jedoch um 2 Punkte pro zusätzlicher Komponente erschwert. Wenn sie einmal entstanden sind, kann der Magier sich anderen Dingen zuwenden. Die Realitätsdichte (siehe den Kasten zum Thema Illusionen auf der gegenüberliegenden Seite) beträgt ZfP*/2+7 Punkte.",
+    "cost": "4 AsP pro Illusionskomponente",
+    "target": "Zone",
+    "distance": "ZfW x 3 Schritt",
+    "duration": "maximal ZfP*/2 Spielrunden",
+    "modifications": ["Zauberdauer", "Kosten", "Wirkungsdauer"],
+    "reversalis": "Der Zauber wird aufgehoben.",
+    "antimagic": "kann in einer Zone des ILLUSION AUFLÖSEN nur erschwert gewirkt werden und wird von diesem Zauber aufgehoben.",
+    "complexity": "D",
+    "characteristics": ["Illusion"],
+    "variants": [
+      {
+        "name": "Verpuffung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Bildillusionen lösen sich langsam auf oder verpuffen schlagartig, sobald sie berührt werden; ein gewollter optischer Effekt."
+      },
+      {
+        "name": "Außer Sicht",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Trugbild, Geräusch oder Geruch entstehen an einem Punkt innerhalb der Reichweite, den der Zaubernde nicht einsehen kann, den er aber schon einmal gesehen haben muss."
+      },
+      {
+        "name": "Entfernte Phantasmagorie",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Eine Reichweitenvergrößerung, mit der es möglich ist, Trugbilder weiter entfernt erscheinen zu lassen (z.B. am Himmel): Die Reichweite beträgt ZfW x 30 Schritt."
+      },
+      {
+        "name": "Bewegte Bilder",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Es wird eine bewegliche Bildillusion erzeugt (z.B. ein fliegender Drache)."
+      },
+      {
+        "name": "Selbst leuchtend",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Die Bild-Illusion kann auch eine Lichtquelle darstellen."
+      },
+      {
+        "name": "Geschmack und Tastsinn",
+        "mod": "jeweils +12",
+        "minZfW": 14,
+        "effect": "Prinzipiell möglich, aber eine schon legendär schwierige Auswirkung sind die Täuschungen dieser beiden Sinne."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Scharlatan", "distribution": 5}
+    ]
+  },
+  {
+    "page": 36,
+    "name": "Auris Nasus Oculus",
+    "trial": "KL/GE/KO",
+    "difficulty": "",
+    "technik": "Die Elfe konzentriert sich auf alle Muskeln und Sehnen ihres Körpers und spricht a’sela dhao biundawin.",
+    "castTime": "2 Aktionen",
+    "effect": "Dieser Zauber versetzt den Verzauberten in die Lage, seine Bewegungen kurzfristig enorm zu beschleunigen. Sie sind fließend und grazil, wirken jedoch wegen der Schnelligkeit für Außenstehende leicht verschwommen. Es werden ausschließlich körperliche Aktionen beeinflusst, geistige Aktivitäten (wie lesen, denken, zielen oder zaubern) bleiben unbeeinflusst. Auch die Koordinierungsfähigkeit verbessert sich nicht, weswegen es vermehrt zu Stürzen oder Verstauchungen kommen kann (GE- oder FF-Proben). Der Parade-Basiswert erhöht sich um 2 Punkte, Ausweichen-Proben sind um weitere 2 Punkte erleichtert; die TP von bewaffneten oder unbewaffneten Nahkampfangriffen steigen um 2 Punkte und die Abwehr eines beschleunigten Nahkampf-Angriffs ist um 2 Punkte erschwert. GS (nach Einrechnung der BE) und INI-Basiswert (der aus den Eigenschaften und eventuellen Vor-/Nachteilen berechnete Teil der INI) werden verdoppelt. Ebenfalls verdoppelt ist der Athletik-TaW zur Berechnung von Sprints und Sprüngen. Während der Wirkungsdauer verfügt der Verzauberte über die Entsprechung der Sonderfertigkeiten Schnellziehen und Schnellladen. Wenn er diese SF sowieso schon beherrscht, kann er das Laden und Ziehen einer Waffe um eine weitere Aktion verkürzen (nicht weniger als 1 Aktion, FF-Probe erforderlich).",
+    "cost": "7 AsP (Sch: 5 AsP)",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst, 7 Schritt",
+    "duration": "ZfP* mal 3 Kampfrunden (A)",
+    "modifications": ["Zauberdauer", "Kosten", "Zielobjekt (mehrere)", "Reichweite"],
+    "reversalis": "erzeugt beim Verzauberten verlangsamte Bewegungen, so dass er sich nur noch mit halber GS fortbewegen kann, sein Athletik-Wert wird für oben genannte Anwendungen halbiert und er hat im Kampf reduzierte Werte: AT, PA, Ausweichen und TP je –2. Es gelten natürlich die Regeln für ein unfreiwilliges Zielobjekt ...",
+    "antimagic": "kann nicht in einer Zone des EIGENSCHAFT WIEDERHERSTELLEN gesprochen werden und wird von diesem Spruch erschwert.",
+    "complexity": "C",
+    "characteristics": ["Eigenschaften"],
+    "variants": [
+      {
+        "name": "Blitzgeschwind",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Der Zauber verleiht der Nutznießerin die Schnelligkeit eines Pfeils: Zusätzlich zur o.g. Wirkung wird der Athletik-Wert für Sprints und Sprungweiten um die doppelten ZfP* erhöht, die GS ebenso. Eine weitere Steigerung von Kampfwerten findet jedoch nicht mehr statt. Bei diesem wahnwitzigen Tempo soll es jedoch schon häufig zu Unfällen gekommen sein, bei dem sausende Zauberkundige an Bäumen oder Felsvorsprüngen endeten. Ein Kampf ist in diesem Tempo besonders riskant – alle Würfelwürfe von 18 und höher gelten als Patzer."
+      },
+      {
+        "name": "Koboldisch",
+        "mod": "",
+        "minZfW": 3,
+        "effect": "Die Beschleunigung bezieht sich einzig auf die Sprache der Elfe – nur so ist es möglich, Koboldisch zu sprechen. Schelme sind hiervon ausgenommen: Sie beherrschen die Sprache auch ohne diesen Zauber. Die Wirkungsdauer für diese Variante beträgt ZfP* Minuten."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 6},
+      { "representation": "Achaz", "distribution": 5},
+      { "representation": "Scharlatan", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 3}
+    ]
   }
 ]
