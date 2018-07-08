@@ -791,7 +791,7 @@
     ]
   },
   {
-    "page": 32,
+    "page": 31,
     "name": "Aufgeblasen abgehoben",
     "trial": "CH/KO/KK",
     "difficulty": "+MR",
@@ -806,7 +806,7 @@
     "reversalis": "hebt einen wirkenden AUFGEBLASEN wieder auf.",
     "antimagic": "VERWANDLUNG BEENDEN und LUFTBANN können das Wirken des Zaubers erschweren (Zonen-Variante) oder ihn beenden.",
     "complexity": "C",
-    "characteristics": ["Form, Elementar(Luft)"],
+    "characteristics": ["Form", "Elementar(Luft)"],
     "variants": [
       {
         "name": "Flughöhe begrenzen",
@@ -835,6 +835,78 @@
     ],
     "distribution": [
       { "representation": "Schelm", "distribution": 5}
+    ]
+  },
+  {
+    "page": 32,
+    "name": "Auge des Limbus",
+    "trial": "MU/KO/KK",
+    "difficulty": "",
+    "technik": "Der Magier macht mit beiden Händen eine kreisende Bewegung, reißt die Hände an den Körper und spricht die Formel.",
+    "castTime": "15 Aktionen",
+    "effect": "Diese Formel bewirkt eine unkontrollierte, strudelartige Öffnung von der Dritten Sphäre in die ‘darüber liegende’ Ebene des Limbus, die sich als tosender, grauer Mahlstrom manifestiert. Innerhalb des Zentralbereichs des Wirbels wird alles, was nicht massiv an festen Objekten außerhalb dieses Bereichs befestigt ist, in den Limbus gerissen. Für Bereiche außerhalb des zentralen Wirkungsbereichs gilt, dass von der Mitte des Wirbels aus eine Zugkraft entsteht, die der Höhe der eingesetzten AsP entspricht und die pro Schritt Abstand vom Zentrum um 2 Punkte abnimmt. Am Anfang jeder Kampfrunde müssen alle Wesen innerhalb der betroffenen Umgebung eine KK-Probe erschwert um die Zugkraft des Wirbels ablegen, bei deren Misslingen sie 1W6 Schritt zum Zentrum hingezogen werden. Gegenstände werden je nach Halt und Gewicht zum Wirbel hingezogen. Wer von diesem Zauber in den Limbus gerissen wird, erleidet halb so viele Schadenspunkte, wie AsP für die Erschaffung des Wirbels aufgewandt wurden. Der Entstehungsort des Wirbels muss bereits während der Zauberdauer – nach etwa 7 Aktionen – festgelegt werden. Der Natur des chaotischen Zaubers entsprechend, lässt er sich auf bestenfalls einen Schritt genau zielen. Der zentrale Bereich des Wirbels entsteht ohne weitere Schwierigkeiten nur in Luft; in Feuer oder Wasser ist die Probe um 5 Punkte erschwert und die Kosten sind verdoppelt, in Humus, Eis oder Erz sind die Kosten verdreifacht bei einer Proben-Erschwernis von 12 Punkten. Dieser zentrale Wirkungsbereich ‘springt nicht auf ein benachbartes Element über’ – es wirkt nur der oben beschriebene Sog. Wird der Zauber übrigens im Limbus gewirkt, ist die Probe um 3W6 Punkte erschwert und öffnet dann ein Tor zu irgendeinem, offenbar zufälligen Ort – viel leicht in Aventurien, vielleicht aber auch in einer anderen Sphäre oder Globule. Mehr zum Limbus finden Sie im gleichnamigen Kapitel in Wege der Zauberei auf den Seiten 358ff.",
+    "cost": "3W6 AsP plus 3 AsP je Schritt Radius des Zentralbereichs, den der Wirbel aufweist.",
+    "target": "Zone",
+    "distance": "Der Wirbel entsteht maximal ZfW Schritt vom Zaubernden entfernt (so dass sich der Zaubernde bei einem entsprechend niedrigen Wert höchster Gefahr aussetzt).",
+    "duration": "augenblicklich; der Wirbel bleibt ZfP* KR bestehen und schließt sich dann schlagartig.",
+    "modifications": ["Zauberdauer", "Kosten", "Erzwingen", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Die Zonen-Variante des LIMBUS VERSIEGELN erschwert das Wirken des Zaubers; direkt angewandt kann diese Antimagie einen Wirbel schließen.",
+    "complexity": "E",
+    "characteristics": ["Limbus", "Kraft"],
+    "variants": [
+      {
+        "name": "Tor in die Niederhöllen",
+        "mod": "+10",
+        "minZfW": 14,
+        "effect": "Der Mahlstrom führt anstatt in den Limbus direkt in die Niederhöllen, die sich gähnend hinter dem Schlund auftun. Die Kosten für diese Variante sind verdreifacht. Gnade der Seele desjenigen, der hier vom Sog erfasst wird ..."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 2},
+      { "representation": "Achaz", "distribution": 1}
+    ]
+  },
+  {
+    "page": 33,
+    "name": "Aureolus Güldenglanz",
+    "trial": "IN/CH/FF",
+    "difficulty": "",
+    "technik": "Die Magierin berührt die zu verzaubernde Oberfläche und spricht das Zauberwort.",
+    "castTime": "5 Aktionen",
+    "effect": "Die Oberfläche erhält einen goldenen Glanz und schimmert leicht – auch im Dunkeln. Der Glanz reicht aus, um einen Gegenstand zu lokalisieren, stellt aber keine nutzbare Lichtquelle dar. Die Oberfläche kann zu einem Gegenstand gehören oder Teil einer Wand sein. Diese einfache Illusion stellt genau die richtige Zauberei für eitle Magi und Magae aller Art dar, die sich gerne mit dem Schein von Reichtum umgeben. An Fürstenhöfen mag eine Magierin hiermit so manchen Dukaten, Batzen oder Maravedi verdienen, indem sie der Einrichtung des Herrschers strahlenden Glanz verleiht. Fürstin Sybia von Aranien soll während ihrer Regierungszeit auf diese Art manchen Stammesfürsten der Ferkinas und auch den darpatischen Emissär zutiefst beeindruckt haben. Die Realitätsdichte (siehe den Kasten zum Thema Illusionen auf Seite 33) beträgt ZfP*/2+7 Punkte.",
+    "cost": "3 AsP pro angefangenem Rechtschritt Oberfläche",
+    "target": "Einzelobjekt, Einzelwesen, freiwillig",
+    "distance": "selbst, Berührung; die Oberfläche darf maximal ZfW Rechtschritt groß sein.",
+    "duration": "ZfP* x 6 Stunden",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "Der Zauber wird aufgehoben.",
+    "antimagic": "kann in einer Zone des ILLUSION AUFLÖSEN nur erschwert gewirkt werden und wird von diesem Zauber aufgehoben.",
+    "complexity": "A",
+    "characteristics": ["Illusion"],
+    "variants": [
+      {
+        "name": "Farbenglanz",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Anstatt einer goldschimmernden Oberfläche können nach Belieben auch silbern, kristallen oder opalgleich sowie jede denkbare Farbe gewählt werden."
+      },
+      {
+        "name": "Muster",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Die Oberfläche besteht aus einem vom Zaubernden festgelegten, ‘gekachelten’ Muster aus mehreren Farben. Das Muster ist von beliebiger Komplexität und kann z.B. auch Schriftzeichen (ständig wiederholte Wörter) zeigen."
+      },
+      {
+        "name": "Wasserfläche",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Das Objekt muss keine feste Oberfläche haben, sondern kann z.B. menschliche Haut oder eine bewegte Wasserfläche sein."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Scharlatan", "distribution": 6}
     ]
   }
 ]
