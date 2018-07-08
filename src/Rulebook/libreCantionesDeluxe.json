@@ -419,7 +419,7 @@
   },
   {
     "page": 23,
-    "name": "Ängste Lindern",
+    "name": "Ängste lindern",
     "trial": "MU/IN/CH",
     "difficulty": "",
     "technik": "Die Hexe tritt vor die Person, der sie    helfen  möchte,  sieht  ihr  in  die  Augen  und  legt ihr beide  Hände auf die Schultern.",
@@ -788,6 +788,53 @@
       { "representation": "Achaz", "distribution": 3},
       { "representation": "Schelm", "distribution": 3},
       { "representation": "Scharlatan", "distribution": 3}
+    ]
+  },
+  {
+    "page": 32,
+    "name": "Aufgeblasen abgehoben",
+    "trial": "CH/KO/KK",
+    "difficulty": "+MR",
+    "technik": "Die Schelmin holt laut und gut sichtbar Luft, bläst ihre Backen auf, hebt die Hände langsam zum Himmel und lässt die Luft mit einem lauten “Pfrrz!” wieder entweichen.",
+    "castTime": "7 Aktionen",
+    "effect": "Der Bezauberte bläst gegen seinen Willen selbst die Backen auf (ja, er erscheint überhaupt sehr aufgeblasen) und beginnt, langsam aber stetig (etwa ein Spann pro Aktion) nach oben zu schweben, um nach Ablauf der Zauberdauer ebenso langsam wieder zu Boden zu sinken. Das Opfer bewegt sich eventuell mit dem Wind, kann aber weder von der Schelmin gelenkt werden, noch selbst irgendwelche Steuerbewegungen vornehmen – und da es die Backen aufgeblasen hat, kann es auch nicht schreien (oder Zaubersprüche ausstoßen). Der Zauber wirkt nur gegen intelligente Lebewesen, dabei aber auch gegen solch massive Gestalten wie Trolle (in diesem Fall aber zu höheren Kosten; siehe die generellen Magieregeln im Band Wege der Zauberei auf Seite 24). In geschlossenen Räumen wird der Verzauberte natürlich höchst unbeholfen und lächerlich unter der Decke haften bleiben, während im Freien eine große Höhe (Proben auf eine eventuell vorhandene Höhenangst verlangen!) unter Umständen dazu führt, dass er den Boden mit leicht gebräunten Beinkleidern wieder betritt ...",
+    "cost": "15 AsP (Sch: 10 AsP)",
+    "target": "Einzelperson",
+    "distance": "7 Schritt",
+    "duration": "ZfP*/2 Spielrunden",
+    "modifications": ["Zauberdauer"],
+    "reversalis": "hebt einen wirkenden AUFGEBLASEN wieder auf.",
+    "antimagic": "VERWANDLUNG BEENDEN und LUFTBANN können das Wirken des Zaubers erschweren (Zonen-Variante) oder ihn beenden.",
+    "complexity": "C",
+    "characteristics": ["Form, Elementar(Luft)"],
+    "variants": [
+      {
+        "name": "Flughöhe begrenzen",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Opfer fliegt max. ZfW Schritt hoch."
+      },
+      {
+        "name": "Fesselballon",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Opfer bleibt senkrecht über der Startstelle."
+      },
+      {
+        "name": "Tierballons",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Diese Variante wirkt auch auf Tiere (Zielobjekt: Einzelwesen)."
+      },
+      {
+        "name": "Kunstflug",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Das Opfer fliegt Figuren, die die Schelmin mit ihren Armen vormacht (A)."
+      }
+    ],
+    "distribution": [
+      { "representation": "Schelm", "distribution": 5}
     ]
   }
 ]
