@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
 
-import Main from '../index';
+import Main from '../../index';
 
 class TalentList extends Component {
   constructor() {

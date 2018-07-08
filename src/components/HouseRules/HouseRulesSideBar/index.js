@@ -106,18 +106,13 @@ class HouseRulesSidebar extends Component {
         </div>
         <div className="row">
           <ul className="list-group list-group-flush col-md-12">
-            <li className="list-group-item">
-              <div className="row">
-                <div>Templates</div>
-              </div>
-            </li>
             {this.possibleTemplates.map(template => (
               <li
                 key={template}
                 className="list-group-item"
                 onClick={this.download.bind(this, template)}>
                 <div className="row">
-                  <div className="offset-2">Zauber</div>
+                  <div>Download Zaubertemplate</div>
                 </div>
               </li>
             ))}
