@@ -1006,5 +1006,45 @@
       { "representation": "Scharlatan", "distribution": 5},
       { "representation": "Gildenmagier", "distribution": 3}
     ]
+  },
+  {
+    "page": 37,
+    "name": "Balsam Salabunde",
+    "trial": "KL/IN/CH",
+    "difficulty": "+Mod.",
+    "technik": "Der Elf legt dem Verletzten sanft eine Hand auf die Verletzung (bei großflächigen oder inneren Verletzungen aufs Herz) und wiederholt die Melodie des bha’sama sala bian da’o so lange, bis die heilende Wirkung einsetzt.",
+    "castTime": "min. 5 Aktionen bis zum langsa men Ein- setzen der ersten Heilwirkung, 1 SR insgesamt",
+    "effect": "Diese mächtige Zauberei heilt, je nach AsP-Einsatz, sämtliche Wunden und inneren Verletzungen des Verzauberten. Man kann der heilenden Wirkung eines mächtigen BALSAM SALABUNDE förmlich zusehen: Offene Wunden überziehen sich mit frischer Haut, Blutungen halten ein, zersplitterte Knochen finden wieder zusammen. Für jeden AsP, den der Zauberer einsetzt, bekommt ein Verwundeter, Kranker oder Vergifteter einen Lebenspunkt zurück (maximal jedoch ZfW x 2 LeP). Der Zauberer kann sich mit diesem Spruch auch selbst heilen (wenn er nicht bewusstlos ist; es gelten die üblichen Zuschläge für Wunden und niedrige LE). Die schädliche Wirkung von Krankheiten und Giften wird mit diesem Zauber nicht gestoppt. U Heilung von Wunden (WdS 37, 161). Die Zauberprobe ist um die doppelte Anzahl der Wunden des Patienten erschwert. Je 7 zurückgegebene LeP heilen eine Wunde vollständig. Optional: Wenn Sie mit Trefferzonen spielen, gilt für die Probe der höchste Zuschlag (die schlimmste Wunde) der Tabelle aus WdS 37. Auch hier heilen je 7 zurückgegebene LeP eine Wunde vollständig. Das Heilen von Wunden muss angesagt werden, ist also kein ‘Nebeneffekt’ jedes BALSAM-Zaubers. U Heilung von Verstümmelungen. Der Zauber kann auch abgetrennte Gliedmaßen wieder anfügen oder komplett zerstörte Organe regenerieren, solange die Verletzung noch frisch ist (maximal ZfW Stunden). Dies erfordert je nach Komplexität und Schwere der Verstümmelung eine bis zu 15 Punkte erschwerte Probe und womöglich permanente AsP (Meis- terentscheid). Narben kann man bis zu ZfW Tagen nach Entstehung mit dem BALSAM verschwinden lassen. U Rettung von der Schwelle des Todes. Schwerst Verwundete (zwischen 0 LeP und –KO LeP) vom Rande des Todes zurückzu- holen, gelingt, wenn der Zauber sofort und mit vollem Einsatz gesprochen wird (mindestens 10 AsP, außerdem muss der Patient hierdurch auf mindestens 1 LeP kommen; Probe erschwert um ((LeP unter null) x 2). Jeder zurückzubringende LeP unter 0 kostet den Zaubernden 2 AsP. Dabei verliert der Zaubernde für je 10 angefangene LeP unter 0 einen permanenten AsP (jedoch nur, wenn der Zauber gelingt), der jedoch nach den Regeln von Wege des Schwerts 173 zurückgekauft werden kann. Ein Patient, dessen LeP unter den negativen Wert seiner Wundschwelle (üblicherweise also unter –KO/2) gefallen sind, hat so schwere Verletzungen erlitten, dass er permanent einen LeP verliert (Optionalregel aus WdS 56).",
+    "cost": "1 AsP pro LeP, mindestens aber 5 AsP",
+    "target": "Einzelwesen, freiwillig",
+    "distance": "selbst, Berührung",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "ein schleichender Schadenszauber, bei dem das Opfer je eingesetztem AsP einen LeP verliert.",
+    "antimagic": "Während der Zauber gewirkt wird, kann er mit HEILKRAFT BANNEN und VERWANDLUNG BEENDEN zum Scheitern gebracht werden; er wirkt nur erschwert in entsprechenden Zonen.",
+    "complexity": "C",
+    "characteristics": ["Heilung", "Form"],
+    "variants": [
+      {
+        "name": "Lebenskraft stärken",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Die Lebens aura des Nutznießers wird für einige Zeit über das gewöhnliche Maß hinaus gestärkt. Für je 3 AsP kann die LE des Verzauberten um 1 LeP über den LE-Grundwert angehoben werden. Maximal können so vorübergehend ZfW LeP hinzugewonnen werden. Nach ZfP* Stunden baut sich dieses Übermaß an Lebensaura jedoch wieder ab und der Verzauberte verliert die entsprechenden LeP wieder (dadurch kann er sogar zu Tode kommen, wenn er zwischenzeitlich zu viele LeP verloren hat)."
+      },
+      {
+        "name": "Sofortige Regeneration",
+        "mod": "+15",
+        "minZfW": 18,
+        "effect": "Der verzauberte Leib erhält die Möglichkeit zur sofortigen Regeneration: Jede KR regeneriert der Nutznießer 1W6 LeP, geschlagene Wunden schließen sich sofort wieder. Kosten: 35 AsP. Zauberdauer: 12 Aktionen. Wirkungsdauer: ZfP* x 10 Kampfrunden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 7},
+      { "representation": "Gildenmagier", "distribution": 7},
+      { "representation": "Achaz", "distribution": 5},
+      { "representation": "Geode", "distribution": 5},
+      { "representation": "Druide", "distribution": 4},
+      { "representation": "Hexe", "distribution": 3}
+    ]
   }
 ]
