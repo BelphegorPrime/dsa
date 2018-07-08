@@ -17,6 +17,7 @@ import RuleBook from '../Rulebook';
 const index = (hero, houseRules = []) => {
   const returnHero = {};
   const ruleBook = new RuleBook(houseRules);
+  console.log(ruleBook.getArsenal())
   returnHero.name = hero.children[0].attributes.name;
   const { children } = hero.children[0];
   children.forEach(child => {

@@ -1,4 +1,5 @@
 import lcd from './libreCantionesDeluxe.json';
+import arsenal from './arsenal.json';
 
 export default class Rulebook {
   constructor(houseRules) {
@@ -24,5 +25,9 @@ export default class Rulebook {
       }
     });
     return lcdInstance;
+  }
+
+  getArsenal() {
+    return arsenal;
   }
 }

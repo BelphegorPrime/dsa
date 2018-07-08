@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Beil",
+    "TP": "1W+3",
+    "TP/KK": "11/4",
+    "mass": 70,
+    "length": 50,
+    "BF": 5,
+    "INI": -1,
+    "cost": 20,
+    "WM": "-1/-2",
+    "comment": "i",
+    "DK": "N",
+    "talent": "Hiebwaffen",
+    "distribution": "(18) alle Regionen außer EHE, WAL"
+  },
+  {
+    "name": "Steinernes Beil",
+    "TP": "1W+3",
+    "TP/KK": "11/4",
+    "mass": 80,
+    "length": 50,
+    "BF": 6,
+    "INI": -1,
+    "cost": 15,
+    "WM": "-1/-2",
+    "comment": "i",
+    "DK": "N",
+    "talent": "Hiebwaffen",
+    "distribution": "(12) ORK, EHE, ALA, BRA, WAL, CHA"
+  },
+  {
+    "name": "Dolch",
+    "TP": "1W+1",
+    "TP/KK": "12/5",
+    "mass": 20,
+    "length": 30,
+    "BF": 2,
+    "INI": 0,
+    "cost": 20,
+    "WM": "0/-1",
+    "comment": "(w)",
+    "DK": "H",
+    "talent": "Dolche",
+    "distribution": "(18) alle Regionen außer FIR, EHE, WAL",
+    "mastership": "Ein Waffenmeister (Dolch) erhält einen INI-Bonus von 1, er benutzt einen TP/KK von 11/4, beim Manöver Gezielter Stich ist die Erschwernis um 4 Punkte, bei Binden und Todesstoß um je 2 Punkte vermindert. Erfordert MU 15, GE 17"
+  }
+]
