@@ -17,7 +17,6 @@ import RuleBook from '../Rulebook';
 const index = (hero, houseRules = []) => {
   const returnHero = {};
   const ruleBook = new RuleBook(houseRules);
-  console.log(ruleBook.getLibreCantionesDeluxe())
   returnHero.name = hero.children[0].attributes.name;
   const { children } = hero.children[0];
   children.forEach(child => {
@@ -57,7 +56,10 @@ const index = (hero, houseRules = []) => {
           returnHero.advantages = getAdvantages(child.children);
           break;
         case 'zauberliste':
-          returnHero.spellList = getSpellList(child.children);
+          returnHero.spellList = getSpellList(
+            child.children,
+            ruleBook.getLibreCantionesDeluxe()
+          );
           break;
         case 'verbindungen':
           returnHero.connections = getConnections(child.children);

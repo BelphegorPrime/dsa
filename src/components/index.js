@@ -4,9 +4,9 @@ import XmlPrint from 'xml-printer';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Hero from './Hero';
-import SideBar from './SideBar';
+import SideBar from './Hero/SideBar';
 import HouseRules from './HouseRules';
-import HouseRulesSideBar from './HouseRulesSideBar';
+import HouseRulesSideBar from './HouseRules/HouseRulesSideBar';
 
 import convert from '../heroConverter';
 import trialToProperty from '../heroConverter/trialToProperty';

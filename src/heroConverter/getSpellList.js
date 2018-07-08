@@ -1,6 +1,6 @@
 import trialToProperty from './trialToProperty';
 
-export default spellList => {
+export default (spellList, lcd) => {
   const returnSpellList = {};
   spellList.forEach(s => {
     const {
@@ -36,6 +36,7 @@ export default spellList => {
       .split(')')[0]
       .split('/');
     returnSpellList[name] = {
+      name,
       learningMethode,
       remarks,
       homeSpell: hauszauber === 'true',
@@ -52,5 +53,26 @@ export default spellList => {
       value: parseInt(value, 10)
     };
   });
+
+  // Add properties from LCD to a Spell
+  Object.keys(returnSpellList).forEach(name => {
+    let spell = returnSpellList[name];
+    let possibleSpells = lcd.filter(
+      s => s.name.toLowerCase() === name.toLowerCase()
+    );
+    if (possibleSpells.length > 0) {
+      possibleSpells = possibleSpells.map(ps => {
+        const returnSpell = ps;
+        returnSpell.trial = returnSpell.trial
+          .split('(')[0]
+          .split(')')[0]
+          .split('/');
+        return returnSpell;
+      });
+      spell = { ...spell, ...possibleSpells[0], fromLCD: true };
+      returnSpellList[name] = spell;
+    }
+  });
+
   return returnSpellList;
 };

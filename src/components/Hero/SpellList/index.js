@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/fontawesome-free-solid';
+import { faHome, faBook } from '@fortawesome/fontawesome-free-solid';
 
 import Main from '../index';
 
@@ -9,7 +9,8 @@ class SpellList extends Component {
   constructor() {
     super();
     this.state = {
-      tawStars: {}
+      tawStars: {},
+      lcdVisible: []
     };
   }
 
@@ -23,9 +24,18 @@ class SpellList extends Component {
     });
   }
 
+  showLCD(name) {
+    const { lcdVisible } = this.state;
+    if (lcdVisible.indexOf(name) > -1) {
+      this.setState({ lcdVisible: lcdVisible.filter(n => n !== name) });
+    } else {
+      this.setState({ lcdVisible: [].concat(...lcdVisible, name) });
+    }
+  }
+
   render() {
     const { spellList, className } = this.props;
-    const { tawStars } = this.state;
+    const { tawStars, lcdVisible } = this.state;
     return (
       <div className={className}>
         <table className="fixt-table fixt-table-5 table table-sm table-hover">
@@ -42,12 +52,17 @@ class SpellList extends Component {
             {Object.keys(spellList).map(name => {
               const spell = spellList[name];
               return (
-                <tr key={name}>
+                <tr
+                  key={name}
+                  onClick={
+                    spell.fromLCD ? this.showLCD.bind(this, name) : () => {}
+                  }>
                   <td style={{ width: '50%' }}>
                     <div>
                       <span className="font-weight-bold">{name}</span>
                       {spell.variant}
                       ({spell.representation})
+                      {spell.fromLCD ? <FontAwesomeIcon icon={faBook} /> : null}
                     </div>
                     <div>
                       {spell.complexity
@@ -59,6 +74,84 @@ class SpellList extends Component {
                     </div>
                     <div>{spell.remarks}</div>
                     <div>{spell.spellComment}</div>
+                    {lcdVisible.indexOf(name) > -1 ? (
+                      <div>
+                        <div>
+                          <span className="font-weight-bold">Technik: </span>
+                          {spell.technik}
+                        </div>
+                        <div>
+                          <span className="font-weight-bold">Wirkung: </span>
+                          {spell.effect}
+                        </div>
+                        <div>
+                          <span className="font-weight-bold">Zielobjekt: </span>
+                          {spell.target}
+                        </div>
+                        <div>
+                          <span className="font-weight-bold">
+                            Modifikationen:{' '}
+                          </span>
+                          {spell.modifications.join(', ')}
+                        </div>
+                        <div>
+                          <span className="font-weight-bold">Varianten: </span>
+                          {spell.variants.map(variant => (
+                            <div
+                              key={variant.name + variant.effect}
+                              className="pl-3 border-bottom border-dark">
+                              <div>
+                                <span className="font-weight-bold">Name: </span>
+                                {variant.name}
+                              </div>
+                              <div>
+                                <span className="font-weight-bold">
+                                  Min. ZfW:{' '}
+                                </span>
+                                {variant.minZfW}
+                              </div>
+                              <div>
+                                <span className="font-weight-bold">
+                                  Erschwerniss:{' '}
+                                </span>
+                                {variant.mod}
+                              </div>
+                              <div>
+                                <span className="font-weight-bold">
+                                  Effekt:{' '}
+                                </span>
+                                {variant.effect}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div>
+                          <span className="font-weight-bold">Reversalis: </span>
+                          {spell.reversalis}
+                        </div>
+                        <div>
+                          <span className="font-weight-bold">Antimagie: </span>
+                          {spell.antimagic}
+                        </div>
+                        <div>
+                          <span className="font-weight-bold">Merkmale: </span>
+                          {spell.characteristics.join(', ')}
+                        </div>
+                        <div>
+                          <span className="font-weight-bold">
+                            Repräsentation und Verbreitung:{' '}
+                          </span>
+                          {spell.distribution
+                            .map(
+                              distri =>
+                                `${distri.representation} ${
+                                  distri.distribution
+                                }`
+                            )
+                            .join(', ')}
+                        </div>
+                      </div>
+                    ) : null}
                   </td>
                   <td style={{ width: '7%' }}>({spell.trial.join('/')})</td>
                   <td style={{ width: '30%' }}>
