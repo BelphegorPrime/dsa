@@ -39,7 +39,7 @@ class App extends Component {
   static test(trial, properties) {
     const propertyValues = trial.map(trialToProperty).map(property => {
       const possibleProperty = properties[property];
-      if (possibleProperty.value) {
+      if (possibleProperty && possibleProperty.value) {
         return possibleProperty.value;
       }
       return 0;
@@ -47,11 +47,11 @@ class App extends Component {
     console.warn(`Eigenschaften: ${propertyValues}`);
     const throws = propertyValues.map(() => App.rollDice(20));
     console.warn(`Gewürfelte Werte: ${throws}`);
-    const values = propertyValues.map((val, i) => val - throws[i]);
-    console.warn(`Ergebnisse: ${values}`);
+    const propertyValue = propertyValues.map((val, i) => val - throws[i]);
+    console.warn(`Ergebnisse: ${propertyValue}`);
     return {
-      values: `(${values.join('/')})`,
-      diceThrow: values
+      values: `(${propertyValue.join('/')})`,
+      diceThrow: propertyValue
         .filter(val => val < 0)
         .reduce((acc, val) => acc + val, 0)
     };
