@@ -44,7 +44,7 @@ body {
 }
 
 .hero-name {
-  width: 400px;
+  min-width: 200px;
   line-height: 38px;
 }
 
@@ -120,4 +120,13 @@ body {
 
 .house-rule-delete {
   right: 16px;
+}
+
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.custom-file {
+  width: 240px !important;
 }

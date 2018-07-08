@@ -287,20 +287,22 @@ class App extends Component {
                     </span>
                   ) : null}
                 </div>
-                <div
-                  className="border border-dark"
-                  style={{ height: 40, width: 40, display: 'inherit' }}>
-                  {this.throws.map((throwValue, index) => (
-                    <div
-                      key={index}
-                      style={{
-                        width: 2,
-                        marginBottom: throwValue / 200,
-                        background: '#000000'
-                      }}
-                    />
-                  ))}
-                </div>
+                {page === 'mastermode' ? (
+                  <div
+                    className="border border-dark"
+                    style={{ height: 36, width: 36, display: 'inherit' }}>
+                    {this.throws.map((throwValue, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          width: 1.8,
+                          marginBottom: throwValue / 200,
+                          background: '#000000'
+                        }}
+                      />
+                    ))}
+                  </div>
+                ) : null}
               </div>
               <div className="float-right">
                 <div
