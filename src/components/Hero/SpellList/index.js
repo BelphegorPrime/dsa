@@ -63,14 +63,20 @@ class SpellList extends Component {
                       <span className="font-weight-bold">{name}</span>
                       {spell.variant}
                       ({spell.representation})
-                      {spell.fromLCD ? <FontAwesomeIcon icon={faBook} /> : null}
+                      {spell.fromLCD ? (
+                        <span className="pl-1">
+                          <FontAwesomeIcon icon={faBook} />
+                        </span>
+                      ) : null}
                     </div>
                     <div>
                       {spell.complexity
                         ? ` Komplexität(${spell.complexity})`
                         : null}
                       {spell.homeSpell ? (
-                        <FontAwesomeIcon icon={faHome} />
+                        <span className="pl-1">
+                          <FontAwesomeIcon icon={faHome} />
+                        </span>
                       ) : null}
                     </div>
                     <div>{spell.remarks}</div>

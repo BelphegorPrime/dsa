@@ -27,7 +27,13 @@ export default class Rulebook {
     return lcdInstance;
   }
   getArsenal() {
-    return arsenal;
+    const weaponRules = this.houseRules.filter(rule => rule.type === 'weapon');
+    let arsenalInstance = JSON.parse(JSON.stringify(arsenal));
+    weaponRules.forEach(rule => {
+      arsenalInstance = arsenalInstance.filter(w => w.name !== rule.name);
+      arsenalInstance.push(rule);
+    });
+    return arsenalInstance;
   }
   getLiturgium() {
     return [];

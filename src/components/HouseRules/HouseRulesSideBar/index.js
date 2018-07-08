@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/fontawesome-free-solid';
+
 class HouseRulesSidebar extends Component {
   constructor() {
     super();
     this.fileUpload = React.createRef();
-    this.possibleTemplates = ['spell'];
+    this.possibleTemplates = ['spell', 'weapon'];
   }
 
   addId(rule) {
@@ -57,6 +60,22 @@ class HouseRulesSidebar extends Component {
             });
           break;
         }
+        case 'weapon': {
+          // eslint-disable-next-line no-undef
+          fetch('/templates/weaponTemplate.js')
+            .then(response => response.body)
+            .then(body => {
+              const reader = body.getReader();
+              reader.read().then(({ value }) => {
+                resolve({
+                  // eslint-disable-next-line no-undef
+                  stringValue: new TextDecoder('utf-8').decode(value),
+                  name: 'weaponTemplate'
+                });
+              });
+            });
+          break;
+        }
         default: {
           break;
         }
@@ -87,7 +106,7 @@ class HouseRulesSidebar extends Component {
   render() {
     return (
       <div>
-        <div className="row">
+        <div className="row pl-3 pt-3">
           <div className="custom-file">
             <input
               ref={this.fileUpload}
@@ -106,35 +125,95 @@ class HouseRulesSidebar extends Component {
         </div>
         <div className="row">
           <ul className="list-group list-group-flush col-md-12">
-            {this.possibleTemplates.map(template => (
-              <li
-                key={template}
-                className="list-group-item"
-                onClick={this.download.bind(this, template)}>
-                <div className="row">
-                  <div>Download Zaubertemplate</div>
-                </div>
-              </li>
-            ))}
+            {this.possibleTemplates.map(template => {
+              switch (template) {
+                case 'spell': {
+                  return (
+                    <li
+                      key={template}
+                      className="list-group-item"
+                      onClick={this.download.bind(this, template)}>
+                      <div className="row">
+                        <div className="pl-3">
+                          <span className="pr-3">
+                            <FontAwesomeIcon icon={faDownload} />
+                          </span>
+                          <span className="font-weight-bold">
+                            Zaubertemplate
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  );
+                }
+                case 'weapon': {
+                  return (
+                    <li
+                      key={template}
+                      className="list-group-item"
+                      onClick={this.download.bind(this, template)}>
+                      <div className="row">
+                        <div className="pl-3">
+                          <span className="pr-3">
+                            <FontAwesomeIcon icon={faDownload} />
+                          </span>
+                          <span className="font-weight-bold">
+                            Waffentemplate
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  );
+                }
+                default: {
+                  return null;
+                }
+              }
+            })}
             <li className="list-group-item">
               <div className="row">
-                <div>Regeln</div>
+                <div className="pl-3">Regeln</div>
               </div>
             </li>
-            {this.possibleTemplates.map(template => (
-              <li
-                key={`rules${template}`}
-                className={
-                  this.props.houseRuleToShow === template
-                    ? 'list-group-item active'
-                    : 'list-group-item'
+            {this.possibleTemplates.map(template => {
+              switch (template) {
+                case 'spell': {
+                  return (
+                    <li
+                      key={`rules${template}`}
+                      className={
+                        this.props.houseRuleToShow === template
+                          ? 'list-group-item active'
+                          : 'list-group-item'
+                      }
+                      onClick={this.show.bind(this, template)}>
+                      <div className="row">
+                        <div className="offset-2">Zauber</div>
+                      </div>
+                    </li>
+                  );
                 }
-                onClick={this.show.bind(this, template)}>
-                <div className="row">
-                  <div className="offset-2">Zauber</div>
-                </div>
-              </li>
-            ))}
+                case 'weapon': {
+                  return (
+                    <li
+                      key={`rules${template}`}
+                      className={
+                        this.props.houseRuleToShow === template
+                          ? 'list-group-item active'
+                          : 'list-group-item'
+                      }
+                      onClick={this.show.bind(this, template)}>
+                      <div className="row">
+                        <div className="offset-2">Waffen</div>
+                      </div>
+                    </li>
+                  );
+                }
+                default: {
+                  return null;
+                }
+              }
+            })}
           </ul>
         </div>
       </div>
