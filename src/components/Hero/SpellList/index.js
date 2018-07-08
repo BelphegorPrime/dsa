@@ -3,7 +3,7 @@ import proptypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faHome, faBook } from '@fortawesome/fontawesome-free-solid';
 
-import Main from '../index';
+import Main from '../../index';
 
 class SpellList extends Component {
   constructor() {
@@ -14,7 +14,8 @@ class SpellList extends Component {
     };
   }
 
-  changeSpell(name, trial, taw) {
+  changeSpell(name, trial, taw, e) {
+    e.stopPropagation();
     const { diceThrow, values } = Main.test(trial, this.props.properties);
     const tawStar = taw + diceThrow;
     this.setState(currentState => {
