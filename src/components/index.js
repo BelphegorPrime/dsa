@@ -290,8 +290,9 @@ class App extends Component {
                 <div
                   className="border border-dark"
                   style={{ height: 40, width: 40, display: 'inherit' }}>
-                  {this.throws.map(throwValue => (
+                  {this.throws.map((throwValue, index) => (
                     <div
+                      key={index}
                       style={{
                         width: 2,
                         marginBottom: throwValue / 200,

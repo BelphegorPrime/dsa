@@ -11,7 +11,7 @@ class Comments extends Component {
           {comments.map(comment => {
             if (comment.name) {
               return (
-                <div>
+                <div key={comment.name + comment.comment}>
                   <span className="pl-4">
                     {comment.name}:{' '}
                     <div className="pl-5">{comment.comment}</div>
@@ -20,7 +20,7 @@ class Comments extends Component {
               );
             }
             return (
-              <div>
+              <div key={comment.specialAbilityName + comment.specialAbility}>
                 <span className="pl-4">
                   {comment.specialAbilityName} ({comment.specialAbility})
                   <div className="pl-5">
