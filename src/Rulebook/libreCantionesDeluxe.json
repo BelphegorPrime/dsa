@@ -412,9 +412,9 @@
     "distribution": [
       { "representation": "Gildenmagier", "distribution": 6},
       { "representation": "Achaz", "distribution": 3},
-      { "representation": "Druide (Mag)", "distribution": 2},
-      { "representation": "Geode (Mag)", "distribution": 2},
-      { "representation": "Hexe (Mag)", "distribution": 2}
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"},
+      { "representation": "Geode", "distribution": 2, "subRepresentation": "Gildenmagier"},
+      { "representation": "Hexe", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
   },
   {
@@ -1045,6 +1045,113 @@
       { "representation": "Geode", "distribution": 5},
       { "representation": "Druide", "distribution": 4},
       { "representation": "Hexe", "distribution": 3}
+    ]
+  },
+  {
+    "page": 38,
+    "name": "Band und Fessel",
+    "trial": "KL/CH/KK",
+    "difficulty": "+MR",
+    "technik": "Die Elfe läuft einmal im Kreis um das Opfer herum und spricht zum Abschluss das bhanda fialza dhaôm’ra.",
+    "castTime": "3 Aktionen plus 6 Aktionen pro Schritt Radius, den der Kreis hat.",
+    "effect": "Mit diesem Zauber wird ein Opfer (Tier oder denkendes Wesen) daran gehindert, das von der Elfe fest- gelegte Gebiet zu verlassen. Jeweils nach Verstreichen einer vollen Spielrunde kann das Opfer versuchen, die Zauberwir- kung mittels einer MU-Probe abzuschütteln, die jedoch um die ZfP* erschwert ist. (Für Tiere ohne angegebenen MU-Wert muss eine Probe auf ihren doppelten GW abgelegt werden, die ebenfalls um die ZfP* erschwert ist.) Dieser Zuschlag sinkt pro Stunde um einen Punkt (die ZfP* verbrauchen sich sozusagen, bis sie bei 0 angekommen sind und der Zauber endet). Andererseits bedeutet eine misslungene MU-Probe, dass der MU des Opfers bis zum Ende der Wirkungsdauer um 1 Punkt sinkt, diese Abzüge sind kumulativ. Die Zone, die durch den Zauber festgelegt wird, ist relativ zu verstehen: Wenn eine Person beispielsweise auf einem Schiff Opfer des Zaubers wird, dann kann sie sich innerhalb des Schiffes nicht weiterbewegen, unabhängig davon, ob das Schiff sich fortbewegt oder nicht. Es ist auch einem Bezauberten jederzeit möglich, Gegenstände durch die Barriere hindurch zu bewegen, also zu schießen oder am Rand der Barriere zu kämpfen – nur sein gesamter Körper einschließlich aller Extremitäten wird von der Barriere aufgehalten. Die Elfe selbst hingegen kann sich ebenso wie jede Person, die nicht Opfer des Zaubers ist, jederzeit in den Kreis hinein oder aus ihm hinaus bewegen. Ein Opfer, das einmal seine MU-Probe geschafft hat, unterliegt der Wirkung nicht mehr, kann sich also ab sofort frei über die Barriere hinweg bewegen. Sollte das Opfer mit Gewalt über die Barriere gezwungen werden, verliert es augenblicklich ZfP* Mut-Punkte (die sich um 1 pro Stunde regenerieren) und erleidet ebenso viele Punkte Erschöpfung.",
+    "cost": "9 AsP (borb. Var.: 1W20 AsP oder 1W20/2 LeP)",
+    "target": "Einzelwesen",
+    "distance": "Das abgeschrittene Gebiet darf eine maximale Ausdehnung von ZfW Schritt Radius haben. Das Opfer muss sich nicht genau im Zentrum des Gebietes befinden, aber es muss vollständig umschlossen sein.",
+    "duration": "ZfP* Stunden",
+    "modifications": ["Zielobjekt (mehrere)"],
+    "reversalis": "Die Reversalis-Wirkung des Grundzaubers bewirkt, dass eine bestimmte Person den umschrittenen Kreis nicht betreten kann. Allerdings muss sich diese Person während der Zauberdauer im Sichtbereich der Elfe aufhalten. Eine spezielle Reversalis-Variante mit mehreren Zielobjekten erlaubt es, eine Zone so zu präparieren, dass niemand sie ohne erschwerte MU-Probe betreten kann, abgesehen von den Personen, die sich zum Zeitpunkt des Zaubers selbst innerhalb der Reichweite aufgehalten haben. Diese Variante ist durchaus dazu geeignet, einen nächtlichen Lagerplatz zu schützen. Allerdings ist die Probe insgesamt um 10 Punkte erschwert, der Zauber kostet 15 AsP und die MU-Proben zum Eindringen sind jeweils um die eigene MR erleichtert.",
+    "antimagic": "kann in einer Zone des EINFLUSS BANNEN nur erschwert gewirkt und durch ihn beendet werden.",
+    "complexity": "C",
+    "characteristics": ["Einfluss"],
+    "variants": [
+      {
+        "name": "mehrere Zielobjekte",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "kostet der Zauber 7 AsP pro Opfer"
+      },
+      {
+        "name": "Ausgewählte Zielobjekte",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "In diesem Fall kann die Elfe beliebig auswählen, welche Personen innerhalb des abgeschrittenen Kreises betroffen sind und welche nicht; Kosten wie bei mehreren Zielobjekten, jedoch auch für die ausgesparten Ziele"
+      },
+      {
+        "name": "Bindung in endloser Höhe",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Mit diesem Spruch ist es auch möglich, Opfer zu binden, die sich beispiels weise in einem anderen Stockwerk eines Gebäudes be finden, aber vollständig innerhalb eines Zylinders, dessen Ränder durch den von der Elfe gezogenen Kreis beschrieben werden."
+      },
+      {
+        "name": "Bannen durch einen Blick",
+        "mod": "+7",
+        "minZfW": 14,
+        "effect": "Die Elfe ist in der Lage, die Bannzone allein durch einen Blick festzulegen – sie muss sie nicht abschreiten, sondern nur den Radius um das Opfer festlegen. Zentrum der Bannzone darf maximal ZfW Schritt von der Elfe entfernt sein; die Zone darf einen Durchmesser von maximal ZfW Schritt haben (und muss mindestens 1 Schritt durchmessen). Die Zauberdauer sinkt in dieser Variante auf 4 Aktionen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 5},
+      { "representation": "Hexe", "distribution": 4},
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Borbaradianer", "distribution": 2}
+    ]
+  },
+  {
+    "page": 39,
+    "name": "Banbaladin",
+    "trial": "IN/CH/CH",
+    "difficulty": "+MR",
+    "technik": "Der Elf blickt seinem Opfer in die Augen und spricht bian bha la da’in.",
+    "castTime": "5 Aktionen",
+    "effect": "Der Verzauberte sieht in dem Spruch- anwender einen Freund. Die Intensität der Wirkung bemisst sich nach den übrig behaltenen Zauberfertig- keitspunkten: 1 ZfP*: Das Opfer mag den Zaubernden und hat das unbe- stimmte Gefühl, ihn irgendwoher zu kennen. 4 ZfP*: Das Opfer ist dem Zaubernden freundschaftlich ver- bunden, ist zuvorkommend und wohlgesinnt und vertraut ihm auch kleinere Geheimnisse an. 7 ZfP*: Das Opfer sieht in dem Zaubernden einen engen Vertrau- ten oder sehr guten Freund, liest ihm jeden Wunsch von den Augen ab und antwortet auf fast alle Fragen wahrheitsgemäß. 10 ZfP*: Das Opfer ist bedingungslos loyal, lässt keine Geheimnisse offen und erfüllt jede Bitte des Zaubernden, selbst wenn sie seinen moralischen Grundsätzen widerspricht. 13 ZfP*: Das Opfer ist bereit, körperlichen oder schweren finanziellen Schaden für den Anwender zu erleiden. 16 ZfP*: Das Opfer ist dem Anwender verfallen und würde sogar sein Leben für den Spruchanwender opfern. Ob eine bestimmte Bitte erfüllt wird, können Proben auf Charisma, Überreden oder Überzeugen entscheiden, wobei Talentproben um die ZfP* erleichtert sind, Eigenschafts-Proben um die halben ZfP*. Die Zauberprobe ist aus einer Bedrohungssituation heraus um 3 Punk- te, in einem bereits begonnenen Kampf um 7 Punkte erschwert. Da der Zaubernde einen intensiven Kontakt zum Geist seines Opfers herstellen muss, ist es nur schwer möglich, diese Formel gegen mehrere Opfer gleichzeitig einzusetzen. Ob Außenstehende bemerken, dass das Opfer unter einem Bann steht, hängt von der Situation ab. Dem Opfer wird nach Ablaufen der Wirkungsdauer eventuell klar, dass es verzaubert worden ist (eine KL-Probe pro SR erlaubt, wobei es höchstens KL –ZfP* Versuche hat).",
+    "cost": "7 AsP",
+    "target": "Einzelperson",
+    "distance": "3 Schritt",
+    "duration": "ZfP* Spielrunden",
+    "modifications": ["Zauberdauer", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "Ein existenter BANNBALADIN wird aufgehoben. Ein Unverzauberter wird dagegen glauben, einen Feind vor sich zu haben: Intensität der Wirkung je nach ZfP* analog zu oben.",
+    "antimagic": "Der EINFLUSS BANNEN lässt das Opfer wieder Herr über seine Gefühle werden. Der Zauber kann in einer entsprechenden Zone nur entsprechend erschwert gewirkt werden.",
+    "complexity": "B",
+    "characteristics": ["Einfluss"],
+    "variants": [
+      {
+        "name": "gegen mehrere Personen",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "kostet der Zauber 6 AsP pro Opfer und ist um 2 Punkte (anstatt des üblichen einen) pro Person erschwert."
+      },
+      {
+        "name": "Tierfreund",
+        "mod": "+5 nur in der elfischen Repräsentation",
+        "minZfW": 0,
+        "effect": "Mit dieser Variante können auch Tiere so beeinflusst werden, dass sie glauben, ein Rudelmitglied oder gar ein Respekt einflößendes Alphatier vor sich zu haben."
+      },
+      {
+        "name": "Gemeinsame Erinnerungen",
+        "mod": "+3 nicht in elfischer Repräsentation",
+        "minZfW": 7,
+        "effect": "Der Zauber schafft zusätzlich im Geist des Opfers fiktive Erinnerungen an das Freundschaftsband zwischen ihm und dem Zaubernden, der diese Erinnerungen vorgibt. (Spieltipp: Lassen Sie den Spieler diese gemeinsame Vorgeschichte formulieren: Je glaubwürdiger und kreativer, desto stärker kann der BANNBALADIN bei speziellen Bitten wirken.) Gemeinsam mit der Grundeinstellung des Opfers lässt sich durch die Erinnerung die Art der Freundschaft definieren: Zwangsbündnis, rondrianische Ehrenschuld, familiäre Verbundenheit oder thorwalsche Kumpelhaftigkeit. Nach Ende des Zaubers verblassen diese Erinnerungen jedoch langsam."
+      },
+      {
+        "name": "Keine Erinnerung",
+        "mod": "+7 nicht in elfischer Repräsentation",
+        "minZfW": 11,
+        "effect": "Das Opfer erinnert sich nach dem Zauber nicht daran, was es unter Einfluss des Zaubers getan hat."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 7},
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Scharlatan", "distribution": 3, "subRepresentation": "Gildenmagier"},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Borbaradianer", "distribution": 2}
     ]
   }
 ]
