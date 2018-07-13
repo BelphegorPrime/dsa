@@ -1263,5 +1263,37 @@
       { "representation": "Geode", "distribution": 2, "subRepresentation": "Gildenmagier"},
       { "representation": "Elf", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 43,
+    "name": "Bewegung Stören",
+    "trial": "KL/IN/FF",
+    "difficulty": "+Mod",
+    "technik": "Der Magier deutet mit der rechten Hand (oder dem Stab) auf das Ziel des Zaubers und beschreibt mit der linken einen kleinen Kreis in der Luft.",
+    "castTime": "4 Aktionen",
+    "effect": "Diese Formel kann magisch gelenkte, beein- flusste oder erzeugte Bewegung stören. Darunter fallen insbesondere alle Zauberanwendungen mit dem Merkmal Telekinese, aber auch der Flug eines Hexenbesens, der Apport eines personalisierten Artefakts und die Steuerung von Zaubereffekten wie die ferngelenkte Flammenkugel eines IGNISPHAERO (explodiert, sobald der BEWEGUNG STÖREN wirkt) oder die schwebende Lichtkugel eines FLIM FLAM (verbleibt an Ort und Stelle). Auch die magische Fortbewegung von Drachen, Gargylen, Dschinnen (wenn nicht im eigenen Element), Dämonen und Geistern kann gestoppt werden, hierfür ist die Probe jedoch um die MR des Wesens erschwert. Die Zauberprobe ist um die vom gegnerischen Zauberer (demjenigen, der die Bewegung gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/5 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren. Die Störformel wird gleichzeitig mit oder im Verlauf der Bewegung gesprochen. Die Aus- wirkung des Zaubers legt der Spielleiter fest; er ist nicht geeignet, z.B. ein fliegendes Ziel tödlich abstürzen zu lassen, wohl aber, es zur sofortigen Landung zu zwingen. Der Zauber ist daran erkenntlich, dass sich aus der rechten Hand des Magiers eine bläulich schimmernde Kugel löst, die die betroffene Bewegungszauberei mit einem Gespinst blassblauer Fäden umgibt. Sorgfältige magische Analyse (so man die Zeit dazu hat) des wir- kenden Bewegungszaubers im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf BEWEGUNG STÖREN um einen Punkt erleichtert.",
+    "cost": "8 AsP plus 1/5 der Kosten des zu brechenden Spruchs; nur die Grundkosten beim Stören von Bewegungen magischer Wesen (Sch: 5 AsP + 2/15 der Kosten des zu brechenden Zaubers). Um einen permanent wirkenden und mittels perma- nenter AsP fixierten Bewegungszauber aufzuheben, muss der Magier permanente AsP investieren: 1/10 der Kosten des wirkenden Bewegungszaubers, min destens aber 1 AsP. Misslingt die Probe, entstehen keine permanenten Kosten.",
+    "target": "Einzelwesen, Einzelobjekt (eigentlich: einzelner Zauber, dessen Matrix an einem Wesen oder Objekt wirkt)",
+    "distance": "ZfW x 7 Schritt",
+    "duration": "augenblicklich. Eine magische Wesenheit kann nach ZfP* KR ihre Bewegung fortsetzen.",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Der PROTECTIONIS kann den Zauber erschweren.",
+    "complexity": "C",
+    "characteristics": ["Antimagie", "Telekinese"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 24 AsP kann der Ma- gier eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Bewegung um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält. In die Zone eindringende Bewegungen kommen zum Stillstand, wenn die ZfP* des Störzaubers größer sind als die der Telekinese bzw. wenn mit dem W20 eine Probe auf die ZfP* des Störzaubers gelingt (bei Artefakten, Wesen). Der Bewegungsstörer ist nicht von der Wirkung ausgenommen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Scharlatan", "distribution": 4},
+      { "representation": "Elf", "distribution": 4},
+      { "representation": "Hexe", "distribution": 3}
+    ]
   }
 ]
