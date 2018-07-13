@@ -1102,7 +1102,7 @@
   },
   {
     "page": 39,
-    "name": "Banbaladin",
+    "name": "Bannbaladin",
     "trial": "IN/CH/CH",
     "difficulty": "+MR",
     "technik": "Der Elf blickt seinem Opfer in die Augen und spricht bian bha la da’in.",
@@ -1152,6 +1152,43 @@
       { "representation": "Achaz", "distribution": 2},
       { "representation": "Geode", "distribution": 2},
       { "representation": "Borbaradianer", "distribution": 2}
+    ]
+  },
+  {
+    "page": 40,
+    "name": "Bärenruhe Winterschlaf",
+    "trial": "MU/KO/KK",
+    "difficulty": "+Mod",
+    "technik": "Die Elfe konzentriert sich auf ihren Herzschlag und bremst ihn nach und nach ab, während sie sich auf die Melodie von var fir’ye diungra ia’bha’ray konzentriert.",
+    "castTime": "3 Spielrunden",
+    "effect": "Die Elfe versetzt sich in einen Tiefschlaf, der an den Winterschlaf mancher Tiere erinnert, aber noch stärker in seinen Auswirkungen ist: Sobald der Zustand erst einmal erreicht ist, braucht die Schläferin keine Nahrung und keine Luft zum Atmen mehr. Selbst große Kälte schadet ihr nicht, während große Hitze sie zwar verbrennen, aber nicht austrocknen kann. Da auch die bewussten Denkprozesse während der Schlafenszeit angehalten sind, ist es nicht möglich, den erst einmal begonnenen Schlaf vor der Zeit bewusst zu beenden. Auch Gewalteinwirkung nützt nicht, nur von außen gewirkte Antimagie kann den Prozess abbrechen. Regeneration findet während dieser Zeit nicht statt, aber auch die Auswirkungen von Krankheiten und Gift werden gestoppt. Da die Elfe während des ‘Winter-Nickerchens’ träumt, ist eine Einfluss- nahme via Traummagie möglich. Ohne magische Hellsicht ist dieser Schlafzustand nicht vom Tod zu unterscheiden. Die Zauberprobe ist pro voller 3 Tage, die der Zauber andauern soll, um 1 Punkt erschwert.",
+    "cost": "2 AsP pro Tag",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst, Berührung",
+    "duration": "je nach aufgewandter Astralenergie, höchstens ZfW x 5 Tage",
+    "modifications": ["Zauberdauer", "Kosten", "Wirkungsdauer"],
+    "reversalis": "Die Elfe verliert das Bedürfnis und die Fähigkeit zu schlafen. Dies hat allerdings zur Folge, dass sie nicht regeneriert und nach einem Tag 1 Punkt Erschöpfung erleidet, nach einem weiteren Tag 2 Punkte, nach dem nächsten Tag 3 etc.",
+    "antimagic": "kann in einer Zone des VERWANDLUNG BEEN- DEN nur erschwert gewirkt werden und wird von diesem Zauber beendet.",
+    "complexity": "D",
+    "characteristics": ["Form"],
+    "variants": [
+      {
+        "name": "Tiere",
+        "mod": "+2",
+        "minZfW": 0,
+        "effect": "Es ist möglich, auch Tiere mit diesem Zauber zu belegen. Da diese jedoch nicht begreifen, was ihnen geschieht, und sie daher dem Zauber stets Widerstand entgegensetzen, ist die Probe um die MR des Tieres +2 Punkte erschwert."
+      },
+      {
+        "name": "Der lange Schlaf",
+        "mod": "+5 und +1 pro Monat",
+        "minZfW": 0,
+        "effect": "Die Kosten betragen 7 AsP pro Monat, die Höchstzeit ist nur durch die AsP begrenzt, die zur Verfügung stehen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 4},
+      { "representation": "Gildenmagier", "distribution": 3, "subRepresentation": "Elf"},
+      { "representation": "Achaz", "distribution": 3}
     ]
   }
 ]
