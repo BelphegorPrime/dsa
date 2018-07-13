@@ -1190,5 +1190,39 @@
       { "representation": "Gildenmagier", "distribution": 3, "subRepresentation": "Elf"},
       { "representation": "Achaz", "distribution": 3}
     ]
+  },
+  {
+    "page": 41,
+    "name": "Beherrschung Brechen",
+    "trial": "KL/IN/CH",
+    "difficulty": "+Mod",
+    "technik": "Der Druide berührt die Stirn des Beherrschten mit der Hand und konzentriert sich mit geschlossenen Augen",
+    "castTime": "40 Aktionen",
+    "effect": "hebt bei Gelingen einen Spruch mit dem Merkmal Herrschaft auf. Die Zauberprobe ist um die vom gegnerischen Zauberer (demjenigen, der die Beherrschung gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/5 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren. Mit dieser Formel ist keine Selbstbefreiung eines Beherrschten möglich, da es zum Wesen einer Beherrschungsformel gehört, dass das Opfer sich nicht gegen sie auflehnen kann. Der Druide muss übrigens nur wissen, dass eine Beherrschung vorliegt, nicht aber, welche es genau ist. Dieser Zauber ist auch dazu geeignet, einen von außen verursachten Traum zu beenden (siehe das Kapitel Tödliche Träume im Band Wege der Zauberei auf den Seiten 69ff.). Der Zauber wirkt ebenfalls gegen geistbeeinflussende Hexenflüche, wobei sich hier die übrig behaltenen TaP* Ritualkenntnis als Er- schwernis auswirken. Dazu kommt wegen des nicht klar definierten Merkmals eine zusätzliche Erschwernis von 3 Punkten (Letzteres nicht in der hexischen Repräsentation). Sorgfältige magische Analyse des wirkenden Beherrschungszaubers im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf BEHERRSCHUNG BRECHEN um einen Punkt erleichtert.",
+    "cost": "7 AsP plus 1/5 der Kosten des zu brechenden Spruchs. Um einen permanent wirkenden und mittels permanenter AsP fixierten Beherrschungszauber aufzuheben, muss der Druide permanente AsP investieren: 1/10 der Kosten des wirkenden Beherr- schungszaubers, mindestens aber 1 AsP. Misslingt die Probe, entstehen keine permanenten Kosten.",
+    "target": "Einzelwesen (eigentlich: einzelner Zauber an einem Einzelwesen)",
+    "distance": "Berührung",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Der PROTECTIONIS kann auch einen Beherrschungs- zauber schützen (S. 213).",
+    "complexity": "C",
+    "characteristics": ["Antimagie", "Herrschaft"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 21 AsP kann der Druide eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Beherrschung um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 7},
+      { "representation": "Geode", "distribution": 6},
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Hexe", "distribution": 5},
+      { "representation": "Elf", "distribution": 4},
+      { "representation": "Achaz", "distribution": 4}
+    ]
   }
 ]
