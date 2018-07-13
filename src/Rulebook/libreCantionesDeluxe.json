@@ -1224,5 +1224,44 @@
       { "representation": "Elf", "distribution": 4},
       { "representation": "Achaz", "distribution": 4}
     ]
+  },
+  {
+    "page": 42,
+    "name": "Beschwörung Vereiteln",
+    "trial": "MU/IN/CH",
+    "difficulty": "+Mod",
+    "technik": "Die Magierin deutet auf den Be- schwörungskreis (das Penta-/Heptagramm o.ä.), ruft die Formel und konzentriert sich darauf, die Verbindung vom Diesseits in eine fremde Sphäre zu zerreißen.",
+    "castTime": "15 Aktionen",
+    "effect": "Mit diesem Zauber kann eine bereits begon- nene Beschwörung gestört werden, indem die Magierin die Verbindung von der Dritten Sphäre in eine andere unterbricht – jene Sphäre, aus der die gerufene Wesenheit erscheinen soll. Dieser Zauber wirkt, während ein gegnerischer Zauberer seine Beschwörung vollführt, vor allem aber in der Wartezeit zwischen dem Ende der Beschwörung und dem Erscheinen des Wesens. Die Zauberprobe ist um die vom gegnerischen Zauberer (demjenigen, der die Beschwörung durchführt) erzielten ZfP* erschwert, des Weiteren um 1 Punkt für Geister oder für fleischliche Wesen aus fremden Dimensionen, 3 Punkte für Niedere Dämonen und 5 Punkte für Gehörnte Dämonen. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren, während gezielt gewählte Anti-Para- phernalia die Probe erleichtern können. Sorgfältige magische Analyse (so man die Zeit dazu hat) der begon- nenen Beschwörung im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf BESCHWÖRUNG VEREITELN um einen Punkt erleichtert.",
+    "cost": "7 AsP plus 1/5 der Kosten der Beschwörung (nur des Beschwörungszaubers selbst, nicht eventueller Folgekosten)",
+    "target": "Zone (der Ort der Beschwörung)",
+    "distance": "7 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Die Beschwörung kann prophylaktisch mit einem PROTECTIONIS geschützt sein.",
+    "complexity": "C",
+    "characteristics": ["Antimagie", "Beschwörung"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Viel wichtiger als die Stö- rung einer laufenden Beschwörung ist die Errichtung einer Zone, in der Beschwörungen erschwert sind: Für den Einsatz von 21 AsP kann die Magierin eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Zaubersprüchen mit dem Merkmal Beschwörung um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält. Es ist auch entsprechend erschwert, Wesenheiten in die Zone hinein zu beschwören; woanders beschworene Wesenheiten können die Zone jedoch ohne Schwierigkeiten betreten."
+      },
+      {
+        "name": "Dauernder Bann",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Die Errichtung der Zone kostet 49 AsP, davon 7 permanente AsP. Dafür ist die Wirkung auch von permanenter Dauer."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Druide", "distribution": 2},
+      { "representation": "Hexe", "distribution": 2},
+      { "representation": "Geode", "distribution": 2, "subRepresentation": "Gildenmagier"},
+      { "representation": "Elf", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
