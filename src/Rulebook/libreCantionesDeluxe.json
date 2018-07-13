@@ -1295,5 +1295,29 @@
       { "representation": "Elf", "distribution": 4},
       { "representation": "Hexe", "distribution": 3}
     ]
+  },
+  {
+    "page": 44,
+    "name": "Blendwerk",
+    "trial": "IN/CH/GE",
+    "difficulty": "",
+    "technik": "Die Schelmin blickt – so lange, wie das Trugbild währen soll – unverwandt auf die Stelle, an der sie es erscheinen lassen will.",
+    "castTime": "5 Aktionen (bis das Bild erscheint), die Schelmin muss sich während der gesamten Wirkungsdauer auf das Bild konzentrieren.",
+    "effect": "Mit Hilfe dieses Zaubers kann die Schelmin bewegte, dreidimensionale Bilder bis zu 5 Raumschritt Größe pro Punkt ZfW, jedoch keine Geräusche oder Gerüche erscheinen lassen. Je nach Komplexität der Illusion kann diese um bis zu 7 Punk- te erschwert und je nach Vertrautheit der Schelmin mit dem abgebildeten Objekt um bis zu 7 Punkte erleichtert sein. Die Realitätsdichte (siehe den Kasten zum Thema Illusionen auf Seite 34) beträgt ZfP*/2+7 Punkte.",
+    "cost": "9 AsP pro Spielrunde (Sch: 6 AsP/SR)",
+    "target": "Zone",
+    "distance": "Die Illusion entsteht maximal ZfW x 3 Schritt von der Schelmin entfernt, zur maximalen Größe siehe oben.",
+    "duration": "nach Wunsch der Schelmin und AsP-Aufwand (A)",
+    "modifications": [],
+    "reversalis": "hebt die Illusion auf.",
+    "antimagic": "kann nur erschwert in einer Zone des ILLUSION AUFLÖSEN gewirkt und mit dieser Antimagie beendet werden.",
+    "complexity": "C",
+    "characteristics": ["Illusion"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Schelm", "distribution": 7},
+      { "representation": "Gildenmagier", "distribution": 3, "subRepresentation": "Schelm"},
+      { "representation": "Scharlatan", "distribution": 3, "subRepresentation": "Schelm"}
+    ]
   }
 ]
