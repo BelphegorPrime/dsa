@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faHome, faBook } from '@fortawesome/fontawesome-free-solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faBook } from '@fortawesome/free-solid-svg-icons';
 
 import Main from '../../index';
 

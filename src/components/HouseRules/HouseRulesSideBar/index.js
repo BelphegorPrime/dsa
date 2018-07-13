@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/fontawesome-free-solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 class HouseRulesSidebar extends Component {
   constructor() {
