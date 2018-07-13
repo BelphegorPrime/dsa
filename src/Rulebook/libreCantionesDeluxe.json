@@ -1319,5 +1319,39 @@
       { "representation": "Gildenmagier", "distribution": 3, "subRepresentation": "Schelm"},
       { "representation": "Scharlatan", "distribution": 3, "subRepresentation": "Schelm"}
     ]
+  },
+  {
+    "page": 45,
+    "name": "Blick aufs Wesen",
+    "trial": "KL/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Der Elf mustert die betreffende Person von oben nach unten, flüstert dhao valva bha ́fey und konzentriert sich auf den Zauber.",
+    "castTime": "30 Aktionen",
+    "effect": "Der Zaubernde erhält eine grobe Vorstellung der Fähigkeiten und Fertigkeiten seines Gegenübers. Der Meister gibt dabei keine Werte weiter, sondern Einschät- zungen über Besonderheiten – dabei hängt eine solche Ein- schätzung immer auch von den Fähigkeiten des zaubernden Elfen selbst ab, denn in Fachgebieten, von denen er selbst nur wenig Ahnung hat, sind seine Einschätzungen immer sehr viel grober als in seinen eigenen Spezialgebieten. Die Menge und Genauigkeit an Informationen hängt davon ab, wie gut die Zauberprobe gelungen ist: U 1 ZfP*: Aussagen über die Intelligenz (wobei hier der Mittelwert aus KL und IN genommen wird, denn der Zauber unterscheidet nicht zwischen diesen Werten), die Gelehrtheit (die an der Summe aller TaW in Wissenstalenten festgemacht werden kann), die körperliche Verfassung (eine Einschätzung anhand der Werte KO, KK, GE und aller körperlichen Talente, wobei hier Krankheiten und Verletzungen das Bild verzerren können), das handwerkliche Geschick (FF und Handwerkstalente), die Kampfkraft (Kampftalente, aber auch hier spielen KK und GE mit hinein) und die Zaubermacht (so vorhanden: Summe aller ZfW). Dazu werden jeweils auch passende Sonderfer- tigkeiten gezählt. In all diesen Kategorien erhält der Spieler nur die Auskunft, ob die untersuchte Person unfähig, durchschnittlich, fähig oder sehr fähig ist. U 4 ZfP*: Die Angaben in den oben genannten Kategorien sind etwas konkreter. Besonders auffällige Werte können vom Meister angedeutet werden, ohne das jeweilige Talent oder die Eigenschaft zu nennen. (Beispiel: Ein meisterlicher Maler oder Musikant ist “ein fähiger Künstler”.) U 7 ZfP*: Zusätzlich erhält der Elf auch noch Einblick in eventuell vorhandene Schlechte Eigenschaften und ihre Ausprägung (leicht, mit- tel, stark, sehr stark) sowie bei Zauberkundigen Auskunft über ihre Merkmalskenntnisse. U 10 ZfP*: Der Elf erfährt genau, in welchen Talenten der Bezauberte besonders gut ist, mit welchen Waffen er am liebsten kämpft und ob er dabei sehr trickreich oder brutal kämpft etc. Gelingt der Zauber so gut, kann der Elf auch das Seelentier seines Gegenübers erahnen.",
+    "cost": "6 AsP",
+    "target": "Einzelwesen",
+    "distance": "ZfW in Schritt",
+    "duration": "entspricht der Zauberdauer",
+    "modifications": ["Zauberdauer", "Reichweite"],
+    "reversalis": "Der Elf offenbart seinem Gegenüber seine eigenen besonderen Fähigkeiten.",
+    "antimagic": "kann in einer Zone des HELLSICHT TRÜBEN nur erschwert gewirkt und von diesem Zauber auch unterbrochen werden.",
+    "complexity": "C",
+    "characteristics": ["Hellsicht"],
+    "variants": [
+      {
+        "name": "Leuchtende Persönlichkeit",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Der Elf erkennt aus einer Gruppe von (maximal ZfW) Leuten denjenigen, der in einem bestimmten Bereich besonders hervorsticht: Das kann der heim- liche Wortführer sein, aber auch der beste Kämpfer etc., je nachdem, was der Elf gerade sucht. Das funktioniert natürlich nur, wenn es wirklich jemanden gibt, der sich in diesem Bereich wesentlich von den anderen Personen im Wirkungsbereich unterscheidet. Die Zauberprobe ist um die höchste MR in der Gruppe erschwert."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 6},
+      { "representation": "Geode", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Druide", "distribution": 4},
+      { "representation": "Hexe", "distribution": 4}
+    ]
   }
 ]
