@@ -1975,5 +1975,42 @@
       { "representation": "Hexe", "distribution": 2, "subRepresentation": "Gildenmagier"},
       { "representation": "Scharlatan", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 62,
+    "name": "Custodosigil Diebesbann",
+    "trial": "KL/FF/FF",
+    "difficulty": "",
+    "technik": "Der Magier versiegelt den Gegen- stand seiner Wahl mit gewöhnlichem Siegelwachs, ritzt die speziel len, benötigten Zeichen ein und spricht das Zauberwort.",
+    "castTime": "etwa eine Stunde",
+    "effect": "Mit diesem besonderen Zauberzeichen können Behältnisse verschiedenster Art (Briefe, Flaschen und Phio- len, Kassetten und maximal Truhen) vor unbefugtem Öffnen gesichert werden. Nur der Magier selbst darf den Gegenstand öffnen, ohne dass das magische Siegel sich entlädt. Wenn dies geschieht, geht der komplette Inhalt des Behältnisses unwieder- bringlich in Flammen auf. Unter ‘unbefugtes Öffnen’ fallen alle Versuche, den Behälter mit Schlösser Knacken, roher Gewalt, FORAMEN o.ä. zu öffnen. Die ZfP* aus der Zauberprobe wirken als Erschwernis auf eine Kraftprobe, die doppelten ZfP* als Erschwernis auf Talent- und Zauberproben. Misslingt dann eine entsprechende Probe, so zündet der CUSTODOSIGIL. Die benötigten Zeichen müssen in der Tat eingeritzt werden, denn sie bezeichnen sowohl den zu schützenden Gegenstand als auch die Perso- nen, die ihn gefahrlos berühren dürfen – als auch den ‘Tagesherrscher’, den dem Tag des Zaubers zugeordneten Dämon. (Und wer will schon mit einer Sammlung von mehreren Hundert Siegelringen herumlau- fen?) Die Wirkung entsteht offensichtlich durch das Zusammenspiel eines APPLICATUS und einer elementaren Invokation. Der Zauber kann übrigens bewusst als Falle verwendet werden (und wird es auch gerne), indem man den Behälter mit einer brennbaren Substanz füllt.",
+    "cost": "von 5 AsP für eine kleine Phiole bis zu 30 AsP für eine Truhe (grob: 1 AsP pro Stein Gewicht des Behälters, min. jedoch 5 AsP)",
+    "target": "Einzelobjekt (hohl)",
+    "distance": "Berührung",
+    "duration": "bis zur nächsten Wintersonnenwende",
+    "modifications": ["Zauberdauer", "Kosten"],
+    "reversalis": "hebt einen bestehenden CUSTODOSIGIL auf; dabei müssen jedoch mehr ZfP* erzielt werden als bei der ursprünglichen Verzauberung",
+    "antimagic": "kann mit einem OBJEKT ENTZAUBERN gebannt werden; dabei müssen jedoch mehr ZfP* erzielt werden als beim CUSTODOSIGIL selbst. Kann in einer Zone des OBJEKT ENT- ZAUBERN (oder gegen ein entsprechend geschütztes Einzelobjekt), des METAMAGIE NEUTRALISIEREN oder des FEUERBANN nur erschwert gewirkt werden.",
+    "complexity": "C",
+    "characteristics": ["Objekt,", "Metamagie", "Elementar (Feuer)"],
+    "variants": [
+      {
+        "name": "Personalisierung",
+        "mod": "+1",
+        "minZfW": 0,
+        "effect": "Pro benannter Person, die den Behälter öffnen darf, ist die Probe um 1 Punkt erschwert"
+      },
+      {
+        "name": "Permanenz",
+        "mod": "+7",
+        "minZfW": 14,
+        "effect": "Die Kosten betragen das Anderthalbfache der oben angegebenen Werte, davon 1 AsP permanent."
+      }
+    ],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 6},
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Scharlatan", "distribution": 3, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
