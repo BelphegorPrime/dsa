@@ -1496,5 +1496,41 @@
       { "representation": "Geode", "distribution": 3},
       { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"}
     ]
+  },
+  {
+    "page": 49,
+    "name": "Blitz dich Find",
+    "trial": "KL/IN/GE",
+    "difficulty": "+MR",
+    "technik": "Die Elfe deutet mit Zeige- und Mittelfinger der linken Hand auf das Opfer und spricht bha’iza dha feyra.",
+    "castTime": "1 Aktion",
+    "effect": "Der Zauber erzeugt im Geist des Opfers einen grellen Lichtblitz, der es für ZfW/2 Aktionen blen- det und – vor allem – desorientiert. Anschließend kann es übergangslos wieder vollständig sehen. Ein geblendetes Opfer kann kaum noch gezielte Aktionen unter nehmen (Talentpro- ben, Zauberproben und Fernkampf um jeweils ZfP* Punkte erschwert) und erleidet im Kampf Abzüge von ZfP* Punkten auf seine Kampfwerte (jeweils gleichmäßig von AT- und PA-Basiswert abziehen, bei ungeraden ZfP* zuerst von der Attacke) sowie von ZfW Punkten auf seinen INI-Wert (Aktion Orientieren während der Wirkungsdauer nicht möglich). Kenntnis der SF Blindkampf senkt die Abzüge auf die Hälfte. Kenntnis der SF Konzentrationsstärke halbiert die Abzüge auf Zauberproben. Natürlich kann der Zauber auch gegen Tiere oder andere Kreaturen angewandt werden, die Augen und einen Geist haben. Wie stark ein geblendetes Tier eingeschränkt ist, hängt natürlich davon ab, wie sehr es auf seinen Gesichtssinn angewiesen ist. Bei den meisten Tieren dürfte der Schreck jedoch reichen, um sie in die Flucht zu schlagen. Dämonen, Geister, Untote und Golems sind ebenso immun gegen diesen Zauber wie Elementarwesen. Der ‘Blitz’ ist für Außenstehende nicht zu sehen, sondern betrifft nur den Geist des Opfers.",
+    "cost": "4 AsP (Sch: 3 AsP)",
+    "target": "Einzelwesen",
+    "distance": "ZfW Schritt",
+    "duration": "ZfW/2 Aktionen",
+    "modifications": ["Zielobjekt (mehrere Wesen)", "Reichweite"],
+    "reversalis": "hebt die Blitz-Wirkung auf.",
+    "antimagic": "Ein EINFLUSS BANNEN beendet den Zauber vorzeitig; in einer entsprechenden Zone kann der Zauber nur erschwert gewirkt werden.",
+    "complexity": "B",
+    "characteristics": ["Einfluss"],
+    "variants": [
+      {
+        "name": "gegen mehrere Personen",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante gegen mehrere Personen kostet der Zauber 3 AsP pro Person."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 7},
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Druide", "distribution": 5},
+      { "representation": "Hexe", "distribution": 5},
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Geode", "distribution": 4},
+      { "representation": "Schelm", "distribution": 4},
+      { "representation": "Scharlatan", "distribution": 4}
+    ]
   }
 ]
