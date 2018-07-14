@@ -47,12 +47,12 @@
     "wait-on": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
-    "electron:dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3003 && electron .\"",
+    "electron:dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron:dev:win": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
     "preelectron:pack": "npm run build",
     "electron:pack:linux": "electron-builder -l",
