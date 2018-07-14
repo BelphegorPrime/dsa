@@ -1465,5 +1465,36 @@
       { "representation": "Hexe", "distribution": 4},
       { "representation": "Geode", "distribution": 3}
     ]
+  },
+  {
+    "page": 48,
+    "name": "Blick in die Vergangenheit",
+    "trial": "KL/KL/IN",
+    "difficulty": "+Mod",
+    "technik": "Der Geode nimmt den Gegenstand in die Hand (bzw. lässt sich am gewünschten Ort nieder) und konzentriert sich auf seine astralen Schwingungen.",
+    "castTime": "etwa eine Spielrunde Vorbereitung, dann eine Minute pro betrachtetem Jahr",
+    "effect": "Der Geode erhält im Zeitraffer Einblick in die Geschichte eines Gegenstandes oder Ortes, ausgehend von der Gegenwart. Er erhält bildliche Eindrücke, von wem, wozu und unter welchen Umständen der Gegenstand regelmäßig oder häufig benutzt wurde. Ein Jahr erscheint als eine Minute; binnen zweier Tage zöge also die gesamte aventurische Menschheitsge- schichte am Betrachter vorbei. Wegen dieser Geschwindigkeit können keine Einzelheiten wahrgenommen werden. Nur länger dauernde und wiederholte Ereignisse oder größere Entladungen astraler Macht verdichten sich zu wahrnehmbaren Eindrücken, ebenso die Ereignisse, die die Geschichte geprägt haben, die so genannten ‘Karmatischen Kausalknoten’. Der Zauber ist also nicht dazu geeignet, dass ein Geode Detektivgeschichten ruiniert, indem er nach kurzem Grübeln den Mörder ‘wiedererkennt’. Vielmehr eignet er sich dafür, epische und fantastische Ereignisse der Vergangenheit vage anzudeuten. Die Variante zur Betrachtung der Vergangenheit von Gegenständen ist prinzipiell um 3 Punkte erschwert. Bei der Untersuchung eines Ortes kann der Geode sich nicht von der Stelle bewegen, wohl aber in alle Richtungen blicken. Dauert die magische Untersuchung länger als sechs Stunden, sollten zunehmend erschwerte Selbstbeherrschungs-Proben verlangt werden, um zu prüfen, ob der Geode die Konzentration aufrechterhalten kann.",
+    "cost": "21 AsP + 3 AsP pro angefangener Stunde Zauber-/Wirkungsdauer",
+    "target": "Einzelobjekt oder Zone (Sichtweite)",
+    "distance": "Berührung (Objekt) oder Sichtweite (Zone)",
+    "duration": "nach AsP-Einsatz (A)",
+    "modifications": ["Kosten"],
+    "reversalis": "keine Wirkung – es ist definitiv nicht möglich, in die Zukunft zu sehen.",
+    "antimagic": "HELLSICHT TRÜBEN kann die Vergangenheitsschau des Geoden jederzeit abbrechen. Demzufolge kann der Zauber auch in einer entsprechenden antimagischen Zone nur erschwert gewirkt werden. Auch in diesem Fall wäre der TEMPORALZAUBER STÖ- REN sicherlich wirkungsvoll – wenn es ihn gäbe.",
+    "complexity": "D",
+    "characteristics": ["Hellsicht", "Temporal"],
+    "variants": [
+      {
+        "name": "Gegenwart aus ‘rückwärts zu spulen’",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Es ist möglich, nicht von der Gegenwart aus ‘rückwärts zu spulen’, sondern direkt zu einem Zeitpunkt in ferner Vergan- genheit zu springen. Die Modifikatoren dafür sind: über ein Jahr: +2, ein Jahrzehnt: +4, ein Jahrhundert: +8, ein Jahrtausend: +16, ein Jahrzehntausend: +32"
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Geode", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"}
+    ]
   }
 ]
