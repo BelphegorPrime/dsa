@@ -1869,5 +1869,36 @@
       { "representation": "Elf", "distribution": 2, "subRepresentation": "Gildenmagier"},
       { "representation": "Schelm", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 59,
+    "name": "Corpofesso Gliederschmerz",
+    "trial": "KL/KO/KK",
+    "difficulty": "+MR",
+    "technik": "Der Magier deutet mit der offenen rechten Hand auf das Opfer, spricht die Formel und ballt die Hand zur Faust.",
+    "castTime": "5 Aktionen",
+    "effect": "Das Opfer dieses Zauberspruches leidet un- ter schmerzhafter Muskelschwäche: Es verliert schlagartig ZfW/2 Punkte Körperkraft und ZfW/4 Punkte Gewandt- heit und erleidet ZfW/2 Punkte Erschöpfung. Während der gesamten Wirkungsdauer ist es zu keiner Kraftanstrengung (dazu zählen auch Kampfhandlungen) oder längerer Dauerbe- lastung fähig. Sinkt die KK gar unter 5, so ist das Opfer auch nicht mehr in der Lage, sich ohne Hilfe fortzubewegen. Sollte ein Opfer trotz der negativen Auswirkungen des Zaubers weiterhin zu kämpfen versuchen, dann verliert es pro Kampfaktion (AT oder PA) 1W6 Ausdauerpunkte und erleidet pro 5 Kampfrunden einen Punkt Erschöpfung. Dieser Kampfzauber ist vor allem geeignet, lästige Verfolger zu bremsen oder einen Gegner nur kampfunfähig, nicht aber gleich zum Krüppel zu zaubern.",
+    "cost": "8 AsP",
+    "target": "Einzelwesen",
+    "distance": "7 Schritt",
+    "duration": "ZfP* mal 10 Kampfrunden, die Erschöpfung muss jedoch durch Ruhe reduziert werden",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt einen wirkenden CORPOFESSO auf oder bewirkt eine Kräftigung des Betroffenen.",
+    "antimagic": "kann in einer Zone des EIGENSCHAFT WIEDERHERSTELLEN nur erschwert gewirkt und von diesem Zauber beendet werden.",
+    "complexity": "C",
+    "characteristics": ["Eigenschaften"],
+    "variants": [
+      {
+        "name": "gegen mehrere Wesen",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante gegen mehrere Wesen kostet der Zauber nur 6 AsP pro Opfer."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Elf", "distribution": 2, "subRepresentation": "Gildenmagier"},
+      { "representation": "Hexe", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
