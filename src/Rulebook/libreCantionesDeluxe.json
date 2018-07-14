@@ -1709,5 +1709,28 @@
       { "representation": "Hexe", "distribution": 3, "subRepresentation": "Elf"},
       { "representation": "Gildenmagier", "distribution": 3, "subRepresentation": "Elf"}
     ]
+  },
+  {
+    "page": 55,
+    "name": "Chimaeroform Hybridgestalt",
+    "trial": "KL/IN/KO",
+    "difficulty": "+Mod",
+    "technik": "Der Zaubernde muss die zu ver- wandelnden Lebewesen aneinander festbinden, sie in einem Heptagramm fixieren, für sich selbst ein Heptagramm zeichnen, sich hineinsetzen und die Opfer der Verwandlung während der gesamten Zauber- dauer beobachten.",
+    "castTime": "von Sonnenuntergang bis Sonnenaufgang",
+    "effect": "Der Zauber verwandelt zwei (oder mehr) unter- schiedliche Wesen (Tiere, Pflanzen, Dämonen) in ein einziges. Aussehen und Fähigkeiten der Kreatur werden in Übereinstim- mung mit dem Meister festgelegt. Die Erschaffung von Chimären ist eine schwierige Angelegenheit: Zuerst müssen die passenden Wesen beschafft und ruhig gestellt werden, damit sie sich nicht zerfleischen, wenn sie gemeinsam im Heptagramm festgebunden werden. Mit dem Zauber können auch Daimoniden erschaffen werden, Mischwesen aus Lebewesen und Dämonen. Je nach Verwandtschaftsgrad der Wesen, ihrem Größenunterschied und weiteren speziellen Fähigkeiten und Umständen (wie der Besitz der Konstruktionsthesis und Zurbarans Tinktur), ist die Probe erschwert oder erleichtert. Die Kontroll-Probe geht auf einen Wert von (MU+MU+KL+CH+ ZfW)/5 beim Dienst Gefolgschaft, ansonsten ist es immer eine LO-Probe (Startloyalität bei Chimären: 1W6+7, bei Daimoniden 1W6+1) Einige Beispiel-Chimären finden Sie im Kapitel Asfaloths Transfor- mationen im Band Wege der Zauberei auf den Seiten 228f.; weitere Details zur Macht Asfaloths und zur Erschaffung von Chimären im gleichen Band auf den Seiten 194ff.",
+    "cost": "ca. 30 AsP für Lebewesen bis Hundegröße, 45 AsP für menschengroße, 60 AsP für Tiere bis Pferdegröße und 100 AsP für größere Lebewesen; von diesen Kosten wird 1/20 permanent verbraucht.",
+    "target": "zwei oder mehr Einzelwesen",
+    "distance": "1 Schritt (Abstand der beiden Heptagramme)",
+    "duration": "permanent",
+    "modifications": ["diverse individuelle Abwandlungen"],
+    "reversalis": "Eine Chimäre kann hiermit in ihre Bestandteile zerlegt werden; die permanenten Kosten betragen die Hälfte derjenigen bei der Erschaffung.",
+    "antimagic": "Einem VERWANDLUNG BEENDEN oder einem ASFALOTHBANN setzen Chimären einen Widerstand in Höhe ihrer doppelten Erschaffungsschwierigkeit entgegen. Eine Erschaf- fung von Chimären verhindern die Zonen-Versionen der genannten anti magischen Sprüche jedoch in voller Stärke. Chimären können mittels DESTRUCTIBO zerlegt werden.",
+    "complexity": "F",
+    "characteristics": ["Dämonisch (Asfaloth)", "Form"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution":2},
+      { "representation": "Hexe", "distribution": 1}
+    ]
   }
 ]
