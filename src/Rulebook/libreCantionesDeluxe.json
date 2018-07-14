@@ -1622,5 +1622,43 @@
       { "representation": "Achaz", "distribution": 3},
       { "representation": "Gildenmagier", "distribution": 3}
     ]
+  },
+  {
+    "page": 52,
+    "name": "Caldofrigo Heiss und Kalt",
+    "trial": "IN/CH/KO",
+    "difficulty": "",
+    "technik": "Der Magier breitet die Arme aus bzw. berührt den Gegenstand und spricht das Zauberwort.",
+    "castTime": "40 Aktion",
+    "effect": "Durch diesen Zauber kann der Magier die Temperatur eines Gegenstandes von maximal Truhengröße nach Wunsch verändern. Die Temperaturveränderung tritt dabei sofort ein. Gegen schlagartige Temperaturänderungen (IGNIFAXIUS, plötzliche elementare Gewalten) schützt die Zauberwirkung nicht. Im Folgenden sind diverse Tempera- turbereiche in Kategorien eingeordnet, mitsamt der für diesen Zauber gültigen Wertigkeit (wichtig zur Kostenberechnung, siehe unten) und dem Hitze- bzw. Kälteschaden, den Lebewesen durch diese Temperaturen erleiden. Die Vorteile Hitze- bzw. Kälteresistenz sowie die entsprechenden Akklimatisierungen senken den entsprechenden Schaden um 2 Punkte. Näheres zu Hitze- und Kälteschaden finden Sie in WdS 144ff. Ein Zauberer kann maximal eine Wertigkeitsveränderung von ZfW x 5 Punkten in einer Verzauberung erreichen.",
+    "cost": "die halbe Differenz aus den Wertigkeiten zwischen Ausgangstemperatur und gewünschter Temperatur in AsP",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "ZfP* Spielrunden; danach passt sich der Gegenstand mit natürlicher Geschwindigkeit der Umgebungstemperatur an.",
+    "modifications": ["Zauberdauer", "Kosten", "Erzwingen", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt einen wirkenden CALDOFRIGO auf.",
+    "antimagic": "Je nach Anwendung wirken OBJEKT ENT- ZAUBERN oder VERÄNDERUNG AUFHEBEN gegen den CALDOFRIGO – entweder gezielt oder in der Zonenvari- ante. Auch FEUER- und EISBANN können den Zauber brechen bzw. erschweren.",
+    "complexity": "E",
+    "characteristics": ["Objekt", "Umwelt", "Elementar (Feuer)", "Elementar (Eis)"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Eine Zone veränderter Tempe- ratur von maximal ZfW Schritt Radius entsteht um den Zaubernden herum und bewegt sich mit ihm. Diese Variante kostet doppelt so viele AsP und muss aufrechterhalten werden (A)."
+      },
+      {
+        "name": "Zonenzentrum",
+        "mod": "+7",
+        "minZfW": 7,
+        "effect": "Bei dieser Variante kann das Zentrum der Zone bis zu ZfW Schritt vom Zaubernden entfernt entstehen; diese Variante muss nicht aufrechterhalten werden, sie verbleibt am Ort. Für die Kosten gilt das bei der Zonen-Variante Gesagte; der genannte Zuschlag enthält bereits die +3 für die Zone."
+      }
+    ],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Geode", "distribution": 3},
+      { "representation": "Druide", "distribution": 2}
+    ]
   }
 ]
