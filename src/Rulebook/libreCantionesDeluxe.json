@@ -2012,5 +2012,46 @@
       { "representation": "Gildenmagier", "distribution": 6},
       { "representation": "Scharlatan", "distribution": 3, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 63,
+    "name": "Dämonenbann",
+    "trial": "MU/CH/KO",
+    "difficulty": "+Mod",
+    "technik": "Der Magier stimmt sich auf die Strukturen des dämonischen Merkmals ein und murmelt dabei beständig die Formel.",
+    "castTime": "40 Aktionen",
+    "effect": "hebt bei Gelingen einen Spruch mit dem Merkmal Dämonisch auf, wenn es sich um die vom Magier gewählte Domäne handelt. Die Zauberprobe ist um die vom gegnerischen Zauberer (demjenigen, der den dämonischen Zauber gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/5 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren. Sorgfältige magische Analyse der vorliegenden dämonischen Präsenz im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf den DÄ- MONENBANN um einen Punkt erleichtert. Der Zauber ist nicht geeignet, Dämonen zu exorzieren. Auf Daimo- nide wirkt er jedoch einschüchternd: Er senkt die INI-Basis und den AT-Wert jeweils um ZfP* Punkte. Der Magier muss beim Erlernen festlegen, aus welcher Domäne die dämonische Wirkung stammen soll, die er bevorzugt verbannt. Wir- kungen anderer Domänen sind erschwert zu brechen.",
+    "cost": "9 AsP plus 1/5 der Kosten des zu brechenden Spruchs. Um einen permanent wirkenden und mittels permanenter AsP fixierten dämonischen Zauber aufzuheben, muss der Magier permanente AsP investieren: 1/20 der Kosten des wirkenden Beschwörungszaubers. Misslingt die Probe, entstehen keine permanenten Kosten.",
+    "target": "einzelner Zauber",
+    "distance": "maximal ZfW Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Dämonische Formeln sind häufiger einmal durch den PROTECTIONIS geschützt (Seite 213).",
+    "complexity": "C",
+    "characteristics": ["Antimagie,", "Dämonisch"],
+    "variants": [
+      {
+        "name": "Andere / beliebige Domäne",
+        "mod": "+3 / +7",
+        "minZfW": 0,
+        "effect": "Die Bannung von Kräften aus einer anderen Domäne als der beim Erlernen gewählten ist um 3 Punkte erschwert, die Bannung eines generellen dämonischen Effekts um 7 Punkte."
+      },
+      {
+        "name": "Zone",
+        "mod": "+5",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 27 AsP kann der Magier eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Dämonisch um ZfP* Punkte erschwert ist und die ZfP* Stunden lang anhält. Diese Zone ist auch dazu geeignet, in dämonisch verseuchten oder längerfristig verzauberten Arealen die dämonische Wirkung zeitweilig zu vermindern (abhängig von den ZfP*). Gelingt es, die Wirkung für einen Tag unter 0 zu drücken, ist das Areal von der dämo- nischen Wirkung befreit (kann jedoch natürlich jederzeit wieder ‘befallen’ werden)."
+      },
+      {
+        "name": "Schutzkreis",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Erschafft ein am Ort verbleibendes Areal von ZfW Schritt Radius, das von Daimoniden aus der gewählten Domäne nicht betreten werden kann, von Niederen Dämonen nur nach einer erfolgreichen Probe auf ihren Gefährlich- keitswert, die um die ZfP* der Zone erschwert ist. Wirkt leider nicht gegen Gehörnte Dämonen. Kosten: 21 AsP bei ZfW Stunden Dauer. Kann mit der Variante Zone kombiniert werden; der Gesamt-Proben- aufschlag beträgt dann nur 7 Punkte; Kosten 35 AsP."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 2}
+    ]
   }
 ]
