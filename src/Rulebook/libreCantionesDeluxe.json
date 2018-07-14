@@ -1732,5 +1732,41 @@
       { "representation": "Gildenmagier", "distribution":2},
       { "representation": "Hexe", "distribution": 1}
     ]
+  },
+  {
+    "page": 56,
+    "name": "Chronoklassis Urfossil",
+    "trial": "KL/IN/KO",
+    "difficulty": "+Mod",
+    "technik": "Ein länger dauerndes, komplexes Ritual, in dem der Kristallomant bei geeigneter Sternkonstellation ein Tridekagramm auf den Boden zeichnet, dessen Enden er mit großen Mondsteinen krönt und Zauber sätze rückwärts zischt, während er die Szenerie durch einen Diamanten fixiert.",
+    "castTime": "mehrere Stunden für die Vorbereitung, 3 Spielrunden für den eigentlichen Zaubervorgang",
+    "effect": "Mit diesem Spruch kann der Kristallomant Gegen- stände oder Lebewesen aus einem genau bestimmten Zeitpunkt der Vergangenheit holen. Er muss eine genaue Beschreibung – sowohl des Zeitpunkts als auch des Objekts/Lebewesens – geben können. Die Modifikatoren auf die Probe sind: U Zeitabstand: 1 Jahr +2, 1 Jahrzehnt +4, 1 Jahrhundert +6, 1 Jahrtausend: +8, 1 Jahrzehntausend: +10 usw. U Genauigkeit: Magier kennt die Zeit genau, besitzt eine detail- lierte Beschreibung des Objekts und ist am gleichen Ort +0, Magier kennt den Gegenstand nur flüchtig +3, Magier kennt Ort ziemlich genau +7, Magier kennt weder Zeit noch Ort +12, Magier vermutet Existenz +20.",
+    "cost": "Beschwörungskosten 20 AsP für das Zeittor und Kosten nach Gewicht des gerufenen Gegenstandes/Wesens: 5 AsP bis zu 1 Stein, 10 AsP bis zu 10 Stein, 20 AsP bis zu 100 Stein etc. Folgekosten nach Gewicht 1, 2, 4 etc. AsP je Stunde.",
+    "target": "Einzelobjekt, Einzelwesen in der Vergangenheit",
+    "distance": "Das Objekt oder Lebewesen erscheint im Beschwörungskreis; es kann sich beliebig bewegen beziehunsweise bewegt werden.",
+    "duration": "Das Objekt oder Lebewesen bleibt nach AsP-Aufwand in der Gegenwart. Danach wird es in seine Zeit zurückge- schleudert – in denselben Augen blick, aus dem herausgerissen wurde (und bei Lebewesen mit bestenfalls nebulösen Erinnerungen an seine Zeit in der Zukunft).",
+    "modifications": [],
+    "reversalis": "keine Wirkung",
+    "antimagic": "nicht bekannt; der hypothetische TEMPORALZAUBEREI BANNEN würde wirken, der HERBEIRUFUNG VEREITELN sicherlich auch.",
+    "complexity": "F",
+    "characteristics": ["Herbeirufung,", "Temporal"],
+    "variants": [
+      {
+        "name": "Rückkehr in den Ausgangszustand",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Kehrt die beschworene Wesenheit wieder in ihre Zeit zurück, sind alle an ihr in ihrer Zukunft vorgenommenen oder entstandenen Änderungen rückgängig gemacht; vor allem hat sie definitiv keine Erinnerung (Wirkungsdauer: augenblicklich) an die Zeit, die sie in der Gegenwart zugebracht hat; Zusatzkosten: 7 AsP."
+      },
+      {
+        "name": "Permanenz",
+        "mod": "+12",
+        "minZfW": 14,
+        "effect": "Das Objekt oder Lebe wesen wird permanent im gegenwärtigen Zeitkontinuum verankert. Hierfür muss der Zaubernde 1/5 der Beschwörungskosten an permanenten AsP opfern."
+      }
+    ],
+    "distribution": [
+      { "representation": "Achaz", "distribution":2},
+      { "representation": "Gildenmagier", "distribution": 1, "subRepresentation": "Achaz"}
+    ]
   }
 ]
