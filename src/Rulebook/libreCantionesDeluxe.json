@@ -1353,5 +1353,53 @@
       { "representation": "Druide", "distribution": 4},
       { "representation": "Hexe", "distribution": 4}
     ]
+  },
+  {
+    "page": 46,
+    "name": "Blick durch fremde Augen",
+    "trial": "MU/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Der Druide konzentriert sich auf die Person, deren Gesichtssinn er benutzen will, versetzt sich mit rhythmischem Schaukeln in Trance und lässt seinen Geist wandern.",
+    "castTime": "2 Spielrunden Einstimmung; danach muss der Druide die Konzentration aufrechterhalten.",
+    "effect": "Durch diesen Zauber ist der Druide in der Lage, die Augen einer Person (oder auch eines Tiers) mitzubenutzen, die weit von ihm entfernt sein kann – allerdings ist die Probe für jeweils angefangene 10 Meilen Entfernung um 1 erschwert. Der Spruch in seiner Grundform bezieht sich ausschließlich auf den Gesichtssinn. Der Druide sieht genau das, was der natürliche Besitzer der Augen gerade betrachtet – schließt dieser die Augen, schläft er oder ist er blind, so kann der Druide nichts erkennen. Als Sinnenschärfe-Wert des Druiden gelten seine ZfP*. Die Gedanken des Opfers bleiben dem Druiden verborgen, ebenso wie die Anwesenheit des Druiden dem Opfer (es sei denn, dieses verfügt über Magiegespür oder eine vergleichbare Fähigkeit). Der Druide muss eine sehr konkrete Vorstellung von der Person ha- ben, deren Augen er benutzen will; das heißt in der Regel, dass er sie über längere Zeit gezielt beobachten konnte (was z.B. auf im Haus lebende Verwandte, ein Lehrer-Schüler-Verhältnis, die Leibwache des Opfers etc.) zutrifft. Bei eher flüchtigen Bekannten (eine kurze Reise zusammen verbracht, Mitglied des Hofstaats des Opfers etc.) ist die Probe um min destens 3 Punkte erschwert, bei Zufallsbegegnungen um mindestens 7 Punkte (ebenso bei Personen, die er nicht sehen, die er aber hören oder riechen kann – z.B. Wachen im Nebenraum, Oger im Gebüsch); bei Personen, die man nur vom Hörensagen kennt, beträgt der Zuschlag mindestens 14 Punkte. Wenn der Druide über Haare, Fingernägel oder Blut der Zielperson verfügt, die er als Fokus zum Einstimmen verwenden kann, ist die Probenerschwerung nach Entfernung halbiert und es fällt kein Probenzuschlag wegen mangelnder Bekanntheit an. Hat das Opfer den Vorteil Zauberhaar oder den Nachteil Körpergebundene Kraft und werden entsprechende Teile verwendet, so ist zudem die gesamte Probe um 7 Punkte erleichtert. Der Fokus wird beim Zaubern nicht verbraucht (kann aber durchaus eine begrenzte Haltbarkeit haben).",
+    "cost": "Grundkosten 1 AsP pro begonnenen 10 Meilen, Folgekosten 7 AsP pro angefangener Spielrunde",
+    "target": "Einzelwesen",
+    "distance": "ZfW mal 10 Meilen",
+    "duration": "nach AsP-Einsatz (A)",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Das Opfer kann sich vor dem Zugriff des Druiden auf seine Sinne schützen, indem es sich in einer Zone von HELLSICHT TRÜBEN oder VERSTÄNDIGUNG STÖREN aufhält. Späteres Betreten solcher Zonen senkt nur die ZfP* um den entsprechenden Betrag. Beide Zauber unterbrechen die Verbindung zwischen dem Druiden und seinem Opfer, wenn sie auf einen der beiden gewirkt werden.",
+    "complexity": "E",
+    "characteristics": ["Hellsicht", "Verständigung"],
+    "variants": [
+      {
+        "name": "geistige Anwesenheit des Druiden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Wenn das ‘Opfer’ die geistige Anwesenheit des Drui den zu einem bestimmten – verabrede- ten – Zeitpunkt erwartet und billigt, so kommt die Probenerschwernis durch MR nur zur Hälfte zum Tragen."
+      },
+      {
+        "name": "Fremde Sinne",
+        "mod": "+3/+5",
+        "minZfW": 0,
+        "effect": "Will der Druide einen anderen Sinn als den Gesichtssinn seines Opfers verwenden (also Ge- hör, Geruchssinn, Tastsinn, Geschmackssinn), ist die Probe um 3 Punkte erschwert (um 5, wenn es sich um einen Sinn handelt, über den der Druide selbst nicht verfügt – etwa das Gespür für Körperwärme, das Echsenwesen haben)."
+      },
+      {
+        "name": "Mehrere Sinne",
+        "mod": "je +2",
+        "minZfW": 11,
+        "effect": "Der Druide kann mehrere Sinne seines Opfers gleichzeitig mitbenutzen; für jeden zusätzlichen Sinn ist die Probe um weitere 2 Punkte (zusätzlich zu denen für Fremde Sinne) erschwert."
+      },
+      {
+        "name": "Fremder Zauber",
+        "mod": "+7",
+        "minZfW": 14,
+        "effect": "Mit Hilfe eines Fokus’ wie (Zauber-) Haaren des Opfers kann der Drui de auch durch die fremden Augen zaubern, natürlich unter Verzicht auf etwaige Gesten und Formeln und demzufolge mit entsprechender Erschwernis (siehe die allgemeinen Zauberregeln, WdZ 19f.). Die ZfP* der BLICK-Probe können diese Erschwernis ausgleichen – ein Probenzuschlag von min- destens 7 Punkten bleibt aber auf jeden Fall erhalten. Der Fokus wird in diesem Fall verbraucht."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"}
+    ]
   }
 ]
