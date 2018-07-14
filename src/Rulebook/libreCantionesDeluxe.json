@@ -1532,5 +1532,58 @@
       { "representation": "Schelm", "distribution": 4},
       { "representation": "Scharlatan", "distribution": 4}
     ]
+  },
+  {
+    "page": 50,
+    "name": "Böser Blick",
+    "trial": "MU/CH/CH",
+    "difficulty": "+MR",
+    "technik": "Der Druide starrt seinem Opfer in die Augen und spricht vernehmlich das Wort “Furcht” (weitere mögliche Worte siehe Modifikationen).",
+    "castTime": "4 Aktion",
+    "effect": "Die übliche Variante dieses Zaubers erzeugt Furcht: Der MU-Wert des Opfers halbiert sich; sinkt er unter 8, so ist das Opfer unfähig, den Druiden anzugreifen, und es flieht vor ihm, sobald dieser eine drohende Haltung einnimmt.",
+    "cost": "7 AsP (borbaradianische Variante: 2W6 AsP bzw. die Hälfte davon als LeP)",
+    "target": "Einzelperson",
+    "distance": "1 Schritt",
+    "duration": "ZfP* Minuten",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "bewirkt entweder verdoppelten Mut, absolute Friedfertigkeit, Vertrauensseligkeit oder übersteigertes Selbstbewusstsein und Tatendrang (dabei dann MU und CH je +4).",
+    "antimagic": "EINFLUSS BANNEN kann den Zauber auf- heben; eine entsprechende Zone bewirkt, dass er nur erschwert gesprochen werden kann; auch ÄNGSTE LINDERN kann die Wirkung aufheben oder zu mindest abschwächen.",
+    "complexity": "C",
+    "characteristics": ["Einfluss", "Bor: Iribaar"],
+    "variants": [
+      {
+        "name": "gegen mehrere Personen",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante gegen mehrere Personen kostet der Zauber 6 AsP pro Opfer."
+      },
+      {
+        "name": "Hass",
+        "mod": "+0",
+        "minZfW": 7,
+        "effect": "Das Opfer greift augenblicklich den Nächststehenden an, der eine aggressive oder provozierende Haltung einnimmt; dies kann auch der Druide sein. Mit dem Angriff auf die nächstbeste Person ist die Wirkung des Zaubers nicht beendet. Während der Wirkungsdauer reagiert der Verzauberte mit Hass und Aggression auf jeden, der ihm einen Vorwand dafür liefert; gegebenenfalls auch auf Personen mit dem Nachteil Randgruppe oder solche, gegenüber denen er Vorurteile hegt."
+      },
+      {
+        "name": "Wahn",
+        "mod": "+0",
+        "minZfW": 11,
+        "effect": "Für die Wirkungsdauer erhält das Opfer den Nachteil Wahnvorstellungen; speziell Verfolgungswahn und ein übersteigertes Misstrauen gegenüber so genannten guten Freunden."
+      },
+      {
+        "name": "Zweifel",
+        "mod": "+3 nicht in kristallomantischer Variante",
+        "minZfW": 14,
+        "effect": "Das Opfer zweifelt an seinen bisherigen Moralvorstellungen, der Richtigkeit seines Tuns und an sich selbst; es wird apathisch oder weinerlich (MU –4) und versinkt in Grübeleien und Gejammer (CH –4)."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 7},
+      { "representation": "Geode", "distribution": 6},
+      { "representation": "Achaz", "distribution": 5},
+      { "representation": "Borbaradianer", "distribution": 2},
+      { "representation": "Hexe", "distribution": 2, "subRepresentation": "Druide"},
+      { "representation": "Gildenmagier", "distribution": 2},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"}
+    ]
   }
 ]
