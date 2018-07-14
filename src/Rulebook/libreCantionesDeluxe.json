@@ -1937,5 +1937,43 @@
       { "representation": "Gildenmagier", "distribution": 4},
       { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 61,
+    "name": "Cryptographo Zauberschrift",
+    "trial": "KL/KL/IN",
+    "difficulty": "",
+    "technik": "Der Zaubernde berührt das Blatt Pergament, das er verzaubern will, spricht das Lösungswort, inves tiert Astralenergie nach Wunsch und rezitiert dann die Formel.",
+    "castTime": "1 Spielrunde",
+    "effect": "Jegliche Schrift, die auf ein solcherart ver- zaubertes Pergament (Papier, Papyrus) aufgebracht wird, verwandelt sich sofort in ein obskures mehr oder minder hingekritzeltes Zeichensystem, das nur der Zauberer und alle anderen Kenner eines vom Zaubernden ausgewählten Lösungs- wortes wieder in sinnvollen Text verwandeln können. Wird das Lösungswort gesprochen, erscheinen die Originalzeichnung oder der ursprüngliche Text für den Zeitraum einer Spielrunde wieder. Es kann natürlich gut sein, dass der Autor seine Niederschrift in einer fremden Schrift oder mit einer zusätzliche Verschlüsselung getätigt hat, womit man das Dokument auch dann nur entziffern kann, wenn man diese Schrift oder den entsprechenden Code kennt. Ohne Magie kann die Zauberschrift nur entschlüsselt werden, wenn in mehreren Kryptographie-Proben zehnmal so viele TaP angesammelt werden, wie die Summe aus ZfP* des Zaubers plus die zur Sicherung investierten AsP beträgt. Jede Kryptographie-Probe dauert einen Tag. Das benötigte Lösungswort kann von einem Magier mittels eines ANALYS ARCANSTRUKTUR (Probe erschwert um die ZfP* des CRYPTOGRAPHO und die zur Sicherung investierten AsP) ermittelt wer den. Ohne Kenntnis des Schlüsselworts kann man den Text eines mit CRYPTOGRAPHO verschlüsselten Schriftstücks erkennbar machen, indem man min destens doppelt so viel Astralenergie in das Pergament fließen lässt wie der Verschlüsseler plus dessen ZfP*. Hierzu ist eine Kenntnis des CRYPTOGRAPHO, aber keine separate Probe erforderlich.",
+    "cost": "3 AsP für ein Blatt Pergament plus eine beliebige Anzahl AsP für zusätzliche Sicherheit.",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "bis zur nächsten Sonnenwende",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "VERSTÄNDIGUNG STÖREN und OBJEKT ENTZAUBERN entziffern den Text gleichermaßen. Der Zauber kann in den entsprechenden Zonen natürlich nur erschwert gewirkt werden.",
+    "complexity": "C",
+    "characteristics": ["Objekt,", "Verständigung"],
+    "variants": [
+      {
+        "name": "Unlesbares Buch",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Der Zauber kann auch auf ein Buch von höchstens 333 (Octavo-)Seiten gelegt werden. Die Grundkosten betragen 27 AsP; je 2 für Sicherheit investierte AsP entsprechen einem der o.g. Sicherungs-Punkte."
+      },
+      {
+        "name": "Schreibmaterial",
+        "mod": "+3 nur in der kristallomantischen Repräsentation",
+        "minZfW": 0,
+        "effect": "Der Zauber kann auch auf zu ritzendes Holz, Gestein oder anderes solides Schreibmaterial angewendet werden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Hexe", "distribution": 2, "subRepresentation": "Gildenmagier"},
+      { "representation": "Scharlatan", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
