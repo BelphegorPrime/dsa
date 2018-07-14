@@ -1585,5 +1585,42 @@
       { "representation": "Gildenmagier", "distribution": 2},
       { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"}
     ]
+  },
+  {
+    "page": 51,
+    "name": "Brenne toter Stoff",
+    "trial": "MU/KL/KO",
+    "difficulty": "",
+    "technik": "Die Borbaradianerin legt eine Hand auf das Material, das sie in Brand setzen will, und spricht die Formel.",
+    "castTime": "3 Aktion",
+    "effect": "Der Zauber setzt jegliches tote Material in einem Bereich, der etwa einem Rechtspann Größe entspricht, in Brand. Bei dem Feuer handelt es sich entweder um blauschwarze Dämonenflammen oder um elementares Feuer. Dieser Brand hält ZfP*/2 Kampfrunden lang an (bor- baradianische Variante: 1W20 Aktionen). Nicht entzündliche Stoffe (Stein, Metall etc.) erlöschen nach Ablauf dieser Frist, entzündliche brennen weiter. Wird der Zauber gegen Rüstungen oder Kleidung eingesetzt, erleidet der Träger 3W6 SP (borbaradia- nisch: 1 SP pro Aktion) durch den Zauber und muss sich evtl. noch nach der Wirkungsdauer mit brennender Kleidung (1W3 SP/KR) auseiunander setzen. Richtet der Zauber mehr als 10 Schadenspunkte an, sinkt der RS der Rüstung um 1. Der Zauber kann nicht direkt gegen Lebewesen und nicht gegen magische Objekte eingesetzt werden.",
+    "cost": "11 AsP (borbaradianische Repräsentation: 1W20 AsP oder 1W20/2 LeP)",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "ZfP*/2 Kampfrunden (borbaradianische Repräsentation: 1 Aktion pro AsP)",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "löscht ein gewöhnliches oder magisches Feuer, das der Zaubernde dafür jedoch berühren muss. Je nach Größe des Brandes kostet dies den Zaubernden von 1 AsP (Kerzen- flamme; kein eigener Schaden) über 7 AsP (Lagerfeuer; 1W3 SP) und 20 AsP (brennender Schrank; 1W6 SP) bis 100 AsP (komplettes Haus in Flammen; 2W6 SP).",
+    "antimagic": "Während der Wirkungsdauer kann der Zauber nicht durch Ersticken oder Wasser gelöscht werden, sondern nur mittels OBJEKT ENTZAUBERN bzw. eine passende Bannformel (AG- RIMOTHBANN oder FEUERBANN). Die Zonenvarianten dieser Zauber erschweren das Wirken des BRENNE, TOTER STOFF!.",
+    "complexity": "C",
+    "characteristics": ["Objekt", "nicht Bor: Elementar (Feuer)", "Bor: Dämonisch (Agrimoth)"],
+    "variants": [
+      {
+        "name": "Drachenglut",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Die beschworene Flamme wird enorm heiß und ist in der Lage, Steine und Metalle binnen kurzer Zeit zum Schmelzen zu bringen. Die so erzeugte Flamme zählt neben Dra- chenatem und Dschinnenglut zum heißesten Feuer, das Sterbliche kennen. Sie erzeugt bei Berührung (ZfP*/2) W6 TP."
+      },
+      {
+        "name": "Flammeninferno",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Es entsteht ein Brand von etwa einem Schritt Durchmesser, der sich (auch auf nicht brennbaren Materialien) rasend schnell ausbreitet: Während der Wirkungsdauer erhöht sich pro KR der Durchmesser der brennenden Fläche um 1 Schritt. Wer in den Feuerbereich gerät, erleidet 2W6 TP pro KR. Diese Variante benötigt 6 Aktionen Zauberdauer plus eine Kampfrunde Verzug bis zur Entzündung der Fläche und kostet 22 AsP (bzw. 2W20 AsP oder 2W20/2 LeP)."
+      }
+    ],
+    "distribution": [
+      { "representation": "Borbaradianer", "distribution": 6},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3}
+    ]
   }
 ]
