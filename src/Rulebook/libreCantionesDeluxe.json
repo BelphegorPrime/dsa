@@ -1900,5 +1900,42 @@
       { "representation": "Elf", "distribution": 2, "subRepresentation": "Gildenmagier"},
       { "representation": "Hexe", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 60,
+    "name": "Corpofrigo Kälteschock",
+    "trial": "CH/GE/KO",
+    "difficulty": "+MR",
+    "technik": "Der Kristallomant bläst über einen Turmalin in Richtung des Opfers.",
+    "castTime": "2 Aktionen",
+    "effect": "Der Zauber entzieht einem Lebewesen schlagartig die Körperwärme so drastisch, dass sich seine Haut sogar mit Reif bedeckt. Dadurch erleidet es ZfP* SP(A) und büßt ZfP* Kampfrunden lang je 4 Punkte von AT, PA/Ausweichen, INI, GE, FF und KK ein. Auf kälteempfindliche Wesen wirkt der Spruch mit doppelter Stärke, auf kälteresistente Wesen nur zur Hälfte; nach Meister- entscheid können auch Humuselementare (üblicherweise immun gegen das Merkmal Eigenschaften) gegen diese Formel anfällig sein. Es ist nicht möglich, ein Opfer gleichzeitig mit mehreren CORPOFRIGO zu belegen.",
+    "cost": "9 AsP",
+    "target": "Einzelwesen",
+    "distance": "7 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)", "Reichweite"],
+    "reversalis": "erzeugt einen Fieberschub mit gleichen Auswirkungen auf die Eigenschaften.",
+    "antimagic": "kann in einer Zone des EIGENSCHAFT WIEDERHERSTELLEN oder des EISBANN nur erschwert gesprochen werden. Ein GARDIANUM blockt die Wirkung ab, ein INVERCANO kann den Spruch reflektieren.",
+    "complexity": "C",
+    "characteristics": ["Eigenschaften", "Elementar (Eis)"],
+    "variants": [
+      {
+        "name": "gegen mehrere Wesen",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante gegen mehrere Wesen kostet der Zauber 7 AsP pro Opfer."
+      },
+      {
+        "name": "Eisblock",
+        "mod": "+5 nur in der kristallomantischen Repräsentation",
+        "minZfW": 0,
+        "effect": "Eine stärkere Variante, die das Opfer schlagartig in einen dünnen Eispanzer hüllt: 2 x ZfP* SP(A); für ZfP* KR sinken AT, PA, INI, GE, FF, KK um 6 Punkte, die GS auf ein Viertel."
+      }
+    ],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 6},
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
