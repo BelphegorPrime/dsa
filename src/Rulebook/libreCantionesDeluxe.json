@@ -1768,5 +1768,54 @@
       { "representation": "Achaz", "distribution":2},
       { "representation": "Gildenmagier", "distribution": 1, "subRepresentation": "Achaz"}
     ]
+  },
+  {
+    "page": 56,
+    "name": "Chronoautos Zeitenfahrt",
+    "trial": "MU/CH/KO",
+    "difficulty": "+Mod",
+    "technik": "ein komplexes Ritual mit Beachtung entsprechender Paraphernalia",
+    "castTime": "Das vorbereitende Ritual benötigt die richtigen Sternkonstellationen (möglichst dieselben, wie sie zur Zeit des Eintreffens herrschten) und dauert etwa einen halben Tag. Der eigentliche Zaubervorgang selbst nimmt etwa eine Viertelstunde (3 SR) in Anspruch.",
+    "effect": "Mit diesem Spruch wird ein Tor in der Zeit geöffnet, so wie sich durch den PLANASTRALE ein Tor in die Sphären öffnet. Dieses Tor führt jedoch nur in eine Richtung – in die Vergangenheit (allerdings sind auch räumliche Abweichungen möglich). Mit diesem mächtigen Zauber ist es möglich, in die ferns- te Historie zu reisen und dort bestimmte Ereignisse zu beobachten (und sogar den Fluss der Zeit selbst zu verändern). Es gibt eine deutliche Barriere bei dem Versuch, in eine Vergangenheit zu reisen, in der einer der Zeitenfahrer sich selbst begegnen könnte. Üblicherweise kommen die Zeitreisenden nackt an, jedoch ist es möglich, wenn auch deutlich schwieriger, mit Ausrüstung zu reisen. Das Zeittor schließt sich 2 x ZfP* KR nach Erscheinen wieder, der ‘Rücktransport’ erfolgt ohne Tor (durch rein rüdes Zurückreißen).",
+    "cost": "28 AsP plus 7 AsP pro o.g. Zeitkategorie (also 42 AsP für eine Zeitreise von 11 bis 100 Jahren) plus 1W6 AsP pro Reisendem, davon 1/10 der Kosten permanent. Je 1 eingesetzter AsP verlängert die Wirkungsdauer um 1 Stunde.",
+    "target": "Zone",
+    "distance": "Das Tor entsteht 1W20 Schritt vom Zauberer entfernt.",
+    "duration": "ZfP* plus eingesetzte Astral- energie in Stunden",
+    "modifications": [],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Der hypothetische TEMPORALZAUBEREI BANNEN würde mit Sicherheit gegen diese Zeitmanipulation wirken.",
+    "complexity": "F",
+    "characteristics": ["Temporal"],
+    "variants": [
+      {
+        "name": "Reisende mit Ausrüstung",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": ""
+      },
+      {
+        "name": "Zeitabstand",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "1 Jahr +0, 1 Jahrzehnt +3, ein Jahrhundert +6, ein Jahrtausend +9, ein Jahrzehntausend +12"
+      },
+      {
+        "name": "Einer der Zeitreisenden lebt bereits",
+        "mod": "+12",
+        "minZfW": 0,
+        "effect": ""
+      },
+      {
+        "name": "Verlängerte Dauer",
+        "mod": "+10",
+        "minZfW": 0,
+        "effect": ""
+      }
+    ],
+    "distribution": [
+      { "representation": "Achaz", "distribution":2},
+      { "representation": "Elf", "distribution": 1},
+      { "representation": "Gildenmagier", "distribution": 1}
+    ]
   }
 ]
