@@ -1770,7 +1770,7 @@
     ]
   },
   {
-    "page": 56,
+    "page": 57,
     "name": "Chronoautos Zeitenfahrt",
     "trial": "MU/CH/KO",
     "difficulty": "+Mod",
@@ -1816,6 +1816,58 @@
       { "representation": "Achaz", "distribution":2},
       { "representation": "Elf", "distribution": 1},
       { "representation": "Gildenmagier", "distribution": 1}
+    ]
+  },
+  {
+    "page": 58,
+    "name": "Claudibus Clavistibor",
+    "trial": "KL/FF/KK",
+    "difficulty": "",
+    "technik": "Der Zaubernde legt eine Hand auf den zu verschließenden Gegenstand (Tür, Truhe ...) und spricht die Formel.",
+    "castTime": "3 Aktionen",
+    "effect": "Die Formel verriegelt eine Tür, Truhe oder sonstigen Schließmechanismus auf magische Weise und verstärkt die Festigkeit des Materials. Die Tür kann – selbst mit dem passenden Schlüssel – nicht mehr ohne Schwierigkeiten geöffnet werden. Hierdurch können zwergische Spezialschlösser nicht nur quasi unüberwindbar gemacht wer- den, sondern auch halb verrottete Türen einer Burgruine, deren Schloss längst zerfallen ist, für den Zeitraum der Wirkungsdauer zu einem Hindernis werden. Maximale Größe für diesen Zauber ist ein Stadttor. Die Sperre kann – wie jeder Schließmechanismus – durch große Fin- gerfertigkeit, schiere Kraft oder den Zauber FORAMEN überwunden werden. Wichtig ist, wie viele AsP der Zaubernde freiwillig in den CLAUDIBUS investiert und wie viele ZfP* der Zauber hat. U Schlösser knacken: Addieren Sie die ZfP* zu den AsP des Ver- schlusszaubers und verdoppeln Sie die Summe. Das Ergebnis ist der Zuschlag auf die Schlösser Knacken-Probe, mit der die Tür geöffnet werden kann, zuzüglich zu dem Zuschlag, den die Tür in unverzau- bertem Zustand schon verlangt hätte. U Kraft: Addieren Sie die ZfP* zu den AsP des Verschlusszaubers. Das Ergebnis ist der Zuschlag auf die KK-Probe, mit der die Tür geöffnet werden kann, zuzüglich zu dem Zuschlag, den die Tür in unverzaubertem Zustand schon verlangt hätte. U FORAMEN: Der FORAMEN ist zusätzlich um die ZfP* des CLAUDIBUS erschwert. Außerdem muss der Wirker des FORAMEN zusätzlich zu den normalen Kosten AsP in gleicher Höhe einsetzen, wie in den Verschlusszauber investiert wurden. U Schaden: Wird der Tür mit Brecheisen, Axt oder Schadensmagie zu Leibe gerückt, können zu den Strukturpunkten der Tür die fünffache Summe aus ZfP* und AsP addiert werden. Sind Tür oder Truhe zusätzlich mit Fallen gesichert, die einen mecha- nischen Auslöser erfordern, werden diese durch den CLAU- DIBUS ebenfalls beeinflusst: Sie werden nur noch dann ausgelöst, wenn der öffnende Held einen Patzer würfelt, nicht aber bei jedem misslungenen Öffnungsversuch.",
+    "cost": "nach Wunsch des Zaubernden, maximal ZfW AsP, mindestens jedoch 3 AsP",
+    "target": "Einzelobjekt (Es muss ein Verschluss vorhanden sein.)",
+    "distance": "Berührung",
+    "duration": "bis die Tür geöffnet wird, maximal jedoch ZfP* Spielrunden.",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "hebt einen wirkenden CLAUDIBUS auf.",
+    "antimagic": "OBJEKT ENTZAUBERN wirkt gegen den Verschluss; in einer entsprechenden Zone kann der CLAUDIBUS nur erschwert gewirkt werden.",
+    "complexity": "C",
+    "characteristics": ["Objekt"],
+    "variants": [
+      {
+        "name": "Wirkungsdauer",
+        "mod": "+2",
+        "minZfW": 0,
+        "effect": "Der Zauber bleibt deutlich länger wirksam. Für jede Erhöhung der maximalen Wirkungsdauer um eine der folgenden Zeitkategorien ist die Probe um 2 Punkte erschwert, die Zauberdauer ist verdoppelt, die Kosten betragen jeweils die gewünschte Punktzahl pro Kategorie: ZfP* Stunden / ZfP* Tage / ZfP* Monate / permanent. Permanente Versiegelung erfordert 1/10 der Kosten als pAsP."
+      },
+      {
+        "name": "Aktive Versiegelung",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Innerhalb der maximalen Wirkungsdauer bleibt der Verschlusszauber auch dann noch aktiv, wenn die Tür zwischendurch mit einem passenden Schlüssel geöffnet und wieder geschlossen wurde."
+      },
+      {
+        "name": "Schlüsselmeister",
+        "mod": "+3/+5",
+        "minZfW": 11,
+        "effect": "Der Zaubernde kann bis zu drei / sieben Personen oder Gegenstände (Schlüssel) nennen, bei denen der Verschlusszauber nicht zum Tragen kommt, wenn sie die Tür öffnen."
+      },
+      {
+        "name": "Die Priesterkaiser kommen!",
+        "mod": "+7",
+        "minZfW": 14,
+        "effect": "Unter diesem Spitznamen kennt man eine Variante, bei der der Zaubernde innerhalb einer Minute beliebig viele Gegenstände durch Berührung versiegeln kann. Zunächst werden wie gehabt eine Probe gewürfelt und AsP investiert (Verschlussqualität für alle Gegenstände), anschließend müssen zusätzlich 4 AsP pro versiegeltem Gegenstand aufgewendet werden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Hexe", "distribution":5},
+      { "representation": "Scharlatan", "distribution":5},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Hexe"},
+      { "representation": "Elf", "distribution": 2, "subRepresentation": "Gildenmagier"},
+      { "representation": "Schelm", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
   }
 ]
