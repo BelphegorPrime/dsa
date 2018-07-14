@@ -1660,5 +1660,54 @@
       { "representation": "Geode", "distribution": 3},
       { "representation": "Druide", "distribution": 2}
     ]
+  },
+  {
+    "page": 54,
+    "name": "Chamaelioni Mimikry",
+    "trial": "IN/CH/GE",
+    "difficulty": "",
+    "technik": "Die Elfe verharrt völlig regungslos und konzentriert sich auf die Formel iama lamia mini‘rai.",
+    "castTime": "2 Aktion",
+    "effect": "Solange sich die Elfe völlig ruhig verhält, verschmilzt sie vollkommen mit der Umgebung und ist fast nicht mehr zu sehen. Ihre Kleidung und die Ausrüstung, die sie direkt am Körper trägt, wird eben falls getarnt. Wer in ihre Richtung blickt, muss eine Sinnenschärfe-Probe ablegen, die um ZfP*/2 +7 Punkte und zusätzlich pro angefangenen 3 Schritt Abstand um einen weiteren Punkt erschwert wird. Sobald die Elfe sich schneller als ‘zeitlupenhaft’ bewegt, bricht der Zauber vollständig zusammen – der Meister kann gegebenenfalls Selbstbeherrschungs-Proben verlangen, ob die Elfe wirklich so regungslos verharrt. Natürlich fällt es jeder Elfe am leichtesten, eine Umgebung vorzu- täuschen, die ihr auch vertraut ist. Hält die Elfe sich jedoch an einem Ort auf, in dem sie sich wenig auskennt (will sie zum Beispiel vor einer Ziegel mauer verschwinden), kann der Meister Probenzuschläge bis zu 7 Punkte verlangen. Umgekehrt kann auch der Zuschlag auf die Sinnen schär fe-Probe geringer ausfallen, als von der Elfe erhofft: Obige Regelung gilt für einen Wald mit Unterholz – der angestammten Heimat der Waldelfen. Auf einem gepflegten Rasen oder vor einer glatten, einfarbigen Wand in vollem Sonnenlicht kann der Meister den Zuschlag um maximal die Hälfte reduzieren.",
+    "cost": "4 AsP",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "ZfP* x 10 KR (A)",
+    "modifications": [],
+    "reversalis": "Die Elfe verfärbt sich vor dem Hintergrund ihrer Umgebung extrem auffällig. In der Regel wird sie vollständig (also einschließlich Kleidung und Ausrüstung) feuerrot oder leuchtend gelb. Auch dieser Zauber bricht zusammen, sobald die Elfe sich rührt.",
+    "antimagic": "kann nur erschwert in einer Zone des ILLUSION AUFLÖSEN gewirkt und von diesem Zauber beendet werden. Es gelten nicht die üblichen Regeln zum Entdecken und Brechen von Illusionen.",
+    "complexity": "C",
+    "characteristics": ["Illusion"],
+    "variants": [
+      {
+        "name": "Tarnung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Die Elfe kann sich in gleich bleibendem Ge- lände auch mit einer Geschwindigkeit von bis zu 0,5 Schritt pro Aktion fortbewegen, ohne dass der Zauber endet, allerdings ist ihre Tarnung unvollkommen: Pro 3 Schritt Entfernung muss ein Beobachter nur eine Sinnenschärfe-Probe erschwert um die halben ZfP* ablegen, um sie zu entdecken. Verhält sie sich wieder regungslos, dann ist der volle Zuschlag für eine Entdeckung nötig. Ist sie jedoch erst einmal entdeckt, kann der Beobachter sie weiterhin sehen, solange er sie nicht aus den Augen lässt."
+      },
+      {
+        "name": "Verschwimmende Tarnung",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Die Elfe kann sich während des Zaubers auch beliebig bewegen. Allerdings ist die Tarnung unvollkommen: Wenn sie sich mit einer Geschwindigkeit von höchstens 0,5 Schritt pro Aktion fortbewegt, gel- ten die gleichen Bedingungen wie bei Tarnung. Bewegt sie sich schneller, ist die Sinnenschärfe-Probe nur noch um ein Viertel der ZfP* erschwert. Die verschwimmende Tarnung sorgt allerdings dafür, dass Fernkampf-Proben gegen die Elfe um ZfP*/2 erschwert sind, Attacken im Nah- kampf um ZfP*/3."
+      },
+      {
+        "name": "Andere Tarnen",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Der Zauber kann für je 7 Punkte auf andere Personen ausgedehnt werden, die jedoch die ganze Wirkungsdauer in direktem Körperkontakt mit der Elfe stehen müssen; der Zauber bricht zusammen, sobald auch nur ein Verwandelter sich zu schnell bewegt. Nur mit dieser Variante können auch Tiere getarnt werden, wobei jedoch höchstens einem Vertrauten oder einem Tierischen Begleiter klar gemacht werden kann, dass er absolut bewegungslos zu bleiben hat."
+      },
+      {
+        "name": "Dinge Tarnen",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Gegenstände bis zur Größe der Elfe können für 3 AsP unabhängig von der Elfe getarnt werden; diese müssen nach dem Wirken des Zaubers nicht weiter berührt werden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 5},
+      { "representation": "Hexe", "distribution": 3, "subRepresentation": "Elf"},
+      { "representation": "Gildenmagier", "distribution": 3, "subRepresentation": "Elf"}
+    ]
   }
 ]
