@@ -1401,5 +1401,69 @@
       { "representation": "Druide", "distribution": 3},
       { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"}
     ]
+  },
+  {
+    "page": 47,
+    "name": "Blick in die Gedanken",
+    "trial": "KL/KL/CH",
+    "difficulty": "+MR",
+    "technik": "Die Elfe blickt ihrem Opfer ins Ge- sicht und konzentriert sich dann auf die Melodie des i’bhanda dhara feya dendra.",
+    "castTime": "10 Aktionen",
+    "effect": "Die Zaubernde erhält einen Einblick in die momentanen Gedankengänge ihres Opfers, die sie als verschwommene Bilder vor ihrem geistigen Auge sieht. Wenn das Opfer weiß, dass seine Gedanken gelesen werden sollen, kann es versuchen, an etwas anderes zu denken, ein Lied im Geist zu rezitieren oder gar die Hellseherin mit ‘unechten Gedanken’ auf eine falsche Fährte zu locken. Hierzu ist eine Selbstbeherrschungs-Probe erschwert um die ZfP* nötig. Wenn die Hellseherin versucht, die Gedankengänge eines andersar- tigen Wesens zu erforschen, ist die Zauberprobe zwischen 1 (Mit- telländer untersucht Nivesen) und 5 Punkten (untersucht Drache, Einhorn, Mensch-Tier-Chimäre) erschwert. Zu den Gedanken von Tieren siehe den Zauber TIERGEDANKEN (S. 257).",
+    "cost": "6 AsP pro 5 Kampfrunden",
+    "target": "Einzelperson",
+    "distance": "3 Schritt",
+    "duration": "nach AsP-Aufwand (A)",
+    "modifications": ["Zauberdauer", "Erzwingen", "Reichweite"],
+    "reversalis": "Die Zaubernde gibt jedem in Reichweite ihre Gedanken preis.",
+    "antimagic": "kann in einer Zone des HELLSICHT TRÜBEN nur erschwert gewirkt werden; ein gezielt eingesetzter HELLSICHT TRÜBEN kontert den BLICK IN DIE GEDANKEN.",
+    "complexity": "D",
+    "characteristics": ["Hellsicht"],
+    "variants": [
+      {
+        "name": "Keine Sicht",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Das Opfer muss sich innerhalb der Reichweite aufhalten, aber die Elfe braucht es nicht zu sehen, muss es aber kennen / schon einmal gesehen haben."
+      },
+      {
+        "name": "Traumreise",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Auf einen Träumenden gewirkt, kann die Zaubernde für 6 AsP pro Spielrunde an dessen Träumen teilhaben und auf sie einwirken (siehe das Kapitel Tödliche Träume; WdZ 69ff.)."
+      },
+      {
+        "name": "Drachisch",
+        "mod": "erfordert zusätzlich ZfW 7 in GEDANKENBILDER",
+        "minZfW": 7,
+        "effect": "Mit diesem Kenntnisstand ist der Zauberer in der Lage, die drachische Gedanken sprache zu erlernen. Dass er dazu vorzugsweise einen ‘Muttersprachler’ benötigt, macht das Erlernen nicht einfacher ..."
+      },
+      {
+        "name": "Liebessinn",
+        "mod": "+3 nicht in Achaz- und druidischer Repräsentation; Kosten 3 AsP/SR",
+        "minZfW": 11,
+        "effect": "Während der Kampfsinn den Zauberer mit den Aktionen des Gegners ‘harmonisiert’, tut die Variante Liebessinn desgleichen während des Liebesspiels. Nur auf freiwillige Ziele, dafür auch nur gegen halbe MR."
+      },
+      {
+        "name": "Kampfsinn",
+        "mod": "+5 nur in der elfischen Repräsentation",
+        "minZfW": 11,
+        "effect": "Im Zweikampf gewirkt, kann die Zaubernde die Aktionen eines Gegners vorhersehen. Die Parade gegen gewöhnliche Attacken des Gegners ist um ZfP*/2 erleichtert, gegen Attacken aus Manövern mit Ansage um ZfP*."
+      },
+      {
+        "name": "Tiefentelepathie",
+        "mod": "+7 + doppelte MR (anstatt einfacher MR) nur in der gildenmagischen und kristallomantischen Repräsentation",
+        "minZfW": 11,
+        "effect": "In einem Zeitraum von einer Stunde erforscht der Zaubernde durch eine Mischung aus Gedankenlesen und geschickten Fragen die Geisteswelt des Opfers gründlich und wendet einmalig 27 AsP auf. Zusätzlich zur Zauber- probe ist eine Probe auf Überzeugen (Verhör) oder auf Heilkunde Seele, jeweils erschwert um die Selbstbeherrschung des Opfers abzulegen. Gelingen beide Proben, werden beliebige Gedanken, Gesinnungen und Erinnerungen offen gelegt. Gelingt nur die Probe auf den Zauber (oder schläft das Opfer), so erhält der Fragenden nur einen Einblick in die allgemeine Gedankenwelt des Opfers, aus dem er sich die Antworten auf seine Fragen zusammenreimen muss (abhängig von den ZfP*, Meisterentscheid)"
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Druide", "distribution": 4},
+      { "representation": "Hexe", "distribution": 4},
+      { "representation": "Geode", "distribution": 3}
+    ]
   }
 ]
