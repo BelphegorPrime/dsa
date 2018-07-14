@@ -1,7 +1,11 @@
 {
   "name": "dsa",
   "version": "0.1.0",
+  "description": "Pen and Paper tool for 'the dark eye'",
+  "author": "",
   "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "@fortawesome/fontawesome": "1.1.8",
     "@fortawesome/fontawesome-free-solid": "5.0.13",
@@ -11,8 +15,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "0.1.0-11",
     "bootstrap": "4.1.2",
+    "electron-is-dev": "^0.3.0",
+    "jquery": "^3.3.1",
     "lodash": "4.17.10",
     "moment": "2.22.2",
+    "popper.js": "^1.14.3",
     "prop-types": "15.6.2",
     "react": "16.4.1",
     "react-dom": "16.4.1",
@@ -21,6 +28,9 @@
     "xml-reader": "2.4.3"
   },
   "devDependencies": {
+    "concurrently": "^3.6.0",
+    "electron": "^2.0.5",
+    "electron-builder": "^20.20.4",
     "eslint": "5.1.0",
     "eslint-config-airbnb-base": "13.0.0",
     "eslint-config-prettier": "2.9.0",
@@ -33,13 +43,41 @@
     "eslint-plugin-react": "7.10.0",
     "jest-fetch-mock": "^1.6.2",
     "prettier": "1.13.7",
-    "react-testing-library": "4.1.2"
+    "react-testing-library": "4.1.2",
+    "wait-on": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "npm test -- --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron:dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3003 && electron .\"",
+    "electron:dev:win": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "preelectron:pack": "npm run build",
+    "electron:pack:linux": "electron-builder -l",
+    "electron:pack:mac": "electron-builder -m",
+    "electron:pack:win": "electron-builder -w",
+    "electron:pack": "npm run electron:pack:linux && npm run electron:pack:mac && npm run electron:pack:win"
+  },
+  "build": {
+    "appId": "com.electron.dsa",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "linux": {
+      "target": "zip"
+    },
+    "mac": {
+      "target": "zip",
+      "category": "public.app-category.games"
+    },
+    "win": {
+      "target": "zip"
+    }
   }
 }
