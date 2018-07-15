@@ -2299,5 +2299,80 @@
       { "representation": "Gildenmagier", "distribution": 6},
       { "representation": "Scharlatan", "distribution": 6}
     ]
+  },
+  {
+    "page": 71,
+    "name": "Ecliptifactus Schattenkraft",
+    "trial": "MU/KL/KO",
+    "difficulty": "",
+    "technik": "Der Magier fixiert seinen Schatten und hebt beide Arme in einer beschwörenden Geste.",
+    "castTime": "6 Aktionen",
+    "effect": "Dieser Zauber bewirkt, dass der Schatten des Magiers mit Eigenleben erfüllt wird und an dessen Seite kämpft. Dabei hat der Schatten so viel LeP wie der Magier zum Zeitpunkt der Erschaffung, die gleichen natürlichen Ei- genschafts- und Kampfwerte (zeitweilige Veränderungen durch Zauber und Elixiere oder aber durch Wunden und Erschöpfung kommen nicht zum Tragen) und einen RS in Höhe von ZfP*/3. Der Schatten muss keine Selbstbeherrschungs-Probe bei hohem Schaden ablegen und erleidet keine Wunden. Der Schatten handelt eigenständig, kann aber nicht zaubern. Er kann die Kampfmanöver einsetzen, die auch dem Magier bekannt sind. Jedem Gegner des Schattens muss eine MU-Probe gelingen, sonst wirkt der Anblick wie Schreckgestalt I (Verlust von 1W6 Punkten auf MU, KL, CH, FF, AT, PA, FK und INI-Basis; fern des Anblicks Rückgewinn von 1 Punkt pro halber Stunde) Der Schatten ist durch Zauberei nicht zu verletzen oder anderwei- tig zu beeinflussen. ‘Stirbt’ der Schatten, so verliert der Zauberer schlagartig seine gesamte Astralenergie, davon 2 AsP permanent. Es dauert sieben Wochen (in denen er keine AsP regenerieren kann), bis dem Magier ein neuer Schatten ‘nachgewachsen’ ist. Da der verlorene Schatten auch ein Zeichen der Geweihten des Namenlosen ist, muss ein Magier, dessen Schatten erschlagen wurde, damit rechnen, schärfster Befragung unterzogen, wenn nicht gar von einer wütenden Menge aufgeknüpft zu werden. Stirbt der Magier, so erhält der Schatten die restliche, verbliebene Astralenergie des Magiers zu seinen LeP hinzu und wütet so lange als seelenlose Kampfmaschine weiter, bis auch er vernichtet ist.",
+    "cost": "5 AsP plus 1 AsP pro KR (borbaradianische Variante: 1W6+1 AsP plus 1 AsP/KR bzw. die Hälfte davon als LeP)",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst; der Schatten kann sich maximal 3 Schritt vom Magier entfernen.",
+    "duration": "nach AsP-Einsatz (A)",
+    "modifications": ["Zauberdauer", "Reichweite (der Bewegungsradius des Schattens)", "Wirkungsdauer"],
+    "reversalis": "lässt einen beliebigen, auch magisch belebten, Schatten verschwinden. Der Raub eines Schattens mittels dieser Zauberkombination wird üblicherweise mit disvocatio oder gravierender bestraft.",
+    "antimagic": "kann in Zonen des DÄMONENBANN und des VERWANDLUNG BEENDEN nur schwieriger gewirkt und mit diesen antimagischen Formeln auch beendet werden.",
+    "complexity": "D",
+    "characteristics": ["Dämonisch (allgemein)", "Form (Bor: dito)"],
+    "variants": [
+      {
+        "name": "Langer Schatten",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Diese Variante erlaubt es dem Magier, geistig für längere Zeit in den Schatten einzufahren und sich mit diesem vom Körper des Zauberers weg zu bewegen. Der Schatten kann sich (mit GS 15) nur durch existierende Schatten bewegen, also z.B. nicht über einen sonnenüberfluteten Platz. Er kann Dinge in seiner Umgebung optisch wahrnehmen; zusätzliches Gehör oder Tastsinn erschweren die Probe um je 2 Punkte und kosten je 1 AsP pro Spielrunde mehr. Der Schatten ist in dieser Form nicht zu irgend einer körperlichen Interaktion in der Lage; der Leib bleibt derweil bewusstlos und ohne Schatten liegen. Diese Variante kostet 7 AsP plus 5 AsP pro Spielrunde."
+      },
+      {
+        "name": "Schattensprung",
+        "mod": "+10",
+        "minZfW": 14,
+        "effect": "Der Magier kann körperlich mit seinem Schatten und dieser mit einem existierenden Umgebungsschatten verschmelzen, so dass er zwar seine Umgebung noch wahrnehmen, aber nicht mehr mit ihr interagieren kann – und sie auch nicht mit ihm, was heißt, dass er gegen körperliche Angriffe immun ist (gegen magische oder geweihte Waffen hat er einen RS von ZfP*), aber selbst ebenfalls nicht attackieren kann. Er kann jedoch (mit einer Erschwernis von +7) aus den Schatten heraus zaubern, er kann astral wahrgenommen und Opfer eines Zaubers werden. Er kann sich außerdem mit GS 15 durch existierende Schatten bewegen und diese wieder verlassen, womit er wieder körperlich wird. Die am Leib getragene Ausrüstung wird von dem Zauber auch betroffen. Diese Variante kostet 7 AsP pro Spielrunde. Sobald ein Zauberer aus den Schatten heraustritt, endet die Wirkung. (Es wird von einer Variante gemunkelt, die es erlaubt, während der Wirkungsdauer beliebig in die Schatten hinein- und aus ihnen herauszutreten.)"
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Borbaradianer", "distribution": 2}
+    ]
+  },
+  {
+    "page": 73,
+    "name": "Eigenschaft Wiederherstellen",
+    "trial": "KL/IN/CH",
+    "difficulty": "+Mod",
+    "technik": "Die Hexe berührt die Person und konzentriert sich auf deren Körper, um Aura und Eigenschaften wieder in Einklang zu bringen.",
+    "castTime": "40 Aktionen",
+    "effect": "Mit dieser Formel können Verwandlungs- zauber mit dem Merkmal Eigenschaften aufgehoben werden; der Zauber ist jedoch nicht geeignet, im Zustand der Verwandlung entstandene Schäden ungeschehen zu machen. Die Zauberprobe ist um die vom gegnerischen Zau- berer (demjenigen, der die Form-Verwandlung gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/5 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren. Sorgfältige magische Analyse des wirkenden Verwandlungszaubers im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf EIGENSCHAFTEN WIEDERHERSTELLEN um einen Punkt erleichtert.",
+    "cost": "7 AsP plus 1/5 der Kosten des zu brechenden Spruchs. Um einen permanent wirkenden und mittels permanenter AsP fixierten Eigenschafts-Zauber aufzu heben, muss der Druide permanente AsP investieren: 1/10 der Kosten des wirkenden Beherrschungszaubers, mindestens aber 1 AsP. Misslingt die Probe, entstehen keine perma- nenten Kosten.",
+    "target": "Einzelwesen",
+    "distance": "selbst, Berührung",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Der eigenschaftsverändernde Zauber kann mit einem PROTECTIONIS (S. 213) geschützt werden.",
+    "complexity": "C",
+    "characteristics": ["Antimagie", "Eigenschaften"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 21 AsP kann der Druide eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Eigenschaften um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält."
+      },
+      {
+        "name": "Schattensprung",
+        "mod": "+10",
+        "minZfW": 14,
+        "effect": "Der Magier kann körperlich mit seinem Schatten und dieser mit einem existierenden Umgebungsschatten verschmelzen, so dass er zwar seine Umgebung noch wahrnehmen, aber nicht mehr mit ihr interagieren kann – und sie auch nicht mit ihm, was heißt, dass er gegen körperliche Angriffe immun ist (gegen magische oder geweihte Waffen hat er einen RS von ZfP*), aber selbst ebenfalls nicht attackieren kann. Er kann jedoch (mit einer Erschwernis von +7) aus den Schatten heraus zaubern, er kann astral wahrgenommen und Opfer eines Zaubers werden. Er kann sich außerdem mit GS 15 durch existierende Schatten bewegen und diese wieder verlassen, womit er wieder körperlich wird. Die am Leib getragene Ausrüstung wird von dem Zauber auch betroffen. Diese Variante kostet 7 AsP pro Spielrunde. Sobald ein Zauberer aus den Schatten heraustritt, endet die Wirkung. (Es wird von einer Variante gemunkelt, die es erlaubt, während der Wirkungsdauer beliebig in die Schatten hinein- und aus ihnen herauszutreten.)"
+      }
+    ],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 6},
+      { "representation": "Achaz", "distribution": 5},
+      { "representation": "Druide", "distribution": 5},
+      { "representation": "Geode", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 5}
+    ]
   }
 ]
