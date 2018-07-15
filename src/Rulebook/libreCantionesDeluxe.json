@@ -2163,5 +2163,27 @@
       { "representation": "Elf", "distribution": 2},
       { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 67,
+    "name": "Dichter und Denker",
+    "trial": "KL/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Die Schelmin spricht das Opfer mit einem Reim ihrer Wahl an.",
+    "castTime": "4 Aktionen",
+    "effect": "Das Opfer kann sich nur noch gereimt äußern – fällt ihm kein Reim ein, so muss es eben so lange grübeln, bis dies geschieht – daher ‘Dichter und Denker’.",
+    "cost": "6 AsP (Sch: 4 AsP)",
+    "target": "Einzelperson",
+    "distance": "3 Schritt",
+    "duration": "ZfP*/2 Spielrunden",
+    "modifications": [],
+    "reversalis": "Der Reimzwang wird aufgehoben.",
+    "antimagic": "Ein BEHERRSCHUNG BRECHEN hebt den Reimzwang auf; in einer entsprechenden Zone kann der Zauber nur erschwert gewirkt werden.",
+    "complexity": "C",
+    "characteristics": ["Herrschaft"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Schelm", "distribution": 2}
+    ]
   }
 ]
