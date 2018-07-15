@@ -2053,5 +2053,83 @@
     "distribution": [
       { "representation": "Gildenmagier", "distribution": 2}
     ]
+  },
+  {
+    "page": 64,
+    "name": "Delicioso Gaumenschmaus",
+    "trial": "KL/CH/FF",
+    "difficulty": "",
+    "technik": "Der Magier steckt den Zeigefinger seiner rechten Hand in den Mund, als wolle er einen Geschmack prüfen, murmelt das Zauberwort und berührt dann mit dem Finger die Speise, die er verzaubern will.Der Magier steckt den Zeigefinger seiner rechten Hand in den Mund, als wolle er einen Geschmack prüfen, murmelt das Zauberwort und berührt dann mit dem Finger die Speise, die er verzaubern will.",
+    "castTime": "10 Aktionen",
+    "effect": "Eine Speise, auf die diese Illusion gelegt wird, nimmt nach Willen des Magiers jeden beliebigen, angenehmen Geschmack (süß, gut gewürzt, nach bestimmten Aromen) an, egal, wie sauer, versalzen oder abgestanden sie im Ursprungs- zustand ist. Nicht verändern (aber vielleicht überdecken) lassen sich die Beschaffenheit des Essens, seine Temperatur, sein Nährwert und vor allem sein Erhaltungszustand. Der Zauberer kann auch einem anderen unbelebten Gegenstand einen beliebigen Geschmack geben – aber wer prüft schon mit der Zunge, ob eine Türklinke nach Khunchomer Pfeffer schmeckt? Lebewesen, die sich auf Geruchs- und Geschmackssinn verlassen (z.B. Schlan- gen), können hierdurch allerdings sehr wohl getäuscht werden. Die Realitätsdichte (siehe den Kasten zum Thema Illusionen auf Seite 34) beträgt ZfP*/2+7 Punkte.",
+    "cost": "3 AsP pro Stein Nahrung (Sch: 2 AsP/Stein)",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "maximal 2 x ZfP* Spielrunden",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt einen wirkenden DELICIOSO auf.",
+    "antimagic": "kann nur erschwert in einer Zone des ILLUSION AUFLÖSEN gewirkt oder mit diesem Zauber beendet werden.",
+    "complexity": "D",
+    "characteristics": ["Illusion"],
+    "variants": [
+      {
+        "name": "Aromenvielfalt",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Der Zauber erzeugt nicht nur einen bestimmten Geschmack, sondern nach Wunsch des Zaubernden unterschiedlichste Aromen für die verschiedenen Teile des Menüs."
+      },
+      {
+        "name": "Sättigung",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Bereits kleine Mengen des ‘veredelten’ Essens sind während der Wirkungsdauer überaus sättigend, wenn der Zauber mehr ZfP* erzielt hat, als die MR des Essers beträgt."
+      },
+      {
+        "name": "Widerwärtiger Geschmack",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Da ins Gewebe des Zaubers nur angenehme Geschmäcker eingeflochten sind, aber jeder Geschmack im Übermaß eklig wird, ist es auch möglich, unangenehme Aromen zu erzeugen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Schelm", "distribution": 3},
+      { "representation": "Scharlatan", "distribution": 3}
+    ]
+  },
+  {
+    "page": 65,
+    "name": "Desintegratus Pulverstaub",
+    "trial": "KL/KO/KK",
+    "difficulty": "",
+    "technik": "Der Magier deutet mit den gespreiz- ten Fingern der linken Hand auf das Objekt und spricht die Formel.",
+    "castTime": "7 Aktionen",
+    "effect": "Dieser Spruch erzeugt eine Spur der Verwüstung und fügt allen unbelebten Objekten in der Wirkungslinie des Zaubers schwersten Schaden zu, lässt Lebewesen jedoch gänzlich unbeschädigt. Der Schaden reicht aus, um eine schwere Tür zerbröseln zu lassen, eine Rüstung vollständig aufzulösen oder ein Möbelstück in Späne zu verwandeln (30 + 3x ZfP* Punkte Strukturschaden). Von dem betroffenen Objekt bleiben nur noch Staub und nutzlose Trümmer übrig. Der Spruch wirkt nicht gegen magische Objekte oder Untote. Diese – wie auch alle Lebewesen und Pflanzen – werfen einen ‘Schatten’ in der kegelförmigen Zerstörungsbahn, so dass auch dahinter liegende Objekte geschützt sind.",
+    "cost": "30 AsP",
+    "target": "Zone, kegelförmig von den Fingern des Zaubernden ausgehend",
+    "distance": "ein Kegel von ZfW Schritt Länge und einer maximalen Basisbreite von ZfW/2 Spann",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "kann in einer Zone des SCHADENSZAUBER BANNEN nur erschwert gewirkt werden. Wird mit dem INVERCANO reflektiert und von einem entsprechend mächtigen GARDIANUM aufgefangen.",
+    "complexity": "D",
+    "characteristics": ["Objekt", "Schaden"],
+    "variants": [
+      {
+        "name": "Hand der Vernichtung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Eine stark eingeschränkte Variante, mit der der Zaubernde einen maximal apfelgroßen Gegenstand, den er in der Hand hält, zu Staub zerbröselt. Diese Variante kostet nur 6 AsP."
+      },
+      {
+        "name": "Kegelform",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Bei einer Basisbreite von ZfW/4 Spann beträgt die Länge des Kegels 2 x ZfW Schritt oder die Basisbreite beträgt ZfW Spann, die Länge des Kegels nur ZfW/2 Schritt."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3}
+    ]
   }
 ]
