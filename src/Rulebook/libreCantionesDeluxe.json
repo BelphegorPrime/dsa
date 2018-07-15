@@ -2187,7 +2187,7 @@
     ]
   },
   {
-    "page": 67,
+    "page": 68,
     "name": "Dschinnenruf",
     "trial": "MU/KL/CH",
     "difficulty": "+Anrufungsschwierigkeit",
@@ -2208,6 +2208,60 @@
       { "representation": "Gildenmagier", "distribution": 4},
       { "representation": "Druide", "distribution": 3},
       { "representation": "Geode", "distribution": 3}
+    ]
+  },
+  {
+    "page": 68,
+    "name": "Dunkelheit",
+    "trial": "KL/KL/FF",
+    "difficulty": "",
+    "technik": "Der Druide formt die Hände zu einer geschlossenen Kugel und schließt die Augen.",
+    "castTime": "5 Aktionen",
+    "effect": "Mit dem Leib des Druiden im Mittelpunkt entsteht eine Kugel schwärzester Finsternis, in der alles nicht magische Licht verschluckt wird, so dass Personen innerhalb dieser Zone kaum noch etwas sehen. Der DUNKELHEITszauber verdunkelt die Umgebung um einen Wert von ZfP*/2+7; diese Punkte werden zu gleichen Teilen auf AT- und PA-Werte der Betroffenen angerechnet, wobei bei ungeraden Zahlen immer die Parade stärker betroffen ist. Diese druidische Verdunklung wirkt zusätzlich zu natürlichen ‘Dunkelheitsstufen’. (Natürliche nächtliche Dunkelheit liegt üb- licherweise bei Werten von 6 (Mondlicht) über 10 (Sternenlicht) bis 16 (sternlose Finsternis), resultierend in AT/PA –3 bis AT/PA –8.) Die Fernkampf-Probe in die Zone hinein oder in der Zone wird durch die DUNKELHEIT generell um ZfP*/2+7 Punkte erschwert (zusätzlich zu allen Modifikatoren, also auch zusätzlich zu denen aus natürlicher Dunkelheit; WdS 96). Für den Zaubernden selbst gelten die Abzüge nicht, von ‘normaler’ Dunkelheit bleibt er jedoch weiterhin betroffen. Wesen mit Dämme- rungssicht erleiden nur die Hälfte der Gesamt-Abzüge; Wesen mit Nachtsicht erleiden Einbußen von einem Viertel der Gesamt-Abzüge; Kenner der SF Blindkampf sind im Nahkampf nur mit maximal –2/–2 behindert. Magisches Licht (FLIM FLAM, Stabzauber ...), das innerhalb der DUNKELHEIT leuchtet, kann zwar selbst als Lichtquelle gesehen werden, beleuchtet aber nichts – das Licht wird von nichts wider- gespiegelt. Von außen eindringendes Licht kann bestenfalls die natürliche Dunkelheit erhellen. Magische Wahrnehmung (Zauber- wirkungen mit dem Merkmal Hellsicht wie ODEM ARCANUM, OCULUS ASTRALIS etc.) wird durch diesen Zauber nicht beeinträchtigt, wohl aber gesteigerte Wahrnehmungen wie z.B. ADLERAUGE. Die Zone der DUNKELHEIT verbleibt an Ort und Stelle, auch wenn der Druide sich entfernt.",
+    "cost": "3 AsP pro Spielrunde (Sch: 2 AsP/SR)",
+    "target": "Zone",
+    "distance": "ZfW/2 Schritt Radius",
+    "duration": "nach AsP-Einsatz (vorher festzulegen); maximal ZfP* SR",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "erzeugt eine halbkugelförmige Zone, die von außen strahlend weiß erscheint, innen dagegen eine unerträgliche Lichtin- tensität besitzt, die schmerzhaft selbst durch geschlossene Augenlider dringt. Die Einbußen auf Handlungen entsprechen denen völliger Dunkelheit, treffen lichtempfindliche Charaktere jedoch stärker.",
+    "antimagic": "kann in einer Zone des VERÄNDERUNG AUFHEBEN nur erschwert gewirkt und von diesem Zauber beendet werden.",
+    "complexity": "C",
+    "characteristics": ["Umwelt"],
+    "variants": [
+      {
+        "name": "schelmischer Repräsentation",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In schelmischer Repräsentation verdunkelt der Spruch auch magisches Licht völlig."
+      },
+      {
+        "name": "Bewegliche Dunkelheit",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Der Druide kann die Zone mit sich wandern lassen; diese Variante wird aufrechterhalten (A)."
+      },
+      {
+        "name": "Schwarzer Zylinder",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Der Druide kann die Dunkelheit statt halbkugelförmig zylindrisch wählen. Die Höhe des Zylinders ist gleich der Scheitelhöhe des Druiden, der Radius beträgt bis zu ZfW Schritt. Will der Druide seine DUNKELHEIT in einem höheren Zylinder wirken, so ist die Probe pro zusätzlichem Schritt um 3 Punkte erschwert."
+      },
+      {
+        "name": "Schwarzer Zylinder",
+        "mod": "+5 nur gildenmagische Repräsentation",
+        "minZfW": 14,
+        "effect": "Der Zauber verdunkelt den Raum, in dem er gewirkt wird; maximale Ausdehnung des Raums darf ZfW Schritt betragen, wo der Magier dabei steht, ist nicht relevant."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 7},
+      { "representation": "Geode", "distribution": 4},
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Schelm", "distribution": 4},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Scharlatan", "distribution": 3, "subRepresentation": "Gildenmagier"},
+      { "representation": "Elf", "distribution": 2}
     ]
   }
 ]
