@@ -2374,5 +2374,41 @@
       { "representation": "Geode", "distribution": 5},
       { "representation": "Gildenmagier", "distribution": 5}
     ]
+  },
+  {
+    "page": 74,
+    "name": "Eigenschaft Wiederherstellen",
+    "trial": "MU/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Der Magier konzentriert sich, spricht die Formel und berührt sein Opfer kurz.",
+    "castTime": "3 Aktionen",
+    "effect": "Der Zauber raubt dem Opfer alle fünf Sinne, so dass es in seinem eigenen Bewusstsein gefangen und seinen tiefsten Ängsten ausgeliefert ist. Das Opfer ist während dieser Zeit praktisch zu keiner Handlung fähig und verliert pro Stunde einen Punkt jeder seiner Guten Ei- genschaften. Diese regenerieren sich nach Ablauf des Zaubers ebenso langsam wieder. Zum Ende der Wirkungsdauer wird mit dem W20 auf die ZfP* gewürfelt. Bei gelungener Probe steigt eine Angst des Opfers (nach Wahl des Spielleiters) permanent um einen Punkt. Die Probe kann je nach vorhandenen Ängsten des Op fers um bis zur Hälfte der Summe aller Ängste erleichtert sein (Meisterentscheid).",
+    "cost": "11 AsP (1W20 AsP bzw. 1W20/2 LeP bei borba- radianischer Repräsentation)",
+    "target": "Einzelperson",
+    "distance": "Berührung",
+    "duration": "maximal ZfP* Stunden (borbaradianische Repräsentation: so viele Stunden, wie der Zauber AsP gekostet hat)",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "Die Sinne des Zaubernden werden geschärft: TaW Sinnenschärfe +ZfP*, alle Ängste (Schlechte Eigenschaften mit der Bezeichnung Angst oder Phobie) sinken um ZfP*/2 Punkte.",
+    "antimagic": "EINFLUSS BANNEN hebt den Zauber auf. Bei der gildenmagischen Repräsentation hilft auch der EIGENSCHAFT WIEDERHERSTELLEN, bei der borbaradianischen Variante der AMAZEROTHBANN. In den entsprechenden Zonen ist der Zauber schwieriger zu wirken.",
+    "complexity": "C",
+    "characteristics": ["Einfluss,", "nicht Bor: Eigenschaften", "Bor: Dämonisch (Amazeroth)"],
+    "variants": [
+      {
+        "name": "Sinnenraub",
+        "mod": "+2 nur gildenmagische Repräsentation",
+        "minZfW": 7,
+        "effect": "Mit dieser Variante können einzelne Sinne des Opfers blockiert werden, so dass es zeitweilig erblindet, nichts mehr hört etc. Es erleidet jedoch keinen schleichenden Verlust von Eigenschaften, sondern nur passende Abzüge je nach fehlendem Sinn. Pro geraubtem Sinn ist die Probe um 2 Punkte erschwert; Kosten: 5 AsP plus 2 AsP pro geraubtem Sinn."
+      },
+      {
+        "name": "Magiegespür rauben",
+        "mod": "+5 nur gildenmagische Repräsentation",
+        "minZfW": 0,
+        "effect": "Eine Variante, die dem Opfer statt aller fünf Sinne die Wahrnehmungsfähigkeit für und mit Magie nimmt: Alle Proben auf die Gabe Magiegespür und auf Zauber mit dem Merkmal Hellsicht sind um die doppelten ZfP* erschwert. Kosten: 9 AsP"
+      }
+    ],
+    "distribution": [
+      { "representation": "Borbaradianer", "distribution": 6},
+      { "representation": "Gildenmagier", "distribution": 2}
+    ]
   }
 ]
