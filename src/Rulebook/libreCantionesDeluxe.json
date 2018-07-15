@@ -2185,5 +2185,29 @@
     "distribution": [
       { "representation": "Schelm", "distribution": 2}
     ]
+  },
+  {
+    "page": 67,
+    "name": "Dschinnenruf",
+    "trial": "MU/KL/CH",
+    "difficulty": "+Anrufungsschwierigkeit",
+    "technik": "Der Magier zeichnet ein Hexagramm und einen Bannkreis auf den Boden, legt eine größere Men ge des Elements (etwa einen halben Stein), dessen Dschinn er rufen will, in das innere Hexagon, versenkt sich in die Essenz des Elements und spricht die Formel.",
+    "castTime": "6 Spielrunden",
+    "effect": "Dieser Zauber ruft einen Dschinn des gewünschten Elements herbei, der dem Beschwörer einen oder mehrere Dienste erfüllt, wenn diesem eine Kontroll-Probe auf (MU+IN+CH+CH+ZfW)/5 gelingt. Sowohl die Anrufungs- als auch die Kontroll-Probe sind um bestimmte Modifikatoren erschwert oder erleichtert, von denen die Affinität des Beschwörers zum gerufenen Element die wichtigste ist. Ein Dschinn stellt dem Beschwörer Dienste im Wert von 30 Punkten zur Verfügung. Alles Wissenswerte zu Elementargeistern, Diensten und Affinitäten finden Sie im Kapitel Die Kunst der Invokation im Band Wege der Zauberei. Es ist nicht möglich, die für die Beschwörung nötige Menge des Ele- ments durch einen einzigen MANIFESTO herbeizurufen, dazu ist die erscheinende Menge zu gering. Eine ausreichende Menge erhält man durch die Ansammlung von 24 ZfP* durch mehrere MANIFESTO- Zauber hintereinander.",
+    "cost": "30 AsP",
+    "target": "Einzelwesen",
+    "distance": "3 Schritt bei der Herbeirufung; der Dschinn kann sich danach frei bewegen.",
+    "duration": "bis zur Erfüllung der Dienste",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten"],
+    "reversalis": "Mit der Reversion der Formel kann ein Dschinn ausgetrieben werden; dies ist jedoch zusätzlich zu den +8 für den Dschinn und eventuellen Affinitäten noch um die ZfP* der Herbeirufung erschwert.",
+    "antimagic": "Die Herbeirufung kann in Zonen des ELEMENTARBANN und des HERBEIRUFUNG VEREITELN nur erschwert gewirkt werden; der ELEMENTARBANN ist auch gegen den erschienenen Dschinn wirksam (siehe dort).",
+    "complexity": "E",
+    "characteristics": ["Elementar", "Herbeirufung"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Geode", "distribution": 3}
+    ]
   }
 ]
