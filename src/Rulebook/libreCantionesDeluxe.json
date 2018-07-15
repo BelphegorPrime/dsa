@@ -1011,7 +1011,7 @@
     "page": 37,
     "name": "Balsam Salabunde",
     "trial": "KL/IN/CH",
-    "difficulty": "+Mod.",
+    "difficulty": "+Mod",
     "technik": "Der Elf legt dem Verletzten sanft eine Hand auf die Verletzung (bei großflächigen oder inneren Verletzungen aufs Herz) und wiederholt die Melodie des bha’sama sala bian da’o so lange, bis die heilende Wirkung einsetzt.",
     "castTime": "min. 5 Aktionen bis zum langsa men Ein- setzen der ersten Heilwirkung, 1 SR insgesamt",
     "effect": "Diese mächtige Zauberei heilt, je nach AsP-Einsatz, sämtliche Wunden und inneren Verletzungen des Verzauberten. Man kann der heilenden Wirkung eines mächtigen BALSAM SALABUNDE förmlich zusehen: Offene Wunden überziehen sich mit frischer Haut, Blutungen halten ein, zersplitterte Knochen finden wieder zusammen. Für jeden AsP, den der Zauberer einsetzt, bekommt ein Verwundeter, Kranker oder Vergifteter einen Lebenspunkt zurück (maximal jedoch ZfW x 2 LeP). Der Zauberer kann sich mit diesem Spruch auch selbst heilen (wenn er nicht bewusstlos ist; es gelten die üblichen Zuschläge für Wunden und niedrige LE). Die schädliche Wirkung von Krankheiten und Giften wird mit diesem Zauber nicht gestoppt. U Heilung von Wunden (WdS 37, 161). Die Zauberprobe ist um die doppelte Anzahl der Wunden des Patienten erschwert. Je 7 zurückgegebene LeP heilen eine Wunde vollständig. Optional: Wenn Sie mit Trefferzonen spielen, gilt für die Probe der höchste Zuschlag (die schlimmste Wunde) der Tabelle aus WdS 37. Auch hier heilen je 7 zurückgegebene LeP eine Wunde vollständig. Das Heilen von Wunden muss angesagt werden, ist also kein ‘Nebeneffekt’ jedes BALSAM-Zaubers. U Heilung von Verstümmelungen. Der Zauber kann auch abgetrennte Gliedmaßen wieder anfügen oder komplett zerstörte Organe regenerieren, solange die Verletzung noch frisch ist (maximal ZfW Stunden). Dies erfordert je nach Komplexität und Schwere der Verstümmelung eine bis zu 15 Punkte erschwerte Probe und womöglich permanente AsP (Meis- terentscheid). Narben kann man bis zu ZfW Tagen nach Entstehung mit dem BALSAM verschwinden lassen. U Rettung von der Schwelle des Todes. Schwerst Verwundete (zwischen 0 LeP und –KO LeP) vom Rande des Todes zurückzu- holen, gelingt, wenn der Zauber sofort und mit vollem Einsatz gesprochen wird (mindestens 10 AsP, außerdem muss der Patient hierdurch auf mindestens 1 LeP kommen; Probe erschwert um ((LeP unter null) x 2). Jeder zurückzubringende LeP unter 0 kostet den Zaubernden 2 AsP. Dabei verliert der Zaubernde für je 10 angefangene LeP unter 0 einen permanenten AsP (jedoch nur, wenn der Zauber gelingt), der jedoch nach den Regeln von Wege des Schwerts 173 zurückgekauft werden kann. Ein Patient, dessen LeP unter den negativen Wert seiner Wundschwelle (üblicherweise also unter –KO/2) gefallen sind, hat so schwere Verletzungen erlitten, dass er permanent einen LeP verliert (Optionalregel aus WdS 56).",
@@ -2130,6 +2130,38 @@
     ],
     "distribution": [
       { "representation": "Gildenmagier", "distribution": 3}
+    ]
+  },
+  {
+    "page": 66,
+    "name": "Destructibo Arcanitas",
+    "trial": "KL/KL/FF",
+    "difficulty": "+Mod",
+    "technik": "Der Magier zeichnet mit der Hand ein Pentagramm über den Gegenstand, der entzaubert werden soll.",
+    "castTime": "von mindestens 1 Minute bis hin zu vielen Stunden, je nach Wahl des Zaubernden und Komplexität und Fremdheit der zu zerstörenden Zauberei (siehe unten)",
+    "effect": "Der Zauber vernichtet jede Art von in Matrizen gebundener Zauberkraft, entzaubert also vor allem magische Artefakte, aber auch Untote, Golems und personalisierte Ri- tualinstrumente wie den Zauberstab oder die Schamanenkeule (sprich: alles, was permanente AsP besitzt). Die Entzauberung ist radikal und vollständig, die gespeicherte Kraft entlädt sich und ist nicht aufzufangen. Um die permanenten Kraftfäden zu zerstören, muss der Zaubernde oft selbst einen Teil seiner Zauberkraft aufgeben. Göttliche und geweihte Artefakte können mit diesem Zauber nicht ihrer Kräfte beraubt werden. Die Zauberprobe wird wie folgt modifiziert: U Allgemein: –1 für je 4 Stunden, die sich der Zaubernde auf die Entzauberung einstimmt. Er kann sich maximal ZfW Stunden einstim- men / –1 pro 3 ZfP* eines vorbereitenden ANALYS / bis zu +7 für besondere Komplexität und Fremdartigkeit des magischen Objekts U Magische Artefakte: Siehe hierzu das Artefakt-Kapitel in Wege der Zauberei und die folgenden Modifikationen fürs Entzaubern: +1 für die Auflösung des ARCANOVI; +12 für die Auflösung eines INFINITUM; +2 für jeden wirkenden Spruch, der eine vom Entzau- berer beherrschte Repräsentation besitzt; +4 für jeden wirkenden Spruch einer fremden Repräsentation; +1 für jede Stapelung von Sprüchen; +1 für jede aufgebrauchte Ladung; +3 für jede noch aktive Ladung; +1 für jeden AsP, der permanent im Artefakt gespeichert ist; –1 für je 3 ZfP* bei einer vorbereitenden ANALYS- Probe; –1 für je 4 Stunden, die der Zauberer sich ununterbrochen auf das Artefakt einstimmt. Er kann sich maximal ZfW Stunden einstimmen; bis +7 nach Maßgabe des Meisters für besondere Komplexität, hohes Alter, gänzlich fremdartige Magie etc. U Magische Ritualinstrumente: +1 für jeden permanen- ten AsP / +1 für jeden gespeicherten Zauber (oder jedes Objektritual) / +MR des Besitzers eines gebundenen Ritualinstruments U Golems, Untote, Chimären: +1 für jeden bei der Erschaffung aufgewandten permanenten AsP / +MR U Geister, Dämonen: zwar nur erschwert um die MR, dennoch ob Berührung und langer Zauberdauer meist nicht praktikabel.",
+    "cost": "bei Artefakten halb so viele AsP, wie für die Erschaffung aufgewendet wurden. Bei persönlichen Ritualinstrumenten je nach Macht zwischen 20 und 80 AsP. Bei allen Wesenheiten wie Golems, Untoten, Chimären, Geistern und Dämonen: MR + LeP/2 in AsP. Davon sind jeweils 1/20 der Kosten permanent aufzuwenden. Bei misslungener Zauberprobe entstehen keine permanenten Kosten.",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Mit PROTECTIONIS geschützte Objekte erschweren die Zauberprobe.",
+    "complexity": "E",
+    "characteristics": ["Antimagie", "Metamagie", "Kraft"],
+    "variants": [
+      {
+        "name": "Astralkörper abbauen",
+        "mod": "+5 +MR",
+        "minZfW": 14,
+        "effect": "Zielobjekt: Einzelwesen; nur in der gildenmagischen Repräsentation; eine seltene Gildenstrafe. Einem Zauberkundigen oder magischen Wesen kann hierdurch zeitweise sein Astralspeicher ganz oder teilweise aufgelöst werden. Pro eingesetztem AsP verliert das Opfer ebenfalls 1 AsP. Die hierdurch verlorenen AsP regenerieren sich nur mit der Geschwindig- keit von 1 AsP pro Tag. Sinken die AsP des Opfers hierdurch jedoch auf 0, ist es für ZfP* Monate nicht in der Lage, AsP zu regenerieren. Durch diese Variante entstehen keine permanenten Kosten. "
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Elf", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
   }
 ]
