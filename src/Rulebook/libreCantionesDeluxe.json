@@ -2211,7 +2211,7 @@
     ]
   },
   {
-    "page": 68,
+    "page": 69,
     "name": "Dunkelheit",
     "trial": "KL/KL/FF",
     "difficulty": "",
@@ -2262,6 +2262,42 @@
       { "representation": "Hexe", "distribution": 3},
       { "representation": "Scharlatan", "distribution": 3, "subRepresentation": "Gildenmagier"},
       { "representation": "Elf", "distribution": 2}
+    ]
+  },
+  {
+    "page": 70,
+    "name": "Duplicatus Doppelbild",
+    "trial": "KL/CH/GE",
+    "difficulty": "+2 pro zusätzlichem Doppelgänger",
+    "technik": "Der Magier hebt die Hände – Handflächen nach außen – vor das Gesicht, spreizt die Finger und verschiebt die Hände mehrfach gegeneinander; dabei spricht er die Formel.",
+    "castTime": "5 Aktionen",
+    "effect": "Der Magier erschafft durch diese Formel für sich oder einen Gefährten einen oder mehrere optische Doppel- gänger, die sich synchron mit ihm bewegen, dabei ständig mit ihm verschmelzen und wieder von ihm trennen, so dass Gegner kaum feststellen können, welches der echte Magier ist, und ihn nur noch mit geringerer Wahrscheinlichkeit treffen. Ab ZfW 7 können insgesamt zwei Doppelgänger erschaffen werden, ab ZfW 11 drei, ab ZfW 15 vier, ab ZfW 18 fünf. Nach einem unpariertem Angriff wird der Verzauberte je nach Anzahl der Doppelgänger nur mit 50 % (1–3 auf 1W6 bei einem Doppelgänger), 33 % (1–2 auf 1W6 bei zwei Doppelgängern), 25 % (1–5 auf 1W20; drei Dop pelgänger), 20 % (1–4 auf 1W20; vier Doppelgänger) bzw. 17 % (1 auf 1W6; fünf Doppelgänger) Wahrscheinlichkeit getroffen. Diese Regelung gilt auch für gegen den Magier gerichtete Fernwaffen und Zauberei. Für einen Gegner ist es um (Zahl der Doppelgänger) erschwert, einen Angriff des Zauberers zu parieren. Kann sich der Verzauberte nur auf engstem Raum bewegen (in eine Raumecke gedrängt), verdoppelt sich die Trefferwahrscheinlichkeit. Soll der Verzauberte z.B. mitsamt seinem Reittier doppelt erscheinen, muss dieses einen eigenen Doppelgänger erhalten. Die Realitätsdichte (siehe den Kasten zum Thema Illusionen auf Seite 34) beträgt ZfP*/2+7 Punkte. Durch die ständige Bewegung begründet, nützt es jedoch nichts, die Illusion als solche zu erkennen, um von ihr nicht betroffen zu sein. Gegner, die sich nicht optisch orientieren, sind von diesem Zauber nicht betroffen. Beispiele hier- für sind Kämpfer mit geschlossenen Augen, die auf Blindkampf vertrauen, Zauberer mit geschlossenen Augen, die auf die Komponente Sicht verzichten, oder viele Dämonen und Untote.",
+    "cost": "6 AsP für den ersten, 3 AsP für jeden weiteren Doppelgänger",
+    "target": "Einzelwesen, freiwillig",
+    "distance": "selbst, Berührung",
+    "duration": "maximal ZfP* mal 2 KR (A)",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt einen wirkenden DUPLICATUS auf.",
+    "antimagic": "kann in einer Zone des ILLUSION AUFLÖSEN nur erschwert gewirkt werden und wird von diesem Zauber beendet.",
+    "complexity": "C",
+    "characteristics": ["Illusion"],
+    "variants": [
+      {
+        "name": "Objektverdopplung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Diese dynamische Illusion ist auch auf einen Gegenstand anwendbar, hier jedoch meist wenig sinnvoll, da der Zauber für den Kampf entwickelt wurde."
+      },
+      {
+        "name": "Spiegelkabinett",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Der Zaubernde erschafft in einem Radius von 7 Schritt um sich herum insgesamt ZfW/2 Doppelgänger, die stumm dastehen oder scheinbar typischen Tätigkeiten des Zau- bernden nachgehen und sich stets in seiner Nähe aufhalten, wenn sich dieser fortbewegt. Sie verschmelzen nicht mit dem Original, können Gegner aber durch ihre schiere Existenz verwirren. Diese Variante kostet 15 AsP, ist nur auf den Zaubernden selbst anwendbar und hat eine Wirkungsdauer von ZfP*/2 Spielrunden (A)."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Scharlatan", "distribution": 6}
     ]
   }
 ]
