@@ -2517,5 +2517,41 @@
       { "representation": "Druide", "distribution": 5},
       { "representation": "Schelm", "distribution": 4}
     ]
+  },
+  {
+    "page": 78,
+    "name": "Eiseskälte Kämpferherz",
+    "trial": "MU/IN/KO",
+    "difficulty": "",
+    "technik": "Der Elf legt die Hände an die Brust, atmet tief durch und spricht firya ten dha’fey a’thar.",
+    "castTime": "2 Aktionen",
+    "effect": "Der Nutznießer dieses Spruches wird in einen Zustand versetzt, der ihn im Kampf keinerlei Schmerzen mehr erleiden lässt. Erstens hat er einen zusätz- lichen Rüstungsschutz in Höhe von ZfP*/5 Punkten (ohne Behinderung, auch zusätzlich zu dem Schutz durch einen AR- MATRUTZ), zweitens erleidet er keine AT/PA-Abzüge durch niedrige Lebensenergie und seine Selbstbeherrschungs-Proben aufgrund von LeP-Verlust sind um ZfP* Punkte erleichtert. Er kann insgesamt eine Anzahl von ZfP*/2 Wunden ignorieren, die er an beliebigen Stellen des Körpers erleidet. Allerdings stellt dieser Zauber für den Verzauberten ein heftiges Risiko dar, denn obwohl er bei wachem Verstand ist, fällt es ihm sehr schwer, die Gefährlichkeit seiner erlittenen Verletzungen einzu- schätzen. Von Beginn der Wirkungsdauer übernimmt der Meister es, die LeP des Elfen zu verwalten. Der Spieler erfährt nur, dass und wo er getroffen ist, aber nur sehr vage, wie schwer und ob er Wunden erlitten hat. Erst in dem Moment, in dem die Wirkungsdauer endet, teilt der Meister dem Spieler mit, wie viele LeP er noch hat und wo er Wunden erlitten hat. Mit Ende der Wirkungsdauer erleidet der Elf auf jeden Fall 1W6 Punkte Erschöpfung. Es ist durchaus möglich, dass er im Kampf nicht merkt, das seine Lebensenergie auch unter 0 sinkt. Die Folgen derart niedriger LE setzen dann in dem Augenblick ein, wenn die Zauber- wirkung endet. Erleidet eine Gliedmaße mehr als drei Wunden, so ist sie verloren, wenn nicht auf der Stelle ein entsprechend erschwerter Heilzauber gesprochen wird.",
+    "cost": "5 AsP plus 1 AsP/KR",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "höchstens 2 x ZfW KR (A)",
+    "modifications": ["Zauberdauer", "Reichweite"],
+    "reversalis": "Der Elf erleidet durch Wunden besondere Schmerzen (doppelte Abzüge), außerdem ist jede Selbstbeherrschungs-Probe, die er wegen LeP-Verlust ablegen muss, um ZfP* erschwert.",
+    "antimagic": "kann in einer Zone des EIGENSCHAFT WIEDERHERSTELLEN nur erschwert gewirkt und von dieser Antimagie gebrochen werden.",
+    "complexity": "C",
+    "characteristics": ["Eigenschaften"],
+    "variants": [
+      {
+        "name": "eine andere Person zu verzaubern",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante, eine andere Person zu verzaubern, muss die Dauer des Zaubers vorher festgelegt und die entsprechenden AsP-Kosten sofort bezahlt werden, allerdings muss der Zauber nicht aufrechterhalten werden."
+      },
+      {
+        "name": "Berserker",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Wie oben, aber der Elf verzichtet auf jegliche Parade, sondern wandelt in jeder Runde des Kampfes seine Reaktion in eine Aktion um. Dabei erleidet er zwar die normalen Modifikationen für eine solche Umwandlung, sein AT-Wert steigt aber pro 3 ZfP* um 1. Er kann auch in diesem Zustand sehr wohl zwischen Freund und Feind unterscheiden, ist aller dings nicht in der Lage, irgendwelche Magie zu wirken oder Manöver außer Wuchtschlag, Sturmangriff und Niederschlag anzuwenden, sondern muss sich jederzeit mit aller Wucht in den Kampf werfen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Elf", "distribution": 3}
+    ]
   }
 ]
