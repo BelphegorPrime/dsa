@@ -2473,5 +2473,49 @@
       { "representation": "Hexe", "distribution": 2, "subRepresentation": "Geode"},
       { "representation": "Gildenmagier", "distribution": 4, "subRepresentation": "Druide"}
     ]
+  },
+  {
+    "page": 77,
+    "name": "Eisenrost und Patina",
+    "trial": "KL/CH/GE",
+    "difficulty": "",
+    "technik": "Die Magierin spricht die Formel und berührt anschließend den Gegenstand, den sie verrosten lassen möchte, mit Hand oder Zauberstab.",
+    "castTime": "2 Aktionen",
+    "effect": "Ein metallischer Gegenstand, der von diesem Zauber getroffen wird, überzieht sich sofort mit Rostflecken oder Grünspan und wird zuse hends vom Rost zerfressen, bis nur noch Krümel und Metallstaub zurück- bleiben. Ein Nagel ist nach wenigen Sekunden zerfallen, ein Dolch meist innerhalb einer Minute, eine schwere Eisentruhe nach fünf Minuten. Um einen Gegenstand im Kampf zu berühren, ist eine gelungene Attacke erforderlich, die dann pariert werden muss (Waffe verro- sten lassen) oder nicht (Rüstungstreffer). Metallwaffen werden binnen weniger Herzschläge schartig und zerbrechlich. Nach Aussprechen der Formel bleiben der Zauberin ZfP* Kampfrunden Zeit, um die gegnerische Waffe zu berühren. Der Bruchfaktor dieser Waffe steigt pro KR um einen Punkt. Erreicht der BF den Wert 12, zerbricht die Waffe automatisch beim nächsten Treffer bzw. der nächsten gelungenen Parade. Wird eine Rüstung verzaubert, verliert sie alle 3 KR einen Punkt RS. Magische Objekte werden von diesem Zauber nicht betroffen, ebenso wenig Objekte aus Silber (läuft nur an) oder höherwertigen Metallen. Wird mit der Experten-Regel zu Matrixverändernden Zaubern aus SRD 28f. gespielt, dann gilt ein Gegenstand, an dem der EISENROST gerade wirkt, als magisch, so dass z.B. eine rostende Waffe Dämonen verletzen kann.",
+    "cost": "2 AsP plus 2 AsP pro Stein Gewicht (Sch: 2 AsP + 1 AsP/Stein)",
+    "target": "Einzelobjekt aus unedlem Metall (Eisen, Blei, Kupfer und Legierungen wie Messing und Bronze)",
+    "distance": "Berührung",
+    "duration": "Der Verfall hält ZfP*/2 Spielrunden an und verursacht Zerstörung nach Spielleiterentscheid; die Verrostung ist augenblicklich.",
+    "modifications": ["Zauberdauer", "Kosten", "Wirkungsdauer"],
+    "reversalis": "Verrostete Gegenstände setzen sich (nach vorhande- nen Einzelteilen, Spielleiterentscheid und ZfP*) wieder zusammen und gewinnen an Glanz, Stärke und Integrität, bis maximal zum Ursprungszustand. Der BF einer schartigen Waffe sinkt um ZfP*/2 Punkte, der RS einer zerschlissenen Rüstung steigt um ZfP*/4 Punkte, jeweils jedoch maximal bis zum Grundwert. Für diese Instandsetzung sind die Kosten jedoch gegenüber dem Grundzauber verdoppelt.",
+    "antimagic": "OBJEKT ENTZAUBERN macht den Verfall rückgängig, während er wirkt, kann aber nach Ablauf der Wirkungsdauer nichts wiederherstellen. Eine entsprechende Zone erschwert das Wirken des EISENROST – es soll hinreichend paranoide Kämpfer geben, die sich speziell eine solch antimagische Waffe wünschen. Die Objektschutz- Variante der genannten Antimagie erschwert das Verfluchen einer solcherart geschützten Waffe. Ein hypothetischer Anti-Temporalzauber hätte natürlich ebenfalls negative Auswirkungen auf den EISENROST.",
+    "complexity": "C",
+    "characteristics": ["Objekt", "Temporal"],
+    "variants": [
+      {
+        "name": "Rostträger",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Normalerweise muss die Zaubernde das Zielobjekt mit der Hand oder ihrem persönlichen Ritualgerät berühren. Mit dieser Modifikation genügt auch ein beliebiger Stiel, Stecken oder eine Waffe."
+      },
+      {
+        "name": "Rostfalle",
+        "mod": "+5",
+        "minZfW": 7,
+        "effect": "Es reicht aus, wenn der Zaubernde oder sein Stab im Kampf berührt wird – eine aktive Berührung ist nicht erforderlich (gilt aber weiterhin). So kann z.B. eine angreifende Waffe durch eine gelungene Parade oder einen gelungenen Treffer gegen den Magier zum Verrosten gebracht werden."
+      },
+      {
+        "name": "Satinavs Hörner",
+        "mod": "+9 nur in der kristallomantischen Repräsentation",
+        "minZfW": 14,
+        "effect": "Der Zauber wirkt auch auf alles Unbelebte in der Umgebung: Holz verrottet, Leder vertrocknet, Stein verwittert, Lebensmittel und alchimistisches Gebräu verkommen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Achaz", "distribution": 5},
+      { "representation": "Druide", "distribution": 5},
+      { "representation": "Schelm", "distribution": 4}
+    ]
   }
 ]
