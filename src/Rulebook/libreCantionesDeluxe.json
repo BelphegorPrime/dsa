@@ -2589,5 +2589,37 @@
       { "representation": "Geode", "distribution": 2},
       { "representation": "Gildenmagier", "distribution": 2}
     ]
+  },
+  {
+    "page": 80,
+    "name": "Elementarer Diener",
+    "trial": "MU/KL/CH",
+    "difficulty": "+Anrufungsschwierigkeit",
+    "technik": "Der Druide berührt eine ‘Hand voll’ des Elements, dessen Elementargeist er rufen will, mit den Händen und konzentriert sich auf die dem Element eigenen Kräfte.",
+    "castTime": "1 Spielrunde",
+    "effect": "Dieser Zauber ruft einen Elementargeist des gewünschten Elements herbei, der dem Beschwörer einige Diens- te erfüllt, wenn diesem eine (modifizierte) Kontroll-Probe auf einen Wert von (MU+IN+CH+CH+ZfW)/5 gelingt. Sowohl die Anrufungs- als auch die Kontroll-Probe sind um bestimmte Modifikatoren erschwert/erleichtert, von denen die Affinität des Beschwörers zum gerufenen Element die wichtigste ist. Ein Elementargeist stellt dem Beschwörer Dienste im Wert von 15 Punkten zur Verfügung. Alles Wissenswerte zu Elementargeistern, Wünschen und Affinitäten finden Sie im Band Wege der Zauberei im Kapitel Die Kunst der Invokation ab Seite 175. Die Notwendigkeit, mindestens eine Hand voll des zu beschwörenden Elementes zu verwenden (in allen Repräsentationen in der einen oder anderen Form vorhanden), ist der Grund dafür, dass sich die Beschwörung eines Schneesturms in der Wüste so außerordentlich schwierig gestaltet und dass die Luftgeister zu den am häufigsten beschworenen Wesenheiten gehören (denn wo keine Luft ist, kann auch kein Beschwörer existieren). Es ist kaum möglich, die für die Beschwörung nötige Menge des Ele- ments durch einen einzigen MANIFESTO herbeizurufen, dazu ist die erscheinende Menge meist zu gering. Eine ausreichende Menge erhält man durch die Ansammlung von 12 ZfP*, eventuell durch mehrere MANIFESTO-Zauber hintereinander.",
+    "cost": "12 AsP",
+    "target": "Einzelwesen",
+    "distance": "3 Schritt bei der Herbeirufung; der Elementargeist kann sich danach frei bewegen.",
+    "duration": "bis zur Erfüllung der Dienste, längs tens jedoch bis zum nächsten Sonnenaufgang",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)"],
+    "reversalis": "Mit der Reversion der Formel kann ein Elementargeist ausgetrieben werden; dies ist jedoch zusätzlich zu den +4 für den Elementargeist und eventuellen Affinitäten noch um die ZfP* der Herbeirufung erschwert.",
+    "antimagic": "Die Herbeirufung kann in den Zonen des ELEMENTARBANN oder des HERBEIRUFUNG VEREITELN nur erschwert gewirkt werden.",
+    "complexity": "C",
+    "characteristics": ["Elementar", "Herbeirufung"],
+    "variants": [
+      {
+        "name": "Herbeirufung mehrerer Elementare",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante zur Herbeirufung mehrerer Elementare müssen für jedes Einzelwesen nur 10 AsP aufgewandt werden. Es sind separate Kontroll-Proben erforderlich, und die Elementare stellen auch jeweils 15 Punkte für die Dienst- erfüllung zur Verfügung."
+      }
+    ],
+    "distribution": [
+      { "representation": "Geode", "distribution": 6},
+      { "representation": "Druide", "distribution": 5},
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Gildenmagier", "distribution": 4}
+    ]
   }
 ]
