@@ -2553,5 +2553,41 @@
       { "representation": "Achaz", "distribution": 3},
       { "representation": "Elf", "distribution": 3}
     ]
+  },
+  {
+    "page": 79,
+    "name": "Elementarbann",
+    "trial": "IN/CH/KO",
+    "difficulty": "+Mod",
+    "technik": "Der Magier nimmt die passende elementare Substanz zur Hand, konzentriert sich auf die Strukturen des elementaren Merkmals und spricht dann die Formel.",
+    "castTime": "40 Aktionen",
+    "effect": "Diese Formel hebt bei Gelingen einen Spruch mit dem Merkmal Elementar auf, ganz gleich, um welche elementare Spezialisierung es sich dabei handelt. Die Zauber- probe ist um die vom gegnerischen Zauberer (demjenigen, der den Elementar-Zauber gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/5 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren. Sorgfältige magische Analyse der vorliegenden elementaren Zauberei im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ist die Probe auf den ELEMENTARBANN um einen Punkt erleichtert. Des Weiteren gelten die Modifikationen für Begabungen und Merk- malskenntnisse für Element bzw. Gegenelement aus WdZ 186f. Der Zauber ist nicht geeignet, Elementargeister, Dschinne oder gar Elementare Meister zu exorzieren; Mindergeister, die teilweise aus dem betroffenen Element entstanden sind, lösen sich unter Einwirkung des Zaubers jedoch sofort auf. Der Zauber wirkt nicht gegen natürliche Vorkommen und Konzentrationen eines Elements, sondern nur gegen mit Zauberei hervorgerufene.e zu wirken oder Manöver außer Wuchtschlag, Sturmangriff und Niederschlag anzuwenden, sondern muss sich jederzeit mit aller Wucht in den Kampf werfen.",
+    "cost": "9 AsP plus 1/5 der Kosten des zu brechenden Spruchs. Um einen permanent wirkenden und mittels permanenter AsP fixierten elementaren Zauber aufzuheben, muss der Magier permanente AsP investieren: 1/10 der Kosten des wirkenden Elementarzaubers. Misslingt die Probe, entstehen keine permanenten Kosten.",
+    "target": "einzelner Zauber",
+    "distance": "maximal ZfW Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Prinzipiell können auch Elementar-Formeln durch den PROTECTIONIS geschützt werden (S. 213).",
+    "complexity": "C",
+    "characteristics": ["Antimagie", "Elementar"],
+    "variants": [
+      {
+        "name": "Mindergeister bannen",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Mit dieser Variante können Mindergeister, unabhängig von ihrerelementaren Zusammensetzung, verbannt werden. Dies kostet 3 AsP pro Minderem Geist."
+      },
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 27 AsP kann der Magier eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Elementar um ZfP* Punkte erschwert ist, die ZfP* Stunden lang anhält und in der keine Mindergeister bestehen können."
+      }
+    ],
+    "distribution": [
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Gildenmagier", "distribution": 2}
+    ]
   }
 ]
