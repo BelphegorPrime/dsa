@@ -2419,7 +2419,7 @@
     "duration": "augenblicklich",
     "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
     "reversalis": "keine Wirkung",
-    "antimagic": "Der Beeinflussungszauber kann von einem PRO- TECTIONIS geschützt sein (S. 213)",
+    "antimagic": "Der Beeinflussungszauber kann von einem PROTECTIONIS geschützt sein (S. 213)",
     "complexity": "B",
     "characteristics": ["Antimagie", "Einfluss"],
     "variants": [
@@ -2620,6 +2620,97 @@
       { "representation": "Druide", "distribution": 5},
       { "representation": "Achaz", "distribution": 4},
       { "representation": "Gildenmagier", "distribution": 4}
+    ]
+  },
+  {
+    "page": 81,
+    "name": "Elfenstimme Flötenton",
+    "trial": "IN/CH/KO",
+    "difficulty": "",
+    "technik": "Der Elf stimmt das Instrument, auf dem er spielen will, spricht a’feyra feya, iama’fey dschis, konzentriert sich auf die Personen, die den Klang hören sollen, und beginnt zu spielen.",
+    "castTime": "40 Aktionen",
+    "effect": "Die Klänge, die der Elf seinem Instrument entlockt, sind für all jene hörbar, für die der Zauber gedacht sind, unabhängig von ihrer Entfernung zu dem Musikanten. Auch Mauern oder andere Hindernisse halten die Klänge nicht auf. Der Empfänger hört die Musik nur in seinem Geist und weiß, dass es sich um einen Zauber handelt. Es wird jedoch nur die Musik übertragen, kein eventueller zusätzlicher Gesang oder dergleichen.",
+    "cost": "6 AsP + 1 AsP pro SR Spielzeit",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst; der Gruß reicht zumindest kontinentweit, jedoch nicht sphärenübergreifend; als Empfänger können nur solche Personen ausgewählt werden, die ein enges Band zum Elfen haben (Freundschaftslied-Partner, Salasandra-Sippenangehörige, langjährige Freunde).",
+    "duration": "je nach AsP-Aufwand, höchstens ZfP*/2 SR",
+    "modifications": [],
+    "reversalis": "nicht bekannt",
+    "antimagic": "kann in einer Zone des VERSTÄNDIGUNG STÖREN nur erschwert gewirkt und von diesem Zauber unterbunden werden.",
+    "complexity": "D",
+    "characteristics": ["Verständigung"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Elf", "distribution": 2}
+    ]
+  },
+  {
+    "page": 82,
+    "name": "Erinnerung Verlasse dich!",
+    "trial": "MU/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Der Magier berührt sein Opfer und spricht dabei die Formel.",
+    "castTime": "3 Aktionen",
+    "effect": "Der Magier raubt seinem Opfer für eine begrenzte Zeit das Gedächtnis. Es hat während dieser Zeit keine Erinnerung an sein bisheriges Leben. Dadurch sinken KL und IN um jeweils ZfP* Punkte. An Ereignisse, die während der Wirkungsdauer geschehen, kann es sich später überhaupt nicht mehr erinnern, es sei denn, es wird mit einem BEHERRSCHUNG BRECHEN behandelt. In Verbindung mit einem BANNBALADIN oder einer ähnlichen Formel stellt dieser Spruch in den Händen von Schwarzmagiern eine ernste Gefahr dar, gelingt es ihnen doch, Menschen zu Raub und Mord zu zwingen, sie sogar auf ausweglose Missionen zu schicken, die für sie mit dem Tode enden. Aus diesem Grunde wird ein Einsatz dieser Formel zu anderen als seelenheilerischen Zwecken gemäß Cod.Alb. III, 21 mit schwersten Strafen geahndet.",
+    "cost": "11 AsP (borbaradianische Variante: 1W20 AsP oder 1W20/2 LeP)",
+    "target": "Einzelperson",
+    "distance": "Berührung",
+    "duration": "ZfP* Stunden (borbaradianische Variante: so viele Stunden wie AsP)",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "Das Opfer ist zu phänomenalen Gedächtnisleistungen in der Lage, d.h. es kann sich an kleinste Details aus seiner Vergangenheit erinnern.",
+    "antimagic": "BEHERRSCHUNG BRECHEN kann den Zauber aufheben bzw. in der Zonen-Variante sein Wirken erschweren; gegen die borbaradianische Variante wirkt auch ein AMAZEROTHBANN.",
+    "complexity": "D",
+    "characteristics": ["Herrschaft", "Bor: Dämonisch (Amazeroth)"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Borbaradianer", "distribution": 4},
+      { "representation": "Gildenmagier", "distribution": 3}
+    ]
+  },
+  {
+    "page": 83,
+    "name": "Exposami Lebenskraft",
+    "trial": "KL/IN/IN",
+    "difficulty": "",
+    "technik": "Der Elf hält die Hände muschelförmig hinter die Ohren und konzentriert sich auf den Zauber, benennt den Ort und spricht dhao visya’my ama’e’ra.",
+    "castTime": "15 Aktionen",
+    "effect": "Mit diesem Zauber kann ein Elf die Anwe- senheit jedes wenigstens rattengroßen lebendigen Wesens erkennen (keine Pflanzen), selbst wenn das Wesen verborgen oder getarnt ist. Diese Auren nimmt der Elf als grün leuchtende Flecken wahr, deren Intensität und Durchmesser von der Größe des Wesens abhängen. Die Gestalt der georteten Wesen ist jedoch nicht erkennbar. Dichtes Unterholz, Wasser und sogar Erdboden bis zu etwa einem halben Schritt Tiefe wird von dem Zauber durchdrungen, massive Barrieren aus Stein oder Eis jedoch nicht: Alles, was vorwiegend aus den Elementen Erz oder Eis besteht, widersetzt sich dem Zauber. Die Dicke dieser Materialien, die der Zauber durchdringen kann, entspricht ZfP* Fingern – um eine zehn Finger dicke Steinwand zu ‘durchschauen’, sind also wenigstens 10 ZfP* nötig. Außerdem schwächen solche Hindernisse die Intensität der entdeckten Auren, so dass sich der Elf in der Größe eines Wesens, das hinter einer massiven Steinwand lauert, durchaus irren kann. Die genaue Wirkungsweise des Zaubers ist unter Magietheoretikern umstritten, aber es deutet einiges darauf hin, dass es eine Variante des ODEM ARCANUM ist, die Sikaryan ortet – jene Lebenskraft, von der alle Lebewesen erfüllt sind. Dafür spricht jedenfalls, dass Dämonen, Untote und ähnliche Wesenheiten durch diesen Zauber nicht wahrgenommen werden können, mit der bemerkenswerten Ausnahme von Vampiren, die vor kurzem getrunken haben und damit fremdes Sikaryan in sich aufgenommen haben. Die Aura von sterbenden oder schwer kranken Wesen verblasst im Vergleich zum gesunden Zustand, während Insektenstaaten als Einzelwesen wahrgenommen werden.",
+    "cost": "4 AsP",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst; die Wirkung des EXPOSAMI reicht ZfP* x 3 Schritt weit.",
+    "duration": "entspricht der Zauberdauer.",
+    "modifications": ["Zauberdauer", "Reichweite"],
+    "reversalis": "nicht bekannt",
+    "antimagic": "kann in einer Zone des HELLSICHT TRÜBEN nur erschwert gewirkt werden; die Wirkung eines außerhalb gesproche- nen EXPOSAMI wird in der Zone um die ZfP* der antimagischen Formel reduziert, so dass dort die Reichweite des Hellsichtzaubers sinkt. Gezielter Einsatz der Antimagie gegen den Elfen beendet den EXPOSAMI.",
+    "complexity": "B",
+    "characteristics": ["Hellsicht"],
+    "variants": [
+      {
+        "name": "Tierart",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Mit dieser Variante kann der Elf nur Wesen einer bestimmten Tierart wahrnehmen. Funktioniert nur bei Wesen, deren Aura der Elf schon einmal mittels EXPOSAMI oder ODEM ARCANUM gesehen hat."
+      },
+      {
+        "name": "Suche",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Der Hellsichtzauber reagiert nur auf ein bestimmtes Wesen, dessen Aura der Elf schon einmal wahrgenommen haben muss (BLICK AUFS WESEN, EXPOSAMI, ODEM ARCANUM ...)"
+      },
+      {
+        "name": "Reinheit der Aura",
+        "mod": "+10",
+        "minZfW": 14,
+        "effect": "Der Elf kann erkennen, ob ein Wesen krank oder gesund ist, erregt oder ruhig, dämonisch verseucht oder natürlich drittsphärig."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 6},
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Druide", "distribution": 4},
+      { "representation": "Geode", "distribution": 4},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3}
     ]
   }
 ]
