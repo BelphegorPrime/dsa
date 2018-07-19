@@ -2343,7 +2343,7 @@
     "difficulty": "+Mod",
     "technik": "Die Hexe berührt die Person und konzentriert sich auf deren Körper, um Aura und Eigenschaften wieder in Einklang zu bringen.",
     "castTime": "40 Aktionen",
-    "effect": "Mit dieser Formel können Verwandlungs- zauber mit dem Merkmal Eigenschaften aufgehoben werden; der Zauber ist jedoch nicht geeignet, im Zustand der Verwandlung entstandene Schäden ungeschehen zu machen. Die Zauberprobe ist um die vom gegnerischen Zau- berer (demjenigen, der die Form-Verwandlung gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/5 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren. Sorgfältige magische Analyse des wirkenden Verwandlungszaubers im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf EIGENSCHAFTEN WIEDERHERSTELLEN um einen Punkt erleichtert.",
+    "effect": "Mit dieser Formel können Verwandlungszauber mit dem Merkmal Eigenschaften aufgehoben werden; der Zauber ist jedoch nicht geeignet, im Zustand der Verwandlung entstandene Schäden ungeschehen zu machen. Die Zauberprobe ist um die vom gegnerischen Zau- berer (demjenigen, der die Form-Verwandlung gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/5 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren. Sorgfältige magische Analyse des wirkenden Verwandlungszaubers im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf EIGENSCHAFTEN WIEDERHERSTELLEN um einen Punkt erleichtert.",
     "cost": "7 AsP plus 1/5 der Kosten des zu brechenden Spruchs. Um einen permanent wirkenden und mittels permanenter AsP fixierten Eigenschafts-Zauber aufzu heben, muss der Druide permanente AsP investieren: 1/10 der Kosten des wirkenden Beherrschungszaubers, mindestens aber 1 AsP. Misslingt die Probe, entstehen keine perma- nenten Kosten.",
     "target": "Einzelwesen",
     "distance": "selbst, Berührung",
@@ -2359,12 +2359,6 @@
         "mod": "+3",
         "minZfW": 7,
         "effect": "Für den Einsatz von 21 AsP kann der Druide eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Eigenschaften um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält."
-      },
-      {
-        "name": "Schattensprung",
-        "mod": "+10",
-        "minZfW": 14,
-        "effect": "Der Magier kann körperlich mit seinem Schatten und dieser mit einem existierenden Umgebungsschatten verschmelzen, so dass er zwar seine Umgebung noch wahrnehmen, aber nicht mehr mit ihr interagieren kann – und sie auch nicht mit ihm, was heißt, dass er gegen körperliche Angriffe immun ist (gegen magische oder geweihte Waffen hat er einen RS von ZfP*), aber selbst ebenfalls nicht attackieren kann. Er kann jedoch (mit einer Erschwernis von +7) aus den Schatten heraus zaubern, er kann astral wahrgenommen und Opfer eines Zaubers werden. Er kann sich außerdem mit GS 15 durch existierende Schatten bewegen und diese wieder verlassen, womit er wieder körperlich wird. Die am Leib getragene Ausrüstung wird von dem Zauber auch betroffen. Diese Variante kostet 7 AsP pro Spielrunde. Sobald ein Zauberer aus den Schatten heraustritt, endet die Wirkung. (Es wird von einer Variante gemunkelt, die es erlaubt, während der Wirkungsdauer beliebig in die Schatten hinein- und aus ihnen herauszutreten.)"
       }
     ],
     "distribution": [
@@ -2377,7 +2371,7 @@
   },
   {
     "page": 74,
-    "name": "Eigenschaft Wiederherstellen",
+    "name": "Eigene Ängste Quälen Dich!",
     "trial": "MU/IN/CH",
     "difficulty": "+MR",
     "technik": "Der Magier konzentriert sich, spricht die Formel und berührt sein Opfer kurz.",
@@ -2391,7 +2385,7 @@
     "reversalis": "Die Sinne des Zaubernden werden geschärft: TaW Sinnenschärfe +ZfP*, alle Ängste (Schlechte Eigenschaften mit der Bezeichnung Angst oder Phobie) sinken um ZfP*/2 Punkte.",
     "antimagic": "EINFLUSS BANNEN hebt den Zauber auf. Bei der gildenmagischen Repräsentation hilft auch der EIGENSCHAFT WIEDERHERSTELLEN, bei der borbaradianischen Variante der AMAZEROTHBANN. In den entsprechenden Zonen ist der Zauber schwieriger zu wirken.",
     "complexity": "C",
-    "characteristics": ["Einfluss,", "nicht Bor: Eigenschaften", "Bor: Dämonisch (Amazeroth)"],
+    "characteristics": ["Einfluss", "nicht Bor: Eigenschaften", "Bor: Dämonisch (Amazeroth)"],
     "variants": [
       {
         "name": "Sinnenraub",
@@ -2409,6 +2403,75 @@
     "distribution": [
       { "representation": "Borbaradianer", "distribution": 6},
       { "representation": "Gildenmagier", "distribution": 2}
+    ]
+  },
+  {
+    "page": 75,
+    "name": "Eifluss Bannen",
+    "trial": "IN/CH/CH",
+    "difficulty": "+Mod",
+    "technik": "Die Hexe berührt die zu entzaubernde Person und konzentriert sich auf die hervorgerufenen Gefühle.",
+    "castTime": "40 Aktionen",
+    "effect": "Der Spruch hebt Zauber mit dem Merkmal Einfluss auf. Die Erinnerung an die Gefühle (evtl. für einen anderen Menschen) bleiben jedoch bestehen, so dass das Opfer auch nach Aufhebung des Beeinflussungszaubers noch in dessen Sinne reagieren kann (Meisterentscheid). Die Hexe kann sich mit dieser Formel nicht selbst aus einer Beeinflussung befreien. Die Zauberprobe ist um die vom geg- nerischen Zauberer (demjenigen, der die Beeinflussung gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/5 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren. Sorgfältige magische Analyse des wirkenden Zaubers im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS AR- CANSTRUKTUR ist die Probe auf EINFLUSS BANNEN um einen Punkt erleichtert.",
+    "cost": "5 AsP plus 1/5 der Kosten des zu brechenden Spruchs (Sch: 3 AsP +2/15 der Kosten). Um einen permanent wirkenden und mittels permanenter AsP fixierten Beeinflussungszauber aufzuheben, muss der Druide permanente AsP investieren: 1/10 der Kosten des wirkenden zu brechenden Zaubers, mindestens aber 1 AsP. Misslingt die Probe, entstehen keine permanenten Kosten.",
+    "target": "Einzelwesen",
+    "distance": "Berührung",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Der Beeinflussungszauber kann von einem PRO- TECTIONIS geschützt sein (S. 213)",
+    "complexity": "B",
+    "characteristics": ["Antimagie", "Einfluss"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 15 AsP kann der Druide eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Einfluss um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 6},
+      { "representation": "Geode", "distribution": 6},
+      { "representation": "Hexe", "distribution": 6},
+      { "representation": "Achaz", "distribution": 5},
+      { "representation": "Elf", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Schelm", "distribution": 4},
+      { "representation": "Scharlatan", "distribution": 3}
+    ]
+  },
+  {
+    "page": 76,
+    "name": "Eins mit der Natur",
+    "trial": "IN/GE/KO",
+    "difficulty": "",
+    "technik": "Der Geode legt sich mit ausgestreckten Gliedmaßen auf den Boden und lässt die Kraft der Erde durch seinen Körper pulsieren.",
+    "castTime": "3 Spielrunden",
+    "effect": "Die Talentwerte des Geoden in Fährtensuchen, Orientierung, Wettervorhersage und Wild- nisleben steigen um ZfP* Punkte. Er entwickelt zudem einen spezialisierten Gefahreninstinkt (in Höhe von ZfP* Punkten), der ihn vor typischen, naturgegebenen Gefahren der Gegend andeutungsweise warnt, z.B. vor Raubtieren, Gift- pflanzen, Treibsand, Lawinen oder dünnem Eis, nicht jedoch vor ‘Zivilisationsgefahren’ wie Fangeisen oder Straßenräubern. Da er sich intuitiv richtig verhält, erleidet er nur den halben Schaden durch Klima und Landschaft (Kälte, Hitze, Dornen etc.), den ein nicht Verzauberter verspüren würde. Der Wert dieses Gefahrenin- stinkts, der nur für diese speziellen Merkmale gilt, kann auf eine eventuell vorhandene gleichnamige Gabe addiert werden. Die Wirkung gilt nur für die Art von Umgebung, in der der Geode den Zauber ausgeführt hat, also z.B. für Wald, wenn er sich auf Wald- boden gelegt hat, für Steppe, Gebirge oder Schneewüste. Innerhalb von Siedlungen, Gebäuden oder dämonisch pervertierter Landschaft wirkt der Zauber nicht.",
+    "cost": "6 AsP",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "bis zum nächsten Sonnenaufgang",
+    "modifications": [],
+    "reversalis": "bewirkt jeden möglichen Patzer in der Natur, von Sonnenbrand und Frostbeulen über das Stolpern in Bäche und Dornbüsche, das Essen unbekömmlicher Beeren und Vergessen der Feldflasche bis zum Streicheln niedlicher Bärenjungen ...",
+    "antimagic": "EIGENSCHAFT WIEDERHERSTELLEN oder ELEMENTARBANN nehmen dem Geoden seine angezauberte Naturverbundenheit wieder; eine entsprechende Zone erschwert das Wirken des EINS MIT DER NATUR.",
+    "complexity": "C",
+    "characteristics": ["Eigenschaften", "Elementar"],
+    "variants": [
+      {
+        "name": "andere Personen",
+        "mod": "+5",
+        "minZfW": 10,
+        "effect": "eine andere Person mit diesem Zauber belegen, Einverständnis (bewusste Teilnahme an der Meditation des Geoden) vorausgesetzt."
+      }
+    ],
+    "distribution": [
+      { "representation": "Geode", "distribution": 7},
+      { "representation": "Druide", "distribution": 5},
+      { "representation": "Elf", "distribution": 2},
+      { "representation": "Hexe", "distribution": 2, "subRepresentation": "Geode"},
+      { "representation": "Gildenmagier", "distribution": 4, "subRepresentation": "Druide"}
     ]
   }
 ]
