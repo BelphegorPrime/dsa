@@ -2712,5 +2712,84 @@
       { "representation": "Hexe", "distribution": 3},
       { "representation": "Gildenmagier", "distribution": 3}
     ]
+  },
+  {
+    "page": 84,
+    "name": "Falkenauge Meisterschuss",
+    "trial": "IN/FF/GE",
+    "difficulty": "",
+    "technik": "Der Elf streicht dem Schützen mit der Innenseite der flachen Hand über die Augen und flüstert dabei iama yara sala‘dha. Der Schütze konzentriert sich dabei auf sein Ziel.",
+    "castTime": "4 Aktionen",
+    "effect": "Der Zauber stellt ein geistiges Band zwi- schen dem Schützen und dem Ziel her. Dadurch wird die Fernkampf-Probe, mit der der Schütze sein Ziel zu treffen versucht, um die ZfP* erleichtert. In der Zeit zwischen Zauber und Schuss bzw. Wurf muss sich der Schütze ständig auf sein Ziel konzentrieren, sonst verfällt die Wirkung (in Zweifelsfällen kann der Meister von dem Schützen Selbstbeherrschungs-Proben verlangen).",
+    "cost": "5 AsP",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst, Berührung",
+    "duration": "Der Schuss oder Wurf muss innerhalb von ZfW Kampfrunden erfolgen",
+    "modifications": ["Zauberdauer", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "Für den nächsten Schuss oder Wurf innerhalb der Zauberdauer erleidet der Schütze eine Erschwernis um ZfP* Punkte.",
+    "antimagic": "kann in einer Zone des EIGENSCHAFT WIEDERHERSTELLEN nur erschwert gewirkt und von diesem Zauber beendet werden.",
+    "complexity": "B",
+    "characteristics": ["Eigenschaften"],
+    "variants": [
+      {
+        "name": "Das bleibende Band",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Die Erleichterung gilt für alle Schüsse bzw. Würfe, die der Schütze innerhalb der Wirkungsdauer auf ein und dasselbe Ziel abgibt."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 6},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Elf"}
+    ]
+  },
+  {
+    "page": 85,
+    "name": "Favilludo Funkentanz",
+    "trial": "IN/CH/FF",
+    "difficulty": "",
+    "technik": "Die Magierin schließt kurz und heftig die Augen und nickt mit dem Kopf; dabei murmelt sie die Formel.",
+    "castTime": "2 Aktionen",
+    "effect": "Die Illusionistin, eine Person oder ein Gegenstand ihrer Wahl wird von einem Schwarm tanzender Fun- ken in allen denkbaren Farben des Regenbogens umgeben. Dieser – eindeutig als Illusion erkennbare – Lichterschwarm kann einfache geometrische Formen annehmen. Je nach Form, Farbe und Geschwindigkeit des Tanzes kann die Illusionistin variierte Wirkungen wählen, die dem ‘ Umschwärmten’ einen leichten Vorteil bringen.",
+    "cost": "3 AsP (Sch: 2 AsP)",
+    "target": "Einzelwesen, Einzelobjekt",
+    "distance": "Der Lichterschwarm entsteht in max. 1 Schritt Entfernung von der Magierin, die sich danach bis zu 7 Schritt entfernen darf.",
+    "duration": "ZfP* mal 10 Kampfrunden (A)",
+    "modifications": ["Zauberdauer", "Reichweite"],
+    "reversalis": "hebt eine FAVILLUDO-Illusion auf.",
+    "antimagic": "kann in einer Zone des ILLUSION AUFLÖSEN nur erschwert gesprochen und von diesem Zauber beendet werden.",
+    "complexity": "A",
+    "characteristics": ["Illusion"],
+    "variants": [
+      {
+        "name": "Subtiles Leuchten",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Die Illusionistin oder eine von ihr mit den Funken umgebene Person wirkt durch das Funkeln an den ‘richtigen’ Stellen (ein kurzes Aufblitzen an Augen oder Zähnen, ein Lichtreflex im Haar) interessanter und überzeugender. Das Charisma steigt für alle Proben auf Gesellschaftliche Talente um 2 Punkte. Die Wirkungsdauer dieser Variante beträgt ZfP* Spielrunden."
+      },
+      {
+        "name": "Leuchtender Panzer",
+        "mod": "+5",
+        "minZfW": 0,
+        "effect": "Der Umschwärmte oder die Magierin selbst sind von einem dichten, aber ständig seine Form ändernden Schwarm Funken umgeben, der Gegner im Kampf so verwirrt, dass sie ZfP*/4 Punkte Abzug auf ihre Attacken erleiden und keine Gezielten Stiche, Gezielten Schläge, Todesstöße oder Gezielte Fernkampfangriffe gegen die Zauberin einsetzen können."
+      },
+      {
+        "name": "Katzengold",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Ein Objekt wird von einer engen Funkenhaut umgeben, so dass es wie juwelenbesetzt erscheint. Diese Variante hält ZfP* Spielrunden an und muss nicht aufrechterhalten werden."
+      },
+      {
+        "name": "Hypnotischer Wirbel",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Diese Variante zieht ein einzelnes Opfer in ihren Bann, wenn dessen MR kleiner oder gleich den ZfP* ist. Das Opfer kann alle ZfP* KR eine KL-Probe ablegen, um sich aus dem Bann zu lösen; ein Angriff oder auch nur ein scharfes Anrempeln bringen es auf jeden Fall in die Realität zurück."
+      }
+    ],
+    "distribution": [
+      { "representation": "Scharlatan", "distribution": 6},
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Schelm", "distribution": 3, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
