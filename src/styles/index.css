@@ -145,3 +145,11 @@ body {
 .custom-file-label::after {
   content: '\f093' !important;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
