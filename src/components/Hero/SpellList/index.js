@@ -60,9 +60,8 @@ class SpellList extends Component {
             {Object.keys(spellList).map(name => {
               const spell = spellList[name];
               return (
-                <Fragment>
+                <Fragment key={name}>
                   <tr
-                    key={name}
                     onClick={
                       spell.fromLCD ? this.showLCD.bind(this, name) : () => {}
                     }>
