@@ -29,10 +29,10 @@ class TalentList extends Component {
         <table className="fixt-table fixt-table-4 table table-sm table-hover">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Probe</th>
-              <th>Wert</th>
-              <th>Test</th>
+              <th style={{ width: 353 }}>Name</th>
+              <th style={{ width: 150 }}>Probe</th>
+              <th style={{ width: 100 }}>Wert</th>
+              <th style={{ width: 250 }}>Test</th>
             </tr>
           </thead>
           <tbody>
@@ -40,15 +40,15 @@ class TalentList extends Component {
               const talent = talentList[name];
               return (
                 <tr key={name}>
-                  <td>
+                  <td style={{ width: 353 }}>
                     {name}
                     {talent.attack ? ` AT(${talent.attack})` : null}
                     {talent.parade ? ` PA(${talent.parade})` : null}
                     {talent.k ? ` Komplexität(${talent.k})` : null}
                   </td>
-                  <td>({talent.trial.join('/')})</td>
-                  <td>{talent.value}</td>
-                  <td>
+                  <td style={{ width: 150 }}>({talent.trial.join('/')})</td>
+                  <td style={{ width: 100 }}>{talent.value}</td>
+                  <td style={{ width: 250 }}>
                     <button
                       className={
                         tawStars[name] &&
@@ -61,7 +61,8 @@ class TalentList extends Component {
                         name,
                         talent.trial,
                         parseInt(talent.value, 10)
-                      )}>
+                      )}
+                      style={{ width: 220 }}>
                       {tawStars[name] !== undefined ? tawStars[name] : 'Probe'}
                     </button>
                   </td>

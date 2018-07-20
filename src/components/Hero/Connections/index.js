@@ -6,7 +6,7 @@ class Connections extends Component {
     const { connections, className } = this.props;
     return (
       <div className={className}>
-        <div className="pl-2 pt-2">
+        <div className="pl-2">
           <span className="font-weight-bold">Verbindungen:</span>
           {connections.map(connection => {
             const { description, name, socialStatus } = connection;

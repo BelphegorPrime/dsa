@@ -6,13 +6,13 @@ class Purse extends Component {
     const { purse, className } = this.props;
     return (
       <div className={className}>
-        <div className="pl-3 pt-3">
+        <div className="pl-2 pt-2">
           <span className="font-weight-bold">Vermögen</span>
           {Object.keys(purse).map(monetaryUnit => {
             const money = purse[monetaryUnit];
             return (
               <div key={monetaryUnit}>
-                <span className="pl-3">
+                <span className="pl-2">
                   {money.amount} {monetaryUnit} ({money.country})
                 </span>
               </div>

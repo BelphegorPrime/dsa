@@ -14,7 +14,7 @@ class HouseRules extends Component {
         case 'spell': {
           return (
             <div key={rule.type + rule.name + index} className="col-md-4">
-              <div className="m-3 p-3 border position-relative">
+              <div className="m-2 p-2 border position-relative">
                 <div
                   className="house-rule-delete position-absolute col-md-2 btn btn-secondary"
                   onClick={this.removeRule.bind(this, rule)}>
@@ -44,7 +44,7 @@ class HouseRules extends Component {
         case 'weapon': {
           return (
             <div key={rule.type + rule.name + index} className="col-md-4">
-              <div className="m-3 p-3 border position-relative">
+              <div className="m-2 p-2 border position-relative">
                 <div
                   className="house-rule-delete position-absolute col-md-2 btn btn-secondary"
                   onClick={this.removeRule.bind(this, rule)}>

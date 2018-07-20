@@ -6,7 +6,7 @@ class SpecialAbilities extends Component {
     const { specialAbilities, className } = this.props;
     return (
       <div className={className}>
-        <div className="pl-2 pt-2">
+        <div className="pl-2">
           <span className="font-weight-bold">Sonderfertigkeiten:</span>
           {specialAbilities.specialAbilities.map(specialAbility => {
             const { name } = specialAbility;

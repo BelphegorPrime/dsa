@@ -46,8 +46,7 @@ class Base extends Component {
               ))}
             </div>
           ) : null}
-          <hr />
-          <div>
+          <div className="pt-3">
             <span className="font-weight-bold">{base.exp} AP vergeben</span>
           </div>
           <div>

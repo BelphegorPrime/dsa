@@ -21,7 +21,8 @@ body {
   padding: 0;
 }
 
-#app-body > div {
+.left-pane,
+.right-pane > .row {
   overflow: scroll;
 }
 
@@ -46,8 +47,8 @@ body {
 }
 
 .hero-name {
-  min-width: 218px;
-  max-width: 218px;
+  min-width: 275px;
+  max-width: 275px;
   line-height: 38px;
 }
 
@@ -61,13 +62,14 @@ body {
 }
 
 .right-pane,
-.right-pane > div{
+.right-pane > div,
+.right-pane > div > div{
   padding: 0 !important;
 }
 
 .row-without-margin {
-  display: flex;
-  flex-wrap: wrap;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
 }
 
 .list-group {
@@ -133,10 +135,14 @@ body {
 
 .custom-file {
   margin-right: 8px !important;
-  width: 210px !important;
+  width: 153px !important;
 }
 
 .btn-remove-hero {
   width: 37px;
   height: 37px;
+}
+
+.custom-file-label::after {
+  content: '\f093' !important;
 }

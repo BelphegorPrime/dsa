@@ -6,12 +6,12 @@ class Objects extends Component {
     const { objects, className } = this.props;
     return (
       <div className={className}>
-        <div className="pl-3 pt-3">
+        <div className="pl-2 pt-2">
           <span className="font-weight-bold">Ausrüstung</span>
           {Object.keys(objects).map(name => {
             const object = objects[name];
             return (
-              <div key={name} className="col-md-12 pl-3">
+              <div key={name} className="col-md-12 pl-2">
                 <span>{`${name} ${object.amount} Stk`}</span>
                 {object.distantWeapon ? ` Kampftalent: ${object.talent}` : null}
                 {object.properties ? (

@@ -3,145 +3,175 @@ import proptypes from 'prop-types';
 
 class Properties extends Component {
   render() {
-    const { properties } = this.props;
+    const { properties, className } = this.props;
+    const borderRight = {
+      borderRight: '1px solid lightgrey'
+    };
+    const tableStyle = {
+      ...borderRight,
+      borderLeft: '1px solid lightgrey',
+      borderBottom: '1px solid lightgrey'
+    };
     return (
-      <div>
-        <div className="pl-2 pt-2">
-          <table className="table table-sm table-hover">
+      <div className={className}>
+        <div className="pl-2">
+          <table className="table table-sm table-hover" style={tableStyle}>
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Startwert</th>
-                <th>Mod</th>
-                <th>Wert</th>
+                <th style={borderRight}>Name</th>
+                <th style={borderRight}>Start</th>
+                <th style={borderRight}>Mod</th>
+                <th style={borderRight}>Wert</th>
                 <th>Gekauft</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Mut</td>
-                <td>{properties.courage.startValue}</td>
-                <td>{properties.courage.mod}</td>
-                <td>{properties.courage.value}</td>
+                <td style={borderRight}>Mut</td>
+                <td style={borderRight}>{properties.courage.startValue}</td>
+                <td style={borderRight}>{properties.courage.mod}</td>
+                <td style={borderRight}>{properties.courage.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Klugheit</td>
-                <td>{properties.wisdom.startValue}</td>
-                <td>{properties.wisdom.mod}</td>
-                <td>{properties.wisdom.value}</td>
+                <td style={borderRight}>Klugheit</td>
+                <td style={borderRight}>{properties.wisdom.startValue}</td>
+                <td style={borderRight}>{properties.wisdom.mod}</td>
+                <td style={borderRight}>{properties.wisdom.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Intuition</td>
-                <td>{properties.intuition.startValue}</td>
-                <td>{properties.intuition.mod}</td>
-                <td>{properties.intuition.value}</td>
+                <td style={borderRight}>Intuition</td>
+                <td style={borderRight}>{properties.intuition.startValue}</td>
+                <td style={borderRight}>{properties.intuition.mod}</td>
+                <td style={borderRight}>{properties.intuition.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Charisma</td>
-                <td>{properties.charisma.startValue}</td>
-                <td>{properties.charisma.mod}</td>
-                <td>{properties.charisma.value}</td>
+                <td style={borderRight}>Charisma</td>
+                <td style={borderRight}>{properties.charisma.startValue}</td>
+                <td style={borderRight}>{properties.charisma.mod}</td>
+                <td style={borderRight}>{properties.charisma.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Fingerfertigkeit</td>
-                <td>{properties.fingerAbility.startValue}</td>
-                <td>{properties.fingerAbility.mod}</td>
-                <td>{properties.fingerAbility.value}</td>
+                <td style={borderRight}>Fingerfertigkeit</td>
+                <td style={borderRight}>
+                  {properties.fingerAbility.startValue}
+                </td>
+                <td style={borderRight}>{properties.fingerAbility.mod}</td>
+                <td style={borderRight}>{properties.fingerAbility.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Gewandtheit</td>
-                <td>{properties.dexterity.startValue}</td>
-                <td>{properties.dexterity.mod}</td>
-                <td>{properties.dexterity.value}</td>
+                <td style={borderRight}>Gewandtheit</td>
+                <td style={borderRight}>{properties.dexterity.startValue}</td>
+                <td style={borderRight}>{properties.dexterity.mod}</td>
+                <td style={borderRight}>{properties.dexterity.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Konstitution</td>
-                <td>{properties.constitution.startValue}</td>
-                <td>{properties.constitution.mod}</td>
-                <td>{properties.constitution.value}</td>
+                <td style={borderRight}>Konstitution</td>
+                <td style={borderRight}>
+                  {properties.constitution.startValue}
+                </td>
+                <td style={borderRight}>{properties.constitution.mod}</td>
+                <td style={borderRight}>{properties.constitution.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Körperkraft</td>
-                <td>{properties.strength.startValue}</td>
-                <td>{properties.strength.mod}</td>
-                <td>{properties.strength.value}</td>
+                <td style={borderRight}>Körperkraft</td>
+                <td style={borderRight}>{properties.strength.startValue}</td>
+                <td style={borderRight}>{properties.strength.mod}</td>
+                <td style={borderRight}>{properties.strength.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Sozialstatus</td>
-                <td>{properties.socialStatus.startValue}</td>
-                <td>{properties.socialStatus.mod}</td>
-                <td>{properties.socialStatus.value}</td>
+                <td style={borderRight}>Sozialstatus</td>
+                <td style={borderRight}>
+                  {properties.socialStatus.startValue}
+                </td>
+                <td style={borderRight}>{properties.socialStatus.mod}</td>
+                <td style={borderRight}>{properties.socialStatus.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Lebenspunkte</td>
-                <td>{properties.lifeforce.calcValue}</td>
-                <td>{properties.lifeforce.mod}</td>
-                <td>{properties.lifeforce.value}</td>
+                <td style={borderRight}>Lebenspunkte</td>
+                <td style={borderRight}>{properties.lifeforce.calcValue}</td>
+                <td style={borderRight}>{properties.lifeforce.mod}</td>
+                <td style={borderRight}>{properties.lifeforce.value}</td>
                 <td>{properties.lifeforce.basicValue}</td>
               </tr>
               <tr>
-                <td>Ausdauer</td>
-                <td>{properties.endurance.calcValue}</td>
-                <td>{properties.endurance.mod}</td>
-                <td>{properties.endurance.value}</td>
+                <td style={borderRight}>Ausdauer</td>
+                <td style={borderRight}>{properties.endurance.calcValue}</td>
+                <td style={borderRight}>{properties.endurance.mod}</td>
+                <td style={borderRight}>{properties.endurance.value}</td>
                 <td>{properties.endurance.basicValue}</td>
               </tr>
               <tr>
-                <td>Astralenergie</td>
-                <td>{properties.astralEnergy.calcValue}</td>
-                <td>{properties.astralEnergy.mod}</td>
-                <td>{properties.astralEnergy.value}</td>
+                <td style={borderRight}>Astralenergie</td>
+                <td style={borderRight}>{properties.astralEnergy.calcValue}</td>
+                <td style={borderRight}>{properties.astralEnergy.mod}</td>
+                <td style={borderRight}>{properties.astralEnergy.value}</td>
                 <td>{properties.astralEnergy.basicValue}</td>
               </tr>
               <tr>
-                <td>Karmaenergie</td>
-                <td>{properties.karmaEnergy.calcValue}</td>
-                <td>{properties.karmaEnergy.mod}</td>
-                <td>{properties.karmaEnergy.value}</td>
+                <td style={borderRight}>Karmaenergie</td>
+                <td style={borderRight}>{properties.karmaEnergy.calcValue}</td>
+                <td style={borderRight}>{properties.karmaEnergy.mod}</td>
+                <td style={borderRight}>{properties.karmaEnergy.value}</td>
                 <td>{properties.karmaEnergy.basicValue}</td>
               </tr>
               <tr>
-                <td>Magieresistenz</td>
-                <td>{properties.magicResistance.calcValue}</td>
-                <td>{properties.magicResistance.mod}</td>
-                <td>{properties.magicResistance.value}</td>
+                <td style={borderRight}>Magieresistenz</td>
+                <td style={borderRight}>
+                  {properties.magicResistance.calcValue}
+                </td>
+                <td style={borderRight}>{properties.magicResistance.mod}</td>
+                <td style={borderRight}>{properties.magicResistance.value}</td>
                 <td>{properties.magicResistance.basicValue}</td>
               </tr>
               <tr>
-                <td>Initiative Basis</td>
-                <td>{properties.initiativBaseValue.calcValue}</td>
-                <td>{properties.initiativBaseValue.mod}</td>
-                <td>{properties.initiativBaseValue.value}</td>
+                <td style={borderRight}>Initiative Basis</td>
+                <td style={borderRight}>
+                  {properties.initiativBaseValue.calcValue}
+                </td>
+                <td style={borderRight}>{properties.initiativBaseValue.mod}</td>
+                <td style={borderRight}>
+                  {properties.initiativBaseValue.value}
+                </td>
                 <td />
               </tr>
               <tr>
-                <td>Attacke Basis</td>
-                <td>{properties.attackBaseValue.calcValue}</td>
-                <td>{properties.attackBaseValue.mod}</td>
-                <td>{properties.attackBaseValue.value}</td>
+                <td style={borderRight}>Attacke Basis</td>
+                <td style={borderRight}>
+                  {properties.attackBaseValue.calcValue}
+                </td>
+                <td style={borderRight}>{properties.attackBaseValue.mod}</td>
+                <td style={borderRight}>{properties.attackBaseValue.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Parade Basis</td>
-                <td>{properties.paradeBaseValue.calcValue}</td>
-                <td>{properties.paradeBaseValue.mod}</td>
-                <td>{properties.paradeBaseValue.value}</td>
+                <td style={borderRight}>Parade Basis</td>
+                <td style={borderRight}>
+                  {properties.paradeBaseValue.calcValue}
+                </td>
+                <td style={borderRight}>{properties.paradeBaseValue.mod}</td>
+                <td style={borderRight}>{properties.paradeBaseValue.value}</td>
                 <td />
               </tr>
               <tr>
-                <td>Fernkampf Basis</td>
-                <td>{properties.remoteCombatBaseValue.calcValue}</td>
-                <td>{properties.remoteCombatBaseValue.mod}</td>
-                <td>{properties.remoteCombatBaseValue.value}</td>
+                <td style={borderRight}>Fernkampf Basis</td>
+                <td style={borderRight}>
+                  {properties.remoteCombatBaseValue.calcValue}
+                </td>
+                <td style={borderRight}>
+                  {properties.remoteCombatBaseValue.mod}
+                </td>
+                <td style={borderRight}>
+                  {properties.remoteCombatBaseValue.value}
+                </td>
                 <td />
               </tr>
             </tbody>
@@ -153,7 +183,8 @@ class Properties extends Component {
 }
 
 Properties.propTypes = {
-  properties: proptypes.object
+  properties: proptypes.object,
+  className: proptypes.string
 };
 
 export default Properties;

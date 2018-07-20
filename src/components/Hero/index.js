@@ -23,20 +23,25 @@ class Hero extends Component {
       case 'Basis': {
         return (
           <Fragment>
-            <Base base={hero.converted.basics} className="col-md-2" />
-            <Properties properties={hero.converted.properties} />
+            <Base base={hero.converted.basics} className="col-md-6" />
             <Advantages
               advantages={hero.converted.advantages}
-              className="col-md-2"
+              className="col-md-6"
+            />
+            <hr className="col-md-12" />
+            <Properties
+              properties={hero.converted.properties}
+              className="col-md-6"
             />
             <SpecialAbilities
               specialAbilities={hero.converted.specialAbilities}
-              className="col-md-3"
+              className="col-md-6"
             />
+            <hr className="col-md-12" />
             {hero.converted.connections ? (
               <Connections
                 connections={hero.converted.connections}
-                className="col-md-2"
+                className="col-md-6"
               />
             ) : null}
           </Fragment>

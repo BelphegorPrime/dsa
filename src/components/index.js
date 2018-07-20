@@ -11,6 +11,7 @@ import HouseRulesSideBar from './HouseRules/HouseRulesSideBar';
 
 import convert from '../heroConverter';
 import trialToProperty from '../heroConverter/trialToProperty';
+import PropertiesQuickBar from './Hero/PropertiesQuickBar';
 
 class App extends Component {
   constructor() {
@@ -266,7 +267,7 @@ class App extends Component {
                   <label
                     className="custom-file-label"
                     htmlFor="validatedCustomFile">
-                    Held hochladen...
+                    Held
                   </label>
                 </div>
                 <button
@@ -373,7 +374,20 @@ class App extends Component {
                 />
               </div>
               <div className="right-pane col-md-10 row-without-margin">
-                {chosenHero ? <Hero hero={chosenHero} page={heroPage} /> : null}
+                {chosenHero ? (
+                  <PropertiesQuickBar hero={chosenHero} className="col-md-12" />
+                ) : null}
+                <div
+                  className="row col-md-12"
+                  style={{
+                    marginLeft: 0,
+                    marginRight: 0,
+                    maxHeight: 'calc(100% - 41px)'
+                  }}>
+                  {chosenHero ? (
+                    <Hero hero={chosenHero} page={heroPage} />
+                  ) : null}
+                </div>
               </div>
             </Fragment>
           ) : (

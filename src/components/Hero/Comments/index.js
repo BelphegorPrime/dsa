@@ -6,8 +6,8 @@ class Comments extends Component {
     const { comments, className } = this.props;
     return (
       <div className={className}>
-        <div className="pt-3">
-          <span className="font-weight-bold pl-3">Kommentare</span>
+        <div className="pt-2">
+          <span className="font-weight-bold pl-2">Kommentare</span>
           {comments.map(comment => {
             if (comment.name) {
               return (

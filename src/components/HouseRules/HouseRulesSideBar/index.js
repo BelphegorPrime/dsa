@@ -105,7 +105,7 @@ class HouseRulesSidebar extends Component {
   render() {
     return (
       <div>
-        <div className="row pl-3 pt-3">
+        <div className="row pl-2 pt-2">
           <div className="custom-file">
             <input
               ref={this.fileUpload}
@@ -118,7 +118,7 @@ class HouseRulesSidebar extends Component {
               onChange={e => this.fileUploaded(e.target.files)}
             />
             <label className="custom-file-label" htmlFor="validatedCustomFile">
-              Hausregel hochladen...
+              Hausregel
             </label>
           </div>
         </div>
@@ -133,8 +133,8 @@ class HouseRulesSidebar extends Component {
                       className="list-group-item"
                       onClick={this.download.bind(this, template)}>
                       <div className="row">
-                        <div className="pl-3">
-                          <span className="pr-3">
+                        <div className="pl-2">
+                          <span className="pr-2">
                             <FontAwesomeIcon icon={faDownload} />
                           </span>
                           <span className="font-weight-bold">
@@ -152,8 +152,8 @@ class HouseRulesSidebar extends Component {
                       className="list-group-item"
                       onClick={this.download.bind(this, template)}>
                       <div className="row">
-                        <div className="pl-3">
-                          <span className="pr-3">
+                        <div className="pl-2">
+                          <span className="pr-2">
                             <FontAwesomeIcon icon={faDownload} />
                           </span>
                           <span className="font-weight-bold">
@@ -171,7 +171,7 @@ class HouseRulesSidebar extends Component {
             })}
             <li className="list-group-item">
               <div className="row">
-                <div className="pl-3">Regeln</div>
+                <div className="pl-2">Regeln</div>
               </div>
             </li>
             {this.possibleTemplates.map(template => {

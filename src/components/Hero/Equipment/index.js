@@ -18,7 +18,7 @@ class Equipment extends Component {
       return (
         <div
           key={weapon.weaponName ? weapon.weaponName : name}
-          className="pl-3">
+          className="pl-2">
           <span className="font-weight-bold">
             {weapon.weaponName ? weapon.weaponName : name}
           </span>
@@ -31,7 +31,7 @@ class Equipment extends Component {
 
     return (
       <div className={className}>
-        <div className="pl-3 pt-3">
+        <div className="pl-2 pt-2">
           <span className="font-weight-bold">Nahkampfwaffen</span>
           {Object.keys(weapons.closeRange).map(mappingFunc)}
           <hr />
