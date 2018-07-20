@@ -5,7 +5,6 @@ class HouseRulesSidebar extends Component {
   constructor() {
     super();
     this.fileUpload = React.createRef();
-    this.possibleTemplates = ['spell', 'weapon'];
   }
 
   addId(rule) {
@@ -41,6 +40,23 @@ class HouseRulesSidebar extends Component {
     this.props.setHouseRuleToShow(template);
   }
 
+  renderListElement(template, name) {
+    return (
+      <li
+        key={`rules${template}`}
+        className={
+          this.props.houseRuleToShow === template
+            ? 'list-group-item active'
+            : 'list-group-item cursor-pointer'
+        }
+        onClick={this.show.bind(this, template)}>
+        <div className="row">
+          <div className="offset-2">{name}</div>
+        </div>
+      </li>
+    );
+  }
+
   render() {
     return (
       <div>
@@ -63,53 +79,19 @@ class HouseRulesSidebar extends Component {
         </div>
         <div className="row">
           <ul className="list-group list-group-flush col-md-12">
-            <li
-              className={
-                this.props.houseRuleToShow === 'templates'
-                  ? 'list-group-item active'
-                  : 'list-group-item'
-              }
-              onClick={this.show.bind(this, 'templates')}>
-              Vorlagen
-            </li>
-            <li className="list-group-item">
+            {this.renderListElement('templates', 'Vorlagen')}
+            <li className="list-group-item cursor-default">
               <div className="row">
                 <div className="pl-2">Regeln</div>
               </div>
             </li>
-            {this.possibleTemplates.map(template => {
+            {['spell', 'weapon'].map(template => {
               switch (template) {
                 case 'spell': {
-                  return (
-                    <li
-                      key={`rules${template}`}
-                      className={
-                        this.props.houseRuleToShow === template
-                          ? 'list-group-item active'
-                          : 'list-group-item'
-                      }
-                      onClick={this.show.bind(this, template)}>
-                      <div className="row">
-                        <div className="offset-2">Zauber</div>
-                      </div>
-                    </li>
-                  );
+                  return this.renderListElement(template, 'Zauber');
                 }
                 case 'weapon': {
-                  return (
-                    <li
-                      key={`rules${template}`}
-                      className={
-                        this.props.houseRuleToShow === template
-                          ? 'list-group-item active'
-                          : 'list-group-item'
-                      }
-                      onClick={this.show.bind(this, template)}>
-                      <div className="row">
-                        <div className="offset-2">Waffen</div>
-                      </div>
-                    </li>
-                  );
+                  return this.renderListElement(template, 'Waffen');
                 }
                 default: {
                   return null;

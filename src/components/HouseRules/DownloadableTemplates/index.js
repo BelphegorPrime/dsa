@@ -63,40 +63,31 @@ class DownloadableTemplates extends Component {
     });
   }
 
+  renderTemplate(template, name) {
+    return (
+      <div
+        key={template}
+        className="col-md-4 pt-2 pb-2 m-2"
+        style={{ maxHeight: 58 }}
+        onClick={this.download.bind(this, template)}>
+        <div className="p-2 border position-relative">
+          <span className="font-weight-bold">{name}</span>
+          <span className="pr-2 float-right">
+            <FontAwesomeIcon icon={faDownload} />
+          </span>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return ['spell', 'weapon'].map(template => {
       switch (template) {
         case 'spell': {
-          return (
-            <div
-              key={template}
-              className="col-md-4 pt-2 pb-2 m-2"
-              style={{ maxHeight: 58 }}
-              onClick={this.download.bind(this, template)}>
-              <div className="p-2 border position-relative">
-                <span className="font-weight-bold">Zaubertemplate</span>
-                <span className="pr-2 float-right">
-                  <FontAwesomeIcon icon={faDownload} />
-                </span>
-              </div>
-            </div>
-          );
+          return this.renderTemplate(template, 'Zaubertemplate');
         }
         case 'weapon': {
-          return (
-            <div
-              key={template}
-              className="col-md-4 pt-2 pb-2 m-2"
-              style={{ maxHeight: 58 }}
-              onClick={this.download.bind(this, template)}>
-              <div className="p-2 border position-relative">
-                <span className="font-weight-bold">Waffentemplate</span>
-                <span className="pr-2 float-right">
-                  <FontAwesomeIcon icon={faDownload} />
-                </span>
-              </div>
-            </div>
-          );
+          return this.renderTemplate(template, 'Waffentemplate');
         }
         default: {
           return null;
