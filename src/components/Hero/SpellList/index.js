@@ -123,89 +123,103 @@ class SpellList extends Component {
                     </td>
                   </tr>
                   {lcdVisible.indexOf(name) > -1 ? (
-                    <td
-                      colSpan={5}
-                      style={{ background: 'lightgrey' }}
-                      onClick={
-                        spell.fromLCD ? this.showLCD.bind(this, name) : () => {}
-                      }>
-                      <div style={{ padding: 8 }}>
-                        <div>
-                          <span className="font-weight-bold">Technik: </span>
-                          {spell.technik}
-                        </div>
-                        <div>
-                          <span className="font-weight-bold">Wirkung: </span>
-                          {spell.effect}
-                        </div>
-                        <div>
-                          <span className="font-weight-bold">Zielobjekt: </span>
-                          {spell.target}
-                        </div>
-                        <div>
-                          <span className="font-weight-bold">
-                            Modifikationen:{' '}
-                          </span>
-                          {spell.modifications.join(', ')}
-                        </div>
-                        <div>
-                          <span className="font-weight-bold">Varianten: </span>
-                          {spell.variants.map(variant => (
-                            <div
-                              key={variant.name + variant.effect}
-                              className="pl-3 border-bottom border-dark">
-                              <div>
-                                <span className="font-weight-bold">Name: </span>
-                                {variant.name}
+                    <tr>
+                      <td
+                        colSpan={5}
+                        style={{ background: 'lightgrey', width: '100%' }}
+                        onClick={
+                          spell.fromLCD
+                            ? this.showLCD.bind(this, name)
+                            : () => {}
+                        }>
+                        <div style={{ padding: 8 }}>
+                          <div>
+                            <span className="font-weight-bold">Technik: </span>
+                            {spell.technik}
+                          </div>
+                          <div>
+                            <span className="font-weight-bold">Wirkung: </span>
+                            {spell.effect}
+                          </div>
+                          <div>
+                            <span className="font-weight-bold">
+                              Zielobjekt:{' '}
+                            </span>
+                            {spell.target}
+                          </div>
+                          <div>
+                            <span className="font-weight-bold">
+                              Modifikationen:{' '}
+                            </span>
+                            {spell.modifications.join(', ')}
+                          </div>
+                          <div>
+                            <span className="font-weight-bold">
+                              Varianten:{' '}
+                            </span>
+                            {spell.variants.map(variant => (
+                              <div
+                                key={variant.name + variant.effect}
+                                className="pl-3 border-bottom border-dark">
+                                <div>
+                                  <span className="font-weight-bold">
+                                    Name:{' '}
+                                  </span>
+                                  {variant.name}
+                                </div>
+                                <div>
+                                  <span className="font-weight-bold">
+                                    Min. ZfW:{' '}
+                                  </span>
+                                  {variant.minZfW}
+                                </div>
+                                <div>
+                                  <span className="font-weight-bold">
+                                    Erschwerniss:{' '}
+                                  </span>
+                                  {variant.mod}
+                                </div>
+                                <div>
+                                  <span className="font-weight-bold">
+                                    Effekt:{' '}
+                                  </span>
+                                  {variant.effect}
+                                </div>
                               </div>
-                              <div>
-                                <span className="font-weight-bold">
-                                  Min. ZfW:{' '}
-                                </span>
-                                {variant.minZfW}
-                              </div>
-                              <div>
-                                <span className="font-weight-bold">
-                                  Erschwerniss:{' '}
-                                </span>
-                                {variant.mod}
-                              </div>
-                              <div>
-                                <span className="font-weight-bold">
-                                  Effekt:{' '}
-                                </span>
-                                {variant.effect}
-                              </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
+                          <div>
+                            <span className="font-weight-bold">
+                              Reversalis:{' '}
+                            </span>
+                            {spell.reversalis}
+                          </div>
+                          <div>
+                            <span className="font-weight-bold">
+                              Antimagie:{' '}
+                            </span>
+                            {spell.antimagic}
+                          </div>
+                          <div>
+                            <span className="font-weight-bold">Merkmale: </span>
+                            {spell.characteristics.join(', ')}
+                          </div>
+                          <div>
+                            <span className="font-weight-bold">
+                              Repräsentation und Verbreitung:{' '}
+                            </span>
+                            {spell.distribution
+                              .map(
+                                distri =>
+                                  `${distri.representation} ${
+                                    distri.distribution
+                                  }`
+                              )
+                              .join(', ')}
+                          </div>
                         </div>
-                        <div>
-                          <span className="font-weight-bold">Reversalis: </span>
-                          {spell.reversalis}
-                        </div>
-                        <div>
-                          <span className="font-weight-bold">Antimagie: </span>
-                          {spell.antimagic}
-                        </div>
-                        <div>
-                          <span className="font-weight-bold">Merkmale: </span>
-                          {spell.characteristics.join(', ')}
-                        </div>
-                        <div>
-                          <span className="font-weight-bold">
-                            Repräsentation und Verbreitung:{' '}
-                          </span>
-                          {spell.distribution
-                            .map(
-                              distri =>
-                                `${distri.representation} ${
-                                  distri.distribution
-                                }`
-                            )
-                            .join(', ')}
-                        </div>
-                      </div>
-                    </td>
+                      </td>
+                    </tr>
                   ) : null}
                 </Fragment>
               );
