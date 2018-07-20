@@ -61,7 +61,7 @@ class HouseRulesSidebar extends Component {
     return (
       <div>
         <div className="row p-2">
-          <div className="custom-file">
+          <div className="custom-file cursor-pointer">
             <input
               ref={this.fileUpload}
               id="validatedCustomFile"
@@ -72,7 +72,7 @@ class HouseRulesSidebar extends Component {
               multiple={true}
               onChange={e => this.fileUploaded(e.target.files)}
             />
-            <label className="custom-file-label" htmlFor="validatedCustomFile">
+            <label className="custom-file-label cursor-pointer" htmlFor="validatedCustomFile">
               Hausregel
             </label>
           </div>

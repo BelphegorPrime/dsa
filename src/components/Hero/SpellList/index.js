@@ -62,6 +62,7 @@ class SpellList extends Component {
               return (
                 <Fragment key={name}>
                   <tr
+                    className={spell.fromLCD ? 'cursor-pointer' : ''}
                     onClick={
                       spell.fromLCD ? this.showLCD.bind(this, name) : Main.noop
                     }>
@@ -124,11 +125,8 @@ class SpellList extends Component {
                   </tr>
                   {lcdVisible.indexOf(name) > -1 ? (
                     <tr
-                      onClick={
-                        spell.fromLCD
-                          ? this.showLCD.bind(this, name)
-                          : Main.noop
-                      }>
+                      className="cursor-pointer"
+                      onClick={this.showLCD.bind(this, name)}>
                       <td
                         colSpan={5}
                         style={{ background: 'lightgrey', width: '100%' }}>

@@ -153,3 +153,7 @@ body {
 .cursor-default {
   cursor: default;
 }
+
+.custom-file-input {
+    z-index: 0 !important;
+}

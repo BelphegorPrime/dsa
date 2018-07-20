@@ -250,7 +250,7 @@ class App extends Component {
       houseRuleToShow
     } = this.state;
     return (
-      <div className="App">
+      <div className="App cursor-default">
         <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
@@ -267,7 +267,7 @@ class App extends Component {
                     onChange={e => this.fileUploaded(e.target.files)}
                   />
                   <label
-                    className="custom-file-label"
+                    className="custom-file-label cursor-pointer"
                     htmlFor="validatedCustomFile">
                     Held
                   </label>

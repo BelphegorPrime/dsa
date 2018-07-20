@@ -41,7 +41,9 @@ class Sidebar extends Component {
       .sort()
       .map((name, index) => (
         <Fragment key={name + index}>
-          <div className="row" onClick={chooseHero.bind(this, name)}>
+          <div
+            className="row cursor-pointer"
+            onClick={chooseHero.bind(this, name)}>
             <ul className="list-group list-group-flush col-md-12">
               <li className="list-group-item">
                 <div className="row">
