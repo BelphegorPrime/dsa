@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 class HouseRulesSidebar extends Component {
   constructor() {
@@ -39,65 +37,6 @@ class HouseRulesSidebar extends Component {
     });
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  download(template) {
-    const templateFile = new Promise(resolve => {
-      switch (template) {
-        case 'spell': {
-          // eslint-disable-next-line no-undef
-          fetch('/templates/spellTemplate.js')
-            .then(response => response.body)
-            .then(body => {
-              const reader = body.getReader();
-              reader.read().then(({ value }) => {
-                resolve({
-                  // eslint-disable-next-line no-undef
-                  stringValue: new TextDecoder('utf-8').decode(value),
-                  name: 'spellTemplate'
-                });
-              });
-            });
-          break;
-        }
-        case 'weapon': {
-          // eslint-disable-next-line no-undef
-          fetch('/templates/weaponTemplate.js')
-            .then(response => response.body)
-            .then(body => {
-              const reader = body.getReader();
-              reader.read().then(({ value }) => {
-                resolve({
-                  // eslint-disable-next-line no-undef
-                  stringValue: new TextDecoder('utf-8').decode(value),
-                  name: 'weaponTemplate'
-                });
-              });
-            });
-          break;
-        }
-        default: {
-          break;
-        }
-      }
-    });
-    templateFile.then(file => {
-      // eslint-disable-next-line no-undef
-      const doc = document;
-      const a = doc.createElement('a');
-      a.setAttribute(
-        'href',
-        `data:application/javascript;charset=utf-8,${encodeURIComponent(
-          file.stringValue
-        )}`
-      );
-      a.setAttribute('download', `${file.name}.js`);
-      a.style.display = 'none';
-      doc.body.appendChild(a);
-      a.click();
-      doc.body.removeChild(a);
-    });
-  }
-
   show(template) {
     this.props.setHouseRuleToShow(template);
   }
@@ -105,7 +44,7 @@ class HouseRulesSidebar extends Component {
   render() {
     return (
       <div>
-        <div className="row pl-2 pt-2">
+        <div className="row p-2">
           <div className="custom-file">
             <input
               ref={this.fileUpload}
@@ -124,51 +63,15 @@ class HouseRulesSidebar extends Component {
         </div>
         <div className="row">
           <ul className="list-group list-group-flush col-md-12">
-            {this.possibleTemplates.map(template => {
-              switch (template) {
-                case 'spell': {
-                  return (
-                    <li
-                      key={template}
-                      className="list-group-item"
-                      onClick={this.download.bind(this, template)}>
-                      <div className="row">
-                        <div className="pl-2">
-                          <span className="pr-2">
-                            <FontAwesomeIcon icon={faDownload} />
-                          </span>
-                          <span className="font-weight-bold">
-                            Zaubertemplate
-                          </span>
-                        </div>
-                      </div>
-                    </li>
-                  );
-                }
-                case 'weapon': {
-                  return (
-                    <li
-                      key={template}
-                      className="list-group-item"
-                      onClick={this.download.bind(this, template)}>
-                      <div className="row">
-                        <div className="pl-2">
-                          <span className="pr-2">
-                            <FontAwesomeIcon icon={faDownload} />
-                          </span>
-                          <span className="font-weight-bold">
-                            Waffentemplate
-                          </span>
-                        </div>
-                      </div>
-                    </li>
-                  );
-                }
-                default: {
-                  return null;
-                }
+            <li
+              className={
+                this.props.houseRuleToShow === 'templates'
+                  ? 'list-group-item active'
+                  : 'list-group-item'
               }
-            })}
+              onClick={this.show.bind(this, 'templates')}>
+              Vorlagen
+            </li>
             <li className="list-group-item">
               <div className="row">
                 <div className="pl-2">Regeln</div>

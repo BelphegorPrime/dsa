@@ -63,7 +63,7 @@ class SpellList extends Component {
                 <Fragment key={name}>
                   <tr
                     onClick={
-                      spell.fromLCD ? this.showLCD.bind(this, name) : () => {}
+                      spell.fromLCD ? this.showLCD.bind(this, name) : Main.noop
                     }>
                     <td style={{ width: nameWidth }}>
                       <div>
@@ -123,15 +123,15 @@ class SpellList extends Component {
                     </td>
                   </tr>
                   {lcdVisible.indexOf(name) > -1 ? (
-                    <tr>
+                    <tr
+                      onClick={
+                        spell.fromLCD
+                          ? this.showLCD.bind(this, name)
+                          : Main.noop
+                      }>
                       <td
                         colSpan={5}
-                        style={{ background: 'lightgrey', width: '100%' }}
-                        onClick={
-                          spell.fromLCD
-                            ? this.showLCD.bind(this, name)
-                            : () => {}
-                        }>
+                        style={{ background: 'lightgrey', width: '100%' }}>
                         <div style={{ padding: 8 }}>
                           <div>
                             <span className="font-weight-bold">Technik: </span>

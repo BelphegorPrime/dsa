@@ -22,7 +22,7 @@ class App extends Component {
       chosenHero: null,
       heroPage: null,
       houseRules: [],
-      houseRuleToShow: 'spell'
+      houseRuleToShow: 'templates'
     };
     this.state = this.initialState;
     this.fileUpload = React.createRef();
@@ -32,6 +32,8 @@ class App extends Component {
     }
     this.throws = values(countBy(throws));
   }
+
+  static noop() {}
 
   static rollDice(x) {
     return Math.floor(Math.random() * x) + 1;
@@ -399,12 +401,20 @@ class App extends Component {
                   houseRuleToShow={houseRuleToShow}
                 />
               </div>
-              <div className="col-md-10 row-without-margin p-0">
-                <HouseRules
-                  houseRuleToShow={houseRuleToShow}
-                  houseRules={houseRules}
-                  removeRule={this.removeRule.bind(this)}
-                />
+              <div className="right-pane col-md-10 row-without-margin">
+                <div
+                  className="row col-md-12"
+                  style={{
+                    marginLeft: 0,
+                    marginRight: 0,
+                    maxHeight: 'calc(100% - 41px)'
+                  }}>
+                  <HouseRules
+                    houseRuleToShow={houseRuleToShow}
+                    houseRules={houseRules}
+                    removeRule={this.removeRule.bind(this)}
+                  />
+                </div>
               </div>
             </Fragment>
           )}

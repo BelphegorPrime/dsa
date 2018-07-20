@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
 
+import DownloadableTemplates from './DownloadableTemplates';
+
 class HouseRules extends Component {
   removeRule(rule) {
     this.props.removeRule(rule.id);
   }
 
-  render() {
-    const { houseRules, houseRuleToShow } = this.props;
+  getRulesToShow(houseRules, houseRuleToShow) {
     const rulesToShow = houseRules.filter(hr => hr.type === houseRuleToShow);
     return rulesToShow.map((rule, index) => {
       switch (rule.type) {
@@ -74,6 +75,14 @@ class HouseRules extends Component {
         }
       }
     });
+  }
+
+  render() {
+    const { houseRules, houseRuleToShow } = this.props;
+    if (houseRuleToShow === 'templates') {
+      return <DownloadableTemplates />;
+    }
+    return this.getRulesToShow(houseRules, houseRuleToShow);
   }
 }
 
