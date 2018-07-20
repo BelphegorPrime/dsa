@@ -399,7 +399,7 @@ class App extends Component {
                   houseRuleToShow={houseRuleToShow}
                 />
               </div>
-              <div className="col-md-10 row-without-margin">
+              <div className="col-md-10 row-without-margin p-0">
                 <HouseRules
                   houseRuleToShow={houseRuleToShow}
                   houseRules={houseRules}

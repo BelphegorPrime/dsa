@@ -22,8 +22,7 @@ class HouseRules extends Component {
                 </div>
                 <div>Typ: Zauber</div>
                 <div>
-                  Zaubername:{' '}
-                  <span className="font-weight-bold">{rule.name}</span>
+                  Name: <span className="font-weight-bold">{rule.name}</span>
                 </div>
                 <div>LCD Seite: {rule.page}</div>
                 <div>
@@ -52,8 +51,7 @@ class HouseRules extends Component {
                 </div>
                 <div>Typ: Waffe</div>
                 <div>
-                  Waffenname:{' '}
-                  <span className="font-weight-bold">{rule.name}</span>
+                  Name: <span className="font-weight-bold">{rule.name}</span>
                 </div>
                 <div>TP: {rule.TP}</div>
                 <div>TP/KK: {rule['TP/KK']}</div>
