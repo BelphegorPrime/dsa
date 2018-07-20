@@ -4,6 +4,9 @@ import proptypes from 'prop-types';
 class Purse extends Component {
   render() {
     const { purse, className } = this.props;
+    if (!purse) {
+      return null;
+    }
     return (
       <div className={className}>
         <div className="pl-2 pt-2">
