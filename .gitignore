@@ -5,3 +5,4 @@ data/*
 coverage
 build
 dist
+package-lock.json
