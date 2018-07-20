@@ -28,6 +28,8 @@ body {
 .navbar {
   background: whitesmoke;
   border-bottom: 1px solid lightgrey;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
 }
 
 .navbar-header {
@@ -40,11 +42,12 @@ body {
 
 .display-flex > div,
 .display-flex > button {
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .hero-name {
-  min-width: 200px;
+  min-width: 218px;
+  max-width: 218px;
   line-height: 38px;
 }
 
@@ -72,7 +75,8 @@ body {
 }
 
 .test-btn {
-  width: 166px;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
 .fixt-table {
@@ -128,5 +132,11 @@ body {
 }
 
 .custom-file {
-  width: 240px !important;
+  margin-right: 8px !important;
+  width: 210px !important;
+}
+
+.btn-remove-hero {
+  width: 37px;
+  height: 37px;
 }

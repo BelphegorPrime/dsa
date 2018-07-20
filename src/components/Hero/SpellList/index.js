@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import proptypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBook } from '@fortawesome/free-solid-svg-icons';
@@ -37,52 +37,100 @@ class SpellList extends Component {
   render() {
     const { spellList, className } = this.props;
     const { tawStars, lcdVisible } = this.state;
+    const nameWidth = 330;
+    const checkWidth = 90;
+    const costWidth = 255;
+    const valueWidth = 46;
+    const testWidth = 130;
     return (
       <div className={className}>
         <table className="fixt-table fixt-table-5 table table-sm table-hover">
           <thead>
             <tr>
-              <th style={{ width: '50%' }}>Name</th>
-              <th style={{ width: '7%' }}>Probe</th>
-              <th style={{ width: '30%' }}>Kosten | ZDauer | RW | WDauer</th>
-              <th style={{ width: '3%' }}>Wert</th>
-              <th style={{ width: '10%' }}>Test</th>
+              <th style={{ width: nameWidth }}>Name</th>
+              <th style={{ width: checkWidth }}>Probe</th>
+              <th style={{ width: costWidth }}>
+                Kosten | ZDauer | RW | WDauer
+              </th>
+              <th style={{ width: valueWidth }}>Wert</th>
+              <th style={{ width: testWidth }}>Test</th>
             </tr>
           </thead>
           <tbody>
             {Object.keys(spellList).map(name => {
               const spell = spellList[name];
               return (
-                <tr
-                  key={name}
-                  onClick={
-                    spell.fromLCD ? this.showLCD.bind(this, name) : () => {}
-                  }>
-                  <td style={{ width: '50%' }}>
-                    <div>
-                      <span className="font-weight-bold">{name}</span>
-                      {spell.variant}
-                      ({spell.representation})
-                      {spell.fromLCD ? (
-                        <span className="pl-1">
-                          <FontAwesomeIcon icon={faBook} />
-                        </span>
-                      ) : null}
-                    </div>
-                    <div>
-                      {spell.complexity
-                        ? ` Komplexität(${spell.complexity})`
-                        : null}
-                      {spell.homeSpell ? (
-                        <span className="pl-1">
-                          <FontAwesomeIcon icon={faHome} />
-                        </span>
-                      ) : null}
-                    </div>
-                    <div>{spell.remarks}</div>
-                    <div>{spell.spellComment}</div>
-                    {lcdVisible.indexOf(name) > -1 ? (
+                <Fragment>
+                  <tr
+                    key={name}
+                    onClick={
+                      spell.fromLCD ? this.showLCD.bind(this, name) : () => {}
+                    }>
+                    <td style={{ width: nameWidth }}>
                       <div>
+                        <span className="font-weight-bold">{name}</span>
+                        {spell.variant}
+                        ({spell.representation})
+                        {spell.fromLCD ? (
+                          <span className="pl-1">
+                            <FontAwesomeIcon icon={faBook} />
+                          </span>
+                        ) : null}
+                      </div>
+                      <div>
+                        {spell.complexity
+                          ? ` Komplexität(${spell.complexity})`
+                          : null}
+                        {spell.homeSpell ? (
+                          <span className="pl-1">
+                            <FontAwesomeIcon icon={faHome} />
+                          </span>
+                        ) : null}
+                      </div>
+                      <div>{spell.remarks}</div>
+                      <div>{spell.spellComment}</div>
+                    </td>
+                    <td style={{ width: checkWidth }}>
+                      ({spell.trial.join('/')})
+                    </td>
+                    <td style={{ width: costWidth }}>
+                      {spell.cost ? `${spell.cost}` : null}
+                      {spell.castTime ? ` | ${spell.castTime}` : null}
+                      {spell.distance ? ` | ${spell.distance}` : null}
+                      {spell.duration ? ` | ${spell.duration}` : null}
+                    </td>
+                    <td style={{ width: valueWidth }}>{spell.value}</td>
+                    <td style={{ width: testWidth }}>
+                      <button
+                        className={
+                          tawStars[name] &&
+                          parseInt(tawStars[name].split(' => ')[1], 10) < 0
+                            ? 'btn btn-danger test-btn'
+                            : 'btn btn-primary test-btn'
+                        }
+                        style={{ width: testWidth - 20 }}
+                        onClick={this.changeSpell.bind(
+                          this,
+                          name,
+                          spell.trial,
+                          parseInt(spell.value, 10)
+                        )}>
+                        <span>
+                          {tawStars[name] !== undefined
+                            ? tawStars[name]
+                            : 'Probe'}
+                        </span>
+                      </button>
+                    </td>
+                  </tr>
+                  {lcdVisible.indexOf(name) > -1 ? (
+                    <td
+                      colSpan={5}
+                      style={{ background: 'lightgrey' }}
+                      onClick={
+                        spell.fromLCD ? this.showLCD.bind(this, name) : () => {}
+                      }>
+                      <div style={{ padding: 8 }}>
                         <div>
                           <span className="font-weight-bold">Technik: </span>
                           {spell.technik}
@@ -158,34 +206,9 @@ class SpellList extends Component {
                             .join(', ')}
                         </div>
                       </div>
-                    ) : null}
-                  </td>
-                  <td style={{ width: '7%' }}>({spell.trial.join('/')})</td>
-                  <td style={{ width: '30%' }}>
-                    {spell.cost ? `${spell.cost}` : null}
-                    {spell.castTime ? ` | ${spell.castTime}` : null}
-                    {spell.distance ? ` | ${spell.distance}` : null}
-                    {spell.duration ? ` | ${spell.duration}` : null}
-                  </td>
-                  <td style={{ width: '3%' }}>{spell.value}</td>
-                  <td style={{ width: '10%' }}>
-                    <button
-                      className={
-                        tawStars[name] &&
-                        parseInt(tawStars[name].split(' => ')[1], 10) < 0
-                          ? 'btn btn-danger test-btn'
-                          : 'btn btn-primary test-btn'
-                      }
-                      onClick={this.changeSpell.bind(
-                        this,
-                        name,
-                        spell.trial,
-                        parseInt(spell.value, 10)
-                      )}>
-                      {tawStars[name] !== undefined ? tawStars[name] : 'Probe'}
-                    </button>
-                  </td>
-                </tr>
+                    </td>
+                  ) : null}
+                </Fragment>
               );
             })}
           </tbody>

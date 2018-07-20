@@ -8,7 +8,7 @@ class Base extends Component {
     const { className, base } = this.props;
     return (
       <div className={className}>
-        <div className="pl-3 pt-3">
+        <div className="pl-2 pt-2">
           <div>
             <span>
               <span className="font-weight-bold">Geschlecht: </span>

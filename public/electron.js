@@ -6,7 +6,7 @@ const { app, BrowserWindow } = electron;
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({});
+  mainWindow = new BrowserWindow({ width: 1024, height: 768 });
   mainWindow.loadURL(
     isDev
       ? 'http://localhost:3000'
@@ -15,7 +15,7 @@ function createWindow() {
   if (isDev) {
     mainWindow.webContents.openDevTools();
   }
-  mainWindow.maximize();
+  // mainWindow.maximize();
   mainWindow.on('closed', () => {
     mainWindow = null;
   });

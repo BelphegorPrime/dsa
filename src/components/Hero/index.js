@@ -24,10 +24,7 @@ class Hero extends Component {
         return (
           <Fragment>
             <Base base={hero.converted.basics} className="col-md-2" />
-            <Properties
-              properties={hero.converted.properties}
-              className="col-md-3"
-            />
+            <Properties properties={hero.converted.properties} />
             <Advantages
               advantages={hero.converted.advantages}
               className="col-md-2"

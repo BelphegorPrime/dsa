@@ -45,11 +45,11 @@ class Sidebar extends Component {
             <ul className="list-group list-group-flush col-md-12">
               <li className="list-group-item">
                 <div className="row">
-                  <div className="col-md-10">
+                  <div className="col-md-9">
                     <span className="font-weight-bold">{name}</span>
                   </div>
                   <span
-                    className="col-md-2 btn btn-secondary"
+                    className="btn btn-secondary btn-remove-hero"
                     onClick={removeHero.bind(this, name)}>
                     X
                   </span>

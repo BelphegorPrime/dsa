@@ -3,10 +3,10 @@ import proptypes from 'prop-types';
 
 class Properties extends Component {
   render() {
-    const { className, properties } = this.props;
+    const { properties } = this.props;
     return (
-      <div className={className}>
-        <div className="pl-3 pt-3">
+      <div>
+        <div className="pl-2 pt-2">
           <table className="table table-sm table-hover">
             <thead>
               <tr>
@@ -153,8 +153,7 @@ class Properties extends Component {
 }
 
 Properties.propTypes = {
-  properties: proptypes.object,
-  className: proptypes.string
+  properties: proptypes.object
 };
 
 export default Properties;
