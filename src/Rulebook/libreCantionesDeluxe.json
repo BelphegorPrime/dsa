@@ -3064,5 +3064,48 @@
       { "representation": "Gildenmagier", "distribution": 5},
       { "representation": "Hexe", "distribution": 5, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 92,
+    "name": "Gardianum Zauberschild",
+    "trial": "KL/IN/KO",
+    "difficulty": "",
+    "technik": "Der Magier hebt den Zauberstab über den Kopf und lässt ihn einmal waagerecht rotieren; zauberkundige Helden ohne Zauberstab zeichnen mit beiden Händen einen großen Kreis über sich in die Luft.",
+    "castTime": "2 Aktionen",
+    "effect": "Der Zauber erschafft um den Magier eine unsichtbare Schutzkuppel in Form einer Halbkugel von 3 Schritt Radius, die auch von den Gefährten des Magiers genutzt werden kann. Der Schild ist ‘orientiert’, d.h., auch wenn bestimmte Wirkungen nicht nach innen dringen können, ist doch Schadenszauberei aus der Kuppel heraus möglich. Der Schild absorbiert durch direkte magische Angriffe erzeugte Trefferpunkte (namentlich die Wirkung von Zaubern mit dem Merkmal Schaden, aber auch Schaden erzeugende Zauber von Dämonen, Elementaren oder Geistern, die Flammenwolke des IGNISPHAERO, Attacken des Flammenschwerts etc.), nicht aber magisch erhöhte Trefferpunkte normaler Waffen (siehe auch SCHADENSZAUBER BANNEN), Schaden von Waffen aus magi- schen Materialien, physischen Attacken von Dämonen, Elementaren oder Geistern oder anderen magischen Wesen (Drache, Einhorn). Gegen andere Arten von Magie (wie z.B. Verwandlung oder Beherrschung) ist die Grund-Variante wirkungslos. Zauber, die von innerhalb der Kuppel gegen den Magier gewirkt werden (oder Flammenschwert-Angriffe o.ä.), werden nicht aufgefangen. Die Anzahl der aufgefangenen TP entspricht den vom Magier investierten AsP plus den doppelten ZfP*. Sobald der Schild diese Trefferpunktzahl hingenommen hat, spätestens aber nach 1 Spielrunde, löst er sich auf. Richtet ein Schadenszauber keine direkten TP an (sondern z.B. eine Wunde), so verliert der Schild AsP in Höhe der Kosten des Schadenszaubers. Der Schutzschild ist unsichtbar und kann nur mittels magischer Hellsicht (oder während er einen Zauber abwehrt) als schimmernde Kuppel wahrgenommen werden. Die Kuppel bewegt sich stets mit dem Magier. Werden direkt wirkende Kampfzauber (z.B. FUL- MINICTUS) mittels APPLICATUS o. ä. auf einen Ge genstand gelegt, so dass diese als magisches Detonationsgeschoss wirken, so werden diese vom GARDIANUM vorzeitig zur Detonation gebracht, was den GARDIANUM die Hälfte der TP kostet.",
+    "cost": "nach Wahl, mindestens aber 3 AsP",
+    "target": "Zone",
+    "distance": "3 Schritt Radius um den Magier herum",
+    "duration": "bis die aufgewendeten AsP aufgezehrt sind, maximal 1 Spielrunde",
+    "modifications": ["Zauberdauer", "Reichweite (Größe der Kuppel)", "Wirkungsdauer"],
+    "reversalis": "keine Wirkung. Eine Schutzkuppel zu erzeugen, die das Ausbrechen magischer Energie verhindert, erfordert eine Große Modifikation des GARDIANUM.",
+    "antimagic": "Ein mit dem PROTECTIONIS geschützter Zauber durchdringt den GARDIANUM, wenn die Summe aus den PROTECTIONIS-AsP und dessen ZfP* größer ist als die ZfP* des GARDIANUM. Ansonsten wird er wie ein verzaubertes Geschoss (s.o.) behandelt. Die AsP des PROTECTIONIS haben keine Auswirkungen auf den Schild.",
+    "complexity": "D",
+    "characteristics": ["Antimagie", "Kraft", "Metamagie"],
+    "variants": [
+      {
+        "name": "Schild gegen Dämonen",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Zusätzlich zur o.g. Wirkung verhindert der Zauber, dass Dämonen die Schutzkuppel durchdringen oder sich in ihr aufhalten können. Ebenfalls verhindert werden Angriffe mittels dämonischer Materie wie z.B. die Angriffe eines PANDÄMONIUM. Das Verhindern dämonischer Bewegung verbraucht keine AsP des Schildes, jeder gezielte dämonische Angriff gegen den Schild verbraucht einen Punkt Schildstärke pro 7 angerichteter TP."
+      },
+      {
+        "name": "Schild gegen Zauber",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Zusätzlich zur Haupt-Wirkung werden auch Verwandlungen und Beherrschungen (Zauber mit den Merkmalen Eigenschaften, Einfluss, Form und Herrschaft) abgewehrt. Jeder AsP, der auf diese Art und Weise abgeblockt wird, reduziert die Schildstärke in gleichem Maße; Zauber, die den geschwächten Schild durchbrechen, kommen abgeschwächt zur Wirkung: Ihre ZfP* werden um die Zahl der AsP reduziert, die der Schild noch aufgefangen hat."
+      },
+      {
+        "name": "Persönlicher Schild",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Die Wirkung des GARDIANUM entsteht nicht in einer Schutzkuppel, sondern in einer eng anliegenden ‘zweiten Haut’ um den Magier und seine Kleidung/Ausrüstung. Diese Variante stellt einen Schutz in Höhe von 3 mal ZfP* plus eingesetzte AsP zur Verfügung."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Geode", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
