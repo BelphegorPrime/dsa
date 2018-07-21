@@ -3107,5 +3107,65 @@
       { "representation": "Achaz", "distribution": 2},
       { "representation": "Geode", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 94,
+    "name": "Gedankenbilder Elfenruf",
+    "trial": "KL/IN/CH",
+    "difficulty": "",
+    "technik": "Der Elf legt eine Hand an seine Stirn und konzentriert sich mit geschlossenen Augen auf den Zauber feya, ama visya‘ray und seine Botschaft.",
+    "castTime": "5 Aktionen",
+    "effect": "Der Elf sendet eine Gedankenbotschaft aus, die jeder innerhalb der Reichweite des Zaubers empfangen kann, der diesen Zauber ebenfalls beherrscht. Die Botschaft selbst ist dabei nicht von einer Sprache abhängig: Ein Emp- fänger versteht den Inhalt auch dann, wenn er die Sprache des Elfen nicht sprechen kann. Es ist jedoch möglich, Botschaften in Rätsel oder Gleichnisse zu verpacken, so dass der Empfänger zwar das Rätsel versteht, die Lösung jedoch nicht unbedingt kennt. Wer die Botschaft aus irgendeinem Grund nicht empfangen will, kann sich dagegen wehren – diese Abwehr gelingt immer. Dies ist ohne Zweifel der klassische Verständigungszauber, mit dem Elfen selbst über weitere Entfernungen hinweg Botschaften weitergeben können und so ihre Sippe vor nahende Gefahren und beispielsweise Eindringlinge ins Sippengebiet warnen können, sich aber oft auch einfach nur ihre Gefühle und Stimmungen mitteilen – auch eine Vorbereitung für das Salasandra (vgl. WdZ 321f., WdS 173 und Aus Licht und Traum Seite 51), als dessen reduzierte Form der GEDANKENBILDER angesehen werden kann.",
+    "cost": "4 AsP pro angefangener 5 Kampfrunden, nur der ‘sendende’ Elf muss AsP aufbringen.",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst; die Botschaft wird ZfW x 100 Schritt weit gesendet.",
+    "duration": "höchstens ZfP* x 5 Kampfrunden (A)",
+    "modifications": ["Zauberdauer", "Wirkungsdauer", "Reichweite (gestaffelt in den Stufen x3 / x7 / x 12 / x 21 / x49; jeweils verrechnet mit den ZfW x 100 Schritt bzw. den ZfW x 10 Meilen beim Kreis der Eingeweihten)"],
+    "reversalis": "nicht bekannt",
+    "antimagic": "kann in einer Zone des VERSTÄNDIGUNG STÖREN nur erschwert gewirkt werden; gezielter Einsatz dieser Antimagie kann den GEDANKENBILDER beenden.",
+    "complexity": "B",
+    "characteristics": ["Verständigung"],
+    "variants": [
+      {
+        "name": "Bestimmter Empfänger",
+        "mod": "+5 für einen Empfänger im Blickfeld und in Reichweite des Zaubers / +10 für einen Empfänger außerhalb des Blickfeldes, aber innerhalb der Reichweite",
+        "minZfW": 0,
+        "effect": "In diesem Fall muss der zaubernde Elf nicht die Augen schließen, sondern sein ‘Opfer’ fixieren; ausschließlich der gewählte Empfänger erhält die Botschaft."
+      },
+      {
+        "name": "Kreis der Eingeweihten",
+        "mod": "+5 nur in der elfischen Repräsentation",
+        "minZfW": 0,
+        "effect": "Hier sendet der Elf die Botschaft nur an seine engsten Vertrauten, zumeist Sippenmitglieder oder Verwandte; Reichweite ZfW x 10 Meilen, kostet auch jeden Empfänger 1 AsP. Ein solcher Kreis setzt sehr innige Verbun- denheit mit den Empfängern voraus, wie sie nur durch Verwandtschaft oder sehr enge und langjährige Freundschaft entsteht."
+      },
+      {
+        "name": "Sinneseindrücke",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Der Elf sendet keine Botschaft, sondern er gibt die Sinneseindrücke weiter, die er gerade hat: was er hört, sieht, riecht, schmeckt und/oder fühlt; Probe +3 pro übertragenem Sinn."
+      },
+      {
+        "name": "Kontakt",
+        "mod": "+3 nur elfische Repräsentation",
+        "minZfW": 7,
+        "effect": "Der Elf kann einem Wesen, das er berührt und das den Zauber nicht unbedingt kennen muss, Gedanken übermitteln: Reichweite Berührung, Kosten 7 AsP/SR (A)."
+      },
+      {
+        "name": "Illusionen",
+        "mod": "+7 nur gildenmagische Repräsentation",
+        "minZfW": 11,
+        "effect": "Der Magier sendet nicht seine aktuellen Sinneseindrücke, sondern erdachte – hierfür muss ihm allerdings eine Selbstbeherrschungs-Probe gelingen, sonst vermischen sich erdachte mit realen Eindrücken. Der erste Sinn erschwert die Probe um 7 Punkte, jeder weitere Sinn um je 3 Punkte."
+      },
+      {
+        "name": "Erzwungene Botschaft",
+        "mod": "+3 nur gildenmagische Repräsentation",
+        "minZfW": 11,
+        "effect": "In dieser Variante ist es nicht möglich, den Empfang der Nachricht zu verhindern, wenn die MR des Empfängers kleiner oder gleich den ZfP* ist. Ein Empfänger, der gerade mit Zaubern oder anderen Aktivitäten beschäftigt ist, die seine ganze Konzentration erfordern, muss eine Selbstbeherrschungs-Probe ablegen, um nicht abgelenkt zu werden. Eine solche Botschaft kann maximal 5 Kampfrunden lang sein."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 7},
+      { "representation": "Gildenmagier", "distribution": 3}
+    ]
   }
 ]
