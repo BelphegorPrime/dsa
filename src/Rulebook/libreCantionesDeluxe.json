@@ -2913,7 +2913,7 @@
     ]
   },
   {
-    "page": 87,
+    "page": 88,
     "name": "Fluch der Pestilenz",
     "trial": "MU/KL/CH",
     "difficulty": "+MR",
@@ -2947,6 +2947,43 @@
       { "representation": "Druide", "distribution": 6},
       { "representation": "Borbaradianer", "distribution": 2},
       { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"}
+    ]
+  },
+  {
+    "page": 89,
+    "name": "Foramen Foraminor",
+    "trial": "KL/KL/FF",
+    "difficulty": "evtl. +Mod.",
+    "technik": "Der Magier berührt das Schloss, den Mechanismus oder die Tür dreimal mit der flachen Hand und spricht leise die Formel.",
+    "castTime": "5 Aktionen",
+    "effect": "Der Zauber öffnet mechanische Schlösser, Riegel etc. an Türen, Truhen und ähnlichem, ohne dass der Zauberer den genauen Schließmechanismus kennen muss. Die Zuschläge auf die Zauberprobe sind von der Komplexität des Schlosses (0 für einen einfachen Riegel bis +18 für ein zwergisches Kombinationsschloss an einem Panzerschrank der Nordlandbank), die Kosten von der zu bewegenden Masse des Schließmechanismus abhängig (bis zu einem Maximum von etwa 2 x ZfW Stein). Gewöhnliche, wenn auch komplizierte Schlösser stellen für diesen Zauber kein Hindernis dar. Sollte der Schließme- chanismus jedoch mit einer Falle gekoppelt sein, so können Sie als Meister einen Zuschlag (bis zu +10 wäre angemessen) auf die FO- RAMEN-Probe verlangen, damit die Falle gesichert bleibt, während das Schloss sich öffnet. Eine weitere Methode, den FORAMEN zu überlisten, ist die Anbringung mehrfacher, deutlich getrennter Schließmechanismen, die jeweils einen separaten FORAMEN erfordern. Ist eine Tür mittels CLAUDIBUS CLAVISTIBOR verschlossen, muss der Zauberer nicht nur mehr ZfP* mit dem FORAMEN erzielen als das Ergebnis des CLAUDIBUS, sondern auch noch zusätzliche Kosten (über die Qualität des Schlosses hinaus) in Höhe der für den CLAUDIBUS verwendeten AsP aufwenden.",
+    "cost": "zwischen 2 AsP (Schloss an einem Schmuckkästchen) und 12 AsP (Riegel eines Burg- oder Stadttores), s.o. (Sch: 1–8 AsP)",
+    "target": "Einzelobjekt",
+    "distance": "Berührung",
+    "duration": "augenblicklich; das Schloss bleibt so lange offen, bis es wieder zugesperrt wird.",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "Der umgedrehte Zauber verschließt Schlösser und andere Mechanismen; diese können aber ganz normal mit einem Schlüssel wieder geöffnet werden.",
+    "antimagic": "Sowohl Zonen des BEWEGUNG STÖREN wie auch des HELLSICHT TRÜBEN erschweren das Wirken des Zaubers.",
+    "complexity": "C",
+    "characteristics": ["Hellsicht", "Telekinese"],
+    "variants": [
+      {
+        "name": "Mehrfachschlüssel",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Für einen Zuschlag von sieben Punkten pro Schloss kann ein automatisch wieder verschließen- des Schloss offen gehalten werden, während man mit einem neuen FORAMEN das nächste Schloss (einer Mehrfachkombination) öffnet. Kann auch verwendet werden, um eine Falle zu blockieren, während man ein Schloss öffnet."
+      },
+      {
+        "name": "Contra-Claudibus",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Mit dieser Variante kann ein auf einem Verschluss wirkender CLAUDIBUS neutralisiert und diese daraufhin gewöhnlich (mittels Schlösser Knacken, Krafteinsatz, Waffengewalt oder einem weiteren FORAMEN) geöffnet werden. Hierfür muss der Magier mindestens so viele ZfP* übrig behalten wie der Wirker des CLAUDIBUS; die AsP-Kosten betragen so viele Punkte, wie für den CLAUDIBUS aufgewendet wurden"
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Scharlatan", "distribution": 5},
+      { "representation": "Schelm", "distribution": 4}
     ]
   }
 ]
