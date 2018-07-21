@@ -3167,5 +3167,27 @@
       { "representation": "Elf", "distribution": 7},
       { "representation": "Gildenmagier", "distribution": 3}
     ]
+  },
+  {
+    "page": 95,
+    "name": "Gefäss der Jahre",
+    "trial": "MU/KL/KO",
+    "difficulty": "",
+    "technik": "Für diesen Zauber ist ein etwa sechsstündiges Ritual vonnöten, das in der Neumondnacht durchgeführt werden muss. Es heißt, dass (neben den Materia lien für das Abbild des Zauberers) ein Menschenopfer benötigt werde, damit der Zauber gelingt.",
+    "castTime": "etwa 6 Stunden",
+    "effect": "Mit diesem Zauber kann der Magier die Last seines Alters in ein Bild oder eine Statuette von sich bannen, die dann an seiner Stelle altern (und auch erkranken) kann. Das Abbild des Zauberers muss nicht von eigener Hand geschaf- fen, aber so naturgetreu wie möglich sein: Je 3 TaP* bei der entspre- chenden Handwerks-Probe erleichtern den Zauber um 1 Punkt. Der Zauberer muss in jeder Neumondnacht das Ritual in abge- schwächter Form wiederholen (Dauer etwa 1 Stunde, (MU/KL/KO)- Probe –3, Kosten 11 AsP) und jedes Jahr zur Wintersonnenwende 1 permanenten Astralpunkt opfern. Wird eine der beiden Bedingungen nicht erfüllt, so altert der Zauberer schlagartig um 1W6 Jahre. Sobald ein anderer Sterblicher (ein vernunftbegabtes Wesen) das Bild oder die Statuette berührt (von der Wand nimmt, zerstört ...), verfliegt der Zauber, das Bildnis kehrt in seinen Originalzustand zurück und die gesamte Last des Alters fällt auf den Zauberer. Bei dieser Formel scheint es sich um einen abgewandelten IMMOR- TALIS zu handeln, denn auch hier wird die Zeit, die den Magier selbst ereilen würde, umgelenkt und auf einen anderen Gegenstand gerichtet, so wie beim IMMORTALIS ein Opfer die Folgen des Alters erleiden muss.",
+    "cost": "49 AsP + 1W6 AsP permanent",
+    "target": "Einzelobjekt, Einzelperson, freiwillig",
+    "distance": "selbst; der Zauberer darf sich niemals weiter als 7 Meilen vom Bildnis entfernen.",
+    "duration": "permanent, siehe oben",
+    "modifications": [],
+    "reversalis": "nicht Wirkung",
+    "antimagic": "kann in den Zonen entsprechender Antimagie- Formeln nur erschwert gewirkt werden; einzig der hypothetische TEMPORALZAUBEREI BANNEN würde eine laufende Wirkung aufheben.",
+    "complexity": "E",
+    "characteristics": ["Form", "Temporal"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 1}
+    ]
   }
 ]
