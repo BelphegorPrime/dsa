@@ -3181,13 +3181,39 @@
     "distance": "selbst; der Zauberer darf sich niemals weiter als 7 Meilen vom Bildnis entfernen.",
     "duration": "permanent, siehe oben",
     "modifications": [],
-    "reversalis": "nicht Wirkung",
+    "reversalis": "keine Wirkung",
     "antimagic": "kann in den Zonen entsprechender Antimagie- Formeln nur erschwert gewirkt werden; einzig der hypothetische TEMPORALZAUBEREI BANNEN würde eine laufende Wirkung aufheben.",
     "complexity": "E",
     "characteristics": ["Form", "Temporal"],
     "variants": [],
     "distribution": [
       { "representation": "Gildenmagier", "distribution": 1}
+    ]
+  },
+  {
+    "page": 96,
+    "name": "Gefunden",
+    "trial": "KL/IN/GE",
+    "difficulty": "+Mod",
+    "technik": "Die Schelmin konzentriert sich auf die Schwingungen des Gegenstands und spricht die Formel.",
+    "castTime": "6 Spielrunden Vorbereitung",
+    "effect": "Mit diesem Spruch kann eine Schelmin den Aufenthaltsort eines Objektes (nicht aber einer Person oder eines sonstigen Lebewesens) ermitteln. Sie muss eine genaue Beschreibung des Gegenstandes besitzen oder das Objekt selbst kennen, besser ist jedoch, wenn sie die Aura des Objektes kennt (z.B. weil sie es lange mit sich geführt hat). Die Probe ist folgendermaßen modifiziert: U Entfernung: +1 pro angefangener 250 Schritt U Größe: Schrank –3, Truhe –1, Rucksack +/–0, Buch +1, Ring, Amulett o.ä. +3, noch kleinere Objekte +7 U Vertrautheit: Gegenstand aus dem persönlichen Besitz der Schelmin –1, Schelmin hat den gesuchten Gegenstand schon einmal näher gesehen/berührt +/–0, Schelmin kennt eine ähnliche Aura +3, Schelmin hat den Gegenstand nur von Besitzer beschrieben bekommen +7 U Besonderheiten: Gegenstand ist magisch –2, bewegt sich +3, ist von magischem (oder antimagischem) Behältnis umschlossen +7 Die Schelmin erkennt nicht direkt, wo sich der Gegenstand befindet, sondern erhält ein grobes Gespür über die Richtung und die Entfer- nung, in der sich der Gegenstand befindet. Sie kann, während sie den Gegenstand sucht, jeweils einen ZfP* aufwenden, um die genaue Richtung herauszufinden, und sich so Stück für Stück an den Gegenstand ‘herantasten’.",
+    "cost": "17 AsP (Sch: 12 AsP)",
+    "target": "Einzelobjekt",
+    "distance": "selbst; der Gegenstand darf maximal ZfW/2 Meilen entfernt sein.",
+    "duration": "Das Gespür für den Gegenstand stellt sich sofort nach Ende der Zauberdauer ein und hält 6 + ZfP* Spielrunden lang an.",
+    "modifications": ["Erzwingen", "Kosten", "Reichweite (jeweils nur in den nicht-schelmischen Repräsentationen)"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Eine Zone des HELLSICHT TRÜBEN (egal, ob bei der Schelmin oder um den Gegenstand) macht es schwieriger, den Zauber zu wirken, ein gezielter HELLSICHT TRÜBEN auf die Schelmin beendet die Suche.",
+    "complexity": "C",
+    "characteristics": ["Hellsicht"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Schelm", "distribution": 5},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Scharlatan", "distribution": 3, "subRepresentation": "Gildenmagier"}
     ]
   }
 ]
