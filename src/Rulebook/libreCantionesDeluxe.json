@@ -2911,5 +2911,42 @@
       { "representation": "Schelm", "distribution": 4},
       { "representation": "Scharlatan", "distribution": 4, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 87,
+    "name": "Fluch der Pestilenz",
+    "trial": "MU/KL/CH",
+    "difficulty": "+MR",
+    "technik": "Der Druide fixiert sein Opfer und denkt an die Krankheit, die es erleiden soll.",
+    "castTime": "10 Aktionen",
+    "effect": "Mit dieser Formel kann der Druide seinem Opfer eine beliebige Krankheit anhexen (zu Krankheiten siehe WdS 151ff. bzw. GA 205ff.), ausgenommen die Lykanthropie. Die Krankheit nimmt vom Mo ment der ‘magischen Ansteckung’ an ihren natürlichen Verlauf mit allen Symptomen und Schäden für das Opfer. Wie eine auf normalem Weg entstandene Krankheit kann sie mit Kräutern o.ä. behandelt werden. Der Druide muss die Krankheit kennen, die er verursachen will.",
+    "cost": "Gefährlichkeitsstufe der Krankheit mal 2 AsP (borbaradianische Variante: Stufe der Krankheit x 1W3 AsP bzw. die Hälfte davon als LeP)",
+    "target": "Einzelperson",
+    "distance": "3 Schritt",
+    "duration": "augenblicklich (Die magische Herkunft der Krankheit ist noch einen Tag lang spürbar.)",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)", "Reichweite"],
+    "reversalis": "Die Umkehrung kann alle Krankheiten außer der Lykanthropie heilen; sie ist nicht um die MR, jedoch um die doppelte Stufe der Krankheit erschwert. (Es ist nicht ganz einfach, eine erzdämonische Wesenheit dazu zu bringen, Geschenke aus ihrer Domäne zurückzunehmen.)",
+    "antimagic": "Am ersten Tag der Krankheit kann die Pestilenz noch mit einem MISHKHARABANN (erschwert um die Stufe der Krankheit) geheilt werden. An den folgenden Tagen ist dies nicht mehr möglich, eben- so wenig wie Folge-Infizierte mit dieser Antimagie geheilt werden können. Auch eine magisch hervorgerufene Krankheit kann durch die Umkehrung dieses Zaubers, REVERSALIS [FLUCH DER PESTILENZ], geheilt werden. VERWAND- LUNG BEENDEN wirkt dagegen nicht, angesichts der starken dämonischen Komponente in diesem Zauber. Man müsste schon einen gehörnten Dämon aus Mishkharas Domäne bemühen, damit er die Krankheit von dem Opfer nimmt; das jedoch tun Dämonen erfahrungs gemäß sehr ungern.",
+    "complexity": "D",
+    "characteristics": ["Dämonisch (Mishkhara)"],
+    "variants": [
+      {
+        "name": "Einzelfall",
+        "mod": "+3 + Stufe der Krankheit",
+        "minZfW": 7,
+        "effect": "Der Druide kann mit dieser Variante verhindern, dass die Krankheit ansteckend ist."
+      },
+      {
+        "name": "Fernverfluchung",
+        "mod": "",
+        "minZfW": 7,
+        "effect": "Verfügt der Druide über ein Körperteil (Haare, Fingernägel ...) des Opfers, so kann er mit diesem Gegenstand als Fokus den Zauber auch aus großer Entfernung wirken. Die Probe ist dann zusätzlich um 1 Punkt pro 10 Meilen erschwert, mindestens jedoch um 7 Punkte. Der Fokus wird dabei verbraucht."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 6},
+      { "representation": "Borbaradianer", "distribution": 2},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"}
+    ]
   }
 ]
