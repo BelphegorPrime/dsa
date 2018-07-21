@@ -2985,5 +2985,84 @@
       { "representation": "Scharlatan", "distribution": 5},
       { "representation": "Schelm", "distribution": 4}
     ]
+  },
+  {
+    "page": 90,
+    "name": "Fortifex Arkane Wand",
+    "trial": "IN/KO/KK",
+    "difficulty": "",
+    "technik": "Die Magierin kreuzt die Arme – Handflächen nach außen – vor dem Gesicht und spricht die Formel.",
+    "castTime": "10 Aktionen",
+    "effect": "Der Zauber lässt an einem beliebigen Ort innerhalb der Reichweite (jedoch nur innerhalb der Elemente Luft, Wasser oder Feuer) eine für jegliche Materie undurchdringliche, jedoch durchsichtige Wand von maximal 2 mal 2 Schritt Fläche entstehen, die danach an ihrem Ort verbleibt. Dieser Ort ist fix gegenüber einem festen Objekt im Blickfeld des Magiers: Es ist also möglich, den FORTIFEX ‘3 Schritt steuerbord querab vom Mast’ zu fixieren, nicht aber, ihn z.B. an einer Rotzen-Kugel zu applizieren. Die Orientierung im Raum kann nach Belieben gewählt werden. Die Barriere ist zwar für ‘Pfeil und Bolzen’ undurchdringlich, vor Zaubern (auch elementaren Zaubern wie dem IGNIFAXIUS) oder halbmateriellen Wesen wie Geistern und Dämonen (ausgenommen manifestierten) schützt sie jedoch genauso wenig wie vor Hitze, Kälte oder Licht. Es handelt sich bei dem Zauber um ein ‘zweidimensional ausgedehntes Kraftfeld’, nicht um eine extrem dünne und an den Kanten rasiermesserscharfe Fläche: Es ist also nicht möglich, damit z.B. anstürmende Reiter zu enthaupten (wohl aber, sie aus den Sätteln zu werfen). Der Zauber eignet sich übrigens hervorragend, um enge Durchlässe zu versperren.",
+    "cost": "11 AsP",
+    "target": "Zone",
+    "distance": "3 Schritt",
+    "duration": "ZfP* mal 10 Kampfrunden",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite (Größe oder Abstand von der Magierin)"],
+    "reversalis": "Ein wirkender FORTIFEX wird aufgehoben.",
+    "antimagic": "Ein VERÄNDERUNG AUFHEBEN oder ein ERZBANN kann den Zauber aufheben bzw. in der Zonen-Variante sein Wirken erschweren.",
+    "complexity": "D",
+    "characteristics": ["Umwelt", "Elementar (Erz)"],
+    "variants": [
+      {
+        "name": "Bewegliche Wand",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Die Wand bewegt sich zusammen mit der Zauberin, und zwar in dem Abstand, in dem sie beschworen wurde. In diesem Fall hat die Barriere die gleiche Körperkraft wie die Zauberin."
+      },
+      {
+        "name": "Schimmernder Schild",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Vor dem Schildarm der Magierin oder einer verzauberten Person entsteht ein schimmernder Rundschild von vier Spann Durchmesser (WM 0/+3; INI 0); Kosten: 7 AsP"
+      },
+      {
+        "name": "Schwebende Wand",
+        "mod": "+10",
+        "minZfW": 14,
+        "effect": "So lässt sich ein – mit maximal ZfP* Schritt/Sekunde – unabhängig beweglicher FORTIFEX erzeugen. Eine solche Wand kann auch waagerecht angelegt werden; in diesem Fall können damit Objekte von maximal (doppelte MU+CH der Magierin) Stein Gewicht gehoben und bewegt oder sogar das doppelte Gewicht geschoben werden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Achaz", "distribution": 3}
+    ]
+  },
+  {
+    "page": 91,
+    "name": "Fulminictus Donnerkeil",
+    "trial": "IN/GE/KO",
+    "difficulty": "",
+    "technik": "Der Elf deutet mit der linken Faust auf das Ziel, während er fial miniza dao’ka ausruft.",
+    "castTime": "2 Aktionen",
+    "effect": "Der Zaubernde erzeugt eine gezielte, unsichtbare Welle magischen Schadens, die jede gewöhnliche Rüstung glatt durchdringt. Der Elf wirft 2W6 und addiert die ZfP*. Das Gesamtresultat ist gleich der Anzahl der Schadenspunkte, die direkt von der Lebensenergie des Getroffenen abgezogen werden. Der Schaden äußert sich bei Lebewesen meist als Summe kleinerer innerer Verletzungen und erzeugt keine (regeltechnischen) Wunden. (Experte: Wenn Sie den Schaden für verschiedene Arten von Verletzungen separat nachhalten, können Sie festlegen, dass der Schaden aus einem FULMINICTUS nicht durch das Talent Heilkunde Wunden zu behandeln ist.)",
+    "cost": "1 AsP pro zugefügtem Schadenspunkt; ist dieser Wert größer als die derzeitige Astralenergie des Elfen, so werden nur so viele SP erzeugt, wie der Zauberer noch AsP besitzt.",
+    "target": "Einzelwesen",
+    "distance": "7 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Reichweite"],
+    "reversalis": "Ein teurer Fernheilzauber, der der Zielperson sofort 2W6+ZfP* LeP zurückgibt und vor allem als letzte Rettung vor dem Tod verwendet wird. Experimente, diese Reversalis-Kombination als festen Zauber (‘VALETUDO LEBENSKRAFT’) zu etablieren, wurden bereits mehrfach unternommen, verliefen jedoch stets im Sande.",
+    "antimagic": "Gegen den magischen Schaden helfen weder Rüstungen noch der ARMATRUTZ (lediglich einige Dämonen können ihre MR als magischen Schild verwenden), wohl aber der GARDIANUM und der INVERCANO. In einer Zone unter dem Einfluss des SCHADENSZAUBER BANNEN kann die Formel nur erschwert gewirkt werden.",
+    "complexity": "C",
+    "characteristics": ["Schaden", "Kraft"],
+    "variants": [
+      {
+        "name": "Welle des Schmerzes",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Eine Schadens welle breitet sich vom Elfen ungezielt in alle Richtungen aus und zieht alles bis in 3 Schritt Entfernung in Mitleidenschaft: Für je 3 AsP (den AsP- Einsatz wie oben auswürfeln) richtet der Zauber 1W6 SP(A) bei allen umstehenden Lebewesen an."
+      },
+      {
+        "name": "Welle der Reinigung",
+        "mod": "+3 nur in der gilden magischen Repräsentation",
+        "minZfW": 7,
+        "effect": "Vom Magier geht eine Welle der Kraft aus, die für alle Lebewesen mit nur 1 LeP oder weniger tödlich ist – sprich, die alles Ungeziefer in einem Herbergszimmer tot von der Wand fallen lässt. Der Radius beträgt 3 Schritt; die Kosten 1W6+2 AsP."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 7},
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Hexe", "distribution": 5, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
