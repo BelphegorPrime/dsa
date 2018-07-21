@@ -2791,5 +2791,125 @@
       { "representation": "Gildenmagier", "distribution": 5},
       { "representation": "Schelm", "distribution": 3, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 86,
+    "name": "Firnlauf",
+    "trial": "MU/KL/GE",
+    "difficulty": "",
+    "technik": "Die Firnelfe stellt sich barfuß auf den Boden, breitet die Arme aus und konzentriert sich auf die Melodie des ia‘bha a‘sela diundra fir‘ye.",
+    "castTime": "6 Aktionen",
+    "effect": "Die Elfe kann sich sicher über alle Arten von Eis- und Schneeflächen bewegen; auf eisigem Untergrund scheint sie kein Gewicht zu haben: Sie überquert Tiefschnee ohne einzusinken, behält auf Eisschollen das Gleichgewicht und bricht nicht in hauchdünnes Eis ein. Sie erleidet geringere Einbußen auf die Anwendung Körperlicher Talente oder Kampffertigkeiten auf Eisflächen oder beim Klettern an Eiswänden. (Die ZfP* werden von der Erschwernis abgezogen, es entsteht jedoch kein Bonus.) Beim Sturz auf einen eisigen Untergrund kann sie ZfP* Punkte von der Schadenswirkung abziehen. Der Zauber erlaubt das Mitführen von maximal 25 Stein Ausrüs- tung. Er schützt nicht vor anderen Auswirkungen des Elements (wie Erfrieren oder Hagelschlag) und er ist bei der Bewegung auf dämonisch pervertiertem Eis um 7 Punkte erschwert (bzw. der Bonus auf die ge nannten Talente ist um 7 Punkte reduziert).",
+    "cost": "5 AsP plus 2 AsP pro Spielrunde",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "je nach AsP-Aufwand (A)",
+    "modifications": ["Zauberdauer", "Kosten", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "keine Wirkung bekannt",
+    "antimagic": "Sowohl EIGENSCHAFT WIEDERHERSTELLEN als auch EISBANN erschweren als Zone das Wirken des FIRNLAUF und können ihn, gezielt gesprochen, beenden.",
+    "complexity": "D",
+    "characteristics": ["Elementar (Eis)", "Eigenschaften"],
+    "variants": [
+      {
+        "name": "Eisspinne",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Die ZfP* kompensieren nicht nur Erschwernisse, sondern können auch als Erleichterungen auf entsprechende Proben auf Körperliche Talente angewendet werden. Dadurch kann die Elfe eventuell an lotrechten Eiswänden oder sogar unter Überhängen klettern."
+      },
+      {
+        "name": "Verankerung",
+        "mod": "+0",
+        "minZfW": 7,
+        "effect": "Die Elfe kann sich für den Einsatz von 1 AsP auf einer Eisfläche so verankern, dass sie nicht stürzt, selbst wenn das Eis in bedrohliche Schräglage oder schnelle Bewegung gerät."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 6, "comment": "Firnelfen, bei anderen Elfen 2"},
+      { "representation": "Gildenmagier", "distribution": 2}
+    ]
+  },
+  {
+    "page": 87,
+    "name": "Flim Flam Funkel",
+    "trial": "KL/KL/FF",
+    "difficulty": "",
+    "technik": "Der Elf besinnt sich auf das Licht, spricht feya feiama i‘ungra und schnippt dabei mit den Fingern.",
+    "castTime": "2 Aktionen",
+    "effect": "Durch diesen Zauber entsteht eine bläulichweiß strahlende, stationäre Lichtkugel, die zur Beleuchtung dienen kann. Die maximale Leuchtkraft bemisst sich nach den ZfP*: Glühwürmchen (1), Kerze (2 bis 3), Fackel (4 bis 6), Lagerfeuer (7 bis 9), bis hin zu sonnenhell (ab 15 ZfP*). Der Leuchtradius erreicht dadurch etwa ZfP* Schritt, wobei die Helligkeit nach außen hin natürlich immer weiter abnimmt. Das erschaffene Licht ist kalt und erzeugt keinerlei Verbrennungen. Es kann mit den Händen oder abschirmenden Gegenständen verhüllt werden, und es leuchtet auch bei Wind oder einer Berührung weiter.",
+    "cost": "1 AsP pro angefangener Spielrunde (Sch: 1 AsP/SR). Pro zusätzlichem AsP pro SR kann die Helligkeit um eine Stufe (entsprechend 1 ZfP*) erhöht werden; Reduzierung der Helligkeit ist nicht möglich.",
+    "target": "Stelle im Raum oder auf einer Oberfläche (Zone)",
+    "distance": "Die Lichtkugel entsteht in maximal ZfW Schritt Entfernung.",
+    "duration": "nach AsP-Aufwand; Wirkungsdauer muss vorher festgelegt werden.",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite (Entstehungsort)"],
+    "reversalis": "Der Zauber schafft eine schwarze Kugel, die die Umgebung dunkler werden lässt, je näher man ihr kommt (praktisch eine ‘leuchtende Finsternis‘, anstatt einer vollständigen Dunkelheit, wie sie der gleichnamige Zauber erschafft).",
+    "antimagic": "kann nur erschwert in einer Zone des VERÄNDERUNG AUFHEBEN gewirkt und von diesem Zauber beendet werden.",
+    "complexity": "A",
+    "characteristics": ["Umwelt"],
+    "variants": [
+      {
+        "name": "Andere Farbe",
+        "mod": "+2",
+        "minZfW": 0,
+        "effect": "Beliebt sind rot, violett, gelb, seltener grün, orange und blau; nur sichtbare Farben möglich."
+      },
+      {
+        "name": "Pulsierendes Licht",
+        "mod": "+2",
+        "minZfW": 0,
+        "effect": "Lichtkugel wird in regelmäßigem Rhythmus heller und dunkler."
+      },
+      {
+        "name": "Lichtkegel",
+        "mod": "+3 nur in gildenmagischer und kristallomantischer Repräsentation",
+        "minZfW": 0,
+        "effect": "Das Licht kann gleich sam wie ein Strahler in eine bestimmte Richtung (Kegel von etwa 45 Grad) gelenkt werden und diesen Bereich deutlich heller beleuchten."
+      },
+      {
+        "name": "Bewegliche Lichtkugel",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Die durch die ZfP* bestimmte Helligkeit ist die maximale Helligkeit der Lichtkugel; sie kann jedoch nach Belieben des Elfen abgedunkelt werden – um sie allerdings wieder heller (bis zur Maximalhelligkeit) erstrahlen zu lassen, ist der Einsatz eines AsP nötig."
+      },
+      {
+        "name": "Variable Helligkeit",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Das Licht schwebt in unmittelbarer Nähe des Zaubernden (nach Belieben über Kopf, Gesicht, Schulter, Hand oder Füßen) und kann so mitgeführt werden. Kosten müssen nicht vorher festgelegt werden, daher (A)."
+      },
+      {
+        "name": "Irrwisch",
+        "mod": "+5 nicht in geodischer und hexischer Repräsentation",
+        "minZfW": 0,
+        "effect": "Die Kugel kann bis zu ZfW mal 2 Schritt vom Zaubernden fortgeschickt und ferngelenkt werden. (A)"
+      },
+      {
+        "name": "Lichtblitz",
+        "mod": "+7 nicht in echsischer und druidischer Repräsentation",
+        "minZfW": 0,
+        "effect": "Der Zaubernde kann die Kugel für einmalig 4 AsP in einem hellen Blitz explodieren lassen, der weithin sichtbar ist und Beobachter in einer Distanz von weniger als 7 Schritt für ZfP* Aktionen zu blenden vermag (AT/PA jeweils –ZfP*/2 ; Fernkampf-, Talent- und Zauberproben jeweils um ZfP* erschwert, INI –ZfP*). Auslösen des Lichtblitzes erfordert eine Aktion."
+      },
+      {
+        "name": "Leuchtturm",
+        "mod": "+7 nur in gildenmagischer Repräsentation",
+        "minZfW": 0,
+        "effect": "Im Endeffekt eine Kombination mehrerer o.g. Kombinationen. Eine pulsierende Lichtkugel von mindestens Helligkeit 10 (+ZfP*) steigt in eine Höhe von ZfW mal 10 Schritt und verbleibt dort bis zum Ende der Wirkungsdauer von 1 SR. Kosten: 5 AsP"
+      },
+      {
+        "name": "Immerlicht",
+        "mod": "+9 nur in elfischer und kristallomantischer Repräsentation",
+        "minZfW": 0,
+        "effect": "Die stationäre Lichtkugel erhält für einen permanenten AsP eine stabile Matrix und leuchtet dauerhaft. Jeweils nach einem Jahr wird mit 1W20 gewürfelt: Bei einer 20 wird das Licht um eine Stufe (1 ZfP*) dunkler. Nicht kombinierbar mit anderen Modifikationen (außer Anderer Farbe)."
+      }
+    ],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 7},
+      { "representation": "Elf", "distribution": 7},
+      { "representation": "Gildenmagier", "distribution": 7},
+      { "representation": "Druide", "distribution": 6},
+      { "representation": "Hexe", "distribution": 6},
+      { "representation": "Geode", "distribution": 5},
+      { "representation": "Schelm", "distribution": 4},
+      { "representation": "Scharlatan", "distribution": 4, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
