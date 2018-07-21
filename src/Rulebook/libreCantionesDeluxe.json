@@ -3215,5 +3215,55 @@
       { "representation": "Gildenmagier", "distribution": 3},
       { "representation": "Scharlatan", "distribution": 3, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 97,
+    "name": "Geisterbann",
+    "trial": "MU/MU/CH",
+    "difficulty": "+Austreibungsschwierigkeit des Geistes",
+    "technik": "Der Druide zeichnet ein Pentagramm auf den Boden, durch das der Geist verschwinden soll. Anschließend ruft er Schutzmächte seiner Wahl (Elemente, Götter, Heilige, Tugenden, Sumu ...) an und befiehlt dem Geist zu verschwinden.",
+    "castTime": "eine Spielrunde für Zeichnen und Anrufungen",
+    "effect": "Dieser Zauber hindert Geister (aus der Gruppe der Totengeister) für geraume Zeit daran, sich zu manifestieren und zu spuken. Der Geist kann ZfP* Tage und Nächte nicht erschei- nen, sich nicht manifestieren oder ähnliche Aktionen ausführen. Nach Ablauf dieser Zeit kann er wieder umgehen wie zuvor. Der Druide spricht stets einen bestimmten Geist an, so dass nur dieser betroffen ist, auch wenn mehrere Geister anwesend sind. Sorgfältige magische Analyse der vorhandenen Geisterpräsenz im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf GEISTERBANN um einen Punkt erleichtert.",
+    "cost": "dreifache Austreibungsschwierigkeit des Geistes in AsP, mindestens aber 11 AsP",
+    "target": "Einzelwesen",
+    "distance": "ZfW mal 3 Schritt Radius um das Penta gramm",
+    "duration": "Es dauert Austreibungsschwierigkeit des Geistes in Minuten, bis er dem Befehl nachkommt. Danach ist er für ZfP* Tage und Nächte gebannt.",
+    "modifications": ["Erzwingen", "Zielobjekt (mehrere)", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Da es höchst unwahrscheinlich ist, dass ein Totengeist mittels PROTECTIONIS geschützt ist, lässt sich dieser Zauber wohl mit keiner Antimagie kontern.",
+    "complexity": "C",
+    "characteristics": ["Antimagie", "Geisterwesen"],
+    "variants": [
+      {
+        "name": "gegen mehrere Geister",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante gegen mehrere Geister kostet der Spruch die doppelte Austreibungsschwierigkeit, min destens jedoch 7 AsP pro Geist."
+      },
+      {
+        "name": "Langfristige Bannung",
+        "mod": "je +3",
+        "minZfW": 0,
+        "effect": "Der Geist kann für einen längeren Zeitraum vom Erscheinen abgehalten werden. Pro Zeitintervall der folgenden Liste ist die Probe um 3 Punkte erschwert: bis zum nächsten Vollmond / bis zur nächsten Sommersonnenwende / sieben Jahre und sieben Tage / bis zum Tode des Bannwirkers"
+      },
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 12 AsP kann der Magier eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in die Geister, deren Austreibungsschwierigkeit weniger oder gleich den ZfP* beträgt, nicht eindringen können und die das Wirken von Sprüchen mit dem Merkmal Geister um ZfP* Punkte erschwert. Diese Zone hält ZfP* Stunden lang an."
+      },
+      {
+        "name": "Permanente Bannung",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Der Druide kann den Geist auch endgültig von Sumus Leib verbannen. Dafür muss er ein Zehntel der eingesetzten AsP, mindestens jedoch 1 AsP permanent opfern."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 7},
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Geode", "distribution": 4},
+      { "representation": "Hexe", "distribution": 4}
+    ]
   }
 ]
