@@ -5,7 +5,7 @@ const isDev = require('electron-is-dev');
 const { app, BrowserWindow } = electron;
 let mainWindow;
 
-function createWindow() {
+const createWindow = () => {
   mainWindow = new BrowserWindow({ width: 1024, height: 768 });
   mainWindow.loadURL(
     isDev
@@ -19,7 +19,7 @@ function createWindow() {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
-}
+};
 
 app.on('ready', createWindow);
 app.on('window-all-closed', () => {

@@ -1,5 +1,5 @@
 {
-  "name": "dsa",
+  "name": "topas",
   "version": "0.1.0",
   "description": "Pen and Paper tool for 'the dark eye'",
   "author": "",
@@ -61,7 +61,7 @@
     "electron:pack": "npm run electron:pack:linux && npm run electron:pack:mac && npm run electron:pack:win"
   },
   "build": {
-    "appId": "com.electron.dsa",
+    "appId": "com.electron.topas",
     "files": [
       "build/**/*",
       "node_modules/**/*"
