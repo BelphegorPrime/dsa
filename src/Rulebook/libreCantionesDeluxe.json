@@ -3451,7 +3451,7 @@
     ]
   },
   {
-    "page": 103,
+    "page": 104,
     "name": "Hartes Schmelze!",
     "trial": "MU/KL/KK",
     "difficulty": "",
@@ -3486,7 +3486,7 @@
     ]
   },
   {
-    "page": 104,
+    "page": 105,
     "name": "Haselbusch und Ginsterkraut",
     "trial": "CH/FF/KO",
     "difficulty": "",
@@ -3516,6 +3516,37 @@
       { "representation": "Druide", "distribution": 2, "subRepresentation": "Elf"},
       { "representation": "Hexe", "distribution": 2, "subRepresentation": "Elf"},
       { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Elf"}
+    ]
+  },
+  {
+    "page": 107,
+    "name": "Heilkraft Bannen",
+    "trial": "KL/CH/FF",
+    "difficulty": "+Mod",
+    "technik": "Der Magier berührt das Ziel seines Zaubers mit der Hand und spricht die Formel.",
+    "castTime": "8 Aktionen",
+    "effect": "Mit dieser Formel können noch wirkende Zauber mit dem Merkmal Heilung unterbrochen werden, ebenso solche, die gerade gezaubert werden. Es ist kaum möglich, mittels dieses Zaubers abgeschlosse ne Heilprozes- se rückgängig zu machen, da die meisten Heilzauber eine augenblickliche Wirkung aufweisen. Die Zauberprobe ist um die vom gegnerischen Zauberer (demjenigen, der die Heilung gewirkt hat) erzielten ZfP* erschwert, des weiteren um 1/3 der AsP des wirkenden und zu brechenden Spruchs. Sorgfältige magische Analyse des wirkenden Heilzaubers im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf HEILKRAFT BANNEN um einen Punkt erleichtert.",
+    "cost": "4 AsP plus 1/3 der Kosten des zu brechenden Spruchs (borbaradianische Variante: 1W6 AsP plus die Kosten des zu brechenden Spruchs bzw. die Hälfte dieser Kosten als LeP)",
+    "target": "Einzelperson",
+    "distance": "Berührung",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "keine bekannt",
+    "complexity": "C",
+    "characteristics": ["Antimagie", "Heilung", "Bor: Dämonisch (Mishkhara)"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 12 AsP kann der Magier eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Heilung um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält."
+      }
+    ],
+    "distribution": [
+      { "representation": "Borbaradianer", "distribution": 2},
+      { "representation": "Gildenmagier", "distribution": 2},
+      { "representation": "Hexe", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
   }
 ]
