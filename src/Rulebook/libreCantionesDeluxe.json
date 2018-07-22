@@ -3548,5 +3548,53 @@
       { "representation": "Gildenmagier", "distribution": 2},
       { "representation": "Hexe", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 108,
+    "name": "Hellsicht Trüben",
+    "trial": "KL/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Der Druide deutet mit der rechten Hand auf das Opfer, dessen Hellsicht er stören will, und schüttelt den Kopf.",
+    "castTime": "2 Aktionen",
+    "effect": "Das Wirken von Hellsicht-Zaubern wird um ZfP* Punkte erschwert. Wann immer das Opfer dieses Spruchs einen Zauber mit Merkmal Hellsicht formt und dieser misslingt, erkennt es nichts als das wallende, monotone Grau des Limbus, wird also praktisch für die Wirkungsdauer blind. Gegen bereits wirkende Hellsichtzauber gesprochen, gilt: Die Zauberprobe ist um die vom gegnerischen Zauberer (demjenigen, der den Hellsichtzauber gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/5 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren.",
+    "cost": "MR des Opfers in AsP, mindestens jedoch 6 AsP (Sch: 2/3 der MR des Opfers, min. 4 AsP)",
+    "target": "Einzelperson",
+    "distance": "ZfW Schritt",
+    "duration": "ZfP*/2 Spielrunden",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Der PROTECTIONIS kann auch einen Hellsichtzauber schützen (S. 213).",
+    "complexity": "C",
+    "characteristics": ["Antimagie", "Hellsicht"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 18 AsP kann der Druide eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Hellsicht um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält. Wer mit magisch veränderter Wahrnehmung in die Zone hineinzublicken versucht, dessen ZfP* werden um die ZfP* des HELLSICHT TRÜBEN reduziert; sinkt der Wert dabei unter 0, sieht der Zauberer nur waberndes Grau. Das gilt auch für den Druiden selbst."
+      },
+      {
+        "name": "Klarsicht",
+        "mod": "+5",
+        "minZfW": 7,
+        "effect": "Der Druide kann das Opfer so verzaubern, dass es seine normale Wahrneh- mung behält, auch wenn sein Hellsichtzauber misslingt. Bei einigen Zaubern (insbesondere ODEM ARCANUM) kann das dazu führen, dass das Opfer glaubt, sein Hellsichtzauber sei gelungen, es gäbe nur ganz einfach nichts Spezielles zu sehen."
+      },
+      {
+        "name": "Aura",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Der Druide kann eine Aura von HELLSICHT TRÜBEN um sich selbst legen. Dies kostet ihn 10 AsP pro Spielrunde (A) und bewirkt, dass jemand, der ihn mit einem Hellsichtzauber betrachten oder untersuchen will, keine Besonderheit sieht, wenn die ZfP* des Hellsehers kleiner oder gleich den ZfP* des Druiden beim HELLSICHT TRÜBEN sind. Die MR spielt hierbei keine Rolle."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 6},
+      { "representation": "Geode", "distribution": 6},
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Schelm", "distribution": 5},
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Elf", "distribution": 4},
+      { "representation": "Hexe", "distribution": 4},
+      { "representation": "Scharlatan", "distribution": 3}
+    ]
   }
 ]
