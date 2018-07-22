@@ -3328,5 +3328,59 @@
       { "representation": "Gildenmagier", "distribution": 2},
       { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 100,
+    "name": "Grosse Gier",
+    "trial": "KL/KL/CH",
+    "difficulty": "+MR",
+    "technik": "Die Hexe tippt mit dem Zeigefinger auf die Stirn des Opfers und sagt: “Was du jetzt wirklich brauchst, ist (sind) ...”",
+    "castTime": "5 Aktionen",
+    "effect": "Mit diesem Spruch erweckt die Hexe in einer Person eine Große Gier nach bestimmten Gegenständen, Orten oder Handlungen. Die Person wird für die Dauer des Zaubers alles Menschenmögliche versuchen, um diesen Gegenstand zu bekommen, diesen Ort zu erreichen oder diese (konkrete, einzelne) Handlung auszuführen – alles andere wird darüber unwichtig. Das Opfer geht aber nicht so weit, sein Leben unmittelbar aufs Spiel zu setzen (jedoch Gesundheit und guten Ruf bisweilen sehr wohl). Im Endeffekt entspricht dies einer miss- lungenen Probe auf die durch den Zauber entstandene ‘Schlechte Eigenschaft’ Gier nach ... in Höhe von ZfP* Punkten. Die Probe ist eventuell um die Hälfte einer bereits bestehenden Schlechten Eigenschaft erleichtert, wenn die Gier in diese Richtung aktiviert wird (Meisterentscheid). Das Opfer muss die Worte der Hexe übrigens nur hören, nicht aber verstehen können.",
+    "cost": "6 AsP",
+    "target": "Einzelperson",
+    "distance": "Berührung",
+    "duration": "ZfP* in SR",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "erzeugt ‘Großen Ekel‘, der in seiner Wirkung dem WIDERWILLE UNGEMACH ähnelt.",
+    "antimagic": "Sowohl EINFLUSS BANNEN wie auch BEHERRSCHUNG BRECHEN wirken in Zonen-Variante störend, in gezielter Variante aufhebend gegen die GROSSE GIER.",
+    "complexity": "C",
+    "characteristics": ["Einfluss", "Herrschaft"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 7},
+      { "representation": "Geode", "distribution": 3}
+    ]
+  },
+  {
+    "page": 101,
+    "name": "Grosse Verwirrung",
+    "trial": "KL/KL/CH",
+    "difficulty": "+MR",
+    "technik": "Der Druide versetzt seinem Opfer einen leichten Klaps auf die Stirn.",
+    "castTime": "2 Aktionen (Der Klaps auf die Stirn muss erst in der zweiten der zwei Aktionen erfolgen; der Druide muss das Opfer nicht während der ganzen Zeit berühren.)",
+    "effect": "Das Opfer ist für die Wirkungsdauer mehr oder weniger verwirrt, kann sich nicht konzentrieren oder an zurückliegende Ereignisse erinnern und reagiert langsamer als sonst. Seine KL und IN sinken um je ZfP*/2; seine MR sowie seine Fernkampf-, Initiative- und Parade-Basiswerte sinken um je ZfP*/4. Der Verlust von KL und IN beeinflusst natürlich auch Talent- und Zauberproben.",
+    "cost": "6 AsP (Sch: 4 AsP)",
+    "target": "Einzelperson",
+    "distance": "Berührung",
+    "duration": "ZfP* Spielrunden",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "KL und IN des Verzauberten steigen je nach ZfP*.",
+    "antimagic": "Ein EIGENSCHAFT WIEDERHERSTELLEN kann den Zauber aufheben; in einer entsprechenden antimagischen Zone ist das Wirken des Zaubers erschwert.",
+    "complexity": "C",
+    "characteristics": ["Eigenschaften"],
+    "variants": [
+      {
+        "name": "Dumm oder schwerfällig",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Die ZfP* müssen nicht mehr gleichmäßig von KL und IN abgezogen werden, sondern der Druide kann frei entscheiden, wie viele Punkte von KL und wie viele von IN abgezogen werden sollen. In diesem Fall sinken die anderen genannten Basiswerte nicht automatisch um ZfP*/4, sondern werden neu berechnet."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 7},
+      { "representation": "Geode", "distribution": 7},
+      { "representation": "Schelm", "distribution": 3}
+    ]
   }
 ]
