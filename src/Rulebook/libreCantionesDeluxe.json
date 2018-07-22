@@ -3421,5 +3421,33 @@
       { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"},
       { "representation": "Scharlatan", "distribution": 2, "subRepresentation": "Geode"}
     ]
+  },
+  {
+    "page": 103,
+    "name": "Harmlose Gestalt",
+    "trial": "KL/CH/GE",
+    "difficulty": "",
+    "technik": "Die Hexe schlägt die Hände vors Gesicht und kauert sich zusammen.",
+    "castTime": "10 Aktionen",
+    "effect": "Wenn die Hexe die Hände herunternimmt, erscheint sie in neuer, harmloser Gestalt, z.B. als Krüppel oder kleines Kind. Auffällige Ausrüstungsgegenstände (lange Waffen, Rucksäcke o.ä.) und Vertraute (die Tierbe- gleiter der Hexen) können mit diesem Zauber nicht verborgen werden, wenn sich auch die Kleidung der gewünschten Gestalt anpasst. Zur gewünschten harmlosen Gestalt gehören nicht nur die Kleidung und das entsprechende Aussehen, sondern auch eine dazu passende Stimme, ja selbst ein typischer Bewegungsablauf und überzeugende Mimik – will heißen: Wenn die Hexe nicht gerade einen Zweihänder, eine Schatztruhe und eine Wagenladung Teppiche mit sich herumschleppt, kann die Illusion nur mittels Magie durchschaut werden. Als HARMLOSE GESTALT kann je nach den herrschenden Um- ständen auch z.B. ein Ork gewählt werden (wenn man gerade von Orks überfallen wird). Der Zauber speist sich aus den unterbewussten Ängsten der Hexe und den Vorstellungen, wie diesen Ängsten zu begegnen ist – Sie können also als Meister der Hexe die entstandene Illusion vorgeben. Die Realitätsdichte (siehe den Kasten zum Thema Illusionen auf Seite 34) beträgt ZfP*/2+7 Punkte.",
+    "cost": "6 AsP (Sch: 4 AsP)",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "ZfP* in Spielrunden (A)",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt eine HARMLOSE GESTALT auf.",
+    "antimagic": "ILLUSION AUFLÖSEN und EINFLUSS BANNEN wirken gegen diesen Zauber; die Zonen-Varianten erschweren das Wirken der HARMLOSEN GESTALT, eine gezielte Anwendung löst den Zauber auf.",
+    "complexity": "C",
+    "characteristics": ["Einfluss", "Illusion"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 7},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Schelm", "distribution": 3},
+      { "representation": "Scharlatan", "distribution": 3},
+      { "representation": "Elf", "distribution": 2}
+    ]
   }
 ]
