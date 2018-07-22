@@ -3596,5 +3596,36 @@
       { "representation": "Hexe", "distribution": 4},
       { "representation": "Scharlatan", "distribution": 3}
     ]
+  },
+  {
+    "page": 109,
+    "name": "Herbeirufung Vereiteln",
+    "trial": "MU/IN/CH",
+    "difficulty": "+Mod",
+    "technik": "Der Druide deutet auf den Herbeirufer und konzentriert sich darauf, die nach außen weisenden Fäden der Kraft zu kappen.",
+    "castTime": "12 Aktionen",
+    "effect": "Mit diesem Zauber kann eine bereits begonnene Herbeirufung gestört werden, indem der Druide die astrale Verbindung vom Ort der Herbeirufung zu jenem Ort unterbricht, von wo die gerufene Wesenheit erscheinen soll. Dieser Zauber wirkt, während ein gegnerischer Zauberer seine Herbeirufung wirkt, vor allem aber in der Wartezeit zwischen dem Ende der Anrufung und dem Erscheinen des Wesens. Die Zauber probe ist um die vom gegnerischen Zauberer (dem Herbeirufer) erzielten ZfP* plus 1/10 der Herbeirufungs- Kosten erschwert. Sorgfältige magische Analyse (so man die Zeit dazu hat) der begonnenen Herbeirufung im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf HERBEIRUFUNG VEREITELN um einen Punkt erleichtert.",
+    "cost": "8 AsP plus 1/5 der Kosten der Herbeirufung",
+    "target": "Zone (der Ort der Beschwörung)",
+    "distance": "7 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "keine bekannt",
+    "complexity": "C",
+    "characteristics": ["Antimagie", "Herbeirufung"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Üblicherweise entscheidender als die Störung einer laufenden Herbeirufung ist die Errichtung einer Zone, in der Herbeirufungen erschwert sind: Für den Einsatz von 24 AsP kann der Druide eine ortsfeste Zone von ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Herbeirufung um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält. Es ist auch entsprechend erschwert, von außen Wesenheiten in die Zone hineinzurufen; woanders herbeigerufene Wesenheiten können die Zone jedoch ohne Schwierigkeiten betreten."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Hexe", "distribution": 2}
+    ]
   }
 ]
