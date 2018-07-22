@@ -3382,5 +3382,44 @@
       { "representation": "Geode", "distribution": 7},
       { "representation": "Schelm", "distribution": 3}
     ]
+  },
+  {
+    "page": 102,
+    "name": "Halluzination",
+    "trial": "KL/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Der Geode fasst sein Opfer bei der Hand, spricht: “Sieh doch ...” und sagt ihm, was es sehen, hören, riechen, fühlen, schmecken soll.",
+    "castTime": "5 Aktionen",
+    "effect": "Dieser Spruch erzeugt beim Opfer ein Trug- bild, eine Wahnvorstellung, einen Tagtraum, der alle fünf Sinne betrifft und dem Opfer völlig real erscheint. Der Geode muss keine Einzelheiten beschreiben; er kann z.B. vorgeben: “Hier ist köstlicher Wein für dich” oder “Dir erscheint ein todbringender Dämon”. Das Opfer ergänzt den Rest aus seiner Phantasie, wird also im Beispiel bald glauben, betrunken zu sein oder aber von einem Dämon gejagt zu werden – auch wenn es nicht genau weiß, wie ein Dämon aussieht. Die Halluzination überlagert in den Gedanken des Opfers die Wirklichkeit; das, was das Opfer wirklich sieht, riecht und hört, wird in seinen Wachtraum eingebunden, soweit das möglich ist. Das Opfer einer HALLUZINATION: “Sieh doch, jener Oger dort, er will dich fressen!” mag sich in verzweifeltem Kampf auf seinen besten Freund stürzen. Kommt das Opfer in seiner Traumwelt ums Leben, so verliert es auf der Stelle das Bewusstsein, erleidet aber keinen echten Schaden (sondern nur einen entsprechenden Verlust von AuP). Entsprechend sind auch Verletzungen, die das Opfer glaubt zu erleiden, nicht echt – wohl aber solche, die es sich auf der wilden Flucht vor einem eingebildeten Dämon zuzieht, wenn es durch tatsächliche Dornbüsche bricht. Es können nur solche Lebewesen mit diesem Spruch verzaubert werden, die das verstehen, was der Geode ihnen sagt. Die Phantasiewelt, deren Randbedingungen der Geode vorgibt und die das Opfer sich zusammenphantasiert, hat eine Realitätsdichte von 2 x ZfP*. Es ist möglich, in diese Halluzination einzudringen und dem Opfer beizustehen; Näheres hierzu finden Sie im Kapitel Tödliche Träume in Wege der Zauberei.",
+    "cost": "7 AsP + 2 AsP pro Spielrunde",
+    "target": "Einzelperson",
+    "distance": "Berührung",
+    "duration": "nach AsP-Einsatz (beim Zaubervorgang festzulegen), jedoch maximal ZfW/2 Spielrunden",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt eine HALLUZINATION auf.",
+    "antimagic": "BEHERRSCHUNG BRECHEN hebt den Zauber auf; in einer entsprechenden Zone kann der Zauber schwieriger gewirkt werden.",
+    "complexity": "C",
+    "characteristics": ["Herrschaft"],
+    "variants": [
+      {
+        "name": "Wechselnde Eindrücke",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Es ist möglich, die HALLUZINATION den gesamten Wirkungszeitraum über zu beeinflussen; dies erfordert Konzentration (A) und der Geode muss das Opfer ununterbrochen berühren."
+      },
+      {
+        "name": "Traumbilder",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Auch ein schlafendes Opfer kann mit einer HALLUZINATION belegt werden, die dann seine Träume bestimmt (oder überhaupt erst verursacht, wenn es sich um einen Zwerg handelt, denn Zwerge träumen für gewöhnlich nicht). Da das Opfer im Schlaf den Geoden nicht bewusst hören kann, ist die Probe erschwert."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 5},
+      { "representation": "Geode", "distribution": 4},
+      { "representation": "Hexe", "distribution": 2, "subRepresentation": "Druide"},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Druide"},
+      { "representation": "Scharlatan", "distribution": 2, "subRepresentation": "Geode"}
+    ]
   }
 ]
