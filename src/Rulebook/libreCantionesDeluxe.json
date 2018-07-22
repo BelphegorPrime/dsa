@@ -3484,5 +3484,38 @@
       { "representation": "Scharlatan", "distribution": 3},
       { "representation": "Elf", "distribution": 2}
     ]
+  },
+  {
+    "page": 104,
+    "name": "Haselbusch und Ginsterkraut",
+    "trial": "CH/FF/KO",
+    "difficulty": "",
+    "technik": "Der Zaubernde berührt die Pflanze und beginnt, ihre Kraftfäden umzuformen, während er die Melodie des la sala biunda sanya‘ray mit dem Lied der Pflanze verbindet.",
+    "castTime": "je nach Komplexität der Umformung zwischen einer Viertelstunde und mehreren Tagen (Richtwert: eine Spielrunde pro verbrauchtem AsP)",
+    "effect": "Mit diesem Zauber kann ein Elf das Wachstum einer Pflanze kontrollieren, und zwar bis hin zur genauen Form, die z.B. ein Baum annehmen soll. Ein Elf ist damit in der Lage, einen Baum vor der Zeit Früchte tragen oder eine Rankpflanze in wenigen Minuten eine Burgmauer erklettern zu lassen. Ebenfalls möglich, vor allem jedoch von ganzen Sippen in gemeinsamer Anstrengung eingesetzt, ist das formende Wachsen von Bäumen. Die Pflanze wird durch den Zauber nicht beschädigt, aber es kann geschehen, dass ihre Form so instabil wird, dass sie einer heftigen Windbö oder einem starken Schlag nichts mehr entgegenzusetzen hat. Mit dieser Formel sind dem Spieler eine große Anzahl an Möglichkei- ten an die Hand gegeben, über deren Realisierung er sich jeweils mit seinem Meister einigen muss. Aber es gibt durchaus diverse Berichte von Baumwurzeln, die in Felsspalten eindringen und ganze Felsen sprengen, aber auch Bäume, die sich als Brücke über einen Abgrund spannen, und sogar junge Triebe, die ein Türschloss aufbrechen. Einige Variationsmöglichkeiten des Zaubers sind im Folgenden aufgeführt: U Schnelles Wachstum. Die Pflanze wächst nach den Vorstellungen des Elfen in einer unnatürlichen Geschwindigkeit weiter. Dabei hängt der Probenzuschlag von dem Faktor ab, um den das Wachstum beschleunigt werden soll: +2 ergibt das Wachstum einer Woche innerhalb einer Minute, +4 das Wachstum eines Jahres in einer Minute und +8 entsprechend das Wachstum eines Jahrzehnts. Dabei kann keine Pflanze größer werden als durch natürlichen Wuchs, und wenn die Pflanze ihr maximales Alter erreicht hat, verfällt sie auch nicht wieder. Ein Grashalm wird also auch bei einem scheinbaren Alter von 100 Jahren einfach nur aussehen wie ein ausgewachsener Grashalm. Die Kosten hängen hierbei natürlich von der Größe der Pflanze, dem Beschleunigungs- faktor und der überbrückten Zeit ab. U Schnelle Blüte. Diese Variante ähnelt dem Schnellen Wachstum, allerdings mit dem entscheidenden Unterschied, dass die Pflanze sich so verhält, als würde sie die Jahreszeiten dabei durchleben: Sie entwickelt Knospen, Blüten, Früchte, wirft gegebenenfalls ihr Laub ab, um dann wieder neues zu bekommen. Bei dieser Variante geschieht es durchaus, dass eine Pflanze, die ihre maximale Lebenserwartung überschreitet, stirbt und dann in gleicher Geschwindigkeit verrottet. Die Probenzuschläge entsprechen denen des Schnellen Wachstums, die Kosten liegen aber etwa beim Doppelten, was bedeutet: einen kleinen Kirschbaum etwa einen Monat vor der Zeit Früchte tragen zu lassen, kostet etwa 10 AsP, einen Urwaldriesen, der nur alle zwölf Jahre Früchte trägt, von einer in die nächste Blüte zu treiben, sicherlich 50 AsP und mehr. Nur mit dieser Variante ist es übrigens möglich, aus einem Samenkorn eine neue Pflanze entstehen zu lassen. U Dauerhafte Form. In der einfachsten Möglichkeit kann zum Beispiel ein junger Baum so verformt werden, dass er einen Torbogen bildet (+3; 12 AsP), oder die Rinde eines knorrigen Baumes so an- gepasst, dass sie scheinbar ein Gesicht erhält (+5; 7 AsP). Weiterhin denkbar wäre es, einen Tunnel in ein Dornengestrüpp hinein zu formen (+/–0; 3 AsP/Schritt). Deutlich aufwendiger, aber ebenfalls möglich ist es, einen lebenden Baum dazu zu veranlassen, Möbel auszuprägen (Regalflächen, Sitzfläche und Lehne ...; +12; um 50 AsP) oder schließlich sogar ganze Baumhäuser mit lebendigem Boden, Dach und Fenstern zu formen (+12; über 150 AsP). Ein geschickter und schriftkundiger Elf kann auch Botschaften in die Rinde eines Baumes schreiben (+7; 5 AsP). Ausdrücklich nicht möglich ist es jedoch, eine Pflanze völlig unna- türlichen Veränderungen zu unterziehen: Keine Pflanze kann z. B. gezielte Schläge ausführen.",
+    "cost": "von 3 AsP für kleine Veränderungen wie dem schnellen Wachstum einer kleinen Heilpflanze bis hin zu 200 AsP für die deutliche Umformung eines großen Baumes (Meisterentscheid; abhängig von der Größe der Pflanze und dem Umfang der Veränderung).",
+    "target": "einzelne Pflanze",
+    "distance": "Berührung",
+    "duration": "augenblicklich (Die Verformung geschieht während der Zauberdauer, die Auswirkungen sind dauerhaft; die Pflanze kehrt nicht in ihre alte Ge stalt zurück, wächst aber normal weiter, so dass sich die Verformungen im Lauf der Zeit wieder auswachsen können.)",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "nicht bekannt",
+    "antimagic": "kann in Zonen der antimagischen Sprüche EIGENSCHAFT WIEDERHERSTELLEN, HUMUSBANN oder VERWANDLUNG BEENDEN nur erschwert gesprochen werden. Da keine Matrizen mehr wirken, um die Verzauberung nach der Zauberdauer aufrechtzuerhalten, kann ein HASELBUSCH nur während dieser Zauberdauer aufgehoben werden.",
+    "complexity": "D",
+    "characteristics": ["Eigenschaften", "Elementar (Humus)", "Form"],
+    "variants": [
+      {
+        "name": "Schnelle Schlinge",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Mit dieser Variante kann eine Rankpflanze so sehr beschleunigt werden, dass sie in der Lage ist, auch Tiere (oder Waldfrevler) einzufangen (+7; 12 AsP). Ihr AT-Wert hierfür entspricht 5 plus den ZfP*."
+      }
+    ],
+    "distribution": [
+      { "representation": "Elf", "distribution": 5},
+      { "representation": "Geode", "distribution": 3},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Elf"},
+      { "representation": "Hexe", "distribution": 2, "subRepresentation": "Elf"},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Elf"}
+    ]
   }
 ]
