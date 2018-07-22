@@ -3226,7 +3226,7 @@
     "effect": "Dieser Zauber hindert Geister (aus der Gruppe der Totengeister) für geraume Zeit daran, sich zu manifestieren und zu spuken. Der Geist kann ZfP* Tage und Nächte nicht erschei- nen, sich nicht manifestieren oder ähnliche Aktionen ausführen. Nach Ablauf dieser Zeit kann er wieder umgehen wie zuvor. Der Druide spricht stets einen bestimmten Geist an, so dass nur dieser betroffen ist, auch wenn mehrere Geister anwesend sind. Sorgfältige magische Analyse der vorhandenen Geisterpräsenz im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf GEISTERBANN um einen Punkt erleichtert.",
     "cost": "dreifache Austreibungsschwierigkeit des Geistes in AsP, mindestens aber 11 AsP",
     "target": "Einzelwesen",
-    "distance": "ZfW mal 3 Schritt Radius um das Penta gramm",
+    "distance": "ZfW mal 3 Schritt Radius um das Pentagramm",
     "duration": "Es dauert Austreibungsschwierigkeit des Geistes in Minuten, bis er dem Befehl nachkommt. Danach ist er für ZfP* Tage und Nächte gebannt.",
     "modifications": ["Erzwingen", "Zielobjekt (mehrere)", "Kosten", "Reichweite"],
     "reversalis": "keine Wirkung",
@@ -3264,6 +3264,69 @@
       { "representation": "Gildenmagier", "distribution": 5},
       { "representation": "Geode", "distribution": 4},
       { "representation": "Hexe", "distribution": 4}
+    ]
+  },
+  {
+    "page": 98,
+    "name": "Geisterruf",
+    "trial": "MU/MU/CH",
+    "difficulty": "+Austreibungsschwierigkeit des Geistes",
+    "technik": "Der Druide entzündet eine Fackel, Kerze oder ein sonstiges kleines Feuer und konzentriert sich auf den Rauch.",
+    "castTime": "ca. eine Spielrunde",
+    "effect": "Ein beliebiges Wesen aus der Gruppe der Totengeister (gefesselte Seele, Spuk ...; siehe das Kapitel Die Kunst der Invokation im Band Wege der Zauberei), das sich vor Ort aufhält (also aus irgendeinem Grund noch durch die Dritte Sphäre streift und sich innerhalb der Reichweite befindet) wird herbeigerufen und dazu gebracht, sich zu manifestieren. Der Druide kann mit dem Geist reden, ihn um Hilfe oder Informatio- nen bitten und Abmachungen mit ihm treffen, aber er kann ihn nicht gänzlich unter seinen Willen zwingen. Eine Kontroll-Probe, abgelegt auf (MU + IN + CH + CH + ZfW)/5, entscheidet, ob der Totengeist die Bitte des Druiden erfüllt. Solcherart gerufene Geister sind meist kooperationsbereit, weil sie sich Erlösung erhoffen. In den seltensten Fällen (20 auf 1W20) greifen sie aus einer Laune heraus ihren Beschwörer an. Es ist möglich (bei 18 und 19 auf 1W20), dass nicht nur ein Geist erscheint, sondern mehrere, sofern mehrere Geister mit der entsprechenden oder einer niedrigeren Anrufungsschwierigkeit in der Nähe sind. Für all diese Geister müssen entsprechend AsP aufgebracht werden. Es kann aber durchaus auch sein, dass kein Geist erscheint, obwohl der Zauber gelungen ist, denn auch wenn es in Aventurien eine Menge Geister gibt, ist der Kontinent doch nicht übersät von ihnen. Dieser Zauber sollte nachts gewirkt werden; tagsüber ist die Probe um 7 Punkte erschwert.",
+    "cost": "9 AsP pro Geist",
+    "target": "Einzelwesen",
+    "distance": "ZfW mal 20 Schritt Radius um den Druiden herum",
+    "duration": "Der Geist entscheidet selbst, wie lange er bleiben will.",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "entspricht dem GEISTERBANN",
+    "antimagic": "Sowohl GEISTERBANN als auch HERBEIRUFUNG VEREITELN erschweren als Zone das Wirken des GEISTERRUF und können ihn, gezielt gesprochen, beenden.",
+    "complexity": "D",
+    "characteristics": ["Geisterwesen", "Herbeirufung"],
+    "variants": [
+      {
+        "name": "Bestimmter Geist",
+        "mod": "+7",
+        "minZfW": 7,
+        "effect": "Der Druide kann einen speziellen Geist rufen. Verfügt er über einen Gegenstand oder ein Körperteil (z.B. Haare, Finger- nägel ...), der dem Geist zu Lebzeiten gehörte, ist die Probe nicht erschwert (er ist jedoch trotzdem erst ab ZfW 7 möglich). Der Gegenstand wird beim Zaubern nicht verbraucht, aber der Geist könnte ihn beanspruchen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 6},
+      { "representation": "Geode", "distribution": 3},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3}
+    ]
+  },
+  {
+    "page": 99,
+    "name": "Granit und Marmor",
+    "trial": "MU/CH/KO",
+    "difficulty": "+MR",
+    "technik": "Der Magier schlägt die Fingerknöchel der linken und der rechten Hand aneinander und spricht die Formel.",
+    "castTime": "10 Aktionen",
+    "effect": "Das Opfer dieses Spruches verwandelt sich langsam und dauerhaft in das vor Ort vorherrschende Gestein. Dadurch sinken alle körperlichen Eigenschaften (GE, FF, KO, KK) pro Spielrunde um ZfP*/2 Punkte. Die vollständige Versteinerung zur Statue ist abgeschlossen, wenn all diese Eigenschaften auf 0 gesunken sind. Eventuelle Kleidung und Ausrüstung sind nicht betroffen. Die entstandene Statue ist in jeder Hinsicht wie Gestein zu behandeln: Er gilt (z.B. für den EXPOSAMI) nicht mehr als Lebewesen, kann mit entsprechender großer Kraft zerstört werden und verwittert im Laufe von Jahren und Jahrzehnten (sprich: das Opfer altert auch langsamer). Zerstörungen an der Statue wirken sich bei der Zurückverwandlung wie entsprechende Verletzungen am Körper aus. Wird also etwa eine vermeintliche spätbosparanische Marmorstatue, der bereits Arme und ein Bein fehlen, mittels Antimagie zurückverwandelt, hat man einen schmerzentstellten, blutenden Menschen vor sich, der wohl binnen kürzester Zeit stirbt ... Verwitterungserscheinungen bleiben als Narben zurück. Eine zurückverwandelte Person hat keinerlei Erinnerung an die Zeit als Statue.",
+    "cost": "30 AsP (borbaradianische Variante: 3W20 AsP oder 3W20/2 LeP)",
+    "target": "Einzelwesen",
+    "distance": "3 Schritt (borbaradianische Variante: Berührung)",
+    "duration": "ZfP* Wochen",
+    "modifications": ["Zauberdauer", "Wirkungsdauer", "Kosten", "Erzwingen"],
+    "reversalis": "hebt die Verwandlung auf.",
+    "antimagic": "kann in einer Zone des VERWANDLUNG BEENDEN nur erschwert gewirkt und von diesem Zauber beendet werden. Ist die vollständige Versteinerung noch nicht abgeschlos- sen, sind die AsP-Kosten anteilig geringer. Zur Beendigung der permanenten Variante muss ein permanenter AsP aufgewendet werden. Kann von einem GARDIANUM aufgehalten und von einem INVERCANO zurückgeworfen werden. Gegen die borbaradianische Variante wirkt auch der AGRIMOTHBANN.",
+    "complexity": "D",
+    "characteristics": ["Form", "nicht Bor: Elementar (Erz)", "Bor: Dämonisch (Agrimoth)"],
+    "variants": [
+      {
+        "name": "Bestimmter Geist",
+        "mod": "+7",
+        "minZfW": 7,
+        "effect": "Der Druide kann einen speziellen Geist rufen. Verfügt er über einen Gegenstand oder ein Körperteil (z.B. Haare, Finger- nägel ...), der dem Geist zu Lebzeiten gehörte, ist die Probe nicht erschwert (er ist jedoch trotzdem erst ab ZfW 7 möglich). Der Gegenstand wird beim Zaubern nicht verbraucht, aber der Geist könnte ihn beanspruchen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Borbaradianer", "distribution": 2},
+      { "representation": "Gildenmagier", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
   }
 ]
