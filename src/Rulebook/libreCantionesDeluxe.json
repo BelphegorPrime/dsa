@@ -3449,5 +3449,40 @@
       { "representation": "Scharlatan", "distribution": 3},
       { "representation": "Elf", "distribution": 2}
     ]
+  },
+  {
+    "page": 103,
+    "name": "Hartes Schmelze!",
+    "trial": "MU/KL/KK",
+    "difficulty": "",
+    "technik": "Der Zaubernde legt die Hand auf das Material, das er zum Schmelzen bringen will, und spricht die Formel.",
+    "castTime": "3 Aktionen",
+    "effect": "Der Zauber lässt eine bestimmte Menge eines harten Materials weich und formbar wie Wachs werden. Nach Ende der Wirkungsdauer nimmt die Materie wieder ihre ursprüngliche Härte an und erstarrt in der Form, die der Magier ihr gegeben hat. Der Zauber wirkt nicht gegen lebende Materie (z.B. die Knochen eines lebenden Wesens) oder magische Objekte jeglicher Art; ansonsten sind ihrem Einsatz jedoch keine Grenzen gesetzt. 100 Kubikzentimeter sind übrigens eine ganze Menge, wenn man weiß, an welcher Stelle man einen bestimmten Gegenstand erweichen will. Uns ist nicht bekannt, ob es künstlerisch veranlagte Borbaradianer gibt; wenn ja, dann sind diese sicherlich in der Lage, mittels dieser Formel außergewöhnliche Plastiken aus jeglicher Art Material zu erschaffen. Dazu ist jedoch handwerkliche Fingerfertigkeit vonnöten, denn nur die Erweichung, nicht aber die Verformung selbst, erfolgt auf Wunsch und Willen. Vom Standpunkt der Elementartheorie scheint es sich recht eindeutig um die Erhöhung der ‘wässrigen Komponente’ in einer harten Substanz zu handeln.",
+    "cost": "2 AsP pro 100 Kubikzentimeter, mindestens aber 7 AsP (borbaradianische Variante: 1W20 AsP oder 1W20/2 LeP)",
+    "target": "Einzelobjekt oder Teil eines solchen (borbaradianische Variante: Einzelobjekt oder Teil eines solchen mit maximal 1000 Kubikzentimetern zusammenhängendem Volumen)",
+    "distance": "Berührung",
+    "duration": "ZfP*/2 SR (borbaradianische Variante: so viele Minuten wie AsP); die entstandene Verformung ist augenblicklich und daher irreversibel.",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "entspricht einem WEICHES ERSTARRE!",
+    "antimagic": "in Zonen des OBJEKT ENTZAUBERN und des WASSERBANN (bzw. des AGRIMOTHBANN) nur erschwert zu wirken und mit den genannten Zaubern während der Zauberdauer aufzuheben.",
+    "complexity": "C",
+    "characteristics": ["Objekt,", "nicht Bor: Elementar (Wasser)", "Bor: Dämonisch (Agrimoth)"],
+    "variants": [
+      {
+        "name": "borbaradianische Variante",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Die borbaradianische Variante ist reversibel: Da der Zauber das Material in einen ‘unnatürlichen’ Zustand versetzt und die in der neuen Form gespeicherte Astral energie eine magische Matrix aufrechterhält, lässt sich das verzau- berte Objekt mittels VERWANDLUNG BEENDEN in seine ursprüngliche Form zurückversetzen. Ein AGRIMOTHBANN führt zum Aufbrechen der Haltematrix und zum unkontrollierten Zerfließen des Gegenstands."
+      }
+    ],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 7},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Schelm", "distribution": 3},
+      { "representation": "Scharlatan", "distribution": 3},
+      { "representation": "Elf", "distribution": 2}
+    ]
   }
 ]
