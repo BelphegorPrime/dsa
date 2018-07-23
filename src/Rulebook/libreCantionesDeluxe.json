@@ -3826,7 +3826,64 @@
       { "representation": "Druide", "distribution": 2, "subRepresentation": "Hexe"},
       { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Hexe"},
       { "representation": "Scharlatan", "distribution": 2, "subRepresentation": "Hexe"}
-
+    ]
+  },
+  {
+    "page": 116,
+    "name": "Hexenkrallen",
+    "trial": "MU/IN/KO",
+    "difficulty": "",
+    "technik": "Die Hexe krümmt die Finger krallenartig und ruft ihr Seelentier herauf.",
+    "castTime": "3 Aktionen",
+    "effect": "Die Fingernägel der Hexe wachsen um etwa 2 bis 4 Finger und werden scharf und hart wie Katzen- oder Vogelkrallen. Damit kann sie im Nahkampf 1W6+1 TP anrichten, sich Klettern-Proben auf geeigneten Oberflächen um ZfP*/2 Punkte erleichtern oder gar mit etwas Mühe Stricke durchtrennen.",
+    "cost": "3 AsP für die Verwandlung plus 1 AsP pro Spielrunde",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "je nach AsP-Einsatz (beim Wirken des Zaubers festzulegen), maximal jedoch ZfP*/2 Spielrunden",
+    "modifications": ["Zauberdauer", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt einen wirkenden HEXENKRALLEN auf.",
+    "antimagic": "Sowohl EIGENSCHAFT WIEDERHERSTELLEN als auch VERWANDLUNG BEENDEN heben den Zauber auf; in den entsprechenden antimagischen Zonen ist er schwieriger zu wirken.",
+    "complexity": "C",
+    "characteristics": ["Eigenschaften", "Form"],
+    "variants": [
+      {
+        "name": "Zwanzig Krallen",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Auch die Fußnägel der Hexe verwandeln sich in Krallen. Klettern-Proben sind nun um ZfP* Punkte erleichtert. Die Hexe kann jedoch kein (gewöhnliches) Schuhwerk mehr tragen."
+      },{
+        "name": "Verborgene Kralle",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Die Hexe kann die Krallen einziehen, um sie zu verbergen, und beliebig wieder ausfahren."
+      }
+    ],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 3, "comment": "nur bei Katzen- ,Raben- und Eulenhexen"}
+    ]
+  },
+  {
+    "page": 117,
+    "name": "Hexenspeichel",
+    "trial": "IN/CH/FF",
+    "difficulty": "",
+    "technik": "Die Hexe streicht ihren Speichel auf die Wunde des Verletzten; bei Krankheiten und Vergiftun gen muss der Speichel auf die Zunge des Erkrankten aufgetragen werden.",
+    "castTime": "20 Aktionen",
+    "effect": "Mit diesem Zauber kann eine Hexe den durch Wunden, Krankheiten und Gifte verursachten Schaden heilen. Bei Wunden gibt der Zauber einen Lebenspunkt pro 2 eingesetzte Astralpunkte zurück, bei Krankheiten 1 LeP pro AsP, bei Vergiftungen 2 LeP für 1 AsP. Die schädliche Wirkung von Giften und Krankheiten kann mit diesem Spruch jedoch nicht gestoppt werden. Die Hexe kann sich mit ihrem Speichel üblicherweise nicht selbst heilen; dafür ist eine Spontane Modifikation des Zaubers nötig. Auch vom Tode bedrohte Patienten (zwischen 0 LeP und –KO LeP) vom Rande des Todes zurückzuholen gelingt, wenn der Zauber sofort und mit vollem Einsatz gesprochen wird (mindestens 10 AsP, außerdem muss der Patient hierdurch auf mindestens 1 LeP kommen; Probe erschwert um (LeP unter null) x 2). Jeder zurück- zubringende LeP unter 0 kostet die Zaubernde die doppelten der o.g. AsP. Dabei verliert die Zaubernde für je 10 angefangene LeP unter 0 einen permanenten AsP (jedoch nur, wenn der Zauber gelingt), der jedoch nach den Regeln von Wege des Schwerts 173 zurückgekauft werden kann. Ein Patient, dessen LeP unter den negativen Wert seiner Wundschwelle (üblicherweise also unter –KO/2) gefallen sind, hat so schwere Schäden erlitten, dass er permanent einen LeP verliert (Optionalregel aus WdS 56).",
+    "cost": "siehe oben; maximal können ZfW AsP auf einmal eingesetzt werden.",
+    "target": "Einzelperson, freiwillig",
+    "distance": "Berührung",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Reichweite (selbst)"],
+    "reversalis": "Die Spucke der Hexe erzeugt für ZfP* AsP die Hälfte dieses Wertes als Schaden auf der Haut des Opfers (die Grundlage des Zaubers HEXENGALLE).",
+    "antimagic": "kann in einer Zone des HEILKRAFT BANNEN nur erschwert gewirkt werden.",
+    "complexity": "C",
+    "characteristics": ["Heilung"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 7},
+      { "representation": "Geode", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Hexe"}
     ]
   }
 ]
