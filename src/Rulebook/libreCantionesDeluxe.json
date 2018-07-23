@@ -3671,5 +3671,62 @@
       { "representation": "Achaz", "distribution": 2},
       { "representation": "Gildenmagier", "distribution": 2}
     ]
+  },
+  {
+    "page": 111,
+    "name": "Herzschlag Ruhe!",
+    "trial": "MU/CH/KK",
+    "difficulty": "+MR",
+    "technik": "Der Magier spricht die Formel und berührt das Opfer in der Herzgegend.",
+    "castTime": "20 Aktionen; davon müssen 3 aufeinander folgende Aktionen Berührung sein.",
+    "effect": "Dem Opfer dieses Spruches bleibt das Herz schlagartig stehen. Je nach eingesetzter Astralenergie dauert diese Wirkung unterschiedlich lange an. Nach den ersten 10 Kampfrunden erleidet das Opfer 1W20 Schadenspunke, nach den nächsten 10 KR weitere 2W20, danach 3W20, 4W20 und so fort, je nachdem, wie viele AsP der Borbaradianer aufgewendet hat. Das Opfer ist nicht in der Lage, selbst etwas gegen den Zauber zu unternehmen, da es von Todesangst wie gelähmt ist.",
+    "cost": "1W20 AsP pro 10 KR Dauer (bzw. die Hälfte dieser Kosten als LeP)",
+    "target": "Einzelperson",
+    "distance": "Berührung",
+    "duration": "je nach eingesetzten AsP (A)",
+    "modifications": ["Zauberdauer", "Reichweite"],
+    "reversalis": "ermöglicht unter Aufbietung aller Kräfte (für 5W20 AsP und mit einer Probe gegen die doppelte MR) eine Wiederbelebung, die aber innerhalb von 1W20 Kampfrunden erfolgen muss, sonst fehlt dem Wiedererweckten die Seele.",
+    "antimagic": "EIGENSCHAFT WIEDERHERSTELLEN, EINFLUSS BANNEN und BLAKHARAZ-BANN beenden die Wirkung; ihre Zonen-Varianten erschweren den Zauber.",
+    "complexity": "D",
+    "characteristics": ["Dämonisch (Blakharaz)", "Eigenschaften", "Einfluss"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Borbaradianer", "distribution": 3}
+    ]
+  },
+  {
+    "page": 112,
+    "name": "Hexenblick",
+    "trial": "IN/IN/CH",
+    "difficulty": "",
+    "technik": "Die Hexe sieht ihrem Gegenüber starr in die Augen und sucht nach einer Gefühls- verwandtschaft.",
+    "castTime": "4 Aktionen",
+    "effect": "Mit Hilfe dieses Zaubers können Hexen (genauer: Kenner derselben Repräsentation) einander an den Augen erkennen. Ist der Mensch, den die Hexe anschaut, selbst eine Tochter Satuarias, so verfärbt sich die Iris des Angeschauten und die der Betrachterin in ein dunkles Purpur. Diese Verfärbung kann aber nur von den beteiligten Hexen wahrgenommen werden.",
+    "cost": "für beide Beteiligte je 1 AsP; die Angeblickte kann sich gegen diesen AsP-Verlust nicht wehren (borbaradianische Variante: 1W3 AsP für beide Beteiligten bzw. die Hälfte dieser Kosten als LeP)",
+    "target": "Einzelperson",
+    "distance": "selbst; der Blick reicht 3 Schritt weit.",
+    "duration": "4 Aktionen (die Zauberdauer)",
+    "modifications": ["Zauberdauer", "Erzwingen", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "In einer Zone des VERSTÄNDIGUNG STÖREN kann der Hexenblick nur erschwert gewirkt werden.",
+    "complexity": "B",
+    "characteristics": ["Verständigung", "Bor: Dämonisch (allgemein)"],
+    "variants": [
+      {
+        "name": "Blickloser Blick",
+        "mod": "+7",
+        "minZfW": 0,
+        "effect": "Statt der Purpurfärbung spüren die Hexen die Gefühlsverwandtschaft; auch für blinde Hexen anwendbar."
+      },{
+        "name": "Spiegelblick",
+        "mod": "+0",
+        "minZfW": 11,
+        "effect": "Eine Hexe, die den Zauber gut genug beherrscht, kann sich gegen das Erkennen und den AsP-Verlust wehren, wenn ihr selbst eine HEXENBLICK-Probe gelingt und sie mehr ZfP* übrig behält als ihre Schwester."
+      }
+    ],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 7},
+      { "representation": "Borbaradianer", "distribution": 3}
+    ]
   }
 ]
