@@ -3627,5 +3627,49 @@
       { "representation": "Gildenmagier", "distribution": 3},
       { "representation": "Hexe", "distribution": 2}
     ]
+  },
+  {
+    "page": 110,
+    "name": "Herr über das Tierreich",
+    "trial": "MU/MU/CH",
+    "difficulty": "+MR",
+    "technik": "Der Druide fixiert das Tier und bewegt den ausgestreckten Zeigefinger kreisförmig vor dessen Augen.",
+    "castTime": "5 Aktionen",
+    "effect": "Mit diesem machtvollen Spruch kann der Druide praktisch jedes Tier in seinen Bann ziehen und ihm Befehle geben. Unter der Wirkung des Spruchs reagiert das Tier wie gut dressiert; es kann als Kampfgenosse, Überbringer von Nachrichten o.ä. eingesetzt werden. Bei Befehlen, die der Natur des Tieres deutlich zuwiderlaufen, kann der Meister Zuschläge bis zu 7 Punkten verhängen. Der Spruch wirkt nur auf das, was im allgemeinen Sprachge- brauch als ‘Tier’ zählt, nicht auf vernunftbegabte Wesen, Zauber- kreaturen (Einhörner, tiergestaltige Feen, Vertraute oder Dämonen) oder Untote. Und bei tumbem Schleimgetier wird es wohl nur zu einfachen Befehlen wie ‘Halt!’ und ‘Friss!’ reichen.",
+    "cost": "Gefährlichkeitswert (siehe Zoo-Botanica Aventurica 62) des Tieres in AsP, mindestens jedoch 4 AsP",
+    "target": "Einzelwesen",
+    "distance": "3 Schritt",
+    "duration": "ZfP* Spielrunden",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt eine entsprechende Beherrschung auf und kann auch genutzt werden, um dressierte Tiere zu verwirren, die einen klaren, nichtmagischen Befehl (“Fass!”) erhalten haben.",
+    "antimagic": "BEHERRSCHUNG BRECHEN hebt den Zauber auf; in einer entsprechenden antimagischen Zone ist er schwieriger zu wirken.",
+    "complexity": "D",
+    "characteristics": ["Herrschaft"],
+    "variants": [
+      {
+        "name": "kristallomantische Variante",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Die kristallomantische Variante ist gegen ge schuppte Tiere um 3 Punkte erleichtert, gegen alle anderen Tiere um 3 Punkte erschwert."
+      },{
+        "name": "Herr über die Monstren",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Mit dem Einsatz von 3 Punkten können auch Tier-Tier-Chimären beherrscht werden, also Chimären, die ausschließlich aus Tieren im obigen Sinn geschaffen wurden und selbst nicht zauberfähig sind (was sie von ‘echten Zauberkreaturen’ wie Einhörnern unterscheidet); mit einer Probe +5 auch Tier-Pflanze-Chimären. In beiden Fällen muss natürlich noch die Magieresistenz überwunden werden."
+      },{
+        "name": "Herr der Fliegen",
+        "mod": "+0",
+        "minZfW": 7,
+        "effect": "Mit dieser Variante können ganze Schwärme von Insekten beherrscht werden. Die MR des Schwarms entspricht der MR eines einzelnen Insekts (also zwischen 12 und 15); die Kosten leiten sich aus dem GW des Schwarms ab."
+      }
+    ],
+    "distribution": [
+      { "representation": "Druide", "distribution": 7},
+      { "representation": "Geode", "distribution": 6},
+      { "representation": "Elf", "distribution": 3},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Gildenmagier", "distribution": 2}
+    ]
   }
 ]
