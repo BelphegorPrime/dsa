@@ -3699,7 +3699,7 @@
     "name": "Hexenblick",
     "trial": "IN/IN/CH",
     "difficulty": "",
-    "technik": "Die Hexe sieht ihrem Gegenüber starr in die Augen und sucht nach einer Gefühls- verwandtschaft.",
+    "technik": "Die Hexe sieht ihrem Gegenüber starr in die Augen und sucht nach einer Gefühlsverwandtschaft.",
     "castTime": "4 Aktionen",
     "effect": "Mit Hilfe dieses Zaubers können Hexen (genauer: Kenner derselben Repräsentation) einander an den Augen erkennen. Ist der Mensch, den die Hexe anschaut, selbst eine Tochter Satuarias, so verfärbt sich die Iris des Angeschauten und die der Betrachterin in ein dunkles Purpur. Diese Verfärbung kann aber nur von den beteiligten Hexen wahrgenommen werden.",
     "cost": "für beide Beteiligte je 1 AsP; die Angeblickte kann sich gegen diesen AsP-Verlust nicht wehren (borbaradianische Variante: 1W3 AsP für beide Beteiligten bzw. die Hälfte dieser Kosten als LeP)",
@@ -3727,6 +3727,46 @@
     "distribution": [
       { "representation": "Hexe", "distribution": 7},
       { "representation": "Borbaradianer", "distribution": 3}
+    ]
+  },
+  {
+    "page": 113,
+    "name": "Hexengalle",
+    "trial": "MU/IN/CH",
+    "difficulty": "",
+    "technik": "Die Hexe spuckt ihr Opfer an.",
+    "castTime": "2 Aktionen",
+    "effect": "Der Speichel der Hexe wird ätzend und richtet beim Auftreffen auf eine ungeschützte Stelle eines Opfers Schaden an: Für je 1 AsP kann 1 SP erzielt werden. Zusätzlich wird das Opfer von Übelkeit gepackt, schmeckt Galle im Mund und muss eine um die erlittenen SP erschwerte KO-Probe ablegen (Resistenz/Immunität gegen tierische, Zauber- und Kontaktgifte helfen bei der KO-Probe). Bei Gelingen bleibt das Opfer unbeeinträchtigt, bei Misslingen ist es für die nächsten 5 KR mit Würgen und Erbrechen beschäftigt. Anschließend kann es mit einer um den gleichen Wert erschwerten KO-Probe versuchen, den Brechreiz zu überwinden, ansonsten würgt es für weitere 5 KR etc. bis zum Ende der Wirkungsdauer. Der Speichel richtet bei unbelebten Objekten keinen Schaden an. Der Zauber garantiert nicht, dass die Spucke der Zaubernden ihr Ziel findet: Dazu ist ein um den RS erschwerter Fernkampfangriff (Probe mit einem W20 auf Fernkampf-Basiswert +10) nötig. Die Probe ist eventuell zusätzlich um Zonen-Zuschlag (dann aber nur um den jeweiligen Zonen-RS) erschwert, wenn die Hexe eine bestimmte Körperzone treffen will. Dem Opfer steht eine um ZfP* erschwerte Ausweichen-Probe zu.",
+    "cost": "siehe oben, maximal dürfen ZfW AsP eingesetzt werden.",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst; die Spuckweite beträgt 3 Schritt.",
+    "duration": "augenblicklich; die Übelkeit dauert längstens ZfP* KR an.",
+    "modifications": ["Zauberdauer", "Kosten"],
+    "reversalis": "wie der Heilzauber HEXENSPEICHEL.",
+    "antimagic": "Wer mit einem ARMATRUTZ geschützt ist, bietet keine Angriffsfläche für die Spucke. Ein GARDIANUM fängt den Zauber (nicht jedoch die Spucke selbst) ebenfalls ab. Kann in einer Zone des SCHADENSZAUBER BANNEN nur erschwert gewirkt werden.",
+    "complexity": "C",
+    "characteristics": ["Schaden"],
+    "variants": [
+      {
+        "name": "Hexenleim",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Der Speichel bleibt ZfP* SR lang giftig und kann daher auch als Kontaktgift verwendet werden."
+      },{
+        "name": "Krötenschweiß",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Der Schweiß der Hexe wird ätzend – wer sie binnen der nächsten Spielrunde ohne Handschuhe berührt, erleidet pro Berührung 1W3 SP. Ein waffenloser Angriff der Hexe, der eine ungeschützte Stelle trifft (aber auch eine gewöhnliche, etwas festere Berührung), richtet zusätzlich zu den üblichen TP(A) eines waffenlosen Angriffs 1W3 echte SP an. Diese Variante kostet 13 AsP."
+      },{
+        "name": "Drachenspeichel",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Der Speichel wirkt auch gegen unbelebte Objekte und frisst rauchende Löcher in alle Materialien. Für 1 AsP richtet der Speichel 2 SP an der Struktur eines unbelebten Objekts an. Schaden an Lebewesen wie gehabt. Bei der ‘Fernkampf-Probe’ gegen Personen muss unterschieden werden: Gelingt die Probe trotz Zuschlag durch RS, ist die Person getroffen – gelingt sie nur ohne den Zuschlag, wurde die Rüstung getroffen und beschädigt."
+      }
+    ],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Achaz", "distribution": 3}
     ]
   }
 ]
