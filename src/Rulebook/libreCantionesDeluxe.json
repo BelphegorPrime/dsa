@@ -3802,5 +3802,31 @@
     "distribution": [
       { "representation": "Hexe", "distribution": 7}
     ]
+  },
+  {
+    "page": 115,
+    "name": "Hexenknoten",
+    "trial": "KL/IN/CH",
+    "difficulty": "",
+    "technik": "Die Hexe verknotet ein Stück Schnur, einen Faden oder ein Haar und wirft es über die Schulter hinter sich.",
+    "castTime": "10 Aktionen",
+    "effect": "Durch diesen Zauber entsteht eine illusionäre Barriere nach Wahl der Hexe, die so bedrohlich wirkt, dass sie von den meisten intelligenten Lebewesen (nämlich von all jenen mit einer MR kleiner oder gleich den ZfP*) nicht überwunden werden kann – wohl aber von den meisten Tieren und von Zaubern, Pfeilen oder Speeren (und auch von Untoten und Dämonen). Die maximale Breite der Barriere entspricht ZfW x 2 Schritt, die maximale Höhe ZfW/2 Schritt. Ein gegen die Barriere anrennender Ork wird nicht plötzlich gegen die illusorische Felswand prallen und sich eine Beule am Kopf holen, sondern alles tun, um zu verhindern, dass er die Wand überhaupt berührt, da sie ihm außerordentlich real und bedrohlich erscheint. Je nach Vorstellungsvermögen der Hexe blicken die Verfolger in einen gähnenden Abgrund, eine Flammenwand oder eine bluttriefende Dornenhecke. Magietheoretisch scheint dies plausibel, wenn man sich den HEXENKNOTEN als einen Kombination einer Illusion mit einem Furchtzauber vorstellt. Die Realitätsdichte (siehe den Kasten zum Thema Illusionen auf Seite 34) beträgt ZfP*/2+7 Punkte.",
+    "cost": "4 AsP",
+    "target": "Zone",
+    "distance": "Der Zauber entsteht, wo das Haar zu Boden fällt; Breite und Höhe siehe Wirkung.",
+    "duration": "ZfP*/2 Spielrunden",
+    "modifications": ["Zauberdauer", "Erzwingen (betrifft dann auch höhere MR)", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "Ein wirkender HEXENKNOTEN wird aufgehoben.",
+    "antimagic": "ILLUSION AUFLÖSEN zerstört die Illusion, nicht aber das tief sitzende Gefühl der Bedrohung von dieser Stelle aus, EINFLUSS BANNEN belässt die Illusion intakt, entfernt aber das Gefühl der Bedrohung. Beide Zauber machen es in ihrer Zonen variante schwieriger, den HEXENKNOTEN zu wirken.",
+    "complexity": "C",
+    "characteristics": ["Einfluss", "Illusion"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 7},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Hexe"},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Hexe"},
+      { "representation": "Scharlatan", "distribution": 2, "subRepresentation": "Hexe"}
+
+    ]
   }
 ]
