@@ -3768,5 +3768,39 @@
       { "representation": "Hexe", "distribution": 3},
       { "representation": "Achaz", "distribution": 3}
     ]
+  },
+  {
+    "page": 114,
+    "name": "Hexenholz",
+    "trial": "KL/FF/KK",
+    "difficulty": "",
+    "technik": "Die Hexe berührt den Gegenstand und lässt ihre Kraft hineinfließen.",
+    "castTime": "1 Spielrunde",
+    "effect": "Mit diesem Zauber lässt die Hexe die ‘Kräfte der Erde’ wieder in totes Holz fließen. So kann sie den Gegenstand beleben und aus der Ferne durch die Luft dirigieren. Das Holz ist zwar zu langsam, um Kampf- handlungen auszuführen, für einen kräftigen Schlag oder Stoß, das Ausfegen einer Kammer oder ein Stuhlwegziehen reicht es aber aus. Der Gegenstand muss mindestens zu zwei Dritteln aus Holz bestehen, darf maximal ZfW x 5 Stein wiegen und nirgendwo eingemauert oder fest angenagelt sein, sehr wohl aber aufgehängt. Ob es sich tatsächlich um die Kräfte der Erde handelt, muss fraglich bleiben, es scheint eher, als würde hier eine elementare Eigenschaft der Luft, die Bewegung, auf das Holz hinabgerufen (was sich aber nicht in den Matrices des Zaubers zeigt). Wenn die Hexe das Objekt aus dem Blickfeld verliert, wiederholt es bis zum Ende der Wirkungsdauer immer wieder die letzte ihm befohlene Bewegung. Verlässt sie den Wirkungsbereich von 7 Schritt, fällt der Gegenstand zu Boden. Das Holz kann hüpfende oder fegende Bewegungen ausführen oder sich schwebend in die Luft erheben. Es kann sich maximal so schnell bewegen wie die Hexe (bei zu hohem Gewicht können Sie als Meister dem jedoch einen Riegel vorschieben). Im Übrigen gilt ein mittels des HEXENHOLZ bewegter Gegenstand nicht als magische Waffe.",
+    "cost": "5 AsP plus 1 AsP pro Spielrunde",
+    "target": "Einzelobjekt",
+    "distance": "7 Schritt",
+    "duration": "je nach AsP-Aufwand (A)",
+    "modifications": ["Zauberdauer", "Kosten", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt die Bewegung auf.",
+    "antimagic": "kann nur erschwert in einer Zone des BEWEGUNG STÖREN gewirkt werden und wird von diesem Zauber beendet.",
+    "complexity": "B",
+    "characteristics": ["Telekinese"],
+    "variants": [
+      {
+        "name": "Verzaubern mehrerer Objekte",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Dies kostet 5 AsP für das erste und 3 AsP für jedes folgende Objekt, dazu kommt 1 AsP pro Spielrunde pro Gegenstand. Pro zusätzlichem Objekt ist die Probe um 3 Punkte erschwert. Das Gesamtgewicht darf ZfW x 5 Stein nicht überschreiten."
+      },{
+        "name": "Hölzerner Diener",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Diese Variante könnte man als den satuarischen ANIMATIO bezeichnen, denn hiermit kann ein hölzerner Gegenstand für die Dauer eines halben Jahres (üblicherweise die Zeit zwischen zwei Hexen- treffen) dazu gebracht werden, auf ein Kommando der Hexe (Fingerschnippen, Schlüssel wort) stets die gleiche Bewegung zu wiederholen, nämlich jene, die die Hexe dem Gegenstand vorgemacht hat (wofür sie ZfW x 10 Aktionen Zeit hat). Selbstrührende Kochlöffel und selbst fegende Besen sind hier die typischsten Beispiele, aber auf Pfiff öffnende Keller- luken oder sich selbst mit Wasser füllende Eimer sind auch sehr praktisch ... Das Maximalgewicht ist wie gehabt; die Hexe muss zur Erteilung des Befehls in Reichweite sein; der Zauber kostet 10 AsP für Gegenstände bis zu 1 Stein Gewicht, 15 AsP für Objekte bis 5 Stein, 20 AsP für Gegenstände bis zu 10 Stein, 25 AsP für Objekte bis zu 50 Stein Gewicht und 40 AsP für schwerere Ob- jekte. Die Hexe kann den Zauber jederzeit unterbrechen und wieder einsetzen lassen, um zwischendrin eine eigenhändige Manipulation durchzuführen. Diese Variante kann nicht mit Spontanen Modifikationen kombiniert werden; sie ist kein (A)-Zauber."
+      }
+    ],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 7}
+    ]
   }
 ]
