@@ -21,7 +21,7 @@ class Advantages extends Component {
         </div>
         <div className="pl-2 pt-2">
           <span className="font-weight-bold">Nachteile:</span>
-          <div>
+          <div className="font-italic">
             {disadvantages.map((advantage, i) => {
               const { name, value } = advantage;
               const isNotLast = disadvantages.length - 1 !== i;
