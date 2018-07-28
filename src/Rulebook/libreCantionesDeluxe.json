@@ -3923,5 +3923,36 @@
       { "representation": "Geode", "distribution": 3},
       { "representation": "Druide", "distribution": 3, "subRepresentation": "Geode"}
     ]
+  },
+  {
+    "page": 119,
+    "name": "Höllenpein zerreisse Dich!",
+    "trial": "KL/CH/KO",
+    "difficulty": "+MR",
+    "technik": "Der Borbaradianer berührt sein Opfer mit der Hand (unter Umständen durch einen gelungenen waffenlosen Angriff nachzuweisen) und flüstert die Formel.",
+    "castTime": "2 Aktionen (eine davon die Berührung)",
+    "effect": "Das Opfer windet sich in unerträglichen Schmerzen, als würden alle seine Muskeln gleichzeitig von einem Krampf befallen. Es ist zu keiner kontrollierten Bewegung fähig; ihm steht jedoch ein intuitiver Ausweichversuch (auf Ausweichen/4) zu, wenn es an ge griffen wird. Das Opfer verliert in jeder KR Ausdauer in Höhe von ZfP* Ausdauerpunkten (borbaradianische Variante: 1W20 Punkten). Sinkt die AU da durch unter 0, kann es sogar bis zum Ende der Wirkungsdauer bewusstlos werden. Nach Ende der Wirkung erleidet das Opfer ZfP*/2 Punkte (borbaradianische Variante: 1W6 Punkte) Erschöpfung. Erleidet das Opfer während der Wirkungs- dauer weiteren, echten Schaden (SP), so fällt die HÖLLENPEIN- Wirkung von ihm ab.",
+    "cost": "11 AsP (borbaradianische Variante: 1W20 AsP bzw. 1W20/2 LeP)",
+    "target": "Einzelwesen",
+    "distance": "Berührung",
+    "duration": "ZfP* mal 3 Kampfrunden",
+    "modifications": ["Zauberdauer", "Zielobjekt (mehrere)", "Reichweite"],
+    "reversalis": "bewirkt Hochgefühl und Euphorie; gibt AuP zurück und kann dadurch sogar eigentlich Kampfunfähige kurzfristig auf den Beinen halten.",
+    "antimagic": "kann in einer Zone des EINFLUSS BANNEN nur erschwert gewirkt und von diesem Zauber beendet werden. (Gegen die borbaradianische Variante wirkt auch der BELHALHARBANN.)",
+    "complexity": "C",
+    "characteristics": ["Einfluss", "Bor: Dämonisch(Belhalhar)"],
+    "variants": [
+      {
+        "name": "Achaz-Variante",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Die Achaz-Variante hat in Wasser eine Reichweite von 3 Schritt und ist gegen Nicht-Geschuppte um 3 Punkte erleichtert."
+      }
+    ],
+    "distribution": [
+      { "representation": "Borbaradianer", "distribution": 7},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Gildenmagier", "distribution": 3}
+    ]
   }
 ]
