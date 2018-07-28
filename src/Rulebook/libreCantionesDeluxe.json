@@ -3976,5 +3976,38 @@
     "distribution": [
       { "representation": "Schelm", "distribution": 2}
     ]
+  },
+  {
+    "page": 121,
+    "name": "Horriphobus Schreckgestalt",
+    "trial": "MU/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Der Magier droht mit der Faust in Richtung seines Opfers und brüllt die Formel.",
+    "castTime": "3 Aktionen",
+    "effect": "Der Magier erscheint seinem Opfer als eine bedrohliche Gestalt und schüchtert es abhängig von den ZfP* ein: 1 ZfP*: Das Opfer hat gehörigen Respekt vor dem Zaubern- den und hält ihn für einen überlegenen Gegner, dem es sich – wenn überhaupt – nur vorsichtig nähert. Attacken gegen den Zaubernden sind nur nach einer vorherigen MU-Probe möglich, die um die ZfP* erschwert ist. 4 ZfP*: Das Opfer fürchtet den Zaubernden und wird – wenn möglich – zurückweichen, d.h. im Kampf ein Rückzugsgefecht führen (MU, AT, INI-Basis je –1W6, wenn eine MU-Probe, er- schwert um die ZfP* misslingt; Opfer setzt keine Aktionsmanöver mit Zuschlägen von +4 oder höher ein). 7 ZfP*: Das Opfer sieht in dem Zaubernden einen Furcht erre- genden, zu allem entschlossenen und übermächtigen Feind. Stark demoralisiert, wird es sich (nach Naturell und örtlichen Gegeben- heiten) entweder angsterfüllt in einer Ecke zusammenkauern oder zumindest so weit fliehen, bis der Zaubernde außer Sichtweite ist. Es muss eine MU-Probe ablegen, die um die ZfP* erschwert ist. Misslingt diese, erleidet das Opfer Abzüge von je 1W6 Punkten auf die Werte MU, KL, CH, FF, AT, PA, FK und INI-Basis. Dieser Malus baut sich fern der Gegenwart des Zaubernden mit einem Punkt pro Spielrunde wieder ab. 10+ ZfP*: Dem Opfer erscheint der Zaubernde wie aus einem Alp- traum entsprungen; es verfällt in heillose Panik und sucht schreiend das Weite. MU-Probe und Abzüge auf Eigenschaften wie oben. Dieser Zauber wirkt gegen alle Arten von denkenden und fühlenden Lebewesen sowie gegen einige Geisterwesen (Letzteres ist Meisterentscheid). Schleimgetier oder Insekten lassen sich von der Formel jedoch nicht beeindrucken, genauso wenig wie Elementare, Untote und Dämonen. Beim HORRIPHOBUS ist die MR des Opfers um die Hälfte der stärksten Angst (also derjenigen Schlechten Eigenschaften, in denen der Begriff ‘Angst’ oder ‘Phobie’ vorkommt, einschließlich Aberglaube) reduziert. Tiere, bei denen kein MU angegeben ist, verwenden stattdessen ihren GW für die Gegen-Proben.",
+    "cost": "7 AsP (borbaradianische Variante: 2W6 AsP bzw. die Hälfte dieser Kosten als LeP)",
+    "target": "Einzelwesen",
+    "distance": "7 Schritt",
+    "duration": "ZfP*/2 SR",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Zielobjekt (mehrere)", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "bringt das Opfer dazu, sich für die Wirkungsdauer in den Zauberer zu verlieben.",
+    "antimagic": "kann in einer Zone des EINFLUSS BANNEN nur erschwert gewirkt und mit diesem Antimagie-Spruch beendet werden. ÄNGSTE LINDERN kann die Wirkung des HORRIPHOBUS aufheben oder zumindest abschwächen.",
+    "complexity": "C",
+    "characteristics": ["Einfluss", "Bor: Dämonisch (allgemein)"],
+    "variants": [
+      {
+        "name": "gegen mehrere Personen",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante gegen mehrere Personen kostet der Zauber nur 6 AsP pro Opfer."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 6},
+      { "representation": "Borbaradianer", "distribution": 4},
+      { "representation": "Druide", "distribution": 3},
+      { "representation": "Hexe", "distribution": 2, "subRepresentation": "Druide"},
+      { "representation": "Scharlatan", "distribution": 1}
+    ]
   }
 ]
