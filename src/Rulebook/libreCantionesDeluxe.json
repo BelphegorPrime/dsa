@@ -3954,5 +3954,27 @@
       { "representation": "Achaz", "distribution": 3},
       { "representation": "Gildenmagier", "distribution": 3}
     ]
+  },
+  {
+    "page": 120,
+    "name": "Holterdiploter",
+    "trial": "IN/IN/FF",
+    "difficulty": "",
+    "technik": "Der Schelm vollführt mit seinen Händen vor der Brust drei Rollen in der Luft.",
+    "castTime": "4 Aktionen",
+    "effect": "Innerhalb eines Bereichs löst der Schelm mit diesem Streich ein ziemliches Tohuwabohu aus: Plötzlich scheinen alle Bündel nicht richtig verschnürt, alle Schritte unbedacht und in der Hand getragene Gegenstände nicht sicher festgehalten worden zu sein. Alles bekommt eine gewisse Tendenz schiefzugehen, jedoch hat der Schelm keinen Einfluss darauf, was letztendlich passiert – auch er wird Opfer seines eigenen Schabernacks: Da rollen Fässer durch die Gegend, purzeln Blumentöpfe von Fensterbrettern und stolpern die geschicktesten Artisten bei einem einfachen Schritt; und das Erstaunlichste dabei ist: Soviel auch danebengeht, wie viele Gegenstände auch zerscheppern, so kommen doch nie Lebewesen zu Schaden (von einigen kleineren Beulen und Blessuren und verletzter Eitelkeit einmal abgesehen). Notfalls gelingen allen Betroffenen auch die unglaublichsten Ausweichmanöver auf spektakulär ungeschickte Art und Weise. Das durch den Streich ausgelöste Geschehen bestimmt allein der Meister.",
+    "cost": "17 AsP (Sch: 12 AsP)",
+    "target": "Zone",
+    "distance": "7 Schritt Radius",
+    "duration": "maximal ZfW Minuten. Der Schelm kann den Zauber jederzeit durch erneutes Ausführen der Zaubertechnik (und nach gelungener erneuter Probe) beenden.",
+    "modifications": [],
+    "reversalis": "Alles scheint verwurzelt, keine Schnalle lässt sich mehr öffnen, keine Waffe mehr ziehen ...",
+    "antimagic": "VERÄNDERUNG AUFHEBEN beendet den Zauber, der sich auch in einer entsprechenden antimagischen Zone schwerer wirken lässt.",
+    "complexity": "C",
+    "characteristics": ["Umwelt"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Schelm", "distribution": 2}
+    ]
   }
 ]
