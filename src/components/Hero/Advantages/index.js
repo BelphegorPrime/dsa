@@ -3,7 +3,7 @@ import proptypes from 'prop-types';
 
 class Advantages extends Component {
   render() {
-    const { advantages, className } = this.props;
+    const { advantages, disadvantages, className } = this.props;
     return (
       <div className={className}>
         <div className="pl-2 pt-2">
@@ -19,6 +19,19 @@ class Advantages extends Component {
             })}
           </div>
         </div>
+        <div className="pl-2 pt-2">
+          <span className="font-weight-bold">Nachteile:</span>
+          <div>
+            {disadvantages.map((advantage, i) => {
+              const { name, value } = advantage;
+              const isNotLast = disadvantages.length - 1 !== i;
+              if (!value) {
+                return `${name}${isNotLast ? ',' : ''} `;
+              }
+              return `${name} ${value || ''}${isNotLast ? ',' : ''} `;
+            })}
+          </div>
+        </div>
       </div>
     );
   }
@@ -26,6 +39,7 @@ class Advantages extends Component {
 
 Advantages.propTypes = {
   advantages: proptypes.array,
+  disadvantages: proptypes.array,
   className: proptypes.string
 };
 

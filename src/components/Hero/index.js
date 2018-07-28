@@ -26,6 +26,7 @@ class Hero extends Component {
             <Base base={hero.converted.basics} className="col-md-6" />
             <Advantages
               advantages={hero.converted.advantages}
+              disadvantages={hero.converted.disadvantages}
               className="col-md-6"
             />
             <hr className="col-md-12" />

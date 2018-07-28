@@ -17,7 +17,7 @@ import RuleBook from '../Rulebook';
 const index = (hero, houseRules = []) => {
   const returnHero = {};
   const ruleBook = new RuleBook(houseRules);
-  console.log(ruleBook.getArsenal())
+  console.log(ruleBook.getArsenal());
   returnHero.name = hero.children[0].attributes.name;
   const { children } = hero.children[0];
   children.forEach(child => {
@@ -53,9 +53,16 @@ const index = (hero, houseRules = []) => {
         case 'talentliste':
           returnHero.talentList = getTalentList(child.children);
           break;
-        case 'vt':
-          returnHero.advantages = getAdvantages(child.children, ruleBook.getAdvantages(), ruleBook.getDisadvantages());
+        case 'vt': {
+          const vantages = getAdvantages(
+            child.children,
+            ruleBook.getAdvantages(),
+            ruleBook.getDisadvantages()
+          );
+          returnHero.advantages = vantages.filter(v => v.isAdvantage);
+          returnHero.disadvantages = vantages.filter(v => !v.isAdvantage);
           break;
+        }
         case 'zauberliste':
           returnHero.spellList = getSpellList(
             child.children,
