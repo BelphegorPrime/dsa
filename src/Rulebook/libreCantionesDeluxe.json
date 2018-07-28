@@ -3885,5 +3885,42 @@
       { "representation": "Geode", "distribution": 5},
       { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Hexe"}
     ]
+  },
+  {
+    "page": 118,
+    "name": "Hilfreiche Tatze, rettende Schwinge",
+    "trial": "MU/IN/CH",
+    "difficulty": "+geistige MR je nach Tierart",
+    "technik": "Der Elf konzentriert sich ganz auf die Melo die und das Wesen der Tierart und harmonisiert es mit seinem Wunsch und der Melodie des feiama diund saladir.",
+    "castTime": "20 Aktionen",
+    "effect": "Der Zauber ruft ein Tier aus der näheren Umgebung des Elfen zu Hilfe, das er um einen Gefallen bitten kann, z.B. “Werte Maus, würdest du bitte meine Fesseln durchnagen?” oder “Bruder Delphin, trage mich bitte bis zu dieser Insel am Horizont.” Der Elf muss die Tierart kennen, die er zu Hilfe ruft (notfalls mittels Tierkunde-Probe nachweisen; Hörensagen oder ein menschliches Zoologie-Kompendium reichen nicht) – und er muss hoffen, in der gewünschten Umgebung ein Tier dieser Tierart vorzufinden. Das Tier wird den Elfen auch nach Erfüllung des Wunsches nicht angreifen, sondern sich von dannen trollen (zu der Tätigkeit, die es vor dem Ruf ausübte). Der Wunsch nach Beistand muss sich in einem Satz formulieren lassen, er muss sich auf den Elfen selbst beziehen, er muss dem Tier körperlich möglich sein und darf nicht dessen Natur widersprechen. Notfalls entscheiden eine CH-Probe und/oder der Meister. Wird die Tierart des Seelentiers gerufen, so ist die Probe um 3 Punkte erleichtert und die Reichweite verdoppelt.",
+    "cost": "3 AsP für den Ruf + GW des Tieres in AsP für den Dienst",
+    "target": "Zone",
+    "distance": "ZfP* x 100 Schritt",
+    "duration": "Der Ruf ergeht augenblicklich; wie lange das Tier benötigt, hängt von seiner Geschwindigkeit ab. Das Tier ist nach Ankunft ZfP* SR lang hilfsbereit gesinnt.",
+    "modifications": ["Zauberdauer", "Kosten", "Zielobjekt (mehrere Tiere)", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Sowohl eine Zone des EINFLUSS BANNEN als auch des VERSTÄNDIGUNG STÖREN erschweren das Wirken des Zaubers; EINFLUSS BANNEN kann ihn beenden.",
+    "complexity": "D",
+    "characteristics": ["Einfluss", "Verständigung"],
+    "variants": [
+      {
+        "name": "Elf mehrere Tiere",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Wenn der Elf mehrere Tiere ruft, betragen die (Ruf-) Kosten 6 AsP pro Tier."
+      },
+      {
+        "name": "Achaz-Variante",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Die Achaz-Variante ist gegen Schuppentiere (Reptilien und Fische) um 3 Punkte erleichtert, bei anderen Tieren um 3 Punkte erschwert."
+      }
+    ],
+    "distribution": [
+      { "representation": "Hexe", "distribution": 7},
+      { "representation": "Geode", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Hexe"}
+    ]
   }
 ]
