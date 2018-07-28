@@ -27,7 +27,6 @@ export default objects => {
             returnObject[name].name = c.children[2].attributes.value;
             break;
           case 'Wesen':
-            console.log(c.children[0].children)
             returnObject[name].properties = getProperties(
               c.children[0].children
             );

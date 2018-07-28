@@ -54,7 +54,7 @@ const index = (hero, houseRules = []) => {
           returnHero.talentList = getTalentList(child.children);
           break;
         case 'vt':
-          returnHero.advantages = getAdvantages(child.children);
+          returnHero.advantages = getAdvantages(child.children, ruleBook.getAdvantages(), ruleBook.getDisadvantages());
           break;
         case 'zauberliste':
           returnHero.spellList = getSpellList(

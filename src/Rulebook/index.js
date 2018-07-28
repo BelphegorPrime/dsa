@@ -1,5 +1,7 @@
 import lcd from './libreCantionesDeluxe.json';
 import arsenal from './arsenal.json';
+import advantages from './advantages.json';
+import disadvantages from './disadvantages.json';
 
 export default class Rulebook {
   constructor(houseRules) {
@@ -26,6 +28,7 @@ export default class Rulebook {
     });
     return lcdInstance;
   }
+
   getArsenal() {
     const weaponRules = this.houseRules.filter(rule => rule.type === 'weapon');
     let arsenalInstance = JSON.parse(JSON.stringify(arsenal));
@@ -35,19 +38,24 @@ export default class Rulebook {
     });
     return arsenalInstance;
   }
+
+  getAdvantages() {
+    return advantages;
+  }
+
+  getDisadvantages() {
+    return disadvantages;
+  }
+
   getLiturgium() {
     return [];
   }
+
   getZooBotanica() {
     return [];
   }
+
   getElementals() {
-    return [];
-  }
-  getAdvantages() {
-    return [];
-  }
-  getDisadvantages() {
     return [];
   }
 }
