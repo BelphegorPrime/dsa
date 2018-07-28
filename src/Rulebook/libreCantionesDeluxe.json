@@ -3918,9 +3918,10 @@
       }
     ],
     "distribution": [
-      { "representation": "Hexe", "distribution": 7},
-      { "representation": "Geode", "distribution": 5},
-      { "representation": "Gildenmagier", "distribution": 2, "subRepresentation": "Hexe"}
+      { "representation": "Elf", "distribution": 4},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Geode", "distribution": 3},
+      { "representation": "Druide", "distribution": 3, "subRepresentation": "Geode"}
     ]
   }
 ]
