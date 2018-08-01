@@ -4009,5 +4009,413 @@
       { "representation": "Hexe", "distribution": 2, "subRepresentation": "Druide"},
       { "representation": "Scharlatan", "distribution": 1}
     ]
+  },
+  {
+    "page": 122,
+    "name": "Ignifaxius Flammenstrahl",
+    "trial": "KL/FF/KO",
+    "difficulty": "",
+    "technik": "Der Magier hebt die rechte Hand zur linken Schulter, konzentriert sich auf die Formel und deutet dann ruckartig mit Zeige- und Mittelfinger auf sein Opfer",
+    "castTime": "4 Aktionen",
+    "effect": "Aus den Fingern des Zaubernden schießt ein Strahl elementarer Gewalten: eine Lanze aus Feuer und Licht. Der Spieler muss vor der Zauberprobe ansagen, wie viele Würfel er für den IGNIFAXIUS einsetzen will: Dem Magier stehen maximal ZfW Würfel zur Verfügung. Dann würfelt er und addiert alle Punkte zu einer Trefferpunktsumme. (Dadurch kann es unter Umständen passieren, dass mehr TP erwürfelt werden, als dem Magier AsP zur Verfügung stehen – in diesem Fall misslingt der Zauber mit den üblichen Folgen.) Ein Opfer, das den Zaubervorgang beobachtet und erkennt, kann versuchen, ihm auszuweichen; dazu ist ein um 5 Punkte erschwertes Ausweichen-Manöver (Wege des Schwerts 66) erforderlich: Für jeden Punkt, den das Opfer besser ausweicht, kann es einen Würfel von der Schadenswirkung abziehen. Der Zauber verursacht Trefferpunkte, die noch um den Rüstungsschutz des Opfers vermindert werden, jedoch wird auch die Rüstung angegriffen: Für je 10 Trefferpunkte verliert das Opfer einen Punkt seines Rüstungsschutzes (nicht bei natürlicher oder magischer Rüstung). Durch die erlittenen Schadenspunkte können dem Opfer eine oder mehrere Wunden entstehen.",
+    "cost": "Anzahl der TP in AsP",
+    "target": "Einzelwesen (kann auch auf ein einzelnes Ob jekt gezielt werden, um Strukturschaden anzurichten).",
+    "distance": "21 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Die Punkte, die bei allen folgenden Modifikationen und Varianten aufgewendet werden, verringern (als Ausnahme zu WdZ 19) die Anzahl der zur Verfügung stehenden Trefferwürfel. Zauberdauer, Reichweite (Bei Reichweite: Horizont gelten die Modifikationen aus WdZ 21 zusätzlich zu denen der folgenden Varianten; die Zielerfassungs-Probe ist gleichzeitig die Zauberprobe. Die folgenden Modifikationen bis auf Kegel sind alle miteinander kombinierbar"],
+    "reversalis": "Die elementare Wirkung wird zu einem AQUAFAXIUS (mit gleicher Schadenswirkung wie der IGNIFAXIUS) umgekehrt, der die Elementaren Sekundäreffekte (siehe unten) des Wassers hervorruft.",
+    "antimagic": "kann nicht in eine Zone eindringen, die mit SCHADENSZAUBER BANNEN oder FEUERBANN errichtet wurde; kann mit diesen beiden Zaubern beim Schaffen des Zaubers gestört werden; wird vom GARDIANUM aufgefangen und vom INVERCANO reflektiert; LEIB DES FEUERS reduziert den entstehenden Schaden.",
+    "complexity": "C",
+    "characteristics": ["Schaden", "Elementar (Feuer)"],
+    "variants": [
+      {
+        "name": "Kegel",
+        "mod": "+2",
+        "minZfW": 11,
+        "effect": "Es entsteht ein Flammenkegel mit 2 Schritt Basisbreite, der große Oberflächenwirkung hat: Er richtet zwar nur 1W6–1 TP pro eingesetztem Würfel an, dafür sinkt der RS des Opfers für je 5 Punkte um 1. Pro Punkt zusätzlicher Erschwernis kann die Basisbreite des Kegels um 1 Schritt vergrößert werden. Wird der Kegel auf mehrere Personen gleichzeitig gezielt, so erhält jedes Opfer nur einen entsprechenden Anteil der ausgewürfelten TP (hierbei immer abrunden). Es ist um weitere 5 Punkte (insge samt also 10 Punkte) erschwert, einem kegelförmigen IGNIFAXIUS auszuweichen."
+      },
+      {
+        "name": "Enger Strahl",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Es entsteht nur ein fingerdicker Flammenstrahl, der keinen Rüstungsschaden, dafür aber pro KO/2–2 SP eine Wunde anrichtet. Die Trefferzone hierfür wird per Zufall bestimmt: 19–20 Kopf, 15–18 Brust, 9–14 Arme (ungerade für links, gerade für rechts), 7–8 Bauch, 1–6 Beine (ungerade für links, gerade für rechts). Um eine bestimmte Körperzone anzuvisieren, ist die Probe nochmals erschwert: +5 für Kopf oder Arm, +4 für Bein, +3 für Brust/Rücken oder Bauch."
+      },
+      {
+        "name": "Mehrere Ziele",
+        "mod": "+5",
+        "minZfW": 7,
+        "effect": "Strahlen schießen aus beliebig vielen Fingern des Magiers: Die erwürfelten TP können auf bis zu 5 Opfer gleichmäßig verteilt werden."
+      },
+      {
+        "name": "Doppelschuss",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Der Magier kann mit einer Probe und unter Aufwendung einer Zauberdauer gleichzeitig zwei Zauber auf ein und dasselbe Ziel wirken; für jeden der Zauber stehen ihm maximal ZfW–5 Würfel zur Verfügung (Zauberfertigkeit minus die Schwierigkeit der Modifikation); dazu verwendet er beide Hände."
+      },
+      {
+        "name": "Schwelle von ZfW 11",
+        "mod": "+0",
+        "minZfW": 11,
+        "effect": "Ab einer Schwelle von ZfW 11 misslingt der Zauber nicht automatisch, wenn die AsP nicht ausreichen, weil ein zu hohes Resultat erwürfelt wurde (s.o.). Stattdessen verbraucht der Spruch dann nur genau die noch vorhandenen AsP und wandelt sie in wirkende TP um."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGIFAXIUS, ARCHOFAXIUS, ORCANOFAXIUS, AQUAFAXIUS, HUMOFAXIUS) erfordern separate Zauber, deren Repräsentationen sehr selten (Geo, Mag, Ach, Dru(Mag) je 2) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Elementaren Sekundärschäden unten auf Seite 123. Dokumente aus bosparanischer Zeit berichten von dem verwandten Zauber IGNIFLUMEN, der Feuerstrahlen und Flammenspuren über den Erdboden laufen ließ."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Je 10 angerichteter TP sinkt der RS einer (Gesamt-)Rüstung um 1 Punkt (bei Zonenrüstungen wird die Rüstung einer Zone abgebaut), die BE bleibt jedoch gleich. Feuerschaden kann leicht entzündliche Materialien entflammen. Elementarer Feuerschaden wirkt in halber Höhe als Strukturschaden an Gegenständen, muss jedoch auch nur die Hälfte der Härte überwinden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 122,
+    "name": "Frigifaxius Eisstrahl",
+    "trial": "KL/FF/KO",
+    "difficulty": "",
+    "technik": "Der Magier hebt die rechte Hand zur linken Schulter, konzentriert sich auf die Formel und deutet dann ruckartig mit Zeige- und Mittelfinger auf sein Opfer",
+    "castTime": "4 Aktionen",
+    "effect": "Aus den Fingern des Zaubernden schießt ein Strahl elementarer Gewalten: eine Lanze aus Feuer und Licht. Der Spieler muss vor der Zauberprobe ansagen, wie viele Würfel er für den IGNIFAXIUS einsetzen will: Dem Magier stehen maximal ZfW Würfel zur Verfügung. Dann würfelt er und addiert alle Punkte zu einer Trefferpunktsumme. (Dadurch kann es unter Umständen passieren, dass mehr TP erwürfelt werden, als dem Magier AsP zur Verfügung stehen – in diesem Fall misslingt der Zauber mit den üblichen Folgen.) Ein Opfer, das den Zaubervorgang beobachtet und erkennt, kann versuchen, ihm auszuweichen; dazu ist ein um 5 Punkte erschwertes Ausweichen-Manöver (Wege des Schwerts 66) erforderlich: Für jeden Punkt, den das Opfer besser ausweicht, kann es einen Würfel von der Schadenswirkung abziehen. Der Zauber verursacht Trefferpunkte, die noch um den Rüstungsschutz des Opfers vermindert werden, jedoch wird auch die Rüstung angegriffen: Für je 10 Trefferpunkte verliert das Opfer einen Punkt seines Rüstungsschutzes (nicht bei natürlicher oder magischer Rüstung). Durch die erlittenen Schadenspunkte können dem Opfer eine oder mehrere Wunden entstehen.",
+    "cost": "Anzahl der TP in AsP",
+    "target": "Einzelwesen (kann auch auf ein einzelnes Ob jekt gezielt werden, um Strukturschaden anzurichten).",
+    "distance": "21 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Die Punkte, die bei allen folgenden Modifikationen und Varianten aufgewendet werden, verringern (als Ausnahme zu WdZ 19) die Anzahl der zur Verfügung stehenden Trefferwürfel. Zauberdauer, Reichweite (Bei Reichweite: Horizont gelten die Modifikationen aus WdZ 21 zusätzlich zu denen der folgenden Varianten; die Zielerfassungs-Probe ist gleichzeitig die Zauberprobe. Die folgenden Modifikationen bis auf Kegel sind alle miteinander kombinierbar"],
+    "reversalis": "Die elementare Wirkung wird zu einem AQUAFAXIUS (mit gleicher Schadenswirkung wie der IGNIFAXIUS) umgekehrt, der die Elementaren Sekundäreffekte (siehe unten) des Wassers hervorruft.",
+    "antimagic": "kann nicht in eine Zone eindringen, die mit SCHADENSZAUBER BANNEN oder FEUERBANN errichtet wurde; kann mit diesen beiden Zaubern beim Schaffen des Zaubers gestört werden; wird vom GARDIANUM aufgefangen und vom INVERCANO reflektiert; LEIB DES FEUERS reduziert den entstehenden Schaden.",
+    "complexity": "C",
+    "characteristics": ["Schaden", "Elementar (Eis)"],
+    "variants": [
+      {
+        "name": "Kegel",
+        "mod": "+2",
+        "minZfW": 11,
+        "effect": "Es entsteht ein Flammenkegel mit 2 Schritt Basisbreite, der große Oberflächenwirkung hat: Er richtet zwar nur 1W6–1 TP pro eingesetztem Würfel an, dafür sinkt der RS des Opfers für je 5 Punkte um 1. Pro Punkt zusätzlicher Erschwernis kann die Basisbreite des Kegels um 1 Schritt vergrößert werden. Wird der Kegel auf mehrere Personen gleichzeitig gezielt, so erhält jedes Opfer nur einen entsprechenden Anteil der ausgewürfelten TP (hierbei immer abrunden). Es ist um weitere 5 Punkte (insge samt also 10 Punkte) erschwert, einem kegelförmigen IGNIFAXIUS auszuweichen."
+      },
+      {
+        "name": "Enger Strahl",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Es entsteht nur ein fingerdicker Flammenstrahl, der keinen Rüstungsschaden, dafür aber pro KO/2–2 SP eine Wunde anrichtet. Die Trefferzone hierfür wird per Zufall bestimmt: 19–20 Kopf, 15–18 Brust, 9–14 Arme (ungerade für links, gerade für rechts), 7–8 Bauch, 1–6 Beine (ungerade für links, gerade für rechts). Um eine bestimmte Körperzone anzuvisieren, ist die Probe nochmals erschwert: +5 für Kopf oder Arm, +4 für Bein, +3 für Brust/Rücken oder Bauch."
+      },
+      {
+        "name": "Mehrere Ziele",
+        "mod": "+5",
+        "minZfW": 7,
+        "effect": "Strahlen schießen aus beliebig vielen Fingern des Magiers: Die erwürfelten TP können auf bis zu 5 Opfer gleichmäßig verteilt werden."
+      },
+      {
+        "name": "Doppelschuss",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Der Magier kann mit einer Probe und unter Aufwendung einer Zauberdauer gleichzeitig zwei Zauber auf ein und dasselbe Ziel wirken; für jeden der Zauber stehen ihm maximal ZfW–5 Würfel zur Verfügung (Zauberfertigkeit minus die Schwierigkeit der Modifikation); dazu verwendet er beide Hände."
+      },
+      {
+        "name": "Schwelle von ZfW 11",
+        "mod": "+0",
+        "minZfW": 11,
+        "effect": "Ab einer Schwelle von ZfW 11 misslingt der Zauber nicht automatisch, wenn die AsP nicht ausreichen, weil ein zu hohes Resultat erwürfelt wurde (s.o.). Stattdessen verbraucht der Spruch dann nur genau die noch vorhandenen AsP und wandelt sie in wirkende TP um."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGIFAXIUS, ARCHOFAXIUS, ORCANOFAXIUS, AQUAFAXIUS, HUMOFAXIUS) erfordern separate Zauber, deren Repräsentationen sehr selten (Geo, Mag, Ach, Dru(Mag) je 2) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Elementaren Sekundärschäden unten auf Seite 123. Dokumente aus bosparanischer Zeit berichten von dem verwandten Zauber IGNIFLUMEN, der Feuerstrahlen und Flammenspuren über den Erdboden laufen ließ."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Das Opfer erleidet nicht nur Schaden, sondern ihm wird auch Körperwärme entzogen, was sich darin äußert, dass es zusätzlich für je 10 angerichtete TP einen Punkt Erschöpfung erleidet. Der Bruchfaktor getroffener hölzerner Waffen oder hölzerner und leder- ner Schilde steigt für die Dauer von TP KR um 10, der metallener Waffen/Schilde um 2 Punkte. Bei Objekten ohne BF kann man entsprechende Verminderungen des Strukturwerts (S. 14) ansetzen: um 10 Punkte bei hölzernen oder ledernen Objekten, um 5 Punkten bei steinernen Objekten, um 2 Punkte bei metallenen Objekten. Fla- schen mit Flüssigkeiten können platzen, schockgefrorene Flüssigkeiten allgemein verderben. Elementarer Eis-Schaden wirkt in halber Höhe als Strukturschaden an Gegenständen, muss jedoch auch nur die Hälfte der Härte überwinden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 122,
+    "name": "Archofaxius Erzstrahl",
+    "trial": "KL/FF/KO",
+    "difficulty": "",
+    "technik": "Der Magier hebt die rechte Hand zur linken Schulter, konzentriert sich auf die Formel und deutet dann ruckartig mit Zeige- und Mittelfinger auf sein Opfer",
+    "castTime": "4 Aktionen",
+    "effect": "Aus den Fingern des Zaubernden schießt ein Strahl elementarer Gewalten: eine Lanze aus Feuer und Licht. Der Spieler muss vor der Zauberprobe ansagen, wie viele Würfel er für den IGNIFAXIUS einsetzen will: Dem Magier stehen maximal ZfW Würfel zur Verfügung. Dann würfelt er und addiert alle Punkte zu einer Trefferpunktsumme. (Dadurch kann es unter Umständen passieren, dass mehr TP erwürfelt werden, als dem Magier AsP zur Verfügung stehen – in diesem Fall misslingt der Zauber mit den üblichen Folgen.) Ein Opfer, das den Zaubervorgang beobachtet und erkennt, kann versuchen, ihm auszuweichen; dazu ist ein um 5 Punkte erschwertes Ausweichen-Manöver (Wege des Schwerts 66) erforderlich: Für jeden Punkt, den das Opfer besser ausweicht, kann es einen Würfel von der Schadenswirkung abziehen. Der Zauber verursacht Trefferpunkte, die noch um den Rüstungsschutz des Opfers vermindert werden, jedoch wird auch die Rüstung angegriffen: Für je 10 Trefferpunkte verliert das Opfer einen Punkt seines Rüstungsschutzes (nicht bei natürlicher oder magischer Rüstung). Durch die erlittenen Schadenspunkte können dem Opfer eine oder mehrere Wunden entstehen.",
+    "cost": "Anzahl der TP in AsP",
+    "target": "Einzelwesen (kann auch auf ein einzelnes Ob jekt gezielt werden, um Strukturschaden anzurichten).",
+    "distance": "21 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Die Punkte, die bei allen folgenden Modifikationen und Varianten aufgewendet werden, verringern (als Ausnahme zu WdZ 19) die Anzahl der zur Verfügung stehenden Trefferwürfel. Zauberdauer, Reichweite (Bei Reichweite: Horizont gelten die Modifikationen aus WdZ 21 zusätzlich zu denen der folgenden Varianten; die Zielerfassungs-Probe ist gleichzeitig die Zauberprobe. Die folgenden Modifikationen bis auf Kegel sind alle miteinander kombinierbar"],
+    "reversalis": "Die elementare Wirkung wird zu einem AQUAFAXIUS (mit gleicher Schadenswirkung wie der IGNIFAXIUS) umgekehrt, der die Elementaren Sekundäreffekte (siehe unten) des Wassers hervorruft.",
+    "antimagic": "kann nicht in eine Zone eindringen, die mit SCHADENSZAUBER BANNEN oder FEUERBANN errichtet wurde; kann mit diesen beiden Zaubern beim Schaffen des Zaubers gestört werden; wird vom GARDIANUM aufgefangen und vom INVERCANO reflektiert; LEIB DES FEUERS reduziert den entstehenden Schaden.",
+    "complexity": "C",
+    "characteristics": ["Schaden", "Elementar (Erz)"],
+    "variants": [
+      {
+        "name": "Kegel",
+        "mod": "+2",
+        "minZfW": 11,
+        "effect": "Es entsteht ein Flammenkegel mit 2 Schritt Basisbreite, der große Oberflächenwirkung hat: Er richtet zwar nur 1W6–1 TP pro eingesetztem Würfel an, dafür sinkt der RS des Opfers für je 5 Punkte um 1. Pro Punkt zusätzlicher Erschwernis kann die Basisbreite des Kegels um 1 Schritt vergrößert werden. Wird der Kegel auf mehrere Personen gleichzeitig gezielt, so erhält jedes Opfer nur einen entsprechenden Anteil der ausgewürfelten TP (hierbei immer abrunden). Es ist um weitere 5 Punkte (insge samt also 10 Punkte) erschwert, einem kegelförmigen IGNIFAXIUS auszuweichen."
+      },
+      {
+        "name": "Enger Strahl",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Es entsteht nur ein fingerdicker Flammenstrahl, der keinen Rüstungsschaden, dafür aber pro KO/2–2 SP eine Wunde anrichtet. Die Trefferzone hierfür wird per Zufall bestimmt: 19–20 Kopf, 15–18 Brust, 9–14 Arme (ungerade für links, gerade für rechts), 7–8 Bauch, 1–6 Beine (ungerade für links, gerade für rechts). Um eine bestimmte Körperzone anzuvisieren, ist die Probe nochmals erschwert: +5 für Kopf oder Arm, +4 für Bein, +3 für Brust/Rücken oder Bauch."
+      },
+      {
+        "name": "Mehrere Ziele",
+        "mod": "+5",
+        "minZfW": 7,
+        "effect": "Strahlen schießen aus beliebig vielen Fingern des Magiers: Die erwürfelten TP können auf bis zu 5 Opfer gleichmäßig verteilt werden."
+      },
+      {
+        "name": "Doppelschuss",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Der Magier kann mit einer Probe und unter Aufwendung einer Zauberdauer gleichzeitig zwei Zauber auf ein und dasselbe Ziel wirken; für jeden der Zauber stehen ihm maximal ZfW–5 Würfel zur Verfügung (Zauberfertigkeit minus die Schwierigkeit der Modifikation); dazu verwendet er beide Hände."
+      },
+      {
+        "name": "Schwelle von ZfW 11",
+        "mod": "+0",
+        "minZfW": 11,
+        "effect": "Ab einer Schwelle von ZfW 11 misslingt der Zauber nicht automatisch, wenn die AsP nicht ausreichen, weil ein zu hohes Resultat erwürfelt wurde (s.o.). Stattdessen verbraucht der Spruch dann nur genau die noch vorhandenen AsP und wandelt sie in wirkende TP um."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGIFAXIUS, ARCHOFAXIUS, ORCANOFAXIUS, AQUAFAXIUS, HUMOFAXIUS) erfordern separate Zauber, deren Repräsentationen sehr selten (Geo, Mag, Ach, Dru(Mag) je 2) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Elementaren Sekundärschäden unten auf Seite 123. Dokumente aus bosparanischer Zeit berichten von dem verwandten Zauber IGNIFLUMEN, der Feuerstrahlen und Flammenspuren über den Erdboden laufen ließ."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Das Opfer erleidet einen Angriff zum Niederwerfen (KK-Probe erschwert um 1 Punkt pro 5 angerichteten TP). Bei mehr angerichteten SP als KO/2–2 des Opfers entsteht eine erste Wunde, eine zweite bei mehr SP als KO –2 usw. Elementarer Erz-Schaden wirkt in voller Höhe als Strukturschaden an Gegenständen; er muss zwar die volle Härte überwinden, macht jedoch sofort eine Struktur-Probe erforderlich."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 122,
+    "name": "Orcanofaxius Luftstrahl",
+    "trial": "KL/FF/KO",
+    "difficulty": "",
+    "technik": "Der Magier hebt die rechte Hand zur linken Schulter, konzentriert sich auf die Formel und deutet dann ruckartig mit Zeige- und Mittelfinger auf sein Opfer",
+    "castTime": "4 Aktionen",
+    "effect": "Aus den Fingern des Zaubernden schießt ein Strahl elementarer Gewalten: eine Lanze aus Feuer und Licht. Der Spieler muss vor der Zauberprobe ansagen, wie viele Würfel er für den IGNIFAXIUS einsetzen will: Dem Magier stehen maximal ZfW Würfel zur Verfügung. Dann würfelt er und addiert alle Punkte zu einer Trefferpunktsumme. (Dadurch kann es unter Umständen passieren, dass mehr TP erwürfelt werden, als dem Magier AsP zur Verfügung stehen – in diesem Fall misslingt der Zauber mit den üblichen Folgen.) Ein Opfer, das den Zaubervorgang beobachtet und erkennt, kann versuchen, ihm auszuweichen; dazu ist ein um 5 Punkte erschwertes Ausweichen-Manöver (Wege des Schwerts 66) erforderlich: Für jeden Punkt, den das Opfer besser ausweicht, kann es einen Würfel von der Schadenswirkung abziehen. Der Zauber verursacht Trefferpunkte, die noch um den Rüstungsschutz des Opfers vermindert werden, jedoch wird auch die Rüstung angegriffen: Für je 10 Trefferpunkte verliert das Opfer einen Punkt seines Rüstungsschutzes (nicht bei natürlicher oder magischer Rüstung). Durch die erlittenen Schadenspunkte können dem Opfer eine oder mehrere Wunden entstehen.",
+    "cost": "Anzahl der TP in AsP",
+    "target": "Einzelwesen (kann auch auf ein einzelnes Ob jekt gezielt werden, um Strukturschaden anzurichten).",
+    "distance": "21 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Die Punkte, die bei allen folgenden Modifikationen und Varianten aufgewendet werden, verringern (als Ausnahme zu WdZ 19) die Anzahl der zur Verfügung stehenden Trefferwürfel. Zauberdauer, Reichweite (Bei Reichweite: Horizont gelten die Modifikationen aus WdZ 21 zusätzlich zu denen der folgenden Varianten; die Zielerfassungs-Probe ist gleichzeitig die Zauberprobe. Die folgenden Modifikationen bis auf Kegel sind alle miteinander kombinierbar"],
+    "reversalis": "Die elementare Wirkung wird zu einem AQUAFAXIUS (mit gleicher Schadenswirkung wie der IGNIFAXIUS) umgekehrt, der die Elementaren Sekundäreffekte (siehe unten) des Wassers hervorruft.",
+    "antimagic": "kann nicht in eine Zone eindringen, die mit SCHADENSZAUBER BANNEN oder FEUERBANN errichtet wurde; kann mit diesen beiden Zaubern beim Schaffen des Zaubers gestört werden; wird vom GARDIANUM aufgefangen und vom INVERCANO reflektiert; LEIB DES FEUERS reduziert den entstehenden Schaden.",
+    "complexity": "C",
+    "characteristics": ["Schaden", "Elementar (Luft)"],
+    "variants": [
+      {
+        "name": "Kegel",
+        "mod": "+2",
+        "minZfW": 11,
+        "effect": "Es entsteht ein Flammenkegel mit 2 Schritt Basisbreite, der große Oberflächenwirkung hat: Er richtet zwar nur 1W6–1 TP pro eingesetztem Würfel an, dafür sinkt der RS des Opfers für je 5 Punkte um 1. Pro Punkt zusätzlicher Erschwernis kann die Basisbreite des Kegels um 1 Schritt vergrößert werden. Wird der Kegel auf mehrere Personen gleichzeitig gezielt, so erhält jedes Opfer nur einen entsprechenden Anteil der ausgewürfelten TP (hierbei immer abrunden). Es ist um weitere 5 Punkte (insge samt also 10 Punkte) erschwert, einem kegelförmigen IGNIFAXIUS auszuweichen."
+      },
+      {
+        "name": "Enger Strahl",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Es entsteht nur ein fingerdicker Flammenstrahl, der keinen Rüstungsschaden, dafür aber pro KO/2–2 SP eine Wunde anrichtet. Die Trefferzone hierfür wird per Zufall bestimmt: 19–20 Kopf, 15–18 Brust, 9–14 Arme (ungerade für links, gerade für rechts), 7–8 Bauch, 1–6 Beine (ungerade für links, gerade für rechts). Um eine bestimmte Körperzone anzuvisieren, ist die Probe nochmals erschwert: +5 für Kopf oder Arm, +4 für Bein, +3 für Brust/Rücken oder Bauch."
+      },
+      {
+        "name": "Mehrere Ziele",
+        "mod": "+5",
+        "minZfW": 7,
+        "effect": "Strahlen schießen aus beliebig vielen Fingern des Magiers: Die erwürfelten TP können auf bis zu 5 Opfer gleichmäßig verteilt werden."
+      },
+      {
+        "name": "Doppelschuss",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Der Magier kann mit einer Probe und unter Aufwendung einer Zauberdauer gleichzeitig zwei Zauber auf ein und dasselbe Ziel wirken; für jeden der Zauber stehen ihm maximal ZfW–5 Würfel zur Verfügung (Zauberfertigkeit minus die Schwierigkeit der Modifikation); dazu verwendet er beide Hände."
+      },
+      {
+        "name": "Schwelle von ZfW 11",
+        "mod": "+0",
+        "minZfW": 11,
+        "effect": "Ab einer Schwelle von ZfW 11 misslingt der Zauber nicht automatisch, wenn die AsP nicht ausreichen, weil ein zu hohes Resultat erwürfelt wurde (s.o.). Stattdessen verbraucht der Spruch dann nur genau die noch vorhandenen AsP und wandelt sie in wirkende TP um."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGIFAXIUS, ARCHOFAXIUS, ORCANOFAXIUS, AQUAFAXIUS, HUMOFAXIUS) erfordern separate Zauber, deren Repräsentationen sehr selten (Geo, Mag, Ach, Dru(Mag) je 2) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Elementaren Sekundärschäden unten auf Seite 123. Dokumente aus bosparanischer Zeit berichten von dem verwandten Zauber IGNIFLUMEN, der Feuerstrahlen und Flammenspuren über den Erdboden laufen ließ."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Das Opfer erleidet einen Angriff zum Niederwerfen (KK- Probe erschwert um 1 pro 10 angerichtete TP). Bei Misslingen der KK-Probe wird er pro 10 TP einen Schritt von der Quelle des Schadens weggeschleudert. Außerdem erleidet das Opfer durch die plötzlichen Luftdruckunterschiede einen Punkt Erschöpfung pro 10 angerichteten TP. Ein elementarer Luftstoß kann kleinere Flammen auslöschen und größere Feuer anfachen. Zudem kann er Gegenstände umherwirbeln, wobei die Einzelheiten Meisterentscheid sind: je höher die TP, desto höher auch hierbei die Auswirkungen. Elementarer Luft-Schaden wirkt in Höhe eines Viertels der angerichteten TP als Strukturschaden an Gegenständen und muss die volle Härte überwinden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 122,
+    "name": "Aquafaxius Wasserstrahl",
+    "trial": "KL/FF/KO",
+    "difficulty": "",
+    "technik": "Der Magier hebt die rechte Hand zur linken Schulter, konzentriert sich auf die Formel und deutet dann ruckartig mit Zeige- und Mittelfinger auf sein Opfer",
+    "castTime": "4 Aktionen",
+    "effect": "Aus den Fingern des Zaubernden schießt ein Strahl elementarer Gewalten: eine Lanze aus Feuer und Licht. Der Spieler muss vor der Zauberprobe ansagen, wie viele Würfel er für den IGNIFAXIUS einsetzen will: Dem Magier stehen maximal ZfW Würfel zur Verfügung. Dann würfelt er und addiert alle Punkte zu einer Trefferpunktsumme. (Dadurch kann es unter Umständen passieren, dass mehr TP erwürfelt werden, als dem Magier AsP zur Verfügung stehen – in diesem Fall misslingt der Zauber mit den üblichen Folgen.) Ein Opfer, das den Zaubervorgang beobachtet und erkennt, kann versuchen, ihm auszuweichen; dazu ist ein um 5 Punkte erschwertes Ausweichen-Manöver (Wege des Schwerts 66) erforderlich: Für jeden Punkt, den das Opfer besser ausweicht, kann es einen Würfel von der Schadenswirkung abziehen. Der Zauber verursacht Trefferpunkte, die noch um den Rüstungsschutz des Opfers vermindert werden, jedoch wird auch die Rüstung angegriffen: Für je 10 Trefferpunkte verliert das Opfer einen Punkt seines Rüstungsschutzes (nicht bei natürlicher oder magischer Rüstung). Durch die erlittenen Schadenspunkte können dem Opfer eine oder mehrere Wunden entstehen.",
+    "cost": "Anzahl der TP in AsP",
+    "target": "Einzelwesen (kann auch auf ein einzelnes Ob jekt gezielt werden, um Strukturschaden anzurichten).",
+    "distance": "21 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Die Punkte, die bei allen folgenden Modifikationen und Varianten aufgewendet werden, verringern (als Ausnahme zu WdZ 19) die Anzahl der zur Verfügung stehenden Trefferwürfel. Zauberdauer, Reichweite (Bei Reichweite: Horizont gelten die Modifikationen aus WdZ 21 zusätzlich zu denen der folgenden Varianten; die Zielerfassungs-Probe ist gleichzeitig die Zauberprobe. Die folgenden Modifikationen bis auf Kegel sind alle miteinander kombinierbar"],
+    "reversalis": "Die elementare Wirkung wird zu einem AQUAFAXIUS (mit gleicher Schadenswirkung wie der IGNIFAXIUS) umgekehrt, der die Elementaren Sekundäreffekte (siehe unten) des Wassers hervorruft.",
+    "antimagic": "kann nicht in eine Zone eindringen, die mit SCHADENSZAUBER BANNEN oder FEUERBANN errichtet wurde; kann mit diesen beiden Zaubern beim Schaffen des Zaubers gestört werden; wird vom GARDIANUM aufgefangen und vom INVERCANO reflektiert; LEIB DES FEUERS reduziert den entstehenden Schaden.",
+    "complexity": "C",
+    "characteristics": ["Schaden", "Elementar (Wasser)"],
+    "variants": [
+      {
+        "name": "Kegel",
+        "mod": "+2",
+        "minZfW": 11,
+        "effect": "Es entsteht ein Flammenkegel mit 2 Schritt Basisbreite, der große Oberflächenwirkung hat: Er richtet zwar nur 1W6–1 TP pro eingesetztem Würfel an, dafür sinkt der RS des Opfers für je 5 Punkte um 1. Pro Punkt zusätzlicher Erschwernis kann die Basisbreite des Kegels um 1 Schritt vergrößert werden. Wird der Kegel auf mehrere Personen gleichzeitig gezielt, so erhält jedes Opfer nur einen entsprechenden Anteil der ausgewürfelten TP (hierbei immer abrunden). Es ist um weitere 5 Punkte (insge samt also 10 Punkte) erschwert, einem kegelförmigen IGNIFAXIUS auszuweichen."
+      },
+      {
+        "name": "Enger Strahl",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Es entsteht nur ein fingerdicker Flammenstrahl, der keinen Rüstungsschaden, dafür aber pro KO/2–2 SP eine Wunde anrichtet. Die Trefferzone hierfür wird per Zufall bestimmt: 19–20 Kopf, 15–18 Brust, 9–14 Arme (ungerade für links, gerade für rechts), 7–8 Bauch, 1–6 Beine (ungerade für links, gerade für rechts). Um eine bestimmte Körperzone anzuvisieren, ist die Probe nochmals erschwert: +5 für Kopf oder Arm, +4 für Bein, +3 für Brust/Rücken oder Bauch."
+      },
+      {
+        "name": "Mehrere Ziele",
+        "mod": "+5",
+        "minZfW": 7,
+        "effect": "Strahlen schießen aus beliebig vielen Fingern des Magiers: Die erwürfelten TP können auf bis zu 5 Opfer gleichmäßig verteilt werden."
+      },
+      {
+        "name": "Doppelschuss",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Der Magier kann mit einer Probe und unter Aufwendung einer Zauberdauer gleichzeitig zwei Zauber auf ein und dasselbe Ziel wirken; für jeden der Zauber stehen ihm maximal ZfW–5 Würfel zur Verfügung (Zauberfertigkeit minus die Schwierigkeit der Modifikation); dazu verwendet er beide Hände."
+      },
+      {
+        "name": "Schwelle von ZfW 11",
+        "mod": "+0",
+        "minZfW": 11,
+        "effect": "Ab einer Schwelle von ZfW 11 misslingt der Zauber nicht automatisch, wenn die AsP nicht ausreichen, weil ein zu hohes Resultat erwürfelt wurde (s.o.). Stattdessen verbraucht der Spruch dann nur genau die noch vorhandenen AsP und wandelt sie in wirkende TP um."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGIFAXIUS, ARCHOFAXIUS, ORCANOFAXIUS, AQUAFAXIUS, HUMOFAXIUS) erfordern separate Zauber, deren Repräsentationen sehr selten (Geo, Mag, Ach, Dru(Mag) je 2) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Elementaren Sekundärschäden unten auf Seite 123. Dokumente aus bosparanischer Zeit berichten von dem verwandten Zauber IGNIFLUMEN, der Feuerstrahlen und Flammenspuren über den Erdboden laufen ließ."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Das Opfer erleidet einen Angriff zum Niederwerfen (KK-Probe erschwert um 1 pro 10 angerichtete TP) und muss zudem eine KO-Probe ablegen, die pro 10 TP um 1 erschwert ist: Bei Misslingen hat das Opfer Wasser in der Lunge und ist ZfP* KR lang kampfunfähig und verliert ebenso viele AuP wie LeP durch diesen Zauber. Elementarer Wasserschaden wirkt in halber Höhe als Strukturschaden an Gegenständen und muss die komplette Härte überwinden, außerdem löscht Wasserschaden je nach Stärke Feuer aus."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 122,
+    "name": "Humofaxius Humusstrahl",
+    "trial": "KL/FF/KO",
+    "difficulty": "",
+    "technik": "Der Magier hebt die rechte Hand zur linken Schulter, konzentriert sich auf die Formel und deutet dann ruckartig mit Zeige- und Mittelfinger auf sein Opfer",
+    "castTime": "4 Aktionen",
+    "effect": "Aus den Fingern des Zaubernden schießt ein Strahl elementarer Gewalten: eine Lanze aus Feuer und Licht. Der Spieler muss vor der Zauberprobe ansagen, wie viele Würfel er für den IGNIFAXIUS einsetzen will: Dem Magier stehen maximal ZfW Würfel zur Verfügung. Dann würfelt er und addiert alle Punkte zu einer Trefferpunktsumme. (Dadurch kann es unter Umständen passieren, dass mehr TP erwürfelt werden, als dem Magier AsP zur Verfügung stehen – in diesem Fall misslingt der Zauber mit den üblichen Folgen.) Ein Opfer, das den Zaubervorgang beobachtet und erkennt, kann versuchen, ihm auszuweichen; dazu ist ein um 5 Punkte erschwertes Ausweichen-Manöver (Wege des Schwerts 66) erforderlich: Für jeden Punkt, den das Opfer besser ausweicht, kann es einen Würfel von der Schadenswirkung abziehen. Der Zauber verursacht Trefferpunkte, die noch um den Rüstungsschutz des Opfers vermindert werden, jedoch wird auch die Rüstung angegriffen: Für je 10 Trefferpunkte verliert das Opfer einen Punkt seines Rüstungsschutzes (nicht bei natürlicher oder magischer Rüstung). Durch die erlittenen Schadenspunkte können dem Opfer eine oder mehrere Wunden entstehen.",
+    "cost": "Anzahl der TP in AsP",
+    "target": "Einzelwesen (kann auch auf ein einzelnes Ob jekt gezielt werden, um Strukturschaden anzurichten).",
+    "distance": "21 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Die Punkte, die bei allen folgenden Modifikationen und Varianten aufgewendet werden, verringern (als Ausnahme zu WdZ 19) die Anzahl der zur Verfügung stehenden Trefferwürfel. Zauberdauer, Reichweite (Bei Reichweite: Horizont gelten die Modifikationen aus WdZ 21 zusätzlich zu denen der folgenden Varianten; die Zielerfassungs-Probe ist gleichzeitig die Zauberprobe. Die folgenden Modifikationen bis auf Kegel sind alle miteinander kombinierbar"],
+    "reversalis": "Die elementare Wirkung wird zu einem AQUAFAXIUS (mit gleicher Schadenswirkung wie der IGNIFAXIUS) umgekehrt, der die Elementaren Sekundäreffekte (siehe unten) des Wassers hervorruft.",
+    "antimagic": "kann nicht in eine Zone eindringen, die mit SCHADENSZAUBER BANNEN oder FEUERBANN errichtet wurde; kann mit diesen beiden Zaubern beim Schaffen des Zaubers gestört werden; wird vom GARDIANUM aufgefangen und vom INVERCANO reflektiert; LEIB DES FEUERS reduziert den entstehenden Schaden.",
+    "complexity": "C",
+    "characteristics": ["Schaden", "Elementar (Humus)"],
+    "variants": [
+      {
+        "name": "Kegel",
+        "mod": "+2",
+        "minZfW": 11,
+        "effect": "Es entsteht ein Flammenkegel mit 2 Schritt Basisbreite, der große Oberflächenwirkung hat: Er richtet zwar nur 1W6–1 TP pro eingesetztem Würfel an, dafür sinkt der RS des Opfers für je 5 Punkte um 1. Pro Punkt zusätzlicher Erschwernis kann die Basisbreite des Kegels um 1 Schritt vergrößert werden. Wird der Kegel auf mehrere Personen gleichzeitig gezielt, so erhält jedes Opfer nur einen entsprechenden Anteil der ausgewürfelten TP (hierbei immer abrunden). Es ist um weitere 5 Punkte (insge samt also 10 Punkte) erschwert, einem kegelförmigen IGNIFAXIUS auszuweichen."
+      },
+      {
+        "name": "Enger Strahl",
+        "mod": "+3",
+        "minZfW": 11,
+        "effect": "Es entsteht nur ein fingerdicker Flammenstrahl, der keinen Rüstungsschaden, dafür aber pro KO/2–2 SP eine Wunde anrichtet. Die Trefferzone hierfür wird per Zufall bestimmt: 19–20 Kopf, 15–18 Brust, 9–14 Arme (ungerade für links, gerade für rechts), 7–8 Bauch, 1–6 Beine (ungerade für links, gerade für rechts). Um eine bestimmte Körperzone anzuvisieren, ist die Probe nochmals erschwert: +5 für Kopf oder Arm, +4 für Bein, +3 für Brust/Rücken oder Bauch."
+      },
+      {
+        "name": "Mehrere Ziele",
+        "mod": "+5",
+        "minZfW": 7,
+        "effect": "Strahlen schießen aus beliebig vielen Fingern des Magiers: Die erwürfelten TP können auf bis zu 5 Opfer gleichmäßig verteilt werden."
+      },
+      {
+        "name": "Doppelschuss",
+        "mod": "+5",
+        "minZfW": 11,
+        "effect": "Der Magier kann mit einer Probe und unter Aufwendung einer Zauberdauer gleichzeitig zwei Zauber auf ein und dasselbe Ziel wirken; für jeden der Zauber stehen ihm maximal ZfW–5 Würfel zur Verfügung (Zauberfertigkeit minus die Schwierigkeit der Modifikation); dazu verwendet er beide Hände."
+      },
+      {
+        "name": "Schwelle von ZfW 11",
+        "mod": "+0",
+        "minZfW": 11,
+        "effect": "Ab einer Schwelle von ZfW 11 misslingt der Zauber nicht automatisch, wenn die AsP nicht ausreichen, weil ein zu hohes Resultat erwürfelt wurde (s.o.). Stattdessen verbraucht der Spruch dann nur genau die noch vorhandenen AsP und wandelt sie in wirkende TP um."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGIFAXIUS, ARCHOFAXIUS, ORCANOFAXIUS, AQUAFAXIUS, HUMOFAXIUS) erfordern separate Zauber, deren Repräsentationen sehr selten (Geo, Mag, Ach, Dru(Mag) je 2) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Elementaren Sekundärschäden unten auf Seite 123. Dokumente aus bosparanischer Zeit berichten von dem verwandten Zauber IGNIFLUMEN, der Feuerstrahlen und Flammenspuren über den Erdboden laufen ließ."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Die Vielgestaltigkeit des Humus erlaubt hier nur sehr wenig konkrete Aussagen, aber üblicherweise werden die körperlichen Eigenschaften eines betroffenen Lebewesens um 1 Punkt pro 10 ange- richteten TP in Mitleidenschaft gezogen werden. Diese Auswirkungen halten jeweils etwa ZfP* SR an. Elementarer Humusschaden wirkt in Höhe eines Viertels der angerichteten TP als Strukturschaden an Gegenständen und muss die halbe Härte überwinden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Achaz", "distribution": 3},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
