@@ -106,6 +106,45 @@ export const reconvert = chosenHero => {
           // returnHero.events = getEvents(child.children);
           break;
         case 'gegenstände':
+          {
+            let existingObjects = returnChild.children.map(
+              o => o.attributes.name
+            );
+            Object.keys(chosenHero.converted.objects).forEach(name => {
+              const object = chosenHero.converted.objects[name];
+              if (existingObjects.indexOf(name) > -1) {
+                returnChild.children = returnChild.children.map(o => {
+                  const returnObject = o;
+                  if (returnObject.attributes.name === name) {
+                    if (parseInt(object.amount, 10) === 0) {
+                      return undefined;
+                    }
+                    returnObject.attributes.anzahl = object.amount;
+
+                    // returnMoney.attributes.anzahl = money.amount;
+                  }
+                  existingObjects = existingObjects.filter(o => o !== name);
+                  return returnObject;
+                });
+              } else {
+                returnChild.children.push({
+                  attributes: {
+                    anzahl: object.amount,
+                    name,
+                    slot: '0'
+                  },
+                  children: [],
+                  name: 'gegenstand',
+                  parent: null,
+                  type: 'element',
+                  value: ''
+                });
+              }
+            });
+            returnChild.children = returnChild.children.filter(
+              o => o && existingObjects.indexOf(o.attributes.name) === -1
+            );
+          }
           // returnHero.objects = getObjects(child.children);
           break;
         case 'geldboerse':

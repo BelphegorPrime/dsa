@@ -2,16 +2,73 @@ import React, { Component, Fragment } from 'react';
 import proptypes from 'prop-types';
 
 class Objects extends Component {
+  save() {
+    const { hero, updateHero } = this.props;
+    const inputs = document
+      .getElementById('create-object-form')
+      .getElementsByTagName('input');
+    const nameInput = inputs[0];
+    const amountInput = inputs[1];
+    if (parseInt(amountInput.value, 10) === 0) {
+      delete hero.converted.objects[nameInput.value];
+    } else {
+      hero.converted.objects[nameInput.value] = {
+        amount: amountInput.value
+      };
+    }
+    updateHero(hero);
+  }
+
+  removeObject(name) {
+    const { hero, updateHero } = this.props;
+    delete hero.converted.objects[name];
+    updateHero(hero);
+  }
+
   render() {
-    const { objects, className } = this.props;
+    const { hero, className } = this.props;
+    const { objects } = hero.converted;
     return (
       <div className={className}>
         <div className="pl-2 pt-2">
           <span className="font-weight-bold">Ausrüstung</span>
+          <div className="container">
+            <div id="create-object-form" className="row">
+              <div className="col-12 p-0">
+                <div>Name:</div>
+                <input style={{ width: '100%' }} />
+              </div>
+              <div className="col-12 p-0 mb-2">
+                <div>Menge:</div>
+                <input
+                  type="number"
+                  defaultValue={1}
+                  min={0}
+                  className="mr-2"
+                  style={{ width: 'calc(100% - 108px)' }}
+                />
+                <div
+                  className="btn btn-primary"
+                  style={{ width: 100 }}
+                  onClick={this.save.bind(this)}>
+                  Speichern
+                </div>
+              </div>
+            </div>
+          </div>
+
           {Object.keys(objects).map(name => {
             const object = objects[name];
             return (
-              <div key={name} className="col-md-12 pl-2">
+              <div
+                key={name}
+                className="col-md-12 p-2"
+                style={{ minHeight: 54, borderBottom: '1px solid #E5E5E5' }}>
+                <span
+                  className="btn btn-secondary btn-remove-hero float-right mr-3"
+                  onClick={this.removeObject.bind(this, name)}>
+                  X
+                </span>
                 <span>{`${name} ${object.amount} Stk`}</span>
                 {object.distantWeapon ? ` Kampftalent: ${object.talent}` : null}
                 {object.properties ? (
@@ -130,8 +187,6 @@ class Objects extends Component {
                     ) : null}
                   </Fragment>
                 ) : null}
-
-                <hr className="m-0" />
               </div>
             );
           })}
@@ -142,7 +197,8 @@ class Objects extends Component {
 }
 
 Objects.propTypes = {
-  objects: proptypes.object,
+  updateHero: proptypes.func,
+  hero: proptypes.object,
   className: proptypes.string
 };
 

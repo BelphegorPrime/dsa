@@ -73,7 +73,11 @@ class Hero extends Component {
       case 'Kampf': {
         return (
           <Fragment>
-            <Objects objects={hero.converted.objects} className="col-md-4" />
+            <Objects
+              hero={hero}
+              updateHero={this.props.updateHero}
+              className="col-md-4"
+            />
             <Equipment weapons={hero.converted.weapons} className="col-md-4" />
             <Purse
               hero={hero}
