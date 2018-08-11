@@ -26,7 +26,7 @@ class Purse extends Component {
           {sortedUnits.map(monetaryUnit => {
             const money = purse[monetaryUnit];
             return (
-              <div key={monetaryUnit}>
+              <div key={monetaryUnit} className="mb-2">
                 <span className="pl-2">
                   <input
                     type="number"

@@ -21,6 +21,7 @@ class Base extends Component {
     const heroToUpdate = Object.assign({}, hero);
     heroToUpdate.converted.basics.notes = value.split('\n');
     updateHero(heroToUpdate);
+    this.toggleEditNotes();
   }
 
   render() {
@@ -57,37 +58,27 @@ class Base extends Component {
             {base.profession.name}
           </div>
           {base.notes.length > 0 ? (
-            <div onClick={this.toggleEditNotes.bind(this)}>
+            <div>
               <span className="font-weight-bold">Notizen: </span>
-              {editNotes ? (
-                <Fragment>
-                  <br />
-                  <div
-                    className="btn btn-primary"
-                    onClick={this.save.bind(this)}>
-                    Speichern
-                  </div>
-                  <br />
-                  <textarea
-                    id="edit-note-textarea"
-                    defaultValue={base.notes.join('\n')}
-                    rows={base.notes.length}
-                    onClick={e => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                    }}
-                  />
-                </Fragment>
-              ) : (
-                <Fragment>
-                  {base.notes.map(n => (
-                    <Fragment key={n}>
-                      <span>{n}</span>
-                      <br />
-                    </Fragment>
-                  ))}
-                </Fragment>
-              )}
+              <div style={{ display: 'flex' }}>
+                <textarea
+                  id="edit-note-textarea"
+                  className="w-75"
+                  defaultValue={base.notes.join('\n')}
+                  rows={base.notes.length}
+                  disabled={!editNotes}
+                />
+                <div
+                  className="btn btn-primary ml-3"
+                  style={{ width: 100, height: 38 }}
+                  onClick={
+                    editNotes
+                      ? this.save.bind(this)
+                      : this.toggleEditNotes.bind(this)
+                  }>
+                  {editNotes ? 'Speichern' : 'Bearbeiten'}
+                </div>
+              </div>
             </div>
           ) : null}
           <div className="pt-3">
