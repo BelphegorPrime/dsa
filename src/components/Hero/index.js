@@ -75,7 +75,11 @@ class Hero extends Component {
           <Fragment>
             <Objects objects={hero.converted.objects} className="col-md-4" />
             <Equipment weapons={hero.converted.weapons} className="col-md-4" />
-            <Purse purse={hero.converted.purse} className="col-md-4" />
+            <Purse
+              hero={hero}
+              updateHero={this.props.updateHero}
+              className="col-md-4"
+            />
           </Fragment>
         );
       }

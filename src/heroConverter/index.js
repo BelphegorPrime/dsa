@@ -109,6 +109,16 @@ export const reconvert = chosenHero => {
           // returnHero.objects = getObjects(child.children);
           break;
         case 'geldboerse':
+          Object.keys(chosenHero.converted.purse).forEach(monetaryUnit => {
+            const money = chosenHero.converted.purse[monetaryUnit];
+            returnChild.children = returnChild.children.map(m => {
+              const returnMoney = m;
+              if (returnMoney.attributes.name === monetaryUnit) {
+                returnMoney.attributes.anzahl = money.amount;
+              }
+              return returnMoney;
+            });
+          });
           // returnHero.purse = getPurse(child.children);
           break;
         case 'kampf':
