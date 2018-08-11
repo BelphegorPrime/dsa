@@ -88,8 +88,8 @@ export const reconvert = chosenHero => {
   let { children } = returnXml.children[0];
   children = children.map(child => {
     const returnChild = child;
-    if (child.children.length > 0) {
-      switch (child.name) {
+    if (returnChild.children.length > 0) {
+      switch (returnChild.name) {
         case 'ausrüstungen':
           // returnHero.weapons = getEquipment(child.children);
           break;
@@ -115,6 +115,23 @@ export const reconvert = chosenHero => {
           // returnHero.fight = getFight(child.children);
           break;
         case 'kommentare':
+          chosenHero.converted.comments
+            .filter(c => c.added)
+            .forEach(commentToAdd => {
+              returnChild.children.push({
+                attributes: {
+                  key: commentToAdd.name,
+                  kommentar: commentToAdd.comment,
+                  added: true,
+                  id: commentToAdd.id
+                },
+                children: [],
+                name: 'kommentar',
+                parent: null,
+                type: 'element',
+                value: ''
+              });
+            });
           // returnHero.comments = getComments(child.children);
           break;
         case 'sf':

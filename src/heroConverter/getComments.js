@@ -3,8 +3,10 @@ import trialToProperty from './trialToProperty';
 export default comments =>
   comments.map(c => {
     const {
+      id,
       key,
       kommentar,
+      added,
       dauer: duration,
       kosten: cost,
       probe,
@@ -29,6 +31,14 @@ export default comments =>
         specialAbility,
         specialAbilityName,
         effect
+      };
+    }
+    if (added && id) {
+      return {
+        name: key,
+        comment: kommentar.replace(/&#10;/g, ''),
+        added,
+        id
       };
     }
     return {
