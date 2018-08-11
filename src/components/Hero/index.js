@@ -81,7 +81,11 @@ class Hero extends Component {
       }
       case 'Kommentare': {
         return (
-          <Comments comments={hero.converted.comments} className="col-md-12" />
+          <Comments
+            hero={hero}
+            updateHero={this.props.updateHero}
+            className="col-md-12"
+          />
         );
       }
       default:
