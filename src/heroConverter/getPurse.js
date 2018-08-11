@@ -4,8 +4,10 @@ const getPosition = name => {
       return 1;
     case 'Silbertaler':
       return 2;
-    case 'Kreuzer':
+    case 'Heller':
       return 3;
+    case 'Kreuzer':
+      return 4;
     default:
       return 0;
   }
