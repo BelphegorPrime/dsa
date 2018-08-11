@@ -4,8 +4,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 
 class Base extends Component {
+  constructor() {
+    super();
+    this.state = {
+      editNotes: false
+    };
+  }
+
+  toggleEditNotes() {
+    this.setState(state => ({ editNotes: !state.editNotes }));
+  }
+
+  save() {
+    const { value } = document.getElementById('edit-note-textarea');
+    const { hero, updateHero } = this.props;
+    const heroToUpdate = Object.assign({}, hero);
+    heroToUpdate.converted.basics.notes = value.split('\n');
+    updateHero(heroToUpdate);
+  }
+
   render() {
-    const { className, base } = this.props;
+    const { className, hero } = this.props;
+    const base = hero.converted.basics;
+    const { editNotes } = this.state;
     return (
       <div className={className}>
         <div className="pl-2 pt-2">
@@ -36,14 +57,37 @@ class Base extends Component {
             {base.profession.name}
           </div>
           {base.notes.length > 0 ? (
-            <div>
+            <div onClick={this.toggleEditNotes.bind(this)}>
               <span className="font-weight-bold">Notizen: </span>
-              {base.notes.map(n => (
-                <Fragment key={n}>
-                  <span>{n}</span>
+              {editNotes ? (
+                <Fragment>
                   <br />
+                  <div
+                    className="btn btn-primary"
+                    onClick={this.save.bind(this)}>
+                    Speichern
+                  </div>
+                  <br />
+                  <textarea
+                    id="edit-note-textarea"
+                    defaultValue={base.notes.join('\n')}
+                    rows={base.notes.length}
+                    onClick={e => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
+                  />
                 </Fragment>
-              ))}
+              ) : (
+                <Fragment>
+                  {base.notes.map(n => (
+                    <Fragment key={n}>
+                      <span>{n}</span>
+                      <br />
+                    </Fragment>
+                  ))}
+                </Fragment>
+              )}
             </div>
           ) : null}
           <div className="pt-3">
@@ -61,8 +105,9 @@ class Base extends Component {
 }
 
 Base.propTypes = {
-  base: proptypes.object,
-  className: proptypes.string
+  hero: proptypes.object,
+  className: proptypes.string,
+  updateHero: proptypes.func
 };
 
 export default Base;

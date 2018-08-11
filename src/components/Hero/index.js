@@ -23,7 +23,11 @@ class Hero extends Component {
       case 'Basis': {
         return (
           <Fragment>
-            <Base base={hero.converted.basics} className="col-md-6" />
+            <Base
+              hero={hero}
+              updateHero={this.props.updateHero}
+              className="col-md-6"
+            />
             <Advantages
               advantages={hero.converted.advantages}
               disadvantages={hero.converted.disadvantages}
@@ -88,7 +92,8 @@ class Hero extends Component {
 
 Hero.propTypes = {
   hero: proptypes.object,
-  page: proptypes.string
+  page: proptypes.string,
+  updateHero: proptypes.func
 };
 
 export default Hero;

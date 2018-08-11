@@ -209,6 +209,16 @@ class App extends Component {
     });
   }
 
+  updateHero(hero) {
+    const { name } = hero.xml.children[0].attributes;
+    const { heros } = this.state;
+    heros[name] = hero;
+    this.setState({
+      heros,
+      chosenHero: hero
+    });
+  }
+
   showHeroPage(heroPage) {
     this.setState({
       heroPage
@@ -387,7 +397,11 @@ class App extends Component {
                     maxHeight: 'calc(100% - 41px)'
                   }}>
                   {chosenHero ? (
-                    <Hero hero={chosenHero} page={heroPage} />
+                    <Hero
+                      hero={chosenHero}
+                      page={heroPage}
+                      updateHero={this.updateHero.bind(this)}
+                    />
                   ) : null}
                 </div>
               </div>
