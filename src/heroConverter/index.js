@@ -14,7 +14,7 @@ import getConnections from './getConnections';
 import addFight from './addFight';
 import RuleBook from '../Rulebook';
 
-const index = (hero, houseRules = []) => {
+export const convert = (hero, houseRules = []) => {
   const returnHero = {};
   const ruleBook = new RuleBook(houseRules);
   console.log(ruleBook.getArsenal());
@@ -83,4 +83,72 @@ const index = (hero, houseRules = []) => {
   return returnHero;
 };
 
-export default index;
+export const reconvert = chosenHero => {
+  const returnXml = Object.assign({}, chosenHero.xml);
+  let { children } = returnXml.children[0];
+  children = children.map(child => {
+    const returnChild = child;
+    if (child.children.length > 0) {
+      switch (child.name) {
+        case 'ausrüstungen':
+          // returnHero.weapons = getEquipment(child.children);
+          break;
+        case 'basis':
+          returnChild.children[6].attributes.notiz0 = chosenHero.converted.basics.notes.join(
+            '&#10;'
+          );
+          // returnHero.basics = getBasics(child.children);
+          break;
+        case 'eigenschaften':
+          // returnHero.properties = getProperties(child.children);
+          break;
+        case 'ereignisse':
+          // returnHero.events = getEvents(child.children);
+          break;
+        case 'gegenstände':
+          // returnHero.objects = getObjects(child.children);
+          break;
+        case 'geldboerse':
+          // returnHero.purse = getPurse(child.children);
+          break;
+        case 'kampf':
+          // returnHero.fight = getFight(child.children);
+          break;
+        case 'kommentare':
+          // returnHero.comments = getComments(child.children);
+          break;
+        case 'sf':
+          // returnHero.specialAbilities = getSpecialAbilities(child.children);
+          break;
+        case 'talentliste':
+          // returnHero.talentList = getTalentList(child.children);
+          break;
+        case 'vt': {
+          // const vantages = getAdvantages(
+          //   child.children,
+          //   ruleBook.getAdvantages(),
+          //   ruleBook.getDisadvantages()
+          // );
+          // returnHero.advantages = vantages.filter(v => v.isAdvantage);
+          // returnHero.disadvantages = vantages.filter(v => !v.isAdvantage);
+          break;
+        }
+        case 'zauberliste':
+          // returnHero.spellList = getSpellList(
+          //   child.children,
+          //   ruleBook.getLibreCantionesDeluxe()
+          // );
+          break;
+        case 'verbindungen':
+          // returnHero.connections = getConnections(child.children);
+          break;
+        default:
+          // returnHero[child.name] = child.children;
+          break;
+      }
+    }
+    return returnChild;
+  });
+  returnXml.children[0].children = children;
+  return returnXml;
+};

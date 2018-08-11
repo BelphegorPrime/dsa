@@ -9,7 +9,7 @@ import SideBar from './Hero/SideBar';
 import HouseRules from './HouseRules';
 import HouseRulesSideBar from './HouseRules/HouseRulesSideBar';
 
-import convert from '../heroConverter';
+import { convert, reconvert } from '../heroConverter';
 import trialToProperty from '../heroConverter/trialToProperty';
 import PropertiesQuickBar from './Hero/PropertiesQuickBar';
 
@@ -157,18 +157,19 @@ class App extends Component {
 
   download() {
     const { chosenHero } = this.state;
+    const xmlToDownload = reconvert(chosenHero);
     // eslint-disable-next-line no-undef
     const doc = document;
     const a = doc.createElement('a');
     a.setAttribute(
       'href',
       `data:text/xml;charset=utf-8,${encodeURIComponent(
-        XmlPrint(chosenHero.xml)
+        XmlPrint(xmlToDownload)
       )}`
     );
     a.setAttribute(
       'download',
-      `${chosenHero.xml.children[0].attributes.name}.xml`
+      `${xmlToDownload.children[0].attributes.name}.xml`
     );
     a.style.display = 'none';
     doc.body.appendChild(a);
