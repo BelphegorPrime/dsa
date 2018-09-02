@@ -4417,5 +4417,269 @@
       { "representation": "Geode", "distribution": 2},
       { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 124,
+    "name": "Ignisphaero Feuerball",
+    "trial": "MU/IN/KO",
+    "difficulty": "",
+    "technik": "Die Magierin hält beide Hände schalenförmig geöffnet in Armeslänge vor sich und spricht die Formel.",
+    "castTime": "7 Aktionen",
+    "effect": "Aus den geöffneten Händen der Magierin steigt eine Feuerkugel, die sie beliebig dirigieren und zur Explosion bringen kann. Verliert sie die Feuerkugel aus dem Blick oder durch äußere Einwirkung die Konzentration, so explodiert der Feuerball augenblicklich. Die Feuerkugel hat eine Maximalgeschwindigkeit von GS 15. Der angerichtete Schaden beträgt bis 1 Schritt Entfernung von der Explosion 5W6+ZfP*/2 TP. Dafür werden die Würfel für das Zentrum des Feuerballs geworfen; für jeden Schritt Entfernung sinkt der Schaden um 1 + den Würfel mit der niedrigsten Augen- zahl. Von diesen TP wird jeweils der RS der Opfer abgezogen. Bei mehr als 10 erlittenen TP sinkt der RS entsprechend dem IGNI- FAXIUS-Zauber. Brennbare Objekte innerhalb des Wirkungsradius gehen ebenfalls in Flammen auf.",
+    "cost": "21 AsP plus 1W6 LeP plus 1 Punkt Erschöpfung",
+    "target": "Zone",
+    "distance": "49 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "Es entsteht eine platzende Wasserkugel, die neben ihrem Schaden auch noch die Sekundärwirkungen elementaren Wassers (S. 123) anrichtet.",
+    "antimagic": "Sowohl eine Zone des FEUERBANN als auch eine des SCHADENSZAUBER BANNEN oder des BEWEGUNG STÖREN erschweren das Wirken des IGNISPHAERO. Die Kugel selbst wird von einem GARDIANUM oder einem INVERCANO aufgehalten und detoniert dann. Ein direkt auf die Kugel gesprochener BEWEGUNG STÖREN, Feuerbann oder SCHADENSZAUBER BANNEN bringen den Feuerball zur Explosion.",
+    "complexity": "D",
+    "characteristics": ["Schaden", "Elementar (Feuer)", "Telekinese"],
+    "variants": [
+      {
+        "name": "Komplexe Bewegung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Hiermit kann die Flammenkugel für eine Zeit von ZfW Aktionen eine von der Magierin festgelegte Bewegung (Kreis, Dreieck, Quadrat, Hin und Her, aber nichts komplizierteres) durchführen, an dessen Ende sie explodiert."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGOSPHAERO, ORCANOSPHAERO ...) erfordern separate Zauber, deren Kernformeln sehr selten (Ach, Mag, Dru(Mag) je 2; Geo 1) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Sekundärschäden auf Seite 123. Es wird häufig über Flächen- Varianten (IGNIPLANO) oder von kontrollierbaren Varianten spekuliert, doch bislang hat sich noch keine dieser Spekulationen in einer Variante manifestiert."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Je 10 angerichteter TP sinkt der RS einer (Gesamt-)Rüstung um 1 Punkt (bei Zonenrüstungen wird die Rüstung einer Zone abgebaut), die BE bleibt jedoch gleich. Feuerschaden kann leicht entzündliche Materialien entflammen. Elementarer Feuerschaden wirkt in halber Höhe als Strukturschaden an Gegenständen, muss jedoch auch nur die Hälfte der Härte überwinden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 124,
+    "name": "Frigosphaero Eisball",
+    "trial": "MU/IN/KO",
+    "difficulty": "",
+    "technik": "Die Magierin hält beide Hände schalenförmig geöffnet in Armeslänge vor sich und spricht die Formel.",
+    "castTime": "7 Aktionen",
+    "effect": "Aus den geöffneten Händen der Magierin steigt eine Eiskugel, die sie beliebig dirigieren und zur Explosion bringen kann. Verliert sie die Feuerkugel aus dem Blick oder durch äußere Einwirkung die Konzentration, so explodiert der Feuerball augenblicklich. Die Feuerkugel hat eine Maximalgeschwindigkeit von GS 15. Der angerichtete Schaden beträgt bis 1 Schritt Entfernung von der Explosion 5W6+ZfP*/2 TP. Dafür werden die Würfel für das Zentrum des Feuerballs geworfen; für jeden Schritt Entfernung sinkt der Schaden um 1 + den Würfel mit der niedrigsten Augen- zahl. Von diesen TP wird jeweils der RS der Opfer abgezogen. Bei mehr als 10 erlittenen TP sinkt der RS entsprechend dem IGNI- FAXIUS-Zauber. Brennbare Objekte innerhalb des Wirkungsradius gehen ebenfalls in Flammen auf.",
+    "cost": "21 AsP plus 1W6 LeP plus 1 Punkt Erschöpfung",
+    "target": "Zone",
+    "distance": "49 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "Es entsteht eine platzende Humuskugel, die neben ihrem Schaden auch noch die Sekundärwirkungen elementaren Wassers (S. 123) anrichtet.",
+    "antimagic": "Sowohl eine Zone des EISBANN als auch eine des SCHADENSZAUBER BANNEN oder des BEWEGUNG STÖREN erschweren das Wirken des IGNISPHAERO. Die Kugel selbst wird von einem GARDIANUM oder einem INVERCANO aufgehalten und detoniert dann. Ein direkt auf die Kugel gesprochener BEWEGUNG STÖREN, Feuerbann oder SCHADENSZAUBER BANNEN bringen den Feuerball zur Explosion.",
+    "complexity": "D",
+    "characteristics": ["Schaden", "Elementar (Eis)", "Telekinese"],
+    "variants": [
+      {
+        "name": "Komplexe Bewegung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Hiermit kann die Eiskugel für eine Zeit von ZfW Aktionen eine von der Magierin festgelegte Bewegung (Kreis, Dreieck, Quadrat, Hin und Her, aber nichts komplizierteres) durchführen, an dessen Ende sie explodiert."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGOSPHAERO, ORCANOSPHAERO ...) erfordern separate Zauber, deren Kernformeln sehr selten (Ach, Mag, Dru(Mag) je 2; Geo 1) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Sekundärschäden auf Seite 123. Es wird häufig über Flächen- Varianten (IGNIPLANO) oder von kontrollierbaren Varianten spekuliert, doch bislang hat sich noch keine dieser Spekulationen in einer Variante manifestiert."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Das Opfer erleidet nicht nur Schaden, sondern ihm wird auch Körperwärme entzogen, was sich darin äußert, dass es zusätzlich für je 10 angerichtete TP einen Punkt Erschöpfung erleidet. Der Bruchfaktor getroffener hölzerner Waffen oder hölzerner und leder- ner Schilde steigt für die Dauer von TP KR um 10, der metallener Waffen/Schilde um 2 Punkte. Bei Objekten ohne BF kann man entsprechende Verminderungen des Strukturwerts (S. 14) ansetzen: um 10 Punkte bei hölzernen oder ledernen Objekten, um 5 Punkten bei steinernen Objekten, um 2 Punkte bei metallenen Objekten. Fla- schen mit Flüssigkeiten können platzen, schockgefrorene Flüssigkeiten allgemein verderben. Elementarer Eis-Schaden wirkt in halber Höhe als Strukturschaden an Gegenständen, muss jedoch auch nur die Hälfte der Härte überwinden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 124,
+    "name": "Archosphaero Erzball",
+    "trial": "MU/IN/KO",
+    "difficulty": "",
+    "technik": "Die Magierin hält beide Hände schalenförmig geöffnet in Armeslänge vor sich und spricht die Formel.",
+    "castTime": "7 Aktionen",
+    "effect": "Aus den geöffneten Händen der Magierin steigt eine Erzkugel, die sie beliebig dirigieren und zur Explosion bringen kann. Verliert sie die Feuerkugel aus dem Blick oder durch äußere Einwirkung die Konzentration, so explodiert der Feuerball augenblicklich. Die Feuerkugel hat eine Maximalgeschwindigkeit von GS 15. Der angerichtete Schaden beträgt bis 1 Schritt Entfernung von der Explosion 5W6+ZfP*/2 TP. Dafür werden die Würfel für das Zentrum des Feuerballs geworfen; für jeden Schritt Entfernung sinkt der Schaden um 1 + den Würfel mit der niedrigsten Augen- zahl. Von diesen TP wird jeweils der RS der Opfer abgezogen. Bei mehr als 10 erlittenen TP sinkt der RS entsprechend dem IGNI- FAXIUS-Zauber. Brennbare Objekte innerhalb des Wirkungsradius gehen ebenfalls in Flammen auf.",
+    "cost": "21 AsP plus 1W6 LeP plus 1 Punkt Erschöpfung",
+    "target": "Zone",
+    "distance": "49 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "Es entsteht eine platzende Luftkugel, die neben ihrem Schaden auch noch die Sekundärwirkungen elementaren Wassers (S. 123) anrichtet.",
+    "antimagic": "Sowohl eine Zone des ERZBANN als auch eine des SCHADENSZAUBER BANNEN oder des BEWEGUNG STÖREN erschweren das Wirken des IGNISPHAERO. Die Kugel selbst wird von einem GARDIANUM oder einem INVERCANO aufgehalten und detoniert dann. Ein direkt auf die Kugel gesprochener BEWEGUNG STÖREN, Feuerbann oder SCHADENSZAUBER BANNEN bringen den Feuerball zur Explosion.",
+    "complexity": "D",
+    "characteristics": ["Schaden", "Elementar (Erz)", "Telekinese"],
+    "variants": [
+      {
+        "name": "Komplexe Bewegung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Hiermit kann die Erzkugel für eine Zeit von ZfW Aktionen eine von der Magierin festgelegte Bewegung (Kreis, Dreieck, Quadrat, Hin und Her, aber nichts komplizierteres) durchführen, an dessen Ende sie explodiert."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGOSPHAERO, ORCANOSPHAERO ...) erfordern separate Zauber, deren Kernformeln sehr selten (Ach, Mag, Dru(Mag) je 2; Geo 1) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Sekundärschäden auf Seite 123. Es wird häufig über Flächen- Varianten (IGNIPLANO) oder von kontrollierbaren Varianten spekuliert, doch bislang hat sich noch keine dieser Spekulationen in einer Variante manifestiert."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Das Opfer erleidet einen Angriff zum Niederwerfen (KK-Probe erschwert um 1 Punkt pro 5 angerichteten TP). Bei mehr angerichteten SP als KO/2–2 des Opfers entsteht eine erste Wunde, eine zweite bei mehr SP als KO –2 usw. Elementarer Erz-Schaden wirkt in voller Höhe als Strukturschaden an Gegenständen; er muss zwar die volle Härte überwinden, macht jedoch sofort eine Struktur-Probe erforderlich."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 124,
+    "name": "Orcanosphaero Luftball",
+    "trial": "MU/IN/KO",
+    "difficulty": "",
+    "technik": "Die Magierin hält beide Hände schalenförmig geöffnet in Armeslänge vor sich und spricht die Formel.",
+    "castTime": "7 Aktionen",
+    "effect": "Aus den geöffneten Händen der Magierin steigt eine Luftkugel, die sie beliebig dirigieren und zur Explosion bringen kann. Verliert sie die Feuerkugel aus dem Blick oder durch äußere Einwirkung die Konzentration, so explodiert der Feuerball augenblicklich. Die Feuerkugel hat eine Maximalgeschwindigkeit von GS 15. Der angerichtete Schaden beträgt bis 1 Schritt Entfernung von der Explosion 5W6+ZfP*/2 TP. Dafür werden die Würfel für das Zentrum des Feuerballs geworfen; für jeden Schritt Entfernung sinkt der Schaden um 1 + den Würfel mit der niedrigsten Augen- zahl. Von diesen TP wird jeweils der RS der Opfer abgezogen. Bei mehr als 10 erlittenen TP sinkt der RS entsprechend dem IGNI- FAXIUS-Zauber. Brennbare Objekte innerhalb des Wirkungsradius gehen ebenfalls in Flammen auf.",
+    "cost": "21 AsP plus 1W6 LeP plus 1 Punkt Erschöpfung",
+    "target": "Zone",
+    "distance": "49 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "Es entsteht eine platzende Erzkugel, die neben ihrem Schaden auch noch die Sekundärwirkungen elementaren Wassers (S. 123) anrichtet.",
+    "antimagic": "Sowohl eine Zone des LUFTBANN als auch eine des SCHADENSZAUBER BANNEN oder des BEWEGUNG STÖREN erschweren das Wirken des IGNISPHAERO. Die Kugel selbst wird von einem GARDIANUM oder einem INVERCANO aufgehalten und detoniert dann. Ein direkt auf die Kugel gesprochener BEWEGUNG STÖREN, Feuerbann oder SCHADENSZAUBER BANNEN bringen den Feuerball zur Explosion.",
+    "complexity": "D",
+    "characteristics": ["Schaden", "Elementar (Luft)", "Telekinese"],
+    "variants": [
+      {
+        "name": "Komplexe Bewegung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Hiermit kann die Luftkugel für eine Zeit von ZfW Aktionen eine von der Magierin festgelegte Bewegung (Kreis, Dreieck, Quadrat, Hin und Her, aber nichts komplizierteres) durchführen, an dessen Ende sie explodiert."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGOSPHAERO, ORCANOSPHAERO ...) erfordern separate Zauber, deren Kernformeln sehr selten (Ach, Mag, Dru(Mag) je 2; Geo 1) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Sekundärschäden auf Seite 123. Es wird häufig über Flächen- Varianten (IGNIPLANO) oder von kontrollierbaren Varianten spekuliert, doch bislang hat sich noch keine dieser Spekulationen in einer Variante manifestiert."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Das Opfer erleidet einen Angriff zum Niederwerfen (KK- Probe erschwert um 1 pro 10 angerichtete TP). Bei Misslingen der KK-Probe wird er pro 10 TP einen Schritt von der Quelle des Schadens weggeschleudert. Außerdem erleidet das Opfer durch die plötzlichen Luftdruckunterschiede einen Punkt Erschöpfung pro 10 angerichteten TP. Ein elementarer Luftstoß kann kleinere Flammen auslöschen und größere Feuer anfachen. Zudem kann er Gegenstände umherwirbeln, wobei die Einzelheiten Meisterentscheid sind: je höher die TP, desto höher auch hierbei die Auswirkungen. Elementarer Luft-Schaden wirkt in Höhe eines Viertels der angerichteten TP als Strukturschaden an Gegenständen und muss die volle Härte überwinden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 124,
+    "name": "Aquasphaero Wasserball",
+    "trial": "MU/IN/KO",
+    "difficulty": "",
+    "technik": "Die Magierin hält beide Hände schalenförmig geöffnet in Armeslänge vor sich und spricht die Formel.",
+    "castTime": "7 Aktionen",
+    "effect": "Aus den geöffneten Händen der Magierin steigt eine Wasserkugel, die sie beliebig dirigieren und zur Explosion bringen kann. Verliert sie die Feuerkugel aus dem Blick oder durch äußere Einwirkung die Konzentration, so explodiert der Feuerball augenblicklich. Die Feuerkugel hat eine Maximalgeschwindigkeit von GS 15. Der angerichtete Schaden beträgt bis 1 Schritt Entfernung von der Explosion 5W6+ZfP*/2 TP. Dafür werden die Würfel für das Zentrum des Feuerballs geworfen; für jeden Schritt Entfernung sinkt der Schaden um 1 + den Würfel mit der niedrigsten Augen- zahl. Von diesen TP wird jeweils der RS der Opfer abgezogen. Bei mehr als 10 erlittenen TP sinkt der RS entsprechend dem IGNI- FAXIUS-Zauber. Brennbare Objekte innerhalb des Wirkungsradius gehen ebenfalls in Flammen auf.",
+    "cost": "21 AsP plus 1W6 LeP plus 1 Punkt Erschöpfung",
+    "target": "Zone",
+    "distance": "49 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "Es entsteht eine platzende Feuerkugel, die neben ihrem Schaden auch noch die Sekundärwirkun- gen elementaren Wassers (S. 123) anrichtet.",
+    "antimagic": "Sowohl eine Zone des WASSERBANN als auch eine des SCHADENSZAUBER BANNEN oder des BEWEGUNG STÖREN erschweren das Wirken des IGNISPHAERO. Die Kugel selbst wird von einem GARDIANUM oder einem INVERCANO aufgehalten und detoniert dann. Ein direkt auf die Kugel gesprochener BEWEGUNG STÖREN, Feuerbann oder SCHADENSZAUBER BANNEN bringen den Feuerball zur Explosion.",
+    "complexity": "D",
+    "characteristics": ["Schaden", "Elementar (Wasser)", "Telekinese"],
+    "variants": [
+      {
+        "name": "Komplexe Bewegung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Hiermit kann die Wasserkugel für eine Zeit von ZfW Aktionen eine von der Magierin festgelegte Bewegung (Kreis, Dreieck, Quadrat, Hin und Her, aber nichts komplizierteres) durchführen, an dessen Ende sie explodiert."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGOSPHAERO, ORCANOSPHAERO ...) erfordern separate Zauber, deren Kernformeln sehr selten (Ach, Mag, Dru(Mag) je 2; Geo 1) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Sekundärschäden auf Seite 123. Es wird häufig über Flächen- Varianten (IGNIPLANO) oder von kontrollierbaren Varianten spekuliert, doch bislang hat sich noch keine dieser Spekulationen in einer Variante manifestiert."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Das Opfer erleidet einen Angriff zum Niederwerfen (KK-Probe erschwert um 1 pro 10 angerichtete TP) und muss zudem eine KO-Probe ablegen, die pro 10 TP um 1 erschwert ist: Bei Misslingen hat das Opfer Wasser in der Lunge und ist ZfP* KR lang kampfunfähig und verliert ebenso viele AuP wie LeP durch diesen Zauber. Elementarer Wasserschaden wirkt in halber Höhe als Strukturschaden an Gegenständen und muss die komplette Härte überwinden, außerdem löscht Wasserschaden je nach Stärke Feuer aus."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
+  },
+  {
+    "page": 124,
+    "name": "Humosphaero Humusball",
+    "trial": "MU/IN/KO",
+    "difficulty": "",
+    "technik": "Die Magierin hält beide Hände schalenförmig geöffnet in Armeslänge vor sich und spricht die Formel.",
+    "castTime": "7 Aktionen",
+    "effect": "Aus den geöffneten Händen der Magierin steigt eine Humuskugel, die sie beliebig dirigieren und zur Explosion bringen kann. Verliert sie die Feuerkugel aus dem Blick oder durch äußere Einwirkung die Konzentration, so explodiert der Feuerball augenblicklich. Die Feuerkugel hat eine Maximalgeschwindigkeit von GS 15. Der angerichtete Schaden beträgt bis 1 Schritt Entfernung von der Explosion 5W6+ZfP*/2 TP. Dafür werden die Würfel für das Zentrum des Feuerballs geworfen; für jeden Schritt Entfernung sinkt der Schaden um 1 + den Würfel mit der niedrigsten Augen- zahl. Von diesen TP wird jeweils der RS der Opfer abgezogen. Bei mehr als 10 erlittenen TP sinkt der RS entsprechend dem IGNI- FAXIUS-Zauber. Brennbare Objekte innerhalb des Wirkungsradius gehen ebenfalls in Flammen auf.",
+    "cost": "21 AsP plus 1W6 LeP plus 1 Punkt Erschöpfung",
+    "target": "Zone",
+    "distance": "49 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Kosten", "Reichweite"],
+    "reversalis": "Es entsteht eine platzende Eiskugel, die neben ihrem Schaden auch noch die Sekundärwirkungen elementaren Wassers (S. 123) anrichtet.",
+    "antimagic": "Sowohl eine Zone des HUMUSBANN als auch eine des SCHADENSZAUBER BANNEN oder des BEWEGUNG STÖREN erschweren das Wirken des IGNISPHAERO. Die Kugel selbst wird von einem GARDIANUM oder einem INVERCANO aufgehalten und detoniert dann. Ein direkt auf die Kugel gesprochener BEWEGUNG STÖREN, Feuerbann oder SCHADENSZAUBER BANNEN bringen den Feuerball zur Explosion.",
+    "complexity": "D",
+    "characteristics": ["Schaden", "Elementar (Humus)", "Telekinese"],
+    "variants": [
+      {
+        "name": "Komplexe Bewegung",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Hiermit kann die Humuskugel für eine Zeit von ZfW Aktionen eine von der Magierin festgelegte Bewegung (Kreis, Dreieck, Quadrat, Hin und Her, aber nichts komplizierteres) durchführen, an dessen Ende sie explodiert."
+      },
+      {
+        "name": "Elementare Varianten",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "(FRIGOSPHAERO, ORCANOSPHAERO ...) erfordern separate Zauber, deren Kernformeln sehr selten (Ach, Mag, Dru(Mag) je 2; Geo 1) zu finden sind. Auch diese Zauber rufen jeweils die zerstörerischen Aspekte eines reinen Elements herbei und haben regeltechnisch ähnliche Auswirkungen – orientieren Sie sich an den Sekundärschäden auf Seite 123. Es wird häufig über Flächen- Varianten (IGNIPLANO) oder von kontrollierbaren Varianten spekuliert, doch bislang hat sich noch keine dieser Spekulationen in einer Variante manifestiert."
+      },
+      {
+        "name": "Elementarer Sekundärschaden",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Die Vielgestaltigkeit des Humus erlaubt hier nur sehr wenig konkrete Aussagen, aber üblicherweise werden die körperlichen Eigenschaften eines betroffenen Lebewesens um 1 Punkt pro 10 ange- richteten TP in Mitleidenschaft gezogen werden. Diese Auswirkungen halten jeweils etwa ZfP* SR an. Elementarer Humusschaden wirkt in Höhe eines Viertels der angerichteten TP als Strukturschaden an Gegenständen und muss die halbe Härte überwinden."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Achaz", "distribution": 2},
+      { "representation": "Geode", "distribution": 2},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
