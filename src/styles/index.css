@@ -142,8 +142,15 @@ body {
   height: 37px;
 }
 
+.custom-file-input:lang(en) ~ .custom-file-label::after{
+  content: "" !important;
+}
+
 .custom-file-label::after {
-  content: '\f093' !important;
+  text-indent: -9999px;
+  width: 28px;
+  background: url("/assets/download.svg") no-repeat center !important;
+  background-size: 16px 16px !important;
 }
 
 .cursor-pointer {
