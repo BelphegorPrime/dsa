@@ -4681,5 +4681,28 @@
       { "representation": "Geode", "distribution": 2},
       { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 125,
+    "name": "Ignorantia Ungesehn",
+    "trial": "IN/CH/GE",
+    "difficulty": "",
+    "technik": "Der Magier berührt leicht seine Augen und Ohren und murmelt die Formel.",
+    "castTime": "10 Aktionen",
+    "effect": "Dieser Zauber sorgt dafür, dass der Magier von zufälligen Beobachtern nicht bemerkt wird. Er eignet sich damit hervorragend, um in größeren Menschenmengen unterzutauchen. Der Magier wird nicht etwa unsichtbar, sondern die Umstehenden haben überhaupt kein Interesse an ihm, solange er nicht von sich aus mit ihnen interagiert. Wenn ein Beobachter sich auf den Magier konzentriert oder mit ihm alleine ist – was meist auch für Wachen gilt – kann er ihn entdecken, wenn ihm eine Sinnenschärfe-Probe gelingt, die um ZfP*/2 +7 Punkte erschwert ist.",
+    "cost": "5 AsP plus 2 AsP pro SR",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "je nach AsP-Einsatz (A)",
+    "modifications": ["Zauberdauer", "Wirkungsdauer", "Reichweite(Berührung)"],
+    "reversalis": "hebt einen wirkenden IGNORANTIA auf.",
+    "antimagic": "kann in einer Zone des EINFLUSS BANNEN oder des ILLUSION AUFLÖSEN nur erschwert gesprochen und durch gezielten Einsatz dieser Zauber beendet werden.",
+    "complexity": "D",
+    "characteristics": ["Einfluss", "Illusion"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3},
+      { "representation": "Scharlatan", "distribution": 3}
+    ]
   }
 ]
