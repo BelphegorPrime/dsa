@@ -4704,5 +4704,37 @@
       { "representation": "Gildenmagier", "distribution": 3},
       { "representation": "Scharlatan", "distribution": 3}
     ]
+  },
+  {
+    "page": 126,
+    "name": "Illusion auflösen",
+    "trial": "KL/IN/CH",
+    "difficulty": "",
+    "technik": "Der Magier klatscht dreimal in die Hände.",
+    "castTime": "2 Aktionen",
+    "effect": "Mit dieser Formel können Illusionszauber aller Art (alle Zauber mit dem Merkmal Illusion) gebrochen werden: Das Trugbild löst sich in einen Wirbel aus Farben und Formen auf, Geräusche enden in einem leiser werdenden Rauschen etc. Der Antimagier muss nur wissen, dass eine Illusion vorliegt, den zu bannenden Spruch aber nicht aktiv beherrschen; er muss das Trugbild also als solches erkannt haben. Diese anti magische Formel wirkt jeweils nur gegen eine einzige Illusion. Die Zauberprobe ist um die vom gegnerischen Zauberer (demjenigen, der die Illusion gewirkt hat) erzielten ZfP* erschwert, des Weiteren um 1/20 der AsP des zu brechenden Spruchs. Weitere Erschwernisse können aus einem PROTECTIONIS herrühren. Sorgfältige magische Analyse des wirkenden Illusionszaubers im Vorfeld erleichtert die Probe: Pro 3 Punkte ZfP* bei einem ANALYS ARCANSTRUKTUR ist die Probe auf ILLUSION AUFLÖSEN um einen Punkt erleichtert.",
+    "cost": "6 AsP plus 1/20 der Kosten des zu brechenden Spruchs (Sch: 4 AsP +1/30 der Kosten). Um eine permanent wirkende und mittels permanenter AsP fixierte Illusion aufzuheben, muss der Magier permanente AsP investieren: 1/20 der Kosten der Illusion. Misslingt die Probe, entstehen keine permanenten Kosten.",
+    "target": "einzelner Zauber",
+    "distance": "3 Schritt",
+    "duration": "augenblicklich",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Illusionen sind häufiger einmal mit dem PROTECTIONIS geschützt (S. 213).",
+    "complexity": "B",
+    "characteristics": ["Antimagie", "Illusion"],
+    "variants": [
+      {
+        "name": "Zone",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Für den Einsatz von 18 AsP kann der Magier eine ortsfeste, antimagische Zone von 2 x ZfW Schritt Radius erzeugen, in der das Wirken von Sprüchen mit dem Merkmal Illusion um ZfP* Punkte erschwert ist und die ZfP* SR lang anhält. Bereits existierende Illusionen innerhalb der Zone lösen sich auf, wenn sie weniger ZfP* aufweisen als die Antimagie."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Scharlatan", "distribution": 4},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Schelm", "distribution": 3}
+    ]
   }
 ]
