@@ -4759,5 +4759,47 @@
       { "representation": "Gildenmagier", "distribution": 1},
       { "representation": "Achaz", "distribution": 1}
     ]
+  },
+  {
+    "page": 128,
+    "name": "Imperavi Handlungszwang",
+    "trial": "KL/CH/CH",
+    "difficulty": "+MR",
+    "technik": "Der Magier fixiert sein Opfer und flüstert die Formel.",
+    "castTime": "10 Aktionen",
+    "effect": "Dieser Zauber erzeugt beim Opfer absoluten Gehorsam für einen einzigen konkreten Befehl des Magiers. In gewisser Weise wirkt der IMPERAVI ähnlich wie der Spruch BANNBALADIN, jedoch länger, ausschließlich auf intelligente Wesen und durch tiefer gehende Gefühlsveränderung, weswegen er auch nur schwer zu brechen ist. Bei Befehlen, die dem Selbsterhaltungstrieb oder den inners- ten Überzeugungen (wie ein Mordauftrag an Tsa-Geweihte) zuwiderlaufen, steht dem Opfer stündlich eine MU-Probe zu, die um die ZfP* erschwert ist, um den Befehl für die kommende Stunde zu verweigern. “Erschlage den reichen Kaufmann, suche seine Truhe und bring mir seine Dukaten!”, sind drei Befehle (auch wenn man sie in einen Satz packen kann). Eine ‘Kaska dierung’ des Imperavi (“Folge allen meinen weiteren Befehlen!” oder “Du beantwortest mir nun alle Fragen wahrheitsgemäß.”) ist nicht möglich. Während der Wirkungsdauer ist es dem Opfer nicht möglich, gegen den Zauberer vorzugehen.",
+    "cost": "13 AsP",
+    "target": "Einzelperson",
+    "distance": "1 Schritt",
+    "duration": "maximal ZfP* Stunden; die Wirkung endet auch mit der vollständigen Erfüllung des Befehls.",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite"],
+    "reversalis": "hebt einen bestehenden IMPERAVI auf.",
+    "antimagic": "kann in einer Zone des BEHERRSCHUNG BRECHEN nur erschwert gewirkt und von diesem Zauber beendet werden.",
+    "complexity": "E",
+    "characteristics": ["Herrschaft"],
+    "variants": [
+      {
+        "name": "Auslöser",
+        "mod": "+3",
+        "minZfW": 0,
+        "effect": "Es besteht auch die Möglichkeit, den Zauber so zu sprechen, dass das Opfer den Befehl erst beim Eintreten eines gewissen Ereignisses (Fingerschnippen, Schlüsselwort, Opfer betritt den Raum etc.) ausführt."
+      },
+      {
+        "name": "Befehl und Gehorsam",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Der Magier kann dem Opfer einen einzelnen, kurzen Befehl geben (“Halt‘s Maul!”, “Waffe weg!”), den es sofort ausführen muss; danach verfliegt die Wirkung des Zaubers. Bei Befehlen, die den innersten Grundwerten oder dem Selbsterhaltungstrieb des Opfers widersprechen, muss der Zauberer eine Zauberprobe ablegen, die um die doppelte MR erschwert ist. Zauberdauer 3 Aktionen, Kosten 7 AsP."
+      },
+      {
+        "name": "Befehl und Gehorsam",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Diese Variante wirkt maximal ZfP* Tage lang; es können während dieser Zeit bis zu ZfP* konkrete Befehle erteilt werden. Dafür kostet sie 21 AsP und erfordert Berührung und eine Spielrunde Zauberdauer (während der die Berührung aufrechterhalten werden muss)."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
+    ]
   }
 ]
