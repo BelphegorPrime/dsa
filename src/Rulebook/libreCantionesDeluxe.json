@@ -4736,5 +4736,28 @@
       { "representation": "Hexe", "distribution": 3},
       { "representation": "Schelm", "distribution": 3}
     ]
+  },
+  {
+    "page": 127,
+    "name": "Immortalis Lebenszeit",
+    "trial": "MU/CH/KO",
+    "difficulty": "",
+    "technik": "Der Magier zeichnet ein Tridekagramm (einen Dreizehnstern) auf den Boden, legt sich und ein eventuelles Opfer hinein, ruft den unergründlichen Satinav bei den Mächten an, die ihn einst verbannten, und wartet, dass eine Vision des Viel- gehörnten erscheint. Das Ritual kann nur zu besonderen Sternkonstellationen (Tsa-Mond, Satinav und Sumus Schale im Meridian, Uthar geschlossen) ausgeführt werden, die sich etwa alle zehn Jahre wiederholen.",
+    "castTime": "von Neumond bis zum nächsten Neumond; der Magier selbst muss jede Nacht im Tridekagramm liegen, kann tagsüber aber agieren.",
+    "effect": "Mit diesem Zauber kann sich der Magier nach Belieben verjüngen, indem er ein anderes Wesen dafür altern und vergehen lässt oder eine große Menge permanenter Astralenergie einsetzt. Die Verjüngung hebt alle negativen Auswirkungen des Alters (siehe das entsprechende Kapitel im Band Wege des Schwerts), die in der entsprechenden, zurückgenommenen Periode aufgetreten sind, wieder auf.",
+    "cost": "49 AsP, davon 3 AsP permanent für das eigentliche Ritual. Dazu kommen pro 10 Jahre Verjüngung 1W6+1 permanente LeP und AsP, die jedoch vom Opfer stammen können (nicht zwangsläufig müssen).",
+    "target": "Einzelperson",
+    "distance": "selbst",
+    "duration": "augenblicklich",
+    "modifications": [],
+    "reversalis": "keine Wirkung",
+    "antimagic": "keine bekannt. Da das Ritual aber lange andauert, kann es natürlich mit weltlichen Mitteln gestört werden. VERWANDLUNG BEENDEN und ein eventueller TEMPORALZAUBER BANNEN kommen wegen der augenblicklichen Wirkung nicht zum Tragen.",
+    "complexity": "F",
+    "characteristics": ["Form", "Temporal"],
+    "variants": [],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 1},
+      { "representation": "Achaz", "distribution": 1}
+    ]
   }
 ]
