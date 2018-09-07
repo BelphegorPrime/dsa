@@ -4801,5 +4801,41 @@
       { "representation": "Gildenmagier", "distribution": 4},
       { "representation": "Druide", "distribution": 2, "subRepresentation": "Gildenmagier"}
     ]
+  },
+  {
+    "page": 129,
+    "name": "Impesona Maskenbild",
+    "trial": "KL/IN/FF",
+    "difficulty": "",
+    "technik": "Der Magier fährt sich – oder der Person, die er tarnen will – mit den gespreizten Fingern der linken Hand über das Gesicht und spricht die Formel.",
+    "castTime": "1 Spielrunde",
+    "effect": "Dieser Spruch legt eine bewegte Illusion über das Gesicht einer Person, so dass sie einer anderen gleicht. Die Illusion wirkt nur auf die Gesichtszüge und das Haupthaar, nicht jedoch auf die typische Mimik oder gar die Aussprache, genauso wenig auf Größe und Körperbau. Der Zaubernde muss ein Gesicht schon einmal gesehen haben, wenn er es imitieren will, besser ist jedoch, wenn er den zu Imitierenden geraume Zeit beobachtet hat. Je nach Bekanntheit des Gesichts kann der Meister Zu schläge bis zu 7 Punkten auf die Probe verlangen. Will der Magier sich ein vollkommen neues Gesicht erschaffen, so ist die Probe beim ersten Mal um 7 Punkte erschwert, bei der zweiten Anwendung um 6 Punkte usw., bis der Zauberer gelernt hat, das Phantasiegebilde richtig zu beherrschen und seine Mimik zu steuern. Allgemein gilt: Die übrig behaltenen Zauberfertigkeitspunkte geben die Qualität der Illusion, die Realitätsdichte an (RD = ZfP*/2 +7; vgl. S. 34) und können als Erschwernis auf Proben angewandt werden, wenn ein Beobachter die Illusion durchschauen will. Bei Misslingen der Zauberprobe entsteht meist eine groteske Karika- tur des gewünschten Gesichts, die von jedermann sofort als Trugbild erkenntlich ist (weswegen der Illusionist den Zauber auch meist fallen lässt). Das bei einem Patzer entstehende Gesicht ist so schrecklich, dass der Zauberer während der nächsten Stunden tunlichst die Öffentlichkeit und den Blick in den Spiegel meiden sollte: Gar grässlich ist das Angesicht, willentlich weichen tut es nicht ...",
+    "cost": "9 AsP plus 3 AsP pro Stunde",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst, Berührung",
+    "duration": "je nach AsP-Aufwand (A)",
+    "modifications": ["Zauberdauer", "Erzwingen", "Wirkungsdauer"],
+    "reversalis": "Ein wirkender IMPERSONA wird aufgehoben.",
+    "antimagic": "kann in einer Zone des ILLUSION AUFLÖSEN nur erschwert gesprochen und durch gezielten Einsatz dieses Zaubers beendet werden.",
+    "characteristics": ["Illusion"],
+    "complexity": "D",
+    "variants": [
+      {
+        "name": "Karikatur",
+        "mod": "+0 nur in der scharlatanischen Repräsentation",
+        "minZfW": 7,
+        "effect": "Besonderheiten des gewünschten Gesichts (große Ohren, volle Lippen, lange Nase, Warzen) werden besonders hervorgehoben. Das Bildnis ist sofort als Karikatur kenntlich. Kosten: 7 AsP, Wirkungsdauer: 1 Stunde"
+      },
+      {
+        "name": "Mal tarnen",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Der Zaubernde legt keine Illusion über sein Gesicht, sondern über eine Gliedmaße, über Brust, Bauch oder Rücken. Diese Illusion bewegt sich mit Haut und Muskeln und kann entweder eine Tätowierung oder Luloa-Malerei darstellen oder aber ein solches Bild, aber auch eine Brandnarbe verstecken. Wirkt nicht gegen das Gilden- siegel, jedoch gegen Dämonenmale oder Stigmata (Zauberprobe zusätzlich erschwert um die GP des Stigmas bzw. den Kreis der Verdammnis bei Dämonenmalen). Kosten: 7 AsP plus 1 AsP pro Stunde."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Scharlatan", "distribution": 3}
+    ]
   }
 ]
