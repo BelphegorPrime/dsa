@@ -4837,5 +4837,30 @@
       { "representation": "Gildenmagier", "distribution": 4},
       { "representation": "Scharlatan", "distribution": 3}
     ]
+  },
+  {
+    "page": 130,
+    "name": "Infinitum Immerdar",
+    "trial": "KL/CH/KO",
+    "difficulty": "+Mod",
+    "technik": "Der Zaubernde konzentriert sich auf die astralen Schwingungen, die dem zu verlängernden Spruch innewohnen, spricht die Formel und lässt seine Kraft in den Spruch fließen.",
+    "castTime": "mehrere Tage Vorbereitung, der eigentliche Zauber dauert etwa 1 Stunde.",
+    "effect": "Wird dieser Spruch angewandt, während ein anderer Spruch wirkt, so wird dessen Wirkungsdauer auf permanent verlängert. Mit Permanenz lassen sich nur solche Sprüche belegen, die eine begrenzte Wirkungsdauer haben, nicht aber solche, deren Dauer augenblicklich ist (z.B. viele Schadens- und Heilzauber). Zauber, deren Wirkungsdauer kürzer ist als die Zauber dauer des INFINITUM (1 Stunde), werden am Ende dieser Stunde gesprochen. Die Zauberprobe ist um die Hälfte der ursprünglichen AsP-Kosten des zu verlängernden Spruches erschwert.",
+    "cost": "49 AsP plus die (Mindest-)Kosten des zu verlängernden Zaubers; von dieser Summe müssen 1/20 als permanente AsP aufgewendet werden.",
+    "target": "einzelner Zauber",
+    "distance": "Berührung (Der Magier muss im oder am Wirkungsbereich des zu verlängernden Zaubers stehen.)",
+    "duration": "permanent",
+    "modifications": [],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Die Wirkung eines INFINITUM könnte vermutlich mit einem TEMPORALZAUBEREI BANNEN aufgehoben werden – doch über diese Antimagie wird bislang nur spekuliert. Eine Zone des METAMAGIE NEUTRALISIEREN erschwert das Wirken des Zaubers; ein mittels INFINITUM verlängerter Zauber kann jedoch mittels des DESTRUCTIBO (nicht aber mittels anderer Antimagie) gebrochen werden.",
+    "characteristics": ["Metamagie", "Temporal"],
+    "complexity": "F",
+    "variants": [],
+    "distribution": [
+      { "representation": "Achaz", "distribution": 1},
+      { "representation": "Elf", "distribution": 1},
+      { "representation": "Geode", "distribution": 1},
+      { "representation": "Gildenmagier", "distribution": 1}
+    ]
   }
 ]
