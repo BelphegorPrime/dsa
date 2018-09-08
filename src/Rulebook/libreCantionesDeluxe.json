@@ -4862,5 +4862,40 @@
       { "representation": "Geode", "distribution": 1},
       { "representation": "Gildenmagier", "distribution": 1}
     ]
+  },
+  {
+    "page": 131,
+    "name": "Invercano Spiegeltrick",
+    "trial": "MU/IN/FF",
+    "difficulty": "",
+    "technik": "Der Zauberer legt die Handfläche der linken Hand an die Stirn, murmelt die Formel und kehrt dann die Handfläche am ausgestreckten Arm nach außen.",
+    "castTime": "7 Aktionen",
+    "effect": "Die Handfläche des Magiers überzieht sich für die Wirkungsdauer mit einem spiegelnden silbernen Schein, der die Wirkung aller Zauber mit den Merkmalen Form, Eigenschaften und Schaden auf den Angreifer zurückwerfen kann. Um einen solchen Zauber zu spiegeln, muss dem Magier jedoch eine IN-Probe gelingen, damit er die Hand rechtzeitig in die Bahn des ankommenden Spruches bewegen kann. Diese Probe ist um 1/10 der AsP des abzuwehrenden Zaubers erleichtert. Die Probe ist um 4 Punkte erschwert, wenn der Magier in dieser Kampfrunde bereits eine Aktion aufgewendet hat. Es ist explizit möglich, solche Zauber abzuwehren, die unsichtbar sind (FULMI- NICTUS, diverse Verwandlungen). Der INVERCANO wirkt nur gegen Zauber, die den Magier auch treffen würden, nicht aber gegen solche, die vor ihm bereits abgewehrt wurden (z.B. durch die Kuppel eines GARDIANUM – was diese Kuppel durchdringt, kann natür lich reflektiert werden), solche, die ihn durch Flächeneffekte schädigen (z.B. die Flammenwolke eines zwei Schritt neben ihm detonierenden IGNISPHAERO), nicht gegen sekundäre Auswirkungen wie erhöhte TP-Zahlen von Angreifern und Zauber, die direkt am Körper abgewehrt würden (Schutzhaut eines GARDIANUM, Schutzamulette). Bei Zaubern, die gegen die Magieresistenz des Verteidi gers gehen, wird zuerst geprüft, ob der Spruch über haupt gelingt, sodann, ob der Verteidiger ihn reflektieren konnte, und schließlich, ob der Angreifer mit seinem Würfelresultat seine eigene MR überwunden hätte. Die Formel wirkt nicht gegen jegliche Art von Flächeneffekten oder sekundären Auswirkungen (erhöhte TP-Anzahl, die Hiebe eines Radaubesens, die Flammenwolke eines IGNISPHAERO etc.).",
+    "cost": "13 AsP",
+    "target": "Einzelperson, freiwillig",
+    "distance": "selbst",
+    "duration": "ZfP* mal 2 Kampfrunden",
+    "modifications": ["Zauberdauer"],
+    "reversalis": "keine Wirkung",
+    "antimagic": "Ein mit PROTECTIONIS geschützter Zauber wird nicht zurückgeworfen. In einer Zone des METAMAGIE NEUTRALISIEREN wirkt der INVERCANO nur, wenn er mehr ZfP* erzielt als die Antimagie.",
+    "characteristics": ["Metamagie", "Antimagie", "Kraft"],
+    "complexity": "F",
+    "variants": [
+      {
+        "name": "Zusätzliches Merkmal",
+        "mod": "+3",
+        "minZfW": 7,
+        "effect": "Der Magier kann sich entscheiden, den Schutz zusätzlich gegen das Merkmal Einfluss oder Herrschaft wirken zu lassen. Jedes zusätzliche Merkmal erschwert die Probe um 3 Punkte."
+      },
+      {
+        "name": "Silberschild",
+        "mod": "+7",
+        "minZfW": 11,
+        "effect": "Mit dieser Variante kann der INVERCANO auf einen beliebigen Schild gelegt werden, der dann ZfP* Spielrunden o.g. Zauberei reflektiert. Die IN-Probe des Schildträgers zur Abwehr des Zaubers ist um den PA-WM des Schildes erleichtert. Kosten: 19 AsP."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 3}
+    ]
   }
 ]
