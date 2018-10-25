@@ -149,7 +149,7 @@ body {
 .custom-file-label::after {
   text-indent: -9999px;
   width: 28px;
-  background: url("/assets/download.svg") no-repeat center !important;
+  background: url("../assets/download.svg") no-repeat center !important;
   background-size: 16px 16px !important;
 }
 
