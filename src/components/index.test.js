@@ -16,9 +16,7 @@ it('renders without crashing', () => {
 
 it('can toogle mastermode', () => {
   let instance;
-  const { getByLabelText, getByTestId } = render(
-    <App ref={el => (instance = el)} />
-  );
+  const { getByLabelText } = render(<App ref={el => (instance = el)} />);
   const standard = getByLabelText('Standard');
   const mastermodus = getByLabelText('Meistermodus');
   const houserules = getByLabelText('Hausregeln');

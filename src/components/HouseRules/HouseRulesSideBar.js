@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
 
+import { addId } from '../../helperFunctions';
+
 class HouseRulesSidebar extends Component {
   constructor() {
     super();
     this.fileUpload = React.createRef();
-  }
-
-  addId(rule) {
-    const returnRule = rule;
-    const s4 = () =>
-      Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-    returnRule.id = `${s4() +
-      s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
-    return returnRule;
   }
 
   fileUploaded(files) {
@@ -28,7 +19,7 @@ class HouseRulesSidebar extends Component {
       })
         // eslint-disable-next-line no-eval
         .then(script => eval(script))
-        .then(rule => this.addId(rule))
+        .then(rule => addId(rule))
         .then(rule => this.props.addedHouseRule(rule))
         .then(() => {
           this.fileUpload.current.value = '';
@@ -64,15 +55,17 @@ class HouseRulesSidebar extends Component {
           <div className="custom-file cursor-pointer">
             <input
               ref={this.fileUpload}
-              id="validatedCustomFile"
-              data-testid="validatedCustomFile"
+              id="validatedCustomHouseRuleFile"
+              data-testid="validatedCustomHouseRuleFile"
               className="custom-file-input"
               type="file"
               accept="application/javascript"
               multiple={true}
               onChange={e => this.fileUploaded(e.target.files)}
             />
-            <label className="custom-file-label cursor-pointer" htmlFor="validatedCustomFile">
+            <label
+              className="custom-file-label cursor-pointer"
+              htmlFor="validatedCustomHouseRuleFile">
               Hausregel
             </label>
           </div>

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import proptypes from 'prop-types';
 
-import App from '../../index'
+import { generateUUID } from '../../helperFunctions';
 
 class Comments extends Component {
   save() {
@@ -14,7 +14,7 @@ class Comments extends Component {
       .getElementsByTagName('textarea')[0];
     hero.converted.comments = [
       {
-        id: App.generateUUID(),
+        id: generateUUID(),
         name: nameInput.value,
         comment: commentTextarea.value,
         added: true

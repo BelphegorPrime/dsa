@@ -3,7 +3,7 @@ import proptypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBook } from '@fortawesome/free-solid-svg-icons';
 
-import Main from '../../index';
+import { test, noop } from '../../helperFunctions';
 
 class SpellList extends Component {
   constructor() {
@@ -16,7 +16,7 @@ class SpellList extends Component {
 
   changeSpell(name, trial, taw, e) {
     e.stopPropagation();
-    const { diceThrow, values } = Main.test(trial, this.props.properties);
+    const { diceThrow, values } = test(trial, this.props.properties);
     const tawStar = taw + diceThrow;
     this.setState(currentState => {
       const newState = currentState.tawStars;
@@ -64,13 +64,12 @@ class SpellList extends Component {
                   <tr
                     className={spell.fromLCD ? 'cursor-pointer' : ''}
                     onClick={
-                      spell.fromLCD ? this.showLCD.bind(this, name) : Main.noop
+                      spell.fromLCD ? this.showLCD.bind(this, name) : noop
                     }>
                     <td style={{ width: nameWidth }}>
                       <div>
                         <span className="font-weight-bold">{name}</span>
-                        {spell.variant}
-                        ({spell.representation})
+                        {spell.variant}({spell.representation})
                         {spell.fromLCD ? (
                           <span className="pl-1">
                             <FontAwesomeIcon icon={faBook} />

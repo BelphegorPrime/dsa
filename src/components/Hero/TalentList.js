@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import proptypes from 'prop-types';
 
-import Main from '../../index';
+import { test } from '../../helperFunctions';
 
 class TalentList extends Component {
   constructor() {
@@ -12,7 +12,7 @@ class TalentList extends Component {
   }
 
   changeTest(name, trial, taw) {
-    const { diceThrow, values } = Main.test(trial, this.props.properties);
+    const { diceThrow, values } = test(trial, this.props.properties);
     const tawStar = taw + diceThrow;
     this.setState(currentState => {
       const newState = currentState.tawStars;

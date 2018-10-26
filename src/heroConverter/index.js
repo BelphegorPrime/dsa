@@ -17,7 +17,6 @@ import RuleBook from '../Rulebook';
 export const convert = (hero, houseRules = []) => {
   const returnHero = {};
   const ruleBook = new RuleBook(houseRules);
-  console.log(ruleBook.getArsenal());
   returnHero.name = hero.children[0].attributes.name;
   const { children } = hero.children[0];
   children.forEach(child => {
@@ -79,7 +78,6 @@ export const convert = (hero, houseRules = []) => {
     }
   });
   returnHero.talentList = addFight(returnHero.talentList, returnHero.fight);
-  console.log(returnHero);
   return returnHero;
 };
 
@@ -123,7 +121,7 @@ export const reconvert = chosenHero => {
 
                     // returnMoney.attributes.anzahl = money.amount;
                   }
-                  existingObjects = existingObjects.filter(o => o !== name);
+                  existingObjects = existingObjects.filter(eo => eo !== name);
                   return returnObject;
                 });
               } else {

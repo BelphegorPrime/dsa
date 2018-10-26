@@ -1,4 +1,4 @@
-import Main from '../components';
+import {calc2, calc5} from '../helperFunctions';
 
 export default properties => {
   const returnProperties = {};
@@ -108,7 +108,7 @@ export default properties => {
     }
   });
 
-  returnProperties.lifeforce.calcValue = Main.calc2(
+  returnProperties.lifeforce.calcValue = calc2(
     returnProperties.constitution.value,
     returnProperties.constitution.value,
     returnProperties.strength.value
@@ -119,7 +119,7 @@ export default properties => {
     returnProperties.lifeforce.basicValue;
 
   if (returnProperties.endurance) {
-    returnProperties.endurance.calcValue = Main.calc2(
+    returnProperties.endurance.calcValue = calc2(
       returnProperties.courage.value,
       returnProperties.constitution.value,
       returnProperties.dexterity.value
@@ -131,7 +131,7 @@ export default properties => {
   }
 
   if (returnProperties.astralEnergy) {
-    returnProperties.astralEnergy.calcValue = Main.calc2(
+    returnProperties.astralEnergy.calcValue = calc2(
       returnProperties.courage.value,
       returnProperties.intuition.value,
       returnProperties.charisma.value
@@ -144,7 +144,7 @@ export default properties => {
   }
 
   if (returnProperties.initiativBaseValue) {
-    returnProperties.initiativBaseValue.calcValue = Main.calc5(
+    returnProperties.initiativBaseValue.calcValue = calc5(
       returnProperties.courage.value,
       returnProperties.courage.value,
       returnProperties.intuition.value,
@@ -156,7 +156,7 @@ export default properties => {
   }
 
   if (returnProperties.attackBaseValue) {
-    returnProperties.attackBaseValue.calcValue = Main.calc5(
+    returnProperties.attackBaseValue.calcValue = calc5(
       returnProperties.courage.value,
       returnProperties.dexterity.value,
       returnProperties.strength.value
@@ -167,7 +167,7 @@ export default properties => {
   }
 
   if (returnProperties.paradeBaseValue) {
-    returnProperties.paradeBaseValue.calcValue = Main.calc5(
+    returnProperties.paradeBaseValue.calcValue = calc5(
       returnProperties.intuition.value,
       returnProperties.dexterity.value,
       returnProperties.strength.value
@@ -178,7 +178,7 @@ export default properties => {
   }
 
   if (returnProperties.remoteCombatBaseValue) {
-    returnProperties.remoteCombatBaseValue.calcValue = Main.calc5(
+    returnProperties.remoteCombatBaseValue.calcValue = calc5(
       returnProperties.intuition.value,
       returnProperties.fingerAbility.value,
       returnProperties.strength.value
@@ -193,7 +193,7 @@ export default properties => {
   }
 
   if (returnProperties.magicResistance) {
-    returnProperties.magicResistance.calcValue = Main.calc5(
+    returnProperties.magicResistance.calcValue = calc5(
       returnProperties.courage ? returnProperties.courage.value : 0,
       returnProperties.wisdom ? returnProperties.wisdom.value : 0,
       returnProperties.constitution ? returnProperties.constitution.value : 0
