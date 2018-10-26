@@ -15,7 +15,6 @@
     "@fortawesome/free-solid-svg-icons": "5.4.2",
     "@fortawesome/react-fontawesome": "0.1.3",
     "bootstrap": "4.1.3",
-    "electron": "3.0.6",
     "electron-is-dev": "1.0.1",
     "jest-fetch-mock": "1.6.6",
     "jquery": "3.3.1",
@@ -31,6 +30,7 @@
   },
   "devDependencies": {
     "cross-env": "5.2.0",
+    "electron": "3.0.6",
     "electron-builder": "20.28.4",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-config-prettier": "3.1.0",
@@ -49,7 +49,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "npm test -- --coverage",
-    "dev": "cross-env-shell PORT=3000 BROWSER=none \"react-scripts start & wait-on http://localhost:\\$PORT && electron .\"",
+    "dev": "cross-env-shell PORT=4507 BROWSER=none \"react-scripts start & wait-on http://localhost:\\$PORT && electron .\"",
     "prepack": "react-scripts build",
     "pack": "electron-builder -lmw",
     "greet": "cross-env-shell GREETING=Hi NAME=Joe \"echo $GREETING && echo $NAME\""

@@ -47,4 +47,23 @@ export const calc5 = (x, y, z, a = '0') =>
     (parseInt(x, 10) + parseInt(y, 10) + parseInt(z, 10) + parseInt(a, 10)) / 5
   );
 
-export const calcKe = (x, y, z) => 0;
+export const calcKe = (x, y, z) => {
+  console.warn(x, y, z);
+  return 0;
+};
+
+export const getElectron = () => {
+  // eslint-disable-next-line no-undef
+  if (window.require) {
+    // eslint-disable-next-line no-undef
+    const instance = window.require('electron');
+    const { remote, ipcRenderer } = instance;
+    const fs = remote.require('fs');
+    return {
+      instance,
+      fs,
+      ipcRenderer
+    };
+  }
+  return null;
+};

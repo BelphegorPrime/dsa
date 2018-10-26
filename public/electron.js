@@ -1,24 +1,106 @@
-const electron = require('electron');
+const { app, BrowserWindow, Menu, shell } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 
-const { app, BrowserWindow } = electron;
-let mainWindow;
+const isWindows = process.platform === 'win32';
 
-const createWindow = () => {
-  mainWindow = new BrowserWindow({ width: 1024, height: 768 });
-  mainWindow.loadURL(
+const windows = [];
+const name = 'Topas';
+
+const setMainMenu = () => {
+  Menu.setApplicationMenu(
+    Menu.buildFromTemplate([
+      {
+        label: isWindows ? 'Datei' : name,
+        submenu: [
+          {
+            label: `${name} Beenden`,
+            accelerator: isWindows ? 'Alt+F4' : 'CmdOrCtrl+Q',
+            click() {
+              app.quit();
+            }
+          }
+        ]
+      },
+      {
+        label: 'Bearbeiten',
+        submenu: [
+          { role: 'undo', label: 'Widerrufen' },
+          { role: 'redo', label: 'Widerholen' },
+          { type: 'separator' },
+          { role: 'cut', label: 'Ausschneiden' },
+          { role: 'copy', label: 'Kopieren' },
+          { role: 'paste', label: 'Einfügen' },
+          { role: 'pasteandmatchstyle', label: 'Einfügen und Stil anpassen' },
+          { role: 'delete', label: 'Löschen' },
+          { role: 'selectall', label: 'Alle auswählen' }
+        ]
+      },
+      {
+        label: 'Darstellung',
+        submenu: [
+          { role: 'reload', label: 'Dienst neu laden' },
+          { role: 'forcereload', label: 'Topas neu laden' },
+          { role: 'toggledevtools', label: 'Entwicklertools anzeigen' },
+          { type: 'separator' },
+          { role: 'resetzoom', label: 'Originalgröße' },
+          { role: 'zoomin', label: 'Vergrößern' },
+          { role: 'zoomout', label: 'Verkleiner' },
+          { type: 'separator' },
+          { role: 'togglefullscreen', label: 'Vollbildmodus' }
+        ]
+      },
+      {
+        role: 'Fenster',
+        submenu: [
+          { role: 'minimize', label: 'Minimieren' },
+          { role: 'close', label: 'Schließen' }
+        ]
+      },
+      {
+        role: 'Hilfe',
+        submenu: [
+          {
+            label: 'Mehr erfahren',
+            click() {
+              shell.openExternal('https://electronjs.org');
+            }
+          }
+        ]
+      }
+    ])
+  );
+};
+
+const createWindow = browserWindowOptions => {
+  const win = new BrowserWindow(
+    Object.assign(
+      {
+        minWidth: 1024,
+        minHeight: 768,
+        show: false,
+        backgroundColor: '#f5f5f5',
+        title: name
+      },
+      browserWindowOptions
+    )
+  );
+  windows.push(win);
+  win.loadURL(
     isDev
       ? `http://localhost:${process.env.PORT}`
       : `file://${path.join(__dirname, '../build/index.html')}`
   );
   if (isDev) {
-    mainWindow.webContents.openDevTools();
+    win.webContents.openDevTools();
   }
-  // mainWindow.maximize();
-  mainWindow.on('closed', () => {
-    mainWindow = null;
+  win.on('closed', () => {
+    windows.splice(windows.indexOf(win), 1);
   });
+  win.on('ready-to-show', () => {
+    win.show();
+  });
+  setMainMenu();
 };
 
 app.on('ready', createWindow);
