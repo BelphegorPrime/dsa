@@ -9,7 +9,7 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({ width: 1024, height: 768 });
   mainWindow.loadURL(
     isDev
-      ? 'http://localhost:3000'
+      ? `http://localhost:${process.env.PORT}`
       : `file://${path.join(__dirname, '../build/index.html')}`
   );
   if (isDev) {
