@@ -51,14 +51,14 @@ const setMainMenu = () => {
         ]
       },
       {
-        role: 'Fenster',
+        label: 'Fenster',
         submenu: [
           { role: 'minimize', label: 'Minimieren' },
           { role: 'close', label: 'Schließen' }
         ]
       },
       {
-        role: 'Hilfe',
+        label: 'Hilfe',
         submenu: [
           {
             label: 'Mehr erfahren',
@@ -76,7 +76,7 @@ const createWindow = browserWindowOptions => {
   const win = new BrowserWindow(
     Object.assign(
       {
-        minWidth: 1024,
+        minWidth: 1060,
         minHeight: 768,
         show: false,
         backgroundColor: '#f5f5f5',
