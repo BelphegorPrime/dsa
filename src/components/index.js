@@ -1,15 +1,19 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react';
 import proptypes from 'prop-types';
-
-import Head from './Head';
-import Body from './Body';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import { convert } from '../heroConverter';
 import { isJSON, objectWithoutKey } from '../helperFunctions';
 
+import Head from './Head';
+import Nav from './Nav';
+import Hero from './Hero';
+import HouseRules from './HouseRules';
+
 const App = props => {
   // console.log(props);
+  const [showNavBar, toggleNavBar] = useState(false);
   const [page, setPage] = useState('default');
   const [heroPage, setHeroPage] = useState('Basis');
   const [houseRuleToShow, setHouseRuleToShow] = useState('templates');
@@ -105,32 +109,70 @@ const App = props => {
     setChosenHero(heros[name]);
   };
 
+  const setToggleNavbar = () => {
+    toggleNavBar(!showNavBar);
+  };
+
   return (
-    <div className="App cursor-default">
-      <Head
-        chosenHero={chosenHero}
-        page={page}
-        houseRules={houseRules}
-        handleChange={setPage}
-        appendToState={appendToState}
-        resetState={resetState}
-      />
-      <Body
-        page={page}
-        heros={heros}
-        chosenHero={chosenHero}
-        heroPage={heroPage}
-        houseRules={houseRules}
-        houseRuleToShow={houseRuleToShow}
-        chooseHero={chooseHero}
-        removeHero={removeHero}
-        showHeroPage={setHeroPage}
-        updateHero={updateHero}
-        addNewHouseRules={addNewHouseRules}
-        setHouseRuleToShow={setHouseRuleToShow}
-        removeRule={removeRule}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="App cursor-default">
+        <Head
+          chosenHero={chosenHero}
+          page={page}
+          houseRules={houseRules}
+          handleChange={setPage}
+          appendToState={appendToState}
+          resetState={resetState}
+          toggleNavBar={setToggleNavbar}
+        />
+        {showNavBar ? <Nav handleChange={setPage} page={page} /> : null}
+        <div id="app-body" className="row">
+          <Route
+            exact
+            path="/houserules"
+            render={() => (
+              <HouseRules
+                addNewHouseRules={addNewHouseRules}
+                setHouseRuleToShow={setHouseRuleToShow}
+                houseRuleToShow={houseRuleToShow}
+                houseRules={houseRules}
+                removeRule={removeRule}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/mastermode"
+            render={() => (
+              <Hero
+                heros={heros}
+                chosenHero={chosenHero || null}
+                page={heroPage}
+                showPage={setHeroPage}
+                chooseHero={chooseHero}
+                removeHero={removeHero}
+                updateHero={updateHero}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Hero
+                heros={heros}
+                chosenHero={chosenHero || null}
+                page={heroPage}
+                showPage={setHeroPage}
+                chooseHero={chooseHero}
+                removeHero={removeHero}
+                updateHero={updateHero}
+              />
+            )}
+          />
+        </div>
+      </div>
+    </BrowserRouter>
   );
 };
 

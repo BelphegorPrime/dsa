@@ -3,6 +3,8 @@ import React, { useRef } from 'react';
 import proptypes from 'prop-types';
 import XmlReader from 'xml-reader';
 import XmlPrint from 'xml-printer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index.es';
+import { faBars } from '@fortawesome/free-solid-svg-icons/index';
 
 import { convert, reconvert } from '../heroConverter';
 import { rollDice, countBy } from '../helperFunctions';
@@ -12,10 +14,10 @@ const Head = props => {
   const {
     chosenHero,
     page,
-    handleChange,
     resetState,
     appendToState,
-    houseRules
+    houseRules,
+    toggleNavBar
   } = props;
   const tempThrows = [];
   for (let i = 0; i < 100000; i += 1) {
@@ -90,6 +92,12 @@ const Head = props => {
       <div className="container-fluid">
         <div className="navbar-header">
           <div className="float-left display-flex">
+            <button
+              className="navbar-toggler navbar-toggler-left"
+              type="button"
+              onClick={toggleNavBar}>
+              <FontAwesomeIcon icon={faBars} />
+            </button>
             <div className="custom-file">
               <input
                 ref={fileUpload}
@@ -140,58 +148,6 @@ const Head = props => {
               </div>
             ) : null}
           </div>
-          <div className="float-right">
-            <div
-              id="page-toggle"
-              className="btn-group btn-group-toggle"
-              data-toggle="buttons">
-              <label
-                className={
-                  page === 'default'
-                    ? 'btn btn-secondary active'
-                    : 'btn btn-secondary'
-                }
-                htmlFor="default">
-                <input
-                  id="default"
-                  type="radio"
-                  onChange={() => handleChange('default')}
-                  checked={page === 'default'}
-                />
-                Standard
-              </label>
-              <label
-                className={
-                  page === 'mastermode'
-                    ? 'btn btn-secondary active'
-                    : 'btn btn-secondary'
-                }
-                htmlFor="mastermode">
-                <input
-                  id="mastermode"
-                  type="radio"
-                  onChange={() => handleChange('mastermode')}
-                  checked={page === 'mastermode'}
-                />
-                Meistermodus
-              </label>
-              <label
-                className={
-                  page === 'houserules'
-                    ? 'btn btn-secondary active'
-                    : 'btn btn-secondary'
-                }
-                htmlFor="houserules">
-                <input
-                  id="houserules"
-                  type="radio"
-                  onChange={() => handleChange('houserules')}
-                  checked={page === 'houserules'}
-                />
-                Hausregeln
-              </label>
-            </div>
-          </div>
         </div>
       </div>
     </nav>
@@ -202,9 +158,9 @@ Head.propTypes = {
   chosenHero: proptypes.object,
   page: proptypes.string,
   houseRules: proptypes.array,
-  handleChange: proptypes.func,
   appendToState: proptypes.func,
-  resetState: proptypes.func
+  resetState: proptypes.func,
+  toggleNavBar: proptypes.func
 };
 
 export default Head;
