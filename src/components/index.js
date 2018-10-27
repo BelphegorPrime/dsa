@@ -1,187 +1,143 @@
-import React, { Component } from 'react';
-import { countBy, values } from 'lodash';
-import 'bootstrap/dist/css/bootstrap.css';
+/* eslint-disable no-undef */
+import React, { useState, useEffect } from 'react';
+import proptypes from 'prop-types';
 
 import Head from './Head';
 import Body from './Body';
 
 import { convert } from '../heroConverter';
-import { rollDice } from '../helperFunctions';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.initialState = {
-      page: 'default',
-      heros: {},
-      chosenHero: null,
-      heroPage: null,
-      houseRules: [],
-      houseRuleToShow: 'templates'
-    };
-    this.state = this.initialState;
-    this.fileUpload = React.createRef();
-    const throws = [];
-    for (let i = 0; i < 100000; i += 1) {
-      throws[i] = rollDice(20);
-    }
-    this.throws = values(countBy(throws));
-  }
+const App = props => {
+  console.log(props);
+  const [page, setPage] = useState('default');
+  const [heros, setHeros] = useState(
+    JSON.parse(window.localStorage.getItem('heros')) || {}
+  );
+  const [chosenHero, setChosenHero] = useState(
+    JSON.parse(window.localStorage.getItem('hero')) || null
+  );
+  const [heroPage, setHeroPage] = useState(null);
+  const [houseRules, setHouseRules] = useState(
+    JSON.parse(window.localStorage.getItem('houseRules')) || []
+  );
+  const [houseRuleToShow, setHouseRuleToShow] = useState('templates');
 
-  componentDidMount() {
-    this.setState({
-      // eslint-disable-next-line no-undef
-      heros: JSON.parse(window.localStorage.getItem('heros')) || null,
-      // eslint-disable-next-line no-undef
-      houseRules: JSON.parse(window.localStorage.getItem('houseRules')) || [],
-      // eslint-disable-next-line no-undef
-      chosenHero: JSON.parse(window.localStorage.getItem('hero')) || null
-    });
-  }
+  useEffect(
+    () => {
+      window.localStorage.setItem('heros', JSON.stringify(heros));
+    },
+    [heros]
+  );
 
-  static getDerivedStateFromProps(nextProps, nextState) {
-    if (nextState.chosenHero) {
-      // eslint-disable-next-line no-undef
-      window.localStorage.setItem('hero', JSON.stringify(nextState.chosenHero));
-    }
-    if (nextState.heros && Object.keys(nextState.heros).length > 0) {
-      // eslint-disable-next-line no-undef
-      window.localStorage.setItem('heros', JSON.stringify(nextState.heros));
-    }
-    if (nextState.houseRules && nextState.houseRules.length > 0) {
-      // eslint-disable-next-line no-undef
-      window.localStorage.setItem(
-        'houseRules',
-        JSON.stringify(nextState.houseRules)
-      );
-    }
-    return nextState;
-  }
+  useEffect(
+    () => {
+      window.localStorage.setItem('houseRules', JSON.stringify(houseRules));
+    },
+    [houseRules]
+  );
 
-  appendToState(xml, converted) {
+  useEffect(
+    () => {
+      window.localStorage.setItem('hero', JSON.stringify(chosenHero));
+    },
+    [chosenHero]
+  );
+
+  const appendToState = (xml, converted) => {
     const { name } = xml.children[0].attributes;
-    const { state } = this;
     const composedHero = {
       xml,
       converted
     };
-    state.chosenHero = composedHero;
-    state.heros = Object.assign(
-      {
-        [name]: composedHero
-      },
-      state.heros
+    setChosenHero(composedHero);
+    setHeros(
+      Object.assign(
+        {
+          [name]: composedHero
+        },
+        heros
+      )
     );
-    this.setState(state);
-  }
+  };
 
-  handleChange(page) {
-    this.setState({
-      page
-    });
-  }
-
-  chooseHero(name) {
-    this.setState({
-      chosenHero: this.state.heros[name]
-    });
-  }
-
-  removeHero(name) {
-    const { heros } = this.state;
-    let { chosenHero } = this.state;
+  const removeHero = name => {
     if (chosenHero && chosenHero.xml.children[0].attributes.name === name) {
-      chosenHero = null;
+      setChosenHero(null);
     }
     delete heros[name];
-    this.setState({
-      heros,
-      chosenHero
-    });
-  }
+    setHeros(heros);
+  };
 
-  updateHero(hero) {
+  const resetState = () => {
+    setPage('default');
+    setHeros({});
+    setChosenHero(null);
+    setHeroPage(null);
+    setHouseRules([]);
+    setHouseRuleToShow('templates');
+  };
+
+  const updateHero = hero => {
     const { name } = hero.xml.children[0].attributes;
-    const { heros } = this.state;
     heros[name] = hero;
-    this.setState({
-      heros,
-      chosenHero: hero
-    });
-  }
+    setChosenHero(hero);
+    setHeros(heros);
+  };
 
-  showHeroPage(heroPage) {
-    this.setState({
-      heroPage
-    });
-  }
-
-  addedHouseRule(rule) {
-    const { houseRules, heros } = this.state;
+  const addedHouseRule = rule => {
     const otherHouseRules = houseRules.filter(r => r.page !== rule.page);
     otherHouseRules.push(rule);
     Object.keys(heros).forEach(name => {
       const { xml } = heros[name];
-      this.appendToState(xml, convert(xml, otherHouseRules));
+      appendToState(xml, convert(xml, otherHouseRules));
     });
-    this.setState({ houseRules: otherHouseRules });
-  }
+    setHouseRules(otherHouseRules);
+  };
 
-  setHouseRuleToShow(type) {
-    this.setState({ houseRuleToShow: type });
-  }
-
-  removeRule(id) {
-    const { houseRules, heros } = this.state;
+  const removeRule = id => {
     const otherHouseRules = houseRules.filter(hr => hr.id !== id);
     Object.keys(heros).forEach(name => {
       const { xml } = heros[name];
-      this.appendToState(xml, convert(xml, otherHouseRules));
+      appendToState(xml, convert(xml, otherHouseRules));
     });
-    this.setState({ houseRules: otherHouseRules });
-  }
+    setHouseRules(otherHouseRules);
+  };
 
-  resetState() {
-    this.setState(this.initialState);
-  }
+  const chooseHero = name => {
+    setChosenHero(heros[name]);
+  };
 
-  render() {
-    const {
-      heros,
-      chosenHero,
-      heroPage,
-      page,
-      houseRules,
-      houseRuleToShow
-    } = this.state;
-    return (
-      <div className="App cursor-default">
-        <Head
-          chosenHero={chosenHero}
-          page={page}
-          houseRules={houseRules}
-          handleChange={this.handleChange.bind(this)}
-          appendToState={this.appendToState.bind(this)}
-          resetState={this.resetState.bind(this)}
-        />
-        <Body
-          page={page}
-          heros={heros}
-          chosenHero={chosenHero}
-          heroPage={heroPage}
-          houseRules={houseRules}
-          houseRuleToShow={houseRuleToShow}
-          chooseHero={this.chooseHero.bind(this)}
-          removeHero={this.removeHero.bind(this)}
-          showHeroPage={this.showHeroPage.bind(this)}
-          updateHero={this.updateHero.bind(this)}
-          addedHouseRule={this.addedHouseRule.bind(this)}
-          setHouseRuleToShow={this.setHouseRuleToShow.bind(this)}
-          removeRule={this.removeRule.bind(this)}
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App cursor-default">
+      <Head
+        chosenHero={chosenHero}
+        page={page}
+        houseRules={houseRules}
+        handleChange={setPage}
+        appendToState={appendToState}
+        resetState={resetState}
+      />
+      <Body
+        page={page}
+        heros={heros}
+        chosenHero={chosenHero}
+        heroPage={heroPage}
+        houseRules={houseRules}
+        houseRuleToShow={houseRuleToShow}
+        chooseHero={chooseHero}
+        removeHero={removeHero}
+        showHeroPage={setHeroPage}
+        updateHero={updateHero}
+        addedHouseRule={addedHouseRule}
+        setHouseRuleToShow={setHouseRuleToShow}
+        removeRule={removeRule}
+      />
+    </div>
+  );
+};
+
+App.protoTypes = {
+  electron: proptypes.object
+};
 
 export default App;
