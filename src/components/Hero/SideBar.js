@@ -43,7 +43,10 @@ const Sidebar = props => {
                 </div>
                 <span
                   className="btn btn-secondary btn-remove-hero"
-                  onClick={() => removeHero(name)}>
+                  onClick={e => {
+                    e.stopPropagation();
+                    removeHero(name);
+                  }}>
                   X
                 </span>
               </div>

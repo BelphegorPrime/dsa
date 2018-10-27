@@ -67,3 +67,17 @@ export const getElectron = () => {
   }
   return null;
 };
+
+export const isJSON = string => {
+  try {
+    return JSON.parse(string);
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+};
+
+export const objectWithoutKey = (object, key) => {
+  const { [key]: deletedKey, ...otherKeys } = object;
+  return otherKeys;
+};

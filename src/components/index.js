@@ -6,41 +6,35 @@ import Head from './Head';
 import Body from './Body';
 
 import { convert } from '../heroConverter';
+import { isJSON, objectWithoutKey } from '../helperFunctions';
 
 const App = props => {
-  console.log(props);
+  // console.log(props);
   const [page, setPage] = useState('default');
-  const [heros, setHeros] = useState(
-    JSON.parse(window.localStorage.getItem('heros')) || {}
-  );
-  const [chosenHero, setChosenHero] = useState(
-    JSON.parse(window.localStorage.getItem('hero')) || null
-  );
   const [heroPage, setHeroPage] = useState(null);
-  const [houseRules, setHouseRules] = useState(
-    JSON.parse(window.localStorage.getItem('houseRules')) || []
-  );
   const [houseRuleToShow, setHouseRuleToShow] = useState('templates');
 
-  useEffect(
-    () => {
-      window.localStorage.setItem('heros', JSON.stringify(heros));
-    },
-    [heros]
+  const [heros, setHeros] = useState(
+    isJSON(window.localStorage.getItem('heros')) || {}
   );
+  useEffect(() => window.localStorage.setItem('heros', JSON.stringify(heros)), [
+    heros
+  ]);
 
-  useEffect(
-    () => {
-      window.localStorage.setItem('houseRules', JSON.stringify(houseRules));
-    },
-    [houseRules]
+  const [chosenHero, setChosenHero] = useState(
+    isJSON(window.localStorage.getItem('chosenHero')) || null
   );
-
   useEffect(
-    () => {
-      window.localStorage.setItem('hero', JSON.stringify(chosenHero));
-    },
+    () => window.localStorage.setItem('chosenHero', JSON.stringify(chosenHero)),
     [chosenHero]
+  );
+
+  const [houseRules, setHouseRules] = useState(
+    isJSON(window.localStorage.getItem('houseRules')) || []
+  );
+  useEffect(
+    () => window.localStorage.setItem('houseRules', JSON.stringify(houseRules)),
+    [houseRules]
   );
 
   const appendToState = (xml, converted) => {
@@ -61,11 +55,10 @@ const App = props => {
   };
 
   const removeHero = name => {
-    if (chosenHero && chosenHero.xml.children[0].attributes.name === name) {
+    setHeros(objectWithoutKey(heros, name));
+    if (chosenHero && chosenHero.converted.name === name) {
       setChosenHero(null);
     }
-    delete heros[name];
-    setHeros(heros);
   };
 
   const resetState = () => {

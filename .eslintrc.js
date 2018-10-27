@@ -1,6 +1,6 @@
 module.exports = {
   extends: ["airbnb-base", "plugin:react/recommended", "prettier"],
-  plugins: ["react", "prettier"],
+  plugins: ["react", "prettier", "react-hooks"],
   rules: {
     "prettier/prettier": ["error", {
       "singleQuote": true,
@@ -14,7 +14,8 @@ module.exports = {
       {
         allow: ["warn", "error"]
       }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error"
   },
   parserOptions: {
     "ecmaVersion": 6,
