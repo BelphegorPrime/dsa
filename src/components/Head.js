@@ -1,12 +1,11 @@
 /* eslint-disable no-undef */
 import React, { useRef } from 'react';
 import proptypes from 'prop-types';
-import { countBy, values } from 'lodash';
 import XmlReader from 'xml-reader';
 import XmlPrint from 'xml-printer';
 
 import { convert, reconvert } from '../heroConverter';
-import { rollDice } from '../helperFunctions';
+import { rollDice, countBy } from '../helperFunctions';
 
 const Head = props => {
   const fileUpload = useRef();
@@ -22,8 +21,8 @@ const Head = props => {
   for (let i = 0; i < 100000; i += 1) {
     tempThrows[i] = rollDice(20);
   }
-  const throws = values(countBy(tempThrows));
 
+  const throws = Object.values(countBy(tempThrows));
   const fileUploaded = files => {
     Object.values(files).forEach(file => {
       new Promise(resolve => {

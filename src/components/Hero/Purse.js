@@ -1,6 +1,5 @@
 import React from 'react';
 import proptypes from 'prop-types';
-import { sortBy } from 'lodash';
 
 const Purse = props => {
   const { hero, updateHero, className } = props;
@@ -13,7 +12,19 @@ const Purse = props => {
   if (!purse) {
     return null;
   }
-  const sortedUnits = sortBy(Object.keys(purse), unit => purse[unit].position);
+
+  const sortedUnits = Object.keys(purse).sort((a, b) => {
+    const p1 = purse[a];
+    const p2 = purse[b];
+    if (p1.position < p2.position) {
+      return -1;
+    }
+    if (p1.position > p2.position) {
+      return 1;
+    }
+    return 0;
+  });
+
   return (
     <div className={className}>
       <div className="pl-2 pt-2">

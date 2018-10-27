@@ -81,3 +81,11 @@ export const objectWithoutKey = (object, key) => {
   const { [key]: deletedKey, ...otherKeys } = object;
   return otherKeys;
 };
+
+export const countBy = data => {
+  const t = {};
+  for (let i = 0, l = data.length; i < l; i += 1) {
+    t[data[i]] = !t[data[i]] ? 1 : t[data[i]] + 1;
+  }
+  return t;
+};
