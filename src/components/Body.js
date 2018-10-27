@@ -1,8 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
-import { countBy, values } from 'lodash';
-
-import { rollDice } from '../helperFunctions';
 
 import SideBar from './Hero/SideBar';
 import PropertiesQuickBar from './Hero/PropertiesQuickBar';
@@ -10,98 +7,86 @@ import Hero from './Hero';
 import HouseRulesSideBar from './HouseRules/HouseRulesSideBar';
 import HouseRules from './HouseRules';
 
-class Body extends Component {
-  constructor() {
-    super();
-    this.fileUpload = React.createRef();
-    const throws = [];
-    for (let i = 0; i < 100000; i += 1) {
-      throws[i] = rollDice(20);
-    }
-    this.throws = values(countBy(throws));
-  }
-
-  render() {
-    const {
-      page,
-      heros,
-      chosenHero,
-      heroPage,
-      houseRuleToShow,
-      houseRules,
-      chooseHero,
-      removeHero,
-      showHeroPage,
-      updateHero,
-      addedHouseRule,
-      setHouseRuleToShow,
-      removeRule
-    } = this.props;
-    return (
-      <div id="app-body" className="row">
-        {page === 'default' || page === 'mastermode' ? (
-          <Fragment>
-            <div className="left-pane col-md-2">
-              <SideBar
-                heros={heros}
-                chosenHero={chosenHero || null}
-                page={heroPage}
-                chooseHero={chooseHero}
-                removeHero={removeHero}
-                showPage={showHeroPage}
-              />
-            </div>
-            <div className="right-pane col-md-10 row-without-margin">
+const Body = props => {
+  const {
+    page,
+    heros,
+    chosenHero,
+    heroPage,
+    houseRuleToShow,
+    houseRules,
+    chooseHero,
+    removeHero,
+    showHeroPage,
+    updateHero,
+    addedHouseRule,
+    setHouseRuleToShow,
+    removeRule
+  } = props;
+  return (
+    <div id="app-body" className="row">
+      {page === 'default' || page === 'mastermode' ? (
+        <Fragment>
+          <div className="left-pane col-md-2">
+            <SideBar
+              heros={heros}
+              chosenHero={chosenHero || null}
+              page={heroPage}
+              chooseHero={chooseHero}
+              removeHero={removeHero}
+              showPage={showHeroPage}
+            />
+          </div>
+          <div className="right-pane col-md-10 row-without-margin">
+            {chosenHero ? (
+              <PropertiesQuickBar hero={chosenHero} className="col-md-12" />
+            ) : null}
+            <div
+              className="row col-md-12"
+              style={{
+                marginLeft: 0,
+                marginRight: 0,
+                maxHeight: 'calc(100% - 41px)'
+              }}>
               {chosenHero ? (
-                <PropertiesQuickBar hero={chosenHero} className="col-md-12" />
+                <Hero
+                  hero={chosenHero}
+                  page={heroPage}
+                  updateHero={updateHero}
+                />
               ) : null}
-              <div
-                className="row col-md-12"
-                style={{
-                  marginLeft: 0,
-                  marginRight: 0,
-                  maxHeight: 'calc(100% - 41px)'
-                }}>
-                {chosenHero ? (
-                  <Hero
-                    hero={chosenHero}
-                    page={heroPage}
-                    updateHero={updateHero}
-                  />
-                ) : null}
-              </div>
             </div>
-          </Fragment>
-        ) : (
-          <Fragment>
-            <div className="left-pane col-md-2">
-              <HouseRulesSideBar
-                addedHouseRule={addedHouseRule}
-                setHouseRuleToShow={setHouseRuleToShow}
+          </div>
+        </Fragment>
+      ) : (
+        <Fragment>
+          <div className="left-pane col-md-2">
+            <HouseRulesSideBar
+              addedHouseRule={addedHouseRule}
+              setHouseRuleToShow={setHouseRuleToShow}
+              houseRuleToShow={houseRuleToShow}
+            />
+          </div>
+          <div className="right-pane col-md-10 row-without-margin">
+            <div
+              className="row col-md-12"
+              style={{
+                marginLeft: 0,
+                marginRight: 0,
+                maxHeight: 'calc(100% - 41px)'
+              }}>
+              <HouseRules
                 houseRuleToShow={houseRuleToShow}
+                houseRules={houseRules}
+                removeRule={removeRule}
               />
             </div>
-            <div className="right-pane col-md-10 row-without-margin">
-              <div
-                className="row col-md-12"
-                style={{
-                  marginLeft: 0,
-                  marginRight: 0,
-                  maxHeight: 'calc(100% - 41px)'
-                }}>
-                <HouseRules
-                  houseRuleToShow={houseRuleToShow}
-                  houseRules={houseRules}
-                  removeRule={removeRule}
-                />
-              </div>
-            </div>
-          </Fragment>
-        )}
-      </div>
-    );
-  }
-}
+          </div>
+        </Fragment>
+      )}
+    </div>
+  );
+};
 
 Body.propTypes = {
   page: proptypes.string,
