@@ -63,7 +63,7 @@ const Objects = props => {
               style={{ minHeight: 54, borderBottom: '1px solid #E5E5E5' }}>
               <span
                 className="btn btn-secondary btn-remove-hero float-right mr-3"
-                onClick={removeObject(name)}>
+                onClick={() => removeObject(name)}>
                 X
               </span>
               <span>{`${name} ${object.amount} Stk`}</span>

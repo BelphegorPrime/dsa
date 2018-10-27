@@ -28,7 +28,7 @@ const Purse = props => {
                   className="mr-2"
                   style={{ width: 80 }}
                   value={money.amount > 0 ? money.amount : 0}
-                  onChange={updatePurse(monetaryUnit)}
+                  onChange={() => updatePurse(monetaryUnit)}
                 />
                 {monetaryUnit} ({money.country})
               </span>

@@ -37,7 +37,7 @@ const HouseRulesSidebar = props => {
           ? 'list-group-item active'
           : 'list-group-item cursor-pointer'
       }
-      onClick={show(template)}>
+      onClick={() => show(template)}>
       <div className="row">
         <div className="offset-2">{name}</div>
       </div>

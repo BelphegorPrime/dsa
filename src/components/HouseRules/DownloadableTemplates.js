@@ -66,7 +66,7 @@ export default () => {
       key={template}
       className="col-md-4 pt-2 pb-2 m-2"
       style={{ maxHeight: 58 }}
-      onClick={download(template)}>
+      onClick={() => download(template)}>
       <div className="p-2 border position-relative">
         <span className="font-weight-bold">{name}</span>
         <span className="pr-2 float-right">

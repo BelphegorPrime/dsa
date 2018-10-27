@@ -7,7 +7,7 @@ import { test, noop } from '../../helperFunctions';
 
 const SpellList = props => {
   const [tawStars, setTawStars] = useState({});
-  const [lcdVisible, setLcdVisible] = useState({});
+  const [lcdVisible, setLcdVisible] = useState([]);
 
   const { properties, spellList, className } = props;
   const changeSpell = (name, trial, taw, e) => {
@@ -49,7 +49,7 @@ const SpellList = props => {
               <Fragment key={name}>
                 <tr
                   className={spell.fromLCD ? 'cursor-pointer' : ''}
-                  onClick={spell.fromLCD ? showLCD(name) : noop}>
+                  onClick={() => (spell.fromLCD ? showLCD(name) : noop())}>
                   <td style={{ width: nameWidth }}>
                     <div>
                       <span className="font-weight-bold">{name}</span>
@@ -92,11 +92,13 @@ const SpellList = props => {
                           : 'btn btn-primary test-btn'
                       }
                       style={{ width: testWidth - 20 }}
-                      onClick={changeSpell(
-                        name,
-                        spell.trial,
-                        parseInt(spell.value, 10)
-                      )}>
+                      onClick={() =>
+                        changeSpell(
+                          name,
+                          spell.trial,
+                          parseInt(spell.value, 10)
+                        )
+                      }>
                       <span>
                         {tawStars[name] !== undefined
                           ? tawStars[name]
@@ -106,9 +108,7 @@ const SpellList = props => {
                   </td>
                 </tr>
                 {lcdVisible.indexOf(name) > -1 ? (
-                  <tr
-                    className="cursor-pointer"
-                    onClick={showLCD(name)}>
+                  <tr className="cursor-pointer" onClick={() => showLCD(name)}>
                     <td
                       colSpan={5}
                       style={{ background: 'lightgrey', width: '100%' }}>

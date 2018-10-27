@@ -2,11 +2,10 @@ import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
 
 const Sidebar = props => {
-  const { heros } = props;
+  const { heros, chooseHero, removeHero, page, chosenHero, showPage } = props;
   if (!heros) {
     return null;
   }
-  const { chooseHero, removeHero, page, chosenHero, showPage } = props;
   const getSubMenu = (hero, name) => (
     <Fragment>
       {['Basis', 'Talente', 'Zauber', 'Kampf', 'Kommentare'].map(k => {
@@ -35,9 +34,7 @@ const Sidebar = props => {
     .sort()
     .map((name, index) => (
       <Fragment key={name + index}>
-        <div
-          className="row cursor-pointer"
-          onClick={chooseHero(name)}>
+        <div className="row cursor-pointer" onClick={() => chooseHero(name)}>
           <ul className="list-group list-group-flush col-md-12">
             <li className="list-group-item">
               <div className="row">
@@ -46,7 +43,7 @@ const Sidebar = props => {
                 </div>
                 <span
                   className="btn btn-secondary btn-remove-hero"
-                  onClick={removeHero(name)}>
+                  onClick={() => removeHero(name)}>
                   X
                 </span>
               </div>

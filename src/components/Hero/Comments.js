@@ -57,7 +57,7 @@ const Comments = props => {
                   {comment.added ? (
                     <span
                       className="btn btn-secondary btn-remove-hero float-right mr-3"
-                      onClick={removeComment(comment)}>
+                      onClick={() => removeComment(comment)}>
                       X
                     </span>
                   ) : null}

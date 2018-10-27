@@ -58,7 +58,7 @@ const Base = props => {
               <div
                 className="btn btn-primary ml-3"
                 style={{ width: 100, height: 38 }}
-                onClick={editNotes ? save : setEditNotes(!editNotes)}>
+                onClick={() => (editNotes ? save : setEditNotes(!editNotes))}>
                 {editNotes ? 'Speichern' : 'Bearbeiten'}
               </div>
             </div>

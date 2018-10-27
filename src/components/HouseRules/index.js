@@ -17,7 +17,7 @@ const HouseRules = props => {
             <div className="m-2 p-2 border position-relative">
               <div
                 className="house-rule-delete position-absolute col-md-2 btn btn-secondary"
-                onClick={removeRule(rule.id)}>
+                onClick={() => removeRule(rule.id)}>
                 X
               </div>
               <div>Typ: Zauber</div>
@@ -46,7 +46,7 @@ const HouseRules = props => {
             <div className="m-2 p-2 border position-relative">
               <div
                 className="house-rule-delete position-absolute col-md-2 btn btn-secondary"
-                onClick={removeRule(rule.id)}>
+                onClick={() => removeRule(rule.id)}>
                 X
               </div>
               <div>Typ: Waffe</div>

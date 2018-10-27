@@ -45,11 +45,9 @@ const TalentList = props => {
                         ? 'btn btn-danger test-btn'
                         : 'btn btn-primary test-btn'
                     }
-                    onClick={changeTest(
-                      name,
-                      talent.trial,
-                      parseInt(talent.value, 10)
-                    )}
+                    onClick={() =>
+                      changeTest(name, talent.trial, parseInt(talent.value, 10))
+                    }
                     style={{ width: 220 }}>
                     {tawStars[name] !== undefined ? tawStars[name] : 'Probe'}
                   </button>
