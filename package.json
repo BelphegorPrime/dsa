@@ -51,8 +51,7 @@
     "test:coverage": "npm test -- --coverage",
     "dev": "cross-env-shell PORT=4006 BROWSER=none \"react-scripts start & wait-on http://localhost:\\$PORT && electron .\"",
     "prepack": "react-scripts build",
-    "pack": "electron-builder -lmw",
-    "greet": "cross-env-shell GREETING=Hi NAME=Joe \"echo $GREETING && echo $NAME\""
+    "pack": "electron-builder -lmw"
   },
   "build": {
     "appId": "com.electron.topas",
