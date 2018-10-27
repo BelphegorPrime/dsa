@@ -37,20 +37,13 @@ const App = props => {
     [houseRules]
   );
 
-  const appendToState = (xml, converted) => {
-    const { name } = xml.children[0].attributes;
-    const composedHero = {
-      xml,
-      converted
-    };
+  const appendToState = composedHero => {
+    const { name } = composedHero.converted;
     setChosenHero(composedHero);
     setHeros(
-      Object.assign(
-        {
-          [name]: composedHero
-        },
-        heros
-      )
+      Object.assign(heros, {
+        [name]: composedHero
+      })
     );
   };
 
@@ -82,7 +75,10 @@ const App = props => {
     otherHouseRules.push(rule);
     Object.keys(heros).forEach(name => {
       const { xml } = heros[name];
-      appendToState(xml, convert(xml, otherHouseRules));
+      appendToState({
+        xml,
+        converted: convert(xml, otherHouseRules)
+      });
     });
     setHouseRules(otherHouseRules);
   };
@@ -91,7 +87,10 @@ const App = props => {
     const otherHouseRules = houseRules.filter(hr => hr.id !== id);
     Object.keys(heros).forEach(name => {
       const { xml } = heros[name];
-      appendToState(xml, convert(xml, otherHouseRules));
+      appendToState({
+        xml,
+        converted: convert(xml, otherHouseRules)
+      });
     });
     setHouseRules(otherHouseRules);
   };

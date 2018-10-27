@@ -45,7 +45,11 @@ const Head = props => {
               xmlReader.parse(xmlString);
             })
         )
-        .then(hero => appendToState(hero, convert(hero, houseRules)))
+        .then(hero => ({
+          xml: hero,
+          converted: convert(hero, houseRules)
+        }))
+        .then(hero => appendToState(hero))
         .then(() => {
           fileUpload.current.value = '';
         });

@@ -92,13 +92,14 @@ const SpellList = props => {
                           : 'btn btn-primary test-btn'
                       }
                       style={{ width: testWidth - 20 }}
-                      onClick={() =>
+                      onClick={e => {
+                        e.stopPropagation();
                         changeSpell(
                           name,
                           spell.trial,
                           parseInt(spell.value, 10)
-                        )
-                      }>
+                        );
+                      }}>
                       <span>
                         {tawStars[name] !== undefined
                           ? tawStars[name]

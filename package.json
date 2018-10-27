@@ -1,8 +1,10 @@
 {
   "name": "topas",
+  "productName": "Topas",
   "version": "0.1.0",
   "description": "Pen and Paper tool for 'the dark eye'",
-  "author": "",
+  "author": "Marcel Rösler",
+  "keywords": [],
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
