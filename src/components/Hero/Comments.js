@@ -1,106 +1,103 @@
-import React, { Component, Fragment } from 'react';
+/* eslint-disable no-undef */
+import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
 
 import { generateUUID } from '../../helperFunctions';
 
-class Comments extends Component {
-  save() {
-    const { hero, updateHero } = this.props;
+const Comments = props => {
+  const { hero, updateHero, className } = props;
+  const { converted } = hero;
+  let { comments } = converted;
+
+  const save = () => {
     const nameInput = document
       .getElementById('create-comment-form')
       .getElementsByTagName('input')[0];
     const commentTextarea = document
       .getElementById('create-comment-form')
       .getElementsByTagName('textarea')[0];
-    hero.converted.comments = [
+    comments = [
       {
         id: generateUUID(),
         name: nameInput.value,
         comment: commentTextarea.value,
         added: true
       },
-      ...hero.converted.comments
+      ...comments
     ];
     updateHero(hero);
-  }
+  };
 
-  removeComment(comment) {
-    const { hero, updateHero } = this.props;
-    hero.converted.comments = hero.converted.comments.filter(
-      c => c.id !== comment.id
-    );
+  const removeComment = comment => {
+    comments = comments.filter(c => c.id !== comment.id);
     updateHero(hero);
-  }
+  };
 
-  render() {
-    const { hero, className } = this.props;
-    const { comments } = hero.converted;
-    return (
-      <div className={className}>
-        <div className="pt-2">
-          <span className="font-weight-bold pl-2">Kommentare</span>
-          <div id="create-comment-form" className="p-2 pl-4 pr-4">
-            <div>
-              Name: <input />
-            </div>
-            <div>
-              Kommentar: <textarea style={{ width: '100%' }} />
-            </div>
-            <div className="btn btn-primary" onClick={this.save.bind(this)}>
-              Speichern
-            </div>
+  return (
+    <div className={className}>
+      <div className="pt-2">
+        <span className="font-weight-bold pl-2">Kommentare</span>
+        <div id="create-comment-form" className="p-2 pl-4 pr-4">
+          <div>
+            Name: <input />
           </div>
-          {comments.map((comment, index) => {
-            if (comment.name) {
-              return (
-                <div key={index + comment.name + comment.comment}>
-                  <span className="pl-4">
-                    {comment.name}:{' '}
-                    {comment.added ? (
-                      <span
-                        className="btn btn-secondary btn-remove-hero float-right mr-3"
-                        onClick={this.removeComment.bind(this, comment)}>
-                        X
-                      </span>
-                    ) : null}
-                    <div className="pl-5">{comment.comment}</div>
-                  </span>
-                </div>
-              );
-            }
+          <div>
+            Kommentar: <textarea style={{ width: '100%' }} />
+          </div>
+          <div className="btn btn-primary" onClick={save}>
+            Speichern
+          </div>
+        </div>
+        {comments.map((comment, index) => {
+          if (comment.name) {
             return (
-              <div key={comment.specialAbilityName + comment.specialAbility}>
+              <div key={index + comment.name + comment.comment}>
                 <span className="pl-4">
-                  {comment.specialAbilityName} ({comment.specialAbility})
-                  <div className="pl-5">
-                    {comment.cost ? (
-                      <Fragment>
-                        {` Kosten: ${comment.cost}`}
-                        <br />
-                      </Fragment>
-                    ) : null}
-                    {comment.duration ? (
-                      <Fragment>
-                        {` Zauberdauer: ${comment.duration}`}
-                        <br />
-                      </Fragment>
-                    ) : null}
-                    {comment.effect ? (
-                      <Fragment>
-                        {` Effekt: ${comment.effect}`}
-                        <br />
-                      </Fragment>
-                    ) : null}
-                  </div>
+                  {comment.name}:{' '}
+                  {comment.added ? (
+                    <span
+                      className="btn btn-secondary btn-remove-hero float-right mr-3"
+                      onClick={removeComment(comment)}>
+                      X
+                    </span>
+                  ) : null}
+                  <div className="pl-5">{comment.comment}</div>
                 </span>
               </div>
             );
-          })}
-        </div>
+          }
+          return (
+            <div key={comment.specialAbilityName + comment.specialAbility}>
+              <span className="pl-4">
+                {comment.specialAbilityName} ({comment.specialAbility})
+                <div className="pl-5">
+                  {comment.cost ? (
+                    <Fragment>
+                      {` Kosten: ${comment.cost}`}
+                      <br />
+                    </Fragment>
+                  ) : null}
+                  {comment.duration ? (
+                    <Fragment>
+                      {` Zauberdauer: ${comment.duration}`}
+                      <br />
+                    </Fragment>
+                  ) : null}
+                  {comment.effect ? (
+                    <Fragment>
+                      {` Effekt: ${comment.effect}`}
+                      <br />
+                    </Fragment>
+                  ) : null}
+                </div>
+              </span>
+            </div>
+          );
+        })}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 Comments.propTypes = {
   updateHero: proptypes.func,
