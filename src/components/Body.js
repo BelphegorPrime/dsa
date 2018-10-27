@@ -3,9 +3,9 @@ import proptypes from 'prop-types';
 
 import SideBar from './Hero/SideBar';
 import PropertiesQuickBar from './Hero/PropertiesQuickBar';
-import Hero from './Hero';
 import HouseRulesSideBar from './HouseRules/HouseRulesSideBar';
 import HouseRules from './HouseRules';
+import Hero from './Hero';
 
 const Body = props => {
   const {

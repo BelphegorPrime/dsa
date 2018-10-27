@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-// import proptypes from 'prop-types';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index.es';
 import { faDownload } from '@fortawesome/free-solid-svg-icons/index';
 
-class DownloadableTemplates extends Component {
-  // eslint-disable-next-line class-methods-use-this
-  download(template) {
+export default () => {
+  const download = template => {
     const templateFile = new Promise(resolve => {
       switch (template) {
         case 'spell': {
@@ -61,42 +59,34 @@ class DownloadableTemplates extends Component {
       a.click();
       doc.body.removeChild(a);
     });
-  }
+  };
 
-  renderTemplate(template, name) {
-    return (
-      <div
-        key={template}
-        className="col-md-4 pt-2 pb-2 m-2"
-        style={{ maxHeight: 58 }}
-        onClick={this.download.bind(this, template)}>
-        <div className="p-2 border position-relative">
-          <span className="font-weight-bold">{name}</span>
-          <span className="pr-2 float-right">
-            <FontAwesomeIcon icon={faDownload} />
-          </span>
-        </div>
+  const renderTemplate = (template, name) => (
+    <div
+      key={template}
+      className="col-md-4 pt-2 pb-2 m-2"
+      style={{ maxHeight: 58 }}
+      onClick={download(template)}>
+      <div className="p-2 border position-relative">
+        <span className="font-weight-bold">{name}</span>
+        <span className="pr-2 float-right">
+          <FontAwesomeIcon icon={faDownload} />
+        </span>
       </div>
-    );
-  }
+    </div>
+  );
 
-  render() {
-    return ['spell', 'weapon'].map(template => {
-      switch (template) {
-        case 'spell': {
-          return this.renderTemplate(template, 'Zaubertemplate');
-        }
-        case 'weapon': {
-          return this.renderTemplate(template, 'Waffentemplate');
-        }
-        default: {
-          return null;
-        }
+  return ['spell', 'weapon'].map(template => {
+    switch (template) {
+      case 'spell': {
+        return renderTemplate(template, 'Zaubertemplate');
       }
-    });
-  }
-}
-
-DownloadableTemplates.propTypes = {};
-
-export default DownloadableTemplates;
+      case 'weapon': {
+        return renderTemplate(template, 'Waffentemplate');
+      }
+      default: {
+        return null;
+      }
+    }
+  });
+};
