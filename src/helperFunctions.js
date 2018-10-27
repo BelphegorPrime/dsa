@@ -25,17 +25,23 @@ export const test = (trial, properties) => {
 
 export const noop = () => {};
 
-export const generateUUID = () => {
-  const s4 = () =>
-    Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  return `${s4() + s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
-};
+export const ascii = s => s.charCodeAt(0);
+
+export const generateUUID = string =>
+  parseInt(
+    string
+      .split('')
+      .map(ascii)
+      .filter((x, i) => i < 20)
+      .join(''),
+    10
+  )
+    .toString(16)
+    .substring(1);
 
 export const addId = thing => {
   const returnThing = thing;
-  returnThing.id = generateUUID();
+  returnThing.id = generateUUID(JSON.stringify(thing));
   return returnThing;
 };
 

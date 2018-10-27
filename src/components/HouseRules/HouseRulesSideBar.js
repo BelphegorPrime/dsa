@@ -7,22 +7,22 @@ import { addId } from '../../helperFunctions';
 const HouseRulesSidebar = props => {
   const fileUpload = useRef();
 
-  const { addedHouseRule, setHouseRuleToShow, houseRuleToShow } = props;
+  const { addNewHouseRules, setHouseRuleToShow, houseRuleToShow } = props;
   const fileUploaded = files => {
-    Object.values(files).forEach(file => {
-      new Promise(resolve => {
-        const fileReader = new FileReader();
-        fileReader.onload = e => resolve(e.target.result);
-        fileReader.readAsText(file);
-      })
-        // eslint-disable-next-line no-eval
-        .then(script => eval(script))
-        .then(rule => addId(rule))
-        .then(rule => addedHouseRule(rule))
-        .then(() => {
-          fileUpload.current.value = '';
-        });
-    });
+    Promise.all(
+      Object.values(files).map(file =>
+        new Promise(resolve => {
+          const fileReader = new FileReader();
+          fileReader.onload = e => resolve(e.target.result);
+          fileReader.readAsText(file);
+        })
+          // eslint-disable-next-line no-eval
+          .then(script => eval(script))
+          .then(rule => addId(rule))
+      )
+    )
+      .then(rules => addNewHouseRules(rules))
+      .then(() => (fileUpload.current.value = ''));
   };
 
   const show = template => {
@@ -93,7 +93,7 @@ const HouseRulesSidebar = props => {
 };
 
 HouseRulesSidebar.propTypes = {
-  addedHouseRule: proptypes.func,
+  addNewHouseRules: proptypes.func,
   setHouseRuleToShow: proptypes.func,
   houseRuleToShow: proptypes.string
 };

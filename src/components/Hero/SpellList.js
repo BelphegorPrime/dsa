@@ -10,8 +10,7 @@ const SpellList = props => {
   const [lcdVisible, setLcdVisible] = useState([]);
 
   const { properties, spellList, className } = props;
-  const changeSpell = (name, trial, taw, e) => {
-    e.stopPropagation();
+  const changeSpell = (name, trial, taw) => {
     const { diceThrow, values } = test(trial, properties);
     const tawStar = taw + diceThrow;
     setTawStars(Object.assign(tawStars, { [name]: `${values} => ${tawStar}` }));

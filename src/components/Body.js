@@ -19,7 +19,7 @@ const Body = props => {
     removeHero,
     showHeroPage,
     updateHero,
-    addedHouseRule,
+    addNewHouseRules,
     setHouseRuleToShow,
     removeRule
   } = props;
@@ -62,7 +62,7 @@ const Body = props => {
         <Fragment>
           <div className="left-pane col-md-2">
             <HouseRulesSideBar
-              addedHouseRule={addedHouseRule}
+              addNewHouseRules={addNewHouseRules}
               setHouseRuleToShow={setHouseRuleToShow}
               houseRuleToShow={houseRuleToShow}
             />
@@ -99,7 +99,7 @@ Body.propTypes = {
   removeHero: proptypes.func,
   showHeroPage: proptypes.func,
   updateHero: proptypes.func,
-  addedHouseRule: proptypes.func,
+  addNewHouseRules: proptypes.func,
   setHouseRuleToShow: proptypes.func,
   removeRule: proptypes.func
 };

@@ -24,35 +24,39 @@ const Head = props => {
 
   const throws = Object.values(countBy(tempThrows));
   const fileUploaded = files => {
-    Object.values(files).forEach(file => {
-      new Promise(resolve => {
-        const fileReader = new FileReader();
-        fileReader.onload = e => resolve(e.target.result);
-        fileReader.readAsText(file);
+    Promise.all(
+      Object.values(files).map(file =>
+        new Promise(resolve => {
+          const fileReader = new FileReader();
+          fileReader.onload = e => resolve(e.target.result);
+          fileReader.readAsText(file);
+        })
+          .then(
+            xmlString =>
+              new Promise(resolve => {
+                const xmlReader = XmlReader.create({
+                  stream: false,
+                  parentNodes: false,
+                  tagPrefix: 'tag:',
+                  doneEvent: 'done',
+                  emitTopLevelOnly: false
+                });
+                xmlReader.on('done', data => resolve(data));
+                xmlReader.parse(xmlString);
+              })
+          )
+          .then(hero => ({
+            xml: hero,
+            converted: convert(hero, houseRules)
+          }))
+      )
+    )
+      .then(heros => {
+        appendToState(heros);
       })
-        .then(
-          xmlString =>
-            new Promise(resolve => {
-              const xmlReader = XmlReader.create({
-                stream: false,
-                parentNodes: false,
-                tagPrefix: 'tag:',
-                doneEvent: 'done',
-                emitTopLevelOnly: false
-              });
-              xmlReader.on('done', data => resolve(data));
-              xmlReader.parse(xmlString);
-            })
-        )
-        .then(hero => ({
-          xml: hero,
-          converted: convert(hero, houseRules)
-        }))
-        .then(hero => appendToState(hero))
-        .then(() => {
-          fileUpload.current.value = '';
-        });
-    });
+      .then(() => {
+        fileUpload.current.value = '';
+      });
   };
 
   const download = () => {

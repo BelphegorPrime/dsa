@@ -11,15 +11,14 @@ import { isJSON, objectWithoutKey } from '../helperFunctions';
 const App = props => {
   // console.log(props);
   const [page, setPage] = useState('default');
-  const [heroPage, setHeroPage] = useState(null);
+  const [heroPage, setHeroPage] = useState('Basis');
   const [houseRuleToShow, setHouseRuleToShow] = useState('templates');
 
   const [heros, setHeros] = useState(
     isJSON(window.localStorage.getItem('heros')) || {}
   );
-  useEffect(() => window.localStorage.setItem('heros', JSON.stringify(heros)), [
-    heros
-  ]);
+
+  useEffect(() => window.localStorage.setItem('heros', JSON.stringify(heros)));
 
   const [chosenHero, setChosenHero] = useState(
     isJSON(window.localStorage.getItem('chosenHero')) || null
@@ -32,20 +31,9 @@ const App = props => {
   const [houseRules, setHouseRules] = useState(
     isJSON(window.localStorage.getItem('houseRules')) || []
   );
-  useEffect(
-    () => window.localStorage.setItem('houseRules', JSON.stringify(houseRules)),
-    [houseRules]
+  useEffect(() =>
+    window.localStorage.setItem('houseRules', JSON.stringify(houseRules))
   );
-
-  const appendToState = composedHero => {
-    const { name } = composedHero.converted;
-    setChosenHero(composedHero);
-    setHeros(
-      Object.assign(heros, {
-        [name]: composedHero
-      })
-    );
-  };
 
   const removeHero = name => {
     setHeros(objectWithoutKey(heros, name));
@@ -58,7 +46,7 @@ const App = props => {
     setPage('default');
     setHeros({});
     setChosenHero(null);
-    setHeroPage(null);
+    setHeroPage('Basis');
     setHouseRules([]);
     setHouseRuleToShow('templates');
   };
@@ -70,15 +58,31 @@ const App = props => {
     setHeros(heros);
   };
 
-  const addedHouseRule = rule => {
-    const otherHouseRules = houseRules.filter(r => r.page !== rule.page);
-    otherHouseRules.push(rule);
+  const appendToState = composedHeros => {
+    const newHeros = Object.assign(
+      heros,
+      composedHeros
+        .map(h => ({
+          [h.converted.name]: h
+        }))
+        .reduce((acc, val) => Object.assign(acc, val), {})
+    );
+    setHeros(newHeros);
+    setChosenHero(composedHeros[composedHeros.length - 1]);
+  };
+
+  const addNewHouseRules = rules => {
+    const otherHouseRules = houseRules
+      .filter(r => rules.map(ru => ru.id).indexOf(r.id) === -1)
+      .concat(...rules);
     Object.keys(heros).forEach(name => {
       const { xml } = heros[name];
-      appendToState({
-        xml,
-        converted: convert(xml, otherHouseRules)
-      });
+      appendToState([
+        {
+          xml,
+          converted: convert(xml, otherHouseRules)
+        }
+      ]);
     });
     setHouseRules(otherHouseRules);
   };
@@ -87,10 +91,12 @@ const App = props => {
     const otherHouseRules = houseRules.filter(hr => hr.id !== id);
     Object.keys(heros).forEach(name => {
       const { xml } = heros[name];
-      appendToState({
-        xml,
-        converted: convert(xml, otherHouseRules)
-      });
+      appendToState([
+        {
+          xml,
+          converted: convert(xml, otherHouseRules)
+        }
+      ]);
     });
     setHouseRules(otherHouseRules);
   };
@@ -120,7 +126,7 @@ const App = props => {
         removeHero={removeHero}
         showHeroPage={setHeroPage}
         updateHero={updateHero}
-        addedHouseRule={addedHouseRule}
+        addNewHouseRules={addNewHouseRules}
         setHouseRuleToShow={setHouseRuleToShow}
         removeRule={removeRule}
       />
