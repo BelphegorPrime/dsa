@@ -4,10 +4,15 @@ import proptypes from 'prop-types';
 import { getMainProperties } from '../../helperFunctions';
 
 const MasterSideBar = props => {
-  const { heros, chooseHero } = props;
+  const { heros, chooseHero, selectedHeros, setSelectedHeros } = props;
   if (!heros) {
     return null;
   }
+
+  const toggleHero = (name, checked) =>
+    checked
+      ? setSelectedHeros([...selectedHeros, name])
+      : setSelectedHeros(selectedHeros.filter(n => n !== name));
 
   return Object.keys(heros)
     .sort()
@@ -22,9 +27,20 @@ const MasterSideBar = props => {
           <div
             style={{ minHeight: 40 }}
             className="cursor-pointer"
-            onClick={() => chooseHero(name)}>
+            onClick={() => {
+              toggleHero(name, selectedHeros.indexOf(name) === -1);
+              chooseHero(name);
+            }}>
             <div className="p-2">
-              <span className="font-weight-bold">{name}</span>
+              <input
+                type="checkbox"
+                checked={selectedHeros.indexOf(name) > -1}
+                onChange={e => {
+                  e.stopPropagation();
+                  toggleHero(name, e.target.checked);
+                }}
+              />
+              <span className="font-weight-bold pl-2">{name}</span>
               <br />
               {propertiesString}
             </div>
@@ -37,7 +53,9 @@ const MasterSideBar = props => {
 
 MasterSideBar.propTypes = {
   heros: proptypes.object,
-  chooseHero: proptypes.func
+  selectedHeros: proptypes.array,
+  chooseHero: proptypes.func,
+  setSelectedHeros: proptypes.func
 };
 
 MasterSideBar.defaultProps = {
