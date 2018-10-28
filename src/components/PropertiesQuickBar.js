@@ -109,7 +109,7 @@ const PropertiesQuickBar = props => {
         <div
           className={className}
           style={{ borderBottom: '1px solid lightgray', height: 41 }}>
-          <div className="pl-2 pt-2 container d-flex">
+          <div id="properties-pane" className="pl-2 pt-2 container d-flex">
             <div style={{ ...style, borderRight: '1px solid lightgray' }}>
               MU:{' '}
               <span className="font-weight-bold">

@@ -5,7 +5,7 @@ import MasterBody from './MasterBody';
 import MasterSideBar from './MasterSideBar';
 
 const Hero = props => {
-  const { heros, updateHero, page, chosenHero, chooseHero } = props;
+  const { heros, chosenHero, chooseHero } = props;
   return (
     <Fragment>
       <div className="left-pane col-md-2 p-0">
@@ -13,20 +13,11 @@ const Hero = props => {
       </div>
       <div className="right-pane row-without-margin col-md-10">
         <div
-          className="row col-md-12"
+          className="row col-md-12 ml-0 mr-0 pt-2"
           style={{
-            marginLeft: 0,
-            marginRight: 0,
-            maxHeight: 'calc(100% - 41px)'
+            maxHeight: '100%'
           }}>
-          {chosenHero ? (
-            <MasterBody
-              heros={heros}
-              hero={chosenHero}
-              page={page}
-              updateHero={updateHero}
-            />
-          ) : null}
+            <MasterBody heros={heros} hero={chosenHero} />
         </div>
       </div>
     </Fragment>
@@ -36,8 +27,6 @@ const Hero = props => {
 Hero.propTypes = {
   heros: proptypes.object,
   chosenHero: proptypes.object,
-  page: proptypes.string,
-  updateHero: proptypes.func,
   chooseHero: proptypes.func
 };
 

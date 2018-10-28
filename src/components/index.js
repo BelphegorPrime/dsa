@@ -152,9 +152,7 @@ const App = props => {
                 {...renderProps}
                 heros={heros}
                 chosenHero={chosenHero || null}
-                page={heroPage}
                 chooseHero={chooseHero}
-                updateHero={updateHero}
               />
             )}
           />

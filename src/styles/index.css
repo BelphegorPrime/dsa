@@ -21,6 +21,10 @@ body {
   padding: 0;
 }
 
+#properties-pane {
+    padding: 0 !important;
+}
+
 .left-pane,
 .right-pane > .row {
   overflow: scroll;
@@ -64,7 +68,7 @@ body {
 .right-pane,
 .right-pane > div,
 .right-pane > div > div{
-  padding: 0 !important;
+  padding: 0;
 }
 
 .row-without-margin {
