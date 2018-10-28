@@ -130,8 +130,9 @@ const App = props => {
           <Route
             exact
             path="/houserules"
-            render={() => (
+            render={renderProps => (
               <HouseRules
+                {...renderProps}
                 addNewHouseRules={addNewHouseRules}
                 setHouseRuleToShow={setHouseRuleToShow}
                 houseRuleToShow={houseRuleToShow}
@@ -143,8 +144,9 @@ const App = props => {
           <Route
             exact
             path="/mastermode"
-            render={() => (
+            render={renderProps => (
               <Hero
+                {...renderProps}
                 heros={heros}
                 chosenHero={chosenHero || null}
                 page={heroPage}
@@ -156,10 +158,11 @@ const App = props => {
             )}
           />
           <Route
-            exact
-            path="/"
-            render={() => (
+            // exact
+            // path="/"
+            render={renderProps => (
               <Hero
+                {...renderProps}
                 heros={heros}
                 chosenHero={chosenHero || null}
                 page={heroPage}
