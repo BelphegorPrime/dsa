@@ -95,3 +95,14 @@ export const countBy = data => {
   }
   return t;
 };
+
+export const getMainProperties = () => ({
+  MU: 'courage',
+  KL: 'wisdom',
+  IN: 'intuition',
+  CH: 'charisma',
+  FF: 'fingerAbility',
+  GE: 'dexterity',
+  KO: 'constitution',
+  KK: 'strength'
+});

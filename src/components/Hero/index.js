@@ -3,7 +3,7 @@ import proptypes from 'prop-types';
 
 import HeroBody from './HeroBody';
 import HeroSideBar from './HeroSideBar';
-import PropertiesQuickBar from './PropertiesQuickBar';
+import PropertiesQuickBar from '../PropertiesQuickBar';
 
 const Hero = props => {
   const {
@@ -29,7 +29,11 @@ const Hero = props => {
       </div>
       <div className="right-pane col-md-10 row-without-margin">
         {chosenHero ? (
-          <PropertiesQuickBar hero={chosenHero} className="col-md-12" />
+          <PropertiesQuickBar
+            hero={chosenHero}
+            className="col-md-12"
+            orientation={'horizontal'}
+          />
         ) : null}
         <div
           className="row col-md-12"

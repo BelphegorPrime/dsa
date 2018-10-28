@@ -9,6 +9,7 @@ import { isJSON, objectWithoutKey } from '../helperFunctions';
 import Head from './Head';
 import Nav from './Nav';
 import Hero from './Hero';
+import Master from './Master';
 import HouseRules from './HouseRules';
 
 const App = props => {
@@ -147,14 +148,12 @@ const App = props => {
             exact
             path="/mastermode"
             render={renderProps => (
-              <Hero
+              <Master
                 {...renderProps}
                 heros={heros}
                 chosenHero={chosenHero || null}
                 page={heroPage}
-                showPage={setHeroPage}
                 chooseHero={chooseHero}
-                removeHero={removeHero}
                 updateHero={updateHero}
               />
             )}
