@@ -125,7 +125,9 @@ const App = props => {
           resetState={resetState}
           toggleNavBar={setToggleNavbar}
         />
-        {showNavBar ? <Nav handleChange={setPage} page={page} /> : null}
+        {showNavBar ? (
+          <Nav handleChange={setPage} page={page} toggleNavBar={toggleNavBar} />
+        ) : null}
         <div id="app-body" className="row">
           <Route
             exact
@@ -158,8 +160,8 @@ const App = props => {
             )}
           />
           <Route
-            // exact
-            // path="/"
+            exact
+            path="/"
             render={renderProps => (
               <Hero
                 {...renderProps}

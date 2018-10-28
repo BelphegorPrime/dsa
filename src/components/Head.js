@@ -131,6 +131,8 @@ const Head = props => {
                 </span>
               ) : null}
             </div>
+          </div>
+          <div className="float-right display-flex">
             {page === 'mastermode' ? (
               <div
                 className="border border-dark"
