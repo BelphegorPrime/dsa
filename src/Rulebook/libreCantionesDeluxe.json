@@ -4897,5 +4897,37 @@
     "distribution": [
       { "representation": "Gildenmagier", "distribution": 3}
     ]
+  },
+  {
+    "page": 132,
+    "name": "Invocatio Major",
+    "trial": "MU/MU/CH",
+    "difficulty": "+Anrufungsschwierigkeit",
+    "technik": "Der Magier zeichnet ein Heptagramm auf den Boden, konzentriert sich auf den geheimen Namen des Dämons, spricht mehrmals die Formel und ruft zum Ab schluss den Namen des Dämons laut aus.",
+    "castTime": "40 Aktionen für die eigentliche Beschwörung. Danach dauert es weitere 5W20 Aktionen, bis der Dämon erscheint.",
+    "effect": "Bei Gelingen dieses Zaubers erscheint im Zentrum des Heptagramms eine Kreatur aus der Gruppe der Gehörnten Dämonen. Der Magier muss nun mit einer Kontrollprobe auf (MU+MU+KL+CH+ZfW)/5, erschwert um die Kontroll- schwierigkeit, feststellen, ob es ihm gelingt, den Dämon zu beherrschen. Ist dies der Fall, so kann er dem Gehörnten einen oder mehrere Aufträge erteilen, die sich nach Art und Wesen des Gerufenen natürlich unterscheiden können. Eine misslungene Anrufungsgsprobe kann zwei Auswirkungen haben: Entweder erscheint überhaupt kein Wesen oder aber es er- scheint eine andere Entität – etwas, das man nicht gerufen hat und das vielleicht einen stärkeren Willen besitzt, den man nicht brechen kann. Gehen Sie der Einfachheit halber davon aus, dass ein Wurf mit 2W6 anzeigt, wie übel die Auswirkungen für den Beschwörer sind: je höher, desto schlimmer. Misslingt die Kontrollsprobe, so rollen Sie wieder 2W6, und auch hier gilt, dass ein höheres Ergebnis unvorteilhaft für den Beschwörer ist. Auf jeden Fall muss der Beschwörer die vollen Kosten für die Beschwörung aufwenden, selbst wenn sich der Dämon verärgert zurückzieht oder ihn gar angreift. Details zu misslungenen Beschwörungen und Beherrschungen finden Sie im Kapitel Die Kunst der Invokation im Band Wege der Zauberei; detaillierte Informationen zu den einzelnen Dämonen wie auch Erläuterungen zu deren Beschwörung finden Sie im oben erwähnten Band im Kapitel Werte beschworener Wesen.",
+    "cost": "19 AsP für die Beschwörung. Die Kosten für die Kontrolle des Dämons sind von Gehörntem zu Gehörntem unterschiedlich. (Borbaradianische Variante: 2W20 AsP für die Beschwörung bzw. die Hälfte dieser Kosten als LeP.)",
+    "target": "einzelner Dämon",
+    "distance": "Der Dämon erscheint im Heptagramm; für die Ausführung des ihm erteilten Auftrags kann er sich beliebig weit vom Beschwörer entfernen.",
+    "duration": "je nach Auftrag, Art des Dämons und AsP-Einsatz.",
+    "modifications": ["Zauberdauer"],
+    "reversalis": "führt zur Bannung gehörnter Dämonen.",
+    "antimagic": "Ein einmal erschienener Dämon kann mittels PENTAGRAMMA zurückgeschickt werden; die Beschwörung selbst kann mit BESCHWÖRUNG VEREITELN bzw. DÄMONENBANN erschwert werden. Auch bei der Umkehrung ist es möglich, mehrere Dämonen gleicher Art zu bannen (also z.B. zwei Shruufya, aber nicht einen Shruuf und einen Zant).",
+    "characteristics": ["Beschwörung", "Dämonisch"],
+    "complexity": "E",
+    "variants": [
+      {
+        "name": "Dämonen der gleichen Art",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Mit diesem Zauber ist es möglich, mehrere Dämonen der gleichen Art zugleich zu beschwören, dabei wird die Beschwörungsprobe noch zusätzlich um die Anzahl der beschworenen Hörner erschwert (mindere Dämonen zählen hierbei als Eingehörnte). Die Beherrschung wird um die Anzahl der Dämonen erschwert. Die Beschwörungskosten betragen 11 AsP pro Dämon, die Folgekosten sind für jeden Dämonen aufzubringen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Borbaradianer", "distribution": 5},
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Hexe", "distribution": 3},
+      { "representation": "Druide", "distribution": 2}
+    ]
   }
 ]
