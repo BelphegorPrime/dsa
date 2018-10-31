@@ -4985,5 +4985,34 @@
       { "representation": "Borbaradianer", "distribution": 2},
       { "representation": "Gildenmagier", "distribution": 1, "subRepresentation": "Borbaradianer"}
     ]
+  },
+  {
+    "page": 135,
+    "name": "Juckreiz, Dämlicher",
+    "trial": "MU/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Der Schelm kratzt sich ausgiebig am Hinter teil.",
+    "castTime": "4 Aktionen",
+    "effect": "Die dämlichste Person innerhalb des Wirkungsradius (nämlich diejenige mit der geringsten Summe aus KL und IN) wird für den Verlauf der Wirkungsdauer von einem heftigen Juckreiz befallen. Vor zugsweise juckt es das Opfer dort, wo es sich nicht kratzen kann – es aber versuchen muss, wenn ihm eine Selbstbeherrschungs-Probe, erschwert um die ZfP*, misslingt. Eine Person, die ständig gequält das Gesicht verzieht oder aber sich am Allerwertesten kratzt, hat natürlich nicht die rechte Überzeugungskraft und kann sich auch nicht vollständig konzentrieren (KL, IN, CH und INI-Basis je –ZfP*/2).",
+    "cost": "7 AsP (Sch: 4 AsP)",
+    "target": "Zone / Einzelperson",
+    "distance": "ZfW Schritt Radius um den Schelm herum",
+    "duration": "ZfP*/2 Spielrunden",
+    "modifications": ["Zielobjekt (mehrere)"],
+    "reversalis": "hebt die Wirkung eines JUCKREIZ auf.",
+    "antimagic": "kann in einer Zone des EINFLUSS BANNEN nur erschwert gewirkt und von diesem Zauber beendet werden.",
+    "characteristics": ["Einfluss"],
+    "complexity": "B",
+    "variants": [
+      {
+        "name": "gegen mehrere Personen",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "In der Variante gegen mehrere Personen kostet der Zauber 3 AsP pro Opfer und ist um die höchste MR plus die doppelte Anzahl der Opfer erschwert."
+      }
+    ],
+    "distribution": [
+      { "representation": "Schelm", "distribution": 3}
+    ]
   }
 ]
