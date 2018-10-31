@@ -4962,5 +4962,28 @@
       { "representation": "Hexe", "distribution": 4},
       { "representation": "Druide", "distribution": 2}
     ]
+  },
+  {
+    "page": 134,
+    "name": "Iribaars Hand",
+    "trial": "MU/MU/IN",
+    "difficulty": "+MR",
+    "technik": "Die Borbaradianerin leckt einmal über ihre Handfläche und berührt ihr Opfer dann mit dieser Hand an beliebiger Stelle des Körpers.",
+    "castTime": "4 Aktionen; die Berührung muss erst in der letzten, aufgeschobenen Aktion erfolgen (s.u.).",
+    "effect": "Die Hand der Borbaradianerin wird von einem schwarz schillernden Leuchten überzogen. Wann immer sie in den nächsten Augenblicken damit ein Opfer berührt (erfolgreiche waffenlose AT), spürt dieses einen eisi- gen Hauch und plötzliche Verwirrung: Es verliert schlagartig Erinnerungen in Höhe von 1W20 AP. Fällt hierbei eine 20, so handelt es sich um bereits verarbeitete Erinnerung, d.h., ein zufällig bestimmter Talentwert des Opfers sinkt um einen Punkt. Es kann durchaus geschehen, dass die aktuellen AP durch diesen Zauber unter 0 sinken – diese ‘Schulden’ müssen beim nächsten AP-Zugewinn ausgeglichen werden. Das Opfer kann versuchen, dem Erinnerungsverlust zu entgehen, indem es eine Selbstbeherr- schungs-Probe würfelt, die um ZfP* erschwert ist. Gelingt diese, so erleidet das Opfer nur fürchterliche Schmerzen und den Verlust von W20 AuP (wie unter der Wirkung des HÖLLENPEIN). Beträgt der Verlust mehr als KO AuP, so erleidet das Opfer eine Wunde an der berührten Stelle. Der Schadenswürfel (Erinnerungs- oder AuP- Verlust) wird bei jedem Angriff neu gewürfelt. Er ist unabhängig vom Würfelergebnis für die Kosten des Zauberspruchs.",
+    "cost": "13 AsP (Bor: 1W20 AsP bzw. 1W20 / 2 LeP)",
+    "target": "Einzelperson",
+    "distance": "Berührung",
+    "duration": "Die Hand bleibt ZfP* KR lang gefährlich; die Schadenswirkung ist augenblicklich.",
+    "modifications": ["Zauberdauer"],
+    "reversalis": "keine Wirkung bekannt.",
+    "antimagic": "Amazerothbann, EINFLUSS BANNEN und auch SCHADENSZAUBER BANNEN können in ihren Zonen das Wirken des Zaubers erschweren. Geraubte Erinnerung ist jedoch permanent verloren.",
+    "characteristics": ["Einfluss", "Schaden", "Bor: Dämonisch (Amazeroth)"],
+    "complexity": "D",
+    "variants": [],
+    "distribution": [
+      { "representation": "Borbaradianer", "distribution": 2},
+      { "representation": "Gildenmagier", "distribution": 1, "subRepresentation": "Borbaradianer"}
+    ]
   }
 ]
