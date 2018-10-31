@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import proptypes from 'prop-types';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { convert } from '../heroConverter';
 import { isJSON, objectWithoutKey } from '../helperFunctions';
@@ -129,45 +130,57 @@ const App = props => {
         {showNavBar ? (
           <Nav handleChange={setPage} page={page} toggleNavBar={toggleNavBar} />
         ) : null}
-        <div id="app-body" className="row">
-          <Route
-            exact
-            path="/houserules"
-            render={renderProps => (
-              <HouseRules
-                {...renderProps}
-                addNewHouseRules={addNewHouseRules}
-                setHouseRuleToShow={setHouseRuleToShow}
-                houseRuleToShow={houseRuleToShow}
-                houseRules={houseRules}
-                removeRule={removeRule}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/mastermode"
-            render={renderProps => (
-              <Master {...renderProps} heros={heros} chooseHero={chooseHero} />
-            )}
-          />
-          <Route
-            exact
-            path="/"
-            render={renderProps => (
-              <Hero
-                {...renderProps}
-                heros={heros}
-                chosenHero={chosenHero || null}
-                page={heroPage}
-                showPage={setHeroPage}
-                chooseHero={chooseHero}
-                removeHero={removeHero}
-                updateHero={updateHero}
-              />
-            )}
-          />
-        </div>
+        <Route
+          render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                <div id="app-body" className="row">
+                  <Route
+                    exact
+                    path="/houserules"
+                    render={renderProps => (
+                      <HouseRules
+                        {...renderProps}
+                        addNewHouseRules={addNewHouseRules}
+                        setHouseRuleToShow={setHouseRuleToShow}
+                        houseRuleToShow={houseRuleToShow}
+                        houseRules={houseRules}
+                        removeRule={removeRule}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/mastermode"
+                    render={renderProps => (
+                      <Master
+                        {...renderProps}
+                        heros={heros}
+                        chooseHero={chooseHero}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/"
+                    render={renderProps => (
+                      <Hero
+                        {...renderProps}
+                        heros={heros}
+                        chosenHero={chosenHero || null}
+                        page={heroPage}
+                        showPage={setHeroPage}
+                        chooseHero={chooseHero}
+                        removeHero={removeHero}
+                        updateHero={updateHero}
+                      />
+                    )}
+                  />
+                </div>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
       </div>
     </BrowserRouter>
   );
