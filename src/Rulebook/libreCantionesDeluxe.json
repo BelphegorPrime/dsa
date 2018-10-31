@@ -4929,5 +4929,38 @@
       { "representation": "Hexe", "distribution": 3},
       { "representation": "Druide", "distribution": 2}
     ]
+  },
+  {
+    "page": 133,
+    "name": "Invocatio Minor",
+    "trial": "MU/MU/CH",
+    "difficulty": "+Anrufungsschwierigkeit",
+    "technik": "Der Magier zeichnet mit der Hand oder dem Zauberstab ein Pentagramm in die Luft und ruft gleichzeitig laut die Formel.",
+    "castTime": "5 Aktionen für die eigentliche Be- schwörung, danach dauert es 2W20 Aktionen, bis der Dämon erscheint.",
+    "effect": "Mit diesem Zauber kann der Magier eine Kreatur aus der Gruppe der Niederen Dämonen beschwören. Sobald der Dämon erscheint, muss der Magier eine Probe auf seinen Kontrollwert ((MU+MU+KL+CH+ZfW)/5) ablegen, die je nach Mächtigkeit des Sphärenwesens erschwert ist. Gelingt die Kontrolle, so kann er dem Dämonen nun einen oder mehrere Aufträge erteilen. Eine misslungene Anrufungsprobe kann zwei Auswirkungen haben: Entweder erscheint überhaupt kein Wesen oder aber es erscheint eine andere Entität – etwas, das man nicht gerufen hat und das vielleicht einen stärkeren Willen besitzt, den man nicht brechen kann. Gehen Sie der Einfachheit halber davon aus, dass ein Wurf mit 2W6 anzeigt, wie übel die Auswirkungen für den Beschwörer sind: je höher, desto schlimmer. Misslingt die Kontrollprobe, so rollen Sie wieder 2W6, und auch hier gilt, dass ein höheres Ergebnis unvorteilhaft für den Beschwörer ist. Auf jeden Fall muss der Beschwörer die vollen Kosten für die Beschwörung aufwenden, selbst wenn sich der Dämon verärgert zurückzieht oder ihn gar angreift. Details zu misslungenen Beschwörungen und Beherrschungen finden Sie im Kapitel Die Kunst der Invokation im Band Wege der Zauberei; detaillierte Informationen zu den einzelnen Dämonen wie auch Erläuterungen zu deren Beschwörung finden Sie im ober erwähnten Band im Kapitel Werte beschworener Wesen.",
+    "cost": "11 AsP für die Beschwörung. Die Kosten für die Kontrolle des Wesens sind von Dämon zu Dämon unterschiedlich. (Borbaradianische Variante: 1W20 AsP für die Beschörung bzw. die Hälfte dieser Kosten als LeP.)",
+    "target": "einzelner Dämon",
+    "distance": "Der Dämon erscheint in unmittelbarer Nähe des Magiers. Danach kann er sich, je nach Dämon und Aufgabe, beliebig weit vom Beschwörer entfernen.",
+    "duration": "je nach Dämon und AsP-Aufwand",
+    "modifications": ["Zauberdauer"],
+    "reversalis": "führt zur Bannung niederer Dämonen",
+    "antimagic": "Ein bereits erschienener Dämon kann mittels PENTAGRAMMA zurückgeschickt werden; die Beschwörung selbst kann mit BESCHWÖRUNG VEREITELN bzw. DÄMONENBANN erschwert werden.",
+    "characteristics": ["Beschwörung", "Dämonisch"],
+    "complexity": "D",
+    "variants": [
+      {
+        "name": "Niedere Dämonen der gleichen Art",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Es ist auch möglich, mehrere Niedere Dämonen der gleichen Art gleichzeitig zu beschwören. Dabei wird die Beschwö- rungsprobe zusätzlich um die Anzahl der beschworenen Dämonen erschwert, ebenso die anschließende Beherrschungsprobe. Die Beschwörungskosten betragen 9 AsP pro Dämon; die Folgekosten sind jedoch für jeden Dämon einzeln aufzubringen."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 5},
+      { "representation": "Borbaradianer", "distribution": 4},
+      { "representation": "Achaz", "distribution": 4},
+      { "representation": "Hexe", "distribution": 4},
+      { "representation": "Druide", "distribution": 2}
+    ]
   }
 ]
