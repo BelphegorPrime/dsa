@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import proptypes from 'prop-types';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { convert } from '../heroConverter';
@@ -12,6 +12,27 @@ import Nav from './Nav';
 import Hero from './Hero';
 import Master from './Master';
 import HouseRules from './HouseRules';
+
+const NoMatch = ({ location }) => (
+  <Fragment>
+    <div className="left-pane col-md-2" />
+    <div className="right-pane col-md-10 row-without-margin">
+      <div
+        className="row col-md-12"
+        style={{
+          marginLeft: 0,
+          marginRight: 0,
+          maxHeight: 'calc(100% - 41px)'
+        }}>
+        Seite {location.pathname} nicht gefunden.
+      </div>
+    </div>
+  </Fragment>
+);
+
+NoMatch.propTypes = {
+  location: proptypes.object
+};
 
 const App = props => {
   // console.log(props);
@@ -135,47 +156,50 @@ const App = props => {
             <TransitionGroup>
               <CSSTransition key={location.key} classNames="fade" timeout={300}>
                 <div id="app-body" className="row">
-                  <Route
-                    exact
-                    path="/houserules"
-                    render={renderProps => (
-                      <HouseRules
-                        {...renderProps}
-                        addNewHouseRules={addNewHouseRules}
-                        setHouseRuleToShow={setHouseRuleToShow}
-                        houseRuleToShow={houseRuleToShow}
-                        houseRules={houseRules}
-                        removeRule={removeRule}
-                      />
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/mastermode"
-                    render={renderProps => (
-                      <Master
-                        {...renderProps}
-                        heros={heros}
-                        chooseHero={chooseHero}
-                      />
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/"
-                    render={renderProps => (
-                      <Hero
-                        {...renderProps}
-                        heros={heros}
-                        chosenHero={chosenHero || null}
-                        page={heroPage}
-                        showPage={setHeroPage}
-                        chooseHero={chooseHero}
-                        removeHero={removeHero}
-                        updateHero={updateHero}
-                      />
-                    )}
-                  />
+                  <Switch>
+                    <Route
+                      exact
+                      path="/houserules"
+                      render={renderProps => (
+                        <HouseRules
+                          {...renderProps}
+                          addNewHouseRules={addNewHouseRules}
+                          setHouseRuleToShow={setHouseRuleToShow}
+                          houseRuleToShow={houseRuleToShow}
+                          houseRules={houseRules}
+                          removeRule={removeRule}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/mastermode"
+                      render={renderProps => (
+                        <Master
+                          {...renderProps}
+                          heros={heros}
+                          chooseHero={chooseHero}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/"
+                      render={renderProps => (
+                        <Hero
+                          {...renderProps}
+                          heros={heros}
+                          chosenHero={chosenHero || null}
+                          page={heroPage}
+                          showPage={setHeroPage}
+                          chooseHero={chooseHero}
+                          removeHero={removeHero}
+                          updateHero={updateHero}
+                        />
+                      )}
+                    />
+                    <Route component={NoMatch} />
+                  </Switch>
                 </div>
               </CSSTransition>
             </TransitionGroup>
