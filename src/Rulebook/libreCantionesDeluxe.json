@@ -5014,5 +5014,48 @@
     "distribution": [
       { "representation": "Schelm", "distribution": 3}
     ]
+  },
+  {
+    "page": 136,
+    "name": "Karnifilo Raserei",
+    "trial": "MU/IN/CH",
+    "difficulty": "+MR",
+    "technik": "Der Magier berührt mit Zeige- und Mittelfinger der linken Hand den Waffenarm eines Gefährten und spricht die Formel.",
+    "castTime": "3 Aktionen",
+    "effect": "Der Verzauberte verfällt in einen Kampfrausch. Dabei erhöhen sich sein AT-Basiswert, MU und KK um je 5 Punkte, während der PA-Basiswert, KL und CH um je 5 Punkte sinken. Der Kämpfer kann keine Kampfmanöver außer Ausweichen, Befreiungsschlag, Hammerschlag, Nie- derwerfen, Schildparade, Sturmangriff und Wuchtschlag (sowie gewöhnliche AT- und PA-Aktionen) anwenden. Für die Veränderung des AT- und PA-Wertes gelten die oben festgelegten Zahlen, eine Neuberechnung aufgrund der veränderten Eigenschaften muss also nicht durchgeführt werden; die TP können sich jedoch aufgrund der gesteigerten KK verbessern. Das Opfer dieses Zaubers nimmt keine Schmerzen mehr wahr (der Meister notiert die verlorenen LeP verdeckt) und wird auch von LeP/AuP-Verlust und Wunden nicht in seinem Kampfrausch behindert (keine AT/PA-Einbußen, keine Kampfunfähigkeit). Nach Ablauf der Wirkungsdauer beträgt die AU des Kämpfers 0 und er hat ZfP*/2 Punkte Erschöpfung erlitten. Sind alle Gegner vor Ablauf der Wirkungsdauer besiegt, greift der Ra- sende auch seine Kampfgefährten an und kann nur mittels Antimagie davon abgebracht werden. Auf Personen mit dem Vorteil Kampfrausch oder dem Nachteil Blut- rausch gesprochen, ist dieser Spruch nicht um die MR erschwert. In beiden Fällen schließen sich an die Wirkungsdauer des Zaubers noch 1W20 Kampfrunden lang die Auswirkungen des entsprechenden Vor-/Nachteils an.",
+    "cost": "11 AsP (borbaradianische Variante: 1W20 AsP bzw. 1W20/2 LeP)",
+    "target": "Einzelperson",
+    "distance": "Berührung",
+    "duration": "ZfP* x 5 Kampfrunden",
+    "modifications": ["Zauberdauer", "Erzwingen", "Kosten", "Reichweite", "Wirkungsdauer"],
+    "reversalis": "hebt einen wirkenden KARNIFILO auf oder beruhigt Walwütige und andere Berserker, bewirkt jedoch keine Eigenschaftsänderung.",
+    "antimagic": "kann nicht in einer Zone des EINFLUSS BANNEN oder des EIGENSCHAFT WIEDERHERSTELLEN gewirkt werden und kann mit diesen Antimagie-Sprüchen beendet werden. Gegen die borbaradianische Variante wirkt auch der BELHALHARBANN.",
+    "characteristics": ["Einfluss", "Eigenschaften", "Bor: Dämonisch (Belhalhar)"],
+    "complexity": "C",
+    "variants": [
+      {
+        "name": "Blutrausch",
+        "mod": "+3",
+        "minZfW": 14,
+        "effect": "Das Opfer dieses Spruches verwandelt sich in einen rasenden Wüterich, der alles angreift, das sich ihm in den Weg stellt – sei es Freund oder Feind. Die Werte-Veränderungen sind 2 Punkte stärker als oben angegeben. Nach dem Amok- lauf ist es so ermattet, dass es keine weiteren anstrengenden Aktionen unternehmen kann (AU fällt auf 0; Verzauberter erleidet 2 x ZfP* Punkte Erschöpfung)."
+      },
+      {
+        "name": "Borbaradianische Repräsentation",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "Kosten und Wirkungsdauer werden mit 1W20 ausgewürfelt; enthält automatisch die Blutrausch-Variante; als zusätzliches Merkmal kommt Dämonisch (Belhalhar) hinzu und die Modifikation Kosten kann nicht angewendet werden."
+      },
+      {
+        "name": "Achaz-Repräsentation",
+        "mod": "+0",
+        "minZfW": 0,
+        "effect": "wirkt nur auf Geschuppte, kostet jedoch auch nur 7 AsP (Kristallomanten-Bonus bereits eingerechnet)."
+      }
+    ],
+    "distribution": [
+      { "representation": "Gildenmagier", "distribution": 4},
+      { "representation": "Borbaradianer", "distribution": 3},
+      { "representation": "Achaz", "distribution": 3}
+    ]
   }
 ]
