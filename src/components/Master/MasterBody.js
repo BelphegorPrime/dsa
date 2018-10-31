@@ -3,8 +3,7 @@ import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
 
 const MasterBody = props => {
-  const { hero, heros, selectedHeros } = props;
-  const chosenHeroName = hero.converted.name;
+  const { heros, selectedHeros } = props;
 
   const getHeroData = h => {
     const { converted } = h;
@@ -66,22 +65,10 @@ const MasterBody = props => {
     );
   };
 
-  return (
-    <div>
-      {getHeroData(hero)}
-      {Object.entries(heros).map(([hName, h]) => {
-        const isHero = hName === chosenHeroName;
-        if (!isHero) {
-          return getHeroData(h);
-        }
-        return null;
-      })}
-    </div>
-  );
+  return <div>{Object.values(heros).map(h => getHeroData(h))}</div>;
 };
 
 MasterBody.propTypes = {
-  hero: proptypes.object,
   heros: proptypes.object,
   selectedHeros: proptypes.array
 };

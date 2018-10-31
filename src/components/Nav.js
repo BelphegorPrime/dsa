@@ -13,6 +13,7 @@ const Nav = props => {
     toggleNavBar(false);
   };
 
+  const className = 'link';
   return (
     <div
       style={{
@@ -23,33 +24,51 @@ const Nav = props => {
         zIndex: 5,
         background: 'whitesmoke'
       }}>
-      <Link
-        id="default"
-        to="/"
-        className={page === 'default' ? 'active' : ''}
-        style={style}
-        onClick={changePage}>
-        Standard
-      </Link>
-      <hr style={hrStyle} />
-      <Link
-        id="mastermode"
-        to="/mastermode"
-        className={page === 'mastermode' ? 'active' : ''}
-        style={style}
-        onClick={changePage}>
-        Meistermodus
-      </Link>
-      <hr style={hrStyle} />
-      <Link
-        id="houserules"
-        to="/houserules"
-        className={page === 'houserules' ? 'active' : ''}
-        style={style}
-        onClick={changePage}>
-        Hausregeln
-      </Link>
-      <hr style={hrStyle} />
+      <ul className="nav nav-pills nav-stacked">
+        <li>
+          <Link
+            id="default"
+            to="/"
+            className={page === 'default' ? `${className} active` : className}
+            style={style}
+            onClick={changePage}>
+            Standard
+          </Link>
+        </li>
+        <li>
+          <hr style={hrStyle} />
+        </li>
+        <li>
+          <Link
+            id="mastermode"
+            to="/mastermode"
+            className={
+              page === 'mastermode' ? `${className} active` : className
+            }
+            style={style}
+            onClick={changePage}>
+            Meistermodus
+          </Link>
+        </li>
+        <li>
+          <hr style={hrStyle} />
+        </li>
+        <li>
+          <Link
+            id="houserules"
+            to="/houserules"
+            className={
+              page === 'houserules' ? `${className} active` : className
+            }
+            style={style}
+            onClick={changePage}>
+            Hausregeln
+          </Link>
+        </li>
+        <li>
+          <hr style={hrStyle} />
+        </li>
+      </ul>
     </div>
   );
 };

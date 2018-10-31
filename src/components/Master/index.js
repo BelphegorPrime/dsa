@@ -5,7 +5,7 @@ import MasterBody from './MasterBody';
 import MasterSideBar from './MasterSideBar';
 
 const Hero = props => {
-  const { heros, chosenHero, chooseHero } = props;
+  const { heros, chooseHero } = props;
   const [selectedHeros, setSelectedHeros] = useState(Object.keys(heros));
   return (
     <Fragment>
@@ -23,11 +23,7 @@ const Hero = props => {
           style={{
             maxHeight: '100%'
           }}>
-          <MasterBody
-            heros={heros}
-            hero={chosenHero}
-            selectedHeros={selectedHeros}
-          />
+          <MasterBody heros={heros} selectedHeros={selectedHeros} />
         </div>
       </div>
     </Fragment>
@@ -36,7 +32,6 @@ const Hero = props => {
 
 Hero.propTypes = {
   heros: proptypes.object,
-  chosenHero: proptypes.object,
   chooseHero: proptypes.func
 };
 

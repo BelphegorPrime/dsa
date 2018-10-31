@@ -1,24 +1,28 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Times New Roman", Times, serif, apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif, apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+li {
+    width: 100%;
 }
 
 ::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  background: transparent;
+    display: none;
+    width: 0;
+    background: transparent;
 }
 
-#master-mode-toggle-label{
-  padding-right: 10px;
+#master-mode-toggle-label {
+    padding-right: 10px;
 }
 
 #app-body {
-  height: calc(100vh - 55px);
-  width: 100vw;
-  margin: 0;
-  padding: 0;
+    height: calc(100vh - 55px);
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 
 #properties-pane {
@@ -27,71 +31,71 @@ body {
 
 .left-pane,
 .right-pane > .row {
-  overflow: scroll;
+    overflow: scroll;
 }
 
 .navbar {
-  background: whitesmoke;
-  border-bottom: 1px solid lightgrey;
-  padding-left: 8px !important;
-  padding-right: 8px !important;
+    background: whitesmoke;
+    border-bottom: 1px solid lightgrey;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
 }
 
 .navbar-header {
-  width: 100%;
+    width: 100%;
 }
 
-.display-flex{
-  display: flex;
+.display-flex {
+    display: flex;
 }
 
 .display-flex > div,
 .display-flex > button {
-  margin-right: 8px;
+    margin-right: 8px;
 }
 
 .hero-name {
-  min-width: 275px;
-  max-width: 275px;
-  line-height: 38px;
+    min-width: 275px;
+    max-width: 275px;
+    line-height: 38px;
 }
 
 .left-pane {
-  border-right: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
 }
 
 .left-pane > hr {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .right-pane,
 .right-pane > div,
-.right-pane > div > div{
-  padding: 0;
+.right-pane > div > div {
+    padding: 0;
 }
 
 .row-without-margin {
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
 }
 
 .list-group {
-  padding-right: 0 !important;
+    padding-right: 0 !important;
 }
 
 .test-btn {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 .fixt-table {
-  width: 100%;
-  margin-bottom: 0 !important;
+    width: 100%;
+    margin-bottom: 0 !important;
 }
 
 .fixt-table > thead > tr > th {
-  height: 34px;
+    height: 34px;
 }
 
 .fixt-table > thead,
@@ -100,71 +104,75 @@ body {
 .fixt-table > tbody > tr,
 .fixt-table > thead > tr > th,
 .fixt-table > tbody > tr > td {
-  display: block;
+    display: block;
 }
 
 .fixt-table > tbody > tr:after,
 .fixt-table > thead > tr:after {
-  content: ' ';
-  display: block;
-  visibility: hidden;
-  clear: both;
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
 }
 
 .fixt-table > tbody {
-  overflow-y: auto;
-  height: calc(100vh - 89px);
+    overflow-y: auto;
+    height: calc(100vh - 89px);
 }
 
 .fixt-table-4 > tbody > tr > td,
 .fixt-table-4 > thead > tr > th {
-  width: 25%;
-  float: left;
+    width: 25%;
+    float: left;
 }
 
 .fixt-table-5 > tbody > tr > td,
 .fixt-table-5 > thead > tr > th {
-  width: 20%;
-  float: left;
+    width: 20%;
+    float: left;
 }
 
 .house-rule-delete {
-  right: 16px;
+    right: 16px;
 }
 
 .container-fluid {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .custom-file {
-  width: 153px !important;
+    width: 153px !important;
 }
 
 .btn-remove-hero {
-  width: 37px;
-  height: 37px;
+    width: 37px;
+    height: 37px;
 }
 
-.custom-file-input:lang(en) ~ .custom-file-label::after{
-  content: "" !important;
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+    content: "" !important;
 }
 
 .custom-file-label::after {
-  text-indent: -9999px;
-  width: 28px;
-  background: url("../assets/download.svg") no-repeat center !important;
-  background-size: 16px 16px !important;
+    text-indent: -9999px;
+    width: 28px;
+    background: url("../assets/download.svg") no-repeat center !important;
+    background-size: 16px 16px !important;
 }
 
 .cursor-pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .cursor-default {
-  cursor: default;
+    cursor: default;
 }
 
 .custom-file-input {
     z-index: 0 !important;
+}
+
+.link, .link:focus, .link:hover, .link:visited, .link:link, .link:active {
+    text-decoration: none;
 }

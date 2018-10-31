@@ -148,12 +148,7 @@ const App = props => {
             exact
             path="/mastermode"
             render={renderProps => (
-              <Master
-                {...renderProps}
-                heros={heros}
-                chosenHero={chosenHero || null}
-                chooseHero={chooseHero}
-              />
+              <Master {...renderProps} heros={heros} chooseHero={chooseHero} />
             )}
           />
           <Route
