@@ -1,17 +1,28 @@
 import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
 
-import Base from './Base';
-import Properties from './Properties';
-import Advantages from './Advantages';
-import SpecialAbilities from './SpecialAbilities';
-import TalentList from './TalentList';
-import SpellList from './SpellList';
-import Objects from './Objects';
-import Comments from './Comments';
-import Equipment from './Equipment';
-import Connections from './Connections';
-import Purse from './Purse';
+// import Base from './Base';
+// import Properties from './Properties';
+// import Advantages from './Advantages';
+// import SpecialAbilities from './SpecialAbilities';
+// import TalentList from './TalentList';
+// import SpellList from './SpellList';
+// import Objects from './Objects';
+// import Comments from './Comments';
+// import Equipment from './Equipment';
+// import Connections from './Connections';
+// import Purse from './Purse';
+const Base = React.lazy(() => import('./Base'));
+const Properties = React.lazy(() => import('./Properties'));
+const Advantages = React.lazy(() => import('./Advantages'));
+const SpecialAbilities = React.lazy(() => import('./SpecialAbilities'));
+const TalentList = React.lazy(() => import('./TalentList'));
+const SpellList = React.lazy(() => import('./SpellList'));
+const Objects = React.lazy(() => import('./Objects'));
+const Comments = React.lazy(() => import('./Comments'));
+const Equipment = React.lazy(() => import('./Equipment'));
+const Connections = React.lazy(() => import('./Connections'));
+const Purse = React.lazy(() => import('./Purse'));
 
 const Hero = props => {
   const { hero, page, updateHero } = props;

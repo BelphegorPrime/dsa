@@ -18,8 +18,10 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error"
   },
   parserOptions: {
-    "ecmaVersion": 6,
+    "ecmaVersion": 8,
     "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "codeFrame": true,
     "ecmaFeatures": {
       "jsx": true,
       "modules": true,

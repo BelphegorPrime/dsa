@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
 
-import HouseRulesSideBar from './HouseRulesSideBar';
-import HouseRulesBody from './HouseRulesBody';
+// import HouseRulesBody from './HouseRulesBody';
+// import HouseRulesSideBar from './HouseRulesSideBar';
+const HouseRulesBody = React.lazy(() => import('./HouseRulesBody'));
+const HouseRulesSideBar = React.lazy(() => import('./HouseRulesSideBar'));
 
 const HouseRules = props => {
   const {

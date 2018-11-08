@@ -18,11 +18,10 @@ const MasterBody = props => {
           <div className="pl-4">
             <span className="font-weight-bold">Vorteile: </span>
             {converted.advantages
-              .map(
-                advantage =>
-                  advantage.value
-                    ? `${advantage.name} ${advantage.value}`
-                    : `${advantage.name}`
+              .map(advantage =>
+                advantage.value
+                  ? `${advantage.name} ${advantage.value}`
+                  : `${advantage.name}`
               )
               .join(', ')}
           </div>
@@ -30,11 +29,10 @@ const MasterBody = props => {
             <span className="font-weight-bold">Nachteile: </span>
             <span className="font-italic">
               {converted.disadvantages
-                .map(
-                  disadvantage =>
-                    disadvantage.value
-                      ? `${disadvantage.name} ${disadvantage.value}`
-                      : `${disadvantage.name}`
+                .map(disadvantage =>
+                  disadvantage.value
+                    ? `${disadvantage.name} ${disadvantage.value}`
+                    : `${disadvantage.name}`
                 )
                 .join(', ')}
             </span>

@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from 'react';
 import proptypes from 'prop-types';
 
-import MasterBody from './MasterBody';
-import MasterSideBar from './MasterSideBar';
+// import MasterBody from './MasterBody';
+// import MasterSideBar from './MasterSideBar';
+const MasterBody = React.lazy(() => import('./MasterBody'));
+const MasterSideBar = React.lazy(() => import('./MasterSideBar'));
 
 const Hero = props => {
   const { heros, chooseHero } = props;

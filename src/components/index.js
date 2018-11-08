@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, Fragment, Suspense } from 'react';
 import proptypes from 'prop-types';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -7,11 +7,17 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { convert } from '../heroConverter';
 import { isJSON, objectWithoutKey } from '../helperFunctions';
 
-import Head from './Head';
-import Nav from './Nav';
-import Hero from './Hero';
-import Master from './Master';
-import HouseRules from './HouseRules';
+// import Head from './Head';
+// import Nav from './Nav';
+// import Hero from './Hero';
+// import Master from './Master';
+// import HouseRules from './HouseRules';
+
+const Head = React.lazy(() => import('./Head'));
+const Nav = React.lazy(() => import('./Nav'));
+const Hero = React.lazy(() => import('./Hero'));
+const Master = React.lazy(() => import('./Master'));
+const HouseRules = React.lazy(() => import('./HouseRules'));
 
 const NoMatch = ({ location }) => (
   <Fragment>
@@ -138,74 +144,83 @@ const App = props => {
 
   return (
     <BrowserRouter>
-      <div className="App cursor-default">
-        <Head
-          chosenHero={chosenHero}
-          page={page}
-          houseRules={houseRules}
-          handleChange={setPage}
-          appendToState={appendToState}
-          resetState={resetState}
-          toggleNavBar={setToggleNavbar}
-        />
-        {showNavBar ? (
-          <Nav handleChange={setPage} page={page} toggleNavBar={toggleNavBar} />
-        ) : null}
-        <Route
-          render={({ location }) => (
-            <TransitionGroup>
-              <CSSTransition key={location.key} classNames="fade" timeout={300}>
-                <div id="app-body" className="row">
-                  <Switch>
-                    <Route
-                      exact
-                      path="/houserules"
-                      render={renderProps => (
-                        <HouseRules
-                          {...renderProps}
-                          addNewHouseRules={addNewHouseRules}
-                          setHouseRuleToShow={setHouseRuleToShow}
-                          houseRuleToShow={houseRuleToShow}
-                          houseRules={houseRules}
-                          removeRule={removeRule}
-                        />
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/mastermode"
-                      render={renderProps => (
-                        <Master
-                          {...renderProps}
-                          heros={heros}
-                          chooseHero={chooseHero}
-                        />
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/"
-                      render={renderProps => (
-                        <Hero
-                          {...renderProps}
-                          heros={heros}
-                          chosenHero={chosenHero || null}
-                          page={heroPage}
-                          showPage={setHeroPage}
-                          chooseHero={chooseHero}
-                          removeHero={removeHero}
-                          updateHero={updateHero}
-                        />
-                      )}
-                    />
-                    <Route component={NoMatch} />
-                  </Switch>
-                </div>
-              </CSSTransition>
-            </TransitionGroup>
-          )}
-        />
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div className="App cursor-default">
+          <Head
+            chosenHero={chosenHero}
+            page={page}
+            houseRules={houseRules}
+            handleChange={setPage}
+            appendToState={appendToState}
+            resetState={resetState}
+            toggleNavBar={setToggleNavbar}
+          />
+          {showNavBar ? (
+            <Nav
+              handleChange={setPage}
+              page={page}
+              toggleNavBar={toggleNavBar}
+            />
+          ) : null}
+          <Route
+            render={({ location }) => (
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  classNames="fade"
+                  timeout={300}>
+                  <div id="app-body" className="row">
+                    <Switch>
+                      <Route
+                        exact
+                        path="/houserules"
+                        render={renderProps => (
+                          <HouseRules
+                            {...renderProps}
+                            addNewHouseRules={addNewHouseRules}
+                            setHouseRuleToShow={setHouseRuleToShow}
+                            houseRuleToShow={houseRuleToShow}
+                            houseRules={houseRules}
+                            removeRule={removeRule}
+                          />
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/mastermode"
+                        render={renderProps => (
+                          <Master
+                            {...renderProps}
+                            heros={heros}
+                            chooseHero={chooseHero}
+                          />
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/"
+                        render={renderProps => (
+                          <Hero
+                            {...renderProps}
+                            heros={heros}
+                            chosenHero={chosenHero || null}
+                            page={heroPage}
+                            showPage={setHeroPage}
+                            chooseHero={chooseHero}
+                            removeHero={removeHero}
+                            updateHero={updateHero}
+                          />
+                        )}
+                      />
+                      <Route component={NoMatch} />
+                    </Switch>
+                  </div>
+                </CSSTransition>
+              </TransitionGroup>
+            )}
+          />
+        </div>
+      </Suspense>
     </BrowserRouter>
   );
 };
