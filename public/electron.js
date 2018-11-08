@@ -1,6 +1,18 @@
-const { app, BrowserWindow, Menu, shell } = require('electron');
+const {app, BrowserWindow, Menu, shell} = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
+const express = require('express');
+
+const createServer = () => {
+  const server = express();
+  server.get('/', (req, res) => {
+    res.send('Hello World!!!!!')
+  });
+  const port = 8000;
+  server.listen(port, () => {
+    console.log("Server is running on Port " + port)
+  });
+};
 
 const isWindows = process.platform === 'win32';
 
@@ -25,36 +37,36 @@ const setMainMenu = () => {
       {
         label: 'Bearbeiten',
         submenu: [
-          { role: 'undo', label: 'Widerrufen' },
-          { role: 'redo', label: 'Widerholen' },
-          { type: 'separator' },
-          { role: 'cut', label: 'Ausschneiden' },
-          { role: 'copy', label: 'Kopieren' },
-          { role: 'paste', label: 'Einfügen' },
-          { role: 'pasteandmatchstyle', label: 'Einfügen und Stil anpassen' },
-          { role: 'delete', label: 'Löschen' },
-          { role: 'selectall', label: 'Alle auswählen' }
+          {role: 'undo', label: 'Widerrufen'},
+          {role: 'redo', label: 'Widerholen'},
+          {type: 'separator'},
+          {role: 'cut', label: 'Ausschneiden'},
+          {role: 'copy', label: 'Kopieren'},
+          {role: 'paste', label: 'Einfügen'},
+          {role: 'pasteandmatchstyle', label: 'Einfügen und Stil anpassen'},
+          {role: 'delete', label: 'Löschen'},
+          {role: 'selectall', label: 'Alle auswählen'}
         ]
       },
       {
         label: 'Darstellung',
         submenu: [
-          { role: 'reload', label: 'Dienst neu laden' },
-          { role: 'forcereload', label: 'Topas neu laden' },
-          { role: 'toggledevtools', label: 'Entwicklertools anzeigen' },
-          { type: 'separator' },
-          { role: 'resetzoom', label: 'Originalgröße' },
-          { role: 'zoomin', label: 'Vergrößern' },
-          { role: 'zoomout', label: 'Verkleiner' },
-          { type: 'separator' },
-          { role: 'togglefullscreen', label: 'Vollbildmodus' }
+          {role: 'reload', label: 'Dienst neu laden'},
+          {role: 'forcereload', label: 'Topas neu laden'},
+          {role: 'toggledevtools', label: 'Entwicklertools anzeigen'},
+          {type: 'separator'},
+          {role: 'resetzoom', label: 'Originalgröße'},
+          {role: 'zoomin', label: 'Vergrößern'},
+          {role: 'zoomout', label: 'Verkleiner'},
+          {type: 'separator'},
+          {role: 'togglefullscreen', label: 'Vollbildmodus'}
         ]
       },
       {
         label: 'Fenster',
         submenu: [
-          { role: 'minimize', label: 'Minimieren' },
-          { role: 'close', label: 'Schließen' }
+          {role: 'minimize', label: 'Minimieren'},
+          {role: 'close', label: 'Schließen'}
         ]
       },
       {
@@ -101,6 +113,7 @@ const createWindow = browserWindowOptions => {
     win.show();
   });
   setMainMenu();
+  createServer();
 };
 
 app.on('ready', createWindow);
