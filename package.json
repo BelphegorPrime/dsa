@@ -16,7 +16,8 @@
     "dev": "cross-env-shell PORT=3000 BROWSER=none \"react-scripts start & wait-on http://localhost:\\$PORT && electron .\"",
     "prepack": "npm run build",
     "pack": "electron-builder -lmw",
-    "eslint": "eslint"
+    "eslint": "eslint",
+    "electron": "electron ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.5.0",
@@ -51,7 +52,7 @@
     "eslint-plugin-prettier": "3.0.0",
     "eslint-plugin-react": "7.11.1",
     "eslint-plugin-react-hooks": "0.0.0",
-    "jest-fetch-mock": "1.6.6",
+    "jest-fetch-mock": "1.7.2",
     "prettier": "1.15.1",
     "react-testing-library": "5.2.3",
     "wait-on": "3.2.0"

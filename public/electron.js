@@ -4,19 +4,6 @@ const isDev = require('electron-is-dev');
 const express = require('express');
 const cors = require('cors');
 
-const createServer = () => {
-  const server = express();
-  server.use(cors());
-  server.get('/', (req, res) => {
-    console.log('was called!');
-    res.send('Hello World!!!!!');
-  });
-  const port = 8000;
-  server.listen(port, () => {
-    console.warn(`Server is running on Port ${port}`);
-  });
-};
-
 const isWindows = process.platform === 'win32';
 
 const windows = [];
@@ -87,6 +74,19 @@ const setMainMenu = () => {
   );
 };
 
+const createServer = () => {
+  const server = express();
+  server.use(cors());
+  server.get('/', (req, res) => {
+    console.log('was called!');
+    res.send('Hello World!!!!!');
+  });
+  const port = 8000;
+  server.listen(port, () => {
+    console.warn(`Server is running on Port ${port}`);
+  });
+};
+
 const createWindow = browserWindowOptions => {
   const win = new BrowserWindow(
     Object.assign(
@@ -127,7 +127,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-  if (mainWindow === null) {
+  if (windows.length === 0) {
     createWindow();
   }
 });
