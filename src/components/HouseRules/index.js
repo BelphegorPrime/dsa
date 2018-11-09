@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Suspense } from 'react';
 import proptypes from 'prop-types';
+import Spinner from '../Spinner';
 
 // import HouseRulesBody from './HouseRulesBody';
 // import HouseRulesSideBar from './HouseRulesSideBar';
@@ -15,7 +16,7 @@ const HouseRules = props => {
     setHouseRuleToShow
   } = props;
   return (
-    <Fragment>
+    <Suspense fallback={<Spinner />}>
       <div className="left-pane col-md-2">
         <HouseRulesSideBar
           addNewHouseRules={addNewHouseRules}
@@ -38,7 +39,7 @@ const HouseRules = props => {
           />
         </div>
       </div>
-    </Fragment>
+    </Suspense>
   );
 };
 

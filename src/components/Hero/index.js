@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Suspense } from 'react';
 import proptypes from 'prop-types';
+import Spinner from '../Spinner';
 
 // import HeroBody from './HeroBody';
 // import HeroSideBar from './HeroSideBar';
@@ -18,8 +19,9 @@ const Hero = props => {
     chosenHero,
     chooseHero
   } = props;
+
   return (
-    <Fragment>
+    <Suspense fallback={<Spinner />}>
       <div className="left-pane col-md-2">
         <HeroSideBar
           heros={heros}
@@ -50,7 +52,7 @@ const Hero = props => {
           ) : null}
         </div>
       </div>
-    </Fragment>
+    </Suspense>
   );
 };
 

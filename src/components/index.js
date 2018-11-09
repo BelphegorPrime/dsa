@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import React, { useState, useEffect, Fragment, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import proptypes from 'prop-types';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -12,33 +12,15 @@ import { isJSON, objectWithoutKey } from '../helperFunctions';
 // import Hero from './Hero';
 // import Master from './Master';
 // import HouseRules from './HouseRules';
+// import NoMatch from './NoMatch';
+import Spinner from './Spinner';
 
 const Head = React.lazy(() => import('./Head'));
 const Nav = React.lazy(() => import('./Nav'));
 const Hero = React.lazy(() => import('./Hero'));
 const Master = React.lazy(() => import('./Master'));
 const HouseRules = React.lazy(() => import('./HouseRules'));
-
-const NoMatch = ({ location }) => (
-  <Fragment>
-    <div className="left-pane col-md-2" />
-    <div className="right-pane col-md-10 row-without-margin">
-      <div
-        className="row col-md-12"
-        style={{
-          marginLeft: 0,
-          marginRight: 0,
-          maxHeight: 'calc(100% - 41px)'
-        }}>
-        Seite {location.pathname} nicht gefunden.
-      </div>
-    </div>
-  </Fragment>
-);
-
-NoMatch.propTypes = {
-  location: proptypes.object
-};
+const NoMatch = React.lazy(() => import('./NoMatch'));
 
 const App = props => {
   // console.log(props);
@@ -144,7 +126,7 @@ const App = props => {
 
   return (
     <HashRouter>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Spinner />}>
         <div className="App cursor-default">
           <Head
             chosenHero={chosenHero}
