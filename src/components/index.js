@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect, Fragment, Suspense } from 'react';
 import proptypes from 'prop-types';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { convert } from '../heroConverter';
@@ -143,7 +143,7 @@ const App = props => {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Suspense fallback={<div>Loading...</div>}>
         <div className="App cursor-default">
           <Head
@@ -221,7 +221,7 @@ const App = props => {
           />
         </div>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
