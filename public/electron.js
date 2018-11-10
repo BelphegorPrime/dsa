@@ -1,15 +1,25 @@
 const { app, BrowserWindow, Menu, shell } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
-const express = require('express');
-const cors = require('cors');
+const runServer = require('./runServer');
 
-const isWindows = process.platform === 'win32';
+const title = 'Topas';
 
-const windows = [];
-const name = 'Topas';
+const data = {
+  windows: [],
+  servers: []
+};
+app.data = data;
 
-const setMainMenu = () => {
+const createServer = (port, type) => {
+  runServer(port, type).then(serverData => {
+    app.data.servers.push(serverData);
+    console.log(app.data);
+  });
+};
+
+const setMainMenu = (name, appInstance, shellInstance) => {
+  const isWindows = process.platform === 'win32';
   Menu.setApplicationMenu(
     Menu.buildFromTemplate([
       {
@@ -19,7 +29,16 @@ const setMainMenu = () => {
             label: `${name} Beenden`,
             accelerator: isWindows ? 'Alt+F4' : 'CmdOrCtrl+Q',
             click() {
-              app.quit();
+              appInstance.quit();
+            }
+          },
+          {
+            label: 'Starte Kartenserver',
+            click() {
+              createServer(
+                7000 + appInstance.data.servers.length,
+                'MAP_SERVER'
+              );
             }
           }
         ]
@@ -65,7 +84,7 @@ const setMainMenu = () => {
           {
             label: 'Mehr erfahren',
             click() {
-              shell.openExternal('https://electronjs.org');
+              shellInstance.openExternal('https://electronjs.org');
             }
           }
         ]
@@ -74,32 +93,15 @@ const setMainMenu = () => {
   );
 };
 
-const createServer = () => {
-  const server = express();
-  server.use(cors());
-  server.get('/', (req, res) => {
-    console.log('was called!');
-    res.send('Hello World!!!!!');
+const createWindow = () => {
+  const { windows } = app.data;
+  const win = new BrowserWindow({
+    minWidth: 1060,
+    minHeight: 768,
+    show: false,
+    backgroundColor: '#f5f5f5',
+    title
   });
-  const port = 8000;
-  server.listen(port, () => {
-    console.warn(`Server is running on Port ${port}`);
-  });
-};
-
-const createWindow = browserWindowOptions => {
-  const win = new BrowserWindow(
-    Object.assign(
-      {
-        minWidth: 1060,
-        minHeight: 768,
-        show: false,
-        backgroundColor: '#f5f5f5',
-        title: name
-      },
-      browserWindowOptions
-    )
-  );
   windows.push(win);
   win.loadURL(
     isDev
@@ -115,8 +117,8 @@ const createWindow = browserWindowOptions => {
   win.on('ready-to-show', () => {
     win.show();
   });
-  setMainMenu();
-  createServer();
+  setMainMenu(title, app, shell);
+  createServer(7000, 'DATA_SERVER');
 };
 
 app.on('ready', createWindow);
@@ -127,7 +129,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-  if (windows.length === 0) {
+  if (app.data.windows.length === 0) {
     createWindow();
   }
 });
