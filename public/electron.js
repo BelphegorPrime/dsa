@@ -36,7 +36,7 @@ const createWindow = () => {
     win.show();
   });
   setMainMenu(app, Menu, shell);
-  createServer(7000, 'DATA_SERVER', app);
+  createServer(7000, { type: 'DATA_SERVER' }, app);
 };
 
 app.on('ready', createWindow);

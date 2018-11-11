@@ -35,19 +35,20 @@ const getPath = type => {
       return null;
   }
 };
-const run = (port = 8000, type) =>
+const run = (port = 8000, data) =>
   new Promise((resolve, reject) => {
+    const { type } = data;
     const path = getPath(type);
     if (!path) {
       reject(new Error(`NO PATH FOR TYPE ${type} FOUND`));
     }
     runScript(path, port)
-      .then(url => resolve({ url, path, type }))
+      .then(url => resolve({ url, path, data }))
       .catch(err => reject(err));
   });
 
-const createServer = (port, type, app) => {
-  run(port, type).then(serverData => {
+const createServer = (port, data, app) => {
+  run(port, data).then(serverData => {
     app.data.servers.push(serverData);
     console.warn(app.data);
   });

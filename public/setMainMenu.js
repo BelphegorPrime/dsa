@@ -19,7 +19,11 @@ const setMainMenu = (app, Menu, shell) => {
           {
             label: 'Starte Kartenserver',
             click() {
-              createServer(7000 + app.data.servers.length, 'MAP_SERVER', app);
+              createServer(
+                7000 + app.data.servers.length,
+                { type: 'MAP_SERVER' },
+                app
+              );
             }
           }
         ]
