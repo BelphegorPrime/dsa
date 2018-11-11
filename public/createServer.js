@@ -46,4 +46,10 @@ const run = (port = 8000, type) =>
       .catch(err => reject(err));
   });
 
-module.exports = run;
+const createServer = (port, type, app) => {
+  run(port, type).then(serverData => {
+    app.data.servers.push(serverData);
+    console.warn(app.data);
+  });
+};
+module.exports = createServer;

@@ -1,8 +1,11 @@
 const { app, BrowserWindow, Menu, shell } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
-const runServer = require('./runServer');
+const packageJson = require('../package.json');
+const createServer = require('./createServer');
+const setMainMenu = require('./setMainMenu');
 
+console.log(packageJson);
 const title = 'Topas';
 
 const data = {
@@ -10,88 +13,6 @@ const data = {
   servers: []
 };
 app.data = data;
-
-const createServer = (port, type) => {
-  runServer(port, type).then(serverData => {
-    app.data.servers.push(serverData);
-    console.log(app.data);
-  });
-};
-
-const setMainMenu = (name, appInstance, shellInstance) => {
-  const isWindows = process.platform === 'win32';
-  Menu.setApplicationMenu(
-    Menu.buildFromTemplate([
-      {
-        label: isWindows ? 'Datei' : name,
-        submenu: [
-          {
-            label: `${name} Beenden`,
-            accelerator: isWindows ? 'Alt+F4' : 'CmdOrCtrl+Q',
-            click() {
-              appInstance.quit();
-            }
-          },
-          {
-            label: 'Starte Kartenserver',
-            click() {
-              createServer(
-                7000 + appInstance.data.servers.length,
-                'MAP_SERVER'
-              );
-            }
-          }
-        ]
-      },
-      {
-        label: 'Bearbeiten',
-        submenu: [
-          { role: 'undo', label: 'Widerrufen' },
-          { role: 'redo', label: 'Widerholen' },
-          { type: 'separator' },
-          { role: 'cut', label: 'Ausschneiden' },
-          { role: 'copy', label: 'Kopieren' },
-          { role: 'paste', label: 'Einfügen' },
-          { role: 'pasteandmatchstyle', label: 'Einfügen und Stil anpassen' },
-          { role: 'delete', label: 'Löschen' },
-          { role: 'selectall', label: 'Alle auswählen' }
-        ]
-      },
-      {
-        label: 'Darstellung',
-        submenu: [
-          { role: 'reload', label: 'Dienst neu laden' },
-          { role: 'forcereload', label: 'Topas neu laden' },
-          { role: 'toggledevtools', label: 'Entwicklertools anzeigen' },
-          { type: 'separator' },
-          { role: 'resetzoom', label: 'Originalgröße' },
-          { role: 'zoomin', label: 'Vergrößern' },
-          { role: 'zoomout', label: 'Verkleiner' },
-          { type: 'separator' },
-          { role: 'togglefullscreen', label: 'Vollbildmodus' }
-        ]
-      },
-      {
-        label: 'Fenster',
-        submenu: [
-          { role: 'minimize', label: 'Minimieren' },
-          { role: 'close', label: 'Schließen' }
-        ]
-      },
-      {
-        label: 'Hilfe',
-        submenu: [
-          {
-            label: 'Mehr erfahren',
-            click() {
-              shellInstance.openExternal('https://electronjs.org');
-            }
-          }
-        ]
-      }
-    ])
-  );
-};
 
 const createWindow = () => {
   const { windows } = app.data;
@@ -117,8 +38,8 @@ const createWindow = () => {
   win.on('ready-to-show', () => {
     win.show();
   });
-  setMainMenu(title, app, shell);
-  createServer(7000, 'DATA_SERVER');
+  setMainMenu(title, app, Menu, shell);
+  createServer(7000, 'DATA_SERVER', app);
 };
 
 app.on('ready', createWindow);
