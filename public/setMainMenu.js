@@ -1,7 +1,9 @@
+const packageJson = require('../package.json');
 const createServer = require('./createServer');
 
-const setMainMenu = (name, app, Menu, shell) => {
+const setMainMenu = (app, Menu, shell) => {
   const isWindows = process.platform === 'win32';
+  const name = packageJson.productName;
   Menu.setApplicationMenu(
     Menu.buildFromTemplate([
       {

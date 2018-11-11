@@ -5,9 +5,6 @@ const packageJson = require('../package.json');
 const createServer = require('./createServer');
 const setMainMenu = require('./setMainMenu');
 
-console.log(packageJson);
-const title = 'Topas';
-
 const data = {
   windows: [],
   servers: []
@@ -21,7 +18,7 @@ const createWindow = () => {
     minHeight: 768,
     show: false,
     backgroundColor: '#f5f5f5',
-    title
+    title: packageJson.productName
   });
   windows.push(win);
   win.loadURL(
@@ -38,7 +35,7 @@ const createWindow = () => {
   win.on('ready-to-show', () => {
     win.show();
   });
-  setMainMenu(title, app, Menu, shell);
+  setMainMenu(app, Menu, shell);
   createServer(7000, 'DATA_SERVER', app);
 };
 
