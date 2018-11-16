@@ -1,11 +1,24 @@
 const { GraphQLUpload } = require('graphql-upload');
+const { getDataHome } = require('platform-folders');
 const fs = require('fs');
 
 const files = [];
 
+const checkDirectorySync = directory => {
+  try {
+    fs.statSync(directory);
+  } catch (e) {
+    fs.mkdirSync(directory);
+  }
+};
+
 const storeFS = ({ stream, filename }) => {
   const id = files.length;
-  const path = `${__dirname}/uploads/${id}-${filename}`;
+  const appDataDir = `${getDataHome()}/topas`;
+  checkDirectorySync(appDataDir);
+  const uploadDir = `${appDataDir}/uploads`;
+  checkDirectorySync(uploadDir);
+  const path = `${uploadDir}/${id}-${filename}`;
   return new Promise((resolve, reject) =>
     stream
       .on('error', error => {
