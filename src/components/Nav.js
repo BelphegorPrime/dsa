@@ -68,6 +68,19 @@ const Nav = props => {
         <li>
           <hr style={hrStyle} />
         </li>
+        <li>
+          <Link
+            id="map"
+            to="/map"
+            className={page === 'map' ? `${className} active` : className}
+            style={style}
+            onClick={changePage}>
+            Karte
+          </Link>
+        </li>
+        <li>
+          <hr style={hrStyle} />
+        </li>
       </ul>
     </div>
   );

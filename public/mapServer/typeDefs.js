@@ -1,11 +1,21 @@
 const { gql } = require('apollo-server-express');
+
 const typeDefs = gql`
+  scalar Upload
   type Query {
-    books: [Book]
+    uploads: [File]
+    hello: String
   }
-  type Book {
-    title: String
-    author: String
+  type Mutation {
+    singleUpload(file: Upload!): File!
+    multipleUpload(files: [Upload!]!): [File!]!
+  }
+  type File {
+    id: ID!
+    path: String!
+    filename: String!
+    mimetype: String!
+    encoding: String!
   }
 `;
 
