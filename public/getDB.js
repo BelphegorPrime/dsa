@@ -16,6 +16,9 @@ const getDB = () => {
         if (!db.getCollection('heros')) {
           db.addCollection('heros');
         }
+        if (!db.getCollection('houseRules')) {
+          db.addCollection('houseRules');
+        }
         resolve(db);
       },
       adapter: new LokiFSStructuredAdapter(),

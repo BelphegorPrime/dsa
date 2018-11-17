@@ -21,7 +21,10 @@ const runScript = (scriptPath, port) =>
     });
 
     process.on('message', m => {
-      resolve(m);
+      resolve({
+        url: m,
+        process
+      });
     });
   });
 
@@ -43,7 +46,7 @@ const run = (port = 8000, data) =>
       reject(new Error(`NO PATH FOR TYPE ${type} FOUND`));
     }
     runScript(path, port)
-      .then(url => resolve({ url, path, data }))
+      .then(({ url, process }) => resolve({ url, process, path, data }))
       .catch(err => reject(err));
   });
 

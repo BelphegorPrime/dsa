@@ -14,7 +14,7 @@ const data = {
 app.data = data;
 
 const createWindow = () => {
-  const { windows } = app.data;
+  const { windows, servers } = app.data;
   const win = new BrowserWindow({
     minWidth: 1060,
     minHeight: 768,
@@ -33,6 +33,7 @@ const createWindow = () => {
   }
   win.on('closed', () => {
     windows.splice(windows.indexOf(win), 1);
+    servers.map(server => server.process.kill('SIGKILL'));
   });
   win.on('ready-to-show', () => {
     win.show();
