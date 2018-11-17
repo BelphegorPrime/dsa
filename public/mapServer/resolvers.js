@@ -2,15 +2,9 @@ const { GraphQLUpload } = require('graphql-upload');
 const { getDataHome } = require('platform-folders');
 const fs = require('fs');
 
-const files = [];
+const checkDirectorySync = require('../checkDirectorySync');
 
-const checkDirectorySync = directory => {
-  try {
-    fs.statSync(directory);
-  } catch (e) {
-    fs.mkdirSync(directory);
-  }
-};
+const files = [];
 
 const storeFS = ({ stream, filename }) => {
   const id = files.length;

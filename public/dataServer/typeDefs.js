@@ -1,11 +1,12 @@
 const { gql } = require('apollo-server-express');
+
 const typeDefs = gql`
   type Query {
-    books: [Book]
+    heros: [String]
   }
-  type Book {
-    title: String
-    author: String
+  type Mutation {
+    saveHero(hero: String): String
+    upsertHero(hero: String): String
   }
 `;
 

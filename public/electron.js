@@ -1,9 +1,11 @@
 const { app, BrowserWindow, Menu, shell } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
+
 const packageJson = require('../package.json');
 const createServer = require('./createServer');
 const setMainMenu = require('./setMainMenu');
+const getDB = require('./getDB');
 
 const data = {
   windows: [],
@@ -36,6 +38,7 @@ const createWindow = () => {
     win.show();
   });
   setMainMenu(app, Menu, shell);
+  getDB(db => console.log(db.getCollection('heros').data));
   createServer(7000, { type: 'DATA_SERVER' }, app);
 };
 

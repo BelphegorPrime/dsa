@@ -37,6 +37,7 @@
     "graphql": "14.0.2",
     "graphql-tag": "2.10.0",
     "graphql-upload": "8.0.1",
+    "lokijs": "1.5.5",
     "platform-folders": "0.2.7",
     "prop-types": "15.6.2",
     "react": "16.7.0-alpha.2",
