@@ -5,6 +5,10 @@ const resolvers = {
     heros: () =>
       getDB().then(db =>
         db.getCollection('heros').data.map(h => JSON.stringify(h))
+      ),
+    houseRules: () =>
+      getDB().then(db =>
+        db.getCollection('houseRules').data.map(h => JSON.stringify(h))
       )
   },
   Mutation: {
@@ -13,6 +17,13 @@ const resolvers = {
         const heros = db.getCollection('heros');
         heros.insert(JSON.parse(hero));
         const { data } = heros;
+        return JSON.stringify(data[data.length - 1]);
+      }),
+    saveHouseRule: (_, { rule }) =>
+      getDB().then(db => {
+        const rules = db.getCollection('houseRules');
+        rules.insert(JSON.parse(rule));
+        const { data } = rules;
         return JSON.stringify(data[data.length - 1]);
       }),
     upsertHero: (_, { hero }) =>
@@ -26,6 +37,19 @@ const resolvers = {
           return JSON.stringify(data[instance.$loki - 1]);
         }
         heros.insert(instance);
+        return JSON.stringify(data[data.length - 1]);
+      }),
+    upsertHouseRule: (_, { rule }) =>
+      getDB().then(db => {
+        const rules = db.getCollection('houseRules');
+        const { data } = rules;
+        const instance = JSON.parse(rule);
+        if (instance.$loki) {
+          const cached = rules.findOne({ $loki: { $eq: instance.$loki } });
+          rules.update(Object.assign(cached, instance));
+          return JSON.stringify(data[instance.$loki - 1]);
+        }
+        rules.insert(instance);
         return JSON.stringify(data[data.length - 1]);
       })
   }

@@ -39,7 +39,11 @@ const createWindow = () => {
     win.show();
   });
   setMainMenu(app, Menu, shell);
-  getDB(db => console.log(db.getCollection('heros').data));
+  getDB().then(db => {
+    db.listCollections().forEach(col => {
+      console.warn(`Einträge: ${col.name} ${col.count}`);
+    });
+  });
   createServer(7000, { type: 'DATA_SERVER' }, app);
 };
 

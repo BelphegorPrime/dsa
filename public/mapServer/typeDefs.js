@@ -4,11 +4,13 @@ const typeDefs = gql`
   scalar Upload
   type Query {
     uploads: [File]
-    hello: String
   }
   type Mutation {
     singleUpload(file: Upload!): File!
     multipleUpload(files: [Upload!]!): [File!]!
+  }
+  type Subscription {
+      
   }
   type File {
     id: ID!
