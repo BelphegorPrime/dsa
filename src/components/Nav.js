@@ -79,6 +79,16 @@ const Nav = props => {
           </Link>
         </li>
         <li>
+          <Link
+            id="music"
+            to="/music"
+            className={page === 'music' ? `${className} active` : className}
+            style={style}
+            onClick={changePage}>
+            Musik
+          </Link>
+        </li>
+        <li>
           <hr style={hrStyle} />
         </li>
       </ul>

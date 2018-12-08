@@ -21,6 +21,7 @@ const Hero = React.lazy(() => import('./Hero'));
 const Master = React.lazy(() => import('./Master'));
 const HouseRules = React.lazy(() => import('./HouseRules'));
 const Map = React.lazy(() => import('./Map'));
+const Music = React.lazy(() => import('./Music'));
 const NoMatch = React.lazy(() => import('./NoMatch'));
 
 const App = props => {
@@ -154,6 +155,13 @@ const App = props => {
                   timeout={300}>
                   <div id="app-body" className="row">
                     <Switch>
+                      <Route
+                        exact
+                        path="/music"
+                        render={renderProps => (
+                          <Music {...renderProps} />
+                        )}
+                      />
                       <Route
                         exact
                         path="/map"
