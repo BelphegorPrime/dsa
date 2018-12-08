@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
 
-const MasterSideBar = props => {
+const MusicSideBar = props => {
   const { page, setPage, pages } = props;
   if (!page) {
     return null;
@@ -23,18 +23,18 @@ const MasterSideBar = props => {
           </li>
         </ul>
       </div>
-      {pages.length - 1 !== index ? <hr /> : null}
+      {pages.length - 1 !== index ? <hr style={{ margin: 0 }} /> : null}
     </Fragment>
   ));
 };
 
-MasterSideBar.propTypes = {
+MusicSideBar.propTypes = {
   page: proptypes.string,
   pages: proptypes.array,
   setPage: proptypes.func
 };
 
-MasterSideBar.defaultProps = {
+MusicSideBar.defaultProps = {
   heros: '',
   pages: [],
   setPage: () => {
@@ -42,4 +42,4 @@ MasterSideBar.defaultProps = {
   }
 };
 
-export default MasterSideBar;
+export default MusicSideBar;

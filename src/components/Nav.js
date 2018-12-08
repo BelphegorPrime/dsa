@@ -79,6 +79,9 @@ const Nav = props => {
           </Link>
         </li>
         <li>
+          <hr style={hrStyle} />
+        </li>
+        <li>
           <Link
             id="music"
             to="/music"
@@ -87,9 +90,6 @@ const Nav = props => {
             onClick={changePage}>
             Musik
           </Link>
-        </li>
-        <li>
-          <hr style={hrStyle} />
         </li>
       </ul>
     </div>

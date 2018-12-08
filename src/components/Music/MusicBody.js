@@ -2,10 +2,11 @@
 import React from 'react';
 import proptypes from 'prop-types';
 
-const MasterBody = props => <div>{props.page.iframe}</div>;
-
-MasterBody.propTypes = {
-  page: proptypes.object
+const MusicBody = props => props.page.iframe(props.width, props.height);
+MusicBody.propTypes = {
+  page: proptypes.object,
+  width: proptypes.number,
+  height: proptypes.number
 };
 
-export default MasterBody;
+export default MusicBody;
