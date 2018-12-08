@@ -1,5 +1,5 @@
 const { GraphQLUpload } = require('graphql-upload');
-const { getDataHome } = require('platform-folders');
+const homedir = require('os').tmpdir();
 const fs = require('fs');
 
 const checkDirectorySync = require('../checkDirectorySync');
@@ -11,7 +11,7 @@ const processUpload = upload =>
     .then(data => {
       const stream = data.createReadStream();
       const id = files.length;
-      const appDataDir = `${getDataHome()}/topas`;
+      const appDataDir = `${homedir}/topas`;
       checkDirectorySync(appDataDir);
       const uploadDir = `${appDataDir}/uploads`;
       checkDirectorySync(uploadDir);

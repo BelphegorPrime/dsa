@@ -1,10 +1,10 @@
 const Loki = require('lokijs');
 const LokiFSStructuredAdapter = require('lokijs/src/loki-fs-structured-adapter');
-const { getDataHome } = require('platform-folders');
+const homedir = require('os').tmpdir();
 const checkDirectorySync = require('./checkDirectorySync');
 
 const getDB = () => {
-  const appDataDir = `${getDataHome()}/topas`;
+  const appDataDir = `${homedir}/topas`;
   checkDirectorySync(appDataDir);
   return new Promise(resolve => {
     const db = new Loki(`${appDataDir}/topas.json`, {
