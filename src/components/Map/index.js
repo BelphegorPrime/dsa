@@ -7,7 +7,7 @@ import { ApolloProvider } from 'react-apollo';
 
 import Sidebar from './Sidebar';
 
-const Map = props => (
+const Map = () => (
   <ApolloProvider
     client={
       new ApolloClient({

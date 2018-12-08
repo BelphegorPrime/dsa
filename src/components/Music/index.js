@@ -1,8 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 // import proptypes from 'prop-types';
 
-import MusicBody from './MusicBody';
-import MusicSideBar from './MusicSideBar';
+const MusicBody = React.lazy(() => import('./MusicBody'));
+const MusicSideBar = React.lazy(() => import('./MusicSideBar'));
 
 const pages = [
   {

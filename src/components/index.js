@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import proptypes from 'prop-types';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { convert } from '../heroConverter';
@@ -13,7 +13,6 @@ import { isJSON, objectWithoutKey } from '../helperFunctions';
 // import Master from './Master';
 // import HouseRules from './HouseRules';
 // import NoMatch from './NoMatch';
-import Spinner from './Spinner';
 
 const Head = React.lazy(() => import('./Head'));
 const Nav = React.lazy(() => import('./Nav'));
@@ -25,7 +24,6 @@ const Music = React.lazy(() => import('./Music'));
 const NoMatch = React.lazy(() => import('./NoMatch'));
 
 const App = props => {
-  // console.log(props);
   const [showNavBar, toggleNavBar] = useState(false);
   const [page, setPage] = useState('default');
   const [heroPage, setHeroPage] = useState('Basis');
@@ -127,8 +125,7 @@ const App = props => {
   };
 
   return (
-    <HashRouter>
-      <Suspense fallback={<Spinner />}>
+    <Router>
         <div className="App cursor-default">
           <Head
             chosenHero={chosenHero}
@@ -218,8 +215,7 @@ const App = props => {
             )}
           />
         </div>
-      </Suspense>
-    </HashRouter>
+    </Router>
   );
 };
 

@@ -1,10 +1,6 @@
-import React, { Suspense } from 'react';
+import React, {Fragment} from 'react';
 import proptypes from 'prop-types';
-import Spinner from '../Spinner';
 
-// import HeroBody from './HeroBody';
-// import HeroSideBar from './HeroSideBar';
-// import PropertiesQuickBar from '../PropertiesQuickBar';
 const HeroBody = React.lazy(() => import('./HeroBody'));
 const HeroSideBar = React.lazy(() => import('./HeroSideBar'));
 const PropertiesQuickBar = React.lazy(() => import('../PropertiesQuickBar'));
@@ -21,7 +17,7 @@ const Hero = props => {
   } = props;
 
   return (
-    <Suspense fallback={<Spinner />}>
+    <Fragment>
       <div className="left-pane col-md-2">
         <HeroSideBar
           heros={heros}
@@ -52,7 +48,7 @@ const Hero = props => {
           ) : null}
         </div>
       </div>
-    </Suspense>
+    </Fragment>
   );
 };
 

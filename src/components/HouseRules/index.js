@@ -1,9 +1,6 @@
-import React, { Suspense } from 'react';
+import React, {Fragment} from 'react';
 import proptypes from 'prop-types';
-import Spinner from '../Spinner';
 
-// import HouseRulesBody from './HouseRulesBody';
-// import HouseRulesSideBar from './HouseRulesSideBar';
 const HouseRulesBody = React.lazy(() => import('./HouseRulesBody'));
 const HouseRulesSideBar = React.lazy(() => import('./HouseRulesSideBar'));
 
@@ -16,7 +13,7 @@ const HouseRules = props => {
     setHouseRuleToShow
   } = props;
   return (
-    <Suspense fallback={<Spinner />}>
+    <Fragment>
       <div className="left-pane col-md-2">
         <HouseRulesSideBar
           addNewHouseRules={addNewHouseRules}
@@ -39,7 +36,7 @@ const HouseRules = props => {
           />
         </div>
       </div>
-    </Suspense>
+    </Fragment>
   );
 };
 

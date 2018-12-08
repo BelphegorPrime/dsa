@@ -4,7 +4,7 @@ import React from 'react';
 
 import UploadFiles from './UploadFiles';
 
-const Sidebar = props => (
+const Sidebar = () => (
   <div>
     <div className="row p-2">
       <div className="custom-file cursor-pointer">

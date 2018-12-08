@@ -36,5 +36,23 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+      window.onSpotifyWebPlaybackSDKReady = () => {
+        const token = 'BQDpor0pMYKkCTNUZEladOCOYtGS3DsxZeHrIBrUS_AD6wklWqOEgQdw5dW4P5RNqSHte4FD5JvyZLmqVRkNbLFR5AUak5Ldkn75E7IrFiEN_tRVkzloFuCX32eJsbAolLKXbA2gH9_yVFp4JDC9vThQWNJntkk';
+        const player = new Spotify.Player({
+          name: 'Web Playback SDK Quick Start Player',
+          getOAuthToken: cb => { cb(token); }
+        });
+        player.addListener('initialization_error', err => console.error('Failed to initialize', err));
+        player.addListener('authentication_error', err => console.error('Failed to authenticate', err));
+        player.addListener('account_error', err => console.error('Failed to validate Spotify account', err));
+        player.addListener('playback_error', err => console.error('Failed to perform playback', err));
+        player.addListener('player_state_changed', state => console.log('player_state_changed', state));
+        player.addListener('ready', ready => console.log('ready', ready));
+        player.addListener('not_ready', notReady => console.log('not_ready', notReady));
+        player.connect();
+      };
+    </script>
   </body>
 </html>

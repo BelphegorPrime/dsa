@@ -1,9 +1,6 @@
-import React, { Suspense, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import proptypes from 'prop-types';
-import Spinner from '../Spinner';
 
-// import MasterBody from './MasterBody';
-// import MasterSideBar from './MasterSideBar';
 const MasterBody = React.lazy(() => import('./MasterBody'));
 const MasterSideBar = React.lazy(() => import('./MasterSideBar'));
 
@@ -11,7 +8,7 @@ const Hero = props => {
   const { heros, chooseHero } = props;
   const [selectedHeros, setSelectedHeros] = useState(Object.keys(heros));
   return (
-    <Suspense fallback={<Spinner />}>
+    <Fragment>
       <div className="left-pane col-md-2 p-0">
         <MasterSideBar
           heros={heros}
@@ -29,7 +26,7 @@ const Hero = props => {
           <MasterBody heros={heros} selectedHeros={selectedHeros} />
         </div>
       </div>
-    </Suspense>
+    </Fragment>
   );
 };
 

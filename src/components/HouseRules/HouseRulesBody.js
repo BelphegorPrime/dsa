@@ -1,7 +1,6 @@
 import React from 'react';
 import proptypes from 'prop-types';
 
-// import DownloadableTemplates from './DownloadableTemplates';
 const DownloadableTemplates = React.lazy(() => import('./DownloadableTemplates'));
 
 const HouseRules = props => {
