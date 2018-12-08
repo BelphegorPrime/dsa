@@ -2,11 +2,19 @@
 import React from 'react';
 import proptypes from 'prop-types';
 
-const MusicBody = props => props.page.iframe(props.width, props.height);
+const MusicBody = props => (
+  <iframe
+    src={props.src}
+    title="Underground"
+    style={{ width: '100%', height: props.height }}
+    frameBorder="0"
+    allow="encrypted-media"
+  />
+);
+
 MusicBody.propTypes = {
-  page: proptypes.object,
-  width: proptypes.number,
-  height: proptypes.number
+  height: proptypes.number,
+  src: proptypes.string
 };
 
 export default MusicBody;
