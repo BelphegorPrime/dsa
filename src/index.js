@@ -10,20 +10,6 @@ import Spinner from "./components/Spinner";
 
 const App = lazy(() => import('./components'));
 
-// const ErrorBoundary = props => {
-//     const [hasError, setHasError] = useState(false)
-//     useEffect(() => {
-//         setHasError(true)
-//     }, [hasError]);
-//
-//     if (hasError) {
-//         // You can render any custom fallback UI
-//         return <h1>Something went wrong.</h1>;
-//     }
-//
-//     return props.children;
-// };
-
 class ErrorBoundary extends React.Component {
     state = { hasError: false };
 
@@ -44,7 +30,7 @@ class ErrorBoundary extends React.Component {
     }
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.unstable_createRoot(document.getElementById('root'));
 root.render(
   <ErrorBoundary>
     <Suspense fallback={<Spinner />} maxDuration={500}>

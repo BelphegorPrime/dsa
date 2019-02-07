@@ -20,7 +20,8 @@ const createWindow = () => {
     minHeight: 768,
     show: false,
     backgroundColor: '#f5f5f5',
-    title: packageJson.productName
+    title: packageJson.productName,
+    nodeIntegration: true
   });
   windows.push(win);
   win.loadURL(
