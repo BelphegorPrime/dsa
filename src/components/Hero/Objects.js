@@ -4,7 +4,7 @@ import proptypes from 'prop-types';
 
 const Objects = props => {
   const { hero, updateHero, className } = props;
-  const { objects } = hero.converted;
+  const objects = hero.converted.objects || {};
   const save = () => {
     const inputs = document
       .getElementById('create-object-form')

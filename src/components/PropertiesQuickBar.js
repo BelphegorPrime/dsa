@@ -4,6 +4,9 @@ import proptypes from 'prop-types';
 const PropertiesQuickBar = props => {
   const { hero, className, orientation } = props;
   const { properties } = hero.converted;
+  if (!properties) {
+    return null;
+  }
   switch (orientation) {
     case 'vertical': {
       const style = {

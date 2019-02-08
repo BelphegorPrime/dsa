@@ -14,11 +14,17 @@ import getConnections from './getConnections';
 import addFight from './addFight';
 import RuleBook from '../Rulebook';
 
+const getIndex = children => {
+  const nameArray = children.map(child => child.attributes.name);
+  return nameArray.indexOf(nameArray.find(e => e));
+};
+
 export const convert = (hero, houseRules = []) => {
   const returnHero = {};
   const ruleBook = new RuleBook(houseRules);
-  returnHero.name = hero.children[0].attributes.name;
-  const { children } = hero.children[0];
+  const index = getIndex(hero.children);
+  returnHero.name = hero.children[index].attributes.name;
+  const { children } = hero.children[index];
   children.forEach(child => {
     if (child.children.length > 0) {
       switch (child.name) {
