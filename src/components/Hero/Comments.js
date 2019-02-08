@@ -7,8 +7,7 @@ import { generateUUID } from '../../helperFunctions';
 const Comments = props => {
   const { hero, updateHero, className } = props;
   const { converted } = hero;
-  let { comments } = converted;
-
+  let comments = converted.comments || [];
   const save = () => {
     const nameInput = document
       .getElementById('create-comment-form')
