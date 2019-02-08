@@ -1,8 +1,7 @@
 /* eslint-disable no-undef */
 import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
-
-import { generateUUID } from '../../helperFunctions';
+import uuid4 from 'uuid4';
 
 const Comments = props => {
   const { hero, updateHero, className } = props;
@@ -17,7 +16,7 @@ const Comments = props => {
       .getElementsByTagName('textarea')[0];
     comments = [
       {
-        id: generateUUID(),
+        id: uuid4(),
         name: nameInput.value,
         comment: commentTextarea.value,
         added: true

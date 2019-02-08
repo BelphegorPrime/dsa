@@ -45,6 +45,7 @@
     "react-router-dom": "4.4.0-beta.6",
     "react-scripts": "2.1.3",
     "react-transition-group": "2.5.3",
+    "uuid4": "1.1.4",
     "xml-printer": "1.1.3",
     "xml-reader": "2.4.3"
   },

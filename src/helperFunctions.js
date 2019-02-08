@@ -1,3 +1,4 @@
+import uuid4 from 'uuid4';
 import trialToProperty from './heroConverter/trialToProperty';
 
 export const rollDice = x => Math.floor(Math.random() * x) + 1;
@@ -25,23 +26,9 @@ export const test = (trial, properties) => {
 
 export const noop = () => {};
 
-export const ascii = s => s.charCodeAt(0);
-
-export const generateUUID = string =>
-  parseInt(
-    string
-      .split('')
-      .map(ascii)
-      .filter((x, i) => i < 20)
-      .join(''),
-    10
-  )
-    .toString(16)
-    .substring(1);
-
 export const addId = thing => {
   const returnThing = thing;
-  returnThing.id = generateUUID(JSON.stringify(thing));
+  returnThing.id = uuid4();
   return returnThing;
 };
 
@@ -90,9 +77,13 @@ export const objectWithoutKey = (object, key) => {
 
 export const countBy = data => {
   const t = {};
-  for (let i = 0, l = data.length; i < l; i += 1) {
-    t[data[i]] = !t[data[i]] ? 1 : t[data[i]] + 1;
-  }
+  data.forEach(val => {
+    if (t[val]) {
+      t[val] += 1;
+    } else {
+      t[val] = 1;
+    }
+  });
   return t;
 };
 
