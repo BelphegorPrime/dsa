@@ -53,7 +53,7 @@ export const convert = (hero, houseRules = []) => {
           returnHero.comments = getComments(child.children);
           break;
         case 'sf':
-          returnHero.specialAbilities = getSpecialAbilities(child.children);
+          returnHero.specialAbilities = getSpecialAbilities(child.children, ruleBook.getLiturgium());
           break;
         case 'talentliste':
           returnHero.talentList = getTalentList(child.children);

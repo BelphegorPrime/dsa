@@ -1,0 +1,541 @@
+[
+  {
+    "page": 336,
+    "name": "Weisung des Himmels",
+    "alternativeNames": [
+      {
+        "name": "Des Herren Goldener Mittag",
+        "god": "Praios",
+        "grade": 1
+      }
+    ],
+    "gods": [
+      "Ifirn",
+      "Firun",
+      "Himmelswölfe",
+      "Praios",
+      "Efferd",
+      "Aves",
+      "Swafnir"
+    ],
+    "grade": 1,
+    "target": "G",
+    "distance": "selbst",
+    "kind": "Speziell",
+    "ritualDuration": "Gebet (1 Spielrunde)",
+    "duration": "LkP* in Spielrunden",
+    "execution": "Die Ifirngeweihte nimmt Wasser, Schnee oder Erde in ihre Hände, schließt ihre Augen und berührt mit den vollen Händen ihre Stirn. Dabei betet sie still zu Ihrer Göttin und bittet sie, ihr den Weg zu zeigen.",
+    "effect": "Durch diese Liturgie ist die Geweihte in der Lage, eine bestimmte Himmelsrichtung genau zu bestimmen, auch wenn sie über keine weiteren Hilfsmittel (Südweiser, Sonnenstand etc.) verfügt. Proben auf Orientierung sind nicht notwendig, um die Himmelsrichtung zu bestimmen. In den unterschiedlichen Kirchen und Kulten unterscheidet sich jedoch die Himmelsrichtung, welche Geweihte deuten können: -Firun- und Ifirngeweihte sowie die Hochschamanen der Himmelswölfe erkennen den Norden -Efferd- und Swafnirgeweihte den Westen -Praiosgeweihte den Süden -Geweihte des Aves den Osten",
+    "remark": "Die Liturgie entfaltet ihre Wirkung auch dann, wenn der Geweihte in einem Gebäude ist oder sich unter der Erde aufhält."
+  },
+  {
+    "page": 74,
+    "name": "Eidsegen",
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja",
+      "Angrosch",
+      "H'Ranga"
+    ],
+    "grade": 1,
+    "target": "P",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Gebet (1 Spielrunde)",
+    "duration": "wird im Eid festgelegt, maximal LkP* in Monaten",
+    "execution": "Der Schwörende lässt einige Tropfen Blut in eine Schale fallen. Bei mehreren Schwörenden wird es vermischt. Dann spricht der Geweihte über der Schale die folgenden Worte: 'Heiliger Herr Praios, Heilige Herrin/Heiliger Herr [Gottheit], hört diesen Schwur und bezeugt und heiligt ihn mit eurem Geiste. Was nun geschworen wird, sei Euch anempfohlen. Diese Worte werden freiwillig geschworen, ohne Hintergedanken oder Falschheit, und sollen heilig sein in Eurem Angesicht. Wer aber diesen Eid ablegt, um seine Bedeutung zu entstellen, wer den anderen zwingt oder gar diesen heiligen Eid bricht, der sei Eurer Strafe überantwortet.' Anschließend hebt der Schwörende die Schwurfinger (Zeige- und Mittelfinger) und spricht seinen Eid. Hierbei benennt er deutlich, was er in Zukunft zu tun (bzw. nicht zu tun) gelobt. Es werden weiterhin die Dauer des Schwurs festgelegt sowie eine Strafe (üblicherweise ein regeltechnischer Nachteil), die ihn im Falle eines Eidbruches treffen soll."
+  },
+  {
+    "page": 76,
+    "name": "Feuersegen",
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja",
+      "Angrosch",
+      "Gravesh"
+    ],
+    "grade": 1,
+    "target": "G",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (8 Aktionen)",
+    "duration": "LkP* x 10 in Kampfrunden",
+    "execution": "Der Geweihte macht eine Segensgeste seiner Kirche, streckt die Hand aus und spricht die Worte: 'Herr Ingerimm, Herrin/Herr [Gottheit], ich bitte Euch, schenkt uns vom Feuer der himmlischen Esse.'",
+    "effect": "Auf der Hand oder dem Finger des Geweihten erscheint ein kerzenflammengroßes Feuerchen, das gegen Regen, Sturm und andere Witterungseinflüsse gefeit ist. Erst völlig unter Wasser getaucht erlischt es. Während der Wirkungsdauer gelten die Flammen als einfach geweiht.",
+    "variants": [
+      {
+        "grade": 2,
+        "effect": "Mit dieser Liturgie kann der Geweihte auch ein Feuer für LkP* in Stunden vor dem Erlöschen durch Witterungseinflüsse schützen. Das Feuer darf maximal einen Rechtschritt groß sein und muss die ganze Zeit weiter mit Brennstoff versorgt werden."
+      }
+    ],
+    "remark": "Efferdgeweihte setzen diese Liturgie, aufgrund der häufigen Vorbehalte gegen Feuer, meist nur in Notfällen ein."
+  },
+  {
+    "page": 77,
+    "name": "Geburtssegen",
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja"
+    ],
+    "grade": 1,
+    "target": "P",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Gebet (1 Spielrunde)",
+    "duration": "bis zum zwölften Geburtstag, die Wirkung endet beispielsweise aber auch nach einem Paktschluss oder einer Exkommunikation",
+    "execution": "Die Geweihte präsentiert das Neugeborene ihrer Gottheit indem sie es gen Himmel hochhebt und folgende Worte spricht: 'Herrin/Herr [Gottheit], sieh dieses Kind, ein Geschenk der ewigjungen Tsa! Bitte behüte es, denn es ist unschuldig und schutzlos gegen das Böse. Leite und segne es, auf dass es den Weg zu Dir und Deinen Geschwistern finde'. Üblicherweise wird das Kind danach mit dem Zeichen der Gottheit des Geweihten auf der Stirn gesegnet, z.B. eine mit Praiosblumenöl gemalte Sonnenscheibe oder ein durch ein Tsaprisma fallender Regenbogen.",
+    "effect": "Die Seele eines mit dieser Liturgie gesegneten Kindes ist vor dämonischen Einflüsterungen geschützt. Außerdem schützt die Liturgie das Kind vor dem Diebstahl durch Kobolde. Entsprechende Proben sind um 12 Punkte erschwert.",
+    "remark": "Nach Ansicht der meisten Aventurier stellt diese Segnung außerdem sicher, dass die Seele des Kindes direkt in eins der zwölfgöttlichen Paradiese eingeht, sollte es vor dem Erwachsenwerden sterben."
+  },
+  {
+    "page": 78,
+    "name": "Glückssegen",
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja",
+      "Angrosch"
+    ],
+    "grade": 1,
+    "target": "P",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (6 Aktionen)",
+    "duration": "LkP* in Spielrunden",
+    "execution": "In der üblichen Form dieser Liturgie nimmt der Geweihte die Hände des Gesegneten, blickt ihn an und sagt dabei die Worte: 'Im Namen meines Herrn/meiner Herrin [Gottheit] bitte ich Dich, listenreicher Phex, schenke [Name des Gesegneten] etwas von Deinem Glück.'",
+    "effect": "Der Gesegnete darf eine Probe wiederholen und das günstigere Ergebnis wählen, ganz so, als hätte er den Vorteil Glück (Wege der Helden, S. 251). Allerdings ist dies nur bei Talenten möglich, die dem Wesen der Gottheit des segnenden Geweihten nicht zuwider laufen.",
+    "remark": "Bei heimlichen Phexgeweihten sind auch unauffälligere Liturgieformen bekannt, die beispielsweise nur aus einem lockerem Schulterklopfen und einem gemurmelten „Viel Glück!“ bestehen."
+  },
+  {
+    "page": 79,
+    "name": "Grabsegen",
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja",
+      "H'Ranga"
+    ],
+    "grade": 1,
+    "target": "P",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Gebet (1 Spielrunde)",
+    "duration": "permanent, bis zur Entweihung des Grabes",
+    "execution": "Der Geweihte schlägt das zerbrochene Rad über dem offenen Grab und spricht die Worte: 'Herr Boron, Unausweichlicher, diesen Menschen empfehle ich Dir an. Er/Sie ging von uns und wir, die wir zurückbleiben, wissen nicht, in welches der zwölfgöttlichen Paradiese seine/ihre Seele Einlass begehrt. Schirme seine / ihre sterbliche Hülle, auf dass ihr kein Unheil widerfahre und sende Golgari aus, diese Seele zu finden und vor Rethon zu führen.' Im Anschluss streut er eine Handvoll Erde in das Grab.",
+    "effect": "Das gesegnete Grab wirkt abschreckend auf unheilige Wesen und gilt als einfach geweiht. Nekromantische Rituale sind um LkP*/2 erschwert. Grabräubern muss außerdem eine MU-Probe gelingen (erschwert um eine vorhandene Totenangst), wenn sie sich an dem Grab vergreifen wollen.",
+    "remark": "Kein Geweihter sollte diesen Segen ohne triftigen Grund verweigern, verwehrt er doch damit dem Toten, dass Körper wie Seele in Frieden ruhen können. Dem Meer besonders verbundene Geweihte, wie beispielsweise von Efferd oder Swafnir, nehmen häufig auch Seebestattungen vor."
+  },
+  {
+    "page": 174,
+    "name": "Großer Eidsegen",
+    "alternativeNames": [
+      {
+        "name": "Rahjasbund",
+        "god": "Rahja",
+        "grade": 3
+      },
+      {
+        "name": "Blutschwur",
+        "god": "Rondra",
+        "grade": 3
+      },
+      {
+        "name": "Traviabund",
+        "god": "Travia",
+        "grade": 3
+      },
+      {
+        "name": "Bund von Feuer und Erz",
+        "god": "Angrosch",
+        "grade": 3
+      }
+    ],
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja",
+      "Angrosch"
+    ],
+    "grade": 3,
+    "target": "P+P",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Andacht (etwa eine halbe Stunde)",
+    "duration": "permanent",
+    "execution": "Die Geweihte hält eine Predigt über die Prinzipien, denen sich die beiden Schwörenden verpflichten und vollzieht anschließend den in ihrer Kirche üblichen Ritus, der stets symbolisch die Verbindung der beiden Schwörenden (z.B. Hände halten oder zusammenbinden, Austausch von Blut oder Schmuckstücken) bekräftigt.",
+    "effect": "Durch diese Liturgie werden zwei Personen für ihr Leben miteinander verbunden und der Einhaltung der beschworenen Prinzipien verpflichtet. Einmal besiegelt, hat die Verbindung manchmal selbst bis über den Tod hinaus bestand, und allein ein Kirchenoberhaupt oder die Gottheit selbst vermag das Gelöbnis wieder zu lösen. Mutproben um den Partner in Lebensgefahr zu verteidigen sind um LkP*/2 erleichtert, Selbstbeherrschungs-Proben um LkP*+5. Um den Schwur zu brechen, muss eine Selbstbeherrschungs-Probe erschwert um LkP*+5 abgelegt werden. Wer den Eid willentlich bricht, wird zum Eid brecher. Erst, wenn er Buße getan hat, tritt die Verbundenheit mit seinem Partner wieder ein. In besonders schweren Fällen kann er nach Maßgabe des Meisters auch mit dem Mal des Frevlers gezeichnet werden.",
+    "remark": "Ihre häufigste, aber nicht ausschließliche Verwendung findet diese Liturgie wohl bei der Eheschließung. Bei einem Traviabund werden jedoch andere Elemente in die Predigt einfließen, als bei einem ron drianischen Blutschwur, dem bei den Zwergen verbreiteten Bund von Feuer und Erz, oder einer vor Rahja geschlossenen Verbindung. Erzwun gene Eide werden mit dieser Liturgie nicht gesegnet und sind nichtig."
+  },
+  {
+    "page": 167,
+    "name": "Göttliches Zeichen",
+    "gods": [
+      "universell"
+    ],
+    "grade": 1,
+    "target": "ZZ",
+    "distance": "Sicht",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (5 Aktionen)",
+    "duration": "augenblicklich, MU-Bonus für LkP* Spielrunden",
+    "execution": "Die Geweihte fleht ihre Gottheit um ein Zeichen an.",
+    "effect": "Es erscheint ein kleines, göttliches Zeichen, das dem Wesen der Gottheit der Geweihten und der aktuellen Situation entspricht. Alle Gläubigen der Gottheit, die das Zeichen wahrnehmen können, fühlen sich zuversichtlicher, ihr Mut wird gestärkt und steigt für LkP* Spielrunden um einen Punkt.",
+    "variants": [
+      {
+        "grade": 3,
+        "effect": "Um ein Tier oder ein Symbol herbeizurufen, benötigt es Grad III."
+      }
+    ],
+    "remark": "Der hauptsächliche Nutzen der Liturgie sollte in der Stär kung des Glaubens liegen, es ist also nicht möglich, Gegenstände herauf zubeschwören o.ä. Vielmehr ist das Zeichen der Gottheit etwas, das ihren Prinzipien entspricht. Dies mag ein Donnerhall oder Blitzschlag bei Rondra sein, eine auftauchende Delphinschule am Horizont bei Efferd oder sanfter Rosenduft bei Rahja."
+  },
+  {
+    "page": 80,
+    "name": "Harmoniesegen",
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja",
+      "Angrosch"
+    ],
+    "grade": 1,
+    "target": "P",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (12 Aktionen)",
+    "duration": "LkP* in Spielrunden",
+    "execution": "Die Geweihte blickt den Gesegneten an, fasst ihn bei den Schultern oder umarmt ihn und sagt dabei: 'Heitere Herrin Rahja, Schwester meiner Herrin/meines Herrn [Gottheit], sieh diesen Menschen. Er/sie bedarf Deiner Gaben, auf dass er/sie sich mit neuer Zuversicht dieser Welt stellen kann.'",
+    "effect": "Der Gesegnete ist von Freude, Zuversicht und innerer Har monie erfüllt. Alle Proben auf MU, CH und IN sind um LkP*/2 erleich tert, vorhandene Schlechte Eigenschaften sinken um LkP*/2. Außerdem schwächt der Harmoniesegen die Wirkung von Herrschafts- oder Einfluss zaubern, die das Opfer innerlich erschüttern oder aufwühlen. Hierzu werden die ZfP* für die Wirkungsdauer der Liturgie um LkP*/2 Punkte reduziert. Die Wirkungsdauer des Zaubers ist hiervon jedoch nicht betroffen und nur wenn die ZfP* unter 0 sinken, endet der Spruch mög licherweise frühzeitig. Mehr Informationen hierzu finden sie im Abschnitt Liturgien gegen Zauber in Wege der Götter auf Seite 19.",
+    "remark": "Besonders hilfreich ist diese Liturgie gegen Zauber wie BÖSER BLICK, EIGNE ÄNGSTE, GROSSE GIER, HORRIPHOBUS, KARNIFILO, PANIK ÜBERKOMME EUCH, SCHWARZER SCHRECKEN. Ob sie auch bei anderen Sprüchen ihre Wirkung entfaltet, ist Meisterentscheid."
+  },
+  {
+    "page": 81,
+    "name": "Heilungssegen",
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja",
+      "Angrosch",
+      "H'Ranga"
+    ],
+    "grade": 1,
+    "target": "P",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Gebet (1 Spielrunde)",
+    "duration": "augenblicklich",
+    "execution": "Die Geweihte legt dem Patienten die Hände auf die Verletzung oder die schmerzende Stelle und betet: 'Gütige Herrin Peraine, mein Herr / meine Herrin [Gottheit], seht diesen armen Sterblichen. Ich bitte Euch, nehmt ihm die Schmerzen, schenkt ihm von der Lebenskraft, heilt ihn in Eurem Namen.' Wenn der Patient bei Bewusstsein ist, sollte er mitbeten.",
+    "effect": "Durch diese Liturgie bekommt der Patient LkP*/2+3 Lebenspunkte zurück, regeltechnische Wunden schließen sich nicht. Bei Aufstufungen (Heilung mehrerer Personen), müssen die Lebenspunkte unter den zu Heilenden aufgeteilt werden.",
+    "remark": "Mit dem Heilungssegen ist es auch möglich, jemanden von der Schwelle des Todes (LeP 0 oder niedriger) zu retten, so Peraine will."
+  },
+  {
+    "page": 193,
+    "name": "Initiation",
+    "alternativeNames": [
+      {
+        "name": "Feuertaufe",
+        "god": "Angrosch",
+        "grade": 4
+      }
+    ],
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja",
+      "Angrosch",
+      "H'Ranga"
+    ],
+    "grade": 2,
+    "target": "P",
+    "distance": "Berührung",
+    "kind": "Allgemein, nur für Hochgeweihte",
+    "ritualDuration": "Andacht (etwa eine halbe Stunde)",
+    "duration": "permanent",
+    "execution": "Die Geweihte betet mit dem Initiaten, gemeinsam bitten sie um Beistand und Führung für den Initiaten. Anschließend segnet die Geweihte den Initiaten mit einer heiligen Substanz ihres entsprechenden Kultes.",
+    "effect": "Der Initiat wird in die Gemeinschaft der Zwölfgöttergläubigen aufgenommen, gilt nun als eigenständiges Mitglied der Gemeinschaft, und damit in einigen Regionen auch als Erwachsen. Seine Seele kann nach dem Tod in eines der göttlichen Paradiese eingehen. Die ausführenden Geweihten bekommt außerdem oft ein Zeichen ihrer Gottheit, ob sich der Initiat für das Noviziat in einer der Kirchen eignet.",
+    "variants": [
+      {
+        "grade": 4,
+        "effect": "Unter den Zwergen ist die Feuertaufe als Reifeprüfung vor Angrosch ein fester Bestandteil des Erwachsenwerdens (siehe Angroschs Kinder S. 36). Diese wird von Angroschgeweihten anstelle der Initiation erlernt."
+      }
+    ],
+    "remark": "In den zwölfgöttlichen Kirchen wird die Initiation üblicherweise im Alter von zwölf Jahren durchgeführt, in selteneren Fällen auch bei älteren Bekehrten. Eine Initiation kann nur durch Exkommunikation oder Anathema aufgehoben, durch ein Mal des Frevlers oder einen Seelenpakt beendet werden. Bei einem Eidbrecher ruht sie lediglich, desgleichen bei einem Minderpakt."
+  },
+  {
+    "page": 194,
+    "name": "Innere Ruhe",
+    "gods": [
+      "Praios"
+    ],
+    "grade": 1,
+    "target": "G",
+    "distance": "selbst",
+    "kind": "Speziell",
+    "ritualDuration": "Stoßgebet (8 Aktionen)",
+    "duration": "LkP* in Spielrunden",
+    "execution": "Der Geweihte betet: 'Hoher Branibor, hilf! Beschirme mein Herz mit deinen ehernen Schwingen, auf dass es nicht schwankt, noch zagt, noch zweifelt! Herr Praios, dein Gesetz ist recht und billig. So sei es!'",
+    "effect": "Diese Liturgie ermöglicht es dem Geweihten, Einflüsse auf sein Urteilsvermögen zurückzudrängen. Sie senkt entweder sämtliche schlechten Eigenschaften um jeweils LkP*/2 oder er erhält LkP*/2 zusätzliche Punkte auf Selbstbeherrschung.",
+    "remark": "Auch angesichts größter Schrecken kann der Praiosgeweihte sich dank dieser Liturgie auf sein inneres Licht besinnen."
+  },
+  {
+    "page": 82,
+    "name": "Märtyrersegen",
+    "gods": [
+      "universell"
+    ],
+    "grade": 1,
+    "target": "G",
+    "distance": "selbst",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (4 Aktionen)",
+    "duration": "maximal LkP* in Spielrunden, üblicherweise einen Kampf, eine Hinrichtung oder Folterung",
+    "execution": "Der Geweihte betet: 'Hoher Branibor, hilf! Beschirme mein Herz mit deinen ehernen Schwingen, auf dass es nicht schwankt, noch zagt, noch zweifelt! Herr Praios, dein Gesetz ist recht und billig. So sei es!'",
+    "effect": "Der Geweihte betet, je nach Situation laut oder stumm für sich: 'Grimmer Herr Firun, Herr/Herrin [Gottheit] und alle übrigen Herrscher Alverans, gebt mir Kraft und Stärke, Euren Feinden zu widerstehen und Euch selbst im Angesicht dessen zu preisen, was mich erwartet!'",
+    "variants": [
+      {
+        "grade": 3,
+        "effect": "Derart aufgestuft, lässt sich der Märtyrersegen auch auf eine Gruppe frommer Mitstreiter (PP) ausdehnen."
+      }
+    ],
+    "remark": "So manch ein Geweihter oder Gläubiger hat dank dieses Segens noch auf der Folterbank oder brennend auf dem Scheiterhaufen unermüdlich den Namen seines Gottes gepriesen."
+  },
+  {
+    "page": 223,
+    "name": "Objektsegen",
+    "gods": [
+      "universell"
+    ],
+    "grade": 1,
+    "target": "P",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Gebet (1 Spielrunde)",
+    "duration": "für die Dauer des Rituals, maximal LkP* in Tagen",
+    "execution": "Die Geweihte schlägt das Zeichen ihrer Gottheit über dem Objekt und bittet ihre Gottheit, es zu segnen.",
+    "effect": "Mit dieser Liturgie segnet die Geweihte einen Gegenstand oder eine Substanz (maximal LkW Liter), üblicherweise für ein nachfolgendes Ritual. Während der Wirkungsdauer gilt der Gegenstand oder die Substanz als einfach geweiht.",
+    "variants": [
+      {
+        "grade": 2,
+        "effect": "Für eine größere Menge (bis zu LkW x3 Liter) muss die Liturgie auf Grad II aufgestuft werden."
+      },
+      {
+        "grade": 4,
+        "effect": "Für Bauwerke oder sehr große Objekte ist ein Zyklus (3 Tage) notwendig, je nach Größe auf Grad IV oder Grad V. Die Wirkungsdauer beträgt auf jedem dieser Grade LkP* in Wochen. Dieser Ritus wird häufig von mehreren Geweihten und Akoluthen gemeinsam begangen."
+      },
+      {
+        "grade": 5,
+        "effect": "Für Bauwerke oder sehr große Objekte ist ein Zyklus (3 Tage) notwendig, je nach Größe auf Grad IV oder Grad V. Die Wirkungsdauer beträgt auf jedem dieser Grade LkP* in Wochen. Dieser Ritus wird häufig von mehreren Geweihten und Akoluthen gemeinsam begangen."
+      }
+    ],
+    "remark": "Die wohl üblichste Anwendung ist die Segnung von liturgischen Utensilien wie efferdgeweihtes Wasser, Tharf in der Rahjakirche oder das bei den Boronis allseits beliebte Lotosöl."
+  },
+  {
+    "page": 83,
+    "name": "Schutzsegen",
+    "gods": [
+      "universell"
+    ],
+    "grade": 1,
+    "target": "Z",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (10 Aktionen)",
+    "duration": "LkP* in Spielrunden",
+    "execution": "Die Geweihte markiert den zu segnenden Bereich, je nach Kult mit dem Schwert, Graberde oder Blüten. Dann schlägt sie das Zeichen ihrer Gottheit und spricht: 'Im Namen der Herrin Rondra, meines Herrn/meiner Herrin [Gottheit] und der übrigen Herrscher Alverans! Unheiliges Gezücht, du kannst nicht vorbei!'",
+    "effect": "Der markierte Bereich wirkt für eine bestimmte Art unheiliger Wesen, z.B. eine bestimmte Art Dämonen wie Heshthotim, als einfach geweiht. Die Art wird während des Sprechens ausgewählt, muss aber weder explizit benannt noch der Geweihten bekannt sein. Als unheilige Wesen gelten in diesem Fall Dämonen, Chimären, Golems, Untote und Vampire. Je nach Gottheit kann dies nach Maßgabe des Meisters auch andere Wesen umfassen. Für Borongeweihte bieten sich Geister an, bei Efferd- oder Swafnirgeweihten unheiliges Meeresgezücht, bei Geweihten des Praios sogar alle magischen Wesen. Die Zone bewegt sich nicht mit der Geweihten mit.",
+    "variants": [
+      {
+        "grade": 2,
+        "effect": "Auf Grad II kann die Liturgie auf eine größere Art unheiliger Wesen ausgedehnt werden, z.B. alle Untoten, oder aber der markierte Bereich gilt als zweifach geweiht."
+      },
+      {
+        "grade": 3,
+        "effect": "Auf Grad III kann die Liturgie auf eine größere Art unheiliger Wesen ausgedehnt werden und der markierte Bereich gilt als zweifach geweiht."
+      }
+    ],
+    "remark": "Der Schutzsegen wird häufig im Feld eingesetzt, um kurzfristigen Schutz vor einer konkreten Bedrohung zu gewähren. Für eine zweifache Weihe und Schutz gegen jegliche Art von unheiligen Wesen empfiehlt sich die Konsekration."
+  },
+  {
+    "page": 84,
+    "name": "Speisesegen",
+    "gods": [
+      "universell"
+    ],
+    "grade": 1,
+    "target": "PP",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (8 Aktionen)",
+    "duration": "augenblicklich",
+    "execution": "Die Geweihte schlägt das Zeichen Travias über der Speise und spricht: 'Herrin Travia, Schwester meines Herrn/meiner Herrin, segne diese Speise, auf dass sie ihren Zweck erfüllt, uns nährt und unseren Hunger stillt.'",
+    "effect": "Mit dieser Liturgie reinigt die Geweihte eine Mahlzeit für maximal LkW Personen von Dreck, Fäulnis und Krankheiten. Die Krankheitsstufe darf LkP*/2 nicht überschreiten, so die Wirkung nicht aufgestuft wird.",
+    "remark": "Beigemischte Gifte werden mittels dieser Liturgie nicht entfernt und behalten ihre volle Wirkung. Vor einer versehentlichen Pilzvergiftung beim Kochen vermag diese Liturgie jedoch durchaus zu schützen."
+  },
+  {
+    "page": 85,
+    "name": "Tranksegen",
+    "gods": [
+      "Praios",
+      "Rondra",
+      "Efferd",
+      "Travia",
+      "Boron",
+      "Hesinde",
+      "Firun",
+      "Tsa",
+      "Phex",
+      "Peraine",
+      "Ingerimm",
+      "Rahja",
+      "H'Ranga"
+    ],
+    "grade": 1,
+    "target": "PP",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (8 Aktionen)",
+    "duration": "augenblicklich",
+    "execution": "Der Geweihte schlägt das Zeichen Efferds über dem Trinkwasser und spricht: 'Herr Efferd, Bruder meines Herrn/meiner Herrin, segne dieses Wasser, auf dass es seinen Zweck erfüllt, uns erquicken und unseren Durst löschen mag.'",
+    "effect": "Mit dieser Liturgie reinigt der Geweihte ausreichend Trinkwasser von Dreck, Fäulnis und Krankheiten, sodass LkW Personen für einem Tag versorgt werden können. Die Krankheitsstufe darf LkP*/2 nicht überschreiten. Auch Salzwasser kann auf diese Weise trinkbar gemacht werden.",
+    "remark": "Diese Liturgie wirkt neben Wasser auch auf andere Getränke. Beigemischte Gifte werden durch diese Liturgie nicht entfernt, ebenso wenig enthaltener Alkohol."
+  },
+  {
+    "page": 317,
+    "name": "Ucuris Geleit",
+    "gods": [
+      "Praios"
+    ],
+    "grade": 3,
+    "target": "G",
+    "distance": "selbst",
+    "kind": "Speziell",
+    "ritualDuration": "Gebet (1 Spielrunde)",
+    "duration": "LkP* in Spielrunden",
+    "execution": "Der Geweihte betet zu Ucuri und bittet ihn, ihm den Weg zum nächsten Tempel oder Geweihten zu weisen.",
+    "effect": "Die Augen des Geweihten werden von Licht umspielt, ein Funkeln darin zeigt ihm die Richtung zum nächsten zwölfgöttlichen Tempel oder Geweihten, je nachdem, worum der Geweihte gebeten hatte.",
+    "remark": "Egal wie weit das Gesuchte entfernt ist, wird der Geweihte zumindest für die Länge der Wirkungsdauer dank göttlicher Fügung den richtigen Weg einschlagen."
+  },
+  {
+    "page": 86,
+    "name": "Weisheitssegen",
+    "gods": [
+      "universell"
+    ],
+    "grade": 1,
+    "target": "P",
+    "distance": "Berührung",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (15 Aktionen)",
+    "duration": "LkP* in Spielrunden",
+    "execution": "Die Geweihte berührt den Gesegneten an den Schläfen und spricht: 'Herrin Hesinde, Schwester meines Herrn / meiner Herrin [Gottheit], schenk diesem Sterblichen von Deiner Gabe, dem Wirrwarr des sterblichen Geistes zu entkommen und lass ihn Deine göttliche Weisheit erfahren.'",
+    "effect": "Durch diese Liturgie werden LkP*/2 gleichmäßig auf Klugheit und Intuition verteilt, zusätzlich steigt die MR um LkP*/4.",
+    "remark": "Eine Aufstufung auf mehrere Zielpersonen (PP) ist nicht möglich."
+  },
+  {
+    "page": 183,
+    "name": "Heiliger Befehl",
+    "alternativeNames": [
+      {
+        "name": "Wort der Wahrheit",
+        "god": "Praios",
+        "grade": 2
+      }
+    ],
+    "gods": [
+      "universell"
+    ],
+    "grade": 2,
+    "target": "P",
+    "distance": "Sicht",
+    "kind": "Allgemein",
+    "ritualDuration": "Stoßgebet (10 Aktionen)",
+    "duration": "bis der Befehl ausgeführt wurde, ansonsten LkP* Tage",
+    "execution": "Die Geweihte blickt die Person an, schlägt das Zeichen ihrer Gottheit und spricht den Befehl.",
+    "effect": "Die Stimme des Geweihten klingt eindringlicher und selbst jemand, der die Sprache des Geweihten nicht versteht, wird sich dem göttlichen Wirken beugen. Um sich dem Befehl zu widersetzen, muss die Zielperson eine Selbstbeherrschungs-Probe erschwert um LkP*/2+5 bestehen. Der Befehl muss den Prinzipien der Gottheit entsprechen, bei zu häufigem Einsatz dieser Liturgie wird dem Geweihten jedoch schnell mangelnde Durchsetzungskraft unterstellt.",
+    "remark": "Der Einsatz der Liturgie ist je nach Kirche unterschiedlich häufig. Während der Praiosgeweihte des Öfteren zur Wahrheit mahnt und die Rondrageweihte in der Schlacht einen lebensrettenden Befehl geben mag, greift beispielsweise die Tsakirche weit seltener zu solchen Mitteln, um die Entscheidungsfreiheit ihrer Gläubigen nicht einzuschränken."
+  }
+
+]

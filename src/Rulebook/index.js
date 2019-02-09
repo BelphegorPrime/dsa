@@ -1,4 +1,5 @@
 import lcd from './libreCantionesDeluxe.json';
+import liberLiturgium from './liberLiturgium.json';
 import arsenal from './arsenal.json';
 import advantages from './advantages.json';
 import disadvantages from './disadvantages.json';
@@ -48,7 +49,8 @@ export default class Rulebook {
   }
 
   getLiturgium() {
-    return [];
+    const liberLiturgiumInstance = JSON.parse(JSON.stringify(liberLiturgium));
+    return liberLiturgiumInstance;
   }
 
   getZooBotanica() {
