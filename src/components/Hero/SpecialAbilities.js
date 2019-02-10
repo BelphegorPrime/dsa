@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import proptypes from 'prop-types';
 
 const SpecialAbilities = props => {
@@ -26,7 +26,6 @@ const SpecialAbilities = props => {
           }
           if (specialAbility.liturgy) {
             const { liturgy } = specialAbility;
-            console.log(liturgy);
             return (
               <div
                 key={name}
@@ -38,10 +37,26 @@ const SpecialAbilities = props => {
                 {liturgyToShow === name ? (
                   <div className="small">
                     <div>
-                      Seite: {liturgy.page} | Grad: {liturgy.grade} | Ziel:{' '}
-                      {liturgy.target} | Distanz: {liturgy.distance} | Art:{' '}
-                      {liturgy.kind}
+                      Name: {liturgy.name} | Seite: {liturgy.page} | Grad:{' '}
+                      {liturgy.grade} | Ziel: {liturgy.target} | Distanz:{' '}
+                      {liturgy.distance} | Art: {liturgy.kind}
                     </div>
+                    {liturgy.alternativeNames ? (
+                      <div className="row">
+                        <div className="col-2">Alternativen:</div>
+                        <div className="col-10">
+                          {liturgy.alternativeNames.map(alternativeName => (
+                            <div className="row" key={alternativeName.name}>
+                              <div className="col-12">
+                                Gott: {alternativeName.god} | Name:{' '}
+                                {alternativeName.name} | Grad:{' '}
+                                {alternativeName.grade}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
                     <div className="row">
                       <div className="col-2">Götter:</div>
                       <div className="col-10">{liturgy.gods.join(', ')}</div>
@@ -62,6 +77,25 @@ const SpecialAbilities = props => {
                       <div className="col-2">Auswirkung:</div>
                       <div className="col-10">{liturgy.effect}</div>
                     </div>
+                    {liturgy.variants ? (
+                      <div className="row">
+                        <div className="col-2">Varianten:</div>
+                        <div className="col-10">
+                          {liturgy.variants.map(variant => (
+                            <Fragment key={variant.grade}>
+                              <div className="row">
+                                <div className="col-2">Grad:</div>
+                                <div className="col-10">{variant.grade}</div>
+                              </div>
+                              <div className="row">
+                                <div className="col-2">Auswirkung:</div>
+                                <div className="col-10">{variant.effect}</div>
+                              </div>
+                            </Fragment>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
                     <div className="row">
                       <div className="col-2">Anmerkungen:</div>
                       <div className="col-10">{liturgy.remark}</div>
