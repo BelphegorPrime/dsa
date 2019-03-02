@@ -28,7 +28,12 @@ const App = props => {
   const [heros, setHeros] = useSave(electron, 'heros', {});
   const [chosenHero, setChosenHero] = useSave(electron, 'chosenHero');
   const [houseRules, setHouseRules] = useSave(electron, 'houseRules', []);
-
+  const [encounter, setEncounter] = useSave(electron, 'encounter', []);
+  const [activeEncounter, setActiveEncounter] = useSave(
+    electron,
+    'activeEncounter',
+    []
+  );
   useEffect(() => setHeros(heros));
   useEffect(() => setChosenHero(chosenHero), [chosenHero]);
   useEffect(() => setHouseRules(houseRules));
@@ -119,6 +124,8 @@ const App = props => {
           resetState={resetState}
           toggleNavBar={setToggleNavbar}
           setHeros={setHeros}
+          setEncounter={setEncounter}
+          setActiveEncounter={setActiveEncounter}
         />
         {showNavBar ? (
           <Nav handleChange={setPage} page={page} toggleNavBar={toggleNavBar} />
@@ -172,6 +179,11 @@ const App = props => {
                           {...renderProps}
                           heros={heros}
                           chooseHero={chooseHero}
+                          encounter={encounter}
+                          setEncounter={setEncounter}
+                          electron={electron}
+                          activeEncounter={activeEncounter}
+                          setActiveEncounter={setActiveEncounter}
                         />
                       )}
                     />

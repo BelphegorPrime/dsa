@@ -18,7 +18,9 @@ const Head = props => {
     appendToState,
     houseRules,
     toggleNavBar,
-    setHeros
+    setHeros,
+    setEncounter,
+    setActiveEncounter
   } = props;
   const tempThrows = [];
   for (let i = 0; i < 100000; i += 1) {
@@ -84,6 +86,8 @@ const Head = props => {
 
   const clearStorage = () => {
     setHeros(null);
+    setEncounter([]);
+    setActiveEncounter(null);
     resetState();
   };
 
@@ -163,7 +167,9 @@ Head.propTypes = {
   appendToState: proptypes.func,
   resetState: proptypes.func,
   toggleNavBar: proptypes.func,
-  setHeros: proptypes.func
+  setHeros: proptypes.func,
+  setEncounter: proptypes.func,
+  setActiveEncounter: proptypes.func
 };
 
 export default Head;

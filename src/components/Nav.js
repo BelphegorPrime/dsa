@@ -55,6 +55,21 @@ const Nav = props => {
         </li>
         <li>
           <Link
+            id="battlemode"
+            to="/battlemode"
+            className={
+              page === 'battlemode' ? `${className} active` : className
+            }
+            style={style}
+            onClick={changePage}>
+            Kampfmodus
+          </Link>
+        </li>
+        <li>
+          <hr style={hrStyle} />
+        </li>
+        <li>
+          <Link
             id="houserules"
             to="/houserules"
             className={
