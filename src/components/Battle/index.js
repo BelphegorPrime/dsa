@@ -22,8 +22,7 @@ const Battle = props => {
   const [showEncounterModal, setShowEncounterModal] = useState(false);
   const [showStartEncounterModal, setShowStartEncounterModal] = useState(false);
 
-  const battleHeros = selectedHeros.map(name => heros[name]);
-
+  const battleHeros = selectedHeros.map(name => heros[name]).filter(e => e);
   const handleShowHeroIniModal = () => {
     if (selectedEncounter) {
       setShowStartEncounterModal(true);
@@ -108,7 +107,7 @@ const Battle = props => {
               </div>
             </Fragment>
           ) : null}
-          {activeEncounter ? (
+          {activeEncounter && activeEncounter.competitors ? (
             <div className="col-12">
               <BattleTable competitors={activeEncounter.competitors} />
             </div>
