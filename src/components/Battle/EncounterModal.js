@@ -45,7 +45,7 @@ const EncounterModal = props => {
     <div className="modal" style={{ display: show ? 'block' : 'none' }}>
       <div
         className="modal-dialog"
-        style={{ marginTop: '10%', maxWidth: '90vw' }}>
+        style={{ marginTop: '5%', maxWidth: '90vw' }}>
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Kampf</h5>
@@ -53,9 +53,7 @@ const EncounterModal = props => {
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div
-            className="modal-body pt-0"
-            style={{ height: '70vh', overflow: 'scroll' }}>
+          <div className="modal-body pt-0">
             <div className="row pt-3 pb-3 border-bottom">
               <div className="col-4">
                 Name:
@@ -102,7 +100,6 @@ const EncounterModal = props => {
                   value={mobData.iniBase}
                 />
               </div>
-
               <div className="col-3">
                 AT:
                 <input
@@ -201,7 +198,6 @@ const EncounterModal = props => {
                   value={mobData.be}
                 />
               </div>
-
               <div className="col-12 mb-0 position-relative">
                 <div
                   className="btn btn-primary position-absolute mr-3"
@@ -211,17 +207,19 @@ const EncounterModal = props => {
                 </div>
               </div>
             </div>
-            {mobs.map(mob => (
-              <div className="row p-2 border-bottom" key={mob.id}>
-                <div className="col-8">Name: {mob.name}</div>
-                <div className="col-4">Initiative: {mob.iniBase}</div>
-                <div className="col-4">AT: {mob.at}</div>
-                <div className="col-4">PA: {mob.pa}</div>
-                <div className="col-4">
-                  TP: {mob.tpDiceAmount}w{mob.tpDice}+{mob.tpMod}
+            <div style={{ height: '45vh', overflow: 'scroll' }}>
+              {mobs.map(mob => (
+                <div className="row p-2 border-bottom" key={mob.id}>
+                  <div className="col-8">Name: {mob.name}</div>
+                  <div className="col-4">Initiative: {mob.iniBase}</div>
+                  <div className="col-4">AT: {mob.at}</div>
+                  <div className="col-4">PA: {mob.pa}</div>
+                  <div className="col-4">
+                    TP: {mob.tpDiceAmount}w{mob.tpDice}+{mob.tpMod}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
           <div className="modal-footer">
             Name:

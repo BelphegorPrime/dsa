@@ -18,10 +18,15 @@ const StartEncounterModal = props => {
 
   return (
     <div className="modal" style={{ display: show ? 'block' : 'none' }}>
-      <div className="modal-dialog" style={{ marginTop: '10%' }}>
+      <div
+        className="modal-dialog"
+        style={{ marginTop: '5%', maxWidth: '90vw' }}>
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Helden</h5>
+            <button type="button" className="close" onClick={() => close()}>
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div
             className="modal-body pt-0"
