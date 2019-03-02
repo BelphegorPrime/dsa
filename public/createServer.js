@@ -30,8 +30,6 @@ const runScript = (scriptPath, port) =>
 
 const getPath = type => {
   switch (type) {
-    case 'DATA_SERVER':
-      return `${__dirname}/dataServer/index.js`;
     case 'MAP_SERVER':
       return `${__dirname}/mapServer/index.js`;
     default:

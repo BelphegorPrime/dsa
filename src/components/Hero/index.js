@@ -1,9 +1,8 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
-
-const HeroBody = React.lazy(() => import('./HeroBody'));
-const HeroSideBar = React.lazy(() => import('./HeroSideBar'));
-const PropertiesQuickBar = React.lazy(() => import('../PropertiesQuickBar'));
+import HeroBody from './HeroBody';
+import HeroSideBar from './HeroSideBar';
+import PropertiesQuickBar from '../PropertiesQuickBar';
 
 const Hero = props => {
   const {

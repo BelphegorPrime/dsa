@@ -1,12 +1,15 @@
 import React, { Fragment, useState } from 'react';
 import proptypes from 'prop-types';
 
-import MasterBody from './MasterBody';
-import MasterSideBar from './MasterSideBar';
+import MasterSideBar from '../Master/MasterSideBar';
 
-const Hero = props => {
+const Battle = props => {
   const { heros, chooseHero } = props;
   const [selectedHeros, setSelectedHeros] = useState(Object.keys(heros));
+  console.log(heros);
+  console.log(selectedHeros);
+  const battleHeros = selectedHeros.map(name => heros[name]);
+  console.log(battleHeros);
   return (
     <Fragment>
       <div className="left-pane col-md-2 p-0">
@@ -23,17 +26,16 @@ const Hero = props => {
           className="row col-md-12 ml-0 mr-0 pt-2"
           style={{
             maxHeight: '100%'
-          }}>
-          <MasterBody heros={heros} selectedHeros={selectedHeros} />
-        </div>
+          }}
+        />
       </div>
     </Fragment>
   );
 };
 
-Hero.propTypes = {
+Battle.propTypes = {
   heros: proptypes.object,
   chooseHero: proptypes.func
 };
 
-export default Hero;
+export default Battle;

@@ -5,50 +5,33 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { convert } from '../heroConverter';
-import { isJSON, objectWithoutKey } from '../helperFunctions';
+import { objectWithoutKey } from '../helperFunctions';
+import useSave from '../hooks/useSave';
 
-// import Head from './Head';
-// import Nav from './Nav';
-// import Hero from './Hero';
-// import Master from './Master';
-// import HouseRules from './HouseRules';
-// import NoMatch from './NoMatch';
-
-const Head = React.lazy(() => import('./Head'));
-const Nav = React.lazy(() => import('./Nav'));
-const Hero = React.lazy(() => import('./Hero'));
-const Master = React.lazy(() => import('./Master'));
-const HouseRules = React.lazy(() => import('./HouseRules'));
-const Map = React.lazy(() => import('./Map'));
-const Music = React.lazy(() => import('./Music'));
-const NoMatch = React.lazy(() => import('./NoMatch'));
+import Head from './Head';
+import Nav from './Nav';
+import Hero from './Hero';
+import Master from './Master';
+import Battle from './Battle';
+import HouseRules from './HouseRules';
+import NoMatch from './NoMatch';
+import Map from './Map';
+import Music from './Music';
 
 const App = props => {
+  const { electron } = props;
   const [showNavBar, toggleNavBar] = useState(false);
   const [page, setPage] = useState('default');
   const [heroPage, setHeroPage] = useState('Basis');
   const [houseRuleToShow, setHouseRuleToShow] = useState('templates');
 
-  const [heros, setHeros] = useState(
-    isJSON(window.localStorage.getItem('heros')) || {}
-  );
+  const [heros, setHeros] = useSave(electron, 'heros', {});
+  const [chosenHero, setChosenHero] = useSave(electron, 'chosenHero');
+  const [houseRules, setHouseRules] = useSave(electron, 'houseRules', []);
 
-  useEffect(() => window.localStorage.setItem('heros', JSON.stringify(heros)));
-
-  const [chosenHero, setChosenHero] = useState(
-    isJSON(window.localStorage.getItem('chosenHero')) || null
-  );
-  useEffect(
-    () => window.localStorage.setItem('chosenHero', JSON.stringify(chosenHero)),
-    [chosenHero]
-  );
-
-  const [houseRules, setHouseRules] = useState(
-    isJSON(window.localStorage.getItem('houseRules')) || []
-  );
-  useEffect(() =>
-    window.localStorage.setItem('houseRules', JSON.stringify(houseRules))
-  );
+  useEffect(() => setHeros(heros));
+  useEffect(() => setChosenHero(chosenHero), [chosenHero]);
+  useEffect(() => setHouseRules(houseRules));
 
   const removeHero = name => {
     setHeros(objectWithoutKey(heros, name));
@@ -126,100 +109,101 @@ const App = props => {
 
   return (
     <Router>
-        <div className="App cursor-default">
-          <Head
-            chosenHero={chosenHero}
-            page={page}
-            houseRules={houseRules}
-            handleChange={setPage}
-            appendToState={appendToState}
-            resetState={resetState}
-            toggleNavBar={setToggleNavbar}
-          />
-          {showNavBar ? (
-            <Nav
-              handleChange={setPage}
-              page={page}
-              toggleNavBar={toggleNavBar}
-            />
-          ) : null}
-          <Route
-            render={({ location }) => (
-              <TransitionGroup>
-                <CSSTransition
-                  key={location.key}
-                  classNames="fade"
-                  timeout={300}>
-                  <div id="app-body" className="row">
-                    <Switch>
-                      <Route
-                        exact
-                        path="/music"
-                        render={renderProps => (
-                          <Music {...renderProps} />
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/map"
-                        render={renderProps => (
-                          <Map {...renderProps} />
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/houserules"
-                        render={renderProps => (
-                          <HouseRules
-                            {...renderProps}
-                            addNewHouseRules={addNewHouseRules}
-                            setHouseRuleToShow={setHouseRuleToShow}
-                            houseRuleToShow={houseRuleToShow}
-                            houseRules={houseRules}
-                            removeRule={removeRule}
-                          />
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/mastermode"
-                        render={renderProps => (
-                          <Master
-                            {...renderProps}
-                            heros={heros}
-                            chooseHero={chooseHero}
-                          />
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/"
-                        render={renderProps => (
-                          <Hero
-                            {...renderProps}
-                            heros={heros}
-                            chosenHero={chosenHero || null}
-                            page={heroPage}
-                            showPage={setHeroPage}
-                            chooseHero={chooseHero}
-                            removeHero={removeHero}
-                            updateHero={updateHero}
-                          />
-                        )}
-                      />
-                      <Route component={NoMatch} />
-                    </Switch>
-                  </div>
-                </CSSTransition>
-              </TransitionGroup>
-            )}
-          />
-        </div>
+      <div className="App cursor-default">
+        <Head
+          chosenHero={chosenHero}
+          page={page}
+          houseRules={houseRules}
+          handleChange={setPage}
+          appendToState={appendToState}
+          resetState={resetState}
+          toggleNavBar={setToggleNavbar}
+          setHeros={setHeros}
+        />
+        {showNavBar ? (
+          <Nav handleChange={setPage} page={page} toggleNavBar={toggleNavBar} />
+        ) : null}
+        <Route
+          render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                <div id="app-body" className="row">
+                  <Switch>
+                    <Route
+                      exact
+                      path="/music"
+                      render={renderProps => <Music {...renderProps} />}
+                    />
+                    <Route
+                      exact
+                      path="/map"
+                      render={renderProps => <Map {...renderProps} />}
+                    />
+                    <Route
+                      exact
+                      path="/houserules"
+                      render={renderProps => (
+                        <HouseRules
+                          {...renderProps}
+                          addNewHouseRules={addNewHouseRules}
+                          setHouseRuleToShow={setHouseRuleToShow}
+                          houseRuleToShow={houseRuleToShow}
+                          houseRules={houseRules}
+                          removeRule={removeRule}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/mastermode"
+                      render={renderProps => (
+                        <Master
+                          {...renderProps}
+                          heros={heros}
+                          chooseHero={chooseHero}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/battlemode"
+                      render={renderProps => (
+                        <Battle
+                          {...renderProps}
+                          heros={heros}
+                          chooseHero={chooseHero}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/"
+                      render={renderProps => (
+                        <Hero
+                          {...renderProps}
+                          heros={heros}
+                          chosenHero={chosenHero || null}
+                          page={heroPage}
+                          showPage={setHeroPage}
+                          chooseHero={chooseHero}
+                          removeHero={removeHero}
+                          updateHero={updateHero}
+                        />
+                      )}
+                    />
+                    <Route component={NoMatch} />
+                  </Switch>
+                </div>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
+      </div>
     </Router>
   );
 };
 
-App.protoTypes = {
+App.propTypes = {
   electron: proptypes.object
 };
 

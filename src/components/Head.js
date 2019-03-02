@@ -17,7 +17,8 @@ const Head = props => {
     resetState,
     appendToState,
     houseRules,
-    toggleNavBar
+    toggleNavBar,
+    setHeros
   } = props;
   const tempThrows = [];
   for (let i = 0; i < 100000; i += 1) {
@@ -82,8 +83,7 @@ const Head = props => {
   };
 
   const clearStorage = () => {
-    window.localStorage.removeItem('hero');
-    window.localStorage.removeItem('heros');
+    setHeros(null);
     resetState();
   };
 
@@ -162,7 +162,8 @@ Head.propTypes = {
   houseRules: proptypes.array,
   appendToState: proptypes.func,
   resetState: proptypes.func,
-  toggleNavBar: proptypes.func
+  toggleNavBar: proptypes.func,
+  setHeros: proptypes.func
 };
 
 export default Head;

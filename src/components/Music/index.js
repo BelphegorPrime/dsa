@@ -1,8 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 // import proptypes from 'prop-types';
-
-const MusicBody = React.lazy(() => import('./MusicBody'));
-const MusicSideBar = React.lazy(() => import('./MusicSideBar'));
+import MusicBody from './MusicBody';
+import MusicSideBar from './MusicSideBar';
 
 const pages = [
   {
@@ -60,13 +59,11 @@ const pages = [
 const Music = () => {
   const [page, setPage] = useState('Big Creepy');
   const [height, setHeight] = useState(null);
+  // eslint-disable-next-line no-undef
   const elem = document.getElementById('music-container');
-  useEffect(
-    () => {
-      setHeight(elem && elem.offsetHeight > 0 ? elem.offsetHeight - 10 : 300);
-    },
-    [height]
-  );
+  useEffect(() => {
+    setHeight(elem && elem.offsetHeight > 0 ? elem.offsetHeight - 10 : 300);
+  }, [height]);
 
   const pageToShow = pages.filter(p => p.name === page);
   const names = pages.map(p => p.name);

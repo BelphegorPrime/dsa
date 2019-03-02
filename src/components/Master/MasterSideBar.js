@@ -4,7 +4,13 @@ import proptypes from 'prop-types';
 import { getMainProperties } from '../../helperFunctions';
 
 const MasterSideBar = props => {
-  const { heros, chooseHero, selectedHeros, setSelectedHeros } = props;
+  const {
+    heros,
+    chooseHero,
+    selectedHeros,
+    setSelectedHeros,
+    withProperties
+  } = props;
   if (!heros) {
     return null;
   }
@@ -17,10 +23,13 @@ const MasterSideBar = props => {
   return Object.keys(heros)
     .sort()
     .map((name, index) => {
-      const { properties } = heros[name].converted;
-      const propertiesString = Object.entries(getMainProperties())
-        .map(([key, propKey]) => `${key}:${properties[propKey].value}`)
-        .join(', ');
+      let propertiesString = '';
+      if (withProperties) {
+        const { properties } = heros[name].converted;
+        propertiesString = Object.entries(getMainProperties())
+          .map(([key, propKey]) => `${key}:${properties[propKey].value}`)
+          .join(', ');
+      }
 
       return (
         <Fragment key={name + index}>
@@ -42,7 +51,7 @@ const MasterSideBar = props => {
               />
               <span className="font-weight-bold pl-2">{name}</span>
               <br />
-              {propertiesString}
+              {withProperties ? propertiesString : null}
             </div>
           </div>
           <hr className="m-0" />
@@ -55,7 +64,8 @@ MasterSideBar.propTypes = {
   heros: proptypes.object,
   selectedHeros: proptypes.array,
   chooseHero: proptypes.func,
-  setSelectedHeros: proptypes.func
+  setSelectedHeros: proptypes.func,
+  withProperties: proptypes.bool
 };
 
 MasterSideBar.defaultProps = {

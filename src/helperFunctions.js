@@ -52,10 +52,12 @@ export const getElectron = () => {
     const instance = window.require('electron');
     const { remote, ipcRenderer } = instance;
     const fs = remote.require('fs');
+    const tempDirectory = remote.require('os').tmpdir();
     return {
       instance,
       fs,
-      ipcRenderer
+      ipcRenderer,
+      tempDirectory
     };
   }
   return null;

@@ -17,9 +17,9 @@ const setMainMenu = (app, Menu, shell) => {
             }
           },
           {
-            label: 'Starte Kartenserver',
+            label: 'Starte Kartenserver (Port 7000)',
             click() {
-              createServer(7001, { type: 'MAP_SERVER' }, app);
+              createServer(7000, { type: 'MAP_SERVER' }, app);
             }
           }
         ]

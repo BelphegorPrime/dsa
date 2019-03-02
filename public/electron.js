@@ -3,9 +3,7 @@ const path = require('path');
 const isDev = require('electron-is-dev');
 
 const packageJson = require('../package.json');
-const createServer = require('./createServer');
 const setMainMenu = require('./setMainMenu');
-const getDB = require('./getDB');
 
 const data = {
   windows: [],
@@ -21,7 +19,11 @@ const createWindow = () => {
     show: false,
     backgroundColor: '#f5f5f5',
     title: packageJson.productName,
-    nodeIntegration: true
+    webPreferences: {
+      contextIsolation: false,
+      nodeIntegration: true,
+      webviewTag: true
+    }
   });
   windows.push(win);
   win.loadURL(
@@ -40,12 +42,6 @@ const createWindow = () => {
     win.show();
   });
   setMainMenu(app, Menu, shell);
-  getDB().then(db => {
-    db.listCollections().forEach(col => {
-      console.warn(`Einträge: ${col.name} ${col.count}`);
-    });
-  });
-  createServer(7000, { type: 'DATA_SERVER' }, app);
 };
 
 app.on('ready', createWindow);
