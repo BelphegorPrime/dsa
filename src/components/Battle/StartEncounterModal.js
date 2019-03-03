@@ -20,7 +20,7 @@ const StartEncounterModal = props => {
     <div className="modal" style={{ display: show ? 'block' : 'none' }}>
       <div
         className="modal-dialog"
-        style={{ marginTop: '5%', maxWidth: '90vw' }}>
+        style={{ marginTop: '5%', maxWidth: '90vw', height: '90vh' }}>
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Helden</h5>
@@ -38,7 +38,8 @@ const StartEncounterModal = props => {
                   Initiative:{' '}
                   <input
                     type="number"
-                    className="form-control"
+                    className="form-control w-50"
+                    style={{ display: 'inline-block' }}
                     onChange={e => handleIniChange(e, name)}
                     value={inis[name]}
                   />

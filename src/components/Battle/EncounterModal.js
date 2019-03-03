@@ -45,16 +45,20 @@ const EncounterModal = props => {
     <div className="modal" style={{ display: show ? 'block' : 'none' }}>
       <div
         className="modal-dialog"
-        style={{ marginTop: '5%', maxWidth: '90vw' }}>
-        <div className="modal-content">
-          <div className="modal-header">
+        style={{ marginTop: '5%', maxWidth: '90vw', height: '90vh' }}>
+        <div className="modal-content" style={{ height: '90%' }}>
+          <div className="modal-header" style={{ height: 63 }}>
             <h5 className="modal-title">Kampf</h5>
             <button type="button" className="close" onClick={() => close()}>
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div className="modal-body pt-0">
-            <div className="row pt-3 pb-3 border-bottom">
+          <div
+            className="modal-body pt-0"
+            style={{ height: `calc(100% - ${63 + 71}px)` }}>
+            <div
+              className="row pt-3 pb-3 border-bottom"
+              style={{ height: 281 }}>
               <div className="col-4">
                 Name:
                 <input
@@ -207,7 +211,8 @@ const EncounterModal = props => {
                 </div>
               </div>
             </div>
-            <div style={{ height: '45vh', overflow: 'scroll' }}>
+            <div
+              style={{ height: `calc(100% - ${264}px)`, overflow: 'scroll' }}>
               {mobs.map(mob => (
                 <div className="row p-2 border-bottom" key={mob.id}>
                   <div className="col-8">Name: {mob.name}</div>
@@ -221,7 +226,7 @@ const EncounterModal = props => {
               ))}
             </div>
           </div>
-          <div className="modal-footer">
+          <div className="modal-footer" style={{ height: 71 }}>
             Name:
             <input
               className="form-control w-50"

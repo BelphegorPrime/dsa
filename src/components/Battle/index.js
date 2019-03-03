@@ -43,12 +43,16 @@ const Battle = props => {
       })),
       ...heroData
     ].sort((a, b) => b.ini - a.ini);
+    selectedEncounter.battle = { kr: 1, action: 0 };
     setActiveEncounter(selectedEncounter);
   };
 
   const finishBattle = () => {
     setActiveEncounter(null);
   };
+
+  const removeEncounter = () =>
+    setEncounter(encounter.filter(e => e.id !== selectedEncounter.id));
 
   return (
     <Fragment>
@@ -72,13 +76,13 @@ const Battle = props => {
       </div>
       <div className="right-pane row-without-margin col-10">
         <div
-          className="row col-12 ml-0 mr-0 pt-2 pl-2"
+          className="row col-12 ml-0 mr-0 pt-2 pl-2 pr-2"
           style={{
             height: '100%'
           }}>
           {encounter.length > 0 ? (
             <Fragment>
-              <div className="col-9">
+              <div className="col-9 mb-2">
                 <Select
                   onChange={opt => setSelectedEncounter(opt)}
                   style={{ display: 'inline-block' }}
@@ -89,7 +93,7 @@ const Battle = props => {
                   value={activeEncounter || selectedEncounter}
                 />
               </div>
-              <div className="col-3 pr-2">
+              <div className="col-3">
                 {activeEncounter ? (
                   <button
                     className="btn btn-danger float-right ml-2"
@@ -97,7 +101,14 @@ const Battle = props => {
                     onClick={finishBattle}>
                     Beenden
                   </button>
-                ) : null}
+                ) : (
+                  <button
+                    className="btn btn-danger float-right ml-2"
+                    onClick={removeEncounter}
+                    disabled={!selectedEncounter}>
+                    Löschen
+                  </button>
+                )}
                 <button
                   className="btn btn-primary float-right"
                   disabled={!!activeEncounter}
@@ -108,9 +119,10 @@ const Battle = props => {
             </Fragment>
           ) : null}
           {activeEncounter && activeEncounter.competitors ? (
-            <div className="col-12">
-              <BattleTable competitors={activeEncounter.competitors} />
-            </div>
+            <BattleTable
+              encounter={activeEncounter}
+              update={e => setActiveEncounter(Object.assign({}, e))}
+            />
           ) : null}
         </div>
       </div>
