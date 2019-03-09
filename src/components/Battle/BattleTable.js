@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 import proptypes from 'prop-types';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index.es';
-// import { faEllipsisV } from '@fortawesome/free-solid-svg-icons/index';
 
 const BattleTable = props => {
   const { encounter, update } = props;
@@ -62,10 +60,6 @@ const BattleTable = props => {
     update(newEncoutner);
   };
 
-  // const showSubMenu = competitor => {
-  //   console.log(competitor);
-  // };
-
   return (
     <Fragment>
       <h5 className="col-12 p-0">Kampfverlauf</h5>
@@ -106,7 +100,6 @@ const BattleTable = props => {
               <th className="text-center">TP</th>
               <th className="text-center">DK</th>
               <th className="text-center">Initiative</th>
-              {/*<th className="text-center" />*/}
             </tr>
           </thead>
           <tbody>
@@ -165,6 +158,7 @@ const BattleTable = props => {
                     <input
                       type="number"
                       className="form-control"
+                      min={0}
                       onChange={e => handlePlayerChange(e, 'rs', competitor)}
                       value={rs || 0}
                     />
@@ -174,6 +168,7 @@ const BattleTable = props => {
                     <input
                       type="number"
                       className="form-control"
+                      min={0}
                       onChange={e => handlePlayerChange(e, 'be', competitor)}
                       value={be || 0}
                     />
@@ -182,6 +177,7 @@ const BattleTable = props => {
                     <input
                       type="number"
                       className="form-control"
+                      min={0}
                       onChange={e => handlePlayerChange(e, 'gs', competitor)}
                       value={gs || 0}
                     />
@@ -190,6 +186,7 @@ const BattleTable = props => {
                     <input
                       type="number"
                       className="form-control"
+                      min={0}
                       onChange={e => handlePlayerChange(e, 'at', competitor)}
                       value={at || 0}
                     />
@@ -198,6 +195,7 @@ const BattleTable = props => {
                     <input
                       type="number"
                       className="form-control"
+                      min={0}
                       onChange={e => handlePlayerChange(e, 'pa', competitor)}
                       value={pa || 0}
                     />
@@ -206,6 +204,7 @@ const BattleTable = props => {
                     <input
                       type="number"
                       className="form-control"
+                      min={0}
                       onChange={e => handlePlayerChange(e, 'fk', competitor)}
                       value={fk || 0}
                     />
@@ -240,13 +239,11 @@ const BattleTable = props => {
                     <input
                       type="number"
                       className="form-control"
+                      min={0}
                       onChange={e => handlePlayerChange(e, 'ini', competitor)}
                       value={phase.ini || 0}
                     />
                   </td>
-                  {/*<td onClick={() => showSubMenu(competitor)}>*/}
-                    {/*<FontAwesomeIcon icon={faEllipsisV} />*/}
-                  {/*</td>*/}
                 </tr>
               );
             })}
