@@ -3,10 +3,10 @@ import proptypes from 'prop-types';
 
 const NoMatch = ({ location }) => (
   <Fragment>
-    <div className="left-pane col-md-2" />
-    <div className="right-pane col-md-10 row-without-margin">
+    <div className="left-pane col-2" />
+    <div className="right-pane col-10 row-without-margin">
       <div
-        className="row col-md-12"
+        className="row col-12"
         style={{
           marginLeft: 0,
           marginRight: 0,

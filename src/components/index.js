@@ -32,7 +32,7 @@ const App = props => {
   const [activeEncounter, setActiveEncounter] = useSave(
     electron,
     'activeEncounter',
-    {}
+    null
   );
   useEffect(() => setHeros(heros));
   useEffect(() => setChosenHero(chosenHero), [chosenHero]);

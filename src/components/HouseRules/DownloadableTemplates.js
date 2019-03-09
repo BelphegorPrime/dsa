@@ -64,7 +64,7 @@ export default () => {
   const renderTemplate = (template, name) => (
     <div
       key={template}
-      className="col-md-4 pt-2 pb-2 m-2"
+      className="col-4 pt-2 pb-2 m-2"
       style={{ maxHeight: 58 }}
       onClick={() => download(template)}>
       <div className="p-2 border position-relative">

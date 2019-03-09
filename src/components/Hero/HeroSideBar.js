@@ -35,10 +35,10 @@ const Sidebar = props => {
     .map((name, index) => (
       <Fragment key={name + index}>
         <div className="row cursor-pointer" onClick={() => chooseHero(name)}>
-          <ul className="list-group list-group-flush col-md-12">
+          <ul className="list-group list-group-flush col-12">
             <li className="list-group-item">
               <div className="row">
-                <div className="col-md-9">
+                <div className="col-9">
                   <span className="font-weight-bold">{name}</span>
                 </div>
                 <span

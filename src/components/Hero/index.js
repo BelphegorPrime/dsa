@@ -17,7 +17,7 @@ const Hero = props => {
 
   return (
     <Fragment>
-      <div className="left-pane col-md-2">
+      <div className="left-pane col-2">
         <HeroSideBar
           heros={heros}
           chosenHero={chosenHero || null}
@@ -27,16 +27,16 @@ const Hero = props => {
           showPage={showPage}
         />
       </div>
-      <div className="right-pane col-md-10 row-without-margin">
+      <div className="right-pane col-10 row-without-margin">
         {chosenHero ? (
           <PropertiesQuickBar
             hero={chosenHero}
-            className="col-md-12"
+            className="col-12"
             orientation={'horizontal'}
           />
         ) : null}
         <div
-          className="row col-md-12"
+          className="row col-12"
           style={{
             marginLeft: 0,
             marginRight: 0,

@@ -15,12 +15,12 @@ const Map = () => (
         link: createUploadLink({ uri: 'http://localhost:7001/graphql' }) // createUploadLink({ uri: 'http://localhost:7001/graphql' })
       })
     }>
-    <div className="left-pane col-md-2 p-0">
+    <div className="left-pane col-2 p-0">
       <Sidebar />
     </div>
-    <div className="right-pane row-without-margin col-md-10">
+    <div className="right-pane row-without-margin col-10">
       <div
-        className="row col-md-12 ml-0 mr-0 pt-2"
+        className="row col-12 ml-0 mr-0 pt-2"
         style={{
           maxHeight: '100%'
         }}

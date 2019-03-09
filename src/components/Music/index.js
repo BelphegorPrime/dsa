@@ -70,12 +70,12 @@ const Music = () => {
 
   return (
     <Fragment>
-      <div className="left-pane col-md-2 p-0">
+      <div className="left-pane col-2 p-0">
         <MusicSideBar pages={names} page={page} setPage={setPage} />
       </div>
       <div
         id="music-container"
-        className="right-pane row-without-margin col-md-10">
+        className="right-pane row-without-margin col-10">
         {pageToShow.length > 0 ? (
           <MusicBody src={pageToShow[0].src} height={height} />
         ) : null}

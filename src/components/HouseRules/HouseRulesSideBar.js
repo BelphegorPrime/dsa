@@ -66,7 +66,7 @@ const HouseRulesSidebar = props => {
         </div>
       </div>
       <div className="row">
-        <ul className="list-group list-group-flush col-md-12">
+        <ul className="list-group list-group-flush col-12">
           {renderListElement('templates', 'Vorlagen')}
           <li className="list-group-item cursor-default">
             <div className="row">

@@ -12,14 +12,14 @@ const SpecialAbilities = props => {
           const { name } = specialAbility;
           if (name === 'Kulturkunde' || name === 'Rüstungsgewöhnung I') {
             return (
-              <div key={name} className="col-md-12 pt-2">
+              <div key={name} className="col-12 pt-2">
                 <span>{`${name} ${specialAbility.values.join(', ')}`}</span>
               </div>
             );
           }
           if (name.indexOf('Wahrer Name: ') > -1) {
             return (
-              <div key={name} className="col-md-12 pt-2">
+              <div key={name} className="col-12 pt-2">
                 <span>{`${name} ${specialAbility.values.join(', ')}`}</span>
               </div>
             );
@@ -29,7 +29,7 @@ const SpecialAbilities = props => {
             return (
               <div
                 key={name}
-                className="col-md-12 pt-2"
+                className="col-12 pt-2"
                 onClick={() =>
                   setLiturgyToShow(liturgyToShow === name ? null : name)
                 }>
@@ -106,7 +106,7 @@ const SpecialAbilities = props => {
             );
           }
           return (
-            <div key={name} className="col-md-12 pt-2">
+            <div key={name} className="col-12 pt-2">
               <span>{name}</span>
             </div>
           );
@@ -116,7 +116,7 @@ const SpecialAbilities = props => {
         {specialAbilities.cheapenedSpecialAbilities.map(cheapenedAbility => {
           const { name } = cheapenedAbility;
           return (
-            <div key={name} className="col-md-12 pt-2">
+            <div key={name} className="col-12 pt-2">
               <span>{name}</span>
             </div>
           );

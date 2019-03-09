@@ -59,7 +59,7 @@ const Objects = props => {
           return (
             <div
               key={name}
-              className="col-md-12 p-2"
+              className="col-12 p-2"
               style={{ minHeight: 54, borderBottom: '1px solid #E5E5E5' }}>
               <span
                 className="btn btn-secondary btn-remove-hero float-right mr-3"

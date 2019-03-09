@@ -9,7 +9,7 @@ const Hero = props => {
   const [selectedHeros, setSelectedHeros] = useState(Object.keys(heros));
   return (
     <Fragment>
-      <div className="left-pane col-md-2 p-0">
+      <div className="left-pane col-2 p-0">
         <MasterSideBar
           heros={heros}
           chooseHero={chooseHero}
@@ -18,9 +18,9 @@ const Hero = props => {
           withProperties={false}
         />
       </div>
-      <div className="right-pane row-without-margin col-md-10">
+      <div className="right-pane row-without-margin col-10">
         <div
-          className="row col-md-12 ml-0 mr-0 pt-2"
+          className="row col-12 ml-0 mr-0 pt-2"
           style={{
             maxHeight: '100%'
           }}>

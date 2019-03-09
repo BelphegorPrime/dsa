@@ -13,10 +13,10 @@ const HouseRules = props => {
     switch (rule.type) {
       case 'spell': {
         return (
-          <div key={rule.type + rule.name + index} className="col-md-4">
+          <div key={rule.type + rule.name + index} className="col-4">
             <div className="m-2 p-2 border position-relative">
               <div
-                className="house-rule-delete position-absolute col-md-2 btn btn-secondary"
+                className="house-rule-delete position-absolute col-2 btn btn-secondary"
                 onClick={() => removeRule(rule.id)}>
                 X
               </div>
@@ -42,10 +42,10 @@ const HouseRules = props => {
       }
       case 'weapon': {
         return (
-          <div key={rule.type + rule.name + index} className="col-md-4">
+          <div key={rule.type + rule.name + index} className="col-4">
             <div className="m-2 p-2 border position-relative">
               <div
-                className="house-rule-delete position-absolute col-md-2 btn btn-secondary"
+                className="house-rule-delete position-absolute col-2 btn btn-secondary"
                 onClick={() => removeRule(rule.id)}>
                 X
               </div>

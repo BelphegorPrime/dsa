@@ -19,7 +19,7 @@ const PropertiesQuickBar = props => {
         <div className={className}>
           <div className="row">
             <div
-              className="col-md-12"
+              className="col-12"
               style={{ ...style, borderBottom: '1px solid lightgray' }}>
               <div>MU:</div>
               <div>
@@ -29,7 +29,7 @@ const PropertiesQuickBar = props => {
               </div>
             </div>
             <div
-              className="col-md-12"
+              className="col-12"
               style={{ ...style, borderBottom: '1px solid lightgray' }}>
               <div>KL:</div>
               <div>
@@ -39,7 +39,7 @@ const PropertiesQuickBar = props => {
               </div>
             </div>
             <div
-              className="col-md-12"
+              className="col-12"
               style={{ ...style, borderBottom: '1px solid lightgray' }}>
               <div>IN:</div>
               <div>
@@ -49,7 +49,7 @@ const PropertiesQuickBar = props => {
               </div>
             </div>
             <div
-              className="col-md-12"
+              className="col-12"
               style={{ ...style, borderBottom: '1px solid lightgray' }}>
               <div>CH:</div>
               <div>
@@ -59,7 +59,7 @@ const PropertiesQuickBar = props => {
               </div>
             </div>
             <div
-              className="col-md-12"
+              className="col-12"
               style={{ ...style, borderBottom: '1px solid lightgray' }}>
               <div>FF:</div>
               <div>
@@ -69,7 +69,7 @@ const PropertiesQuickBar = props => {
               </div>
             </div>
             <div
-              className="col-md-12"
+              className="col-12"
               style={{ ...style, borderBottom: '1px solid lightgray' }}>
               <div>GE:</div>
               <div>
@@ -79,7 +79,7 @@ const PropertiesQuickBar = props => {
               </div>
             </div>
             <div
-              className="col-md-12"
+              className="col-12"
               style={{ ...style, borderBottom: '1px solid lightgray' }}>
               <div>KO:</div>
               <div>
@@ -88,7 +88,7 @@ const PropertiesQuickBar = props => {
                 </span>
               </div>
             </div>
-            <div className="col-md-12" style={{ ...style }}>
+            <div className="col-12" style={{ ...style }}>
               <div>KK:</div>
               <div>
                 <span className="font-weight-bold">

@@ -23,23 +23,23 @@ const Hero = props => {
     case 'Basis': {
       return (
         <Fragment>
-          <Base hero={hero} updateHero={updateHero} className="col-md-6" />
+          <Base hero={hero} updateHero={updateHero} className="col-6" />
           <Advantages
             advantages={converted.advantages}
             disadvantages={converted.disadvantages}
-            className="col-md-6"
+            className="col-6"
           />
-          <hr className="col-md-12" />
-          <Properties properties={converted.properties} className="col-md-6" />
+          <hr className="col-12" />
+          <Properties properties={converted.properties} className="col-6" />
           <SpecialAbilities
             specialAbilities={converted.specialAbilities}
-            className="col-md-6"
+            className="col-6"
           />
-          <hr className="col-md-12" />
+          <hr className="col-12" />
           {converted.connections ? (
             <Connections
               connections={converted.connections}
-              className="col-md-6"
+              className="col-6"
             />
           ) : null}
         </Fragment>
@@ -50,7 +50,7 @@ const Hero = props => {
         <TalentList
           talentList={converted.talentList}
           properties={converted.properties}
-          className="col-md-12"
+          className="col-12"
         />
       );
     }
@@ -59,22 +59,22 @@ const Hero = props => {
         <SpellList
           spellList={converted.spellList}
           properties={converted.properties}
-          className="col-md-12"
+          className="col-12"
         />
       );
     }
     case 'Kampf': {
       return (
         <Fragment>
-          <Objects hero={hero} updateHero={updateHero} className="col-md-4" />
-          <Equipment weapons={converted.weapons} className="col-md-4" />
-          <Purse hero={hero} updateHero={updateHero} className="col-md-4" />
+          <Objects hero={hero} updateHero={updateHero} className="col-4" />
+          <Equipment weapons={converted.weapons} className="col-4" />
+          <Purse hero={hero} updateHero={updateHero} className="col-4" />
         </Fragment>
       );
     }
     case 'Kommentare': {
       return (
-        <Comments hero={hero} updateHero={updateHero} className="col-md-12" />
+        <Comments hero={hero} updateHero={updateHero} className="col-12" />
       );
     }
     default:

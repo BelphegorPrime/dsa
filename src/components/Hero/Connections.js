@@ -10,7 +10,7 @@ const Connections = props => {
         {connections.map(connection => {
           const { description, name, socialStatus } = connection;
           return (
-            <div key={name} className="col-md-12 pt-2">
+            <div key={name} className="col-12 pt-2">
               <span>
                 {name || null} {description || null} {socialStatus || null}
               </span>

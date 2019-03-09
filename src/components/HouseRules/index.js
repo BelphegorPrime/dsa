@@ -13,16 +13,16 @@ const HouseRules = props => {
   } = props;
   return (
     <Fragment>
-      <div className="left-pane col-md-2">
+      <div className="left-pane col-2">
         <HouseRulesSideBar
           addNewHouseRules={addNewHouseRules}
           setHouseRuleToShow={setHouseRuleToShow}
           houseRuleToShow={houseRuleToShow}
         />
       </div>
-      <div className="right-pane col-md-10 row-without-margin">
+      <div className="right-pane col-10 row-without-margin">
         <div
-          className="row col-md-12"
+          className="row col-12"
           style={{
             marginLeft: 0,
             marginRight: 0,
