@@ -11,6 +11,25 @@ const data = {
 };
 app.data = data;
 
+app.on('widevine-ready', (version, lastVersion) => {
+  if (lastVersion !== null) {
+    console.log(
+      `Widevine ${version}, upgraded from ${lastVersion}, is ready to be used!`
+    );
+  } else {
+    console.log(`Widevine ${version} is ready to be used!`);
+  }
+});
+app.on('widevine-update-pending', (currentVersion, pendingVersion) => {
+  console.log(
+    `Widevine ${currentVersion} is ready to be upgraded to ${pendingVersion}!`
+  );
+});
+app.on('widevine-error', error => {
+  console.log(`Widevine installation encounterted an error: ${error}`);
+  process.exit(1);
+});
+
 const createWindow = () => {
   const { windows, servers } = app.data;
   const win = new BrowserWindow({
@@ -22,7 +41,8 @@ const createWindow = () => {
     webPreferences: {
       contextIsolation: false,
       nodeIntegration: true,
-      webviewTag: true
+      webviewTag: true,
+      plugins: true
     }
   });
   windows.push(win);
