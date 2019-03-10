@@ -71,6 +71,10 @@
     "wait-on": "3.2.0"
   },
   "build": {
+    "electronDownload": {
+      "mirror": "https://github.com/castlabs/electron-releases/releases/download/v",
+      "cache": "./.electron-dl-cache"
+    },
     "appId": "com.electron.topas",
     "files": [
       "build/**/*",
