@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from 'react';
-// import proptypes from 'prop-types';
 import MusicBody from './MusicBody';
 import MusicSideBar from './MusicSideBar';
 
@@ -63,7 +62,7 @@ const Music = () => {
   const elem = document.getElementById('music-container');
   useEffect(() => {
     setHeight(elem && elem.offsetHeight > 0 ? elem.offsetHeight - 10 : 300);
-  }, [height]);
+  }, [elem, height]);
 
   const pageToShow = pages.filter(p => p.name === page);
   const names = pages.map(p => p.name);
@@ -83,7 +82,5 @@ const Music = () => {
     </Fragment>
   );
 };
-
-Music.propTypes = {};
 
 export default Music;

@@ -1,5 +1,5 @@
 import React from 'react';
-import proptypes from 'prop-types';
+import { array, string } from 'prop-types';
 
 const Advantages = props => {
   const { advantages, disadvantages, className } = props;
@@ -36,9 +36,9 @@ const Advantages = props => {
 };
 
 Advantages.propTypes = {
-  advantages: proptypes.array,
-  disadvantages: proptypes.array,
-  className: proptypes.string
+  advantages: array,
+  disadvantages: array,
+  className: string
 };
 
 export default Advantages;

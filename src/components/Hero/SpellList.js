@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import proptypes from 'prop-types';
+import { object, string } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBook } from '@fortawesome/free-solid-svg-icons';
 
@@ -201,9 +201,9 @@ const SpellList = props => {
 };
 
 SpellList.propTypes = {
-  spellList: proptypes.object,
-  properties: proptypes.object,
-  className: proptypes.string
+  spellList: object,
+  properties: object,
+  className: string
 };
 
 export default SpellList;

@@ -1,5 +1,5 @@
 import React from 'react';
-import proptypes from 'prop-types';
+import { object, string } from 'prop-types';
 
 const Equipment = props => {
   const { weapons, className } = props;
@@ -42,8 +42,8 @@ const Equipment = props => {
 };
 
 Equipment.propTypes = {
-  weapons: proptypes.object,
-  className: proptypes.string
+  weapons: object,
+  className: string
 };
 
 export default Equipment;

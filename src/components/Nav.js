@@ -1,5 +1,5 @@
 import React from 'react';
-import proptypes from 'prop-types';
+import { string, func } from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Nav = props => {
@@ -112,9 +112,9 @@ const Nav = props => {
 };
 
 Nav.propTypes = {
-  page: proptypes.string,
-  handleChange: proptypes.func,
-  toggleNavBar: proptypes.func
+  page: string,
+  handleChange: func,
+  toggleNavBar: func
 };
 
 export default Nav;

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import {object, string, func} from 'prop-types';
 import HeroBody from './HeroBody';
 import HeroSideBar from './HeroSideBar';
 import PropertiesQuickBar from '../PropertiesQuickBar';
@@ -52,13 +52,13 @@ const Hero = props => {
 };
 
 Hero.propTypes = {
-  heros: proptypes.object,
-  chosenHero: proptypes.object,
-  page: proptypes.string,
-  updateHero: proptypes.func,
-  removeHero: proptypes.func,
-  showPage: proptypes.func,
-  chooseHero: proptypes.func
+  heros: object,
+  chosenHero: object,
+  page: string,
+  updateHero: func,
+  removeHero: func,
+  showPage: func,
+  chooseHero: func
 };
 
 export default Hero;

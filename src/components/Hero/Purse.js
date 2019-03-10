@@ -1,5 +1,5 @@
 import React from 'react';
-import proptypes from 'prop-types';
+import { func, object, string } from 'prop-types';
 
 const Purse = props => {
   const { hero, updateHero, className } = props;
@@ -52,9 +52,9 @@ const Purse = props => {
 };
 
 Purse.propTypes = {
-  updateHero: proptypes.func,
-  hero: proptypes.object,
-  className: proptypes.string
+  updateHero: func,
+  hero: object,
+  className: string
 };
 
 export default Purse;

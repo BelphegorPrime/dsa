@@ -1,4 +1,4 @@
-import {calc2, calc5} from '../helperFunctions';
+import { calc2, calc5 } from '../helperFunctions';
 
 export default properties => {
   const returnProperties = {};
@@ -81,8 +81,10 @@ export default properties => {
       case 'Rüstungsschutz':
         name = 'armor';
         break;
-      default:
-        name = pp.attributes.name;
+      default: {
+        const n = pp.attributes.name;
+        name = `${n}`;
+      }
     }
     if (name === 'astralEnergy') {
       returnProperties[name] = {

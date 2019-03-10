@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useState } from 'react';
-import proptypes from 'prop-types';
+import { object, string, func } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 
@@ -76,9 +76,9 @@ const Base = props => {
 };
 
 Base.propTypes = {
-  hero: proptypes.object,
-  className: proptypes.string,
-  updateHero: proptypes.func
+  hero: object,
+  className: string,
+  updateHero: func
 };
 
 export default Base;

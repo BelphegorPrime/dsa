@@ -1,5 +1,4 @@
 import React from 'react';
-// import proptypes from 'prop-types';
 import { ApolloClient } from 'apollo-client';
 import { createUploadLink } from 'apollo-upload-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -28,7 +27,5 @@ const Map = () => (
     </div>
   </ApolloProvider>
 );
-
-Map.propTypes = {};
 
 export default Map;

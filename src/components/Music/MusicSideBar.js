@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { string, array, func } from 'prop-types';
 
 const MusicSideBar = props => {
   const { page, setPage, pages } = props;
@@ -29,9 +29,9 @@ const MusicSideBar = props => {
 };
 
 MusicSideBar.propTypes = {
-  page: proptypes.string,
-  pages: proptypes.array,
-  setPage: proptypes.func
+  page: string,
+  pages: array,
+  setPage: func
 };
 
 MusicSideBar.defaultProps = {

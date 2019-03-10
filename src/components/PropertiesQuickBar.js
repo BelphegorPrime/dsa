@@ -1,5 +1,5 @@
 import React from 'react';
-import proptypes from 'prop-types';
+import { object, string } from 'prop-types';
 
 const PropertiesQuickBar = props => {
   const { hero, className, orientation } = props;
@@ -169,9 +169,9 @@ const PropertiesQuickBar = props => {
 };
 
 PropertiesQuickBar.propTypes = {
-  hero: proptypes.object,
-  className: proptypes.string,
-  orientation: proptypes.string
+  hero: object,
+  className: string,
+  orientation: string
 };
 
 export default PropertiesQuickBar;

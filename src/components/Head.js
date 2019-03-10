@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useRef } from 'react';
-import proptypes from 'prop-types';
+import { object, string, array, func } from 'prop-types';
 import XmlReader from 'xml-reader';
 import XmlPrint from 'xml-printer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index.es';
@@ -161,15 +161,15 @@ const Head = props => {
 };
 
 Head.propTypes = {
-  chosenHero: proptypes.object,
-  page: proptypes.string,
-  houseRules: proptypes.array,
-  appendToState: proptypes.func,
-  resetState: proptypes.func,
-  toggleNavBar: proptypes.func,
-  setHeros: proptypes.func,
-  setEncounter: proptypes.func,
-  setActiveEncounter: proptypes.func
+  chosenHero: object,
+  page: string,
+  houseRules: array,
+  appendToState: func,
+  resetState: func,
+  toggleNavBar: func,
+  setHeros: func,
+  setEncounter: func,
+  setActiveEncounter: func
 };
 
 export default Head;

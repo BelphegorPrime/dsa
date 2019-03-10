@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { string, array, func } from 'prop-types';
 import HouseRulesBody from './HouseRulesBody';
 import HouseRulesSideBar from './HouseRulesSideBar';
 
@@ -40,11 +40,11 @@ const HouseRules = props => {
 };
 
 HouseRules.propTypes = {
-  houseRuleToShow: proptypes.string,
-  houseRules: proptypes.array,
-  removeRule: proptypes.func,
-  addNewHouseRules: proptypes.func,
-  setHouseRuleToShow: proptypes.func
+  houseRuleToShow: string,
+  houseRules: array,
+  removeRule: func,
+  addNewHouseRules: func,
+  setHouseRuleToShow: func
 };
 
 export default HouseRules;

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { object, array, func, bool } from 'prop-types';
 
 import { getMainProperties } from '../../helperFunctions';
 
@@ -61,11 +61,11 @@ const MasterSideBar = props => {
 };
 
 MasterSideBar.propTypes = {
-  heros: proptypes.object,
-  selectedHeros: proptypes.array,
-  chooseHero: proptypes.func,
-  setSelectedHeros: proptypes.func,
-  withProperties: proptypes.bool
+  heros: object,
+  selectedHeros: array,
+  chooseHero: func,
+  setSelectedHeros: func,
+  withProperties: bool
 };
 
 MasterSideBar.defaultProps = {

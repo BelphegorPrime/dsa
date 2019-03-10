@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { func, object, string } from 'prop-types';
 
 const Objects = props => {
   const { hero, updateHero, className } = props;
@@ -55,7 +55,7 @@ const Objects = props => {
         </div>
 
         {Object.keys(objects).map(name => {
-          const object = objects[name];
+          const o = objects[name];
           return (
             <div
               key={name}
@@ -66,114 +66,113 @@ const Objects = props => {
                 onClick={() => removeObject(name)}>
                 X
               </span>
-              <span>{`${name} ${object.amount} Stk`}</span>
-              {object.distantWeapon ? ` Kampftalent: ${object.talent}` : null}
-              {object.properties ? (
+              <span>{`${name} ${o.amount} Stk`}</span>
+              {o.distantWeapon ? ` Kampftalent: ${o.talent}` : null}
+              {o.properties ? (
                 <Fragment>
                   <br />
                   <span>
                     {' '}
-                    {object.name ? object.name : ''}{' '}
-                    {object.price ? `${object.price}S` : ''}{' '}
-                    {object.weight ? `(${object.weight} Unzen)` : ''}
+                    {o.name ? o.name : ''} {o.price ? `${o.price}S` : ''}{' '}
+                    {o.weight ? `(${o.weight} Unzen)` : ''}
                   </span>
-                  {object.name || object.price || object.weight ? <br /> : null}
-                  {object.properties.courage ? (
+                  {o.name || o.price || o.weight ? <br /> : null}
+                  {o.properties.courage ? (
                     <span>
                       <span className="font-weight-bold">Mut</span>{' '}
-                      {object.properties.courage.value}{' '}
+                      {o.properties.courage.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.wisdom ? (
+                  {o.properties.wisdom ? (
                     <span>
                       <span className="font-weight-bold">Klugheit</span>{' '}
-                      {object.properties.wisdom.value}{' '}
+                      {o.properties.wisdom.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.intuition ? (
+                  {o.properties.intuition ? (
                     <span>
                       <span className="font-weight-bold">Intuition</span>{' '}
-                      {object.properties.intuition.value}{' '}
+                      {o.properties.intuition.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.charisma ? (
+                  {o.properties.charisma ? (
                     <span>
                       <span className="font-weight-bold">Charisma</span>{' '}
-                      {object.properties.charisma.value}{' '}
+                      {o.properties.charisma.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.fingerAbility ? (
+                  {o.properties.fingerAbility ? (
                     <span>
                       <span className="font-weight-bold">Fingerfertigkeit</span>{' '}
-                      {object.properties.fingerAbility.value}{' '}
+                      {o.properties.fingerAbility.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.dexterity ? (
+                  {o.properties.dexterity ? (
                     <span>
                       <span className="font-weight-bold">Gewandtheit</span>{' '}
-                      {object.properties.dexterity.value}{' '}
+                      {o.properties.dexterity.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.constitution ? (
+                  {o.properties.constitution ? (
                     <span>
                       <span className="font-weight-bold">Konstitution</span>{' '}
-                      {object.properties.constitution.value}{' '}
+                      {o.properties.constitution.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.strength ? (
+                  {o.properties.strength ? (
                     <span>
                       <span className="font-weight-bold">Körperkraft</span>{' '}
-                      {object.properties.strength.value}{' '}
+                      {o.properties.strength.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.lifeforce ? (
+                  {o.properties.lifeforce ? (
                     <span>
                       <span className="font-weight-bold">Lebensenergie</span>{' '}
-                      {object.properties.lifeforce.basicValue}{' '}
+                      {o.properties.lifeforce.basicValue}{' '}
                     </span>
                   ) : null}
-                  {object.properties.endurance ? (
+                  {o.properties.endurance ? (
                     <span>
                       <span className="font-weight-bold">Ausdauer</span>{' '}
-                      {object.properties.endurance.basicValue}{' '}
+                      {o.properties.endurance.basicValue}{' '}
                     </span>
                   ) : null}
-                  {object.properties.astralEnergy ? (
+                  {o.properties.astralEnergy ? (
                     <span>
                       <span className="font-weight-bold">Astralenergie</span>{' '}
-                      {object.properties.astralEnergy.basicValue}{' '}
+                      {o.properties.astralEnergy.basicValue}{' '}
                     </span>
                   ) : null}
-                  {object.properties.risk ? (
+                  {o.properties.risk ? (
                     <span>
                       <span className="font-weight-bold">Gefahrenwert</span>{' '}
-                      {object.properties.risk.value}{' '}
+                      {o.properties.risk.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.loyalty ? (
+                  {o.properties.loyalty ? (
                     <span>
                       <span className="font-weight-bold">Loyalität</span>{' '}
-                      {object.properties.loyalty.value}{' '}
+                      {o.properties.loyalty.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.speed ? (
+                  {o.properties.speed ? (
                     <span>
                       <span className="font-weight-bold">Geschwindigkeit</span>{' '}
-                      {object.properties.speed.value}{' '}
+                      {o.properties.speed.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.armor ? (
+                  {o.properties.armor ? (
                     <span>
                       <span className="font-weight-bold">Rüstungsschutz</span>{' '}
-                      {object.properties.armor.value}{' '}
+                      {o.properties.armor.value}{' '}
                     </span>
                   ) : null}
-                  {object.properties.magicResistance &&
-                  object.properties.magicResistance2 ? (
+                  {o.properties.magicResistance &&
+                  o.properties.magicResistance2 ? (
                     <span>
                       <span className="font-weight-bold">Magieresistenz</span>{' '}
-                      {object.properties.magicResistance.calcValue} /{' '}
-                      {object.properties.magicResistance2.value}{' '}
+                      {o.properties.magicResistance.calcValue} /{' '}
+                      {o.properties.magicResistance2.value}{' '}
                     </span>
                   ) : null}
                 </Fragment>
@@ -187,9 +186,9 @@ const Objects = props => {
 };
 
 Objects.propTypes = {
-  updateHero: proptypes.func,
-  hero: proptypes.object,
-  className: proptypes.string
+  updateHero: func,
+  hero: object,
+  className: string
 };
 
 export default Objects;

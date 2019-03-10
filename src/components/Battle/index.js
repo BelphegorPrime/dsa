@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
-import proptypes from 'prop-types';
+import { object, func, array } from 'prop-types';
 import Select from 'react-select';
 
+import { useBoolean } from 'react-use';
 import MasterSideBar from '../Master/MasterSideBar';
 import EncounterModal from './EncounterModal';
 import StartEncounterModal from './StartEncounterModal';
@@ -19,8 +20,10 @@ const Battle = props => {
   } = props;
   const [selectedHeros, setSelectedHeros] = useState(Object.keys(heros));
   const [selectedEncounter, setSelectedEncounter] = useState(null);
-  const [showEncounterModal, setShowEncounterModal] = useState(false);
-  const [showStartEncounterModal, setShowStartEncounterModal] = useState(false);
+  const [showEncounterModal, setShowEncounterModal] = useBoolean(false);
+  const [showStartEncounterModal, setShowStartEncounterModal] = useBoolean(
+    false
+  );
 
   const battleHeros = selectedHeros.map(name => heros[name]).filter(e => e);
   const handleShowHeroIniModal = () => {
@@ -142,13 +145,13 @@ const Battle = props => {
 };
 
 Battle.propTypes = {
-  heros: proptypes.object,
-  chooseHero: proptypes.func,
-  encounter: proptypes.array,
-  setEncounter: proptypes.func,
-  electron: proptypes.object,
-  activeEncounter: proptypes.object,
-  setActiveEncounter: proptypes.func
+  heros: object,
+  electron: object,
+  activeEncounter: object,
+  encounter: array,
+  chooseHero: func,
+  setEncounter: func,
+  setActiveEncounter: func
 };
 
 export default Battle;

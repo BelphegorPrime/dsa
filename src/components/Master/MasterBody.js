@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { object, array } from 'prop-types';
 
 const MasterBody = props => {
   const { heros, selectedHeros } = props;
@@ -67,8 +67,8 @@ const MasterBody = props => {
 };
 
 MasterBody.propTypes = {
-  heros: proptypes.object,
-  selectedHeros: proptypes.array
+  heros: object,
+  selectedHeros: array
 };
 
 export default MasterBody;

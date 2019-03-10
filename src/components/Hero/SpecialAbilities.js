@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import proptypes from 'prop-types';
+import { object, string } from 'prop-types';
 
 const SpecialAbilities = props => {
   const [liturgyToShow, setLiturgyToShow] = useState(null);
@@ -127,8 +127,8 @@ const SpecialAbilities = props => {
 };
 
 SpecialAbilities.propTypes = {
-  specialAbilities: proptypes.object,
-  className: proptypes.string
+  specialAbilities: object,
+  className: string
 };
 
 export default SpecialAbilities;

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { object, string, func } from 'prop-types';
 
 const Sidebar = props => {
   const { heros, chooseHero, removeHero, page, chosenHero, showPage } = props;
@@ -60,12 +60,12 @@ const Sidebar = props => {
 };
 
 Sidebar.propTypes = {
-  heros: proptypes.object,
-  chosenHero: proptypes.object,
-  page: proptypes.string,
-  chooseHero: proptypes.func,
-  removeHero: proptypes.func,
-  showPage: proptypes.func
+  heros: object,
+  chosenHero: object,
+  page: string,
+  chooseHero: func,
+  removeHero: func,
+  showPage: func
 };
 
 Sidebar.defaultProps = {

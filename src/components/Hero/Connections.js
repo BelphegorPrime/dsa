@@ -1,5 +1,5 @@
 import React from 'react';
-import proptypes from 'prop-types';
+import { array, string } from 'prop-types';
 
 const Connections = props => {
   const { connections, className } = props;
@@ -23,8 +23,8 @@ const Connections = props => {
 };
 
 Connections.propTypes = {
-  connections: proptypes.array,
-  className: proptypes.string
+  connections: array,
+  className: string
 };
 
 export default Connections;

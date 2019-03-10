@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useRef } from 'react';
-import proptypes from 'prop-types';
+import { func, string } from 'prop-types';
 
 import { addId } from '../../helperFunctions';
 
@@ -22,7 +22,9 @@ const HouseRulesSidebar = props => {
       )
     )
       .then(rules => addNewHouseRules(rules))
-      .then(() => (fileUpload.current.value = ''));
+      .then(() => {
+        fileUpload.current.value = '';
+      });
   };
 
   const show = template => {
@@ -93,9 +95,9 @@ const HouseRulesSidebar = props => {
 };
 
 HouseRulesSidebar.propTypes = {
-  addNewHouseRules: proptypes.func,
-  setHouseRuleToShow: proptypes.func,
-  houseRuleToShow: proptypes.string
+  addNewHouseRules: func,
+  setHouseRuleToShow: func,
+  houseRuleToShow: string
 };
 
 export default HouseRulesSidebar;

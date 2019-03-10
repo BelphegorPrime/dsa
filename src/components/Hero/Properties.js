@@ -1,5 +1,5 @@
 import React from 'react';
-import proptypes from 'prop-types';
+import { object, string } from 'prop-types';
 
 const Properties = props => {
   const { properties, className } = props;
@@ -173,8 +173,8 @@ const Properties = props => {
 };
 
 Properties.propTypes = {
-  properties: proptypes.object,
-  className: proptypes.string
+  properties: object,
+  className: string
 };
 
 export default Properties;

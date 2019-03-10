@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { object } from 'prop-types';
 
 const NoMatch = ({ location }) => (
   <Fragment>
@@ -19,7 +19,7 @@ const NoMatch = ({ location }) => (
 );
 
 NoMatch.propTypes = {
-  location: proptypes.object
+  location: object
 };
 
 export default NoMatch;

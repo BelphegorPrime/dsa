@@ -30,11 +30,10 @@ export default basics => {
     variant
   };
   returnBasics.notes = Object.keys(basics[6].attributes)
-    .map(
-      key =>
-        basics[6].attributes[key] !== ''
-          ? basics[6].attributes[key].split('&#10;')
-          : null
+    .map(key =>
+      basics[6].attributes[key] !== ''
+        ? basics[6].attributes[key].split('&#10;')
+        : null
     )
     .filter(e => e)
     .reduce((flat, toFlatten) => flat.concat(toFlatten), [])

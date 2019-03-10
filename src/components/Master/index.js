@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import proptypes from 'prop-types';
+import { object, func } from 'prop-types';
 
 import MasterBody from './MasterBody';
 import MasterSideBar from './MasterSideBar';
@@ -32,8 +32,8 @@ const Hero = props => {
 };
 
 Hero.propTypes = {
-  heros: proptypes.object,
-  chooseHero: proptypes.func
+  heros: object,
+  chooseHero: func
 };
 
 export default Hero;

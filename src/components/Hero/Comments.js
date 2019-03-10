@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { func, object, string } from 'prop-types';
 import uuid4 from 'uuid4';
 
 const Comments = props => {
@@ -98,9 +98,9 @@ const Comments = props => {
 };
 
 Comments.propTypes = {
-  updateHero: proptypes.func,
-  hero: proptypes.object,
-  className: proptypes.string
+  updateHero: func,
+  hero: object,
+  className: string
 };
 
 export default Comments;

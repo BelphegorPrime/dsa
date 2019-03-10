@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import proptypes from 'prop-types';
+import { bool, func, object } from 'prop-types';
 import uuid4 from 'uuid4';
 
 const initialMobData = {
@@ -253,10 +253,10 @@ const EncounterModal = props => {
 };
 
 EncounterModal.propTypes = {
-  show: proptypes.bool,
-  close: proptypes.func,
-  save: proptypes.func,
-  electron: proptypes.object
+  show: bool,
+  close: func,
+  save: func,
+  electron: object
 };
 
 export default EncounterModal;

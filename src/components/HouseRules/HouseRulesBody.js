@@ -1,5 +1,5 @@
 import React from 'react';
-import proptypes from 'prop-types';
+import { string, array, func } from 'prop-types';
 
 import DownloadableTemplates from './DownloadableTemplates';
 
@@ -77,9 +77,9 @@ const HouseRules = props => {
 };
 
 HouseRules.propTypes = {
-  houseRuleToShow: proptypes.string,
-  houseRules: proptypes.array,
-  removeRule: proptypes.func
+  houseRuleToShow: string,
+  houseRules: array,
+  removeRule: func
 };
 
 export default HouseRules;

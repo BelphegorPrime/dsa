@@ -1,14 +1,15 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react';
-import proptypes from 'prop-types';
+import { object } from 'prop-types';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+import { useBoolean } from 'react-use';
 import { convert } from '../heroConverter';
 import { objectWithoutKey } from '../helperFunctions';
 import useSave from '../hooks/useSave';
 
-import Head from './Head';
+import Header from './Head';
 import Nav from './Nav';
 import Hero from './Hero';
 import Master from './Master';
@@ -20,7 +21,7 @@ import Music from './Music';
 
 const App = props => {
   const { electron } = props;
-  const [showNavBar, toggleNavBar] = useState(false);
+  const [showNavBar, toggleNavBar] = useBoolean(false);
   const [page, setPage] = useState('default');
   const [heroPage, setHeroPage] = useState('Basis');
   const [houseRuleToShow, setHouseRuleToShow] = useState('templates');
@@ -31,12 +32,11 @@ const App = props => {
   const [encounter, setEncounter] = useSave(electron, 'encounter', []);
   const [activeEncounter, setActiveEncounter] = useSave(
     electron,
-    'activeEncounter',
-    null
+    'activeEncounter'
   );
-  useEffect(() => setHeros(heros));
-  useEffect(() => setChosenHero(chosenHero), [chosenHero]);
-  useEffect(() => setHouseRules(houseRules));
+  useEffect(() => setHeros(heros), [heros, setHeros]);
+  useEffect(() => setChosenHero(chosenHero), [chosenHero, setChosenHero]);
+  useEffect(() => setHouseRules(houseRules), [houseRules, setHouseRules]);
 
   const removeHero = name => {
     setHeros(objectWithoutKey(heros, name));
@@ -115,7 +115,7 @@ const App = props => {
   return (
     <Router>
       <div className="App cursor-default">
-        <Head
+        <Header
           chosenHero={chosenHero}
           page={page}
           houseRules={houseRules}
@@ -216,7 +216,7 @@ const App = props => {
 };
 
 App.propTypes = {
-  electron: proptypes.object
+  electron: object
 };
 
 export default App;

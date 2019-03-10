@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import proptypes from 'prop-types';
+import { object, string } from 'prop-types';
 
 import { test } from '../../helperFunctions';
 
@@ -62,9 +62,9 @@ const TalentList = props => {
 };
 
 TalentList.propTypes = {
-  talentList: proptypes.object,
-  properties: proptypes.object,
-  className: proptypes.string
+  talentList: object,
+  properties: object,
+  className: string
 };
 
 export default TalentList;

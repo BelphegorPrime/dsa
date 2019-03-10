@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import proptypes from 'prop-types';
+import { bool, func, array } from 'prop-types';
 
 const StartEncounterModal = props => {
   const { show, close, save, heros } = props;
@@ -68,10 +68,10 @@ const StartEncounterModal = props => {
 };
 
 StartEncounterModal.propTypes = {
-  show: proptypes.bool,
-  close: proptypes.func,
-  save: proptypes.func,
-  heros: proptypes.array
+  show: bool,
+  close: func,
+  save: func,
+  heros: array
 };
 
 export default StartEncounterModal;

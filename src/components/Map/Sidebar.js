@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import React from 'react';
-// import proptypes from 'prop-types';
 
 import UploadFiles from './UploadFiles';
 
@@ -14,7 +13,5 @@ const Sidebar = () => (
     <div className="row" />
   </div>
 );
-
-Sidebar.propTypes = {};
 
 export default Sidebar;

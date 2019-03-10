@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import { oneOfType, arrayOf, node } from 'prop-types';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import './styles/index.css';
 import registerServiceWorker from './registerServiceWorker';
@@ -33,10 +33,7 @@ class ErrorBoundary extends React.Component {
 }
 
 ErrorBoundary.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ])
+  children: oneOfType([arrayOf(node), node])
 };
 
 ReactDOM.render(

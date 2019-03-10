@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { object, func } from 'prop-types';
 
 const BattleTable = props => {
   const { encounter, update } = props;
@@ -255,8 +255,8 @@ const BattleTable = props => {
 };
 
 BattleTable.propTypes = {
-  encounter: proptypes.object,
-  update: proptypes.func
+  encounter: object,
+  update: func
 };
 
 export default BattleTable;

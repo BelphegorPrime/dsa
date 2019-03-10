@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import proptypes from 'prop-types';
+import { object, string, func } from 'prop-types';
 
 import Base from './Base';
 import Properties from './Properties';
@@ -83,9 +83,9 @@ const Hero = props => {
 };
 
 Hero.propTypes = {
-  hero: proptypes.object,
-  page: proptypes.string,
-  updateHero: proptypes.func
+  hero: object,
+  page: string,
+  updateHero: func
 };
 
 export default Hero;

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import proptypes from 'prop-types';
+import { number, string } from 'prop-types';
 
 const MusicBody = props => (
   <iframe
@@ -13,8 +13,8 @@ const MusicBody = props => (
 );
 
 MusicBody.propTypes = {
-  height: proptypes.number,
-  src: proptypes.string
+  height: number,
+  src: string
 };
 
 export default MusicBody;
