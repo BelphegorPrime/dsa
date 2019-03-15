@@ -63,25 +63,27 @@ const BattleTable = props => {
   return (
     <Fragment>
       <h5 className="col-12 p-0">Kampfverlauf</h5>
-      <div className="col-12 pl-0 pr-0 pt-2 pb-2">
-        <div className="row m-0">
-          <button
-            className="col-3 btn btn-primary"
-            onClick={() => handleCompetitorChange(-1)}>
-            Vorheriger
-          </button>
-          <div className="col-3 text-center">Kampfrunde: {battle.kr}</div>
-          <div className="col-3 text-center">
-            <div>Aktion: {battle.action}</div>
-            <div>{phases[battle.action].name}</div>
+      {battle ? (
+        <div className="col-12 pl-0 pr-0 pt-2 pb-2">
+          <div className="row m-0">
+            <button
+              className="col-3 btn btn-primary"
+              onClick={() => handleCompetitorChange(-1)}>
+              Vorheriger
+            </button>
+            <div className="col-3 text-center">Kampfrunde: {battle.kr}</div>
+            <div className="col-3 text-center">
+              <div>Aktion: {battle.action}</div>
+              <div>{phases[battle.action].name}</div>
+            </div>
+            <button
+              className="col-3 btn btn-primary"
+              onClick={() => handleCompetitorChange(1)}>
+              Nächster
+            </button>
           </div>
-          <button
-            className="col-3 btn btn-primary"
-            onClick={() => handleCompetitorChange(1)}>
-            Nächster
-          </button>
         </div>
-      </div>
+      ) : null}
       <div className="col-12">
         <table className="table table-sm table-bordered">
           <thead>
