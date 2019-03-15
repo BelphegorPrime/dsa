@@ -15,28 +15,32 @@ const MasterBody = props => {
       <Fragment key={name}>
         <div className="pl-2">
           <div className="font-weight-bold">{name}</div>
-          <div className="pl-4">
-            <span className="font-weight-bold">Vorteile: </span>
-            {converted.advantages
-              .map(advantage =>
-                advantage.value
-                  ? `${advantage.name} ${advantage.value}`
-                  : `${advantage.name}`
-              )
-              .join(', ')}
-          </div>
-          <div className="pl-4">
-            <span className="font-weight-bold">Nachteile: </span>
-            <span className="font-italic">
-              {converted.disadvantages
-                .map(disadvantage =>
-                  disadvantage.value
-                    ? `${disadvantage.name} ${disadvantage.value}`
-                    : `${disadvantage.name}`
+          {converted.advantages ? (
+            <div className="pl-4">
+              <span className="font-weight-bold">Vorteile: </span>
+              {converted.advantages
+                .map(advantage =>
+                  advantage.value
+                    ? `${advantage.name} ${advantage.value}`
+                    : `${advantage.name}`
                 )
                 .join(', ')}
-            </span>
-          </div>
+            </div>
+          ) : null}
+          {converted.disadvantages ? (
+            <div className="pl-4">
+              <span className="font-weight-bold">Nachteile: </span>
+              <span className="font-italic">
+                {converted.disadvantages
+                  .map(disadvantage =>
+                    disadvantage.value
+                      ? `${disadvantage.name} ${disadvantage.value}`
+                      : `${disadvantage.name}`
+                  )
+                  .join(', ')}
+              </span>
+            </div>
+          ) : null}
           <div className="pl-4">
             <span className="font-weight-bold">Kampfwerte: </span>
             {Object.keys(fight)
