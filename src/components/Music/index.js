@@ -57,13 +57,6 @@ const pages = [
 
 const Music = () => {
   const [page, setPage] = useState('Big Creepy');
-  const [height, setHeight] = useState(null);
-  // eslint-disable-next-line no-undef
-  const elem = document.getElementById('music-container');
-  useEffect(() => {
-    setHeight(elem && elem.offsetHeight > 0 ? elem.offsetHeight - 10 : 300);
-  }, [elem, height]);
-
   const pageToShow = pages.filter(p => p.name === page);
   const names = pages.map(p => p.name);
 
@@ -75,9 +68,7 @@ const Music = () => {
       <div
         id="music-container"
         className="right-pane row-without-margin col-10">
-        {pageToShow.length > 0 ? (
-          <MusicBody src={pageToShow[0].src} height={height} />
-        ) : null}
+        {pageToShow.length > 0 ? <MusicBody src={pageToShow[0].src} /> : null}
       </div>
     </Fragment>
   );

@@ -100,6 +100,7 @@ const Nav = props => {
           <Link
             id="music"
             to="/music"
+            target="_blank"
             className={page === 'music' ? `${className} active` : className}
             style={style}
             onClick={changePage}>
