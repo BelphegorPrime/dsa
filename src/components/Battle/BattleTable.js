@@ -140,7 +140,7 @@ const BattleTable = props => {
               if (competitor.battleLep !== undefined) {
                 lep = competitor.battleLep;
               }
-              if (battle.action === i) {
+              if (battle && battle.action === i) {
                 className = 'table-primary';
               }
               return (
