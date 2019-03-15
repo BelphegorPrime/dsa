@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import MusicBody from './MusicBody';
 import MusicSideBar from './MusicSideBar';
 
