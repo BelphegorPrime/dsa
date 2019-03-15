@@ -14,6 +14,11 @@ const pages = [
       'https://open.spotify.com/embed/user/xd1990/playlist/2swfYSnK3UZTaIi8jVMXOM'
   },
   {
+    name: 'Calm Sea',
+    src:
+      'https://open.spotify.com/embed/user/xd1990/playlist/1ydzBbdl4PB9L4bdZwvGT4'
+  },
+  {
     name: 'Creepy',
     src:
       'https://open.spotify.com/embed/user/xd1990/playlist/7F6wmIfRPxK8yz728PSlRE'
@@ -27,6 +32,11 @@ const pages = [
     name: 'Peaceful',
     src:
       'https://open.spotify.com/embed/user/xd1990/playlist/5IUJ6zmUuylwjl4JlRpr32'
+  },
+  {
+    name: 'Sea Battle',
+    src:
+      'https://open.spotify.com/embed/user/xd1990/playlist/7rNeoA3t8SpWEAmx3k66Bv'
   },
   {
     name: 'Small Battle',
@@ -47,6 +57,11 @@ const pages = [
     name: 'Town-Day',
     src:
       'https://open.spotify.com/embed/user/xd1990/playlist/7KWBfWX0MlXyP1qbHoLJYA'
+  },
+  {
+    name: 'Town-Night',
+    src:
+      'https://open.spotify.com/embed/user/xd1990/playlist/4sBAdk6AKgCZf1rYgG2Gl2'
   },
   {
     name: 'Underground',
