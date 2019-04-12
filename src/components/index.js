@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { object } from 'prop-types';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import useBoolean from 'react-use/lib/useBoolean';
 
-import { useBoolean } from 'react-use';
 import { convert } from '../heroConverter';
 import { objectWithoutKey } from '../helperFunctions';
 import useSave from '../hooks/useSave';

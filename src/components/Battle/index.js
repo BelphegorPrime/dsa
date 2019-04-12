@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { object, func, array } from 'prop-types';
 import Select from 'react-select';
+import useBoolean from 'react-use/lib/useBoolean';
 
-import { useBoolean } from 'react-use';
 import MasterSideBar from '../Master/MasterSideBar';
 import EncounterModal from './EncounterModal';
 import StartEncounterModal from './StartEncounterModal';

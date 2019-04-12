@@ -6,3 +6,4 @@ coverage
 build
 dist
 package-lock.json
+/.electron-dl-cache

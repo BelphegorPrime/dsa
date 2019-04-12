@@ -1,4 +1,4 @@
-import { useLocalStorage } from 'react-use';
+import useLocalStorage from 'react-use/lib/useLocalStorage';
 import { isJSON } from '../helperFunctions';
 
 const checkDirectorySync = (fs, directory) => {
