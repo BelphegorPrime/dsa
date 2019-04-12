@@ -33,11 +33,29 @@ const Battle = props => {
   };
 
   const startBattle = inis => {
-    const heroData = battleHeros.map(hero => {
-      const returnHero = hero;
-      returnHero.ini = inis[returnHero.converted.name];
-      returnHero.isPlayer = true;
-      return returnHero;
+    const heroData = Object.keys(inis).map(name => {
+      const hero = battleHeros.find(h => h.converted.name === name);
+      if (hero) {
+        const returnHero = hero;
+        returnHero.ini = inis[name];
+        returnHero.isPlayer = true;
+        return returnHero;
+      }
+      return {
+        name,
+        ini: inis[name],
+        isPlayer: true,
+        tp: 1,
+        converted: {
+          name,
+          properties: {
+            lifeforce: { value: 10 },
+            magicResistance: { value: 4 },
+            endurance: { value: 30 },
+            constitution: { value: 10 }
+          }
+        }
+      };
     });
     selectedEncounter.competitors = [
       ...selectedEncounter.competitors.map(competitor => ({

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import uuid4 from 'uuid4';
 import { bool, func, array } from 'prop-types';
 
 const StartEncounterModal = props => {
@@ -8,13 +9,46 @@ const StartEncounterModal = props => {
       [hero.converted.name]: hero.converted.properties.initiativBaseValue.value
     }))
     .reduce((acc, val) => Object.assign(acc, val), {});
-  const [inis, setInis] = useState(heroData);
+  const [inits, setInits] = useState(heroData);
+  const [additionalHeros, setAdditionalHeros] = useState([]);
   const startBattle = () => {
-    save(inis);
+    additionalHeros.forEach(additionalHero => {
+      inits[additionalHero.name] = additionalHero.init;
+    });
+    save(inits);
     close();
   };
   const handleIniChange = (e, name) =>
-    setInis({ ...inis, [name]: parseInt(e.target.value, 10) });
+    setInits({ ...inits, [name]: parseInt(e.target.value, 10) });
+  const handleAdditionalIniChange = (e, id) =>
+    setAdditionalHeros(
+      additionalHeros.map(ah => {
+        if (ah.id === id) {
+          ah.init = e.target.value;
+        }
+        return ah;
+      })
+    );
+  const addAdditionalHero = () =>
+    setAdditionalHeros([
+      ...additionalHeros,
+      {
+        id: uuid4(),
+        name: '',
+        init: 10
+      }
+    ]);
+
+  const handleAdditionalHeroNameChange = (e, id) => {
+    setAdditionalHeros(
+      additionalHeros.map(ah => {
+        if (ah.id === id) {
+          ah.name = e.target.value;
+        }
+        return ah;
+      })
+    );
+  };
 
   return (
     <div className="modal" style={{ display: show ? 'block' : 'none' }}>
@@ -41,11 +75,45 @@ const StartEncounterModal = props => {
                     className="form-control w-50"
                     style={{ display: 'inline-block' }}
                     onChange={e => handleIniChange(e, name)}
-                    value={inis[name]}
+                    value={inits[name]}
                   />
                 </div>
               </div>
             ))}
+            {additionalHeros.map(additionalHero => {
+              const { id, name, init } = additionalHero;
+              return (
+                <div className="row p-2 border-bottom" key={id}>
+                  <input
+                    className="form-control col-8"
+                    style={{ display: 'inline-block' }}
+                    onChange={e => handleAdditionalHeroNameChange(e, id)}
+                    value={name}
+                  />
+                  <div className="col-4">
+                    Initiative:{' '}
+                    <input
+                      type="number"
+                      className="form-control w-50"
+                      style={{ display: 'inline-block' }}
+                      onChange={e => handleAdditionalIniChange(e, id)}
+                      value={inits[name] ? inits[name] : init}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+            <div className="row p-2">
+              <div className="col-8" />
+              <div className="col-4">
+                <button
+                  type="button"
+                  className="btn btn-primary float-right"
+                  onClick={addAdditionalHero}>
+                  Hinzufügen
+                </button>
+              </div>
+            </div>
           </div>
           <div className="modal-footer">
             <button
