@@ -4,14 +4,14 @@ import MusicSideBar from './MusicSideBar';
 
 const pages = [
   {
+    name: 'Battle',
+    src:
+      'https://open.spotify.com/embed/user/xd1990/playlist/4nAImpaQDsuQIYO8WUkfrk'
+  },
+  {
     name: 'Big Creepy',
     src:
       'https://open.spotify.com/embed/user/xd1990/playlist/1NQj8C9iYBAMT2pMkpv7X7'
-  },
-  {
-    name: 'Boss Battle',
-    src:
-      'https://open.spotify.com/embed/user/xd1990/playlist/2swfYSnK3UZTaIi8jVMXOM'
   },
   {
     name: 'Calm Sea',
@@ -37,11 +37,6 @@ const pages = [
     name: 'Sea Battle',
     src:
       'https://open.spotify.com/embed/user/xd1990/playlist/7rNeoA3t8SpWEAmx3k66Bv'
-  },
-  {
-    name: 'Small Battle',
-    src:
-      'https://open.spotify.com/embed/user/xd1990/playlist/4SmtSXoPWUksFDptSNwzDc'
   },
   {
     name: 'Tavern',
