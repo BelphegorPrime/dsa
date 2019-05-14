@@ -66,8 +66,8 @@ const pages = [
 ];
 
 const Music = () => {
-  const [page, setPage] = useState('Big Creepy');
-  const pageToShow = pages.filter(p => p.name === page);
+  const [page, setPage] = useState('Battle');
+  const pageToShow = pages.find(p => p.name === page);
   const names = pages.map(p => p.name);
 
   return (
@@ -78,7 +78,7 @@ const Music = () => {
       <div
         id="music-container"
         className="right-pane row-without-margin col-10">
-        {pageToShow.length > 0 ? <MusicBody src={pageToShow[0].src} /> : null}
+        {pageToShow ? <MusicBody src={pageToShow.src} /> : null}
       </div>
     </Fragment>
   );
