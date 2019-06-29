@@ -1,44 +1,50 @@
-/* eslint-disable no-undef */
-import React, { useState, useEffect } from 'react';
-import { object } from 'prop-types';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import useBoolean from 'react-use/lib/useBoolean';
+import React, { useEffect, useState } from "react";
+import {
+  HashRouter as Router,
+  Route,
+  RouteComponentProps,
+  Switch
+} from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { useBoolean } from "react-use";
+import { objectWithoutKey } from "../helperFunctions";
+import { convert } from "../heroConverter";
+import useSave from "../hooks/useSave";
+import { HouseRule } from "../types";
+import Battle from "./Battle";
+import Header from "./Head";
+import Hero from "./Hero";
+import HouseRules from "./HouseRules";
+import Map from "./Map";
+import Master from "./Master";
+import Music from "./Music";
+import Nav from "./Nav";
+import NoMatch from "./NoMatch";
 
-import { convert } from '../heroConverter';
-import { objectWithoutKey } from '../helperFunctions';
-import useSave from '../hooks/useSave';
-
-import Header from './Head';
-import Nav from './Nav';
-import Hero from './Hero';
-import Master from './Master';
-import Battle from './Battle';
-import HouseRules from './HouseRules';
-import NoMatch from './NoMatch';
-import Map from './Map';
-import Music from './Music';
-
-const App = props => {
+const App = (props: any) => {
   const { electron } = props;
   const [showNavBar, toggleNavBar] = useBoolean(false);
-  const [page, setPage] = useState('default');
-  const [heroPage, setHeroPage] = useState('Basis');
-  const [houseRuleToShow, setHouseRuleToShow] = useState('templates');
+  const [page, setPage] = useState("default");
+  const [heroPage, setHeroPage] = useState("Basis");
+  const [houseRuleToShow, setHouseRuleToShow] = useState("templates");
 
-  const [heros, setHeros] = useSave(electron, 'heros', {});
-  const [chosenHero, setChosenHero] = useSave(electron, 'chosenHero');
-  const [houseRules, setHouseRules] = useSave(electron, 'houseRules', []);
-  const [encounter, setEncounter] = useSave(electron, 'encounter', []);
+  const [heros, setHeros] = useSave(electron, "heros", {} as any);
+  const [chosenHero, setChosenHero] = useSave(electron, "chosenHero");
+  const [houseRules, setHouseRules] = useSave(
+    electron,
+    "houseRules",
+    [] as any
+  );
+  const [encounter, setEncounter] = useSave(electron, "encounter", [] as any);
   const [activeEncounter, setActiveEncounter] = useSave(
     electron,
-    'activeEncounter'
+    "activeEncounter"
   );
   useEffect(() => setHeros(heros), [heros, setHeros]);
   useEffect(() => setChosenHero(chosenHero), [chosenHero, setChosenHero]);
   useEffect(() => setHouseRules(houseRules), [houseRules, setHouseRules]);
 
-  const removeHero = name => {
+  const removeHero = (name: string) => {
     setHeros(objectWithoutKey(heros, name));
     if (chosenHero && chosenHero.converted.name === name) {
       setChosenHero(null);
@@ -46,37 +52,37 @@ const App = props => {
   };
 
   const resetState = () => {
-    setPage('default');
+    setPage("default");
     setHeros({});
     setChosenHero(null);
-    setHeroPage('Basis');
+    setHeroPage("Basis");
     setHouseRules([]);
-    setHouseRuleToShow('templates');
+    setHouseRuleToShow("templates");
   };
 
-  const updateHero = hero => {
+  const updateHero = (hero: Hero) => {
     const { name } = hero.xml.children[0].attributes;
     heros[name] = hero;
     setChosenHero(hero);
     setHeros(heros);
   };
 
-  const appendToState = composedHeros => {
-    const newHeros = Object.assign(
-      heros,
-      composedHeros
+  const appendToState = (composedHeros: Hero[]) => {
+    const newHeros = {
+      ...heros,
+      ...composedHeros
         .map(h => ({
           [h.converted.name]: h
         }))
-        .reduce((acc, val) => Object.assign(acc, val), {})
-    );
+        .reduce((acc, val) => ({ ...acc, ...val }), {})
+    };
     setHeros(newHeros);
     setChosenHero(composedHeros[composedHeros.length - 1]);
   };
 
-  const addNewHouseRules = rules => {
+  const addNewHouseRules = (rules: HouseRule[]) => {
     const otherHouseRules = houseRules
-      .filter(r => rules.map(ru => ru.id).indexOf(r.id) === -1)
+      .filter((r: HouseRule) => rules.map(ru => ru.id).indexOf(r.id) === -1)
       .concat(...rules);
     Object.keys(heros).forEach(name => {
       const { xml } = heros[name];
@@ -90,8 +96,8 @@ const App = props => {
     setHouseRules(otherHouseRules);
   };
 
-  const removeRule = id => {
-    const otherHouseRules = houseRules.filter(hr => hr.id !== id);
+  const removeRule = (id: string) => {
+    const otherHouseRules = houseRules.filter((hr: HouseRule) => hr.id !== id);
     Object.keys(heros).forEach(name => {
       const { xml } = heros[name];
       appendToState([
@@ -104,7 +110,7 @@ const App = props => {
     setHouseRules(otherHouseRules);
   };
 
-  const chooseHero = name => {
+  const chooseHero = (name: string) => {
     setChosenHero(heros[name]);
   };
 
@@ -119,7 +125,6 @@ const App = props => {
           chosenHero={chosenHero}
           page={page}
           houseRules={houseRules}
-          handleChange={setPage}
           appendToState={appendToState}
           resetState={resetState}
           toggleNavBar={setToggleNavbar}
@@ -139,17 +144,21 @@ const App = props => {
                     <Route
                       exact
                       path="/music"
-                      render={renderProps => <Music {...renderProps} />}
+                      render={(renderProps: RouteComponentProps) => (
+                        <Music {...renderProps} />
+                      )}
                     />
                     <Route
                       exact
                       path="/map"
-                      render={renderProps => <Map {...renderProps} />}
+                      render={(renderProps: RouteComponentProps) => (
+                        <Map {...renderProps} />
+                      )}
                     />
                     <Route
                       exact
                       path="/houserules"
-                      render={renderProps => (
+                      render={(renderProps: RouteComponentProps) => (
                         <HouseRules
                           {...renderProps}
                           addNewHouseRules={addNewHouseRules}
@@ -213,10 +222,6 @@ const App = props => {
       </div>
     </Router>
   );
-};
-
-App.propTypes = {
-  electron: object
 };
 
 export default App;

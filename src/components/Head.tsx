@@ -1,16 +1,29 @@
 /* eslint-disable no-undef */
-import React, { useRef } from 'react';
-import { object, string, array, func } from 'prop-types';
-import XmlReader from 'xml-reader';
-import XmlPrint from 'xml-printer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index.es';
-import { faBars } from '@fortawesome/free-solid-svg-icons/index';
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useRef } from "react";
+import XmlPrint from "xml-printer";
+import XmlReader from "xml-reader";
 
-import { convert, reconvert } from '../heroConverter';
-import { rollDice, countBy } from '../helperFunctions';
+import { countBy, rollDice } from "../helperFunctions";
+import { convert, reconvert } from "../heroConverter";
+import { Child } from "../rawTypes";
+import { Hero, HouseRule } from "../types";
 
-const Head = props => {
-  const fileUpload = useRef();
+interface HeadProps {
+  chosenHero: Hero;
+  page: string;
+  houseRules: HouseRule[];
+  appendToState: (heros: Hero[]) => void;
+  resetState: () => void;
+  toggleNavBar: () => void;
+  setHeros: (heros: Hero[] | null) => void;
+  setEncounter: (encounters: any[]) => void;
+  setActiveEncounter: (encounter: any | null) => void;
+}
+
+const Head = (props: HeadProps) => {
+  const fileUpload = useRef<HTMLInputElement>(null);
   const {
     chosenHero,
     page,
@@ -28,12 +41,16 @@ const Head = props => {
   }
 
   const throws = Object.values(countBy(tempThrows));
-  const fileUploaded = files => {
+  const fileUploaded = (files: File[]) => {
     Promise.all(
       Object.values(files).map(file =>
         new Promise(resolve => {
           const fileReader = new FileReader();
-          fileReader.onload = e => resolve(e.target.result);
+          fileReader.onload = (e: any) => {
+            if (e.target) {
+              resolve(e.target.result);
+            }
+          };
           fileReader.readAsText(file);
         })
           .then(
@@ -42,43 +59,49 @@ const Head = props => {
                 const xmlReader = XmlReader.create({
                   stream: false,
                   parentNodes: false,
-                  tagPrefix: 'tag:',
-                  doneEvent: 'done',
+                  tagPrefix: "tag:",
+                  doneEvent: "done",
                   emitTopLevelOnly: false
                 });
-                xmlReader.on('done', data => resolve(data));
+                xmlReader.on("done", (data: Child) => resolve(data));
                 xmlReader.parse(xmlString);
               })
           )
-          .then(hero => ({
-            xml: hero,
-            converted: convert(hero, houseRules)
-          }))
+          .then(
+            (hero: any): Hero => {
+              return {
+                xml: hero,
+                converted: convert(hero, houseRules)
+              };
+            }
+          )
       )
     )
-      .then(heros => {
+      .then((heros: Hero[]) => {
         appendToState(heros);
       })
       .then(() => {
-        fileUpload.current.value = '';
+        if (fileUpload.current) {
+          fileUpload.current.value = "";
+        }
       });
   };
 
   const download = () => {
     const xmlToDownload = reconvert(chosenHero);
     const doc = document;
-    const a = doc.createElement('a');
+    const a = doc.createElement("a");
     a.setAttribute(
-      'href',
+      "href",
       `data:text/xml;charset=utf-8,${encodeURIComponent(
         XmlPrint(xmlToDownload)
       )}`
     );
     a.setAttribute(
-      'download',
+      "download",
       `${xmlToDownload.children[0].attributes.name}.xml`
     );
-    a.style.display = 'none';
+    a.style.display = "none";
     doc.body.appendChild(a);
     a.click();
     doc.body.removeChild(a);
@@ -99,7 +122,8 @@ const Head = props => {
             <button
               className="navbar-toggler navbar-toggler-left"
               type="button"
-              onClick={toggleNavBar}>
+              onClick={toggleNavBar}
+            >
               <FontAwesomeIcon icon={faBars} />
             </button>
             <div className="custom-file">
@@ -111,18 +135,20 @@ const Head = props => {
                 type="file"
                 accept="text/xml"
                 multiple={true}
-                onChange={e => fileUploaded(e.target.files)}
+                onChange={(e: any) => fileUploaded(e.target.files)}
               />
               <label
                 className="custom-file-label cursor-pointer"
-                htmlFor="validatedCustomFile">
+                htmlFor="validatedCustomFile"
+              >
                 Held
               </label>
             </div>
             <button
               className="btn btn-primary"
               onClick={download}
-              disabled={!chosenHero}>
+              disabled={!chosenHero}
+            >
               Download
             </button>
             <button className="btn btn-primary" onClick={clearStorage}>
@@ -137,17 +163,18 @@ const Head = props => {
             </div>
           </div>
           <div className="float-right display-flex">
-            {page === 'mastermode' ? (
+            {page === "mastermode" ? (
               <div
                 className="border border-dark"
-                style={{ height: 36, width: 36, display: 'inherit' }}>
+                style={{ height: 36, width: 36, display: "inherit" }}
+              >
                 {throws.map((throwValue, index) => (
                   <div
                     key={index}
                     style={{
                       width: 1.8,
                       marginBottom: throwValue / 200,
-                      background: '#000000'
+                      background: "#000000"
                     }}
                   />
                 ))}
@@ -158,18 +185,6 @@ const Head = props => {
       </div>
     </nav>
   );
-};
-
-Head.propTypes = {
-  chosenHero: object,
-  page: string,
-  houseRules: array,
-  appendToState: func,
-  resetState: func,
-  toggleNavBar: func,
-  setHeros: func,
-  setEncounter: func,
-  setActiveEncounter: func
 };
 
 export default Head;

@@ -136,6 +136,7 @@ export interface Hero {
 }
 
 export interface HouseRule {
+  id: string;
   type: string;
   page: number;
   name: string;
