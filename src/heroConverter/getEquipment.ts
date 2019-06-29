@@ -1,4 +1,5 @@
-import { Equipment, RawEquipemnt } from "../types";
+import { RawEquipemnt } from "../rawTypes";
+import { Equipment } from "../types";
 
 export default (equipments: RawEquipemnt[]): Equipment => {
   const returnEquipment: Equipment = {};

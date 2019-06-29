@@ -1,4 +1,5 @@
-import { Child, ObjectType, RawProperty } from "../types";
+import { Child, RawProperty } from "../rawTypes";
+import { ObjectType } from "../types";
 import getProperties from "./getProperties";
 
 export default (objects: Child[]) => {

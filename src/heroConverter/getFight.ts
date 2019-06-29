@@ -1,4 +1,5 @@
-import { Child, Fight } from "../types";
+import { Child } from "../rawTypes";
+import { Fight } from "../types";
 
 export default (fight: Child[]) => {
   const returnFight: Fight = {};

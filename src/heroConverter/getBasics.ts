@@ -1,4 +1,5 @@
-import { Basic, Child } from "../types";
+import { Child } from "../rawTypes";
+import { Basic } from "../types";
 
 export default (basics: Child[]): Basic => {
   const returnBasics: Basic = {};

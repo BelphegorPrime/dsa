@@ -20,11 +20,13 @@ export default class Rulebook {
       );
       if (spell) {
         rule.additionalModification.forEach(variant => {
-          const otherVariants = spell.variants.filter(
-            v => v.name !== variant.name
-          );
-          otherVariants.push(variant);
-          spell.variants = otherVariants;
+          if (spell.variants) {
+            const otherVariants = spell.variants.filter(
+              v => v.name !== variant.name
+            );
+            otherVariants.push(variant);
+            spell.variants = otherVariants;
+          }
         });
       }
     });
@@ -41,11 +43,11 @@ export default class Rulebook {
     return arsenalInstance;
   }
 
-  public getAdvantages() {
+  public getAdvantages(): string[] {
     return advantages;
   }
 
-  public getDisadvantages() {
+  public getDisadvantages(): string[] {
     return disadvantages;
   }
 

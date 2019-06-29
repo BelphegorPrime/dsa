@@ -1,7 +1,9 @@
+import { Child, RawEquipemnt, RawProperty } from "../rawTypes";
 import RuleBook from "../Rulebook";
 import {
   Basic,
-  Child,
+  Comment,
+  Connection,
   Equipment,
   Event,
   Fight,
@@ -9,8 +11,10 @@ import {
   ObjectType,
   Property,
   Purse,
-  RawEquipemnt,
-  RawProperty
+  SpecialAbilities,
+  SpellList,
+  TalentList,
+  Vantage
 } from "../types";
 import addFight from "./addFight";
 import getAdvantages from "./getAdvantages";
@@ -41,29 +45,18 @@ interface ConvertedHero {
   objects?: ObjectType;
   purse?: Purse;
   fight?: Fight;
-  comments?: any;
-  specialAbilities?: any;
-  talentList?: any;
-  advantages?: any;
-  disadvantages?: any;
-  spellList?: any;
-  connections?: any;
+  comments?: Comment[];
+  specialAbilities?: SpecialAbilities;
+  talentList?: TalentList;
+  advantages?: Vantage[];
+  disadvantages?: Vantage[];
+  spellList?: SpellList;
+  connections?: Connection[];
   [key: string]: any;
 }
 
 interface RawHero {
   children: Child[];
-}
-
-interface Vantage {
-  isAdvantage: boolean;
-}
-
-interface Comment {
-  id: string;
-  name: string;
-  comment: string;
-  added: boolean;
 }
 
 const getIndex = (children: Child[]) => {
@@ -75,7 +68,10 @@ const getIndex = (children: Child[]) => {
   return -1;
 };
 
-export const convert = (hero: RawHero, houseRules: HouseRule[] = []) => {
+export const convert = (
+  hero: RawHero,
+  houseRules: HouseRule[] = []
+): ConvertedHero => {
   const returnHero: ConvertedHero = {};
   const ruleBook = new RuleBook(houseRules);
   const index = getIndex(hero.children);
@@ -108,7 +104,6 @@ export const convert = (hero: RawHero, houseRules: HouseRule[] = []) => {
           returnHero.fight = getFight(child.children);
           break;
         case "kommentare":
-          // TODO more typing from here downwards
           returnHero.comments = getComments(child.children);
           break;
         case "sf":
@@ -149,7 +144,9 @@ export const convert = (hero: RawHero, houseRules: HouseRule[] = []) => {
       }
     }
   });
-  returnHero.talentList = addFight(returnHero.talentList, returnHero.fight);
+  if (returnHero.talentList && returnHero.fight) {
+    returnHero.talentList = addFight(returnHero.talentList, returnHero.fight);
+  }
   return returnHero;
 };
 
@@ -250,26 +247,31 @@ export const reconvert = (chosenHero: Hero) => {
         case "kampf":
           // returnHero.fight = getFight(child.children);
           break;
-        case "kommentare":
-          chosenHero.converted.comments
-            .filter((c: Comment) => c.added)
-            .forEach((commentToAdd: Comment) => {
-              returnChild.children.push({
-                attributes: {
-                  key: commentToAdd.name,
-                  kommentar: commentToAdd.comment,
-                  added: true,
-                  id: commentToAdd.id
-                },
-                children: [],
-                name: "kommentar",
-                parent: null,
-                type: "element",
-                value: ""
+        case "kommentare": {
+          const { comments } = chosenHero.converted;
+          if (comments) {
+            comments
+              .filter((c: Comment) => c.added)
+              .forEach((commentToAdd: Comment) => {
+                returnChild.children.push({
+                  attributes: {
+                    key: commentToAdd.name,
+                    kommentar: commentToAdd.comment,
+                    added: true,
+                    id: commentToAdd.id
+                  },
+                  children: [],
+                  name: "kommentar",
+                  parent: null,
+                  type: "element",
+                  value: ""
+                });
               });
-            });
-          // returnHero.comments = getComments(child.children);
+            // returnHero.comments = getComments(child.children);
+          }
           break;
+        }
+
         case "sf":
           // returnHero.specialAbilities = getSpecialAbilities(child.children);
           break;

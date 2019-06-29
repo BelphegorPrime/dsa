@@ -1,6 +1,7 @@
 // @ts-ignore
 // tslint:disable-next-line:no-implicit-dependencies
 import * as Node from "node";
+import { ChildAttributes } from "./rawTypes";
 
 export interface Basic {
   gender?: string;
@@ -26,40 +27,24 @@ export interface Basic {
   freeExp?: number;
 }
 
-export interface Child {
-  name: string;
-  attributes: ChildAttributes;
-  parent: null;
-  type: string;
-  value?: string;
-  children: Child[];
+export interface Comment {
+  name?: string;
+  comment?: string;
+  id?: string;
+  duration?: string;
+  cost?: string;
+  trial?: string[];
+  trialProperties?: string[];
+  specialAbility?: string;
+  specialAbilityName?: string;
+  effect?: string;
+  added?: boolean;
 }
 
-interface ChildAttributes {
-  id?: string;
-  key?: string;
-  name?: string;
-  value?: string;
-  notiz0?: string;
-  kommentar?: string;
-  added?: boolean;
-  anzahl?: number;
-  slot?: string;
-  string?: string;
-  gewicht?: string;
-  alter?: string;
-  augenfarbe?: string;
-  haarfarbe?: string;
-  kalender?: string;
-  gpstart?: string;
-  gbtag?: string;
-  gbmonat?: string;
-  gbjahr?: string;
-  art?: string;
-  tarnidentitaet?: string;
-  kampftalent?: string;
-  waehrung?: string;
-  [key: string]: string | number | boolean | undefined;
+export interface Connection {
+  name: string;
+  description: string;
+  socialStatus: string;
 }
 
 export interface Electron {
@@ -135,6 +120,8 @@ export interface HouseRule {
 
 export interface Liturgie {
   name: string;
+  page: number;
+  alternativeNames: Array<{ name: string }>;
 }
 
 export interface ObjectType {
@@ -196,37 +183,56 @@ export interface Purse {
   };
 }
 
+export interface SpecialAbilities {
+  specialAbilities: Array<{
+    name: string;
+    values?: string[];
+    liturgy?: Liturgie;
+  }>;
+  cheapenedSpecialAbilities: Array<{
+    name: string;
+  }>;
+}
+
 export interface Spell {
-  page: number;
   name: string;
-  variants: Array<{ name: string }>;
+  trial: string | string[];
+  learningMethode: string;
+  remarks: string;
+  homeSpell: boolean;
+  complexity: string;
+  cost: string;
+  distance: string;
+  representation: string;
+  duration: string;
+  castTime: string;
+  spellComment: string;
+  trialProperties: Array<string | null>;
+  value: number;
+  variant: string;
+  page?: number;
+  fromLCD?: boolean;
+  variants?: Array<{ name: string }>;
 }
 
-export interface RawEquipemnt extends Child {
-  attributes: {
-    name: string;
-    bezeichner: string;
-    bfakt: number;
-    bfmin: number;
-    hand: string;
-    schild: string;
-    set: string;
-    slot: string;
-    talent: string;
-    waffenname: string;
-    nummer: number;
+export interface SpellList {
+  [name: string]: Spell;
+}
+
+export interface TalentList {
+  [name: string]: {
+    learningMethode: string;
+    trial: string[];
+    trialProperties: Array<string | null>;
+    value: number;
+    k?: string;
   };
 }
 
-export interface RawProperty extends Child {
-  attributes: {
-    name: string;
-    mod: string;
-    startwert: string;
-    value: string;
-    grossemeditation: string;
-    mrmod: string;
-  };
+export interface Vantage {
+  name: string;
+  value?: string | number;
+  isAdvantage: boolean | null;
 }
 
 export interface Weapon {

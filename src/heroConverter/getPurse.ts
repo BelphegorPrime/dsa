@@ -1,4 +1,5 @@
-import { Child, Purse } from "../types";
+import { Child } from "../rawTypes";
+import { Purse } from "../types";
 
 const getPosition = (name: string): number => {
   switch (name) {

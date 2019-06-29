@@ -1,5 +1,6 @@
 import { calc2, calc5 } from "../helperFunctions";
-import { Property, RawProperty } from "../types";
+import { RawProperty } from "../rawTypes";
+import { Property } from "../types";
 
 export default (properties: RawProperty[]): Property => {
   const returnProperties: Property = {};
