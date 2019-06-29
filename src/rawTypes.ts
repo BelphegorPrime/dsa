@@ -76,6 +76,10 @@ export interface RawEquipemnt extends Child {
   };
 }
 
+export interface RawHero {
+  children: Child[];
+}
+
 export interface RawProperty extends Child {
   attributes: {
     name: string;

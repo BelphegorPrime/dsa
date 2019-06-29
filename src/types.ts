@@ -1,7 +1,7 @@
 // @ts-ignore
 // tslint:disable-next-line:no-implicit-dependencies
 import * as Node from "node";
-import { ChildAttributes } from "./rawTypes";
+import { ChildAttributes, RawHero } from "./rawTypes";
 
 export interface Basic {
   gender?: string;
@@ -45,6 +45,25 @@ export interface Connection {
   name: string;
   description: string;
   socialStatus: string;
+}
+
+export interface ConvertedHero {
+  name?: string;
+  weapons?: Equipment;
+  basics?: Basic;
+  properties?: Property;
+  events?: Event[];
+  objects?: ObjectType;
+  purse?: Purse;
+  fight?: Fight;
+  comments?: Comment[];
+  specialAbilities?: SpecialAbilities;
+  talentList?: TalentList;
+  advantages?: Vantage[];
+  disadvantages?: Vantage[];
+  spellList?: SpellList;
+  connections?: Connection[];
+  [key: string]: any;
 }
 
 export interface Electron {
@@ -109,6 +128,11 @@ export interface Fight {
     attack: number;
     parade: number;
   };
+}
+
+export interface Hero {
+  converted: ConvertedHero;
+  xml: RawHero;
 }
 
 export interface HouseRule {

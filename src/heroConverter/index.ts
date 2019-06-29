@@ -1,21 +1,6 @@
 import { Child, RawEquipemnt, RawProperty } from "../rawTypes";
 import RuleBook from "../Rulebook";
-import {
-  Basic,
-  Comment,
-  Connection,
-  Equipment,
-  Event,
-  Fight,
-  HouseRule,
-  ObjectType,
-  Property,
-  Purse,
-  SpecialAbilities,
-  SpellList,
-  TalentList,
-  Vantage
-} from "../types";
+import { Comment, ConvertedHero, Hero, HouseRule, Vantage } from "../types";
 import addFight from "./addFight";
 import getAdvantages from "./getAdvantages";
 import getBasics from "./getBasics";
@@ -31,34 +16,6 @@ import getSpecialAbilities from "./getSpecialAbilities";
 import getSpellList from "./getSpellList";
 import getTalentList from "./getTalentList";
 
-interface Hero {
-  converted: ConvertedHero;
-  xml: RawHero;
-}
-
-interface ConvertedHero {
-  name?: string;
-  weapons?: Equipment;
-  basics?: Basic;
-  properties?: Property;
-  events?: Event[];
-  objects?: ObjectType;
-  purse?: Purse;
-  fight?: Fight;
-  comments?: Comment[];
-  specialAbilities?: SpecialAbilities;
-  talentList?: TalentList;
-  advantages?: Vantage[];
-  disadvantages?: Vantage[];
-  spellList?: SpellList;
-  connections?: Connection[];
-  [key: string]: any;
-}
-
-interface RawHero {
-  children: Child[];
-}
-
 const getIndex = (children: Child[]) => {
   const nameArray = children.map(child => child.attributes.name);
   const elem = nameArray.find(e => e);
@@ -69,7 +26,7 @@ const getIndex = (children: Child[]) => {
 };
 
 export const convert = (
-  hero: RawHero,
+  hero: Child,
   houseRules: HouseRule[] = []
 ): ConvertedHero => {
   const returnHero: ConvertedHero = {};
