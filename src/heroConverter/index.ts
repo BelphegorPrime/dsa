@@ -3,7 +3,10 @@ import {
   Basic,
   Child,
   Equipment,
+  Event,
   HouseRule,
+  ObjectType,
+  Property,
   RawEquipemnt,
   RawProperty
 } from "../types";
@@ -31,9 +34,9 @@ interface ConvertedHero {
   name?: string;
   weapons?: Equipment;
   basics?: Basic;
-  properties?: any;
-  events?: any;
-  objects?: any;
+  properties?: Property;
+  events?: Event[];
+  objects?: ObjectType;
   purse?: any;
   fight?: any;
   comments?: any;
@@ -178,39 +181,48 @@ export const reconvert = (chosenHero: Hero) => {
             let existingObjects = returnChild.children.map(
               o => o.attributes.name
             );
-            Object.keys(chosenHero.converted.objects).forEach(name => {
-              const object = chosenHero.converted.objects[name];
-              if (existingObjects.indexOf(name) > -1) {
-                returnChild.children = returnChild.children
-                  .map(o => {
-                    const returnObject = o;
-                    if (returnObject.attributes.name === name) {
-                      if (parseInt(object.amount, 10) === 0) {
-                        return undefined;
-                      }
-                      returnObject.attributes.anzahl = object.amount;
+            if (chosenHero.converted.objects) {
+              Object.keys(chosenHero.converted.objects).forEach(
+                (name: string) => {
+                  if (chosenHero.converted.objects) {
+                    const object = chosenHero.converted.objects[name];
+                    if (existingObjects.indexOf(name) > -1) {
+                      returnChild.children = returnChild.children
+                        .map(o => {
+                          const returnObject = o;
+                          if (returnObject.attributes.name === name) {
+                            if (object.amount === 0) {
+                              return undefined;
+                            }
+                            returnObject.attributes.anzahl = object.amount;
+                          }
+                          existingObjects = existingObjects.filter(
+                            eo => eo !== name
+                          );
+                          return returnObject;
+                        })
+                        .filter(
+                          (e: Child | undefined): e is Child => e !== undefined
+                        );
+                    } else {
+                      returnChild.children.push({
+                        attributes: {
+                          anzahl: object.amount,
+                          name,
+                          slot: "0"
+                        },
+                        children: [],
+                        name: "gegenstand",
+                        parent: null,
+                        type: "element",
+                        value: ""
+                      });
                     }
-                    existingObjects = existingObjects.filter(eo => eo !== name);
-                    return returnObject;
-                  })
-                  .filter(
-                    (e: Child | undefined): e is Child => e !== undefined
-                  );
-              } else {
-                returnChild.children.push({
-                  attributes: {
-                    anzahl: object.amount,
-                    name,
-                    slot: "0"
-                  },
-                  children: [],
-                  name: "gegenstand",
-                  parent: null,
-                  type: "element",
-                  value: ""
-                });
-              }
-            });
+                  }
+                }
+              );
+            }
+
             returnChild.children = returnChild.children.filter(
               o => o && existingObjects.indexOf(o.attributes.name) === -1
             );

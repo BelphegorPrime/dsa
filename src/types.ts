@@ -28,34 +28,37 @@ export interface Basic {
 
 export interface Child {
   name: string;
-  attributes: {
-    id?: string;
-    key?: string;
-    name?: string;
-    value?: string;
-    notiz0?: string;
-    kommentar?: string;
-    added?: boolean;
-    anzahl?: number;
-    slot?: string;
-    string?: string;
-    gewicht?: string;
-    alter?: string;
-    augenfarbe?: string;
-    haarfarbe?: string;
-    kalender?: string;
-    gpstart?: string;
-    gbtag?: string;
-    gbmonat?: string;
-    gbjahr?: string;
-    art?: string;
-    tarnidentitaet?: string;
-    [key: string]: string | number | boolean | undefined;
-  };
+  attributes: ChildAttributes;
   parent: null;
   type: string;
   value?: string;
   children: Child[];
+}
+
+interface ChildAttributes {
+  id?: string;
+  key?: string;
+  name?: string;
+  value?: string;
+  notiz0?: string;
+  kommentar?: string;
+  added?: boolean;
+  anzahl?: number;
+  slot?: string;
+  string?: string;
+  gewicht?: string;
+  alter?: string;
+  augenfarbe?: string;
+  haarfarbe?: string;
+  kalender?: string;
+  gpstart?: string;
+  gbtag?: string;
+  gbmonat?: string;
+  gbjahr?: string;
+  art?: string;
+  tarnidentitaet?: string;
+  kampftalent?: string;
+  [key: string]: string | number | boolean | undefined;
 }
 
 export interface Electron {
@@ -104,6 +107,17 @@ export interface Equipment {
   };
 }
 
+export interface Event extends ChildAttributes {
+  Alt: string;
+  Neu: string;
+  kommentar: string;
+  obj: string;
+  text: string;
+  time: string;
+  version: string;
+  name?: string;
+}
+
 export interface HouseRule {
   type: string;
   page: number;
@@ -113,6 +127,19 @@ export interface HouseRule {
 
 export interface Liturgie {
   name: string;
+}
+
+export interface ObjectType {
+  [name: string]: {
+    slot: number;
+    amount: number;
+    distantWeapon?: boolean;
+    talent?: string;
+    weight?: number;
+    price?: number;
+    name?: string;
+    properties?: Property;
+  };
 }
 
 export interface Property {
