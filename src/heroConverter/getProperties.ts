@@ -1,8 +1,9 @@
-import { calc2, calc5 } from '../helperFunctions';
+import { calc2, calc5 } from "../helperFunctions";
+import { Property, RawProperty } from "../types";
 
-export default properties => {
-  const returnProperties = {};
-  properties.forEach(pp => {
+export default (properties: RawProperty[]): Property => {
+  const returnProperties: Property = {};
+  properties.forEach((pp: RawProperty) => {
     const {
       mod,
       startwert: startValue,
@@ -10,83 +11,83 @@ export default properties => {
       grossemeditation,
       mrmod
     } = pp.attributes;
-    let name = '';
+    let name = "";
     switch (pp.attributes.name) {
-      case 'Mut':
-        name = 'courage';
+      case "Mut":
+        name = "courage";
         break;
-      case 'Klugheit':
-        name = 'wisdom';
+      case "Klugheit":
+        name = "wisdom";
         break;
-      case 'Intuition':
-        name = 'intuition';
+      case "Intuition":
+        name = "intuition";
         break;
-      case 'Charisma':
-        name = 'charisma';
+      case "Charisma":
+        name = "charisma";
         break;
-      case 'Fingerfertigkeit':
-        name = 'fingerAbility';
+      case "Fingerfertigkeit":
+        name = "fingerAbility";
         break;
-      case 'Gewandtheit':
-        name = 'dexterity';
+      case "Gewandtheit":
+        name = "dexterity";
         break;
-      case 'Konstitution':
-        name = 'constitution';
+      case "Konstitution":
+        name = "constitution";
         break;
-      case 'Körperkraft':
-        name = 'strength';
+      case "Körperkraft":
+        name = "strength";
         break;
-      case 'Sozialstatus':
-        name = 'socialStatus';
+      case "Sozialstatus":
+        name = "socialStatus";
         break;
-      case 'Lebensenergie':
-        name = 'lifeforce';
+      case "Lebensenergie":
+        name = "lifeforce";
         break;
-      case 'Ausdauer':
-        name = 'endurance';
+      case "Ausdauer":
+        name = "endurance";
         break;
-      case 'Astralenergie':
-        name = 'astralEnergy';
+      case "Astralenergie":
+        name = "astralEnergy";
         break;
-      case 'Karmaenergie':
-        name = 'karmaEnergy';
+      case "Karmaenergie":
+        name = "karmaEnergy";
         break;
-      case 'Magieresistenz':
-        name = 'magicResistance';
+      case "Magieresistenz":
+        name = "magicResistance";
         break;
-      case 'ini':
-        name = 'initiativBaseValue';
+      case "ini":
+        name = "initiativBaseValue";
         break;
-      case 'at':
-        name = 'attackBaseValue';
+      case "at":
+        name = "attackBaseValue";
         break;
-      case 'pa':
-        name = 'paradeBaseValue';
+      case "pa":
+        name = "paradeBaseValue";
         break;
-      case 'fk':
-        name = 'remoteCombatBaseValue';
+      case "fk":
+        name = "remoteCombatBaseValue";
         break;
-      case 'Gefahrenwert':
-        name = 'risk';
+      case "Gefahrenwert":
+        name = "risk";
         break;
-      case 'Loyalität':
-        name = 'loyalty';
+      case "Loyalität":
+        name = "loyalty";
         break;
-      case 'Geschwindigkeit':
-        name = 'speed';
+      case "Geschwindigkeit":
+        name = "speed";
         break;
-      case 'Magieresistenz 2':
-        name = 'magicResistance2';
+      case "Magieresistenz 2":
+        name = "magicResistance2";
         break;
-      case 'Rüstungsschutz':
-        name = 'armor';
+      case "Rüstungsschutz":
+        name = "armor";
         break;
       default: {
         const n = pp.attributes.name;
         name = `${n}`;
       }
     }
-    if (name === 'astralEnergy') {
+    if (name === "astralEnergy") {
       returnProperties[name] = {
         mod: parseInt(mod, 10),
         value: parseInt(value, 10),
@@ -110,17 +111,30 @@ export default properties => {
     }
   });
 
-  returnProperties.lifeforce.calcValue = calc2(
-    returnProperties.constitution.value,
-    returnProperties.constitution.value,
-    returnProperties.strength.value
-  );
-  returnProperties.lifeforce.value =
-    returnProperties.lifeforce.calcValue +
-    returnProperties.lifeforce.mod +
-    returnProperties.lifeforce.basicValue;
+  if (
+    returnProperties.constitution &&
+    returnProperties.strength &&
+    returnProperties.lifeforce
+  ) {
+    returnProperties.lifeforce.calcValue = calc2(
+      returnProperties.constitution.value,
+      returnProperties.constitution.value,
+      returnProperties.strength.value
+    );
+  }
 
-  if (returnProperties.endurance) {
+  if (returnProperties.lifeforce && returnProperties.lifeforce.calcValue) {
+    returnProperties.lifeforce.value =
+      returnProperties.lifeforce.calcValue +
+      returnProperties.lifeforce.mod +
+      returnProperties.lifeforce.basicValue;
+  }
+  if (
+    returnProperties.endurance &&
+    returnProperties.courage &&
+    returnProperties.constitution &&
+    returnProperties.dexterity
+  ) {
     returnProperties.endurance.calcValue = calc2(
       returnProperties.courage.value,
       returnProperties.constitution.value,
@@ -132,7 +146,13 @@ export default properties => {
       returnProperties.endurance.basicValue;
   }
 
-  if (returnProperties.astralEnergy) {
+  if (
+    returnProperties.astralEnergy &&
+    returnProperties.courage &&
+    returnProperties.intuition &&
+    returnProperties.charisma &&
+    returnProperties.astralEnergy.greatMeditation
+  ) {
     returnProperties.astralEnergy.calcValue = calc2(
       returnProperties.courage.value,
       returnProperties.intuition.value,
@@ -145,7 +165,12 @@ export default properties => {
       returnProperties.astralEnergy.greatMeditation;
   }
 
-  if (returnProperties.initiativBaseValue) {
+  if (
+    returnProperties.initiativBaseValue &&
+    returnProperties.courage &&
+    returnProperties.intuition &&
+    returnProperties.dexterity
+  ) {
     returnProperties.initiativBaseValue.calcValue = calc5(
       returnProperties.courage.value,
       returnProperties.courage.value,
@@ -157,7 +182,12 @@ export default properties => {
       returnProperties.initiativBaseValue.mod;
   }
 
-  if (returnProperties.attackBaseValue) {
+  if (
+    returnProperties.attackBaseValue &&
+    returnProperties.courage &&
+    returnProperties.dexterity &&
+    returnProperties.strength
+  ) {
     returnProperties.attackBaseValue.calcValue = calc5(
       returnProperties.courage.value,
       returnProperties.dexterity.value,
@@ -168,7 +198,12 @@ export default properties => {
       returnProperties.attackBaseValue.mod;
   }
 
-  if (returnProperties.paradeBaseValue) {
+  if (
+    returnProperties.paradeBaseValue &&
+    returnProperties.intuition &&
+    returnProperties.dexterity &&
+    returnProperties.strength
+  ) {
     returnProperties.paradeBaseValue.calcValue = calc5(
       returnProperties.intuition.value,
       returnProperties.dexterity.value,
@@ -179,7 +214,12 @@ export default properties => {
       returnProperties.paradeBaseValue.mod;
   }
 
-  if (returnProperties.remoteCombatBaseValue) {
+  if (
+    returnProperties.remoteCombatBaseValue &&
+    returnProperties.intuition &&
+    returnProperties.fingerAbility &&
+    returnProperties.strength
+  ) {
     returnProperties.remoteCombatBaseValue.calcValue = calc5(
       returnProperties.intuition.value,
       returnProperties.fingerAbility.value,

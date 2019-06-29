@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier",
+    "tslint-react-hooks"
+  ],
+  "plugins": ["prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "rules": {
+    "prettier": true,
+    "new-parens": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-conditional-assignment": true,
+    "no-consecutive-blank-lines": false,
+    "object-literal-sort-keys": false,
+    "no-console": {
+      "severity": "warning",
+      "options": [
+        "debug",
+        "info",
+        "time",
+        "timeEnd",
+        "trace"
+      ]
+    },
+    "interface-name": false,
+    "react-hooks-nesting": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warning",
+    "no-submodule-imports": [true, "bootstrap-css-only/css/bootstrap.min.css", "react-use/lib/useLocalStorage"]
+  },
+  "jsRules": {}
+}

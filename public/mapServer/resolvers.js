@@ -46,8 +46,7 @@ const resolvers = {
     multipleUpload(obj, { files: data }) {
       return Promise.all(data.map(processUpload)).then(() => files);
     }
-  },
-  Subscription: {}
+  }
 };
 
 module.exports = resolvers;
