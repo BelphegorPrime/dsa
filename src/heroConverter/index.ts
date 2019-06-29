@@ -4,9 +4,11 @@ import {
   Child,
   Equipment,
   Event,
+  Fight,
   HouseRule,
   ObjectType,
   Property,
+  Purse,
   RawEquipemnt,
   RawProperty
 } from "../types";
@@ -37,8 +39,8 @@ interface ConvertedHero {
   properties?: Property;
   events?: Event[];
   objects?: ObjectType;
-  purse?: any;
-  fight?: any;
+  purse?: Purse;
+  fight?: Fight;
   comments?: any;
   specialAbilities?: any;
   talentList?: any;
@@ -106,6 +108,7 @@ export const convert = (hero: RawHero, houseRules: HouseRule[] = []) => {
           returnHero.fight = getFight(child.children);
           break;
         case "kommentare":
+          // TODO more typing from here downwards
           returnHero.comments = getComments(child.children);
           break;
         case "sf":
@@ -181,46 +184,43 @@ export const reconvert = (chosenHero: Hero) => {
             let existingObjects = returnChild.children.map(
               o => o.attributes.name
             );
-            if (chosenHero.converted.objects) {
-              Object.keys(chosenHero.converted.objects).forEach(
-                (name: string) => {
-                  if (chosenHero.converted.objects) {
-                    const object = chosenHero.converted.objects[name];
-                    if (existingObjects.indexOf(name) > -1) {
-                      returnChild.children = returnChild.children
-                        .map(o => {
-                          const returnObject = o;
-                          if (returnObject.attributes.name === name) {
-                            if (object.amount === 0) {
-                              return undefined;
-                            }
-                            returnObject.attributes.anzahl = object.amount;
-                          }
-                          existingObjects = existingObjects.filter(
-                            eo => eo !== name
-                          );
-                          return returnObject;
-                        })
-                        .filter(
-                          (e: Child | undefined): e is Child => e !== undefined
-                        );
-                    } else {
-                      returnChild.children.push({
-                        attributes: {
-                          anzahl: object.amount,
-                          name,
-                          slot: "0"
-                        },
-                        children: [],
-                        name: "gegenstand",
-                        parent: null,
-                        type: "element",
-                        value: ""
-                      });
-                    }
-                  }
+            const { objects } = chosenHero.converted;
+            if (objects) {
+              Object.keys(objects).forEach((name: string) => {
+                const object = objects[name];
+                if (existingObjects.indexOf(name) > -1) {
+                  returnChild.children = returnChild.children
+                    .map(o => {
+                      const returnObject = o;
+                      if (returnObject.attributes.name === name) {
+                        if (object.amount === 0) {
+                          return undefined;
+                        }
+                        returnObject.attributes.anzahl = object.amount;
+                      }
+                      existingObjects = existingObjects.filter(
+                        eo => eo !== name
+                      );
+                      return returnObject;
+                    })
+                    .filter(
+                      (e: Child | undefined): e is Child => e !== undefined
+                    );
+                } else {
+                  returnChild.children.push({
+                    attributes: {
+                      anzahl: object.amount,
+                      name,
+                      slot: "0"
+                    },
+                    children: [],
+                    name: "gegenstand",
+                    parent: null,
+                    type: "element",
+                    value: ""
+                  });
                 }
-              );
+              });
             }
 
             returnChild.children = returnChild.children.filter(
@@ -229,19 +229,24 @@ export const reconvert = (chosenHero: Hero) => {
           }
           // returnHero.objects = getObjects(child.children);
           break;
-        case "geldboerse":
-          Object.keys(chosenHero.converted.purse).forEach(monetaryUnit => {
-            const money = chosenHero.converted.purse[monetaryUnit];
-            returnChild.children = returnChild.children.map(m => {
-              const returnMoney = m;
-              if (returnMoney.attributes.name === monetaryUnit) {
-                returnMoney.attributes.anzahl = money.amount;
-              }
-              return returnMoney;
+        case "geldboerse": {
+          const { purse } = chosenHero.converted;
+          if (purse) {
+            Object.keys(purse).forEach(monetaryUnit => {
+              const money = purse[monetaryUnit];
+              returnChild.children = returnChild.children.map(m => {
+                const returnMoney = m;
+                if (returnMoney.attributes.name === monetaryUnit) {
+                  returnMoney.attributes.anzahl = money.amount;
+                }
+                return returnMoney;
+              });
             });
-          });
+          }
           // returnHero.purse = getPurse(child.children);
           break;
+        }
+
         case "kampf":
           // returnHero.fight = getFight(child.children);
           break;

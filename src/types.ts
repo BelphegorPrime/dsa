@@ -58,6 +58,7 @@ interface ChildAttributes {
   art?: string;
   tarnidentitaet?: string;
   kampftalent?: string;
+  waehrung?: string;
   [key: string]: string | number | boolean | undefined;
 }
 
@@ -116,6 +117,13 @@ export interface Event extends ChildAttributes {
   time: string;
   version: string;
   name?: string;
+}
+
+export interface Fight {
+  [name: string]: {
+    attack: number;
+    parade: number;
+  };
 }
 
 export interface HouseRule {
@@ -177,6 +185,15 @@ interface PropertyValue {
   magicResistenceMod?: number;
   startValue?: number;
   calcValue?: number;
+}
+
+export interface Purse {
+  [name: string]: {
+    amount: number;
+    country: string;
+    name: string;
+    position: number;
+  };
 }
 
 export interface Spell {
