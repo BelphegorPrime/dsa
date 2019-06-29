@@ -1,7 +1,6 @@
-/* eslint-disable no-undef */
-import React from 'react';
+import React from "react";
 
-import UploadFiles from './UploadFiles';
+import UploadFiles from "./UploadFiles";
 
 const Sidebar = () => (
   <div>

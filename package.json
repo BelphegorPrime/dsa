@@ -13,7 +13,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "npm test -- --coverage",
-    "dev": "cross-env-shell PORT=3000 BROWSER=none \"react-scripts start & wait-on http://localhost:\\$PORT && electron .\"",
+    "dev": "cross-env-shell PORT=3010 BROWSER=none \"react-scripts start & wait-on http://localhost:\\$PORT && electron .\"",
     "prepack": "npm run build",
     "pack": "electron-builder -lmw",
     "eslint": "eslint",

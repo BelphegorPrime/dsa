@@ -1,6 +1,6 @@
-import React from 'react';
-import gql from 'graphql-tag';
-import { Mutation } from 'react-apollo';
+import gql from "graphql-tag";
+import React from "react";
+import { Mutation, MutationFunc } from "react-apollo";
 
 const UploadFiles = () => (
   <Mutation
@@ -14,15 +14,18 @@ const UploadFiles = () => (
           encoding
         }
       }
-    `}>
-    {mutate => (
+    `}
+  >
+    {(mutate: MutationFunc) => (
       <input
         type="file"
         multiple
         required
         onChange={e => {
           console.log(e.target.files);
-          mutate({ variables: { files: e.target.files } });
+          mutate({ variables: { files: e.target.files } }).catch((err: Error) =>
+            console.error(err)
+          );
         }}
       />
     )}
