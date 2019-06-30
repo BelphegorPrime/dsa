@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import { object } from 'prop-types';
+import React, { Fragment } from "react";
+import { RouteComponentProps } from "react-router-dom";
 
-const NoMatch = ({ location }) => (
+const NoMatch = ({ location }: RouteComponentProps) => (
   <Fragment>
     <div className="left-pane col-2" />
     <div className="right-pane col-10 row-without-margin">
@@ -10,16 +10,13 @@ const NoMatch = ({ location }) => (
         style={{
           marginLeft: 0,
           marginRight: 0,
-          maxHeight: 'calc(100% - 41px)'
-        }}>
+          maxHeight: "calc(100% - 41px)"
+        }}
+      >
         Seite {location.pathname} nicht gefunden.
       </div>
     </div>
   </Fragment>
 );
-
-NoMatch.propTypes = {
-  location: object
-};
 
 export default NoMatch;

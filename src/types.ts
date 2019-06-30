@@ -149,6 +149,17 @@ export interface Liturgie {
   alternativeNames: Array<{ name: string }>;
 }
 
+export interface MainProperties {
+  MU: string;
+  KL: string;
+  IN: string;
+  CH: string;
+  FF: string;
+  GE: string;
+  KO: string;
+  KK: string;
+}
+
 export interface ObjectType {
   [name: string]: {
     slot: number;

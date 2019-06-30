@@ -1,10 +1,9 @@
-import React, { Fragment, useState } from 'react';
-import { object, func } from 'prop-types';
+import React, { Fragment, useState } from "react";
+import { MasterProps } from "../../propTypes";
+import MasterBody from "./MasterBody";
+import MasterSideBar from "./MasterSideBar";
 
-import MasterBody from './MasterBody';
-import MasterSideBar from './MasterSideBar';
-
-const Hero = props => {
+const Master = (props: MasterProps) => {
   const { heros, chooseHero } = props;
   const [selectedHeros, setSelectedHeros] = useState(Object.keys(heros));
   return (
@@ -22,8 +21,9 @@ const Hero = props => {
         <div
           className="row col-12 ml-0 mr-0 pt-2"
           style={{
-            maxHeight: '100%'
-          }}>
+            maxHeight: "100%"
+          }}
+        >
           <MasterBody heros={heros} selectedHeros={selectedHeros} />
         </div>
       </div>
@@ -31,9 +31,4 @@ const Hero = props => {
   );
 };
 
-Hero.propTypes = {
-  heros: object,
-  chooseHero: func
-};
-
-export default Hero;
+export default Master;

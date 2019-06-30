@@ -1,14 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { Fragment } from 'react';
-import { object, array } from 'prop-types';
+import React, { Fragment } from "react";
+import { MasterBodyProps } from "../../propTypes";
+import { Hero } from "../../types";
 
-const MasterBody = props => {
-  const { heros, selectedHeros } = props;
-
-  const getHeroData = h => {
+const MasterBody = ({ heros, selectedHeros }: MasterBodyProps) => {
+  const getHeroData = (h: Hero) => {
     const { converted } = h;
     const { fight, name } = converted;
-    if (selectedHeros.indexOf(name) === -1) {
+    if (name && selectedHeros.indexOf(name) === -1) {
       return null;
     }
     return (
@@ -24,7 +23,7 @@ const MasterBody = props => {
                     ? `${advantage.name} ${advantage.value}`
                     : `${advantage.name}`
                 )
-                .join(', ')}
+                .join(", ")}
             </div>
           ) : null}
           {converted.disadvantages ? (
@@ -37,29 +36,31 @@ const MasterBody = props => {
                       ? `${disadvantage.name} ${disadvantage.value}`
                       : `${disadvantage.name}`
                   )
-                  .join(', ')}
+                  .join(", ")}
               </span>
             </div>
           ) : null}
           <div className="pl-4">
             <span className="font-weight-bold">Kampfwerte: </span>
-            {Object.keys(fight)
-              .sort((a, b) => {
-                const f1 = fight[a];
-                const f2 = fight[b];
-                if (f1.attack < f2.attack) {
-                  return 1;
-                }
-                if (f1.attack > f2.attack) {
-                  return -1;
-                }
-                return 0;
-              })
-              .map(talent => {
-                const f = fight[talent];
-                return `${talent} (AT:${f.attack}, PA:${f.parade})`;
-              })
-              .join(', ')}
+            {fight
+              ? Object.keys(fight)
+                  .sort((a, b) => {
+                    const f1 = fight[a];
+                    const f2 = fight[b];
+                    if (f1.attack < f2.attack) {
+                      return 1;
+                    }
+                    if (f1.attack > f2.attack) {
+                      return -1;
+                    }
+                    return 0;
+                  })
+                  .map(talent => {
+                    const f = fight[talent];
+                    return `${talent} (AT:${f.attack}, PA:${f.parade})`;
+                  })
+                  .join(", ")
+              : null}
           </div>
         </div>
         <hr />
@@ -68,11 +69,6 @@ const MasterBody = props => {
   };
 
   return <div>{Object.values(heros).map(h => getHeroData(h))}</div>;
-};
-
-MasterBody.propTypes = {
-  heros: object,
-  selectedHeros: array
 };
 
 export default MasterBody;

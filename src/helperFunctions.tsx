@@ -1,5 +1,6 @@
 import uuid4 from "uuid4";
 import trialToProperty from "./heroConverter/trialToProperty";
+import { MainProperties } from "./types";
 
 export const rollDice = (x: number) => Math.floor(Math.random() * x) + 1;
 
@@ -121,17 +122,6 @@ export const countBy = (data: any) => {
   });
   return t;
 };
-
-interface MainProperties {
-  MU: string;
-  KL: string;
-  IN: string;
-  CH: string;
-  FF: string;
-  GE: string;
-  KO: string;
-  KK: string;
-}
 
 export const getMainProperties = (): MainProperties => ({
   MU: "courage",

@@ -1,37 +1,40 @@
-import React from 'react';
-import { string, func } from 'prop-types';
-import { Link } from 'react-router-dom';
+import React, { MouseEvent } from "react";
+import { Link } from "react-router-dom";
+import { NavProps } from "../propTypes";
 
-const Nav = props => {
-  const { page, handleChange, toggleNavBar } = props;
-  const style = { display: 'block', padding: 10 };
+const Nav = ({ page, handleChange, toggleNavBar }: NavProps) => {
+  const style = { display: "block", padding: 10 };
   const hrStyle = { margin: 0 };
 
-  const changePage = e => {
-    const name = e.target.id;
-    handleChange(name);
-    toggleNavBar(false);
+  const changePage = (e: MouseEvent<HTMLAnchorElement>) => {
+    const { id } = e.target as HTMLAnchorElement;
+    if (id) {
+      handleChange(name);
+      toggleNavBar(false);
+    }
   };
 
-  const className = 'link';
+  const className = "link";
   return (
     <div
       style={{
-        height: 'calc(100vh - 57px)',
-        width: '16.6666667%',
-        borderRight: '1px solid lightgrey',
-        position: 'absolute',
+        height: "calc(100vh - 57px)",
+        width: "16.6666667%",
+        borderRight: "1px solid lightgrey",
+        position: "absolute",
         zIndex: 5,
-        background: 'whitesmoke'
-      }}>
+        background: "whitesmoke"
+      }}
+    >
       <ul className="nav nav-pills nav-stacked">
         <li>
           <Link
             id="default"
             to="/"
-            className={page === 'default' ? `${className} active` : className}
+            className={page === "default" ? `${className} active` : className}
             style={style}
-            onClick={changePage}>
+            onClick={changePage}
+          >
             Standard
           </Link>
         </li>
@@ -43,10 +46,11 @@ const Nav = props => {
             id="mastermode"
             to="/mastermode"
             className={
-              page === 'mastermode' ? `${className} active` : className
+              page === "mastermode" ? `${className} active` : className
             }
             style={style}
-            onClick={changePage}>
+            onClick={changePage}
+          >
             Meistermodus
           </Link>
         </li>
@@ -58,10 +62,11 @@ const Nav = props => {
             id="battlemode"
             to="/battlemode"
             className={
-              page === 'battlemode' ? `${className} active` : className
+              page === "battlemode" ? `${className} active` : className
             }
             style={style}
-            onClick={changePage}>
+            onClick={changePage}
+          >
             Kampfmodus
           </Link>
         </li>
@@ -73,10 +78,11 @@ const Nav = props => {
             id="houserules"
             to="/houserules"
             className={
-              page === 'houserules' ? `${className} active` : className
+              page === "houserules" ? `${className} active` : className
             }
             style={style}
-            onClick={changePage}>
+            onClick={changePage}
+          >
             Hausregeln
           </Link>
         </li>
@@ -87,9 +93,10 @@ const Nav = props => {
           <Link
             id="map"
             to="/map"
-            className={page === 'map' ? `${className} active` : className}
+            className={page === "map" ? `${className} active` : className}
             style={style}
-            onClick={changePage}>
+            onClick={changePage}
+          >
             Karte
           </Link>
         </li>
@@ -101,21 +108,16 @@ const Nav = props => {
             id="music"
             to="/music"
             target="_blank"
-            className={page === 'music' ? `${className} active` : className}
+            className={page === "music" ? `${className} active` : className}
             style={style}
-            onClick={changePage}>
+            onClick={changePage}
+          >
             Musik
           </Link>
         </li>
       </ul>
     </div>
   );
-};
-
-Nav.propTypes = {
-  page: string,
-  handleChange: func,
-  toggleNavBar: func
 };
 
 export default Nav;
