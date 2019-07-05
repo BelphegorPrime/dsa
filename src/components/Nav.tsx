@@ -9,7 +9,7 @@ const Nav = ({ page, handleChange, toggleNavBar }: NavProps) => {
   const changePage = (e: MouseEvent<HTMLAnchorElement>) => {
     const { id } = e.target as HTMLAnchorElement;
     if (id) {
-      handleChange(name);
+      handleChange(id);
       toggleNavBar(false);
     }
   };

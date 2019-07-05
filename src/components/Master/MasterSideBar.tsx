@@ -34,6 +34,7 @@ const MasterSideBar = (props: MasterSideBarProps) => {
                   const property = properties[propKey];
                   return property ? `${key}:${property.value}` : `${key}:`;
                 }
+                return "";
               })
               .join(", ");
           }
