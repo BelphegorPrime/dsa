@@ -140,7 +140,24 @@ export interface HouseRule {
   type: string;
   page: number;
   name: string;
-  additionalModification: Array<{ name: string }>;
+  TP: number;
+  "TP/KK": string;
+  mass: string;
+  length: string;
+  BF: string;
+  INI: string;
+  cost: string;
+  WM: string;
+  comment: string;
+  DK: string;
+  talent: string;
+  distribution: string;
+  additionalModification: Array<{
+    name: string;
+    effect: string;
+    mod: string;
+    minZfW: string;
+  }>;
 }
 
 export interface Liturgie {

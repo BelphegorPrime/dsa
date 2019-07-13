@@ -1,9 +1,17 @@
-import React, { Fragment } from 'react';
-import { string, array, func } from 'prop-types';
-import HouseRulesBody from './HouseRulesBody';
-import HouseRulesSideBar from './HouseRulesSideBar';
+import React, { Fragment } from "react";
+import { HouseRule } from "../../types";
+import HouseRulesBody from "./HouseRulesBody";
+import HouseRulesSideBar from "./HouseRulesSideBar";
 
-const HouseRules = props => {
+interface HouseRuleProps {
+  houseRules: HouseRule[];
+  houseRuleToShow: string;
+  removeRule: (ruleId: string) => void;
+  addNewHouseRules: (rules: HouseRule[]) => void;
+  setHouseRuleToShow: (rule: string) => void;
+}
+
+const HouseRules = (props: HouseRuleProps) => {
   const {
     houseRules,
     houseRuleToShow,
@@ -26,8 +34,9 @@ const HouseRules = props => {
           style={{
             marginLeft: 0,
             marginRight: 0,
-            maxHeight: 'calc(100% - 41px)'
-          }}>
+            maxHeight: "calc(100% - 41px)"
+          }}
+        >
           <HouseRulesBody
             houseRuleToShow={houseRuleToShow}
             houseRules={houseRules}
@@ -37,14 +46,6 @@ const HouseRules = props => {
       </div>
     </Fragment>
   );
-};
-
-HouseRules.propTypes = {
-  houseRuleToShow: string,
-  houseRules: array,
-  removeRule: func,
-  addNewHouseRules: func,
-  setHouseRuleToShow: func
 };
 
 export default HouseRules;

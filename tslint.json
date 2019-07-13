@@ -28,7 +28,13 @@
     "react-hooks-nesting": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warning",
-    "no-submodule-imports": [true, "bootstrap-css-only/css/bootstrap.min.css", "react-use/lib/useLocalStorage"]
+    "no-submodule-imports": [
+      true,
+      "@fortawesome/free-solid-svg-icons/index",
+      "@fortawesome/react-fontawesome/index.es",
+      "bootstrap-css-only/css/bootstrap.min.css",
+      "react-use/lib/useLocalStorage"
+    ]
   },
   "jsRules": {}
 }

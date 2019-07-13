@@ -1,45 +1,55 @@
-/* eslint-disable no-undef */
-import React, { useRef } from 'react';
-import { func, string } from 'prop-types';
+import React, { useRef } from "react";
 
-import { addId } from '../../helperFunctions';
+import { addId } from "../../helperFunctions";
+import { HouseRule } from "../../types";
 
-const HouseRulesSidebar = props => {
-  const fileUpload = useRef();
+interface HouseRulesSidebarProps {
+  addNewHouseRules: (rules: HouseRule[]) => void;
+  setHouseRuleToShow: (rule: string) => void;
+  houseRuleToShow: string;
+}
+
+const HouseRulesSidebar = (props: HouseRulesSidebarProps) => {
+  const fileUpload = useRef<HTMLInputElement>(null);
 
   const { addNewHouseRules, setHouseRuleToShow, houseRuleToShow } = props;
-  const fileUploaded = files => {
+  const fileUploaded = (files: FileList) => {
     Promise.all(
       Object.values(files).map(file =>
         new Promise(resolve => {
           const fileReader = new FileReader();
+          // @ts-ignore
           fileReader.onload = e => resolve(e.target.result);
           fileReader.readAsText(file);
         })
-          // eslint-disable-next-line no-eval
+          // @ts-ignore
+          // tslint:disable-next-line:no-eval
           .then(script => eval(script))
           .then(rule => addId(rule))
       )
     )
       .then(rules => addNewHouseRules(rules))
       .then(() => {
-        fileUpload.current.value = '';
+        if (fileUpload && fileUpload.current) {
+          fileUpload.current.value = "";
+        }
       });
   };
 
-  const show = template => {
+  const show = (template: string) => {
     setHouseRuleToShow(template);
   };
 
-  const renderListElement = (template, name) => (
+  const renderListElement = (template: string, name: string) => (
     <li
       key={`rules${template}`}
       className={
         houseRuleToShow === template
-          ? 'list-group-item active'
-          : 'list-group-item cursor-pointer'
+          ? "list-group-item active"
+          : "list-group-item cursor-pointer"
       }
-      onClick={() => show(template)}>
+      onClick={() => show(template)}
+    >
       <div className="row">
         <div className="offset-2">{name}</div>
       </div>
@@ -58,30 +68,35 @@ const HouseRulesSidebar = props => {
             type="file"
             accept="application/javascript"
             multiple={true}
-            onChange={e => fileUploaded(e.target.files)}
+            onChange={e => {
+              if (e.target.files) {
+                fileUploaded(e.target.files);
+              }
+            }}
           />
           <label
             className="custom-file-label cursor-pointer"
-            htmlFor="validatedCustomHouseRuleFile">
+            htmlFor="validatedCustomHouseRuleFile"
+          >
             Hausregel
           </label>
         </div>
       </div>
       <div className="row">
         <ul className="list-group list-group-flush col-12">
-          {renderListElement('templates', 'Vorlagen')}
+          {renderListElement("templates", "Vorlagen")}
           <li className="list-group-item cursor-default">
             <div className="row">
               <div className="pl-2">Regeln</div>
             </div>
           </li>
-          {['spell', 'weapon'].map(template => {
+          {["spell", "weapon"].map(template => {
             switch (template) {
-              case 'spell': {
-                return renderListElement(template, 'Zauber');
+              case "spell": {
+                return renderListElement(template, "Zauber");
               }
-              case 'weapon': {
-                return renderListElement(template, 'Waffen');
+              case "weapon": {
+                return renderListElement(template, "Waffen");
               }
               default: {
                 return null;
@@ -92,12 +107,6 @@ const HouseRulesSidebar = props => {
       </div>
     </div>
   );
-};
-
-HouseRulesSidebar.propTypes = {
-  addNewHouseRules: func,
-  setHouseRuleToShow: func,
-  houseRuleToShow: string
 };
 
 export default HouseRulesSidebar;
