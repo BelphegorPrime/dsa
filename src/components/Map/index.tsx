@@ -11,7 +11,7 @@ const Map = (props: RouteComponentProps) => (
     client={
       new ApolloClient({
         cache: new InMemoryCache(),
-        link: createUploadLink({ uri: "http://localhost:7001/graphql" }) // createUploadLink({ uri: 'http://localhost:7001/graphql' })
+        link: createUploadLink({ uri: "http://localhost:7000/graphql" }) // createUploadLink({ uri: 'http://localhost:7001/graphql' })
       })
     }
   >

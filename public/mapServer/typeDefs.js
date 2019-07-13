@@ -18,6 +18,8 @@ const typeDefs = gql`
     filename: String!
     mimetype: String!
     encoding: String!
+    svgAddress: String!
+    svgRawAddress: String!
   }
 `;
 

@@ -37,7 +37,10 @@
     "graphql": "14.4.1",
     "graphql-tag": "2.10.1",
     "graphql-upload": "8.0.7",
+    "htmldom": "3.0.8",
+    "js-svg-path": "1.1.0",
     "lokijs": "1.5.6",
+    "potrace": "2.1.2",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-apollo": "2.5.8",
@@ -87,7 +90,14 @@
       "buildResources": "assets"
     },
     "linux": {
-      "target": "zip"
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     },
     "mac": {
       "target": "zip",
