@@ -156,14 +156,28 @@ export interface HouseRule {
     name: string;
     effect: string;
     mod: string;
-    minZfW: string;
+    minZfW: number;
   }>;
 }
 
 export interface Liturgie {
   name: string;
   page: number;
-  alternativeNames: Array<{ name: string }>;
+  grade: number;
+  target: string;
+  distance: string;
+  kind: string;
+  ritualDuration: string;
+  duration: string;
+  execution: string;
+  effect: string;
+  remark: string;
+  gods: string[];
+  variants: Array<{
+    grade: number;
+    effect: string;
+  }>;
+  alternativeNames: Array<{ name: string; god: string; grade: number }>;
 }
 
 export interface MainProperties {
@@ -179,7 +193,7 @@ export interface MainProperties {
 
 export interface ObjectType {
   [name: string]: {
-    slot: number;
+    slot?: number;
     amount: number;
     distantWeapon?: boolean;
     talent?: string;
@@ -249,7 +263,7 @@ export interface SpecialAbilities {
 
 export interface Spell {
   name: string;
-  trial: string | string[];
+  trial: string[];
   learningMethode: string;
   remarks: string;
   homeSpell: boolean;
@@ -261,11 +275,24 @@ export interface Spell {
   castTime: string;
   spellComment: string;
   trialProperties: Array<string | null>;
-  value: number;
+  value: string;
   variant: string;
+  technik?: string;
+  effect?: string;
+  target?: string;
+  modifications?: string[];
+  reversalis?: string;
+  antimagic?: string;
+  characteristics?: string[];
+  distribution?: Array<{ representation: string; distribution: number }>;
   page?: number;
   fromLCD?: boolean;
-  variants?: Array<{ name: string }>;
+  variants?: Array<{
+    name: string;
+    effect: string;
+    minZfW: number;
+    mod: string;
+  }>;
 }
 
 export interface SpellList {
@@ -277,7 +304,9 @@ export interface TalentList {
     learningMethode: string;
     trial: string[];
     trialProperties: Array<string | null>;
-    value: number;
+    value: string;
+    attack?: number;
+    parade?: number;
     k?: string;
   };
 }

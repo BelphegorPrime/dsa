@@ -1,10 +1,22 @@
-import React, { Fragment } from 'react';
-import {object, string, func} from 'prop-types';
-import HeroBody from './HeroBody';
-import HeroSideBar from './HeroSideBar';
-import PropertiesQuickBar from '../PropertiesQuickBar';
+import React, { Fragment } from "react";
+import { Hero as HeroType } from "../../types";
+import PropertiesQuickBar from "../PropertiesQuickBar";
+import HeroBody from "./HeroBody";
+import HeroSideBar from "./HeroSideBar";
 
-const Hero = props => {
+interface HeroProps {
+  heros: {
+    [name: string]: HeroType;
+  };
+  updateHero: (hero: HeroType) => void;
+  removeHero: (hero: string) => void;
+  page: string;
+  showPage: (page: string) => void;
+  chosenHero: HeroType;
+  chooseHero: (hero: string) => void;
+}
+
+const Hero = (props: HeroProps) => {
   const {
     heros,
     updateHero,
@@ -32,7 +44,7 @@ const Hero = props => {
           <PropertiesQuickBar
             hero={chosenHero}
             className="col-12"
-            orientation={'horizontal'}
+            orientation={"horizontal"}
           />
         ) : null}
         <div
@@ -40,8 +52,9 @@ const Hero = props => {
           style={{
             marginLeft: 0,
             marginRight: 0,
-            maxHeight: 'calc(100% - 41px)'
-          }}>
+            maxHeight: "calc(100% - 41px)"
+          }}
+        >
           {chosenHero ? (
             <HeroBody hero={chosenHero} page={page} updateHero={updateHero} />
           ) : null}
@@ -49,16 +62,6 @@ const Hero = props => {
       </div>
     </Fragment>
   );
-};
-
-Hero.propTypes = {
-  heros: object,
-  chosenHero: object,
-  page: string,
-  updateHero: func,
-  removeHero: func,
-  showPage: func,
-  chooseHero: func
 };
 
 export default Hero;

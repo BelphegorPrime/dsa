@@ -1,26 +1,32 @@
-import React, { Fragment } from 'react';
-import { object, string, func } from 'prop-types';
+import React, { Fragment } from "react";
 
-import Base from './Base';
-import Properties from './Properties';
-import Advantages from './Advantages';
-import SpecialAbilities from './SpecialAbilities';
-import TalentList from './TalentList';
-import SpellList from './SpellList';
-import Objects from './Objects';
-import Comments from './Comments';
-import Equipment from './Equipment';
-import Connections from './Connections';
-import Purse from './Purse';
+import { Hero } from "../../types";
+import Advantages from "./Advantages";
+import Base from "./Base";
+import Comments from "./Comments";
+import Connections from "./Connections";
+import Equipment from "./Equipment";
+import Objects from "./Objects";
+import Properties from "./Properties";
+import Purse from "./Purse";
+import SpecialAbilities from "./SpecialAbilities";
+import SpellList from "./SpellList";
+import TalentList from "./TalentList";
 
-const Hero = props => {
+interface HeroBodyProps {
+  hero: Hero;
+  page: string;
+  updateHero: (hero: Hero) => void;
+}
+
+const HeroBody = (props: HeroBodyProps) => {
   const { hero, page, updateHero } = props;
   if (!hero) {
     return null;
   }
   const { converted } = hero;
   switch (page) {
-    case 'Basis': {
+    case "Basis": {
       return (
         <Fragment>
           <Base hero={hero} updateHero={updateHero} className="col-6" />
@@ -45,7 +51,7 @@ const Hero = props => {
         </Fragment>
       );
     }
-    case 'Talente': {
+    case "Talente": {
       return (
         <TalentList
           talentList={converted.talentList}
@@ -54,7 +60,7 @@ const Hero = props => {
         />
       );
     }
-    case 'Zauber': {
+    case "Zauber": {
       return (
         <SpellList
           spellList={converted.spellList}
@@ -63,7 +69,7 @@ const Hero = props => {
         />
       );
     }
-    case 'Kampf': {
+    case "Kampf": {
       return (
         <Fragment>
           <Objects hero={hero} updateHero={updateHero} className="col-4" />
@@ -72,7 +78,7 @@ const Hero = props => {
         </Fragment>
       );
     }
-    case 'Kommentare': {
+    case "Kommentare": {
       return (
         <Comments hero={hero} updateHero={updateHero} className="col-12" />
       );
@@ -82,10 +88,4 @@ const Hero = props => {
   }
 };
 
-Hero.propTypes = {
-  hero: object,
-  page: string,
-  updateHero: func
-};
-
-export default Hero;
+export default HeroBody;

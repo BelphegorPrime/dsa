@@ -1,12 +1,23 @@
-import React from 'react';
-import { func, object, string } from 'prop-types';
+import React, { ChangeEvent } from "react";
+import { Hero } from "../../types";
 
-const Purse = props => {
+interface PurseProps {
+  updateHero: (hero: Hero) => void;
+  hero: Hero;
+  className: string;
+}
+
+const Purse = (props: PurseProps) => {
   const { hero, updateHero, className } = props;
   const { purse } = hero.converted;
-  const updatePurse = (monetaryUnit, e) => {
-    purse[monetaryUnit].amount = e.target.value;
-    updateHero(hero);
+  const updatePurse = (
+    monetaryUnit: string,
+    e: ChangeEvent<HTMLInputElement>
+  ) => {
+    if (purse) {
+      purse[monetaryUnit].amount = parseInt(e.target.value, 10);
+      updateHero(hero);
+    }
   };
 
   if (!purse) {
@@ -39,7 +50,7 @@ const Purse = props => {
                   className="mr-2"
                   style={{ width: 80 }}
                   value={money.amount > 0 ? money.amount : 0}
-                  onChange={() => updatePurse(monetaryUnit)}
+                  onChange={e => updatePurse(monetaryUnit, e)}
                 />
                 {monetaryUnit} ({money.country})
               </span>
@@ -49,12 +60,6 @@ const Purse = props => {
       </div>
     </div>
   );
-};
-
-Purse.propTypes = {
-  updateHero: func,
-  hero: object,
-  className: string
 };
 
 export default Purse;

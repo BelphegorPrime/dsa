@@ -10,7 +10,7 @@ import { useBoolean } from "react-use";
 import { objectWithoutKey } from "../helperFunctions";
 import { convert } from "../heroConverter";
 import useSave from "../hooks/useSave";
-import { HouseRule } from "../types";
+import { Hero as HeroType, HouseRule } from "../types";
 import Battle from "./Battle";
 import Header from "./Head";
 import Hero from "./Hero";
@@ -20,6 +20,10 @@ import Master from "./Master";
 import Music from "./Music";
 import Nav from "./Nav";
 import NoMatch from "./NoMatch";
+
+interface HeroState {
+  [name: string]: HeroType;
+}
 
 const App = (props: any) => {
   const { electron } = props;
@@ -60,20 +64,27 @@ const App = (props: any) => {
     setHouseRuleToShow("templates");
   };
 
-  const updateHero = (hero: Hero) => {
+  const updateHero = (hero: HeroType) => {
     const { name } = hero.xml.children[0].attributes;
-    heros[name] = hero;
-    setChosenHero(hero);
-    setHeros(heros);
+    if (name) {
+      heros[name] = hero;
+      setChosenHero(hero);
+      setHeros(heros);
+    }
   };
 
-  const appendToState = (composedHeros: Hero[]) => {
+  const appendToState = (composedHeros: HeroType[]) => {
     const newHeros = {
       ...heros,
       ...composedHeros
-        .map(h => ({
-          [h.converted.name]: h
-        }))
+        .map((h: HeroType): HeroState | null => {
+          if (h.converted.name) {
+            return {
+              [h.converted.name]: h
+            };
+          }
+          return null;
+        })
         .reduce((acc, val) => ({ ...acc, ...val }), {})
     };
     setHeros(newHeros);

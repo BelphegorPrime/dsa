@@ -1,32 +1,37 @@
-/* eslint-disable no-undef */
-import React, { Fragment } from 'react';
-import { func, object, string } from 'prop-types';
-import uuid4 from 'uuid4';
+import { func, object, string } from "prop-types";
+import React, { Fragment } from "react";
+import uuid4 from "uuid4";
+import { Comment, Hero } from "../../types";
 
-const Comments = props => {
+interface CommentsProps {
+  hero: Hero;
+  updateHero: (hero: Hero) => void;
+  className: string;
+}
+
+const Comments = (props: CommentsProps) => {
   const { hero, updateHero, className } = props;
   const { converted } = hero;
   let comments = converted.comments || [];
   const save = () => {
-    const nameInput = document
-      .getElementById('create-comment-form')
-      .getElementsByTagName('input')[0];
-    const commentTextarea = document
-      .getElementById('create-comment-form')
-      .getElementsByTagName('textarea')[0];
-    comments = [
-      {
-        id: uuid4(),
-        name: nameInput.value,
-        comment: commentTextarea.value,
-        added: true
-      },
-      ...comments
-    ];
-    updateHero(hero);
+    const form = document.getElementById("create-comment-form");
+    if (form) {
+      const nameInput = form.getElementsByTagName("input")[0];
+      const commentTextarea = form.getElementsByTagName("textarea")[0];
+      comments = [
+        {
+          id: uuid4(),
+          name: nameInput.value,
+          comment: commentTextarea.value,
+          added: true
+        },
+        ...comments
+      ];
+      updateHero(hero);
+    }
   };
 
-  const removeComment = comment => {
+  const removeComment = (comment: Comment) => {
     comments = comments.filter(c => c.id !== comment.id);
     updateHero(hero);
   };
@@ -40,7 +45,7 @@ const Comments = props => {
             Name: <input />
           </div>
           <div>
-            Kommentar: <textarea style={{ width: '100%' }} />
+            Kommentar: <textarea style={{ width: "100%" }} />
           </div>
           <div className="btn btn-primary" onClick={save}>
             Speichern
@@ -51,11 +56,12 @@ const Comments = props => {
             return (
               <div key={index + comment.name + comment.comment}>
                 <span className="pl-4">
-                  {comment.name}:{' '}
+                  {comment.name}:{" "}
                   {comment.added ? (
                     <span
                       className="btn btn-secondary btn-remove-hero float-right mr-3"
-                      onClick={() => removeComment(comment)}>
+                      onClick={() => removeComment(comment)}
+                    >
                       X
                     </span>
                   ) : null}
@@ -64,8 +70,12 @@ const Comments = props => {
               </div>
             );
           }
+          let key = "";
+          if (comment.specialAbilityName) {
+            key += comment.specialAbilityName + comment.specialAbility;
+          }
           return (
-            <div key={comment.specialAbilityName + comment.specialAbility}>
+            <div key={key}>
               <span className="pl-4">
                 {comment.specialAbilityName} ({comment.specialAbility})
                 <div className="pl-5">

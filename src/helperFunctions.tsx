@@ -1,13 +1,10 @@
 import uuid4 from "uuid4";
 import trialToProperty from "./heroConverter/trialToProperty";
-import { MainProperties } from "./types";
+import { MainProperties, Property } from "./types";
 
 export const rollDice = (x: number) => Math.floor(Math.random() * x) + 1;
 
-export const test = (
-  trial: string[],
-  properties: { [key: string]: { value: any } }
-) => {
+export const test = (trial: string[], properties: Property) => {
   const propertyValues = trial
     .map(trialToProperty)
     .map((property: string | null) => {

@@ -1,7 +1,12 @@
-import React from 'react';
-import { array, string } from 'prop-types';
+import React from "react";
+import { Connection } from "../../types";
 
-const Connections = props => {
+interface ConnectionsProps {
+  connections: Connection[];
+  className: string;
+}
+
+const Connections = (props: ConnectionsProps) => {
   const { connections, className } = props;
   return (
     <div className={className}>
@@ -20,11 +25,6 @@ const Connections = props => {
       </div>
     </div>
   );
-};
-
-Connections.propTypes = {
-  connections: array,
-  className: string
 };
 
 export default Connections;

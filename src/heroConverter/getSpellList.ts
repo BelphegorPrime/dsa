@@ -56,7 +56,7 @@ export default (spellList: Child[], lcd: Spell[]): SpellList => {
         spellComment: spellComment ? spellComment : "",
         trial,
         trialProperties: trial.map(trialToProperty),
-        value: value ? parseInt(value, 10) : 0
+        value: value ? value : "0"
       };
     }
   });
@@ -70,7 +70,8 @@ export default (spellList: Child[], lcd: Spell[]): SpellList => {
     if (possibleSpells.length > 0) {
       possibleSpells = possibleSpells.map(ps => {
         const returnSpell = ps;
-        const trial: string = returnSpell.trial as string;
+        // @ts-ignore
+        const trial = returnSpell.trial as string;
         returnSpell.trial = trial
           .split("(")[0]
           .split(")")[0]

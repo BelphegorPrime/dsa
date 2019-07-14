@@ -31,7 +31,7 @@ export default (talentList: Child[]): TalentList => {
           learningMethode,
           trial,
           trialProperties: trial.map(trialToProperty),
-          value: value ? parseInt(value, 10) : 0,
+          value: value ? value : "0",
           k: t.attributes.k
         };
       } else {
@@ -39,7 +39,7 @@ export default (talentList: Child[]): TalentList => {
           learningMethode,
           trial,
           trialProperties: trial.map(trialToProperty),
-          value: value ? parseInt(value, 10) : 0
+          value: value ? value : "0"
         };
       }
     }
