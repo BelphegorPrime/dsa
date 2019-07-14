@@ -201,7 +201,6 @@ const App = (props: any) => {
                           chooseHero={chooseHero}
                           encounter={encounter}
                           setEncounter={setEncounter}
-                          electron={electron}
                           activeEncounter={activeEncounter}
                           setActiveEncounter={setActiveEncounter}
                         />

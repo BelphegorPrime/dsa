@@ -27,6 +27,14 @@ export interface Basic {
   freeExp?: number;
 }
 
+export interface BattleHero extends Hero {
+  id: string;
+  name: string;
+  init: number;
+  ini?: number;
+  isPlayer?: boolean;
+}
+
 export interface Comment {
   name?: string;
   comment?: string;

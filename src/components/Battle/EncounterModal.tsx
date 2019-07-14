@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
-import { bool, func, object } from 'prop-types';
-import uuid4 from 'uuid4';
+import React, { ChangeEvent, useState } from "react";
+import uuid4 from "uuid4";
+import { Competitor, Encounter } from "./index";
+
+interface EncounterModalProps {
+  show: boolean;
+  close: () => void;
+  save: (encounter: Encounter) => void;
+}
 
 const initialMobData = {
-  name: '',
+  name: "",
   iniBase: 10,
   at: 10,
   pa: 10,
@@ -17,36 +23,39 @@ const initialMobData = {
   mr: 4,
   gs: 5,
   rs: 0,
-  dk: 'N',
+  dk: "N",
   be: 0
 };
 
-const EncounterModal = props => {
+const EncounterModal = (props: EncounterModalProps) => {
   const { show, close, save } = props;
-  const [formName, setFormName] = useState('');
-  const [mobs, setMobs] = useState([]);
-  const [mobData, setMobData] = useState(
-    Object.assign({ id: uuid4() }, initialMobData)
-  );
+  const [formName, setFormName] = useState("");
+  const [mobs, setMobs] = useState<Competitor[]>([]);
+  const [mobData, setMobData] = useState<Competitor>({
+    id: uuid4(),
+    ...initialMobData
+  });
   const createNewEncounter = () => {
     save({ id: uuid4(), competitors: mobs, name: formName });
     close();
   };
-  const handleNameChange = e => setFormName(e.target.value);
-  const handleMobDataChange = (e, key) =>
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setFormName(e.target.value);
+  const handleMobDataChange = (e: ChangeEvent<HTMLInputElement>, key: string) =>
     setMobData({ ...mobData, [key]: e.target.value });
 
   const handleSaveNevMob = () => {
-    setMobs(mobs.concat(mobData));
-    setMobData(Object.assign({ id: uuid4() }, initialMobData));
+    setMobs([...mobs, mobData]);
+    setMobData({ id: uuid4(), ...initialMobData });
   };
 
   return (
-    <div className="modal" style={{ display: show ? 'block' : 'none' }}>
+    <div className="modal" style={{ display: show ? "block" : "none" }}>
       <div
         className="modal-dialog"
-        style={{ marginTop: '5%', maxWidth: '90vw', height: '90vh' }}>
-        <div className="modal-content" style={{ height: '90%' }}>
+        style={{ marginTop: "5%", maxWidth: "90vw", height: "90vh" }}
+      >
+        <div className="modal-content" style={{ height: "90%" }}>
           <div className="modal-header" style={{ height: 63 }}>
             <h5 className="modal-title">Kampf</h5>
             <button type="button" className="close" onClick={() => close()}>
@@ -55,15 +64,17 @@ const EncounterModal = props => {
           </div>
           <div
             className="modal-body pt-0"
-            style={{ height: `calc(100% - ${63 + 71}px)` }}>
+            style={{ height: `calc(100% - ${63 + 71}px)` }}
+          >
             <div
               className="row pt-3 pb-3 border-bottom"
-              style={{ height: 281 }}>
+              style={{ height: 281 }}
+            >
               <div className="col-4">
                 Name:
                 <input
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'name')}
+                  onChange={e => handleMobDataChange(e, "name")}
                   value={mobData.name}
                 />
               </div>
@@ -73,24 +84,24 @@ const EncounterModal = props => {
                   <input
                     type="number"
                     className="form-control w-25"
-                    style={{ display: 'inline-block' }}
-                    onChange={e => handleMobDataChange(e, 'tpDiceAmount')}
+                    style={{ display: "inline-block" }}
+                    onChange={e => handleMobDataChange(e, "tpDiceAmount")}
                     value={mobData.tpDiceAmount}
                   />
                   w
                   <input
                     type="number"
                     className="form-control w-25"
-                    style={{ display: 'inline-block' }}
-                    onChange={e => handleMobDataChange(e, 'tpDice')}
+                    style={{ display: "inline-block" }}
+                    onChange={e => handleMobDataChange(e, "tpDice")}
                     value={mobData.tpDice}
                   />
                   +
                   <input
                     type="number"
                     className="form-control w-25"
-                    style={{ display: 'inline-block' }}
-                    onChange={e => handleMobDataChange(e, 'tpMod')}
+                    style={{ display: "inline-block" }}
+                    onChange={e => handleMobDataChange(e, "tpMod")}
                     value={mobData.tpMod}
                   />
                 </span>
@@ -100,7 +111,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'iniBase')}
+                  onChange={e => handleMobDataChange(e, "iniBase")}
                   value={mobData.iniBase}
                 />
               </div>
@@ -109,7 +120,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'at')}
+                  onChange={e => handleMobDataChange(e, "at")}
                   value={mobData.at}
                 />
               </div>
@@ -118,7 +129,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'pa')}
+                  onChange={e => handleMobDataChange(e, "pa")}
                   value={mobData.pa}
                 />
               </div>
@@ -127,7 +138,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'fk')}
+                  onChange={e => handleMobDataChange(e, "fk")}
                   value={mobData.fk}
                 />
               </div>
@@ -135,7 +146,7 @@ const EncounterModal = props => {
                 DK:
                 <input
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'dk')}
+                  onChange={e => handleMobDataChange(e, "dk")}
                   value={mobData.dk}
                 />
               </div>
@@ -144,7 +155,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'lep')}
+                  onChange={e => handleMobDataChange(e, "lep")}
                   value={mobData.lep}
                 />
               </div>
@@ -153,7 +164,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'au')}
+                  onChange={e => handleMobDataChange(e, "au")}
                   value={mobData.au}
                 />
               </div>
@@ -162,7 +173,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'ko')}
+                  onChange={e => handleMobDataChange(e, "ko")}
                   value={mobData.ko}
                 />
               </div>
@@ -171,7 +182,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'mr')}
+                  onChange={e => handleMobDataChange(e, "mr")}
                   value={mobData.mr}
                 />
               </div>
@@ -180,7 +191,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'gs')}
+                  onChange={e => handleMobDataChange(e, "gs")}
                   value={mobData.gs}
                 />
               </div>
@@ -189,7 +200,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'rs')}
+                  onChange={e => handleMobDataChange(e, "rs")}
                   value={mobData.rs}
                 />
               </div>
@@ -198,7 +209,7 @@ const EncounterModal = props => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, 'be')}
+                  onChange={e => handleMobDataChange(e, "be")}
                   value={mobData.be}
                 />
               </div>
@@ -206,13 +217,15 @@ const EncounterModal = props => {
                 <div
                   className="btn btn-primary position-absolute mr-3"
                   style={{ bottom: 0, right: 0 }}
-                  onClick={handleSaveNevMob}>
+                  onClick={handleSaveNevMob}
+                >
                   Speichern
                 </div>
               </div>
             </div>
             <div
-              style={{ height: `calc(100% - ${264}px)`, overflow: 'scroll' }}>
+              style={{ height: `calc(100% - ${264}px)`, overflow: "scroll" }}
+            >
               {mobs.map(mob => (
                 <div className="row p-2 border-bottom" key={mob.id}>
                   <div className="col-8">Name: {mob.name}</div>
@@ -230,19 +243,21 @@ const EncounterModal = props => {
             Name:
             <input
               className="form-control w-50"
-              style={{ display: 'inline-block' }}
+              style={{ display: "inline-block" }}
               onChange={handleNameChange}
             />
             <button
               type="button"
               className="btn btn-primary"
-              onClick={createNewEncounter}>
+              onClick={createNewEncounter}
+            >
               Speichern
             </button>
             <button
               type="button"
               className="btn btn-secondary"
-              onClick={() => close()}>
+              onClick={() => close()}
+            >
               Schließen
             </button>
           </div>
@@ -250,13 +265,6 @@ const EncounterModal = props => {
       </div>
     </div>
   );
-};
-
-EncounterModal.propTypes = {
-  show: bool,
-  close: func,
-  save: func,
-  electron: object
 };
 
 export default EncounterModal;

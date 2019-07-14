@@ -1,7 +1,13 @@
-import React, { Fragment } from 'react';
-import { object, func } from 'prop-types';
+import { func, object } from "prop-types";
+import React, { ChangeEvent, Fragment } from "react";
+import { Encounter } from "./index";
 
-const BattleTable = props => {
+interface BattleTableProps {
+  encounter: Encounter;
+  update: (encounter: Encounter) => void;
+}
+
+const BattleTable = (props: BattleTableProps) => {
   const { encounter, update } = props;
   const { competitors, battle } = encounter;
   const phases = competitors
@@ -9,55 +15,73 @@ const BattleTable = props => {
       const { ini } = competitor;
       const phaseArray = [
         {
-          name: competitor.isPlayer
-            ? competitor.converted.name
-            : competitor.name,
+          name:
+            competitor.converted && competitor.isPlayer
+              ? competitor.converted.name
+              : competitor.name,
           ini: competitor.ini
         }
       ];
-      for (let i = ini; i > 8; i -= 8) {
-        const c = Object.assign({}, competitor);
-        c.ini -= 8 * phaseArray.length;
-        phaseArray.push({
-          name: c.isPlayer ? c.converted.name : c.name,
-          ini: c.ini
-        });
+      if (ini) {
+        for (let i = ini; i > 8; i -= 8) {
+          const c = { ...competitor };
+          if (c.ini) {
+            c.ini -= 8 * phaseArray.length;
+            phaseArray.push({
+              name: c.converted && c.isPlayer ? c.converted.name : c.name,
+              ini: c.ini
+            });
+          }
+        }
       }
       return phaseArray;
     })
     .reduce((acc, val) => [...acc, ...val], [])
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .sort((a, b) => b.ini - a.ini);
+    .sort((a, b) => {
+      if (a.name && b.name) {
+        return a.name.localeCompare(b.name);
+      }
+      return 0;
+    })
+    .sort((a, b) => {
+      if (a.ini && b.ini) {
+        return b.ini - a.ini;
+      }
+      return 0;
+    });
 
-  const handlePlayerChange = (e, key, competitor, isNumber = true) => {
+  const handlePlayerChange = (
+    e: ChangeEvent<HTMLInputElement>,
+    key: string,
+    competitor: any,
+    isNumber = true
+  ) => {
     const { value } = e.target;
     encounter.competitors = encounter.competitors.map(comp => {
       const returnCompetitor = comp;
       if (competitor === comp) {
-        if (isNumber) {
-          returnCompetitor[key] = parseInt(value, 10);
-        } else {
-          returnCompetitor[key] = value;
-        }
+        returnCompetitor[key] = isNumber ? parseInt(value, 10) : value;
       }
       return returnCompetitor;
     });
     update(encounter);
   };
 
-  const handleCompetitorChange = mod => {
-    battle.action += mod;
-    if (battle.action < 0) {
-      battle.kr -= 1;
-      battle.action = phases.length - 1;
+  const handleCompetitorChange = (mod: number) => {
+    if (battle) {
+      battle.action += mod;
+      if (battle.action < 0) {
+        battle.kr -= 1;
+        battle.action = phases.length - 1;
+      }
+      if (battle.action > phases.length - 1) {
+        battle.kr += 1;
+        battle.action = 0;
+      }
+      const newEncoutner = encounter;
+      newEncoutner.battle = battle;
+      update(newEncoutner);
     }
-    if (battle.action > phases.length - 1) {
-      battle.kr += 1;
-      battle.action = 0;
-    }
-    const newEncoutner = encounter;
-    newEncoutner.battle = battle;
-    update(newEncoutner);
   };
 
   return (
@@ -68,7 +92,8 @@ const BattleTable = props => {
           <div className="row m-0">
             <button
               className="col-3 btn btn-primary"
-              onClick={() => handleCompetitorChange(-1)}>
+              onClick={() => handleCompetitorChange(-1)}
+            >
               Vorheriger
             </button>
             <div className="col-3 text-center">Kampfrunde: {battle.kr}</div>
@@ -78,7 +103,8 @@ const BattleTable = props => {
             </div>
             <button
               className="col-3 btn btn-primary"
-              onClick={() => handleCompetitorChange(1)}>
+              onClick={() => handleCompetitorChange(1)}
+            >
               Nächster
             </button>
           </div>
@@ -107,12 +133,15 @@ const BattleTable = props => {
           <tbody>
             {phases.map((phase, i) => {
               const competitor = competitors.find(c =>
-                c.isPlayer
+                c.converted && c.isPlayer
                   ? c.converted.name === phase.name
                   : c.name === phase.name
               );
-              let {
-                lep,
+              if (!competitor) {
+                return null;
+              }
+
+              const {
                 rs,
                 at,
                 pa,
@@ -120,37 +149,49 @@ const BattleTable = props => {
                 tpDiceAmount,
                 tpDice,
                 tpMod,
-                mr,
                 dk,
                 be,
-                au,
-                ko,
                 gs
               } = competitor;
+              let { lep, mr, au, ko } = competitor;
+
               let tp = `${tpDiceAmount}w${tpDice}+${tpMod}`;
-              let className = '';
-              if (competitor.isPlayer) {
-                lep = competitor.converted.properties.lifeforce.value;
-                mr = competitor.converted.properties.magicResistance.value;
-                au = competitor.converted.properties.endurance.value;
-                ko = competitor.converted.properties.constitution.value;
-                tp = competitor.tp;
-                className = 'bg-light';
+              let className = "";
+              if (
+                competitor.converted &&
+                competitor.converted.properties &&
+                competitor.isPlayer
+              ) {
+                const {
+                  lifeforce,
+                  magicResistance,
+                  endurance,
+                  constitution
+                } = competitor.converted.properties;
+                lep = lifeforce ? lifeforce.value : 0;
+                mr = magicResistance ? magicResistance.value : 0;
+                au = endurance ? endurance.value : 0;
+                ko = constitution ? constitution.value : 0;
+                tp = competitor.tp ? competitor.tp : "";
+                className = "bg-light";
               }
               if (competitor.battleLep !== undefined) {
                 lep = competitor.battleLep;
               }
               if (battle && battle.action === i) {
-                className = 'table-primary';
+                className = "table-primary";
               }
               return (
-                <tr className={className} key={phase.name + phase.ini}>
+                <tr
+                  className={className}
+                  key={phase.name ? phase.name + phase.ini : ""}
+                >
                   <td>{phase.name}</td>
                   <td>
                     <input
                       type="number"
                       className="form-control"
-                      onChange={e => handlePlayerChange(e, 'lep', competitor)}
+                      onChange={e => handlePlayerChange(e, "lep", competitor)}
                       value={lep}
                     />
                   </td>
@@ -161,7 +202,7 @@ const BattleTable = props => {
                       type="number"
                       className="form-control"
                       min={0}
-                      onChange={e => handlePlayerChange(e, 'rs', competitor)}
+                      onChange={e => handlePlayerChange(e, "rs", competitor)}
                       value={rs || 0}
                     />
                   </td>
@@ -171,7 +212,7 @@ const BattleTable = props => {
                       type="number"
                       className="form-control"
                       min={0}
-                      onChange={e => handlePlayerChange(e, 'be', competitor)}
+                      onChange={e => handlePlayerChange(e, "be", competitor)}
                       value={be || 0}
                     />
                   </td>
@@ -180,7 +221,7 @@ const BattleTable = props => {
                       type="number"
                       className="form-control"
                       min={0}
-                      onChange={e => handlePlayerChange(e, 'gs', competitor)}
+                      onChange={e => handlePlayerChange(e, "gs", competitor)}
                       value={gs || 0}
                     />
                   </td>
@@ -189,7 +230,7 @@ const BattleTable = props => {
                       type="number"
                       className="form-control"
                       min={0}
-                      onChange={e => handlePlayerChange(e, 'at', competitor)}
+                      onChange={e => handlePlayerChange(e, "at", competitor)}
                       value={at || 0}
                     />
                   </td>
@@ -198,7 +239,7 @@ const BattleTable = props => {
                       type="number"
                       className="form-control"
                       min={0}
-                      onChange={e => handlePlayerChange(e, 'pa', competitor)}
+                      onChange={e => handlePlayerChange(e, "pa", competitor)}
                       value={pa || 0}
                     />
                   </td>
@@ -207,7 +248,7 @@ const BattleTable = props => {
                       type="number"
                       className="form-control"
                       min={0}
-                      onChange={e => handlePlayerChange(e, 'fk', competitor)}
+                      onChange={e => handlePlayerChange(e, "fk", competitor)}
                       value={fk || 0}
                     />
                   </td>
@@ -218,9 +259,9 @@ const BattleTable = props => {
                       <input
                         className="form-control"
                         onChange={e =>
-                          handlePlayerChange(e, 'tp', competitor, false)
+                          handlePlayerChange(e, "tp", competitor, false)
                         }
-                        value={tp || ''}
+                        value={tp || ""}
                       />
                     )}
                   </td>
@@ -231,9 +272,9 @@ const BattleTable = props => {
                       <input
                         className="form-control"
                         onChange={e =>
-                          handlePlayerChange(e, 'dk', competitor, false)
+                          handlePlayerChange(e, "dk", competitor, false)
                         }
-                        value={dk || ''}
+                        value={dk || ""}
                       />
                     )}
                   </td>
@@ -242,7 +283,7 @@ const BattleTable = props => {
                       type="number"
                       className="form-control"
                       min={0}
-                      onChange={e => handlePlayerChange(e, 'ini', competitor)}
+                      onChange={e => handlePlayerChange(e, "ini", competitor)}
                       value={phase.ini || 0}
                     />
                   </td>

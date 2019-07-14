@@ -33,7 +33,8 @@
       "@fortawesome/free-solid-svg-icons/index",
       "@fortawesome/react-fontawesome/index.es",
       "bootstrap-css-only/css/bootstrap.min.css",
-      "react-use/lib/useLocalStorage"
+      "react-use/lib/useLocalStorage",
+      "react-use/lib/useBoolean"
     ]
   },
   "jsRules": {}
