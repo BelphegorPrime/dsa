@@ -19,8 +19,6 @@ export interface MasterSideBarProps {
 }
 
 export interface NavProps {
-  page: string;
-  handleChange: (name: string) => void;
   toggleNavBar: (newState: boolean) => void;
 }
 

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef } from "react";
 import XmlPrint from "xml-printer";
 import XmlReader from "xml-reader";
+import { useMainReducer } from "../context/mainReducer/MainContext";
 
 import { countBy, rollDice } from "../helperFunctions";
 import { convert, reconvert } from "../heroConverter";
@@ -11,40 +12,42 @@ import { Child } from "../rawTypes";
 import { Hero, HouseRule } from "../types";
 
 interface HeadProps {
-  chosenHero: Hero;
-  page: string;
+  chosenHero: Hero | null;
   houseRules: HouseRule[];
   appendToState: (heros: Hero[]) => void;
   resetState: () => void;
   toggleNavBar: () => void;
-  setHeros: (heros: Hero[] | null) => void;
   setEncounter: (encounters: any[]) => void;
   setActiveEncounter: (encounter: any | null) => void;
 }
 
 const Head = (props: HeadProps) => {
+  const [
+    {
+      data: { page },
+    },
+    { setHeros },
+  ] = useMainReducer<true>();
   const fileUpload = useRef<HTMLInputElement>(null);
   const {
     chosenHero,
-    page,
     resetState,
     appendToState,
     houseRules,
     toggleNavBar,
-    setHeros,
     setEncounter,
-    setActiveEncounter
+    setActiveEncounter,
   } = props;
   const tempThrows = [];
-  for (let i = 0; i < 100000; i += 1) {
+  for (let i = 0; i < 10000; i += 1) {
     tempThrows[i] = rollDice(20);
   }
 
   const throws = Object.values(countBy(tempThrows));
   const fileUploaded = (files: File[]) => {
     Promise.all(
-      Object.values(files).map(file =>
-        new Promise(resolve => {
+      Object.values(files).map((file) =>
+        new Promise((resolve) => {
           const fileReader = new FileReader();
           fileReader.onload = (e: any) => {
             if (e.target) {
@@ -54,14 +57,14 @@ const Head = (props: HeadProps) => {
           fileReader.readAsText(file);
         })
           .then(
-            xmlString =>
-              new Promise(resolve => {
+            (xmlString) =>
+              new Promise((resolve) => {
                 const xmlReader = XmlReader.create({
                   stream: false,
                   parentNodes: false,
                   tagPrefix: "tag:",
                   doneEvent: "done",
-                  emitTopLevelOnly: false
+                  emitTopLevelOnly: false,
                 });
                 xmlReader.on("done", (data: Child) => resolve(data));
                 xmlReader.parse(xmlString);
@@ -71,7 +74,7 @@ const Head = (props: HeadProps) => {
             (hero: any): Hero => {
               return {
                 xml: hero,
-                converted: convert(hero, houseRules)
+                converted: convert(hero, houseRules),
               };
             }
           )
@@ -88,27 +91,29 @@ const Head = (props: HeadProps) => {
   };
 
   const download = () => {
-    const xmlToDownload = reconvert(chosenHero);
-    const doc = document;
-    const a = doc.createElement("a");
-    a.setAttribute(
-      "href",
-      `data:text/xml;charset=utf-8,${encodeURIComponent(
-        XmlPrint(xmlToDownload)
-      )}`
-    );
-    a.setAttribute(
-      "download",
-      `${xmlToDownload.children[0].attributes.name}.xml`
-    );
-    a.style.display = "none";
-    doc.body.appendChild(a);
-    a.click();
-    doc.body.removeChild(a);
+    if (chosenHero) {
+      const xmlToDownload = reconvert(chosenHero);
+      const doc = document;
+      const a = doc.createElement("a");
+      a.setAttribute(
+        "href",
+        `data:text/xml;charset=utf-8,${encodeURIComponent(
+          XmlPrint(xmlToDownload)
+        )}`
+      );
+      a.setAttribute(
+        "download",
+        `${xmlToDownload.children[0].attributes.name}.xml`
+      );
+      a.style.display = "none";
+      doc.body.appendChild(a);
+      a.click();
+      doc.body.removeChild(a);
+    }
   };
 
   const clearStorage = () => {
-    setHeros(null);
+    setHeros({});
     setEncounter([]);
     setActiveEncounter(null);
     resetState();
@@ -157,7 +162,9 @@ const Head = (props: HeadProps) => {
             <div className="hero-name">
               {chosenHero ? (
                 <span className="font-weight-bold">
-                  {chosenHero.xml ? chosenHero.xml.children[0].attributes.name : null}
+                  {chosenHero.xml
+                    ? chosenHero.xml.children[0].attributes.name
+                    : null}
                 </span>
               ) : null}
             </div>
@@ -174,7 +181,7 @@ const Head = (props: HeadProps) => {
                     style={{
                       width: 1.8,
                       marginBottom: throwValue / 200,
-                      background: "#000000"
+                      background: "#000000",
                     }}
                   />
                 ))}

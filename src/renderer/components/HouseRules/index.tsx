@@ -1,30 +1,25 @@
 import React, { Fragment } from "react";
+import { useMainReducerState } from "../../context/mainReducer/MainContext";
 import { HouseRule } from "../../types";
 import HouseRulesBody from "./HouseRulesBody";
 import HouseRulesSideBar from "./HouseRulesSideBar";
 
 interface HouseRuleProps {
   houseRules: HouseRule[];
-  houseRuleToShow: string;
   removeRule: (ruleId: string) => void;
   addNewHouseRules: (rules: HouseRule[]) => void;
-  setHouseRuleToShow: (rule: string) => void;
 }
 
 const HouseRules = (props: HouseRuleProps) => {
   const {
-    houseRules,
-    houseRuleToShow,
-    removeRule,
-    addNewHouseRules,
-    setHouseRuleToShow
-  } = props;
+    data: { houseRuleToShow },
+  } = useMainReducerState<true>();
+  const { houseRules, removeRule, addNewHouseRules } = props;
   return (
     <Fragment>
       <div className="left-pane col-2">
         <HouseRulesSideBar
           addNewHouseRules={addNewHouseRules}
-          setHouseRuleToShow={setHouseRuleToShow}
           houseRuleToShow={houseRuleToShow}
         />
       </div>
@@ -34,7 +29,7 @@ const HouseRules = (props: HouseRuleProps) => {
           style={{
             marginLeft: 0,
             marginRight: 0,
-            maxHeight: "calc(100% - 41px)"
+            maxHeight: "calc(100% - 41px)",
           }}
         >
           <HouseRulesBody

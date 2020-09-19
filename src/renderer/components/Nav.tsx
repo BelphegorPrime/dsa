@@ -1,15 +1,23 @@
 import React, { MouseEvent } from "react";
 import { Link } from "react-router-dom";
+import { useMainReducer } from "../context/mainReducer/MainContext";
+import { Page } from "../context/mainReducer/mainReducer";
 import { NavProps } from "../propTypes";
 
-const Nav = ({ page, handleChange, toggleNavBar }: NavProps) => {
+const Nav = ({ toggleNavBar }: NavProps) => {
+  const [
+    {
+      data: { page },
+    },
+    { setPage },
+  ] = useMainReducer();
   const style = { display: "block", padding: 10 };
   const hrStyle = { margin: 0 };
 
   const changePage = (e: MouseEvent<HTMLAnchorElement>) => {
     const { id } = e.target as HTMLAnchorElement;
     if (id) {
-      handleChange(id);
+      setPage(id as Page);
       toggleNavBar(false);
     }
   };
@@ -23,15 +31,17 @@ const Nav = ({ page, handleChange, toggleNavBar }: NavProps) => {
         borderRight: "1px solid lightgrey",
         position: "absolute",
         zIndex: 5,
-        background: "whitesmoke"
+        background: "whitesmoke",
       }}
     >
       <ul className="nav nav-pills nav-stacked">
         <li>
           <Link
-            id="default"
+            id={Page.default}
             to="/"
-            className={page === "default" ? `${className} active` : className}
+            className={
+              page === Page.default ? `${className} active` : className
+            }
             style={style}
             onClick={changePage}
           >
@@ -43,10 +53,10 @@ const Nav = ({ page, handleChange, toggleNavBar }: NavProps) => {
         </li>
         <li>
           <Link
-            id="mastermode"
+            id={Page.mastermode}
             to="/mastermode"
             className={
-              page === "mastermode" ? `${className} active` : className
+              page === Page.mastermode ? `${className} active` : className
             }
             style={style}
             onClick={changePage}
@@ -59,10 +69,10 @@ const Nav = ({ page, handleChange, toggleNavBar }: NavProps) => {
         </li>
         <li>
           <Link
-            id="battlemode"
+            id={Page.battlemode}
             to="/battlemode"
             className={
-              page === "battlemode" ? `${className} active` : className
+              page === Page.battlemode ? `${className} active` : className
             }
             style={style}
             onClick={changePage}
@@ -75,10 +85,10 @@ const Nav = ({ page, handleChange, toggleNavBar }: NavProps) => {
         </li>
         <li>
           <Link
-            id="houserules"
+            id={Page.houserules}
             to="/houserules"
             className={
-              page === "houserules" ? `${className} active` : className
+              page === Page.houserules ? `${className} active` : className
             }
             style={style}
             onClick={changePage}
@@ -91,9 +101,9 @@ const Nav = ({ page, handleChange, toggleNavBar }: NavProps) => {
         </li>
         <li>
           <Link
-            id="map"
+            id={Page.map}
             to="/map"
-            className={page === "map" ? `${className} active` : className}
+            className={page === Page.map ? `${className} active` : className}
             style={style}
             onClick={changePage}
           >
@@ -103,17 +113,6 @@ const Nav = ({ page, handleChange, toggleNavBar }: NavProps) => {
         <li>
           <hr style={hrStyle} />
         </li>
-        {/*<li>*/}
-        {/*  <Link*/}
-        {/*    id="music"*/}
-        {/*    to="/music"*/}
-        {/*    className={page === "music" ? `${className} active` : className}*/}
-        {/*    style={style}*/}
-        {/*    onClick={changePage}*/}
-        {/*  >*/}
-        {/*    Musik*/}
-        {/*  </Link>*/}
-        {/*</li>*/}
       </ul>
     </div>
   );

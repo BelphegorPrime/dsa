@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import { useMainReducerCallbacks } from "../../context/mainReducer/MainContext";
+import { HeroPage } from "../../context/mainReducer/mainReducer";
 import { ConvertedHero, Hero } from "../../types";
 
 interface SidearProps {
@@ -6,20 +8,25 @@ interface SidearProps {
     [name: string]: Hero;
   };
   chooseHero: (hero: string) => void;
-  removeHero: (name: string) => void;
   page: string;
-  chosenHero: Hero;
-  showPage: (page: string) => void;
+  chosenHero: Hero | null;
 }
 
 const Sidebar = (props: SidearProps) => {
-  const { heros, chooseHero, removeHero, page, chosenHero, showPage } = props;
+  const { setHeroPage, removeHero } = useMainReducerCallbacks<true>();
+  const { heros, chooseHero, page, chosenHero } = props;
   if (!heros) {
     return null;
   }
   const getSubMenu = (hero: ConvertedHero, name: string) => (
     <Fragment>
-      {["Basis", "Talente", "Zauber", "Kampf", "Kommentare"].map(k => {
+      {[
+        HeroPage.Basis,
+        HeroPage.Talente,
+        HeroPage.Zauber,
+        HeroPage.Kampf,
+        HeroPage.Kommentare,
+      ].map((k) => {
         if (hero && k === "Zauber" && !hero.spellList) {
           return null;
         }
@@ -33,7 +40,11 @@ const Sidebar = (props: SidearProps) => {
           className = "list-group-item active";
         }
         return (
-          <li key={name + k} className={className} onClick={() => showPage(k)}>
+          <li
+            key={name + k}
+            className={className}
+            onClick={() => setHeroPage(k)}
+          >
             {k}
           </li>
         );
@@ -59,7 +70,7 @@ const Sidebar = (props: SidearProps) => {
                     </div>
                     <span
                       className="btn btn-secondary btn-remove-hero"
-                      onClick={e => {
+                      onClick={(e) => {
                         e.stopPropagation();
                         removeHero(name);
                       }}
@@ -80,17 +91,13 @@ const Sidebar = (props: SidearProps) => {
 
 Sidebar.defaultProps = {
   heros: [],
-  chosenHero: {},
   page: "",
   chooseHero: () => {
     console.warn("no chooseHero Function Provided");
   },
-  removeHero: () => {
-    console.warn("no removeHero Function Provided");
-  },
   showPage: () => {
     console.warn("no showPage Function Provided");
-  }
+  },
 };
 
 export default Sidebar;

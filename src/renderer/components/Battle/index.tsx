@@ -51,7 +51,7 @@ interface BattleProps {
   heros: {
     [name: string]: Hero;
   };
-  activeEncounter: Encounter;
+  activeEncounter: Encounter | null;
   encounter: any[];
   chooseHero: (name: string) => void;
   setEncounter: (encounters: Encounter[]) => void;
@@ -65,7 +65,7 @@ const Battle = (props: BattleProps) => {
     encounter,
     setEncounter,
     activeEncounter,
-    setActiveEncounter
+    setActiveEncounter,
   } = props;
   const [selectedHeros, setSelectedHeros] = useState(Object.keys(heros));
   const [selectedEncounter, setSelectedEncounter] = useState<Encounter | null>(
@@ -77,8 +77,9 @@ const Battle = (props: BattleProps) => {
   );
 
   const battleHeros = selectedHeros
-    .map(name => heros[name])
-    .filter(e => e) as BattleHero[];
+    .map((name) => heros[name])
+    .filter((e) => e) as BattleHero[];
+
   const handleShowHeroIniModal = () => {
     if (selectedEncounter) {
       setShowStartEncounterModal(true);
@@ -86,8 +87,8 @@ const Battle = (props: BattleProps) => {
   };
 
   const startBattle = (inis: Initiativ) => {
-    const heroData = Object.keys(inis).map(name => {
-      const hero = battleHeros.find(h => h.converted.name === name);
+    const heroData = Object.keys(inis).map((name) => {
+      const hero = battleHeros.find((h) => h.converted.name === name);
       if (hero) {
         const returnHero = hero;
         returnHero.ini = inis[name];
@@ -105,18 +106,18 @@ const Battle = (props: BattleProps) => {
             lifeforce: { value: 10 },
             magicResistance: { value: 4 },
             endurance: { value: 30 },
-            constitution: { value: 10 }
-          }
-        }
+            constitution: { value: 10 },
+          },
+        },
       };
     });
     if (selectedEncounter) {
       selectedEncounter.competitors = ([
-        ...selectedEncounter.competitors.map(competitor => ({
+        ...selectedEncounter.competitors.map((competitor) => ({
           ...competitor,
-          ini: competitor.iniBase + rollDice(6)
+          ini: competitor.iniBase + rollDice(6),
         })),
-        ...heroData
+        ...heroData,
       ] as Competitor[]).sort((a, b) => {
         if (a.ini && b.ini) {
           return b.ini - a.ini;
@@ -134,7 +135,7 @@ const Battle = (props: BattleProps) => {
 
   const removeEncounter = () =>
     selectedEncounter
-      ? setEncounter(encounter.filter(e => e.id !== selectedEncounter.id))
+      ? setEncounter(encounter.filter((e) => e.id !== selectedEncounter.id))
       : {};
 
   return (
@@ -162,18 +163,20 @@ const Battle = (props: BattleProps) => {
         <div
           className="row col-12 ml-0 mr-0 pt-2 pl-2 pr-2"
           style={{
-            height: "100%"
+            height: "100%",
           }}
         >
           {encounter.length > 0 ? (
             <Fragment>
               <div className="col-9 mb-2">
                 <Select
-                  onChange={(opt: any) => setSelectedEncounter(opt as Encounter)}
+                  onChange={(opt: any) =>
+                    setSelectedEncounter(opt as Encounter)
+                  }
                   style={{ display: "inline-block" }}
                   options={encounter}
-                  getOptionLabel={opt => opt.name}
-                  getOptionValue={opt => opt.id}
+                  getOptionLabel={(opt) => opt.name}
+                  getOptionValue={(opt) => opt.id}
                   isDisabled={Boolean(activeEncounter)}
                   value={activeEncounter || selectedEncounter}
                 />
@@ -209,7 +212,7 @@ const Battle = (props: BattleProps) => {
           {activeEncounter && activeEncounter.competitors ? (
             <BattleTable
               encounter={activeEncounter}
-              update={e => setActiveEncounter({ ...e })}
+              update={(e) => setActiveEncounter({ ...e })}
             />
           ) : null}
         </div>
@@ -217,12 +220,12 @@ const Battle = (props: BattleProps) => {
       <EncounterModal
         show={showEncounterModal}
         close={() => setShowEncounterModal(false)}
-        save={data => setEncounter(encounter.concat(data))}
+        save={(data) => setEncounter(encounter.concat(data))}
       />
       <StartEncounterModal
         show={showStartEncounterModal}
         close={() => setShowStartEncounterModal(false)}
-        save={inis => startBattle(inis)}
+        save={(inis) => startBattle(inis)}
         heros={battleHeros}
       />
     </Fragment>
@@ -235,7 +238,7 @@ Battle.propTypes = {
   encounter: array,
   chooseHero: func,
   setEncounter: func,
-  setActiveEncounter: func
+  setActiveEncounter: func,
 };
 
 export default Battle;

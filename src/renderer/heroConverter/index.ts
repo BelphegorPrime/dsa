@@ -1,4 +1,4 @@
-import { Child, RawEquipemnt, RawProperty } from "../rawTypes";
+import { Child, RawEquipemnt, RawHero, RawProperty } from "../rawTypes";
 import RuleBook from "../Rulebook";
 import { Comment, ConvertedHero, Hero, HouseRule, Vantage } from "../types";
 import addFight from "./addFight";
@@ -17,8 +17,8 @@ import getSpellList from "./getSpellList";
 import getTalentList from "./getTalentList";
 
 const getIndex = (children: Child[]) => {
-  const nameArray = children.map(child => child.attributes.name);
-  const elem = nameArray.find(e => e);
+  const nameArray = children.map((child) => child.attributes.name);
+  const elem = nameArray.find((e) => e);
   if (elem) {
     return nameArray.indexOf(elem);
   }
@@ -26,7 +26,7 @@ const getIndex = (children: Child[]) => {
 };
 
 export const convert = (
-  hero: Child,
+  hero: RawHero,
   houseRules: HouseRule[] = []
 ): ConvertedHero => {
   const returnHero: ConvertedHero = {};
@@ -34,7 +34,7 @@ export const convert = (
   const index = getIndex(hero.children);
   returnHero.name = hero.children[index].attributes.name;
   const { children } = hero.children[index];
-  children.forEach(child => {
+  children.forEach((child) => {
     if (child.children.length > 0) {
       switch (child.name) {
         case "ausrüstungen":
@@ -110,7 +110,7 @@ export const convert = (
 export const reconvert = (chosenHero: Hero) => {
   const returnXml = { ...chosenHero.xml };
   let { children } = returnXml.children[0];
-  children = children.map(child => {
+  children = children.map((child) => {
     const returnChild = child;
     if (returnChild.children.length > 0) {
       switch (returnChild.name) {
@@ -136,7 +136,7 @@ export const reconvert = (chosenHero: Hero) => {
         case "gegenstände":
           {
             let existingObjects = returnChild.children.map(
-              o => o.attributes.name
+              (o) => o.attributes.name
             );
             const { objects } = chosenHero.converted;
             if (objects) {
@@ -144,7 +144,7 @@ export const reconvert = (chosenHero: Hero) => {
                 const object = objects[name];
                 if (existingObjects.indexOf(name) > -1) {
                   returnChild.children = returnChild.children
-                    .map(o => {
+                    .map((o) => {
                       const returnObject = o;
                       if (returnObject.attributes.name === name) {
                         if (object.amount === 0) {
@@ -153,7 +153,7 @@ export const reconvert = (chosenHero: Hero) => {
                         returnObject.attributes.anzahl = object.amount;
                       }
                       existingObjects = existingObjects.filter(
-                        eo => eo !== name
+                        (eo) => eo !== name
                       );
                       return returnObject;
                     })
@@ -165,20 +165,20 @@ export const reconvert = (chosenHero: Hero) => {
                     attributes: {
                       anzahl: object.amount,
                       name,
-                      slot: "0"
+                      slot: "0",
                     },
                     children: [],
                     name: "gegenstand",
                     parent: null,
                     type: "element",
-                    value: ""
+                    value: "",
                   });
                 }
               });
             }
 
             returnChild.children = returnChild.children.filter(
-              o => o && existingObjects.indexOf(o.attributes.name) === -1
+              (o) => o && existingObjects.indexOf(o.attributes.name) === -1
             );
           }
           // returnHero.objects = getObjects(child.children);
@@ -186,9 +186,9 @@ export const reconvert = (chosenHero: Hero) => {
         case "geldboerse": {
           const { purse } = chosenHero.converted;
           if (purse) {
-            Object.keys(purse).forEach(monetaryUnit => {
+            Object.keys(purse).forEach((monetaryUnit) => {
               const money = purse[monetaryUnit];
-              returnChild.children = returnChild.children.map(m => {
+              returnChild.children = returnChild.children.map((m) => {
                 const returnMoney = m;
                 if (returnMoney.attributes.name === monetaryUnit) {
                   returnMoney.attributes.anzahl = money.amount;
@@ -215,13 +215,13 @@ export const reconvert = (chosenHero: Hero) => {
                     key: commentToAdd.name,
                     kommentar: commentToAdd.comment,
                     added: true,
-                    id: commentToAdd.id
+                    id: commentToAdd.id,
                   },
                   children: [],
                   name: "kommentar",
                   parent: null,
                   type: "element",
-                  value: ""
+                  value: "",
                 });
               });
             // returnHero.comments = getComments(child.children);

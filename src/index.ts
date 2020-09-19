@@ -28,7 +28,6 @@ const createWindow = (app: typeof ElectronApp & { data: Data }) => {
       plugins: true,
     },
   });
-  console.log(win);
   windows.push(win);
   win.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 

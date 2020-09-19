@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   HashRouter as Router,
   Route,
@@ -6,18 +6,20 @@ import {
   Switch,
 } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { useBoolean } from "react-use";
-import { objectWithoutKey } from "../helperFunctions";
+import { useMainReducer } from "../context/mainReducer/MainContext";
+import {
+  HeroPage,
+  HouseRuleEnum,
+  Page,
+} from "../context/mainReducer/mainReducer";
 import { convert } from "../heroConverter";
-import useSave from "../hooks/useSave";
-import { Electron, Hero as HeroType, HouseRule } from "../types";
+import { Hero as HeroType, HouseRule } from "../types";
 import Battle from "./Battle";
 import Header from "./Head";
 import Hero from "./Hero";
 import HouseRules from "./HouseRules";
 import Map from "./Map";
 import Master from "./Master";
-// import Music from "./Music";
 import Nav from "./Nav";
 import NoMatch from "./NoMatch";
 
@@ -25,46 +27,42 @@ interface HeroState {
   [name: string]: HeroType;
 }
 
-type Props = {
-  electron: Electron;
-};
+const App = () => {
+  const [
+    {
+      data: {
+        showNavBar,
+        heros,
+        chosenHero,
+        houseRules,
+        encounter,
+        activeEncounter,
+      },
+    },
+    {
+      toggleNavBar,
+      setPage,
+      setHeroPage,
+      setHouseRuleToShow,
+      setHeros,
+      setChosenHero,
+      setHouseRules,
+      setEncounter,
+      setActiveEncounter,
+    },
+  ] = useMainReducer<true>();
 
-const App = ({ electron }: Props) => {
-  const [showNavBar, toggleNavBar] = useBoolean(false);
-  const [page, setPage] = useState("default");
-  const [heroPage, setHeroPage] = useState("Basis");
-  const [houseRuleToShow, setHouseRuleToShow] = useState("templates");
-
-  const [heros, setHeros] = useSave(electron, "heros", {} as any);
-  const [chosenHero, setChosenHero] = useSave(electron, "chosenHero");
-  const [houseRules, setHouseRules] = useSave(
-    electron,
-    "houseRules",
-    [] as any
-  );
-  const [encounter, setEncounter] = useSave(electron, "encounter", [] as any);
-  const [activeEncounter, setActiveEncounter] = useSave(
-    electron,
-    "activeEncounter"
-  );
-  useEffect(() => setHeros(heros), [heros, setHeros]);
-  useEffect(() => setChosenHero(chosenHero), [chosenHero, setChosenHero]);
-  useEffect(() => setHouseRules(houseRules), [houseRules, setHouseRules]);
-
-  const removeHero = (name: string) => {
-    setHeros(objectWithoutKey(heros, name));
-    if (chosenHero && chosenHero.converted.name === name) {
-      setChosenHero(null);
-    }
-  };
+  // useEffect(() => setHeros(heros), [heros, setHeros]);
+  // useEffect(() => setChosenHero(chosenHero), [chosenHero, setChosenHero]);
+  // useEffect(() => setHouseRules(houseRules), [houseRules, setHouseRules]);
 
   const resetState = () => {
-    setPage("default");
+    setPage(Page.default);
     setHeros({});
     setChosenHero(null);
-    setHeroPage("Basis");
+    setHeroPage(HeroPage.Basis);
     setHouseRules([]);
-    setHouseRuleToShow("templates");
+    setHouseRuleToShow(HouseRuleEnum.templates);
   };
 
   const updateHero = (hero: HeroType) => {
@@ -138,18 +136,14 @@ const App = ({ electron }: Props) => {
       <div className="App cursor-default">
         <Header
           chosenHero={chosenHero}
-          page={page}
           houseRules={houseRules}
           appendToState={appendToState}
           resetState={resetState}
           toggleNavBar={setToggleNavbar}
-          setHeros={setHeros}
           setEncounter={setEncounter}
           setActiveEncounter={setActiveEncounter}
         />
-        {showNavBar ? (
-          <Nav handleChange={setPage} page={page} toggleNavBar={toggleNavBar} />
-        ) : null}
+        {showNavBar ? <Nav toggleNavBar={toggleNavBar} /> : null}
         <Route
           render={({ location }) => (
             <TransitionGroup>
@@ -170,8 +164,6 @@ const App = ({ electron }: Props) => {
                         <HouseRules
                           {...renderProps}
                           addNewHouseRules={addNewHouseRules}
-                          setHouseRuleToShow={setHouseRuleToShow}
-                          houseRuleToShow={houseRuleToShow}
                           houseRules={houseRules}
                           removeRule={removeRule}
                         />
@@ -210,11 +202,7 @@ const App = ({ electron }: Props) => {
                         <Hero
                           {...renderProps}
                           heros={heros}
-                          chosenHero={chosenHero || null}
-                          page={heroPage}
-                          showPage={setHeroPage}
                           chooseHero={chooseHero}
-                          removeHero={removeHero}
                           updateHero={updateHero}
                         />
                       )}

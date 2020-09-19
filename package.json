@@ -81,6 +81,7 @@
     "graphql-tag": "2.11.0",
     "graphql-upload": "11.0.0",
     "htmldom": "4.0.11",
+    "immer": "^7.0.9",
     "js-svg-path": "1.1.0",
     "lokijs": "1.5.11",
     "potrace": "2.1.8",
