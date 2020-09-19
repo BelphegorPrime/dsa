@@ -3,112 +3,133 @@
   "productName": "Topas",
   "version": "0.1.0",
   "description": "Pen and Paper tool for 'the dark eye'",
-  "author": "Marcel Rösler",
-  "keywords": [],
   "private": true,
-  "main": "public/electron.js",
+  "main": ".webpack/main",
   "homepage": "./",
+  "keywords": [],
+  "author": {
+    "name": "Marcel Rösler",
+    "email": "roesler1@gmx.de"
+  },
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "test:coverage": "npm test -- --coverage",
-    "dev": "cross-env-shell PORT=3010 BROWSER=none \"react-scripts start & wait-on http://localhost:\\$PORT && electron .\"",
-    "prepack": "npm run build",
-    "pack": "electron-builder -lmw",
-    "eslint": "eslint",
-    "electron": "electron ."
+    "start": "electron-forge start",
+    "build": "npm run make",
+    "package": "electron-forge package",
+    "make": "npm run make:linux && npm run make:win && npm run make:macOS",
+    "make:linux": "electron-forge make --platform linux",
+    "make:win": "electron-forge make --platform win32",
+    "make:macOS": "electron-forge make --platform darwin",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts ."
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.53",
+    "@electron-forge/maker-zip": "6.0.0-beta.53",
+    "@electron-forge/plugin-webpack": "6.0.0-beta.53",
+    "@marshallofsound/webpack-asset-relocator-loader": "0.5.0",
+    "@types/apollo-upload-client": "14.1.0",
+    "@types/jest": "26.0.14",
+    "@types/node": "14.11.1",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "@types/react-router-dom": "5.1.5",
+    "@types/react-select": "3.0.20",
+    "@types/react-transition-group": "4.4.0",
+    "@typescript-eslint/eslint-plugin": "3.9.0",
+    "@typescript-eslint/parser": "3.9.0",
+    "cross-env": "7.0.2",
+    "css-loader": "4.2.1",
+    "electron": "10.1.2",
+    "electron-builder": "22.8.1",
+    "eslint": "7.6.0",
+    "eslint-plugin-import": "2.20.0",
+    "file-loader": "^6.1.0",
+    "fork-ts-checker-webpack-plugin": "5.0.14",
+    "jest-fetch-mock": "3.0.3",
+    "keyboardjs": "2.6.4",
+    "node-loader": "1.0.1",
+    "prettier": "2.1.2",
+    "rebound": "0.1.0",
+    "style-loader": "1.2.1",
+    "svg-inline-loader": "^0.8.2",
+    "ts-loader": "8.0.2",
+    "tslint": "6.1.3",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.3.0",
+    "tslint-react-hooks": "2.2.2",
+    "typescript": "4.0.3",
+    "wait-on": "5.2.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.9.0",
-    "@fortawesome/fontawesome-svg-core": "1.2.19",
-    "@fortawesome/free-brands-svg-icons": "5.9.0",
-    "@fortawesome/free-regular-svg-icons": "5.9.0",
-    "@fortawesome/free-solid-svg-icons": "5.9.0",
-    "@fortawesome/react-fontawesome": "0.1.4-1",
-    "apollo-cache-inmemory": "1.6.2",
-    "apollo-client": "2.6.3",
-    "apollo-server-express": "2.14.2",
-    "apollo-upload-client": "10.0.1",
-    "bootstrap-css-only": "4.3.1",
+    "@fortawesome/fontawesome-free": "5.14.0",
+    "@fortawesome/fontawesome-svg-core": "1.2.30",
+    "@fortawesome/free-brands-svg-icons": "5.14.0",
+    "@fortawesome/free-regular-svg-icons": "5.14.0",
+    "@fortawesome/free-solid-svg-icons": "5.14.0",
+    "@fortawesome/react-fontawesome": "0.1.11",
+    "apollo-cache-inmemory": "1.6.6",
+    "apollo-client": "2.6.10",
+    "apollo-server-express": "2.17.0",
+    "apollo-upload-client": "14.1.2",
+    "bootstrap-css-only": "4.4.1",
     "cors": "2.8.5",
-    "electron-is-dev": "1.1.0",
+    "electron-is-dev": "1.2.0",
+    "electron-squirrel-startup": "1.0.0",
     "express": "4.17.1",
-    "graphql": "14.4.1",
-    "graphql-tag": "2.10.1",
-    "graphql-upload": "8.0.7",
-    "htmldom": "3.0.8",
+    "graphql": "15.3.0",
+    "graphql-tag": "2.11.0",
+    "graphql-upload": "11.0.0",
+    "htmldom": "4.0.11",
     "js-svg-path": "1.1.0",
-    "lokijs": "1.5.6",
-    "potrace": "2.1.2",
+    "lokijs": "1.5.11",
+    "potrace": "2.1.8",
     "prop-types": "15.7.2",
-    "react": "16.8.6",
-    "react-apollo": "2.5.8",
-    "react-dom": "16.8.6",
-    "react-router-dom": "5.0.1",
-    "react-scripts": "3.0.1",
-    "react-select": "3.0.4",
-    "react-transition-group": "4.2.0",
-    "react-use": "9.7.2",
-    "uuid4": "1.1.4",
+    "react": "16.13.1",
+    "react-apollo": "3.1.5",
+    "react-dom": "16.13.1",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "3.4.3",
+    "react-select": "3.1.0",
+    "react-transition-group": "4.4.1",
+    "react-use": "15.3.4",
+    "uuid": "8.3.0",
     "xml-printer": "1.1.3",
     "xml-reader": "2.4.3"
   },
-  "devDependencies": {
-    "@types/apollo-upload-client": "8.1.2",
-    "@types/jest": "24.0.15",
-    "@types/node": "12.0.10",
-    "@types/react": "16.8.22",
-    "@types/react-dom": "16.8.4",
-    "@types/react-router-dom": "4.3.4",
-    "@types/react-select": "3.0.0",
-    "@types/react-transition-group": "2.9.2",
-    "cross-env": "5.2.0",
-    "electron": "https://github.com/castlabs/electron-releases#v4.0.8-wvvmp",
-    "electron-builder": "20.44.4",
-    "jest-fetch-mock": "2.1.2",
-    "keyboardjs": "2.5.1",
-    "prettier": "1.18.2",
-    "rebound": "0.1.0",
-    "tslint": "5.18.0",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.0.1",
-    "tslint-react-hooks": "2.1.1",
-    "typescript": "3.5.2",
-    "wait-on": "3.2.0"
-  },
-  "build": {
-    "electronDownload": {
-      "mirror": "https://github.com/castlabs/electron-releases/releases/download/v",
-      "cache": "./.electron-dl-cache"
-    },
-    "appId": "com.electron.topas",
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
-    },
-    "linux": {
-      "target": [
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "platform": "all"
+      },
+      "makers": [
         {
-          "target": "zip",
-          "arch": [
-            "x64"
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "linux",
+            "win32",
+            "darwin"
           ]
         }
+      ],
+      "plugins": [
+        [
+          "@electron-forge/plugin-webpack",
+          {
+            "mainConfig": "./webpack.main.config.js",
+            "renderer": {
+              "config": "./webpack.renderer.config.js",
+              "entryPoints": [
+                {
+                  "html": "./src/index.html",
+                  "js": "./src/renderer.tsx",
+                  "name": "main_window"
+                }
+              ]
+            }
+          }
+        ]
       ]
-    },
-    "mac": {
-      "target": "zip",
-      "category": "public.app-category.games"
-    },
-    "win": {
-      "target": "zip"
     }
-  },
-  "browserslist": [
-    "last 2 Electron versions"
-  ]
+  }
 }
