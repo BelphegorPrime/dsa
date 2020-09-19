@@ -1,10 +1,14 @@
-import { v4 as uuid4 } from 'uuid';
+import { v4 as uuid4 } from "uuid";
 import trialToProperty from "./heroConverter/trialToProperty";
-import {Electron, MainProperties, Property} from "./types";
+import { Electron, MainProperties, Property } from "./types";
 
-export const rollDice = (x: number): number => Math.floor(Math.random() * x) + 1;
+export const rollDice = (x: number): number =>
+  Math.floor(Math.random() * x) + 1;
 
-export const test = (trial: string[], properties: Property): {values: string, diceThrow: number} => {
+export const test = (
+  trial: string[],
+  properties: Property
+): { values: string; diceThrow: number } => {
   const propertyValues = trial
     .map(trialToProperty)
     .map((property: string | null) => {
@@ -25,13 +29,13 @@ export const test = (trial: string[], properties: Property): {values: string, di
   return {
     values: `(${propertyValue.join("/")})`,
     diceThrow: propertyValue
-      .filter(val => val < 0)
-      .reduce((acc, val) => acc + val, 0)
+      .filter((val) => val < 0)
+      .reduce((acc, val) => acc + val, 0),
   };
 };
 
 // tslint:disable-next-line:no-empty
-export const noop = ():void => {};
+export const noop = (): void => {};
 
 export const addId = (thing: any): any => {
   const returnThing = thing;
@@ -104,7 +108,7 @@ export const objectWithoutKey = (theObject: any, key: string): any => {
   return otherKeys;
 };
 
-export const countBy = (data: any):{ [key: string]: number } => {
+export const countBy = (data: any): { [key: string]: number } => {
   const t: { [key: string]: number } = {};
   data.forEach((val: string) => {
     if (t[val]) {
@@ -124,5 +128,5 @@ export const getMainProperties = (): MainProperties => ({
   FF: "fingerAbility",
   GE: "dexterity",
   KO: "constitution",
-  KK: "strength"
+  KK: "strength",
 });

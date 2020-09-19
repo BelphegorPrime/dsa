@@ -12,8 +12,6 @@ import {
   HouseRuleEnum,
   Page,
 } from "../context/mainReducer/mainReducer";
-import { convert } from "../heroConverter";
-import { Hero as HeroType, HouseRule } from "../types";
 import Battle from "./Battle";
 import Header from "./Head";
 import Hero from "./Hero";
@@ -22,10 +20,6 @@ import Map from "./Map";
 import Master from "./Master";
 import Nav from "./Nav";
 import NoMatch from "./NoMatch";
-
-interface HeroState {
-  [name: string]: HeroType;
-}
 
 const App = () => {
   const [
@@ -49,6 +43,11 @@ const App = () => {
       setHouseRules,
       setEncounter,
       setActiveEncounter,
+      appendToState,
+      removeRule,
+      chooseHero,
+      addNewHouseRules,
+      updateHero,
     },
   ] = useMainReducer<true>();
 
@@ -63,68 +62,6 @@ const App = () => {
     setHeroPage(HeroPage.Basis);
     setHouseRules([]);
     setHouseRuleToShow(HouseRuleEnum.templates);
-  };
-
-  const updateHero = (hero: HeroType) => {
-    const { name } = hero.xml.children[0].attributes;
-    if (name) {
-      heros[name] = hero;
-      setChosenHero(hero);
-      setHeros(heros);
-    }
-  };
-
-  const appendToState = (composedHeros: HeroType[]) => {
-    const newHeros = {
-      ...heros,
-      ...composedHeros
-        .map((h: HeroType): HeroState | null => {
-          if (h.converted.name) {
-            return {
-              [h.converted.name]: h,
-            };
-          }
-          return null;
-        })
-        .reduce((acc, val) => ({ ...acc, ...val }), {}),
-    };
-
-    setHeros(newHeros);
-    setChosenHero(composedHeros[composedHeros.length - 1]);
-  };
-
-  const addNewHouseRules = (rules: HouseRule[]) => {
-    const otherHouseRules = houseRules
-      .filter((r: HouseRule) => rules.map((ru) => ru.id).indexOf(r.id) === -1)
-      .concat(...rules);
-    Object.keys(heros).forEach((name) => {
-      const { xml } = heros[name];
-      appendToState([
-        {
-          xml,
-          converted: convert(xml, otherHouseRules),
-        },
-      ]);
-    });
-    setHouseRules(otherHouseRules);
-  };
-
-  const removeRule = (id: string) => {
-    const otherHouseRules = houseRules.filter((hr: HouseRule) => hr.id !== id);
-    Object.keys(heros).forEach((name) => {
-      const { xml } = heros[name];
-      appendToState([
-        {
-          xml,
-          converted: convert(xml, otherHouseRules),
-        },
-      ]);
-    });
-    setHouseRules(otherHouseRules);
-  };
-
-  const chooseHero = (name: string) => {
-    setChosenHero(heros[name]);
   };
 
   const setToggleNavbar = () => {
