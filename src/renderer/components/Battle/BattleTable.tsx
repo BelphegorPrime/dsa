@@ -1,4 +1,3 @@
-import { func, object } from "prop-types";
 import React, { ChangeEvent, Fragment } from "react";
 import { Encounter } from "./index";
 
@@ -295,11 +294,6 @@ const BattleTable = (props: BattleTableProps) => {
       </div>
     </Fragment>
   );
-};
-
-BattleTable.propTypes = {
-  encounter: object,
-  update: func,
 };
 
 export default BattleTable;

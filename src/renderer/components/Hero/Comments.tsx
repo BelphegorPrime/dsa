@@ -1,4 +1,3 @@
-import { func, object, string } from "prop-types";
 import React, { Fragment } from "react";
 import { v4 as uuid4 } from "uuid";
 import { Comment, Hero } from "../../types/types";
@@ -105,12 +104,6 @@ const Comments = (props: CommentsProps) => {
       </div>
     </div>
   );
-};
-
-Comments.propTypes = {
-  updateHero: func,
-  hero: object,
-  className: string,
 };
 
 export default Comments;
