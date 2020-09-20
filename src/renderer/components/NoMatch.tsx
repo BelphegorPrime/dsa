@@ -10,7 +10,7 @@ const NoMatch = ({ location }: RouteComponentProps) => (
         style={{
           marginLeft: 0,
           marginRight: 0,
-          maxHeight: "calc(100% - 41px)"
+          maxHeight: "calc(100% - 41px)",
         }}
       >
         Seite {location.pathname} nicht gefunden.

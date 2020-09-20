@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Fragment, useState } from "react";
 
 import { noop, test } from "../../helperFunctions";
-import { Property, SpellList as SpellListType } from "../../types";
+import { Property, SpellList as SpellListType } from "../../types/types";
 
 interface SpellListProps {
   properties: Property | undefined;
@@ -26,7 +26,7 @@ const SpellList = (props: SpellListProps) => {
 
   const showLCD = (name: string) => {
     if (lcdVisible.indexOf(name) > -1) {
-      setLcdVisible(lcdVisible.filter(n => n !== name));
+      setLcdVisible(lcdVisible.filter((n) => n !== name));
     } else {
       setLcdVisible([...lcdVisible, name]);
     }
@@ -51,7 +51,7 @@ const SpellList = (props: SpellListProps) => {
         </thead>
         <tbody>
           {spellList
-            ? Object.keys(spellList).map(name => {
+            ? Object.keys(spellList).map((name) => {
                 const spell = spellList[name];
                 return (
                   <Fragment key={name}>
@@ -101,7 +101,7 @@ const SpellList = (props: SpellListProps) => {
                               : "btn btn-primary test-btn"
                           }
                           style={{ width: testWidth - 20 }}
-                          onClick={e => {
+                          onClick={(e) => {
                             e.stopPropagation();
                             changeSpell(
                               name,
@@ -159,7 +159,7 @@ const SpellList = (props: SpellListProps) => {
                                 Varianten:{" "}
                               </span>
                               {spell.variants
-                                ? spell.variants.map(variant => (
+                                ? spell.variants.map((variant) => (
                                     <div
                                       key={variant.name + variant.effect}
                                       className="pl-3 border-bottom border-dark"
@@ -219,7 +219,7 @@ const SpellList = (props: SpellListProps) => {
                               {spell.distribution
                                 ? spell.distribution
                                     .map(
-                                      distri =>
+                                      (distri) =>
                                         `${distri.representation} ${distri.distribution}`
                                     )
                                     .join(", ")

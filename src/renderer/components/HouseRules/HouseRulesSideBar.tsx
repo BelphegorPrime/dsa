@@ -3,7 +3,7 @@ import { useMainReducerCallbacks } from "../../context/mainReducer/MainContext";
 import { HouseRuleEnum } from "../../context/mainReducer/mainReducer";
 
 import { addId } from "../../helperFunctions";
-import { HouseRule } from "../../types";
+import { HouseRule } from "../../types/types";
 
 interface HouseRulesSidebarProps {
   addNewHouseRules: (rules: HouseRule[]) => void;

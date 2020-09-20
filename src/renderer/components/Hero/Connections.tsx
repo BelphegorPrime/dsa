@@ -1,5 +1,5 @@
 import React from "react";
-import { Connection } from "../../types";
+import { Connection } from "../../types/types";
 
 interface ConnectionsProps {
   connections: Connection[];
@@ -12,7 +12,7 @@ const Connections = (props: ConnectionsProps) => {
     <div className={className}>
       <div className="pl-2">
         <span className="font-weight-bold">Verbindungen:</span>
-        {connections.map(connection => {
+        {connections.map((connection) => {
           const { description, name, socialStatus } = connection;
           return (
             <div key={name} className="col-12 pt-2">

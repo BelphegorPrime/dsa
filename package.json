@@ -85,7 +85,6 @@
     "js-svg-path": "1.1.0",
     "lokijs": "1.5.11",
     "potrace": "2.1.8",
-    "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-apollo": "3.1.5",
     "react-dom": "16.13.1",

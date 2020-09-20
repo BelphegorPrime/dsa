@@ -1,10 +1,10 @@
-import { Child, RawProperty } from "../rawTypes";
-import { ObjectType } from "../types";
+import { Child, RawProperty } from "../types/rawTypes";
+import { ObjectType } from "../types/types";
 import getProperties from "./getProperties";
 
 export default (objects: Child[]) => {
   const returnObject: ObjectType = {};
-  objects.forEach(o => {
+  objects.forEach((o) => {
     const { name, anzahl, slot } = o.attributes;
     if (name) {
       if (o.children.length > 0) {
@@ -12,9 +12,9 @@ export default (objects: Child[]) => {
         const amountNumber = anzahl ? anzahl : 0;
         returnObject[name] = {
           slot: slotNumber,
-          amount: amountNumber
+          amount: amountNumber,
         };
-        o.children.forEach(c => {
+        o.children.forEach((c) => {
           switch (c.name) {
             case "Fernkampfwaffe":
               returnObject[name].distantWeapon = true;
@@ -29,8 +29,9 @@ export default (objects: Child[]) => {
               break;
             }
             case "Wesen":
-              returnObject[name].properties = getProperties(c.children[0]
-                .children as RawProperty[]);
+              returnObject[name].properties = getProperties(
+                c.children[0].children as RawProperty[]
+              );
               break;
             default:
               break;
@@ -41,7 +42,7 @@ export default (objects: Child[]) => {
         const amountNumber = anzahl ? anzahl : 0;
         returnObject[name] = {
           slot: slotNumber,
-          amount: amountNumber
+          amount: amountNumber,
         };
       }
     }

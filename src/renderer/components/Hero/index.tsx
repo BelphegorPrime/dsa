@@ -1,33 +1,21 @@
 import React, { Fragment } from "react";
-import { useMainReducerState } from "../../context/mainReducer/MainContext";
-import { Hero as HeroType } from "../../types";
+import { useMainReducer } from "../../context/mainReducer/MainContext";
 import PropertiesQuickBar from "../PropertiesQuickBar";
 import HeroBody from "./HeroBody";
 import HeroSideBar from "./HeroSideBar";
 
-interface HeroProps {
-  heros: {
-    [name: string]: HeroType;
-  };
-  updateHero: (hero: HeroType) => void;
-  chooseHero: (hero: string) => void;
-}
-
-const Hero = (props: HeroProps) => {
-  const {
-    data: { heroPage, chosenHero },
-  } = useMainReducerState<true>();
-  const { heros, updateHero, chooseHero } = props;
+const Hero = () => {
+  const [
+    {
+      data: { heroPage, chosenHero },
+    },
+    { updateHero },
+  ] = useMainReducer<true>();
 
   return (
     <Fragment>
       <div className="left-pane col-2">
-        <HeroSideBar
-          heros={heros}
-          chosenHero={chosenHero}
-          page={heroPage}
-          chooseHero={chooseHero}
-        />
+        <HeroSideBar />
       </div>
       <div className="right-pane col-10 row-without-margin">
         {chosenHero ? (

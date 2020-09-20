@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { Hero } from "../../types";
+import { Hero } from "../../types/types";
 import Advantages from "./Advantages";
 import Base from "./Base";
 import Comments from "./Comments";

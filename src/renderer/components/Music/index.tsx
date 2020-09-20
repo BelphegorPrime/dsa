@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-import { RouteComponentProps } from "react-router-dom";
 import MusicBody from "./MusicBody";
 import MusicSideBar from "./MusicSideBar";
 
@@ -66,7 +65,7 @@ const pages = [
   }
 ];
 
-const Music = (props: RouteComponentProps) => {
+const Music = () => {
   const [page, setPage] = useState("Battle");
   const pageToShow = pages.find(p => p.name === page);
   const names = pages.map(p => p.name);

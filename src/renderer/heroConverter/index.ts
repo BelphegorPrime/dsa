@@ -1,6 +1,12 @@
-import { Child, RawEquipemnt, RawHero, RawProperty } from "../rawTypes";
+import { Child, RawEquipemnt, RawHero, RawProperty } from "../types/rawTypes";
 import RuleBook from "../Rulebook";
-import { Comment, ConvertedHero, Hero, HouseRule, Vantage } from "../types";
+import {
+  Comment,
+  ConvertedHero,
+  Hero,
+  HouseRule,
+  Vantage,
+} from "../types/types";
 import addFight from "./addFight";
 import getAdvantages from "./getAdvantages";
 import getBasics from "./getBasics";

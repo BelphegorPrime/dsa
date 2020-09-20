@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
-import { v4 as uuid4 } from 'uuid';
+import { v4 as uuid4 } from "uuid";
 import { Competitor, Encounter } from "./index";
 
 interface EncounterModalProps {
@@ -24,7 +24,7 @@ const initialMobData = {
   gs: 5,
   rs: 0,
   dk: "N",
-  be: 0
+  be: 0,
 };
 
 const EncounterModal = (props: EncounterModalProps) => {
@@ -33,7 +33,7 @@ const EncounterModal = (props: EncounterModalProps) => {
   const [mobs, setMobs] = useState<Competitor[]>([]);
   const [mobData, setMobData] = useState<Competitor>({
     id: uuid4(),
-    ...initialMobData
+    ...initialMobData,
   });
   const createNewEncounter = () => {
     save({ id: uuid4(), competitors: mobs, name: formName });
@@ -74,7 +74,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 Name:
                 <input
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "name")}
+                  onChange={(e) => handleMobDataChange(e, "name")}
                   value={mobData.name}
                 />
               </div>
@@ -85,7 +85,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                     type="number"
                     className="form-control w-25"
                     style={{ display: "inline-block" }}
-                    onChange={e => handleMobDataChange(e, "tpDiceAmount")}
+                    onChange={(e) => handleMobDataChange(e, "tpDiceAmount")}
                     value={mobData.tpDiceAmount}
                   />
                   w
@@ -93,7 +93,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                     type="number"
                     className="form-control w-25"
                     style={{ display: "inline-block" }}
-                    onChange={e => handleMobDataChange(e, "tpDice")}
+                    onChange={(e) => handleMobDataChange(e, "tpDice")}
                     value={mobData.tpDice}
                   />
                   +
@@ -101,7 +101,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                     type="number"
                     className="form-control w-25"
                     style={{ display: "inline-block" }}
-                    onChange={e => handleMobDataChange(e, "tpMod")}
+                    onChange={(e) => handleMobDataChange(e, "tpMod")}
                     value={mobData.tpMod}
                   />
                 </span>
@@ -111,7 +111,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "iniBase")}
+                  onChange={(e) => handleMobDataChange(e, "iniBase")}
                   value={mobData.iniBase}
                 />
               </div>
@@ -120,7 +120,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "at")}
+                  onChange={(e) => handleMobDataChange(e, "at")}
                   value={mobData.at}
                 />
               </div>
@@ -129,7 +129,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "pa")}
+                  onChange={(e) => handleMobDataChange(e, "pa")}
                   value={mobData.pa}
                 />
               </div>
@@ -138,7 +138,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "fk")}
+                  onChange={(e) => handleMobDataChange(e, "fk")}
                   value={mobData.fk}
                 />
               </div>
@@ -146,7 +146,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 DK:
                 <input
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "dk")}
+                  onChange={(e) => handleMobDataChange(e, "dk")}
                   value={mobData.dk}
                 />
               </div>
@@ -155,7 +155,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "lep")}
+                  onChange={(e) => handleMobDataChange(e, "lep")}
                   value={mobData.lep}
                 />
               </div>
@@ -164,7 +164,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "au")}
+                  onChange={(e) => handleMobDataChange(e, "au")}
                   value={mobData.au}
                 />
               </div>
@@ -173,7 +173,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "ko")}
+                  onChange={(e) => handleMobDataChange(e, "ko")}
                   value={mobData.ko}
                 />
               </div>
@@ -182,7 +182,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "mr")}
+                  onChange={(e) => handleMobDataChange(e, "mr")}
                   value={mobData.mr}
                 />
               </div>
@@ -191,7 +191,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "gs")}
+                  onChange={(e) => handleMobDataChange(e, "gs")}
                   value={mobData.gs}
                 />
               </div>
@@ -200,7 +200,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "rs")}
+                  onChange={(e) => handleMobDataChange(e, "rs")}
                   value={mobData.rs}
                 />
               </div>
@@ -209,7 +209,7 @@ const EncounterModal = (props: EncounterModalProps) => {
                 <input
                   type="number"
                   className="form-control"
-                  onChange={e => handleMobDataChange(e, "be")}
+                  onChange={(e) => handleMobDataChange(e, "be")}
                   value={mobData.be}
                 />
               </div>
@@ -226,7 +226,7 @@ const EncounterModal = (props: EncounterModalProps) => {
             <div
               style={{ height: `calc(100% - ${264}px)`, overflow: "scroll" }}
             >
-              {mobs.map(mob => (
+              {mobs.map((mob) => (
                 <div className="row p-2 border-bottom" key={mob.id}>
                   <div className="col-8">Name: {mob.name}</div>
                   <div className="col-4">Initiative: {mob.iniBase}</div>

@@ -1,5 +1,5 @@
 import { useLocalStorage } from "react-use";
-import { Electron } from "../types";
+import { Electron } from "../types/types";
 import { useEffect, useState } from "react";
 
 const useIpcFileInit = (electron: Electron, key: string) => {

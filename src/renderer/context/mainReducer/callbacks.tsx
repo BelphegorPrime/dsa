@@ -1,6 +1,6 @@
 import { Dispatch } from "react";
 import { Encounter } from "../../components/Battle";
-import { Hero, HouseRule } from "../../types";
+import { Hero, HouseRule } from "../../types/types";
 import { HerosObject } from "./MainContext";
 import {
   Action,
@@ -131,7 +131,7 @@ export const getCallbacks = <T extends boolean>(
   const updateHero = (funcs.updateHero
     ? (hero: Hero) => {
         if (funcs.updateHero) {
-          // dispatch({ type: ActionTypes.UPDATE_HERO, data: hero });
+          dispatch({ type: ActionTypes.UPDATE_HERO, data: hero });
           funcs.updateHero(hero);
         }
       }
@@ -140,7 +140,7 @@ export const getCallbacks = <T extends boolean>(
   const appendToState = (funcs.appendToState
     ? (composedHeros: Hero[]) => {
         if (funcs.appendToState) {
-          // dispatch({ type: ActionTypes.APPEND_HEROS, data: composedHeros });
+          dispatch({ type: ActionTypes.APPEND_HEROS, data: composedHeros });
           funcs.appendToState(composedHeros);
         }
       }
@@ -149,7 +149,7 @@ export const getCallbacks = <T extends boolean>(
   const addNewHouseRules = (funcs.addNewHouseRules
     ? (rules: HouseRule[]) => {
         if (funcs.addNewHouseRules) {
-          // dispatch({ type: ActionTypes.ADD_NEW_HOUSE_RULES, data: rules });
+          dispatch({ type: ActionTypes.ADD_NEW_HOUSE_RULES, data: rules });
           funcs.addNewHouseRules(rules);
         }
       }
@@ -158,7 +158,7 @@ export const getCallbacks = <T extends boolean>(
   const removeRule = (funcs.removeRule
     ? (id: string) => {
         if (funcs.removeRule) {
-          // dispatch({ type: ActionTypes.REMOVE_RULE, data: id });
+          dispatch({ type: ActionTypes.REMOVE_RULE, data: id });
           funcs.removeRule(id);
         }
       }
@@ -167,7 +167,7 @@ export const getCallbacks = <T extends boolean>(
   const chooseHero = (funcs.chooseHero
     ? (name: string) => {
         if (funcs.chooseHero) {
-          // dispatch({ type: ActionTypes.CHOOOSE_HERO, data: name });
+          dispatch({ type: ActionTypes.CHOOOSE_HERO, data: name });
           funcs.chooseHero(name);
         }
       }

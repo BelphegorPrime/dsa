@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Property } from "../../types";
+import { Property } from "../../types/types";
 
 interface PropertiesProps {
   properties: Property | undefined;
@@ -8,14 +8,17 @@ interface PropertiesProps {
 
 const Properties = (props: PropertiesProps) => {
   const { properties, className } = props;
+
   const borderRight = {
-    borderRight: "1px solid lightgrey"
+    borderRight: "1px solid lightgrey",
   };
+
   const tableStyle = {
     ...borderRight,
     borderLeft: "1px solid lightgrey",
-    borderBottom: "1px solid lightgrey"
+    borderBottom: "1px solid lightgrey",
   };
+
   return (
     <div className={className}>
       <div className="pl-2">

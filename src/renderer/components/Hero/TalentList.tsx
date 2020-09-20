@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { test } from "../../helperFunctions";
-import { Property, TalentList as TalentListType } from "../../types";
+import { Property, TalentList as TalentListType } from "../../types/types";
 
 interface TalentListProps {
   talentList: TalentListType | undefined;
@@ -34,7 +34,7 @@ const TalentList = (props: TalentListProps) => {
         </thead>
         <tbody>
           {talentList
-            ? Object.keys(talentList).map(name => {
+            ? Object.keys(talentList).map((name) => {
                 const talent = talentList[name];
                 return (
                   <tr key={name}>

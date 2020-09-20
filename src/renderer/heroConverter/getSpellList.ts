@@ -1,5 +1,5 @@
-import { Child } from "../rawTypes";
-import { Spell, SpellList } from "../types";
+import { Child } from "../types/rawTypes";
+import { Spell, SpellList } from "../types/types";
 import trialToProperty from "./trialToProperty";
 
 export default (spellList: Child[], lcd: Spell[]): SpellList => {
@@ -19,7 +19,7 @@ export default (spellList: Child[], lcd: Spell[]): SpellList => {
       zauberkommentar: spellComment,
       lernmethode,
       probe,
-      value
+      value,
     } = s.attributes;
     if (name && probe) {
       let learningMethode = "selfStudy";
@@ -36,10 +36,7 @@ export default (spellList: Child[], lcd: Spell[]): SpellList => {
           }
           break;
       }
-      const trial = probe
-        .split("(")[1]
-        .split(")")[0]
-        .split("/");
+      const trial = probe.split("(")[1].split(")")[0].split("/");
 
       returnSpellList[name] = {
         name,
@@ -56,26 +53,23 @@ export default (spellList: Child[], lcd: Spell[]): SpellList => {
         spellComment: spellComment ? spellComment : "",
         trial,
         trialProperties: trial.map(trialToProperty),
-        value: value ? value : "0"
+        value: value ? value : "0",
       };
     }
   });
 
   // Add properties from LCD to a Spell
-  Object.keys(returnSpellList).forEach(name => {
+  Object.keys(returnSpellList).forEach((name) => {
     let spell = returnSpellList[name];
     let possibleSpells = lcd.filter(
-      s => s.name.toLowerCase() === name.toLowerCase()
+      (s) => s.name.toLowerCase() === name.toLowerCase()
     );
     if (possibleSpells.length > 0) {
-      possibleSpells = possibleSpells.map(ps => {
+      possibleSpells = possibleSpells.map((ps) => {
         const returnSpell = ps;
         // @ts-ignore
         const trial = returnSpell.trial as string;
-        returnSpell.trial = trial
-          .split("(")[0]
-          .split(")")[0]
-          .split("/");
+        returnSpell.trial = trial.split("(")[0].split(")")[0].split("/");
         return returnSpell;
       });
       spell = { ...spell, ...possibleSpells[0], fromLCD: true };

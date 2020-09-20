@@ -1,20 +1,16 @@
 import React, { Fragment } from "react";
-import { useMainReducerState } from "../../context/mainReducer/MainContext";
-import { HouseRule } from "../../types";
+import { useMainReducer } from "../../context/mainReducer/MainContext";
 import HouseRulesBody from "./HouseRulesBody";
 import HouseRulesSideBar from "./HouseRulesSideBar";
 
-interface HouseRuleProps {
-  houseRules: HouseRule[];
-  removeRule: (ruleId: string) => void;
-  addNewHouseRules: (rules: HouseRule[]) => void;
-}
+const HouseRules = () => {
+  const [
+    {
+      data: { houseRuleToShow, houseRules },
+    },
+    { removeRule, addNewHouseRules },
+  ] = useMainReducer<true>();
 
-const HouseRules = (props: HouseRuleProps) => {
-  const {
-    data: { houseRuleToShow },
-  } = useMainReducerState<true>();
-  const { houseRules, removeRule, addNewHouseRules } = props;
   return (
     <Fragment>
       <div className="left-pane col-2">

@@ -1,6 +1,6 @@
 import { v4 as uuid4 } from "uuid";
 import trialToProperty from "./heroConverter/trialToProperty";
-import { Electron, MainProperties, Property } from "./types";
+import { Electron, MainProperties, Property } from "./types/types";
 
 export const rollDice = (x: number): number =>
   Math.floor(Math.random() * x) + 1;

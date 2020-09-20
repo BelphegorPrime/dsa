@@ -1,11 +1,5 @@
-import React from "react";
-import {
-  HashRouter as Router,
-  Route,
-  RouteComponentProps,
-  Switch,
-} from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import React, { useCallback } from "react";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { useMainReducer } from "../context/mainReducer/MainContext";
 import {
   HeroPage,
@@ -24,14 +18,7 @@ import NoMatch from "./NoMatch";
 const App = () => {
   const [
     {
-      data: {
-        showNavBar,
-        heros,
-        chosenHero,
-        houseRules,
-        encounter,
-        activeEncounter,
-      },
+      data: { showNavBar },
     },
     {
       toggleNavBar,
@@ -41,13 +28,6 @@ const App = () => {
       setHeros,
       setChosenHero,
       setHouseRules,
-      setEncounter,
-      setActiveEncounter,
-      appendToState,
-      removeRule,
-      chooseHero,
-      addNewHouseRules,
-      updateHero,
     },
   ] = useMainReducer<true>();
 
@@ -55,102 +35,34 @@ const App = () => {
   // useEffect(() => setChosenHero(chosenHero), [chosenHero, setChosenHero]);
   // useEffect(() => setHouseRules(houseRules), [houseRules, setHouseRules]);
 
-  const resetState = () => {
+  const resetState = useCallback(() => {
     setPage(Page.default);
     setHeros({});
     setChosenHero(null);
     setHeroPage(HeroPage.Basis);
     setHouseRules([]);
     setHouseRuleToShow(HouseRuleEnum.templates);
-  };
+  }, [setPage, setHeros, setChosenHero, setHouseRules, setHouseRuleToShow]);
 
-  const setToggleNavbar = () => {
+  const setToggleNavbar = useCallback(() => {
     toggleNavBar(!showNavBar);
-  };
+  }, [toggleNavBar, showNavBar]);
 
   return (
     <Router>
       <div className="App cursor-default">
-        <Header
-          chosenHero={chosenHero}
-          houseRules={houseRules}
-          appendToState={appendToState}
-          resetState={resetState}
-          toggleNavBar={setToggleNavbar}
-          setEncounter={setEncounter}
-          setActiveEncounter={setActiveEncounter}
-        />
-        {showNavBar ? <Nav toggleNavBar={toggleNavBar} /> : null}
-        <Route
-          render={({ location }) => (
-            <TransitionGroup>
-              <CSSTransition key={location.key} classNames="fade" timeout={300}>
-                <div id="app-body" className="row">
-                  <Switch>
-                    <Route
-                      exact
-                      path="/map"
-                      render={(renderProps: RouteComponentProps) => (
-                        <Map {...renderProps} />
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/houserules"
-                      render={(renderProps: RouteComponentProps) => (
-                        <HouseRules
-                          {...renderProps}
-                          addNewHouseRules={addNewHouseRules}
-                          houseRules={houseRules}
-                          removeRule={removeRule}
-                        />
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/mastermode"
-                      render={(renderProps) => (
-                        <Master
-                          {...renderProps}
-                          heros={heros}
-                          chooseHero={chooseHero}
-                        />
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/battlemode"
-                      render={(renderProps) => (
-                        <Battle
-                          {...renderProps}
-                          heros={heros}
-                          chooseHero={chooseHero}
-                          encounter={encounter}
-                          setEncounter={setEncounter}
-                          activeEncounter={activeEncounter}
-                          setActiveEncounter={setActiveEncounter}
-                        />
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/"
-                      render={(renderProps) => (
-                        <Hero
-                          {...renderProps}
-                          heros={heros}
-                          chooseHero={chooseHero}
-                          updateHero={updateHero}
-                        />
-                      )}
-                    />
-                    <Route component={NoMatch} />
-                  </Switch>
-                </div>
-              </CSSTransition>
-            </TransitionGroup>
-          )}
-        />
+        <Header resetState={resetState} toggleNavBar={setToggleNavbar} />
+        {showNavBar ? <Nav /> : null}
+        <div id="app-body" className="row">
+          <Switch>
+            <Route exact path="/map" component={Map} />
+            <Route exact path="/houserules" component={HouseRules} />
+            <Route exact path="/mastermode" component={Master} />
+            <Route exact path="/battlemode" component={Battle} />
+            <Route exact path="/" component={Hero} />
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
       </div>
     </Router>
   );

@@ -8,36 +8,23 @@ import { useMainReducer } from "../context/mainReducer/MainContext";
 
 import { countBy, rollDice } from "../helperFunctions";
 import { convert, reconvert } from "../heroConverter";
-import { Child } from "../rawTypes";
-import { Hero, HouseRule } from "../types";
+import { Child } from "../types/rawTypes";
+import { Hero } from "../types/types";
 
 interface HeadProps {
-  chosenHero: Hero | null;
-  houseRules: HouseRule[];
-  appendToState: (heros: Hero[]) => void;
   resetState: () => void;
   toggleNavBar: () => void;
-  setEncounter: (encounters: any[]) => void;
-  setActiveEncounter: (encounter: any | null) => void;
 }
 
 const Head = (props: HeadProps) => {
   const [
     {
-      data: { page },
+      data: { page, chosenHero, houseRules },
     },
-    { setHeros },
+    { setHeros, appendToState, setEncounter, setActiveEncounter },
   ] = useMainReducer<true>();
   const fileUpload = useRef<HTMLInputElement>(null);
-  const {
-    chosenHero,
-    resetState,
-    appendToState,
-    houseRules,
-    toggleNavBar,
-    setEncounter,
-    setActiveEncounter,
-  } = props;
+  const { resetState, toggleNavBar } = props;
   const tempThrows = [];
   for (let i = 0; i < 10000; i += 1) {
     tempThrows[i] = rollDice(20);

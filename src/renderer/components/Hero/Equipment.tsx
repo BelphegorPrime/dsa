@@ -1,6 +1,5 @@
-import { object, string } from "prop-types";
 import React from "react";
-import { Equipment as EquipmentType } from "../../types";
+import { Equipment as EquipmentType } from "../../types/types";
 
 interface EquipmentProps {
   weapons: EquipmentType | undefined;
@@ -59,11 +58,6 @@ const Equipment = (props: EquipmentProps) => {
       </div>
     </div>
   );
-};
-
-Equipment.propTypes = {
-  weapons: object,
-  className: string
 };
 
 export default Equipment;

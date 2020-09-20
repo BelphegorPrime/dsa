@@ -1,16 +1,15 @@
 import React, { Fragment } from "react";
 
 import { getMainProperties } from "../../helperFunctions";
-import { MasterSideBarProps } from "../../propTypes";
+import { MasterSideBarProps } from "../../types/propTypes";
 
-const MasterSideBar = (props: MasterSideBarProps) => {
-  const {
-    heros,
-    chooseHero,
-    selectedHeros,
-    setSelectedHeros,
-    withProperties
-  } = props;
+const MasterSideBar = ({
+  heros,
+  chooseHero,
+  selectedHeros,
+  setSelectedHeros,
+  withProperties,
+}: MasterSideBarProps) => {
   if (!heros) {
     return null;
   }
@@ -18,7 +17,7 @@ const MasterSideBar = (props: MasterSideBarProps) => {
   const toggleHero = (name: string, checked: boolean) =>
     checked
       ? setSelectedHeros([...selectedHeros, name])
-      : setSelectedHeros(selectedHeros.filter(n => n !== name));
+      : setSelectedHeros(selectedHeros.filter((n) => n !== name));
 
   return (
     <Fragment>
@@ -53,7 +52,7 @@ const MasterSideBar = (props: MasterSideBarProps) => {
                   <input
                     type="checkbox"
                     checked={selectedHeros.indexOf(name) > -1}
-                    onChange={e => {
+                    onChange={(e) => {
                       e.stopPropagation();
                       toggleHero(name, e.target.checked);
                     }}

@@ -1,6 +1,6 @@
 import { calc2, calc5 } from "../helperFunctions";
-import { RawProperty } from "../rawTypes";
-import { Property } from "../types";
+import { RawProperty } from "../types/rawTypes";
+import { Property } from "../types/types";
 
 export default (properties: RawProperty[]): Property => {
   const returnProperties: Property = {};
@@ -10,7 +10,7 @@ export default (properties: RawProperty[]): Property => {
       startwert: startValue,
       value,
       grossemeditation,
-      mrmod
+      mrmod,
     } = pp.attributes;
     let name = "";
     switch (pp.attributes.name) {
@@ -94,20 +94,20 @@ export default (properties: RawProperty[]): Property => {
         value: parseInt(value, 10),
         basicValue: parseInt(value, 10),
         greatMeditation: parseInt(grossemeditation, 10),
-        magicResistenceMod: parseInt(mrmod, 10)
+        magicResistenceMod: parseInt(mrmod, 10),
       };
     } else if (startValue) {
       returnProperties[name] = {
         mod: parseInt(mod, 10),
         startValue: parseInt(startValue, 10),
         basicValue: parseInt(value, 10),
-        value: parseInt(value, 10)
+        value: parseInt(value, 10),
       };
     } else {
       returnProperties[name] = {
         mod: parseInt(mod, 10),
         basicValue: parseInt(value, 10),
-        value: parseInt(value, 10)
+        value: parseInt(value, 10),
       };
     }
   });

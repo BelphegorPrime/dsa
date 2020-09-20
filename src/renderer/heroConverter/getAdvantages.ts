@@ -1,5 +1,5 @@
-import { Child } from "../rawTypes";
-import { Vantage } from "../types";
+import { Child } from "../types/rawTypes";
+import { Vantage } from "../types/types";
 
 export default (
   values: Child[],
@@ -8,7 +8,7 @@ export default (
 ): Vantage[] =>
   values
     .map((a: Child): Vantage | undefined => {
-      const adittionalValues = a.children.map(e => e.attributes.value);
+      const adittionalValues = a.children.map((e) => e.attributes.value);
       const { name } = a.attributes;
       if (name) {
         let isAdvantage = null;
@@ -24,19 +24,19 @@ export default (
           return {
             name,
             value,
-            isAdvantage
+            isAdvantage,
           };
         }
         if (adittionalValues.length > 0) {
           return {
             name,
             value: `${adittionalValues[1]} ${adittionalValues[0]}`,
-            isAdvantage
+            isAdvantage,
           };
         }
         return {
           name,
-          isAdvantage
+          isAdvantage,
         };
       }
       return undefined;

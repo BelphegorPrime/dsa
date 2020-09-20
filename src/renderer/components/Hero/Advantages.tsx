@@ -1,5 +1,5 @@
 import React from "react";
-import { Vantage } from "../../types";
+import { Vantage } from "../../types/types";
 
 interface AdvantageProps {
   advantages: Vantage[] | undefined;

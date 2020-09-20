@@ -1,7 +1,8 @@
-import produce from "immer";
+import produce, { Draft } from "immer";
 import { Encounter } from "../../components/Battle";
 import { objectWithoutKey } from "../../helperFunctions";
-import { Electron, Hero, HouseRule } from "../../types";
+import { convert } from "../../heroConverter";
+import { Electron, Hero, HouseRule } from "../../types/types";
 import { HerosObject } from "./MainContext";
 
 export enum ActionTypes {
@@ -15,6 +16,11 @@ export enum ActionTypes {
   "SET_ENCOUNTER" = "SET_ENCOUNTER",
   "SET_ACTIVE_ENCOUNTER" = "SET_ACTIVE_ENCOUNTER",
   "REMOVE_HERO" = "REMOVE_HERO",
+  "UPDATE_HERO" = "UPDATE_HERO",
+  "APPEND_HEROS" = "APPEND_HEROS",
+  "ADD_NEW_HOUSE_RULES" = "ADD_NEW_HOUSE_RULES",
+  "REMOVE_RULE" = "REMOVE_RULE",
+  "CHOOOSE_HERO" = "CHOOOSE_HERO",
 }
 
 export enum Page {
@@ -51,7 +57,8 @@ export type Action = {
     | (Hero | null)
     | HouseRule[]
     | Encounter[]
-    | (Encounter | null);
+    | (Encounter | null)
+    | Hero[];
 };
 
 export type State<T extends boolean> = {
@@ -93,6 +100,26 @@ export const getInitArgs = <T extends boolean>(
       activeEncounter: data.activeEncounter || null,
     },
   };
+};
+
+const appendToState = (
+  draftState: Draft<State<true>>,
+  composedHeros: Hero[]
+) => {
+  draftState.data.heros = {
+    ...draftState.data.heros,
+    ...composedHeros
+      .map((h: Hero): HerosObject | null => {
+        if (h.converted.name) {
+          return {
+            [h.converted.name]: h,
+          };
+        }
+        return null;
+      })
+      .reduce((acc, val) => ({ ...acc, ...val }), {}),
+  };
+  draftState.data.chosenHero = composedHeros[composedHeros.length - 1];
 };
 
 export const mainReducer = (state: State<boolean>, action: Action) => {
@@ -143,6 +170,61 @@ export const mainReducer = (state: State<boolean>, action: Action) => {
         ) {
           draftState.data.chosenHero = null;
         }
+        break;
+      }
+      case ActionTypes.UPDATE_HERO: {
+        const hero = action.data as Hero;
+        const { name } = hero.xml.children[0].attributes;
+        if (name) {
+          draftState.data.heros[name] = hero;
+          draftState.data.chosenHero = hero;
+        }
+        break;
+      }
+      case ActionTypes.APPEND_HEROS: {
+        const composedHeros = action.data as Hero[];
+        appendToState(draftState, composedHeros);
+        break;
+      }
+      case ActionTypes.ADD_NEW_HOUSE_RULES: {
+        const rules = action.data as HouseRule[];
+        const otherHouseRules = draftState.data.houseRules
+          .filter(
+            (r: HouseRule) => rules.map((ru) => ru.id).indexOf(r.id) === -1
+          )
+          .concat(...rules);
+        Object.keys(draftState.data.heros).forEach((name) => {
+          const { xml } = draftState.data.heros[name];
+          appendToState(draftState, [
+            {
+              xml,
+              converted: convert(xml, otherHouseRules),
+            },
+          ]);
+        });
+        draftState.data.houseRules = otherHouseRules;
+        break;
+      }
+      case ActionTypes.REMOVE_RULE: {
+        const id = action.data as string;
+        const otherHouseRules = draftState.data.houseRules.filter(
+          (hr: HouseRule) => hr.id !== id
+        );
+        Object.keys(draftState.data.heros).forEach((name) => {
+          const { xml } = draftState.data.heros[name];
+          appendToState(draftState, [
+            {
+              xml,
+              converted: convert(xml, otherHouseRules),
+            },
+          ]);
+        });
+        draftState.data.houseRules = otherHouseRules;
+        break;
+      }
+      case ActionTypes.CHOOOSE_HERO: {
+        const name = action.data as string;
+        draftState.data.chosenHero = draftState.data.heros[name];
         break;
       }
     }

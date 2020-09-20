@@ -1,10 +1,10 @@
-import { Child } from "../rawTypes";
-import { TalentList } from "../types";
+import { Child } from "../types/rawTypes";
+import { TalentList } from "../types/types";
 import trialToProperty from "./trialToProperty";
 
 export default (talentList: Child[]): TalentList => {
   const returnTalentList: TalentList = {};
-  talentList.forEach(t => {
+  talentList.forEach((t) => {
     const { name, lernmethode, probe, value } = t.attributes;
     if (name && probe) {
       let learningMethode = "selfStudy";
@@ -21,10 +21,7 @@ export default (talentList: Child[]): TalentList => {
           }
           break;
       }
-      const trial = probe
-        .split("(")[1]
-        .split(")")[0]
-        .split("/");
+      const trial = probe.split("(")[1].split(")")[0].split("/");
 
       if (t.attributes.k) {
         returnTalentList[name] = {
@@ -32,14 +29,14 @@ export default (talentList: Child[]): TalentList => {
           trial,
           trialProperties: trial.map(trialToProperty),
           value: value ? value : "0",
-          k: t.attributes.k
+          k: t.attributes.k,
         };
       } else {
         returnTalentList[name] = {
           learningMethode,
           trial,
           trialProperties: trial.map(trialToProperty),
-          value: value ? value : "0"
+          value: value ? value : "0",
         };
       }
     }

@@ -1,10 +1,10 @@
 import React from "react";
-import { PropertiesQuickBarProps } from "../propTypes";
+import { PropertiesQuickBarProps } from "../types/propTypes";
 
 const PropertiesQuickBar = ({
   hero,
   className,
-  orientation
+  orientation,
 }: PropertiesQuickBarProps) => {
   const { properties } = hero.converted;
   if (!properties) {
@@ -16,7 +16,7 @@ const PropertiesQuickBar = ({
         width: "100%",
         textAlign: "center" as "center",
         paddingBottom: "calc(40px - 2rem)",
-        paddingTop: "calc(40px - 2rem)"
+        paddingTop: "calc(40px - 2rem)",
       };
       return (
         <div className={className}>
@@ -118,7 +118,7 @@ const PropertiesQuickBar = ({
         width: "12.5%",
         textAlign: "center" as "center",
         paddingBottom: "calc(40px - 2rem)",
-        paddingTop: "calc(40px - 2rem)"
+        paddingTop: "calc(40px - 2rem)",
       };
       return (
         <div

@@ -1,12 +1,12 @@
-import { Child } from "../rawTypes";
-import { Basic } from "../types";
+import { Child } from "../types/rawTypes";
+import { Basic } from "../types/types";
 
 export default (basics: Child[]): Basic => {
   const returnBasics: Basic = {};
   returnBasics.gender =
     basics[0].attributes.name === "männlich" ? "male" : "female";
   returnBasics.playAids = basics[1].children
-    .map(c => c.attributes.name)
+    .map((c) => c.attributes.name)
     .filter((e: string | undefined): e is string => e !== undefined);
   returnBasics.race = basics[2].attributes.string;
   const [first, second] = basics[2].children;
@@ -35,19 +35,19 @@ export default (basics: Child[]): Basic => {
   const {
     art: kind,
     string: name,
-    tarnidentitaet: coverIdentity
+    tarnidentitaet: coverIdentity,
   } = basics[4].children[0].attributes;
   const variant = basics[4].children[0].children[0].attributes.name;
   returnBasics.profession = {
     kind,
     name,
     coverIdentity,
-    variant
+    variant,
   };
   if (basics[6].attributes) {
     const { attributes } = basics[6];
     returnBasics.notes = Object.keys(attributes)
-      .map(key => {
+      .map((key) => {
         let value = attributes[key];
         if (value && value !== "") {
           value = value.toString();

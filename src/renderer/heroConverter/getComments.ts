@@ -1,5 +1,5 @@
-import { Child } from "../rawTypes";
-import { Comment } from "../types";
+import { Child } from "../types/rawTypes";
+import { Comment } from "../types/types";
 import trialToProperty from "./trialToProperty";
 
 export default (comments: Child[]): Comment[] =>
@@ -15,7 +15,7 @@ export default (comments: Child[]): Comment[] =>
         probe,
         sf: specialAbility,
         sfname: specialAbilityName,
-        wirkung: effect
+        wirkung: effect,
       } = c.attributes;
       let trial: string[] = [];
       if (probe && probe !== "") {
@@ -33,12 +33,12 @@ export default (comments: Child[]): Comment[] =>
           name: "",
           duration,
           cost,
-          trial: trial.map(t => t.split(" ").join("")),
+          trial: trial.map((t) => t.split(" ").join("")),
           trialProperties,
           specialAbility,
           specialAbilityName,
           effect,
-          comment: kommentar ? kommentar.replace(/&#10;/g, "") : ""
+          comment: kommentar ? kommentar.replace(/&#10;/g, "") : "",
         };
       }
       if (added && id) {
@@ -46,12 +46,12 @@ export default (comments: Child[]): Comment[] =>
           name: key,
           comment: kommentar ? kommentar.replace(/&#10;/g, "") : "",
           added,
-          id
+          id,
         };
       }
       return {
         name: key,
-        comment: kommentar ? kommentar.replace(/&#10;/g, "") : ""
+        comment: kommentar ? kommentar.replace(/&#10;/g, "") : "",
       };
     }
   );

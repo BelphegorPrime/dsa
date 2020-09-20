@@ -2,14 +2,13 @@ import React, { MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { useMainReducer } from "../context/mainReducer/MainContext";
 import { Page } from "../context/mainReducer/mainReducer";
-import { NavProps } from "../propTypes";
 
-const Nav = ({ toggleNavBar }: NavProps) => {
+const Nav = () => {
   const [
     {
       data: { page },
     },
-    { setPage },
+    { setPage, toggleNavBar },
   ] = useMainReducer();
   const style = { display: "block", padding: 10 };
   const hrStyle = { margin: 0 };

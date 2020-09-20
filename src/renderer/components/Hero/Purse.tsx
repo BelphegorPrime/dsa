@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import { Hero } from "../../types";
+import { Hero } from "../../types/types";
 
 interface PurseProps {
   updateHero: (hero: Hero) => void;
@@ -40,7 +40,7 @@ const Purse = (props: PurseProps) => {
     <div className={className}>
       <div className="pl-2 pt-2">
         <span className="font-weight-bold">Vermögen</span>
-        {sortedUnits.map(monetaryUnit => {
+        {sortedUnits.map((monetaryUnit) => {
           const money = purse[monetaryUnit];
           return (
             <div key={monetaryUnit} className="mb-2">
@@ -50,7 +50,7 @@ const Purse = (props: PurseProps) => {
                   className="mr-2"
                   style={{ width: 80 }}
                   value={money.amount > 0 ? money.amount : 0}
-                  onChange={e => updatePurse(monetaryUnit, e)}
+                  onChange={(e) => updatePurse(monetaryUnit, e)}
                 />
                 {monetaryUnit} ({money.country})
               </span>

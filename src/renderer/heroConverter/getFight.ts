@@ -1,9 +1,9 @@
-import { Child } from "../rawTypes";
-import { Fight } from "../types";
+import { Child } from "../types/rawTypes";
+import { Fight } from "../types/types";
 
 export default (fight: Child[]) => {
   const returnFight: Fight = {};
-  fight.forEach(f => {
+  fight.forEach((f) => {
     const { name } = f.attributes;
     const [first, second] = f.children;
     if (name) {
@@ -13,7 +13,7 @@ export default (fight: Child[]) => {
           : 0,
         parade: second.attributes.value
           ? parseInt(second.attributes.value, 10)
-          : 0
+          : 0,
       };
     }
   });

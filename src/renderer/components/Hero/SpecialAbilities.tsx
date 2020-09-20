@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { SpecialAbilities as SpecialAbilitiesType } from "../../types";
+import { SpecialAbilities as SpecialAbilitiesType } from "../../types/types";
 
 interface SpecialAbilitiesProps {
   specialAbilities: SpecialAbilitiesType | undefined;
@@ -14,7 +14,7 @@ const SpecialAbilities = (props: SpecialAbilitiesProps) => {
       <div className="pl-2">
         <span className="font-weight-bold">Sonderfertigkeiten:</span>
         {specialAbilities
-          ? specialAbilities.specialAbilities.map(specialAbility => {
+          ? specialAbilities.specialAbilities.map((specialAbility) => {
               const { name } = specialAbility;
               if (name === "Kulturkunde" || name === "Rüstungsgewöhnung I") {
                 return (
@@ -60,15 +60,20 @@ const SpecialAbilities = (props: SpecialAbilitiesProps) => {
                           <div className="row">
                             <div className="col-2">Alternativen:</div>
                             <div className="col-10">
-                              {liturgy.alternativeNames.map(alternativeName => (
-                                <div className="row" key={alternativeName.name}>
-                                  <div className="col-12">
-                                    Gott: {alternativeName.god} | Name:{" "}
-                                    {alternativeName.name} | Grad:{" "}
-                                    {alternativeName.grade}
+                              {liturgy.alternativeNames.map(
+                                (alternativeName) => (
+                                  <div
+                                    className="row"
+                                    key={alternativeName.name}
+                                  >
+                                    <div className="col-12">
+                                      Gott: {alternativeName.god} | Name:{" "}
+                                      {alternativeName.name} | Grad:{" "}
+                                      {alternativeName.grade}
+                                    </div>
                                   </div>
-                                </div>
-                              ))}
+                                )
+                              )}
                             </div>
                           </div>
                         ) : null}
@@ -98,7 +103,7 @@ const SpecialAbilities = (props: SpecialAbilitiesProps) => {
                           <div className="row">
                             <div className="col-2">Varianten:</div>
                             <div className="col-10">
-                              {liturgy.variants.map(variant => (
+                              {liturgy.variants.map((variant) => (
                                 <Fragment key={variant.grade}>
                                   <div className="row">
                                     <div className="col-2">Grad:</div>
@@ -136,14 +141,16 @@ const SpecialAbilities = (props: SpecialAbilitiesProps) => {
         <hr />
         <span className="font-weight-bold">Verbilligt:</span>
         {specialAbilities
-          ? specialAbilities.cheapenedSpecialAbilities.map(cheapenedAbility => {
-              const { name } = cheapenedAbility;
-              return (
-                <div key={name} className="col-12 pt-2">
-                  <span>{name}</span>
-                </div>
-              );
-            })
+          ? specialAbilities.cheapenedSpecialAbilities.map(
+              (cheapenedAbility) => {
+                const { name } = cheapenedAbility;
+                return (
+                  <div key={name} className="col-12 pt-2">
+                    <span>{name}</span>
+                  </div>
+                );
+              }
+            )
           : null}
       </div>
     </div>

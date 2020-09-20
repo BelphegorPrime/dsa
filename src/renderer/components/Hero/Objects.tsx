@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Hero } from "../../types";
+import { Hero } from "../../types/types";
 
 interface ObjectsProps {
   hero: Hero;
@@ -20,7 +20,7 @@ const Objects = (props: ObjectsProps) => {
         delete objects[nameInput.value];
       } else {
         objects[nameInput.value] = {
-          amount: parseInt(amountInput.value, 10)
+          amount: parseInt(amountInput.value, 10),
         };
       }
     }
@@ -61,7 +61,7 @@ const Objects = (props: ObjectsProps) => {
           </div>
         </div>
 
-        {Object.keys(objects).map(name => {
+        {Object.keys(objects).map((name) => {
           const o = objects[name];
           return (
             <div

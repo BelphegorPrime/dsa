@@ -1,5 +1,5 @@
-import { Child } from "../rawTypes";
-import { Purse } from "../types";
+import { Child } from "../types/rawTypes";
+import { Purse } from "../types/types";
 
 const getPosition = (name: string): number => {
   switch (name) {
@@ -18,7 +18,7 @@ const getPosition = (name: string): number => {
 
 export default (purse: Child[]) => {
   const returnPurse: Purse = {};
-  purse.forEach(money => {
+  purse.forEach((money) => {
     const { anzahl, name, waehrung } = money.attributes;
     if (name) {
       const amount = anzahl ? anzahl : 0;
@@ -27,7 +27,7 @@ export default (purse: Child[]) => {
         amount,
         country,
         name,
-        position: getPosition(name)
+        position: getPosition(name),
       };
     }
   });

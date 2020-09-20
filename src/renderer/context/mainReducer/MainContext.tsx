@@ -3,7 +3,7 @@ import { Encounter } from "../../components/Battle";
 import { objectWithoutKey } from "../../helperFunctions";
 import { convert } from "../../heroConverter";
 import useSave from "../../hooks/useSave";
-import { Electron, Hero, HouseRule } from "../../types";
+import { Electron, Hero, HouseRule } from "../../types/types";
 import { mainReducer, getInitArgs, State, Action } from "./mainReducer";
 import { Callbacks, getCallbacks } from "./callbacks";
 

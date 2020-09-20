@@ -1,23 +1,20 @@
 import React, { Fragment } from "react";
-import { useMainReducerCallbacks } from "../../context/mainReducer/MainContext";
+import { useMainReducer } from "../../context/mainReducer/MainContext";
 import { HeroPage } from "../../context/mainReducer/mainReducer";
-import { ConvertedHero, Hero } from "../../types";
+import { ConvertedHero } from "../../types/types";
 
-interface SidearProps {
-  heros: {
-    [name: string]: Hero;
-  };
-  chooseHero: (hero: string) => void;
-  page: string;
-  chosenHero: Hero | null;
-}
+const Sidebar = () => {
+  const [
+    {
+      data: { heros, heroPage, chosenHero },
+    },
+    { setHeroPage, removeHero, chooseHero },
+  ] = useMainReducer<true>();
 
-const Sidebar = (props: SidearProps) => {
-  const { setHeroPage, removeHero } = useMainReducerCallbacks<true>();
-  const { heros, chooseHero, page, chosenHero } = props;
   if (!heros) {
     return null;
   }
+
   const getSubMenu = (hero: ConvertedHero, name: string) => (
     <Fragment>
       {[
@@ -35,7 +32,7 @@ const Sidebar = (props: SidearProps) => {
           hero &&
           chosenHero &&
           hero.name === chosenHero.converted.name &&
-          page === k
+          heroPage === k
         ) {
           className = "list-group-item active";
         }
@@ -87,17 +84,6 @@ const Sidebar = (props: SidearProps) => {
         ))}
     </Fragment>
   );
-};
-
-Sidebar.defaultProps = {
-  heros: [],
-  page: "",
-  chooseHero: () => {
-    console.warn("no chooseHero Function Provided");
-  },
-  showPage: () => {
-    console.warn("no showPage Function Provided");
-  },
 };
 
 export default Sidebar;

@@ -1,9 +1,9 @@
-import { RawEquipemnt } from "../rawTypes";
-import { Equipment } from "../types";
+import { RawEquipemnt } from "../types/rawTypes";
+import { Equipment } from "../types/types";
 
 export default (equipments: RawEquipemnt[]): Equipment => {
   const returnEquipment: Equipment = {};
-  equipments.forEach(equi => {
+  equipments.forEach((equi) => {
     const {
       name,
       bezeichner: identifier,
@@ -15,7 +15,7 @@ export default (equipments: RawEquipemnt[]): Equipment => {
       slot,
       talent,
       waffenname: weaponName,
-      nummer: equiNumber
+      nummer: equiNumber,
     } = equi.attributes;
     if (name.indexOf("nk") > -1) {
       if (!returnEquipment.closeRange) {
@@ -31,7 +31,7 @@ export default (equipments: RawEquipemnt[]): Equipment => {
         set,
         slot,
         talent,
-        weaponName
+        weaponName,
       };
     } else if (name.indexOf("fk") > -1) {
       if (!returnEquipment.farRange) {
@@ -42,7 +42,7 @@ export default (equipments: RawEquipemnt[]): Equipment => {
         set,
         slot,
         talent,
-        weaponName
+        weaponName,
       };
     } else if (name.indexOf("jagt") > -1) {
       if (!returnEquipment.hunt) {
@@ -59,7 +59,7 @@ export default (equipments: RawEquipemnt[]): Equipment => {
         slot,
         talent,
         weaponName,
-        equiNumber
+        equiNumber,
       };
     }
   });

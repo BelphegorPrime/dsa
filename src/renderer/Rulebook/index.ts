@@ -1,4 +1,4 @@
-import { HouseRule, Liturgie, Spell, Weapon } from "../types";
+import { HouseRule, Liturgie, Spell, Weapon } from "../types/types";
 import advantages from "./advantages.json";
 import arsenal from "./arsenal.json";
 import disadvantages from "./disadvantages.json";
@@ -12,17 +12,17 @@ export default class Rulebook {
   }
 
   public getLibreCantionesDeluxe() {
-    const spellRules = this.houseRules.filter(rule => rule.type === "spell");
+    const spellRules = this.houseRules.filter((rule) => rule.type === "spell");
     const lcdInstance: Spell[] = JSON.parse(JSON.stringify(lcd));
-    spellRules.forEach(rule => {
+    spellRules.forEach((rule) => {
       const spell = lcdInstance.find(
         (s: Spell) => s.page === rule.page || s.name === rule.name
       );
       if (spell) {
-        rule.additionalModification.forEach(variant => {
+        rule.additionalModification.forEach((variant) => {
           if (spell.variants) {
             const otherVariants = spell.variants.filter(
-              v => v.name !== variant.name
+              (v) => v.name !== variant.name
             );
             otherVariants.push(variant);
             spell.variants = otherVariants;
@@ -34,10 +34,12 @@ export default class Rulebook {
   }
 
   public getArsenal() {
-    const weaponRules = this.houseRules.filter(rule => rule.type === "weapon");
+    const weaponRules = this.houseRules.filter(
+      (rule) => rule.type === "weapon"
+    );
     let arsenalInstance: Weapon[] = JSON.parse(JSON.stringify(arsenal));
-    weaponRules.forEach(rule => {
-      arsenalInstance = arsenalInstance.filter(w => w.name !== rule.name);
+    weaponRules.forEach((rule) => {
+      arsenalInstance = arsenalInstance.filter((w) => w.name !== rule.name);
       arsenalInstance.push(rule);
     });
     return arsenalInstance;

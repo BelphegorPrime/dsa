@@ -1,10 +1,10 @@
-import { array, func, object } from "prop-types";
 import React, { Fragment, useState } from "react";
 import Select from "react-select";
 import useBoolean from "react-use/lib/useBoolean";
+import { useMainReducer } from "../../context/mainReducer/MainContext";
 
 import { rollDice } from "../../helperFunctions";
-import { BattleHero, ConvertedHero, Hero } from "../../types";
+import { BattleHero, ConvertedHero } from "../../types/types";
 import MasterSideBar from "../Master/MasterSideBar";
 import BattleTable from "./BattleTable";
 import EncounterModal from "./EncounterModal";
@@ -47,26 +47,13 @@ interface Initiativ {
   [name: string]: number;
 }
 
-interface BattleProps {
-  heros: {
-    [name: string]: Hero;
-  };
-  activeEncounter: Encounter | null;
-  encounter: any[];
-  chooseHero: (name: string) => void;
-  setEncounter: (encounters: Encounter[]) => void;
-  setActiveEncounter: (encounter: Encounter | null) => void;
-}
-
-const Battle = (props: BattleProps) => {
-  const {
-    heros,
-    chooseHero,
-    encounter,
-    setEncounter,
-    activeEncounter,
-    setActiveEncounter,
-  } = props;
+const Battle = () => {
+  const [
+    {
+      data: { heros, encounter, activeEncounter },
+    },
+    { chooseHero, setEncounter, setActiveEncounter },
+  ] = useMainReducer<true>();
   const [selectedHeros, setSelectedHeros] = useState(Object.keys(heros));
   const [selectedEncounter, setSelectedEncounter] = useState<Encounter | null>(
     null
@@ -230,15 +217,6 @@ const Battle = (props: BattleProps) => {
       />
     </Fragment>
   );
-};
-
-Battle.propTypes = {
-  heros: object,
-  activeEncounter: object,
-  encounter: array,
-  chooseHero: func,
-  setEncounter: func,
-  setActiveEncounter: func,
 };
 
 export default Battle;

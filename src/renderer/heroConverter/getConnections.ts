@@ -1,5 +1,5 @@
-import { Child } from "../rawTypes";
-import { Connection } from "../types";
+import { Child } from "../types/rawTypes";
+import { Connection } from "../types/types";
 
 export default (connections: Child[]): Connection[] =>
   connections.map(
@@ -8,7 +8,7 @@ export default (connections: Child[]): Connection[] =>
       return {
         name: name ? name : "",
         description: beschreibung ? beschreibung : "",
-        socialStatus: so ? so : ""
+        socialStatus: so ? so : "",
       };
     }
   );

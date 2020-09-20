@@ -75,8 +75,8 @@ export interface ConvertedHero {
 }
 
 export interface Electron {
-  instance: any,
-  ipcRenderer: any
+  instance: any;
+  ipcRenderer: any;
 }
 
 export interface Equipment {
@@ -160,12 +160,12 @@ export interface HouseRule {
   DK: string;
   talent: string;
   distribution: string;
-  additionalModification: Array<{
+  additionalModification: {
     name: string;
     effect: string;
     mod: string;
     minZfW: number;
-  }>;
+  }[];
 }
 
 export interface Liturgie {
@@ -181,11 +181,11 @@ export interface Liturgie {
   effect: string;
   remark: string;
   gods: string[];
-  variants: Array<{
+  variants: {
     grade: number;
     effect: string;
-  }>;
-  alternativeNames: Array<{ name: string; god: string; grade: number }>;
+  }[];
+  alternativeNames: { name: string; god: string; grade: number }[];
 }
 
 export interface MainProperties {
@@ -259,14 +259,14 @@ export interface Purse {
 }
 
 export interface SpecialAbilities {
-  specialAbilities: Array<{
+  specialAbilities: {
     name: string;
     values?: string[];
     liturgy?: Liturgie;
-  }>;
-  cheapenedSpecialAbilities: Array<{
+  }[];
+  cheapenedSpecialAbilities: {
     name: string;
-  }>;
+  }[];
 }
 
 export interface Spell {
@@ -282,7 +282,7 @@ export interface Spell {
   duration: string;
   castTime: string;
   spellComment: string;
-  trialProperties: Array<string | null>;
+  trialProperties: (string | null)[];
   value: string;
   variant: string;
   technik?: string;
@@ -292,15 +292,15 @@ export interface Spell {
   reversalis?: string;
   antimagic?: string;
   characteristics?: string[];
-  distribution?: Array<{ representation: string; distribution: number }>;
+  distribution?: { representation: string; distribution: number }[];
   page?: number;
   fromLCD?: boolean;
-  variants?: Array<{
+  variants?: {
     name: string;
     effect: string;
     minZfW: number;
     mod: string;
-  }>;
+  }[];
 }
 
 export interface SpellList {
@@ -311,7 +311,7 @@ export interface TalentList {
   [name: string]: {
     learningMethode: string;
     trial: string[];
-    trialProperties: Array<string | null>;
+    trialProperties: (string | null)[];
     value: string;
     attack?: number;
     parade?: number;

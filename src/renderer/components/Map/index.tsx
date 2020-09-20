@@ -3,20 +3,17 @@ import { ApolloClient } from "apollo-client";
 import { createUploadLink } from "apollo-upload-client";
 import React from "react";
 import { ApolloProvider } from "react-apollo";
-import { RouteComponentProps } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    link: createUploadLink({ uri: "http://localhost:7000/graphql" }),
+  cache: new InMemoryCache(),
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  link: createUploadLink({ uri: "http://localhost:7000/graphql" }),
 });
 
-const Map = (props: RouteComponentProps) => (
-  <ApolloProvider
-    client={client}
-  >
+const Map = () => (
+  <ApolloProvider client={client}>
     <div className="left-pane col-2 p-0">
       <Sidebar />
     </div>
@@ -24,7 +21,7 @@ const Map = (props: RouteComponentProps) => (
       <div
         className="row col-12 ml-0 mr-0 pt-2"
         style={{
-          maxHeight: "100%"
+          maxHeight: "100%",
         }}
       />
     </div>

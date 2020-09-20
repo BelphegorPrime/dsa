@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Fragment } from "react";
-import { MasterBodyProps } from "../../propTypes";
-import { Hero } from "../../types";
+import { MasterBodyProps } from "../../types/propTypes";
+import { Hero } from "../../types/types";
 
 const MasterBody = ({ heros, selectedHeros }: MasterBodyProps) => {
   const getHeroData = (h: Hero) => {
@@ -18,7 +18,7 @@ const MasterBody = ({ heros, selectedHeros }: MasterBodyProps) => {
             <div className="pl-4">
               <span className="font-weight-bold">Vorteile: </span>
               {converted.advantages
-                .map(advantage =>
+                .map((advantage) =>
                   advantage.value
                     ? `${advantage.name} ${advantage.value}`
                     : `${advantage.name}`
@@ -31,7 +31,7 @@ const MasterBody = ({ heros, selectedHeros }: MasterBodyProps) => {
               <span className="font-weight-bold">Nachteile: </span>
               <span className="font-italic">
                 {converted.disadvantages
-                  .map(disadvantage =>
+                  .map((disadvantage) =>
                     disadvantage.value
                       ? `${disadvantage.name} ${disadvantage.value}`
                       : `${disadvantage.name}`
@@ -55,7 +55,7 @@ const MasterBody = ({ heros, selectedHeros }: MasterBodyProps) => {
                     }
                     return 0;
                   })
-                  .map(talent => {
+                  .map((talent) => {
                     const f = fight[talent];
                     return `${talent} (AT:${f.attack}, PA:${f.parade})`;
                   })
@@ -68,7 +68,7 @@ const MasterBody = ({ heros, selectedHeros }: MasterBodyProps) => {
     );
   };
 
-  return <div>{Object.values(heros).map(h => getHeroData(h))}</div>;
+  return <div>{Object.values(heros).map((h) => getHeroData(h))}</div>;
 };
 
 export default MasterBody;

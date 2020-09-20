@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
-import { v4 as uuid4 } from 'uuid';
-import { BattleHero } from "../../types";
+import { v4 as uuid4 } from "uuid";
+import { BattleHero } from "../../types/types";
 
 interface StartEncounterModalProps {
   show: boolean;
@@ -12,13 +12,13 @@ interface StartEncounterModalProps {
 const StartEncounterModal = (props: StartEncounterModalProps) => {
   const { show, close, save, heros } = props;
   const heroData = heros
-    .map(hero => {
+    .map((hero) => {
       const { name, properties } = hero.converted;
       if (name && properties) {
         const { initiativBaseValue } = properties;
         if (initiativBaseValue) {
           return {
-            [name]: initiativBaseValue.value
+            [name]: initiativBaseValue.value,
           };
         }
       }
@@ -28,7 +28,7 @@ const StartEncounterModal = (props: StartEncounterModalProps) => {
   const [inits, setInits] = useState<{ [name: string]: number }>(heroData);
   const [additionalHeros, setAdditionalHeros] = useState<BattleHero[]>([]);
   const startBattle = () => {
-    additionalHeros.forEach(additionalHero => {
+    additionalHeros.forEach((additionalHero) => {
       inits[additionalHero.name] = additionalHero.init;
     });
     save(inits);
@@ -41,7 +41,7 @@ const StartEncounterModal = (props: StartEncounterModalProps) => {
     id: string
   ) =>
     setAdditionalHeros(
-      additionalHeros.map(ah => {
+      additionalHeros.map((ah) => {
         if (ah.id === id) {
           ah.init = parseInt(e.target.value, 10);
         }
@@ -54,8 +54,8 @@ const StartEncounterModal = (props: StartEncounterModalProps) => {
       {
         id: uuid4(),
         name: "",
-        init: 10
-      }
+        init: 10,
+      },
     ] as BattleHero[]);
 
   const handleAdditionalHeroNameChange = (
@@ -63,7 +63,7 @@ const StartEncounterModal = (props: StartEncounterModalProps) => {
     id: string
   ) => {
     setAdditionalHeros(
-      additionalHeros.map(ah => {
+      additionalHeros.map((ah) => {
         if (ah.id === id) {
           ah.name = e.target.value;
         }
@@ -89,7 +89,7 @@ const StartEncounterModal = (props: StartEncounterModalProps) => {
             className="modal-body pt-0"
             style={{ height: "70vh", overflow: "scroll" }}
           >
-            {Object.keys(heroData).map(name => (
+            {Object.keys(heroData).map((name) => (
               <div className="row p-2 border-bottom" key={name}>
                 <div className="col-8">{name}</div>
                 <div className="col-4">
@@ -98,20 +98,20 @@ const StartEncounterModal = (props: StartEncounterModalProps) => {
                     type="number"
                     className="form-control w-50"
                     style={{ display: "inline-block" }}
-                    onChange={e => handleIniChange(e, name)}
+                    onChange={(e) => handleIniChange(e, name)}
                     value={inits[name]}
                   />
                 </div>
               </div>
             ))}
-            {additionalHeros.map(additionalHero => {
+            {additionalHeros.map((additionalHero) => {
               const { id, name, init } = additionalHero;
               return (
                 <div className="row p-2 border-bottom" key={id}>
                   <input
                     className="form-control col-8"
                     style={{ display: "inline-block" }}
-                    onChange={e => handleAdditionalHeroNameChange(e, id)}
+                    onChange={(e) => handleAdditionalHeroNameChange(e, id)}
                     value={name}
                   />
                   <div className="col-4">
@@ -120,7 +120,7 @@ const StartEncounterModal = (props: StartEncounterModalProps) => {
                       type="number"
                       className="form-control w-50"
                       style={{ display: "inline-block" }}
-                      onChange={e => handleAdditionalIniChange(e, id)}
+                      onChange={(e) => handleAdditionalIniChange(e, id)}
                       value={inits[name] ? inits[name] : init}
                     />
                   </div>

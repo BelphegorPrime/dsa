@@ -15,15 +15,15 @@ export default () => {
           case "spell": {
             // eslint-disable-next-line no-undef
             fetch("/templates/spellTemplate.js")
-              .then(response => response.body)
-              .then(body => {
+              .then((response) => response.body)
+              .then((body) => {
                 if (body) {
                   const reader = body.getReader();
                   reader.read().then(({ value }) => {
                     resolve({
                       // eslint-disable-next-line no-undef
                       stringValue: new TextDecoder("utf-8").decode(value),
-                      name: "spellTemplate"
+                      name: "spellTemplate",
                     });
                   });
                 }
@@ -33,15 +33,15 @@ export default () => {
           case "weapon": {
             // eslint-disable-next-line no-undef
             fetch("/templates/weaponTemplate.js")
-              .then(response => response.body)
-              .then(body => {
+              .then((response) => response.body)
+              .then((body) => {
                 if (body) {
                   const reader = body.getReader();
                   reader.read().then(({ value }) => {
                     resolve({
                       // eslint-disable-next-line no-undef
                       stringValue: new TextDecoder("utf-8").decode(value),
-                      name: "weaponTemplate"
+                      name: "weaponTemplate",
                     });
                   });
                 }
@@ -91,7 +91,7 @@ export default () => {
 
   return (
     <Fragment>
-      {["spell", "weapon"].map(template => {
+      {["spell", "weapon"].map((template) => {
         switch (template) {
           case "spell": {
             return renderTemplate(template, "Zaubertemplate");

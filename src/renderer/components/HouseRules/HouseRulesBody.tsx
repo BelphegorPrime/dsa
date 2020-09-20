@@ -1,7 +1,6 @@
-import { array, func, string } from "prop-types";
 import React, { Fragment } from "react";
 
-import { HouseRule } from "../../types";
+import { HouseRule } from "../../types/types";
 import DownloadableTemplates from "./DownloadableTemplates";
 
 interface HouseRulesBodyProps {
@@ -15,7 +14,7 @@ const HouseRules = (props: HouseRulesBodyProps) => {
   if (houseRuleToShow === "templates") {
     return <DownloadableTemplates />;
   }
-  const rulesToShow = houseRules.filter(hr => hr.type === houseRuleToShow);
+  const rulesToShow = houseRules.filter((hr) => hr.type === houseRuleToShow);
   return (
     <Fragment>
       {rulesToShow.map((rule, index) => {
@@ -37,7 +36,7 @@ const HouseRules = (props: HouseRulesBodyProps) => {
                   <div>LCD Seite: {rule.page}</div>
                   <div>
                     zusätzliche Modifikationen:{" "}
-                    {rule.additionalModification.map(mod => (
+                    {rule.additionalModification.map((mod) => (
                       <div className="pl-3" key={mod.name + mod.effect}>
                         <div>Name: {mod.name}</div>
                         <div>Modifikation: {mod.mod}</div>
@@ -87,12 +86,6 @@ const HouseRules = (props: HouseRulesBodyProps) => {
       })}
     </Fragment>
   );
-};
-
-HouseRules.propTypes = {
-  houseRuleToShow: string,
-  houseRules: array,
-  removeRule: func
 };
 
 export default HouseRules;

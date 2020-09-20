@@ -1,7 +1,7 @@
 import { func, object, string } from "prop-types";
 import React, { Fragment } from "react";
-import { v4 as uuid4 } from 'uuid';
-import { Comment, Hero } from "../../types";
+import { v4 as uuid4 } from "uuid";
+import { Comment, Hero } from "../../types/types";
 
 interface CommentsProps {
   hero: Hero;
@@ -23,16 +23,16 @@ const Comments = (props: CommentsProps) => {
           id: uuid4(),
           name: nameInput.value,
           comment: commentTextarea.value,
-          added: true
+          added: true,
         },
-        ...comments
+        ...comments,
       ];
       updateHero(hero);
     }
   };
 
   const removeComment = (comment: Comment) => {
-    comments = comments.filter(c => c.id !== comment.id);
+    comments = comments.filter((c) => c.id !== comment.id);
     updateHero(hero);
   };
 
@@ -110,7 +110,7 @@ const Comments = (props: CommentsProps) => {
 Comments.propTypes = {
   updateHero: func,
   hero: object,
-  className: string
+  className: string,
 };
 
 export default Comments;
