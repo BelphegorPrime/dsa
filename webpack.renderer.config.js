@@ -3,6 +3,18 @@ const plugins = require('./webpack.plugins');
 
 rules.push(
     {
+        test: /\.tsx?$/,
+        exclude: /(node_modules|\.webpack)/,
+        use: [
+            {
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true
+                }
+            }
+        ]
+    },
+    {
       test: /\.css$/,
       use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
     },
@@ -13,7 +25,7 @@ rules.push(
                 loader: 'file-loader',
             },
         ],
-    },
+    }
 );
 
 module.exports = {

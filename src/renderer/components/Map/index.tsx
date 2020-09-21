@@ -1,19 +1,8 @@
-import { InMemoryCache } from "apollo-cache-inmemory";
-import { ApolloClient } from "apollo-client";
-import { createUploadLink } from "apollo-upload-client";
-import React from "react";
-import { ApolloProvider } from "react-apollo";
+import React, { Fragment } from "react";
 import Sidebar from "./Sidebar";
 
-const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  link: createUploadLink({ uri: "http://localhost:7000/graphql" }),
-});
-
 const Map = () => (
-  <ApolloProvider client={client}>
+  <Fragment>
     <div className="left-pane col-2 p-0">
       <Sidebar />
     </div>
@@ -25,7 +14,7 @@ const Map = () => (
         }}
       />
     </div>
-  </ApolloProvider>
+  </Fragment>
 );
 
 export default Map;

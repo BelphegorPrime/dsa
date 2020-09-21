@@ -1,7 +1,14 @@
-import { app as ElectronApp, BrowserWindow, ipcMain } from "electron";
+import {
+  app as ElectronApp,
+  BrowserWindow,
+  ipcMain,
+  Menu,
+  shell,
+} from "electron";
 import isDev from "electron-is-dev";
 import fs from "fs";
-import setMainMenu from "./setMainMenu";
+
+import childProcess, { ChildProcess, ForkOptions } from "child_process";
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: any;
 
@@ -11,6 +18,152 @@ export type Data = {
 };
 
 const tempDirectory = ElectronApp.getAppPath();
+
+export enum ServerType {
+  "MAP_SERVER" = "MAP_SERVER",
+}
+
+const runScript = (
+  scriptPath: string,
+  port: number
+): Promise<{
+  url: string;
+  process: ChildProcess;
+}> =>
+  new Promise((resolve, reject) => {
+    console.error(scriptPath);
+    let invoked = false;
+    const process = childProcess.fork(scriptPath, [port] as ForkOptions);
+    process.on("error", (err) => {
+      if (invoked) {
+        return;
+      }
+      invoked = true;
+      reject(err);
+    });
+
+    process.on("exit", (code) => {
+      if (invoked) {
+        return;
+      }
+      invoked = true;
+      reject(new Error(`exit code ${code}`));
+    });
+
+    process.on("message", (m) => {
+      resolve({
+        url: m.toString(),
+        process,
+      });
+    });
+  });
+
+const getPath = (type: ServerType) => {
+  switch (type) {
+    case "MAP_SERVER":
+      return `${__dirname}/mapServer.js`;
+    default:
+      return null;
+  }
+};
+const run = async (port = 8000, data: { type: ServerType }) => {
+  const { type } = data;
+  const path = getPath(type);
+  if (!path) {
+    throw new Error(`NO PATH FOR TYPE ${type} FOUND`);
+  }
+  const { url, process } = await runScript(path, port);
+  return { url, process, path, data };
+};
+
+const createServer = (
+  port: number,
+  data: { type: ServerType },
+  app: typeof ElectronApp & { data: Data }
+): Promise<void> => {
+  console.error(data);
+  return run(port, data)
+    .then((serverData) => {
+      app.data.servers.push(serverData);
+      console.warn(app.data);
+    })
+    .catch(console.error);
+};
+
+const setMainMenu = (app: typeof ElectronApp & { data: Data }): void => {
+  const isWindows = process.platform === "win32";
+  const name = "Topas";
+  Menu.setApplicationMenu(
+    Menu.buildFromTemplate([
+      {
+        label: isWindows ? "Datei" : name,
+        submenu: [
+          {
+            label: `${name} Beenden`,
+            accelerator: isWindows ? "Alt+F4" : "CmdOrCtrl+Q",
+            click() {
+              app.quit();
+            },
+          },
+          {
+            label: "Starte Kartenserver (Port 7000)",
+            async click() {
+              console.error(ServerType.MAP_SERVER);
+              await createServer(7000, { type: ServerType.MAP_SERVER }, app);
+              console.error("createServer");
+            },
+          },
+        ],
+      },
+      {
+        label: "Bearbeiten",
+        submenu: [
+          { role: "undo", label: "Widerrufen" },
+          { role: "redo", label: "Widerholen" },
+          { type: "separator" },
+          { role: "cut", label: "Ausschneiden" },
+          { role: "copy", label: "Kopieren" },
+          { role: "paste", label: "Einfügen" },
+          { role: "pasteAndMatchStyle", label: "Einfügen und Stil anpassen" },
+          { role: "delete", label: "Löschen" },
+          { role: "selectAll", label: "Alle auswählen" },
+        ],
+      },
+      {
+        label: "Darstellung",
+        submenu: [
+          { role: "reload", label: "Dienst neu laden" },
+          { role: "forceReload", label: "Topas neu laden" },
+          { role: "toggleDevTools", label: "Entwicklertools anzeigen" },
+          { type: "separator" },
+          { role: "resetZoom", label: "Originalgröße" },
+          { role: "zoomIn", label: "Vergrößern" },
+          { role: "zoomOut", label: "Verkleiner" },
+          { type: "separator" },
+          { role: "togglefullscreen", label: "Vollbildmodus" },
+        ],
+      },
+      {
+        label: "Fenster",
+        submenu: [
+          { role: "minimize", label: "Minimieren" },
+          { role: "close", label: "Schließen" },
+        ],
+      },
+      {
+        label: "Hilfe",
+        submenu: [
+          {
+            label: "Mehr erfahren",
+            click() {
+              shell.openExternal("https://electronjs.org");
+            },
+          },
+        ],
+      },
+    ])
+  );
+};
 
 const createWindow = (app: typeof ElectronApp & { data: Data }) => {
   console.log("creating window");
